@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Dominion 2022-02-21</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Dominion 2022-02-21"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Dominion 2022-02-21"/><meta name="twitter:description" content="Let’s think and play properly. The opponent is Hard AI. Hmmm…lots of cards I’ve never seen before. First, think for yourself without looking at online explanations."/><meta property="og:description" content="Let’s think and play properly. The opponent is Hard AI. Hmmm…lots of cards I’ve never seen before. First, think for yourself without looking at online explanations."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="Let’s think and play properly. The opponent is Hard AI. Hmmm…lots of cards I’ve never seen before. First, think for yourself without looking at online explanations."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Dominion-2022-02-21"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Dominion-2022-02-21"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Let’s think and play properly. The opponent is Hard AI. Hmmm…lots of cards I’ve never seen before. First, think for yourself without looking at online explanations."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Dominion-2022-02-21"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Dominion 2022-02-21</a></div></nav><h1 class="article-title">Dominion 2022-02-21</h1><p show-comma="true" class="content-meta"><span>Feb 21, 2022</span><span>22 min read</span></p></div></div><article class="popover-hint"><p><img src="https://gyazo.com/7d74cf7fb5a9728d050c0cfd604e311e/thumb/1000" alt="image"/>
+Let’s think and play properly. The opponent is Hard AI.</p>
+<p>Hmmm…lots of cards I’ve never seen before.
+First, think for yourself without looking at online explanations.</p>
+<ul>
+<li>Fool’s Gold, First Look.
+<ul>
+<li>A treasure that becomes more powerful when gathered together. 1 gold for 2 costs is inferior to a copper coin, but if you get 2 out, they cost 5 gold, which is equivalent to a silver coin gold coin, and since they cost 4, they are a 5-cost bargain compared to a silver coin gold coin. The problem is that you need a considerable amount to cover it.</li>
+<li>I feel like I have to buy these strong systems when they gather because I don’t want them to be bought up by the other side.</li>
+<li>In situations where you start buying endgame victory point cards and the deck thins out, can you exchange them for gold coins? Nice.</li>
+</ul>
+</li>
+<li>Hori Terminal Draw</li>
+<li>Watch, first look
+<ul>
+<li>I feel that not consuming actions and requiring the disposal of one piece after seeing three pieces is very restrictive, and I wonder if it is effective in compressing the early stages of the video and the mansion full of video.</li>
+<li>I have a feeling it will be a dead card after compression.</li>
+</ul>
+</li>
+<li>Butler, I’ve seen it before, but what was it?
+<ul>
+<li>Draw, coin, and discard selection cards</li>
+<li>If destruction is the goal, is this better than watching? After compression, you can use it for draws or coins.</li>
+<li>Uh, unlike the lookout, it’s a terminal action.</li>
+</ul>
+</li>
+<li>Conclave, first time
+<ul>
+<li>+2 coins</li>
+<li>If you have an action card in your hand that is not on the field, you can use it for another +1 action, so it’s really +2.</li>
+</ul>
+</li>
+<li>duplication
+<ul>
+<li>Another card is acquired when a card with a cost of 6 or less is acquired in the tavern reserve.</li>
+<li>You can earn 2 gold coins when you buy gold coins.</li>
+</ul>
+</li>
+<li>Duke Special Victory Points</li>
+<li>harbor
+<ul>
+<li>Draw + purchase, lasts 2 turns</li>
+</ul>
+</li>
+<li>forging
+<ul>
+<li>Destroyed and cost combined to acquire</li>
+</ul>
+</li>
+<li>Court, first time
+<ul>
+<li>3 times action use</li>
+</ul>
+</li>
+<li>Chameleon Habits
+<ul>
+<li>Draws and coins are swapped.</li>
+<li>Mhm, the conclave is turning into a draw card. Wouldn’t it be pretty good if you could use the card you drew after you drew it?</li>
+</ul>
+</li>
+<li>Project: Evil Deviousness
+<ul>
+<li>You can accumulate 1 draw right each turn.</li>
+</ul>
+</li>
+</ul>
+<p>Supply Check</p>
+<ul>
+<li>Action increase: Conclave, Court
+<ul>
+<li>Court + butler” yields 6 gold.</li>
+</ul>
+</li>
+<li>Draw: moat, butler, conclave + chameleon, landing place, deviousness
+<ul>
+<li>The devious “accumulate tokens and use them when you have a bad hand” approach sounds good.</li>
+</ul>
+</li>
+<li>Purchase: Boat Terminal</li>
+<li>Compression: watchman, butler, forging</li>
+<li>Attacks: None</li>
+<li>Special Victory Points: Duke</li>
+</ul>
+<p>policy consideration</p>
+<ul>
+<li>I’d like to verify that the conclave can perform the drawn action.</li>
+<li>Compression and buying a genus state seems like a good idea.</li>
+<li>There could be a line to increase the dukedom all over with duplicates.</li>
+<li>I’m going to play with this supply a few times, so let’s go the route of using something I’ve never used before first.
+<ul>
+<li>Butler, deviousness. Thereafter, while compressing with the butler, buy fool’s gold for 2 gold, silver coins for 3 gold, a conclave for 4 gold and a landing place for 5 gold.</li>
+<li>I think it is difficult to aim to draw out every turn because there is no easy-to-use action increase and draw. I would draw more to increase the turnover rate.
+<ul>
+<li>If the landing place comes once every two times, it’s always a +1 purchase, so the court + butler will be able to make good use of the 6 gold produced by the court + butler.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Let’s do it, Round 1</p>
+<ul>
+<li>AI has been playing exactly the same w</li>
+<li>T3: Destroy the mansion and fool’s gold for 2 gold</li>
+<li>T4: Conclave with 4 gold and silver coins, but learning is a priority.</li>
+<li>T5: Butler, Conclave, Copper 3
+<ul>
+<li>I’m torn between discarding more with the butler or not and buying a landing place, because I just discarded two cards, so if the landing place comes in at this time, it’ll be every turn draw and increase the turnover without compressing it now.</li>
+<li>7 gold, so you can buy a court, but not now, I feel.</li>
+<li>I have six cards left in the deck, so if I draw on the butler, the landing place I just bought is instantly shuffled.</li>
+<li>Conclave, 2 draws with butler, copper coin comes, 7 gold, 5 gold to buy a landing place.</li>
+</ul>
+</li>
+<li>T6: Copper Coin 3 Fool’s Gold 1
+<ul>
+<li>Buy silver? Draw 3 for a devious token?</li>
+<li>Let’s draw three.</li>
+<li>Steward, landing, 5 gold.</li>
+<li>Backstage playing the boatyard and pulling a conclave.</li>
+<li>Oh, but I also drew a copper coin, so that’s 6 gold. I can buy a gold coin.</li>
+</ul>
+</li>
+<li>T7: Butler 6 copper coins
+<ul>
+<li>Compression or buy a gentry state for 8 gold.</li>
+<li>Compress and buy silver coins for 4 gold?</li>
+<li>Oh, and we’re buying more, so we can have fool’s gold x2.</li>
+</ul>
+</li>
+<li>T8: Conclave, copper coins, fool’s gold, gold coins
+<ul>
+<li>Conclave with +2 gold and poof!</li>
+<li>Shall we try the conclave + chameleon?
+<ul>
+<li>There is an option to use devious tokens…</li>
+</ul>
+</li>
+<li>I drew fool’s gold x2 w
+<ul>
+<li>I wanted to verify that I could use the action card I drew.</li>
+</ul>
+</li>
+<li>13 gold in total, purchase 1 <span>→</span> Province</li>
+</ul>
+</li>
+<li>T9: Steward, landing, 3 coppers
+<ul>
+<li>Well, first of all, I’ll use the pier.</li>
+<li>4 copper coins</li>
+<li>Is the Fool’s Gold x2 subtle here? Conclave?</li>
+</ul>
+</li>
+<li>T10: Opponent gains a province, will you turn fool’s gold into gold?
+<ul>
+<li>Hand, copper coins, fool’s gold x2, gold coins, so even if you discard one, you can still buy a genus state (Note: misjudgment).</li>
+<li>Oops, you can replace any number of cards in your hand, or just one.</li>
+<li>I was only going to use those eight gold pieces to buy the genshūtō, but I got a conclave and gold coins at the dock.</li>
+<li>Oh, fool’s gold, if you destroy one of the two pieces, the rest is not one gold!</li>
+<li>The chameleon conclave safely drew the fool’s gold.</li>
+<li>Can I use an action card drawn in a conclave?</li>
+<li>12Kin, Genus and Conclave</li>
+</ul>
+</li>
+<li>T11: Butler, Copper 4
+<ul>
+<li>Draw 4 cards with the devious tokens!</li>
+<li>Chameleon Conclave with 2 draws</li>
+<li>The landing sites drawn by the conclave can be used.
+<ul>
+<li>Correct behavior?</li>
+<li>Well, if it’s available, we’ll use it.</li>
+<li>Draw more conclaves</li>
+</ul>
+</li>
+<li>Chameleon Conclave Draws Conclave
+<ul>
+<li>I can use the original butler I had, but not the conclave.</li>
+<li>Oh, because the conclave is already in place.</li>
+<li>I have 13 gold now, so I have the choice of destroying the copper coins with the butler, or +4 coins with the butler and the conclave to buy 2 genus states.</li>
+<li>I’m at the end of the line, so I’ll buy a genshu.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>T12: Opponent also buys a province and has one card left, the score is 25 for me and 22 for opponent, and I have 2 gold coins and fool’s gold in my hand, so I cannot reach the province.
+<ul>
+<li>I was going to draw in a trick, I thought.</li>
+<li>Oh, the gold coins came from the effect of the shipyard. W. Purchase of the province of the genus and victory.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/58eda1a9db9a951ec5e2a2919dc8ec21/thumb/1000" alt="image"/>
+The other party is a butler, a landing place.</p>
+<p>second round (of tennis, etc.)</p>
+<ul>
+<li>We won easily, so now let’s ban the conclave and duplicate, duke and ducal.</li>
+<li>I can’t get more actions, by the time I get the court, the deck is full, should I use less terminal actions?
+<ul>
+<li>And don’t even get me started on the boat docks.</li>
+<li>I’m having a hard time deciding whether or not to compress with a butler.</li>
+<li>Hmmm… I still think the previous plan is easier to work with.</li>
+<li>Duplicates move to the mat if you use them, so they don’t squeeze the deck as much?</li>
+<li>Is it inevitable that the deck turnover will go down in the Duke’s Duchy anyway?</li>
+<li>I feel like I should throw away the copper coins, though.</li>
+<li>Should I play it as differently as possible to learn, or not include a butler, first hand silver + duplicate (duplicate stero)</li>
+</ul>
+</li>
+<li>silver coin</li>
+<li>Play duplicates, 4 gold to buy duplicates or silver coins, or silver coins, or, nay, insurance against accidents in hand with deviousness.</li>
+<li>6 gold, buy gold coins and activate replication.</li>
+<li>5 gold… the dukedom is not ready yet, maybe a silver coin.</li>
+<li>Reproduction, 5k gold
+<ul>
+<li>Three draws for deviousness!</li>
+<li>10 gold.</li>
+<li>buy a state of the genus</li>
+</ul>
+</li>
+<li>7 gold, buy gold coins and duplicate</li>
+<li>6 Gold, Gold Coin</li>
+<li>6 Gold, Gold Coin</li>
+<li>8Kin, Province</li>
+<li>Reproduction, 5k gold
+<ul>
+<li>4 draws by deviousness!</li>
+<li>12 gold, buy a genus state</li>
+</ul>
+</li>
+<li>My opponent and I each have three cards, and we’ll be done before we can buy the public domain.
+<ul>
+<li>Oh, right, I should have bought the dukedom instead of the silver coins.</li>
+</ul>
+</li>
+<li>10 gold to buy a province</li>
+<li>The other party also buys and loses.
+<ul>
+<li>Me:Province 4, House 3</li>
+<li>AI: 4 provinces, 2 duchies, 2 villas</li>
+</ul>
+</li>
+<li>AI was again a butler plus a landing place.</li>
+</ul>
+<p>Third round with the same strategy</p>
+<ul>
+<li>
+<p>Reproductions + silver coins</p>
+</li>
+<li>
+<p>conspiracy</p>
+</li>
+<li>
+<p>Reproduction, fool’s gold at 2 gold</p>
+</li>
+<li>
+<p>silver coin</p>
+</li>
+<li>
+<p>5 gold, 2 draws by deviousness, gold coins purchased and duplicated.</p>
+</li>
+<li>
+<p>Play duplicate, buy gold coins and duplicate</p>
+</li>
+<li>
+<p>Buy gold coins</p>
+</li>
+<li>
+<p>4 gold, 2 draws for deviousness, buy a gentry state</p>
+<ul>
+<li>Let’s buy public domain instead of gold from here.</li>
+</ul>
+</li>
+<li>
+<p>Reproduction, 6 gold, not gold coins, public domain, to be reproduced.</p>
+</li>
+<li>
+<p>The other party bought a gentry state, do you want to turn the kingdom of fools into gold coins?</p>
+<ul>
+<li>If I change it, it will be 7 gold, so I’ll pass.</li>
+</ul>
+</li>
+<li>
+<p>6K gold for public domain</p>
+</li>
+<li>
+<p>Duke for 6 gold, now that he has 4 dukes, he will have 4 dukes from then on.</p>
+</li>
+<li>
+<p>8 gold. If you buy a genshu, you have one card left, if you buy a genshu, it is 33 to 30, and if your opponent can buy a genshu next time, you will lose the game in reverse.</p>
+<ul>
+<li>Possibly, there is a line that if you draw 4 in a devious way and get a duplicate, you can buy 2 dukes to make it 8 points 35 to 30, and your opponent wins the genus and turns it around, but the game is still not over by 1 point.
+<ul>
+<li>If that happens, I get 5 points in the public domain, so that’s an advantage.</li>
+</ul>
+</li>
+<li>Which is correct…
+<ul>
+<li>8 cards in the deck, 12 cards in the discard pile… the duplicate would be on the discard side.</li>
+</ul>
+</li>
+<li>Purchase of the genus state</li>
+</ul>
+</li>
+<li>
+<p>Oh, the duplicate came in the draw w</p>
+<ul>
+<li>W lost the game in a predictable upset.</li>
+<li>Me: 3 provinces, 4 duchies, 2 mansions</li>
+<li>AI: 5 Provinces, 2 Duchies</li>
+</ul>
+</li>
+<li>
+<p>Let’s consider the side that draws with Undo.</p>
+</li>
+<li>
+<p>Draw 4 in deviousness, play duplicate, 9 gold but buy duke and duplicate.</p>
+<ul>
+<li>The other party buys a gentry state, 35-36.</li>
+</ul>
+</li>
+<li>
+<p>Public domain 40-36 for 5 gold.</p>
+<ul>
+<li>The other party buys a province and loses.</li>
+</ul>
+</li>
+<li>
+<p>Well, I still think it’s a little too much to ask for this line.</p>
+<ul>
+<li>But I felt that the frequency of duplicates is very low.</li>
+<li>Can we get away with compressing it with a butler?</li>
+</ul>
+</li>
+</ul>
+<p>Round 4 to be done by butler + duplicate</p>
+<ul>
+<li>If you buy a butler and a duplicate on your first move, you’ll have an accident, so either butler + deviousness or butler + silver coin.
+<ul>
+<li>I’d rather have a bad card than a silver coin because the bad card averages +1 card, so 1.4 coins per turn, and it compresses it even more.</li>
+</ul>
+</li>
+<li>Butler 3 gold, 2 discarded, fool’s gold.</li>
+<li>3 gold and silver coins</li>
+<li>4 Gold, reproduction</li>
+<li>Butler, 2 copper coins, fool’s gold, mansion
+<ul>
+<li>2 discarded and fool’s gold.</li>
+</ul>
+</li>
+<li>Reproduction 5 gold
+<ul>
+<li>4 draws for deviousness</li>
+<li>The butler’s here.</li>
+<li>Reproductions, gold coin reproductions</li>
+</ul>
+</li>
+<li>The other party purchases a gentry state, and the fool’s gold is made into a gold coin?
+<ul>
+<li>If you do, 6 gold, if you don’t, 10 gold.</li>
+<li>Let’s buy a genus state.
+<ul>
+<li>Looks like the other party turned it into a gold coin.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Reproduction 4 gold
+<ul>
+<li>Hmmm, I only have one draw… but I’ll use it.</li>
+<li>Here comes the gold coin!</li>
+<li>Reproductions, gold coin reproductions</li>
+</ul>
+</li>
+<li>Butler, 7 gold, fool’s gold. Would you trade a gold nugget of fool’s gold?
+<ul>
+<li>2 gold in exchange and a butler, and a genus state.</li>
+</ul>
+</li>
+<li>7 gold, fool’s gold >> genus without exchange</li>
+<li>Duplicate 4 gold, 2 draws with deviousness.
+<ul>
+<li>8 gold, duplicate, genus state.</li>
+</ul>
+</li>
+<li>The opponent bought the genshu and lost by one point.</li>
+<li>Hmmm, this one doesn’t compress very well with the butler doing the “discard two pieces and fool’s gold” thing twice.
+<ul>
+<li>Me: 5 copper coins, 1 fool’s gold, 1 silver coin, 5 gold coins, 7 others.</li>
+<li>AI: 6 copper coins, 4 fool’s gold bars, 6 gold coins, 8 others</li>
+<li>You have a lot of fool’s gold, you have more purchase rights at the landing, and you’re using the extra coins as fool’s gold.</li>
+<li>Hmmm, here I used the boat landing too, it’s just an imitation of AI…</li>
+<li>Okay, let’s use the conclave.</li>
+</ul>
+</li>
+</ul>
+<p>Round 5 in silver coin conclave duplicate</p>
+<ul>
+<li>First Hand Silver Conclave</li>
+<li>6 Gold, Gold Coin</li>
+<li>2Kin, Hori</li>
+<li>Conclave for +2 coins, moat for 2 draws, 7 gold for gold</li>
+<li>5 gold…by devious means.</li>
+<li>5 gold moat, 6 gold in belly draw, gold coins</li>
+<li>5 gold, duplicated here</li>
+<li>5 gold moat, draw and gold coin</li>
+<li>Conclave 5 gold, draw 6 gold, gold coins. I think I’ve had enough by now.</li>
+<li>6 gold duplicates, 2 public domain</li>
+<li>Draw at moat, 6 gold, public domain</li>
+<li>Chameleon Conclave, 12 gold, only one right to purchase the genus state.</li>
+<li>Reproduction, 9k gold. Province of</li>
+<li>2 gold moat, 1 genshu left, 12 points difference. Impossible. There are 8 devious tokens, not being used effectively. Even if I use these now, I can’t sow them because I only have one purchase right.</li>
+<li>I knew, essentially, that the only additional right to purchase in this supply, the boat landing, is required for the deck.</li>
+</ul>
+<p>Round 6 at the landing site + replication</p>
+<ul>
+<li>First move is silver coins + deviousness</li>
+<li>silver coin</li>
+<li>duplication</li>
+<li>7 gold… gold coins, or rather, a forge or court that is not used at all?
+<ul>
+<li>(The courts don’t overlap in any way, no matter how you think about it.)</li>
+<li>Can you dispose of a batch of copper coins by forging from a devious draw, or two silver coins into a gold coin, or a gold coin and a mansion into a genus?</li>
+<li>Let’s forge it in.</li>
+</ul>
+</li>
+<li>silver coin</li>
+<li>Duplication and forging came together w
+<ul>
+<li>I’ll send a duplicate to Matt and we’ll get back to you on the forging.</li>
+<li>moat with two gold pieces</li>
+</ul>
+</li>
+<li>5 gold for a boat landing.
+<ul>
+<li>Ah, there is a way to duplicate the landing place…</li>
+<li>Maybe I should keep it because I can forge it.</li>
+</ul>
+</li>
+<li>6 gold for gold</li>
+<li>Reproduction 5 gold
+<ul>
+<li>Opponent buys gentry and leads by 10 points, public domain replication.</li>
+</ul>
+</li>
+<li>5 gold, you could honestly buy a public domain here, but you have 8 devious tokens accumulated, so what the hell, let’s use them!
+<ul>
+<li>9 gold, forging, 2 boat docks, moat, 3 mansions
+<ul>
+<li>I don’t see more action.</li>
+</ul>
+</li>
+<li>Forging destroyed 3 mansions, moats, and 1 copper coin to gain a province.</li>
+<li>Purchase of the genus state with the remaining 8 gold.</li>
+<li>That makes it 18-19.</li>
+</ul>
+</li>
+<li>6 money, public domain</li>
+<li>Forging, copper coins, gold coins, and dukedom2
+<ul>
+<li>hmm</li>
+<li>Jusyu 1 point left, 10 point difference.</li>
+<li>Draw 1 for deviousness.
+<ul>
+<li>Genshu is here…</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>It would have been fun to win the same supply in two completely different ways, but it didn’t work out the way I thought it would, and the first plan was the most successful, so I guess it’s okay.</p>
+<p>Oh, that’s right, I said, “First, let’s think for ourselves without looking at the online commentary. Let’s look at the explanations.</p>
+<ul>
+<li>Collect combo parts in duplicate.
+<ul>
+<li>Duplication is a terminal action, so it’s hard to increase with stero</li>
+</ul>
+</li>
+<li>The reserve card is no longer on the field, so it is subject to the use of the conclave any number of times.
+<ul>
+<li>Scales from the eyes!</li>
+</ul>
+</li>
+<li>Forging is suitable for combo decks with easy cost adjustment</li>
+<li>Pier Stello
+<ul>
+<li><a href="https://note.com/urihari/n/n2daca977a912" class="external">https://note.com/urihari/n/n2daca977a912<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+<p>I see… I see… I can roughly summarize them as these two.</p>
+<ul>
+<li>Pier Stello</li>
+<li>Duplicate + Conclave for more action, and finally a combo deck that uses the Conclave 3 times in the court for 6 gold.
+<ul>
+<li>We need a landing place too.</li>
+</ul>
+</li>
+</ul>
+<p>Let’s do the landing stero first, Round 7.</p>
+<ul>
+<li>First move, 2 silver coins</li>
+<li>4 gold, what shall I do, I’ll be devious.</li>
+<li>5Kin, landing</li>
+<li>Draw at the pier, 7 gold, maybe gold coins.</li>
+<li>Draws in the effect of a landing, 5 gold, another landing.</li>
+<li>8Kin, Province</li>
+<li>6 gold. Maybe we could buy gold, but I’m thinking we could do a devious 4 draw and then do a landing draw.
+<ul>
+<li>No! Let’s subtract all the copper coins and buy 12 gold w genus states.</li>
+</ul>
+</li>
+<li>2 gold came for 2 pieces of landing, 2 gold to buy something? Fool’s gold?</li>
+<li>Draws the landing place under the effect of the landing place. 6 gold is there. Use the landing place! I buy a province.</li>
+<li>21-18, 5 gold. There are 3 gongzhou left. I could buy the gongs honestly, but I’ll have to be devious and draw two to try to get some upside.
+<ul>
+<li>Success! 8 gold, buy a genus state.</li>
+</ul>
+</li>
+<li>3 gold on the landing, 5 gold on the draw. One gentry left, 27 to 24. buy gongs.</li>
+<li>Draw!</li>
+</ul>
+<p>Let’s do a replication + conclave Round 8</p>
+<ul>
+<li>First move, butler + silver coin</li>
+<li>Butler 4 gold, +2 gold to buy gold coins</li>
+<li>4K gold, conclave</li>
+<li>5Kin, landing</li>
+<li>Butler Conclave 3 Gold
+<ul>
+<li>Chameleon Conclave draws 2 and plays butler for effect.</li>
+<li>+2 gold to buy gold coins or throw away 2 coins, but let’s compress!</li>
+<li>3 gold to buy silver coins</li>
+</ul>
+</li>
+<li>6 Gold, Gold Coin</li>
+<li>Chameleon Conclave Butler
+<ul>
+<li>I have 7 gold. Discard and buy gold coins.</li>
+</ul>
+</li>
+<li>4 gold at the pier, terminal action, so I’d say +2 gold at the chameleon.
+<ul>
+<li>Oh, I wonder if this will be +2 even if it is sustained.
+<ul>
+<li>No, you got drawn.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Conclave Butler 9 Gold
+<ul>
+<li>12 money to buy gentry and duplicates</li>
+</ul>
+</li>
+<li>Shipyard duplicate 4k gold
+<ul>
+<li>Draw at the landing, buy genshu and moat.</li>
+</ul>
+</li>
+<li>Butler Conclave 9 Gold
+<ul>
+<li>Draw in chameleon conclave</li>
+<li>Play the drawn moat</li>
+<li>Butler Reproductions 12 Kin…
+<ul>
+<li>Play duplicate, buy genus state conclave, duplicate conclave.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>They bought two genshu and lost.
+<ul>
+<li>I don’t feel like I’m putting together the combo very well.</li>
+<li>Is it wrong that I bought gold coins without compressing them with a butler early in the game?</li>
+</ul>
+</li>
+</ul>
+<p>Ninth round split 5-2</p>
+<ul>
+<li>First hand, landing place, fool’s gold</li>
+<li>Conclave with 4 gold</li>
+<li>Another 4k gold, another conclave? A devious scheme?
+<ul>
+<li>I’ll be devious.</li>
+</ul>
+</li>
+<li>Landing, 4 gold
+<ul>
+<li>Conclave?</li>
+</ul>
+</li>
+<li>Draw in conclave, 5 gold. Boat landing?</li>
+<li>4 Gold. Conclave? Duplicate? Draw by deviousness, 6 gold, gold coins.</li>
+<li>condominium boat
+<ul>
+<li>Draw in conclave, play the landing with increased action, 7 gold. Gold? No. Court? I’ll play the court.</li>
+</ul>
+</li>
+<li>9Kin, Province</li>
+<li>court of congress
+<ul>
+<li>Perform the Chameleon Conclave three times at the Court
+<ul>
+<li>Is it possible to choose whether or not to use the habit each time instead of having to draw all three times?</li>
+<li>Play drawn landing sites.</li>
+<li>6 Gold 1 Action</li>
+<li>More draws, 7 gold, ugh, was +2 coins right?</li>
+<li>Buy more court already!</li>
+<li>No, let’s forge it.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Draw at the landing, court and forging draws back
+<ul>
+<li>6 gold for gold</li>
+</ul>
+</li>
+<li>Conclave 4 Gold
+<ul>
+<li>It’s 9-26, and I can’t take it easy anymore, so I’m going to draw in a devious way!</li>
+<li>Concon 6 gold…</li>
+<li>Two draws at the Chameleon Conclave, the landing and forging came</li>
+<li>Play the landing place…can’t do it (it’s already on the persistent card).</li>
+<li>Discard 3 mansions and 6 copper coins in forging to get gold coins.</li>
+<li>One more action and there is a conclave and a landing place, draw hoping to get an action in the conclave, didn’t, buy another conclave.</li>
+</ul>
+</li>
+<li>Conclave Court 4 Gold
+<ul>
+<li>Conclave at the Court
+<ul>
+<li>Once, draw and play the landing place, draw forging and landing place</li>
+<li>Play second conclave, play forging, discard video and fool’s gold to moat.
+<ul>
+<li>Oh, you don’t get it in your hand, miss.</li>
+</ul>
+</li>
+<li>Third time, draw or coin, I’m torn. I already have 2 actions so I can play the remaining con ships. +2 coins would give me 8 gold and confirm the genus state. But if I draw, there’s a better chance of something happening. w
+<ul>
+<li>Draw! Conkons ship 9 gold.</li>
+</ul>
+</li>
+<li>Play the landing place, here comes the moat.</li>
+<li>Play digging in the conclave
+<ul>
+<li>Oh, I’ve already pulled this off.</li>
+<li>I’d better get my coins out.</li>
+</ul>
+</li>
+<li>I’m pulling out, but 13 gold, dreary, 23 points difference, I guess I’m a gentry, I can’t catch up…</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Hori con con forge court 6 gold, it’s the last turn now, so I’m going to be devious, here comes the gold coin.
+<ul>
+<li>court conclave
+<ul>
+<li>Pulled off at 1:moat</li>
+<li>2: Forging to duplicate the conclave</li>
+<li>3: Draw and execute its duplicate</li>
+</ul>
+</li>
+<li>conclave implementation</li>
+<li>15 gold 3 purchased 1 duplicate. Hmmm, even if I get 12 points for the dukedom and ducal province, I’m still 20 points behind, so I can’t catch up. Can I just buy 3 dukes and score 13 points with the duke and hope that my opponent can’t buy a province on the next turn?</li>
+</ul>
+</li>
+<li>It didn’t work.
+<ul>
+<li>I’ve got a feeling that if it’s put together right, we could go for it.</li>
+<li>I guess compression is important…</li>
+</ul>
+</li>
+</ul>
+<p>Once again, Round 10</p>
+<ul>
+<li>4-3, Butler, Conclave</li>
+<li>3Kin, watch</li>
+<li>Conclave, draw, butler play, buy silver coins</li>
+<li>4 money, deviousness</li>
+<li>The lookout, the butler, and the conclave. First, draw on the conclave, execute the lookout, discard a copper coin. Next, the butler discards two coppers and buys a moat.</li>
+<li>Conclave 3 gold, draw a lookout at the conclave, discard copper coins. 4 gold…buy a duplicate.</li>
+<li>Conclave the Watchful Butler. Conclave draws, duplicate comes in and is played. With one action left, he played 2 coins on the butler, bought a landing place, and duplicated it.</li>
+<li>A moat, a lookout, and a butler. Not enough action, and it’s dreary, so three draws for deviousness. The conclave came!
+<ul>
+<li>If you call the dig at the conclave, you’ll leave the action, +4 cards.</li>
+<li>Two landing sites and a duplicate came (I wanted a conclave).</li>
+<li>Oh, the pile is already empty, it’s drawn out, then I guess I have 4 gold now, but that’s all I have, I should buy gold coins with +2 coins at the butler.</li>
+</ul>
+</li>
+<li>Butler, duplicate, landing, 1 money. Not enough action, not enough money. Chameleon the landing place and pay for the money and buy the silver coins. This brings the total to 9 gold.</li>
+<li>Moat, lookout, landing, 6 gold. No action! Bad draw! Conclave coming!</li>
+<li>Activate digging in conclave, 1 piece remaining.
+<ul>
+<li>No, you only have one conclave.</li>
+</ul>
+</li>
+<li>Run a duplicate, buy a conclave for 9 gold, duplicate, add 3 more!
+<ul>
+<li>I feel like I’m screwed because my opponent has already bought 4 copies of the genus state. w</li>
+</ul>
+</li>
+<li>And ship ship 6 gold. Buy gold.</li>
+<li>Hori Butler Con-Con Reproduction
+<ul>
+<li>Con moat, con duplicate, con butler, con lookout (empty shot because it’s drawn out), run chameleon landing with one action left, all used up!</li>
+<li>14 gold 3 purchased. Public domain x3,duplicate.</li>
+</ul>
+</li>
+<li>Draw 2 by deviousness. Skip the hand memo because you can probably draw it out.
+<ul>
+<li>Con duplication, con replication, con moat, con watch.</li>
+<li>I just barely made it, but if I buy a victory point this time, it will be impossible.</li>
+<li>12 Gold. Court, Duchy x3</li>
+</ul>
+</li>
+<li>Con duplicate, butler. 8 gold, that’s troubling. I can buy a genus state, but I still have a 9 point lead. I’m 3 points behind with the duke x2 in duplicate…should I buy the silver at 3 or not…I would if the watchman didn’t have forced discard. Or if the butler has action +1… Hmmm…maybe the silver coin.</li>
+<li>My opponent bought a duke and withered. I am a duke, 6 points. Duplicate, landing place. I gain 2 dukes, and the tables are turned!</li>
+<li>Court Conclave! Court Conclave
+<ul>
+<li>1: Con duplicate</li>
+<li>2: Con moat</li>
+<li>3: No action cards available</li>
+<li>harbor</li>
+<li>Con butler draw</li>
+<li>I have a lookout, but I’m afraid to use it, I think I have another duplicate, but oh, it came with the draw of the conclave.</li>
+<li>CON duplication</li>
+<li>12 gold 3 purchased, duplicates x2. got 3 dukes and got 18 points. I have 7 gold left. Court.</li>
+</ul>
+</li>
+<li>Court Conclave Reproductions. Get 3 reproductions.
+<ul>
+<li>We’re up by 22 points, so it’s like we won, but it’s hard to finish.</li>
+</ul>
+</li>
+<li>4 draws of deviousness. No conclave by any chance. 10 gold to buy a genus state.</li>
+<li>Court steward, all in virtual currency, 8 gold to buy a gentry state.
+<ul>
+<li>We won 72-44!</li>
+</ul>
+</li>
+<li>I like that the conclave and duplicate pair can be used as many times as you want to get “+1 action +2 cards + duplicate”.
+<ul>
+<li>I bought miscellaneous cards early on to feed the conclave, but I could have kept the silver coins and collected them for duplication.</li>
+</ul>
+</li>
+</ul>
+<p>Whew, at any rate, I was able to play against the Hard AI, win with a strategy I devised myself without looking at anything, seal that strategy, and win with another strategy, a draw with a landing stero, and a draw combo.</p>
+<p>PS</p>
+<ul>
+<li>I also won at the landing stelo.
+<ul>
+<li>When you only have 1 action, you may not be able to use the draw, so make the landing place +2 coins with the chameleon</li>
+<li><img src="https://gyazo.com/9d1770e13a83e7bdcd077162d40480e9/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from [/nishio/Dominion 2022-02-21](<a href="https://scrapbox.io/nishio/Dominion" class="external">https://scrapbox.io/nishio/Dominion<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 2022-02-21) using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Dominion-1-month-review" class="internal">Dominion 1 month review</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

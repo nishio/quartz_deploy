@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Trial recording of #inajob talk16: AI assistant that reads its own wiki</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Trial recording of #inajob talk16: AI assistant that reads its own wiki"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Trial recording of #inajob talk16: AI assistant that reads its own wiki"/><meta name="twitter:description" content="open.spotify.com/episode/4XPoFcImONgMtPti44JY9A Transcribed by LISTEN at 要約 ver.2 The author has recently been writing down work memos and daily thoughts on his Wiki ..."/><meta property="og:description" content="open.spotify.com/episode/4XPoFcImONgMtPti44JY9A Transcribed by LISTEN at 要約 ver.2 The author has recently been writing down work memos and daily thoughts on his Wiki ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="open.spotify.com/episode/4XPoFcImONgMtPti44JY9A Transcribed by LISTEN at 要約 ver.2 The author has recently been writing down work memos and daily thoughts on his Wiki ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Trial-recording-of-inajob-talk16:-AI-assistant-that-reads-its-own-wiki"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Trial-recording-of-inajob-talk16:-AI-assistant-that-reads-its-own-wiki"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="open.spotify.com/episode/4XPoFcImONgMtPti44JY9A Transcribed by LISTEN at 要約 ver.2 The author has recently been writing down work memos and daily thoughts on his Wiki ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Trial-recording-of-inajob-talk16:-AI-assistant-that-reads-its-own-wiki"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Trial recording of #inajob talk16: AI assistant that reads its own wiki</a></div></nav><h1 class="article-title">Trial recording of #inajob talk16: AI assistant that reads its own wiki</h1><p show-comma="true" class="content-meta"><span>Sep 17, 2023</span><span>13 min read</span></p></div></div><article class="popover-hint"><p><a href="https://open.spotify.com/episode/4XPoFcImONgMtPti44JY9A?si=EGh6lwLwTp6hrJg9DgM0Iw" class="external">https://open.spotify.com/episode/4XPoFcImONgMtPti44JY9A?si=EGh6lwLwTp6hrJg9DgM0Iw<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p><a href="https://listen.style/p/inajob/itksdrx5" class="external">Transcribed by LISTEN at<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<img src="https://scrapbox.io/api/pages/nishio/gpt/icon" alt="gpt.icon" height="19.5"/></p>
+<h1 id="要約-ver2">要約 ver.2<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#要約-ver2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p><img src="https://scrapbox.io/api/pages/nishio/gpt/icon" alt="gpt.icon" height="19.5"/><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/></p>
+<ul>
+<li>The author has recently been writing down <a href="./work-memos" class="internal alias" data-slug="work-memos">work memos</a> and daily thoughts on his <a href="./Wiki" class="internal" data-slug="Wiki">Wiki</a>. The tools he uses have changed, but currently his favorite is his Wiki.</li>
+<li>The author’s wiki is inspired by “<a href="./Scrapbox" class="internal" data-slug="Scrapbox">Scrapbox</a>” and is being integrated with <a href="./ChatGPT" class="internal" data-slug="ChatGPT">ChatGPT</a> to add the ability to display related articles.</li>
+<li>Some people may see a wiki as a <a href="./dictionary" class="internal" data-slug="dictionary">dictionary</a>, but the author sees it as a <a href="./note-taking-tool" class="internal alias" data-slug="note-taking-tool">note-taking tool</a> like <a href="./Evernote" class="internal" data-slug="Evernote">Evernote</a>.</li>
+<li>Since many of the author’s projects run concurrently, everything is documented in the Wiki.</li>
+<li>Each day, create a diary page in the Wiki and fill in a specific section.</li>
+<li>The main topic of this talk is the integration of an AI assistant into the Wiki. This idea is inspired by “<a href="./Omoikane-Project" class="internal alias" data-slug="Omoikane-Project">Omoikane Project</a>.</li>
+<li>Nishio is a key figure in this project, researching digital-based intellectual production.</li>
+<li>There will be a discussion of the use of ChatGPT and the exploration of vectorization of sentences, as well as new technological advances.</li>
+<li>Information referencing is improved by identifying relevant pages and providing them to ChatGPT.</li>
+<li>Currently considering implementing new features for the Wiki.</li>
+<li>Advice can be sought from ChatGPT and past articles can be referenced.</li>
+<li>AI assistant provides useful answers from past texts.</li>
+<li>Vector indexes of people’s Scrapboxes are collected and published, and can be used to reference others’ pages.</li>
+<li>The advice in this system is abstract and sometimes “<a href="./oracle" class="internal" data-slug="oracle">oracle</a>-like.”</li>
+<li>The use of AI to generate ideas is limited, but <a href="./the-process-of-asking-questions-makes-the-answers-clear" class="internal alias" data-slug="the-process-of-asking-questions-makes-the-answers-clear">the process of asking questions makes the answers clear</a>.</li>
+<li>Similar to the ChatGPT UI, but the current UI is primarily collaborative editing.</li>
+<li>AI and podcasts have something in common as tools for organizing and deepening thinking.</li>
+<li>We are excited about the evolution of AI and expect to see even more useful responses as prompt engineering progresses.</li>
+<li>Experts such as Mr. Nishio give AI high marks. I myself see AI as an interesting tool, but it is difficult to present specific values.</li>
+<li>The combination of diary and AI is promising, and we see the significance of its implementation through chatting with AI and preparing podcasts.</li>
+</ul>
+<p>prompt</p>
+<pre><code>read following bullet lists, those are lecture memo. 
+
+1: Some words are misspelled. Correct them:
+s/scrapbox/[Scrapbox]/g
+s/wiki/[Wiki]/g
+s/two hop link/ [2-hop link] /g
+s/chatGPD/[ChatGPT]/
+s/ Omoikane Project/ [Omoikane Project] /
+2: Make them concise in Japanese.
+###
+</code></pre>
+<h1 id="要約-ver1">要約 ver.1<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#要約-ver1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<img src="https://scrapbox.io/api/pages/nishio/gpt/icon" alt="gpt.icon" height="19.5"/>
+- The author has recently been in the habit of writing work notes and daily thoughts on his wiki.
+- I have always loved writing, but the tools I use change from time to time. Currently, writing on wikis is my passion.
+- Many sentences are accumulated in the diary.
+- We have been working on combining diary and AI using ChatGPT for 3 weeks.
+- The author has created an original wiki for his own exclusive use. The source code is dirty and there are security and bug problems, but he has improved it to suit his needs.
+- The wiki is inspired by the &quot;Scrapbox&quot; service, but does not have collaborative editing capabilities.
+- As a recent initiative, we are combining with ChatGPT and have added the ability to display related articles. This feature uses ChatGPT to suggest pages with similar sentence vectors.
+<ul>
+<li>
+<p>The author uses the wiki as a record of his work and daily notes.</p>
+</li>
+<li>
+<p>While many people may perceive a wiki as a dictionary like Wikipedia, the author sees it as a note-taking tool.</p>
+</li>
+<li>
+<p>The author uses wikis as a miscellaneous note-taking tool like Evernote, preferring a scrapbox-like tool with no specific format or editing mode.</p>
+</li>
+<li>
+<p>The author’s lifestyle often allows only a small slice of time, and in order to effectively utilize the time, the author needs notes that allow him to quickly review past activities and future plans.</p>
+</li>
+<li>
+<p>Since many of the author’s projects run concurrently, it is difficult to retain their progress and thoughts only in his mind. For this reason, he has adopted the method of jotting everything down in a scrap box.</p>
+</li>
+<li>
+<p>Although this method may seem cumbersome at first glance, it is used as the best solution given the author’s situation and needs.</p>
+</li>
+<li>
+<p>Wiki as a working tool.</p>
+</li>
+<li>
+<p>Create a daily diary page.</p>
+<ul>
+<li>Fill in specific sections using templates.</li>
+<li>Examples: health, activities related to the past today, etc.</li>
+<li>Include links to past diary pages and a look back.</li>
+</ul>
+</li>
+<li>
+<p>Write what you come up with and what you work on in your diary page.</p>
+</li>
+<li>
+<p>Certain important information should be divided into separate pages.</p>
+</li>
+<li>
+<p>The diary page is designed to be an easy place to write, making it easy to edit and organize later.</p>
+</li>
+<li>
+<p>The style of wiki use is influenced by the Scrap Box Project.</p>
+</li>
+<li>
+<p>Sudden ideas, such as a wish list, can be written in the diary page and retrieved later.</p>
+</li>
+<li>
+<p>Large projects and tasks should be carved out into separate “work pages” or “project pages”.</p>
+<ul>
+<li>Record related materials, progress, to-do lists, etc. in chronological order.</li>
+<li>Reminders and date-related notes are also recorded.</li>
+</ul>
+</li>
+<li>
+<p>The use of wiki pages makes it easy to resume work.</p>
+</li>
+<li>
+<p>Citing an example from electronics: the analogy of storing physical parts and instructions in one box.</p>
+</li>
+<li>
+<p>Wiki is used mainly as a work log.</p>
+<ul>
+<li>Private information will not be disclosed.</li>
+</ul>
+</li>
+<li>
+<p>Introduction to the main issue.</p>
+</li>
+<li>
+<p>I am looking to implement an AI assistant for my wiki.</p>
+</li>
+<li>
+<p>The project name is “AI Assistant Reading Diary.</p>
+</li>
+<li>
+<p>The original idea was inspired by the Omoikane Project.</p>
+</li>
+<li>
+<p>Brief description and transition of the Omoikane Project:.</p>
+<ul>
+<li>Initially, the purpose is to discuss the future of AI and issues by having AI write science fiction prototypes and science fiction novels using AI.</li>
+<li>The project is not just about creating science fiction, but also combines other themes.</li>
+<li>Example: AI assistant and human collaborate to create sentences.</li>
+<li>Consideration of having AI assist in cutting out the appropriate content from the minutes of a crowded discussion.</li>
+<li>Activities are also underway to have AI provide answers to questions using knowledge in the text.</li>
+</ul>
+</li>
+<li>
+<p>Confirmation of the existence of people in the Omoikane Project who are engaged in the above mentioned activities.</p>
+</li>
+<li>
+<p>Mr. Nishio is the main person working on the project.</p>
+<ul>
+<li>Research on the art of intellectual production, especially with regard to the acceleration of intellectual production using digital technology.</li>
+<li>I feel that opinion carries weight and I am affected by it.</li>
+</ul>
+</li>
+<li>
+<p>About my efforts:.</p>
+<ul>
+<li>A positive attitude toward new and interesting ideas.</li>
+<li>“Second penguin-like behavior”: joining later in new endeavors, the role of a good follower.</li>
+<li>Considerations and efforts regarding AI assistants began with this thought.</li>
+</ul>
+</li>
+<li>
+<p>Awareness and use of ChatGPT:.</p>
+<ul>
+<li>A vector of sentences can be created.</li>
+<li>Vectorization can be used to measure relevance and distance.</li>
+<li>My wiki and Nishio’s scrapbox pages are also vectorized.</li>
+<li>The ability to display related pages will be realized.</li>
+</ul>
+</li>
+<li>
+<p>Scrapbox related page feature:.</p>
+<ul>
+<li>Need to remember human keywords.</li>
+<li>However, the problem is that old memos and unusual vocabulary do not create links well.</li>
+</ul>
+</li>
+<li>
+<p>Document vectors and technological advances:.</p>
+<ul>
+<li>The ability to complement relevance using vector proximity is useful.</li>
+<li>New technologies such as chat GPT provide more accurate document vectors.</li>
+<li>This was not possible with the old technology.</li>
+<li>Unlike the two-hop link in the scrap box, they are complementary to each other.</li>
+</ul>
+</li>
+<li>
+<p>For a given page or string of text, it is possible to identify related pages.</p>
+</li>
+<li>
+<p>Providing this relevant data to the chat GPD improves knowledge referencing.</p>
+</li>
+<li>
+<p>We are currently considering implementing new features of the wiki system.</p>
+<ul>
+<li>Thinking about which features to implement first and other good ideas.</li>
+</ul>
+</li>
+<li>
+<p>You can ask chat GPD for general wiki advice.</p>
+<ul>
+<li>Example: Suggestion that adding a comment function would be a good idea.</li>
+</ul>
+</li>
+<li>
+<p>Provide articles and thoughts you have written in the past to the chat GPD and they will refer you to them for advice.</p>
+<ul>
+<li>The chat GPD also referred to my previous written data to provide answers.</li>
+</ul>
+</li>
+<li>
+<p>Sometimes we forget information that we are supposed to remember.</p>
+<ul>
+<li>It is useful for an AI assistant to read one’s past sentences and provide answers on that basis.</li>
+<li>They find it useful because it serves as a reminder of past information and provides new perspectives and angles.</li>
+</ul>
+</li>
+<li>
+<p>A vector index of scrapbox pages of various people will be collected.</p>
+<ul>
+<li>Examples include the vector index of Mr. Nishio’s page.</li>
+</ul>
+</li>
+<li>
+<p>These vector indexes are publicly available, and you can refer to another person’s page for answers to your questions.</p>
+</li>
+<li>
+<p>There is a vector index that is also available to the public from the well field people and they can refer to them to answer questions.</p>
+</li>
+<li>
+<p>Experience mixing multiple vector indexes to provide the most appropriate response.</p>
+</li>
+<li>
+<p>However, we do not always get the answers we expect.</p>
+</li>
+<li>
+<p>As for the usefulness of this mechanism, we feel that it is not yet sufficient.</p>
+</li>
+<li>
+<p>However, it is useful as a catalyst for new ideas and inspiration.</p>
+</li>
+<li>
+<p>Advice from this system may be considered “oracle-like.”</p>
+<ul>
+<li>oracle-like advice = abstract advice or divinatory replies.</li>
+</ul>
+</li>
+<li>
+<p>This oracle-like advice serves as a catalyst to get things going in cases where the answer is within you.</p>
+</li>
+<li>
+<p>AI can also be used to make suggestions.</p>
+<ul>
+<li>However, the replies come from a specific intelligence, and thus rarely bring new perspectives.</li>
+</ul>
+</li>
+<li>
+<p>Often, explaining the situation in order to ask the AI a question will clarify the answer.</p>
+<ul>
+<li>In the process of explaining this, I can see the answer in my mind.</li>
+</ul>
+</li>
+<li>
+<p>The use of AI is similar to the example of robot vacuum cleaners.</p>
+<ul>
+<li>Similar to the movement of cleaning a room before using a robot vacuum cleaner, organize your thoughts before asking the AI a question.</li>
+</ul>
+</li>
+<li>
+<p>The current UI is similar to that of ChatGPT, but with some differences.</p>
+<ul>
+<li>ChatGPT is primarily concerned with the exchange of short messages.</li>
+<li>Current efforts are in the form of collaborating with AI to think about and co-edit texts and topics.</li>
+</ul>
+</li>
+<li>
+<p>Sentence size is limited and long sentences are difficult to handle.</p>
+</li>
+<li>
+<p>This new form of conversation with AI is different from chatting, and its future remains to be seen.</p>
+</li>
+<li>
+<p>It is interesting to experience an AI commenting with its own and others’ intelligence.</p>
+</li>
+<li>
+<p>Expectations in the current situation are similar to <a href="./oracle-like-advice" class="internal alias" data-slug="oracle-like-advice">oracle-like advice</a> or <a href="./forced-idea-method" class="internal alias" data-slug="forced-idea-method">forced idea method</a>.</p>
+</li>
+<li>
+<p>Commonalities felt:.</p>
+<ul>
+<li>There are similarities between the podcast and the AI experience.
+<ul>
+<li><a href="./similarities-between-podcasts-and-AI" class="internal alias" data-slug="similarities-between-podcasts-and-AI">similarities between podcasts and AI</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Podcast Experience:.</p>
+<ul>
+<li>Topics are selected based on a summary of weekly events.</li>
+<li>Gather information, build logic and prepare a story that leads to a conclusion.</li>
+<li>New ideas and insights are generated during the chat.</li>
+</ul>
+</li>
+<li>
+<p>Effects of chit-chat:.</p>
+<ul>
+<li>Chatting is one of the activities that evolve our thinking and enrich our lives.</li>
+<li>Dialogue with the AI is also a kind of chatting, a chance to think and discover.</li>
+</ul>
+</li>
+<li>
+<p>What AI and Podcasts Have in Common:.</p>
+<ul>
+<li>Putting thoughts out there, organizing and restructuring them to gain new insights.</li>
+<li>Creating scripts and rethinking them with input from the AIs is the beginning of new discoveries.</li>
+<li>AI and podcasts are tools to deepen and extend thinking.</li>
+</ul>
+</li>
+<li>
+<p>Recent experience:.</p>
+<ul>
+<li>In putting together the podcast scripts, I noticed commonalities in the chats and podcasts.</li>
+<li>There are many similarities with the idea method of using AI.</li>
+</ul>
+</li>
+<li>
+<p>Expectations regarding the evolution of AI:.</p>
+<ul>
+<li>He expects the amount of text that AI will handle to increase in the near future.</li>
+<li>As prompt engineering evolves, more effective responses will result.</li>
+<li>He believes that AI has the potential to become more than a fortune teller.</li>
+</ul>
+</li>
+<li>
+<p>Excessive Expectations and Reality:.</p>
+<ul>
+<li>While we avoid excessive expectations, we feel that AI has advantages.</li>
+<li>Experts around intellectual production, such as Mr. Nishio, may have a high opinion of AI.</li>
+</ul>
+</li>
+<li>
+<p>My thoughts on AI:.</p>
+<ul>
+<li>I think of AI as an interesting and life-enhancing tool, parallel to podcasts.</li>
+<li>They want to find usefulness of AI as a tool to “ask around a bit”.</li>
+<li>At this point, he feels it is difficult to convey the clear value of AI.</li>
+</ul>
+</li>
+<li>
+<p>Relevance of diaries and AI:.</p>
+<ul>
+<li>We feel that the combination of diary and AI is a life-enhancing activity.</li>
+<li>By utilizing AI, it is conceivable to stop podcasting and just chat with AI.</li>
+<li>Through the preparation of the podcast and this talk, I felt that the introduction of AI was the first step.</li>
+</ul>
+</li>
+</ul>
+<p>prompt: <code>read following talks and convert them into concise bullet lists</code></p>
+<h1 id="comments-on-the-quality-of-the-summary">Comments on the quality of the summary<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#comments-on-the-quality-of-the-summary" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>.
+from <a href="https://scrapbox.io/villagepump/2023/09/13" class="external">/villagepump/2023/09/13<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>I figured I’d put the summary in Scrapbox.</li>
+<li>Summary of the first step
+<ul>
+<li>A chunk of meaning is given to a human looking at it and cutting it out at random.</li>
+<li>I counted and there were 10 lumps.</li>
+</ul>
+</li>
+<li>Second step summary
+<ul>
+<li>The summarized version was not yet large enough to be thrown into GPT4 in one session, so it was re-summarized in two sessions.</li>
+</ul>
+</li>
+<li>impressions
+<ul>
+<li>I think the summary of the first step is okay.
+<ul>
+<li>The oral word is compressed into the written word while retaining sufficient content.</li>
+</ul>
+</li>
+<li>I don’t think the second step summary is good enough.
+<ul>
+<li>It is a good summary, but I think it is a fluffy story without specific episodes that would make it more persuasive.</li>
+<li>For example, the expression “note-taking tool like Evernote” becomes simply “note-taking tool.</li>
+<li>It’s appropriate behavior as a summary, but subtle in its usefulness for the purpose I have implicitly.</li>
+<li>So what purpose do I have?</li>
+<li>Maybe it would be better if this could be verbalized and given prompts.</li>
+<li>In the age of with LLM, metacognition and verbalization of one’s thoughts and objectives may become highly sought after!</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>No way to listen to it.<img src="https://scrapbox.io/api/pages/villagepump/inajob/icon" alt="/villagepump/inajob.icon" height="19.5"/>
+<ul>
+<li>I laugh at your impression of the summary.</li>
+<li>I wanted to make the summary omni readable because it was a normal but informative talk to hear.<img src="https://scrapbox.io/api/pages/villagepump/nishio/icon" alt="/villagepump/nishio.icon" height="19.5"/></li>
+<li>I see,<a href="https://scrapbox.io/nishio" class="external">/nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>に文字で入っていれば今後なにかの思索のダシになるかもしれないですね<img src="https://scrapbox.io/api/pages/villagepump/inajob/icon" alt="/villagepump/inajob.icon" height="19.5"/></li>
+<li>After this very thing, I put down the chat conversation and let the AI develop it, and I pulled up a transcription of the chatter about my behavior when I was playing werewolf years ago.<img src="https://scrapbox.io/api/pages/villagepump/nishio/icon" alt="/villagepump/nishio.icon" height="19.5"/>
+<ul>
+<li>It is beneficial to record everything.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>PS</p>
+<ul>
+<li>
+<blockquote>
+<p>I put down a chat conversation and let the AI develop it, and it pulled up a transcription of a chat I had years ago about my behavior when I was playing werewolf.
+- <a href="./One-Night-Werewolf-Transcript-2-7-Discussion---AI-Summary-3" class="internal alias" data-slug="One-Night-Werewolf-Transcript-2-7-Discussion---AI-Summary-3">One Night Werewolf Transcript 2-7 Discussion - AI Summary 3</a>.</p>
+</blockquote>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from [/nishio/#inajob の試しに録音してみた talk16: 自分のWikiを読むAIアシスタント](<a href="https://scrapbox.io/nishio/#inajob" class="external">https://scrapbox.io/nishio/#inajob<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> の試しに録音してみた talk16: 自分のWikiを読むAIアシスタント) using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class aria-controls="toc-content" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content" class><ul class="overflow"><li class="depth-0"><a href="#要約-ver2" data-for="要約-ver2">要約 ver.2</a></li><li class="depth-0"><a href="#要約-ver1" data-for="要約-ver1">要約 ver.1</a></li><li class="depth-0"><a href="#comments-on-the-quality-of-the-summary" data-for="comments-on-the-quality-of-the-summary">Comments on the quality of the summary</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li>No backlinks found</li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

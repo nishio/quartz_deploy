@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>ppoi</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="ppoi"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="ppoi"/><meta name="twitter:description" content="ppoi(ish) This is a library that supports machine learning to easily make similar judgments in situations where it is not possible to clearly describe the conditional expression ..."/><meta property="og:description" content="ppoi(ish) This is a library that supports machine learning to easily make similar judgments in situations where it is not possible to clearly describe the conditional expression ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="ppoi(ish) This is a library that supports machine learning to easily make similar judgments in situations where it is not possible to clearly describe the conditional expression ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/ppoi"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/ppoi"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="ppoi(ish) This is a library that supports machine learning to easily make similar judgments in situations where it is not possible to clearly describe the conditional expression ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="ppoi"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>ppoi</a></div></nav><h1 class="article-title">ppoi</h1><p show-comma="true" class="content-meta"><span>Sep 25, 2018</span><span>8 min read</span></p></div></div><article class="popover-hint"><h2 id="ppoiish">ppoi(ish)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ppoiish" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>This is a library that supports machine learning to easily make similar judgments in situations where it is not possible to clearly describe the conditional expression of an if statement, but good and bad examples can be provided.
+<a href="https://github.com/nishio/ppoi" class="external">Github<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>Since the main script is <code>__init__.py</code>, the checked out directory can be imported directly as a Python module. You can rename it to an appropriate, easy-to-understand name. For example, if you want to make it judge whether it looks like a keyword or not, you can use <code>mv ppoi keyword</code> or something like that as follows.</p>
+<p>python</p>
+<pre><code>if keyword.ppoi(something):
+    print(&quot;{} is keyword-ppoi&quot;.format(something))
+</code></pre>
+<p>(I thought of <code>import keyword</code> as a bad name, so I added <code>to_bool</code>. I think <code>keyword_ppoi.to_bool(something)</code> is better.)</p>
+<p><code>__init__.py</code> can be executed directly. You can run it with <code>--initialize</code>.
+Unjudged input must be placed in unknowns.txt before execution.</p>
+<ul>
+<li>(I’ve thought about this a lot and it’s not required, so I’ll change it in a future version.)</li>
+<li>(I felt it would be better to prepare a separate script for execution instead of executing <strong>init</strong>.py in the first place.)</li>
+</ul>
+<p>The sample data to determine if it is a keyword or not is included in the samples. The contents of this sample is one line and one item, and contains examples of the data to determine if it is a keyword or not. This is a sample of the data in Scrapbox, which is mostly keywords, but some of the keywords are not keywords because they are misplaced in the square brackets in the source code.
+:</p>
+<pre><code>Elimination of Genus
+self-introduction
+0
+voice input
+\r\n
+${currentPageTitle}
+[ 0.67869952,  0.35340645, -0.37436676,  0.50602025,  0.13514392
+</code></pre>
+<p><code>cp samples/unknown.txt . </code> Then do <code>python3 __init__.py --initialize</code>. You will then be asked to enter at least one “keyword-like” example and at least one “non-keyword-like” example. (We assume that Python3, NumPy and Scikit-Learn are already installed.)</p>
+<p>:</p>
+<pre><code>Enter at least one positive examples (empty to exit)
+> 
+</code></pre>
+<p>Enter as appropriate
+:</p>
+<pre><code>Enter at least one positive examples (empty to exit)
+> Elimination of Attributes
+> Self Introduction
+>                    
+Enter at least one positive examples (empty to exit)
+> ${currentPageTitle}
+> [ 0.67869952,  0.35340645, -0.37436676,  0.50602025,  0.13514392
+> 
+</code></pre>
+<p>Then, based on the examples you gave, it will display “This looks like a keyword, best 5”, “This doesn’t look like a keyword, worst 5”, and “I’m not sure which one it is”.
+:</p>
+<pre><code>BEST 5
+Good ideas inspire those around you to start growing on their own: 0.7077
+Nature of freedom: 0.7077
+Responsible for their own productivity: 0.7077
+The less confident people are, the more they speak ill of others: 0.7077
+There are two types of genus elimination: 0.7077
+
+WORST 5
+https://speakerdeck.com/kazuph/builderscon-tokyo-2018-day1-chan-ye-degatili-yong-sareruraspberry-pifalsehua: 0.2073
+http://d.hatena.ne.jp/nishiohirokazu/20111020/1319117086: 0.2073
+Elemwise{minimum,no_inplace}.0, Subtensor{:int64:}.0, Subtensor{:int64:}.0, Subtensor{:int64:}.0, Subtensor{:int64:}.0, [* IncSubtensor{Set;:int64:}.0: 0.2230
+http://wedge.ismedia.jp/articles/-/12062?layout=b: 0.2230
+https://www.okudahiromi.com/blog/20180310/1923: 0.2230
+
+LESS CONFIDENT
+kintone migration tips for people used to Facebook: 0.4967
+03 1 Structuring Fragmentary Information_Frontal and Actual KJ Method Flow: 0.5056
+03 2 Structuring Fragmentary Information_KJ Method Practice: 0.5056
+Real numbers between 0 and 1 to {0, 1}: 0.5056
+Supplement to DB Press article: 0.5056
+</code></pre>
+<p>If you are satisfied with the results, you can use them as soon as possible.
+:</p>
+<pre><code>In [1]: import ppoi
+
+In [2]: ppoi.ppoi(&quot;Hello&quot;)
+Out[2]: False
+
+In [3]: ppoi.ppoi(&quot;keyword extraction&quot;)
+Out[3]: True
+</code></pre>
+<p>If you are not satisfied, you will have to add more training data. You don’t have to edit the files manually if you use “interactive active learning,” which I will explain later, but this time we will paste all five of the LESS CONFIDENT into positive.txt.</p>
+<p>If you change the data, it will be relearned with <code>python3 __init__.py --learn</code>. This option only relearns without displaying anything, and this explanation is not interesting, so let’s display the analysis results again with <code>python3 __init__.py --describe</code>.</p>
+<p>Here are the results
+:</p>
+<pre><code>BEST 5
+&quot;Biologically evolved software will sometimes get sick like a cold, and if you leave it alone, it will go away. Now it's just a matter of being able to properly tie requirement specifications to death. : 0.9511
+The good thing about a corporation is that the necessary condition of profit exists. In other words, the ability to go bankrupt is inherent. The function of bankruptcy is the best aspect of the free enterprise system. : 0.9231
+Aggregation of organizations connected by people belonging to multiple organizations: 0.9125
+&quot;Even with equal rules (with seemingly high equality of results), there will be disparities, surprise,&quot; the argument is implicit in the parentheses, so isn't the tweak &quot;If the WTA has low equality of results, there will be disparities&quot; misplaced? The story is that. : 0.9081
+(2) A private document shall be presumed to be duly executed when it is signed or sealed by the principal or his/her agent. : 0.9025
+
+WORST 5
+ 0.45792096,  0.20519401,  0.77490418, -0.08403411, -0.37505412: 0.2266
+ 0.50602025, -0.08403411,  0.68316922, -0.34559589,  0.38823327: 0.2266
+-0.20123254,  0.07652205,  0.50049221,  0.38823327,  0.74325791: 0.2266
+-0.26671759,  0.89310368, -0.08178549, -0.34559589,  0.07142937: 0.2266
+-0.37436676,  0.77490418,  0.04681577, -0.08178549,  0.50049221: 0.2266
+
+LESS CONFIDENT
+Feeling of Knowing in Memory and Problem Solving: 0.5010
+2018-03: 0.5013
+harajune: 0.4984
+the structure of consumption technology: 0.4984
+Scrapbox Drinkup 20180810: 0.5019
+
+</code></pre>
+<p>The sentences that begin with <code>&quot; </code>, which are in the BEST 5 this time, are inline quotation syntax, and these guys can be played with a clear rule that “if it begins with <code>&quot; </code>, it is not a keyword”, so it is better to do it outside of ppoi. If something can be written in logic, it is better to write it in logic.</p>
+<p>In cases where you can’t play by those clear rules and can’t separate the data well by adding more data, you need to add more features. Since <code>_make_features</code> is a function that takes a single line of text and returns an np.array, we would have to modify it.</p>
+<p>Right now it assumes that the input is a string that does not contain newlines, but I will create other cases when I handle the other cases. Until then, I’ll just use JSON for now.</p>
+<h1 id="interactive-active-learning">interactive active learning<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#interactive-active-learning" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>.
+When activated with <code>--interactive</code>, you can learn interactively. The data will be displayed in the order of the LESS CONFIDENT, and if you interactively answer positive or negative, the answer will be added to the data file. This is so-called active learning.</p>
+<p>In addition to positive and negative, there is also neutral. If you cannot tell whether it is positive or negative at a glance, put everything in neutral.</p>
+<p>:</p>
+<pre><code>$ python3 __init__.py --interactive
+Feeling of Knowing in Memory and Problem Solving: 0.5010
+negative(z), neutral(x), positive(c), quit(q)>c
+Peter F. Drucker: 0.5023
+negative(z), neutral(x), positive(c), quit(q)>c
+virtual: 0.5014
+negative(z), neutral(x), positive(c), quit(q)>x
+https://www.okudahiromi.com/blog/20180310/1923: 0.5016
+negative(z), neutral(x), positive(c), quit(q)>z
+2015: 0.4997
+negative(z), neutral(x), positive(c), quit(q)>c
+Lancaster1966: 0.4972
+negative(z), neutral(x), positive(c), quit(q)>c
+https://scrapbox.io/cybozu-make-club/: 0.4986
+negative(z), neutral(x), positive(c), quit(q)>z
+Regret  Analysis  of  Stochastic  and  Nonstochastic  Multi-armed  Bandit  Problems: 0.4994
+negative(z), neutral(x), positive(c), quit(q)>c
+2018-03: 0.4981
+negative(z), neutral(x), positive(c), quit(q)>c
+data.Name==&quot;1299c1b7a9e0c2bf41af69c449464a49&quot;: 0.5034
+negative(z), neutral(x), positive(c), quit(q)>z
+Habitica: 0.5075
+negative(z), neutral(x), positive(c), quit(q)>c
+Miller1956: 0.5078
+negative(z), neutral(x), positive(c), quit(q)>c
+72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33: 0.5032
+negative(z), neutral(x), positive(c), quit(q)>z
+</code></pre>
+<p>In the current implementation, every time one answer is given, the data file is updated and then reread and relearned. This eliminates “asking similar things over and over” when we teach one and can also determine similar cases, but it gets slower and slower as more data is added.</p>
+<p>what to do</p>
+<ul>
+<li>
+<p>Cache of trained models (since we created —learn for that purpose)</p>
+<ul>
+<li>Now, if you simply import the library, you’re still learning and creating a model the first time you make a decision.</li>
+<li>It’s OK to relearn every time in the early data creation phase, but it’s useless to relearn every time when the data grows or when we are in the phase of mere use, so it’s better to relearn explicitly with —learn.</li>
+<li>On the other hand, in the early stages, it’s a burden for humans to think about whether they need to relearn, so it’s better to do it on their own.</li>
+</ul>
+</li>
+<li>
+<p>Create a commentary on how to improve the features</p>
+</li>
+<li>
+<p>—initialize first asks “Enter at least one positive example (empty to exit)”, but I would like a version that asks me to choose one from unknowns.txt.</p>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/ppoi" class="external">/nishio/ppoi<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class aria-controls="toc-content" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content" class><ul class="overflow"><li class="depth-1"><a href="#ppoiish" data-for="ppoiish">ppoi(ish)</a></li><li class="depth-0"><a href="#interactive-active-learning" data-for="interactive-active-learning">interactive active learning</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Cut-out-the-part-of-interest" class="internal">Cut out the part of interest</a></li><li><a href="./Data-or-Rules." class="internal">Data or Rules.</a></li><li><a href="./Motion-Extraction-Work-Memo" class="internal">Motion Extraction Work Memo</a></li><li><a href="./pKeicho" class="internal">pKeicho</a></li><li><a href="./pKeichobot" class="internal">pKeichobot</a></li><li><a href="./ppoi-improvement-plan" class="internal">ppoi improvement plan</a></li><li><a href="./🤖2023-08-12-02:49" class="internal">🤖2023-08-12 02:49</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>GPT3 reverses the information density.</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="GPT3 reverses the information density."/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="GPT3 reverses the information density."/><meta name="twitter:description" content="2023-02-28 OpenAI API: Tokenizer The tokenizer in GPT3 often carves a single Kanji character into multiple tokens. This is an unfavorable situation for the Japanese."/><meta property="og:description" content="2023-02-28 OpenAI API: Tokenizer The tokenizer in GPT3 often carves a single Kanji character into multiple tokens. This is an unfavorable situation for the Japanese."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="2023-02-28 OpenAI API: Tokenizer The tokenizer in GPT3 often carves a single Kanji character into multiple tokens. This is an unfavorable situation for the Japanese."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/GPT3-reverses-the-information-density."/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/GPT3-reverses-the-information-density."/><link rel="icon" href="./static/icon.png"/><meta name="description" content="2023-02-28 OpenAI API: Tokenizer The tokenizer in GPT3 often carves a single Kanji character into multiple tokens. This is an unfavorable situation for the Japanese."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="GPT3-reverses-the-information-density."><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>GPT3 reverses the information density.</a></div></nav><h1 class="article-title">GPT3 reverses the information density.</h1><p show-comma="true" class="content-meta"><span>Aug 22, 2023</span><span>4 min read</span></p></div></div><article class="popover-hint"><p>2023-02-28
+<img src="https://gyazo.com/14e4f77793d723af030402d9042df1bf/thumb/1000" alt="image"/>
+<img src="https://gyazo.com/10c1b8c1b9b9b1817d78f1133a748f82/thumb/1000" alt="image"/><img src="https://gyazo.com/9f52e93ff88b586b14311c82d230a8b8/thumb/1000" alt="image"/>
+<img src="https://gyazo.com/f0a0af30d47e17bf5cebf9d79774f2b6/thumb/1000" alt="image"/><img src="https://gyazo.com/b5be2d6f88a06f83777451a77264327b/thumb/1000" alt="image"/>
+<a href="https://platform.openai.com/tokenizer" class="external">OpenAI API: Tokenizer<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>The <a href="./tokenizer" class="internal" data-slug="tokenizer">tokenizer</a> in <a href="./GPT3" class="internal" data-slug="GPT3">GPT3</a> often carves a single Kanji character into multiple tokens.</p>
+<ul>
+<li>This is an unfavorable situation for the Japanese.</li>
+</ul>
+<p>Until now, Chinese and Japanese who use Chinese characters had a higher density of information to input than those who use the alphabet.</p>
+<ul>
+<li>English took up about twice the area of writing the same content in Japanese and English.</li>
+<li>The size of a person’s physical field of vision doesn’t vary much by race.</li>
+<li>Therefore, the Japanese had an advantage over Westerners in that the amount of information they could input through their eyes at once was twice as large as that of Westerners.</li>
+</ul>
+<p>However, from the GPT3 perspective, if the same content is given in English and Japanese, the number of tokens in Japanese is approximately two to three times larger than in English.</p>
+<ul>
+<li>GPT3 can input about 4000 tokens at a time.
+<ul>
+<li>This is what human physical vision looks like</li>
+</ul>
+</li>
+<li>In other words, for GPT3, the amount of Japanese-language written at a time is small.</li>
+<li>It is widely used to pass contextual information to ChatGPT, saying “Reply with this”, but in this case, you can pass 2-3 times more context if you pass it in English, the difference is huge!</li>
+</ul>
+<p>token-metered billing</p>
+<p>There is talk that the accuracy of <a href="./Semantic-Search" class="internal alias" data-slug="Semantic-Search">Semantic Search</a> is not good enough for Japanese.</p>
+<ul>
+<li>Kanji characters are split up, so kanji that are close together in the character code table are considered to have “1/2 or 2/3 of a token in common.”</li>
+<li>Well, that’s a lot of hurdles to overcome to make it work.</li>
+</ul>
+<p>Q: Is the tokenizer naively tokenizing each byte?</p>
+<ul>
+<li>A: It’s not that simple.</li>
+<li>The highlight is the fact that “information” is one token.
+<ul>
+<li><img src="https://gyazo.com/b5be2d6f88a06f83777451a77264327b/thumb/1000" alt="image"/></li>
+<li>It doesn’t matter how many bytes the original is, it doesn’t interfere with making it into a single token.</li>
+<li>If you look closely, you can see why there are nine tokens for the four Chinese characters, except for “報”, which is two tokens, and “報”, which is three tokens.</li>
+</ul>
+</li>
+<li>So why are the three bytes that make up “emotion” inscribed on two tokens?
+<ul>
+<li>If the input is chopped naively into bytes, there are less than 70 different tokens.</li>
+<li>However, chopping into small pieces causes the “narrowing of the field of vision” phenomenon described above, so frequently occurring byte sequences are stacked together to make a single token with multiple bytes.</li>
+<li>This “frequently used” part depends on the corpus you are assuming.</li>
+<li>GPT3 is not specific to Japanese, so the frequency of occurrence of “emotion” is much lower than that of “information”.</li>
+<li>So the state is deemed not worthy of being made into one token.</li>
+</ul>
+</li>
+<li>Currently there are about 5,000 different GPT3 tokens in total.
+<ul>
+<li>Increasing the number is technically not a problem, but the more you increase it, the more it costs to learn.</li>
+<li>For economic reasons, there are few resources to devote to a minority language such as Japanese.</li>
+</ul>
+</li>
+</ul>
+<p>PS</p>
+<blockquote>
+<p><a href="https://twitter.com/kitar/status/1633426489390809088" class="external">@kitar<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: maybe ChatGPT’s tokenizer is improved over GPT3…? I was just trying to calculate it with tiktoken,
+text: information density
+text-davinci-003: 9 tokens
+gpt-3.5-turbo: 4 tokens
+and came out.</p>
+</blockquote>
+<p>python</p>
+<pre><code>In [10]: tiktoken.encoding_for_model(&quot;gpt-3.5-turbo&quot;)
+Out[10]: &lt;Encoding 'cl100k_base'>
+
+In [11]: tiktoken.encoding_for_model(&quot;text-davinci-003&quot;)
+Out[11]: &lt;Encoding 'p50k_base'>
+</code></pre>
+<p>Okay, it’s definitely different.
+No, this is not new with ChatGPT API.</p>
+<ul>
+<li>They’re also using a new tokenizer in the December 2022 <a href="https://openai.com/blog/new-and-improved-embedding-model" class="external">New and improved embedding model<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</li>
+<li><img src="https://gyazo.com/ff6822187c0b6d035c4d7595edc1adf2/thumb/1000" alt="image"/>
+<ul>
+<li><a href="https://platform.openai.com/docs/guides/embeddings/what-are-embeddings" class="external">https://platform.openai.com/docs/guides/embeddings/what-are-embeddings<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>If [cl100k_base
+python</li>
+</ul>
+<pre><code>In [12]: tiktoken.get_encoding(&quot;cl100k_base&quot;).encode(&quot;information density&quot;)
+Out[12]: [40474, 78943, 28741, 27479]
+</code></pre>
+<pre><code>- 4 tokens.
+</code></pre>
+<ul>
+<li>That the demo on <a href="https://platform.openai.com/tokenizer" class="external">https://platform.openai.com/tokenizer<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> uses V1 GPT-3.</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/GPT3%E3%81%A7%E3%81%AF%E6%83%85%E5%A0%B1%E5%AF%86%E5%BA%A6%E3%81%8C%E9%80%86%E8%BB%A2%E3%81%99%E3%82%8B" class="external">/nishio/GPT3では情報密度が逆転する<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./AI-Baltasar-Gracian-Experiment" class="internal">AI Baltasar Gracian Experiment</a></li><li><a href="./Do-differences-in-Japanese-Tokenizer-affect-downstream-task-performance" class="internal">Do differences in Japanese Tokenizer affect downstream task performance?</a></li><li><a href="./English-is-a-low-density-language" class="internal">English is a low-density language</a></li><li><a href="./Two-problems-with-Japanese-LLMs" class="internal">Two problems with Japanese LLMs</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

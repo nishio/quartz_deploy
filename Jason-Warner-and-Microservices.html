@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Jason Warner and Microservices</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Jason Warner and Microservices"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Jason Warner and Microservices"/><meta name="twitter:description" content="Jason Warner (Now: MD @redpoint, Prior: CTO @github, @heroku, @Canonical) tweeted his thoughts on microservice, and then “Github’s CTO says ‘microservice was a failure’ ..."/><meta property="og:description" content="Jason Warner (Now: MD @redpoint, Prior: CTO @github, @heroku, @Canonical) tweeted his thoughts on microservice, and then “Github’s CTO says ‘microservice was a failure’ ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="Jason Warner (Now: MD @redpoint, Prior: CTO @github, @heroku, @Canonical) tweeted his thoughts on microservice, and then “Github’s CTO says ‘microservice was a failure’ ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Jason-Warner-and-Microservices"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Jason-Warner-and-Microservices"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Jason Warner (Now: MD @redpoint, Prior: CTO @github, @heroku, @Canonical) tweeted his thoughts on microservice, and then “Github’s CTO says ‘microservice was a failure’ ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Jason-Warner-and-Microservices"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Jason Warner and Microservices</a></div></nav><h1 class="article-title">Jason Warner and Microservices</h1><p show-comma="true" class="content-meta"><span>Nov 16, 2022</span><span>11 min read</span></p></div></div><article class="popover-hint"><p>Jason Warner (Now: MD @redpoint, Prior: CTO @github, @heroku, @Canonical) tweeted his thoughts on <a href="./microservice" class="internal" data-slug="microservice">microservice</a>, and then “Github’s CTO says ‘microservice was a failure’. ’” and it was buzzed off in part like that. I put it together to say let’s read the whole thing properly because that’s really not a good idea.</p>
+<p>Each chunk of meaning is written in the order of English sentence, then Japanese sentence. The Japanese sentences are written by changing expressions and cutting jokes, giving priority to comprehension when reading the Japanese sentences alone.</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I’m including Nishio’s annotations in this format.</li>
+</ul>
+<blockquote>
+<p><a href="https://twitter.com/jasoncwarner/status/1592227285024636928?s=46&amp;t=Ms0tUQCH9dgKUgj7oZ3kEw" class="external">@jasoncwarner<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: I’m convinced that one of the biggest architectural mistakes of the past decade was going full microservice
+On a spectrum of monolith to microservices, I suggest the following:
+Monolith > apps > services > microservices
+So, some thoughts
+I am convinced that one of the biggest architectural mistakes of the past decade has been trying to move to full microservices.
+On the spectrum from monoliths to microservices, I propose the following
+Monolith > Apps > Services > Microservices</p>
+</blockquote>
+<blockquote>
+<p><a href="https://twitter.com/jasoncwarner/status/1592227287532904448?s=20&amp;t=BmC71gSmsFXzl6cP845XgA" class="external">@jasoncwarner<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: First, these are thoughts, not rules. Anyone that has built a large distributed system knows they don’t really work that way and have to adapt with it
+Second, stage will be important. If you are reading this at a 5-50 person company…just stick with a monolith. Trust me
+<a href="https://twitter.com/jasoncwarner/status/1592227289986580480?s=20&amp;t=BmC71gSmsFXzl6cP845XgA" class="external">@jasoncwarner<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: If you are reading this at a 10k person company, likely have all of these to some degree but here is where my quick thoughts might differ from what has been done in the past</p>
+</blockquote>
+<ul>
+<li>First, this is a concept, not a rule.
+<ul>
+<li>Anyone who has built a large distributed system knows that it does not work the way it was conceived when it was designed and that adjustments must be made.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>The optimal design is not determined in advance by rules such as “this is what you should do in this case,” but is revealed after the fact based on knowledge gained through actual operation.</li>
+</ul>
+</li>
+<li>Second, the stage is important.
+<ul>
+<li>If you are reading this in a company of 5-50 people, you should stick to monoliths. Trust me, you will.</li>
+<li>If you are a 10,000 person company reading this, you probably have all of these (monolith > app > service > microservice) to some degree!</li>
+<li>but my brief thoughts may differ from what your company has done in the past</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Now, diversion. Let’s talk definitions. There exist no exact definitions for these all
+services - supporting apps/monoliths, core infra pieces, needed by lots of surface area, core compliance func, possibly not written by app teams (infra maintains them)
+microservices - few hundred lines of code, mostly one-offs, likely could/should be library or SDK</p>
+</blockquote>
+<p>Now, let’s talk about definitions. Not all of these have exact definitions!</p>
+<ul>
+<li>Service
+<ul>
+<li>It supports the application/monolith. It is a core part of the infrastructure.</li>
+<li>It is needed in many surface areas. (<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>what surface area are you referring to?)</li>
+<li>Core Compliance Functions.</li>
+<li>App team may not write (infrastructure team will maintain)</li>
+</ul>
+</li>
+<li>microservice
+<ul>
+<li>It is a few hundred lines of code. Mostly one-offs. Likely/should become a library or SDK.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Ok, with all that out of the way, let’s talk why
+My thinking basically goes like this
+Speed &amp; risk
+A. It’s generally easier for entire engineering teams to work inside one big app (think entire site in Rails app) than to reason about the ways in which microservices will fail
+B. distributed systems, which you will have as you grow no matter what, are hard enough to reason about with introducing dozens let alone hundreds of microservices that have their own risk profiles
+C. as you go fully micro, you need to introduce new concepts to handle the sprawl
+D. A big one. Each bespoke infra service or microservice is an extreme version of debt IMV. Code is debt, but services are extreme versions of that. Really think about about what that means for you. Prefer your debt to be literal points of highest leverage not nice to haves</p>
+</blockquote>
+<p>Now, let me tell you why. My thinking is basically as follows.</p>
+<p>Speed and Risk</p>
+<ul>
+<li>A. It is generally easier to have the entire engineering team working within one large app than it is to reason about how microservices can fail. (e.g., an entire site is a Rails app, etc.)</li>
+<li>B. Distributed systems are necessary no matter what as they grow. However, it is very difficult to deploy dozens or hundreds of microservices with unique risk profiles.</li>
+<li>C. To be completely micro, new concepts need to be introduced to handle sprawl.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>The need for a layer to manage and connect the growing number of microservices in an unregulated manner.</li>
+</ul>
+</li>
+<li>D. Key takeaway: in my opinion, tailor-made infrastructure services and microservices are the worst kind of technical debt. Code is a liability, but services are more of a liability.
+<ul>
+<li>Think carefully about what it means to you. Debt is not something to be assumed on a “nice to have” basis, but rather to achieve the highest leverage.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>I think a challenge we dist systems engineers have is we really like to not have duplication so we see something being done in a few places and think “let’s just pull this out and make a microservice out of it”.
+In theory this is fine. And if done for a few tens of instances, it is fine. When it goes to several dozen microservices or…way worse…across massive company boundaries (think one color service for all of Microsoft/Google/Apple) it becomes less technical and more org challenge
+And I know what I’m presenting so many feels like some false dichotomies but in practice I find there are definite tech challenges with microservices, but there are even more org challenges with them</p>
+</blockquote>
+<p>The challenge we distributed systems engineers have is that we want to avoid duplication. So we look at what is being done in several places and think, “Let’s take this out and create a microservice.</p>
+<p>In theory, this is fine. And if it is done for dozens of instances, it is fine.</p>
+<p>If it crosses dozens of microservices or, worse, huge corporate boundaries (let’s say, one color service for all of Microsoft/Google/Apple)</p>
+<ul>
+<li>This is not a technical challenge, but more of an organizational challenge.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Microsoft, Google, and Apple each have their own “color selection” function in their applications. Theoretically, it is correct to argue that “if we carve it out into microservices, we can avoid code duplication,” but in practice, each company insists on a design that suits their own needs. It requires political, rather than technical, effort to reconcile the conflicting opinions of the stakeholders and reach a consensus.
+- <a href="./Picture-sharing-common-areas" class="internal alias" data-slug="Picture-sharing-common-areas">Picture sharing common areas</a></li>
+</ul>
+<p>Many will find my assertion to be a <a href="./false-dichotomy" class="internal alias" data-slug="false-dichotomy">false dichotomy</a>. But it is my experience in reality. Microservices have clear technical challenges, but there are even more organizational challenges.</p>
+<blockquote>
+<p>And of all the things I worry about it’s this</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p>First, infra (unless company is led by unusually with-it CEO) almost always gets short end of priority stick</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Second, too many services typically leads to a lack of ownership problem and boundary issues</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Third, you introduce even more tooling to deal with too many microservices</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>And most importantly, each microservice that could/should have been a library or sdk or something introduces production risk
+more code is indeed overhead, more services is customer facing prod/experience risk. Both approaches have overhead/risk but the % distribution is diff</p>
+</blockquote>
+<p>And this is what I am concerned about.</p>
+<ul>
+<li>First, infrastructure is almost always a low priority (unless the company is led by a CEO who knows IT very well).</li>
+<li>Second, too many services create ownership and boundary issues.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>It becomes unclear which team has the authority to change which service and where the boundaries are. Problems arise when people want a fix but don’t know who to tell, or when multiple teams think of each other as “that team is responsible for the fix” and the ball falls between them.</li>
+</ul>
+</li>
+<li>Third, more tools will be deployed to deal with too many microservices.</li>
+</ul>
+<p>And most importantly, each microservice that could/should have been made into a library, SDK, etc. brings its own production risks.
+Too much code is certainly an overhead, but too much service is a production/experience risk faced by the customer. Both approaches have overhead and risk, just in different proportions.</p>
+<blockquote>
+<p>So this is typically what I recommend</p>
+<ol>
+<li>Be a monolith as long as possible</li>
+<li>Services start in infra for infra reasons, not app eng typically</li>
+<li>If breaking out mono, break to large apps, not small services</li>
+<li>Think that each new app is a virtual wall in your company</li>
+<li>Prefer libraries to microservices where possible
+The classic “we introduced a color service” is my favorite extreme example of where I would choose a library over a service. Yes extreme example but hey, it gets very talked about as quintessential example</li>
+</ol>
+</blockquote>
+<p>Therefore, I recommend the typical method.</p>
+<ul>
+<li>1: Be a monolith for as long as possible</li>
+<li>2: Servitization is initiated by the infrastructure team for reasons on the infrastructure side. It is not initiated by the app engineer side.</li>
+<li>3: When breaking away from monoliths, break them up into larger apps rather than smaller services.</li>
+<li>4: Consider the new app to be a virtual wall within the company.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>The increase in the number of apps will create new “communication barriers” (walls) within the company, and we should be cautious about this.</li>
+</ul>
+</li>
+<li>5: Prioritize libraries over microservices whenever possible</li>
+</ul>
+<p>The classic example of “introducing a color service” is one of my favorite extreme examples of choosing libraries over services. It is certainly an extreme example, but it is very much talked about as the quintessential example.</p>
+<blockquote>
+<p>“But Jason, what about Amazon and Uber and ..?”</p>
+</blockquote>
+<p>‘But Jason, what about Amazon, Uber and . are you?”</p>
+<blockquote>
+<ol>
+<li>Hey, you do you. I’m just saying what I’ve gone through in experience</li>
+<li>If you have the success of Amazon when that mandate came down for services, go nuts</li>
+<li>These are more guidelines than rules</li>
+</ol>
+</blockquote>
+<ol>
+<li>hey, you do your thing. I’m just saying what I’ve been through.</li>
+<li>if your company is making as much money as it was “when Amazon mandated servicing”, then great!
+These are guidelines, not rules.</li>
+</ol>
+<blockquote>
+<p>90% of all companies in the world could probably just be a monolith running against a primary db cluster with db backups, some caches and proxies and be done with it
+For the 10% of companies that hit planet scale (no pun intended here Sam) it’s gonna be art figuring this out
+Distributed systems combined with scaling companies is so complex and so few people have done it that it’s hard to draw specific lessons from those companies. Each context and instance is different. What I’m talking about here is more thoughts on how to approach the problems</p>
+</blockquote>
+<p>90% of the world’s enterprises could probably get away with a monolith that works with a primary DB cluster, DB backups, caches, and proxies.
+For the global 10% of companies, this is a very difficult problem to solve.</p>
+<ul>
+<li>(<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/> the expression “art/artistic”)</li>
+</ul>
+<p>The combination of distributed systems and expanding enterprises is so complex, and so few have done it, that it is difficult to draw specific lessons from them. Each context and example is different. What I am talking about here is an idea of how to approach the problem.</p>
+<blockquote>
+<p>And going back to this
+Monolith > apps > services > microservices
+It’s basically an approach to scale: be one big thing for as long as possible. Never overcorrect to too small of things, go through it as you grow (even hyper growth). This is for org and tech
+Again, it’s art</p>
+</blockquote>
+<p>And back to this.</p>
+<ul>
+<li>Monolith > Apps > Services > Microservices</li>
+</ul>
+<p>This is essentially an approach to scale:</p>
+<ul>
+<li>Be one big thing for as long as possible.</li>
+<li>Not to make things excessively small, but to keep up with growth. (Even during times of rapid growth.)</li>
+<li>This is true for both organizations and technology.</li>
+</ul>
+<h2 id="again-this-is-art">Again, this is art.<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#again-this-is-art" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>This page is auto-translated from [/nishio/Jason Warnerとマイクロサービス](<a href="https://scrapbox.io/nishio/Jason" class="external">https://scrapbox.io/nishio/Jason<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Warnerとマイクロサービス) using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li>No backlinks found</li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

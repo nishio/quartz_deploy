@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Kozaneba Development Diary 2021-08-21</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Kozaneba Development Diary 2021-08-21"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Kozaneba Development Diary 2021-08-21"/><meta name="twitter:description" content="prev Kozaneba Development Diary 2021-08-20 js localStorage.setItem(&quot;onLoad&quot;, &quot;console.log('hello')&quot;) User can define scripts to be executed ..."/><meta property="og:description" content="prev Kozaneba Development Diary 2021-08-20 js localStorage.setItem(&quot;onLoad&quot;, &quot;console.log('hello')&quot;) User can define scripts to be executed ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="prev Kozaneba Development Diary 2021-08-20 js localStorage.setItem(&quot;onLoad&quot;, &quot;console.log('hello')&quot;) User can define scripts to be executed ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Kozaneba-Development-Diary-2021-08-21"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Kozaneba-Development-Diary-2021-08-21"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="prev Kozaneba Development Diary 2021-08-20 js localStorage.setItem(&quot;onLoad&quot;, &quot;console.log('hello')&quot;) User can define scripts to be executed ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Kozaneba-Development-Diary-2021-08-21"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Kozaneba Development Diary 2021-08-21</a></div></nav><h1 class="article-title">Kozaneba Development Diary 2021-08-21</h1><p show-comma="true" class="content-meta"><span>Jan 25, 2022</span><span>5 min read</span></p></div></div><article class="popover-hint"><p>prev  <a href="./Kozaneba-Development-Diary-2021-08-20" class="internal alias" data-slug="Kozaneba-Development-Diary-2021-08-20">Kozaneba Development Diary 2021-08-20</a></p>
+<p>js</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="javascript" data-theme="github-light github-dark"><code data-language="javascript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">localStorage.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">setItem</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;onLoad&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;console.log('hello')&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">)</span></span></code></pre></figure>
+<p>User can define scripts to be executed at load time</p>
+<pre><code>- Users can override the behavior of the tutorial when they access the top page.
+- Users can add buttons to the AppBar
+</code></pre>
+<p>Bug not usable on touch devices.
+2021-08-23 <img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I’m trying to fix it, but it doesn’t seem like an easy fix.
+<a href="https://twitter.com/nishio/status/1428904779703472131?s=20" class="external">https://twitter.com/nishio/status/1428904779703472131?s=20<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<blockquote>
+<p>Usually, we can use <code>overflow: hidden</code> on the  element to prevent scrolling. But unfortunately, that does not work on older versions of iOS.</p>
+</blockquote>
+<ul>
+<li><a href="https://markus.oberlehner.net/blog/simple-solution-to-prevent-body-scrolling-on-ios/" class="external">Simple Solution to Prevent Body Scrolling on iOS - Markus Oberlehner<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<p>It’s hard to get the iPhone to work as expected.</p>
+<ul>
+<li>Aside from the iPhone, I’d love to see it work on the iPad.</li>
+</ul>
+<hr/>
+<p>When I think about running Scrapbox cards on Kozaneba, I need to be able to create something that behaves like Kozane but has a different DOM structure.</p>
+<ul>
+<li>This “same behavior” is also ambiguous.</li>
+<li>Ideally, this could be accomplished with user extensions, but that’s <a href="./You're-trying-to-solve-two-problems-at-once." class="internal alias" data-slug="You're-trying-to-solve-two-problems-at-once.">You’re trying to solve two problems at once.</a></li>
+</ul>
+<hr/>
+<p>2021-08-23</p>
+<p>I’m always tempted to do “something I haven’t done yet”.
+Already doing it, and almost prioritizing it over features that were useful.
+Getting it to work on the iPad is a muddle.
+If I can get it to work on my iPad, I’ll be tempted to add handwritten additions.
+SVG of handwritten additions
+anchor point
+Auto-positioning objects</p>
+<p><img src="https://gyazo.com/59a3112074719fb8922802a663c939a5/thumb/1000" alt="image"/>
+<img src="https://gyazo.com/d7a9ad76fabdfd867c14497827967780/thumb/1000" alt="image"/>
+I wrote the dependencies with red arrows, but since one-way updating will cause circular references, it would be better to use the gradient method to solve for each point as a “constraint that minimizes the distance”.</p>
+<p>Thumbnails on links for sharing</p>
+<p>Instead of skipping tutorials, just make the first process user-customizable.</p>
+<p>paste</p>
+<ul>
+<li>Paste JSON
+<ul>
+<li>→Determine format
+<ul>
+<li>Regroup</li>
+<li>Kozaneba</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Text Paste
+<ul>
+<li>Open Add Kozane Dialog</li>
+</ul>
+</li>
+<li>Paste Image
+<ul>
+<li>Upload to Gyazo and make it Gyazo Kozane
+<ul>
+<li>First, you need a Gyazo Kozane
+<ul>
+<li>Allow switching of rendering methods in Kozane’s options</li>
+<li>It would be nice to be able to extend it from the user in the future.</li>
+</ul>
+</li>
+<li>Is this a “kozane” in the first place?
+<ul>
+<li>GroupItem, KozaneItem, should not be lined up at the level of</li>
+<li>In other words, “add item.type”</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>read-only sharing</p>
+<ul>
+<li>thumbnail view</li>
+</ul>
+<p>Let’s lose the “tutorial” in the menu ✅.</p>
+<p>The wheel and touchpad can be used individually to set the speed when zooming.</p>
+<ul>
+<li>The distinction between a wheel and a touchpad, the deprecated property is a wheel, and the typical device is 120, which is used for identification and so on (discussion in 2020).</li>
+<li><a href="https://stackoverflow.com/a/62415754/3651086" class="external">Detect touchpad vs mouse in Javascript - Stack Overflow<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>The implementation itself is not difficult, so I can put it out there with enough confidence to say, “I think it works for now.
+<ul>
+<li>done</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/4d804026c6f5a45f2ae61d6692f22f7f/thumb/1000" alt="image"/></p>
+<p>Dragging a closed group out of position.
+<img src="https://gyazo.com/7518e22178b2f14a79dbb6f4da996cca/thumb/1000" alt="image"/></p>
+<p>No problem when a group is open to move in and out of another group, but when it is closed to move in, it is out of place A</p>
+<ul>
+<li>At this time, “the position when closed” and “the position when opened” are misaligned, so if you return it to the position you wanted to place it in while it is closed, it will be misaligned in the opposite direction from A when it is opened.</li>
+<li>At least I fixed half of the problem: “when you put a closed group into a group, it’s out of sync with the open group”.</li>
+<li>Apart from that, “things go wrong when you move things around in a group” happens.</li>
+<li>Well, I think I can make it look consistent, but I don’t know the root cause of why the discrepancy is occurring.</li>
+<li>Oh, this happens even if it’s not a closed group. It’s the movement within the same group that makes it go wrong.</li>
+<li>Fixed.</li>
+</ul>
+<p>cause</p>
+<ul>
+<li>The contents of the group are offset by the group
+<ul>
+<li>However, when drawing closed groups, this value was not referenced, so the display is misaligned only when the group is placed inside a group.</li>
+</ul>
+</li>
+<li>Positioning is wrong only when dragging within the same group.
+<ul>
+<li>Only occurs when mousemove is generated on a group while dragging, which naturally occurs in user operation, but did not occur in the test code.</li>
+<li>The structure of the DOM changes when entering and leaving the group, this does not happen at this time.</li>
+<li>The top-level move is the phenomenon in question itself, but it looks the same because you’re not in the group and the offset is zero.</li>
+<li>Rewriting ReactN state with mousemove event while dragging is expensive and choppy
+<ul>
+<li>So I was editing DOM styles directly.</li>
+<li>This style remains even after redrawing by React
+<ul>
+<li>Because redrawing from React updates the styled-components style, but this is applied to the element via the class, so it has lower priority than the “style of the element itself</li>
+<li>Once the “style of the element itself” is set, that takes precedence.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Insert empty string because style cannot be DELETE
+<ul>
+<li>I didn’t see where it stated that this could be removed.</li>
+<li>In this case, if you try to parseFloat the value on the next drag as the start position of the drag, you will end up with NaN.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle" class="external">Window.getComputedStyle() - Web APIs | MDN<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/6df22125da66b4ad8eb7d3a04dc19cd8/thumb/1000" alt="image"/>
+I see you can produce such a diff (I understand the indentation and still understand the correspondence).</p>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/Kozaneba%E9%96%8B%E7%99%BA%E6%97%A5%E8%A8%982021-08-21" class="external">/nishio/Kozaneba開発日記2021-08-21<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Kozaneba-Development-Diary-2021-08-25" class="internal">Kozaneba Development Diary 2021-08-25</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

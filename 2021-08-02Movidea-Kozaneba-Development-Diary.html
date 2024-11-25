@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>2021-08-02Movidea/Kozaneba Development Diary</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="2021-08-02Movidea/Kozaneba Development Diary"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="2021-08-02Movidea/Kozaneba Development Diary"/><meta name="twitter:description" content="Windows users A type of touchpad that even recognizes four-finger gestures Can you operate it? The more uncertain something is, the quicker it should be verified ..."/><meta property="og:description" content="Windows users A type of touchpad that even recognizes four-finger gestures Can you operate it? The more uncertain something is, the quicker it should be verified ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="Windows users A type of touchpad that even recognizes four-finger gestures Can you operate it? The more uncertain something is, the quicker it should be verified ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/2021-08-02Movidea-Kozaneba-Development-Diary"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/2021-08-02Movidea-Kozaneba-Development-Diary"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Windows users A type of touchpad that even recognizes four-finger gestures Can you operate it? The more uncertain something is, the quicker it should be verified ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="2021-08-02Movidea-Kozaneba-Development-Diary"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>2021-08-02Movidea/Kozaneba Development Diary</a></div></nav><h1 class="article-title">2021-08-02Movidea/Kozaneba Development Diary</h1><p show-comma="true" class="content-meta"><span>Aug 03, 2021</span><span>5 min read</span></p></div></div><article class="popover-hint"><p>Windows users</p>
+<ul>
+<li>A type of touchpad that even recognizes four-finger gestures</li>
+<li>Can you operate it?
+The more uncertain something is, the quicker it should be verified.</li>
+<li>Authentication and cloud storage should be put aside for now to verify if it can be operated.</li>
+<li>To do so, we need to
+<ul>
+<li>Deployment.</li>
+<li>Either go with Movidea or change now to Kozaneba, which I was planning to change when I get settled.
+<ul>
+<li><a href="./2021-07-15Movidea-Development-Diary#60effb2baff09e00003b7dcd" class="internal alias" data-slug="2021-07-15Movidea-Development-Diary">60effb2baff09e00003b7dcd</a></li>
+<li>I’m going to Kozaneba now because it’s twice as hard to change the repository and Netlify settings again later.</li>
+<li>Change the source, title bar, etc. later.</li>
+</ul>
+</li>
+<li>Make a small sample to test if it can be manipulated
+<ul>
+<li><a href="https://kozaneba.netlify.app/#tinysample" class="external">https://kozaneba.netlify.app/#tinysample<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>I took a video of me operating with two finger gestures.
+<ul>
+<li><a href="https://youtu.be/FvZvZ1jVKrk" class="external">https://youtu.be/FvZvZ1jVKrk<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Chrome on Windows has a behavior that locks you into moving in that direction when you first move vertically or horizontally
+<ul>
+<li>980479 - two-finger trackpad movement locks in as horizontal or vertical - chromium</li>
+<li><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=980479" class="external">https://bugs.chromium.org/p/chromium/issues/detail?id=980479<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+<p>Certification</p>
+<ul>
+<li>anonymous authentication
+<ul>
+<li><img src="https://gyazo.com/85e7eba0fd4c3bd40818c6694c063ec9/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://firebase.google.com/docs/auth/web/anonymous-auth?hl=ja" class="external">Using JavaScript for Firebase Anonymous Authentication<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>
+<blockquote>
+<p>Convert an anonymous account to a permanent account</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>After an anonymous user registers for the app, he/she may need to be able to continue working under the new account. For example, if a user added items to their shopping cart prior to registering for the app, they may want to add those items to the shopping cart of their new account as well. The procedure is as follows</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>…</p>
+</blockquote>
+</li>
+<li>If the >link call succeeds, the user’s new account will have access to the anonymous account’s Firebase data.</li>
+<li>I wonder if the user.uid will be the same after linking.
+<ul>
+<li><a href="https://firebase.google.com/docs/auth/web/account-linking?hl=ja" class="external">Linking multiple authentication providers to an account using JavaScript | Firebase<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>
+<blockquote>
+<p>User can be identified by the same Firebase user ID regardless of the authentication provider used for login.</p>
+</blockquote>
+</li>
+<li>I see. So it’s a one-to-one correspondence between the user and the authentication provider.</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://firebase.google.com/docs/auth/web/auth-state-persistence?hl=ja" class="external">Authentication State Persistence | Firebase<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>Seems to leave me logged in by default, which is fine.</li>
+</ul>
+<p>At least I got as far as “current user: null”.</p>
+<ul>
+<li>✅ Log in anonymously, reload the browser and you are still logged in.</li>
+<li>I need to create a logout menu.</li>
+<li>✅If you log out and log in anonymously again, you’ll get a different uid.</li>
+<li>✅Google OAuth
+<ul>
+<li><img src="https://gyazo.com/c22edbc879ea0a5937af97351b2b59be/thumb/1000" alt="image"/>
+<ul>
+<li><a href="https://cloud.google.com/identity-platform/docs/show-custom-domain" class="external">Showing a custom domain during sign in<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li><a href="https://firebase.google.com/docs/hosting/custom-domain" class="external">Connect a custom domain | Firebase<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>(computer) console</p>
+<ul>
+<li><img src="https://gyazo.com/582157f59c7c6dad53f159fa3b8e7d98/thumb/1000" alt="image"/></li>
+<li>Ha, I see, this is how it goes.</li>
+</ul>
+<p>ts</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="typescript" data-theme="github-light github-dark"><code data-language="typescript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">import</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;firebaseui&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">var</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> ui </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> new</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> firebaseui.auth.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">AuthUI</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(firebase.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">auth</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">());</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">// 'firebaseui' refers to a UMD global, but the current file is a module. Consider adding an import instead. ts(2686)</span></span></code></pre></figure>
+<p>ts</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="typescript" data-theme="github-light github-dark"><code data-language="typescript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> firebaseui </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;firebaseui&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">// Attempted import error: 'firebaseui' does not contain a default export (imported as 'firebaseui').</span></span></code></pre></figure>
+<p>ts</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="typescript" data-theme="github-light github-dark"><code data-language="typescript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">import</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> *</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> as</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> firebaseui </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;firebaseui&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">// Import may be converted to a default import. ts(80003)</span></span></code></pre></figure>
+<p><img src="https://gyazo.com/f20f0b9ebab31b694a6f6233970dbcb5/thumb/1000" alt="image"/></p>
+<p>html</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="html" data-theme="github-light github-dark"><code data-language="html" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">link</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> type</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;text/css&quot;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> rel</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;stylesheet&quot;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> href</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> /></span></span></code></pre></figure>
+<p><img src="https://gyazo.com/4d92cd515b20dd245b8910bb42c81ccf/thumb/1000" alt="image"/></p>
+<p><a href="https://www.npmjs.com/package/identicon" class="external">https://www.npmjs.com/package/identicon<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>Thinking again now that the parts are much more complete.</p>
+<p>reprint</p>
+<ul>
+<li>Definite no-no’s.
+<ul>
+<li>Require login before starting tutorial</li>
+<li>The ability to obtain editing privileges from a URL passed in a view-only manner.</li>
+</ul>
+</li>
+<li>something (which) one does not like
+<ul>
+<li>That when you use it alone and pass it on Handoff, you need to log in at the destination you pass it to.
+<ul>
+<li>Is it acceptable if you only have to log in once and the session lasts a long time?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>By default, if you know the URL, you can access it.</p>
+<ul>
+<li>Access rights can be narrowed down later.
+<ul>
+<li>You could limit WRITE to specific users.</li>
+<li>You could create a lead-only link.
+<ul>
+<li>This is the same as limiting WRITE to one author.</li>
+</ul>
+</li>
+<li>Only the owner has this “right to change access rights”.
+<ul>
+<li>Create anonymous users even if not logged in for owner identification here?</li>
+<li>Or do you require a login to save to the cloud?
+<ul>
+<li>That’s not a crazy design, it happens all the time.</li>
+<li>On the other hand, does it seem iffy to start using it without an account?
+<ul>
+<li>Not so much of a concern because it’s OAuth, not an email and password account?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>It is necessary at the time of narrowing down access rights, but I wonder if it would be natural to be told to “log in” at the time of saving to the cloud before that.</p>
+<ul>
+<li>And at that stage, I haven’t narrowed down the access rights, so I can write when I Handoff.</li>
+<li>Then, when I tried to create a read-only view and share it, the device that was able to write on it would not be able to write on it… I thought, why not just keep track of the WRITER and focus on the existing WRITER instead of focusing on the owner when creating a read-only view?</li>
+<li>The terminal passed by Handoff logs in anonymously and writes its own user ID to writer.
+<ul>
+<li>Now you can also “visualize how many people are connected in write mode right now.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/2021-08-02Movidea/Kozaneba%E9%96%8B%E7%99%BA%E6%97%A5%E8%A8%98" class="external">/nishio/2021-08-02Movidea/Kozaneba開発日記<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li>No backlinks found</li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

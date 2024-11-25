@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>pVectorSearch2023-06-20</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="pVectorSearch2023-06-20"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="pVectorSearch2023-06-20"/><meta name="twitter:description" content="from pVectorSearch pVectorSearch2023-06-20 New Feature Proposal Pass the Scrapbox page name in the URL fragment with GET On the Scrapbox side, create a UserScript that opens in ..."/><meta property="og:description" content="from pVectorSearch pVectorSearch2023-06-20 New Feature Proposal Pass the Scrapbox page name in the URL fragment with GET On the Scrapbox side, create a UserScript that opens in ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="from pVectorSearch pVectorSearch2023-06-20 New Feature Proposal Pass the Scrapbox page name in the URL fragment with GET On the Scrapbox side, create a UserScript that opens in ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/pVectorSearch2023-06-20"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/pVectorSearch2023-06-20"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="from pVectorSearch pVectorSearch2023-06-20 New Feature Proposal Pass the Scrapbox page name in the URL fragment with GET On the Scrapbox side, create a UserScript that opens in ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="pVectorSearch2023-06-20"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>pVectorSearch2023-06-20</a></div></nav><h1 class="article-title">pVectorSearch2023-06-20</h1><p show-comma="true" class="content-meta"><span>Sep 23, 2024</span><span>4 min read</span></p></div></div><article class="popover-hint"><p>from <a href="./pVectorSearch" class="internal" data-slug="pVectorSearch">pVectorSearch</a>
+pVectorSearch2023-06-20
+New Feature Proposal
+Pass the Scrapbox page name in the URL fragment with GET</p>
+<ul>
+<li>
+<p>On the Scrapbox side, create a UserScript that opens in a new tab.</p>
+</li>
+<li>
+<p>The receiver hits the API with client JS, loads it into a query, and performs a search.</p>
+</li>
+<li>
+<p>Now you can have a “Vector Search Related Pages” from any public project.</p>
+</li>
+<li>
+<p>It’s annoying to have the whole content in the search history.</p>
+</li>
+<li>
+<p>I’d like to search only the diagrams from the page with my hand-drawn diagrams.</p>
+</li>
+<li>
+<p>I’m starting to think that excluding hits on the same page is a better default.</p>
+</li>
+</ul>
+<p>New UI proposal
+<img src="https://gyazo.com/6e99c7cd8a3697961f317e54a3ffb928/thumb/1000" alt="image"/></p>
+<ul>
+<li>
+<ul>
+<li>is all and - is none.
+<ul>
+<li>2023/6/26 No, I don’t understand what you mean if you don’t explain, just write ALL and NONE.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>2023/6/20
+Searching from my phone while on a business trip resulted in an error.</p>
+<ul>
+<li>I couldn’t deal with it on the spot, so I just checked.</li>
+<li>The problem is not reproducible.</li>
+<li>It’s a free version of Vercel, so the log seems to be up to an hour, I don’t know what the error was anymore.
+It seems to be working fine for now, so I’ll pass this time.</li>
+<li>I guess in terms of Next Action, I’d introduce Sentry.</li>
+</ul>
+<p>New Feature Proposal</p>
+<ul>
+<li>Allows “load it and prompt execution” from search results
+<ul>
+<li>digest</li>
+<li>roleplay (e.g. in computer RPG games)</li>
+</ul>
+</li>
+</ul>
+<p>2023-06-21</p>
+<ul>
+<li>client side
+<ul>
+<li><code>Unexpected token 'A', &quot;An error o&quot;... is not valid JSON</code></li>
+<li><code>Failed to load resource: the server responded with a status of 504 ()</code></li>
+</ul>
+</li>
+<li>server side:
+<ul>
+<li><code>[POST] /api/search</code></li>
+<li><code>Execution Duration / Limit 10.01s / 10s (timed out)</code></li>
+</ul>
+</li>
+<li>It’s simply a timeout.
+<ul>
+<li>I guess the next action would be to improve the error message on timeouts or retry.</li>
+</ul>
+</li>
+</ul>
+<p>2023/6/26</p>
+<ul>
+<li>I could see a future where I included my own private sources and then inadvertently shared the search results that included them.
+<ul>
+<li>If it contains non-public sources, let’s keep the share button out.</li>
+</ul>
+</li>
+</ul>
+<p>2023/6/27</p>
+<ul>
+<li>Create a mechanism to automatically update the system, assuming you have export privileges.</li>
+<li>Fork the current source and create a <a href="https://scrapbox.io/omoikane" class="external">/omoikane<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>specialized version</li>
+<li>create anew
+<ul>
+<li><a href="./pVectorSearch2023-06-05" class="internal" data-slug="pVectorSearch2023-06-05">pVectorSearch2023-06-05</a>.</li>
+</ul>
+</li>
+<li>The source code is scattered all over the place because of all the experimenting and piling up.
+<ul>
+<li>I’m sorry, but I’m terrible.</li>
+<li>Sometimes they go missing if you don’t organize them.</li>
+</ul>
+</li>
+<li>Duplicate export code from etude-github-actions repository</li>
+<li>From the qdrant repository
+<ul>
+<li>I didn’t pip freeze.
+<ul>
+<li><code>$ pip install -r requirements.txt </code></li>
+</ul>
+</li>
+<li>make_index_from_scrapbox.py
+<ul>
+<li>I was able to embed it.</li>
+<li><a href="./Git-LFS" class="internal alias" data-slug="Git-LFS">Git LFS</a> to save cache</li>
+</ul>
+</li>
+<li>from_pickle_to_qdrant.py
+<ul>
+<li>I could send it to qdrant.</li>
+<li>I named the collection omoikane.
+<ul>
+<li>I was a little unsure whether or not to put it together with the other cross-search, but I thought it would be simpler to talk about it with fewer dependencies if I kept it separate.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Around UI from nishio-vecsearch
+<ul>
+<li>Simplify by cutting down on unnecessary functions.</li>
+</ul>
+</li>
+<li>deploy
+<ul>
+<li>Oh, shoot, I should have separated the part where data is plugged in from the server implementation.</li>
+<li>Deployment runs in Github Action.</li>
+<li>Vercel is confused by the TS for export to begin with.
+<ul>
+<li>oh no (used as an expression of despair or when giving up)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Should we be honest and separate them?
+<ul>
+<li>omoikane-embed to insert vectors and omoikane-vecsearch to search</li>
+</ul>
+</li>
+<li>I’ve got it.</li>
+</ul>
+<p>2023-06-28</p>
+<ul>
+<li>Omoikane Embed, I’m getting a lot of duplicate hits from the same page after adding the ability to chop by 100 tokens.</li>
+<li>Easy to undo, but no fun.</li>
+<li>Or make sure to take only one case from the same page.</li>
+<li>But I forgot to commit the code for the chopping one, so it went back on its own.</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/pVectorSearch2023-06-20" class="external">/nishio/pVectorSearch2023-06-20<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./pVectorSearch" class="internal">pVectorSearch</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

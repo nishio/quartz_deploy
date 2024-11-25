@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Plurality Study Session 1</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Plurality Study Session 1"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Plurality Study Session 1"/><meta name="twitter:description" content="..."/><meta property="og:description" content="..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Plurality-Study-Session-1"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Plurality-Study-Session-1"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Plurality-Study-Session-1"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Plurality Study Session 1</a></div></nav><h1 class="article-title">Plurality Study Session 1</h1><p show-comma="true" class="content-meta"><span>May 01, 2024</span><span>32 min read</span></p></div></div><article class="popover-hint"><ul>
+<li><a href="./Cybozu-Labs-Study-Session" class="internal alias" data-slug="Cybozu-Labs-Study-Session">Cybozu Labs Study Session</a>  2024-04-26</li>
+<li>Audrey Tang and Glen Weyl’s new book “<a href="./Plurality" class="internal" data-slug="Plurality">Plurality</a> : The Future of Collaborative Technology and Democracy”</li>
+<li>English version submitted to printer on 4/18, expected to be completed on 5/20.</li>
+<li>So in this study group, we will be reading this book in several parts starting this time!</li>
+<li>Related workshops to date
+<ul>
+<li>2023-05-12  <a href="./Plurality-and-Polis-Study-Group" class="internal alias" data-slug="Plurality-and-Polis-Study-Group">Plurality and Polis Study Group</a></li>
+<li>2024-03-15  <a href="./Quadratic-Voting-and-Plural-Management-Study-Group" class="internal alias" data-slug="Quadratic-Voting-and-Plural-Management-Study-Group">Quadratic Voting and Plural Management Study Group</a></li>
+</ul>
+</li>
+<li>Japanese information is available in the forum <a href="https://scrapbox.io/plurality-japanese" class="external">/plurality-japanese<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, and this announcement will be posted in the forum later.</li>
+<li>AI legend
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/⿻Plurality Assistant/icon" alt="⿻Plurality Assistant.icon" height="19.5"/>: <a href="./⿻Plurality-Assistant" class="internal alias" data-slug="⿻Plurality-Assistant">⿻Plurality Assistant</a>, GPT to read Japanese forum content in RAG, general purpose use</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/claude/icon" alt="claude.icon" height="19.5"/>: <a href="./Claude-3-Opus" class="internal alias" data-slug="Claude-3-Opus">Claude 3 Opus</a>, used to summarize and translate long sentences</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/FractalReader/icon" alt="FractalReader.icon" height="19.5"/>: <a href="./FractalReader" class="internal" data-slug="FractalReader">FractalReader</a>, used to summarize long sentences</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/gpt/icon" alt="gpt.icon" height="19.5"/>: ChatGPT <a href="./GPT-4" class="internal" data-slug="GPT-4">GPT-4</a>, used for Bing searches for the latest information</li>
+</ul>
+</li>
+</ul>
+<p>Explanation of the cover</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>The first thing you’ll probably see is the description on the back cover, so let’s read that</li>
+<li><a href="https://scrapbox.io/plurality-japanese/8-cover-cover-commentary" class="external">/plurality-japanese/8-cover-cover-commentary<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</li>
+<li>
+<blockquote>
+<p>Digital technology threatens to tear apart a free and open society through division, inequality, and isolation. But Taiwan, a diverse and resilient island nation, has shown in the decade since the weeks-long occupation of Congress that another path is possible.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Taiwan has achieved inclusive, technology-enabled growth, survived a pandemic without a lockdown, dealt with an infodemic without information containment, committed its people to addressing common challenges such as environmental protection, and leveraged its culture of innovation to “hack the government” The company was able to</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Here, the internationally acclaimed architects of Taiwan’s digital democracy share their secrets of success: plurality (⿻) does not replace people or trust, but channels the energy inherent in social diversity toward progress, growth, and beauty, rather than conflict We utilize digital tools to From telepathy through intimate digital technology to global trade based on social networks rather than money, ⿻ promises to radically enrich human relationships and leave no one behind.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Thus, ⿻ promises to transform everything from healthcare to media. The book itself is an example of this, written as an open, self-governing collaboration of voices from around the world. The work they have done with this open text shows how everyone, from pious African farmers to Hollywood celebrities, can contribute to building a more empowered, harmonious, and inclusive world.</p>
+</blockquote>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Can you get this across without any prerequisite information? Isn’t it difficult?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>You’re going to put this amount of text on the cover?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Sure, there might be a lot of them.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> In Taiwan, 10 years after the weeks-long occupation of Congress, what are we talking about? became.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Yeah, yeah, “What are you talking about?” I know, right? That’s why I’ve prepared an explanation.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>explanation</li>
+<li>
+<blockquote>
+<p>In the decade since the weeks-long occupation of Congress, we have shown that another way is possible.
+- <a href="./Sunflower-Student-Movement" class="internal alias" data-slug="Sunflower-Student-Movement">Sunflower Student Movement</a>.
+- >  <a href="./Sunflower-Student-Movement" class="internal alias" data-slug="Sunflower-Student-Movement">Sunflower Student Movement</a> is a social movement that began on March 18, 2014, when students and citizens of the Republic of China (Taiwan) occupied the Legislative Yuan (the Japanese equivalent of the National Assembly building).
+- Author Audrey Tang is one of the key participants</p>
+</blockquote>
+<ul>
+<li>[“Another way” is implicitly comparable for US readers when we say:.
+<ul>
+<li>
+<blockquote>
+<p><a href="./2021-Attack-on-the-United-States-Capitol" class="internal alias" data-slug="2021-Attack-on-the-United-States-Capitol">2021 Attack on the United States Capitol</a> was a political riot that occurred in the United States on January 6, 2021. Supporters of then-President Donald Trump attacked the United States Capitol, where the United States Congress was in session, claiming election fraud in the 2020 United States presidential election.</p>
+</blockquote>
+</li>
+<li>Taiwan did the same thing and then got good, what’s the difference? A story called</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>We have successfully “hacked the government” by leveraging our culture of innovation.</p>
+</blockquote>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/⿻Plurality Assistant/icon" alt="⿻Plurality Assistant.icon" height="19.5"/>Known by the expression “hack the government,” the <a href="./g0v" class="internal" data-slug="g0v">g0v</a> effort was founded in Taiwan in 2012 by citizen hackers. They began “scraping” data from government websites and providing more user-friendly alternative format websites using the same data at g0v.tw. These are called “<a href="./folk" class="internal" data-slug="folk">folk</a>ed” sites and are often more popular than the original government sites. After the Sunflower Movement, several forked designs were incorporated into actual government services (from <a href="https://scrapbox.io/plurality-japanese/2-2-digital-democracy-everyday" class="external">/plurality-japanese/2-2-digital-democracy-everyday<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>).</li>
+<li><a href="https://en.wikipedia.org/wiki/G0v" class="external">g0v - Wikipedia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>
+<blockquote>
+<p>The 2014 Sunflower Student Movement in Taiwan is still fresh in our minds, and g0v played a pivotal role in that event by broadcasting live online and transparently in real time. --- [g0v zero hour government civic hacker in pursuit of open government - Taiwan Panorama <a href="https://www.taiwan-panorama.com/ja/Articles/Details?Guid=71c2e863-595c-4b39-849c-" class="external">https://www.taiwan-panorama.com/ja/Articles/Details?Guid=71c2e863-595c-4b39-849c-<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> c260c0f3e5a0&amp;CatId=7&amp;postname=%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%EF%BD%A5%E3%82%AC%E3%83%90%E3%83%A1%E3%83%B3%E3%83%88%E3%82%92 E8%BF%BD%E6%B1%82%E3%81%99%E3%82%8B%20g0v%E9%9B%B6%E6%99%82%E6%94%BF%E5%BA%9C%E3%81%AE%E3%82%B7%E3%83%93%E3%83%83%E3%82%AF%E3%83%8 F%E3%83%83%E3%82%AB]</p>
+</blockquote>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Often, the forked site is supported by citizens who say, “This site is better,” which is the will of the people.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Do you pronounce <code>g0v</code> as gab zero?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/> Yes, <code>gov-zero</code> says the head office: <a href="https://g0v.tw/intl/en/" class="external">g0v 台灣零時政府<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>The energy inherent in the diversity of our society is directed toward progress, growth, and beauty, not conflict.</p>
+</blockquote>
+<ul>
+<li>Progress, Growth, and Beauty is a Star Trek tidbit that “beauty, growth, and progress all come from the union of like and unlike.”</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/⿻Plurality Assistant/icon" alt="⿻Plurality Assistant.icon" height="19.5"/>Diversity and symbiosis are emphasized in Star Trek, and these values are portrayed within the framework of space exploration and interaction with other planets. One of the themes is to encourage new discoveries, individual growth, and overall group progress through cross-cultural understanding and cooperation.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I feel that diversity is not in conflict with each other, but rather, it is a combination of the two that creates something better.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>The cover is too <a href="./high-context" class="internal alias" data-slug="high-context">high context</a> …
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Yeah, “<a href="./high-context" class="internal alias" data-slug="high-context">high context</a>” is a good expression. That’s right. There is a lot of unwritten context. There are four sentences on the cover, but how many pages are used to explain the context of these four sentences? It’s like.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Telepathy through intimate digital technology</p>
+</blockquote>
+<ul>
+<li>Advances in technology have made it possible with current technology to go from phone calls to videoconferencing to spatial sharing via immersive VR. Beyond that, BMI and other technologies will enable “higher bandwidth (=<a href="./broadband" class="internal" data-slug="broadband">broadband</a>) information sharing.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>BMI=Brain Machine Interface?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Yes</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Before the advent of cell phones, we used to say things like, “Let’s meet in front of Hachiko at what time,” and then wait in front of Hachiko for about 15 minutes, frustrated because we didn’t see you coming. Now I can communicate with people at a distance even while walking around, so I can say, “Call me when you get there,” or “I got there, where are you now? Now, the interaction has changed to “call me when you get there” or “I’m here, where are you now?
+<ul>
+<li>From the point of view of people before the advent of cell phones, we are communicating with people in remote areas, so it’s a kind of telepathy.</li>
+</ul>
+</li>
+<li>Furthermore, a form of interaction is occurring where people go further from “where are you?” by making a phone call to meet up and share their location in real time via GPS.
+<ul>
+<li>I’m <a href="./interacting" class="internal" data-slug="interacting">interacting</a> in a <a href="./non-verbal" class="internal" data-slug="non-verbal">non-verbal</a> way, without <a href="./turn-based-communication" class="internal alias" data-slug="turn-based-communication">turn-based communication</a>.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Pagers are telepathic with very low bit rates
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Yes, and telepathy is becoming broadband
+<ul>
+<li>“You’re doing something interesting!” I want to see it! I want to see!” then you can “share what you see” using Tweakath, Instalive, and various messenger video calls.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Global trade based on social networks, not money</p>
+</blockquote>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/⿻Plurality Assistant/icon" alt="⿻Plurality Assistant.icon" height="19.5"/>A form of value exchange that does not use the traditional monetary system
+<ul>
+<li>Non-monetary values, such as social capital and trust, form the basis of transactions.</li>
+<li>Value is created based on mutual cooperation and contributions between communities, which is then used in place of money for trade and exchange of services</li>
+</ul>
+</li>
+<li>Tokens that express quantities of value,” such as those once carried by money, can now be easily issued.
+<ul>
+<li>For example, contributions to the OSS can be quantified as those tokens, and those tokens can be used to incentivize others to make the contributions you want them to make.
+<ul>
+<li>This is the same composition as working, earning money, and then using that money to buy <a href="./made-to-order" class="internal" data-slug="made-to-order">made-to-order</a> things.</li>
+<li>(See previous <a href="./Quadratic-Voting-and-Plural-Management-Study-Group" class="internal alias" data-slug="Quadratic-Voting-and-Plural-Management-Study-Group">Quadratic Voting and Plural Management Study Group</a> for specifics.)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>My activities in the Plurality project are “global trade” because I do what Glen in the U.S. wants me to do and receive tokens from me in Japan.
+<ul>
+<li>Collaborate without worrying about whether you are in the U.S. or Taiwan, or where you are physically located.</li>
+</ul>
+</li>
+<li>It’s similar to stock options in that people who find value in the tokens work for them as a reward.
+<ul>
+<li>Stock options are “tokens that cannot be exchanged for money” at the time of grant, and the “expectation” that they may have value when the stock is listed in the future creates subjective value.</li>
+<li>PMP tokens can be considered a separate ownership interest in an OSS project, just as shares are a separate ownership interest in a company.
+<ul>
+<li>You have a vote on where the project is going, so it’s like a real-time shareholder meeting.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I feel like I can explain this story because I’ve read the PMP paper and am involved in the project, not because I read the book… It’s high context.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Tax PMP tokens in the future?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>What is the entity entitled to taxation?
+<ul>
+<li>The state is in armed control of an area and has the power to demand that the people living there “give us money” in this way, so taxation is done, but who has the authority to tax this activity on the Web? This is a difficult subject, so I’ll leave it at that and go to the next question.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Does the same as stock options include the implication that they may be redeemable for real money in the future?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>This is the important part. If the system allows conversion to Japanese yen, it will be taxable.
+<ul>
+<li>
+<blockquote>
+<p>If the so-called NFTs (non-substitutable tokens) or FTs (substitutable tokens) are exchangeable for crypto assets or other assets with property value, then transactions using the NFTs or FTs are subject to income tax.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<ul>
+<li>Transactions using NFTs or FTs that cannot be exchanged for assets having property value are not subject to income tax.</li>
+</ul>
+</blockquote>
+</li>
+<li><a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1525-2.htm" class="external">No.1525-2 Taxation of transactions with NFTs and FTs｜National Tax Administration Agency<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>If it’s not convertible, it’s like in-game currency.</li>
+<li>Can be circulated as a medium of value while remaining separate from legal tender, which can be used to make transactions in the game to increase it and make changes favorable to you without being subject to taxation.</li>
+<li>This is the meaning of the phrase “Global trade based on social networks, not money</li>
+<li>The idea is that such a medium of value can be created and nurtured to increase its value. No one really knows how much the PMP tokens from the PluralityBook project will actually be worth, but the “Audrey Tan-Grenweil Game” has the potential to grow into an interesting game, and I feel like I’m participating in early access to it.</li>
+<li>I’m betting on the one that grows, and I’m getting stock option-like tokens to help me work with it. Real stock options, of course, can run out of paper without going public. This is ultimately a gamble.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Does this mean that it is up to the project owner to decide if it can be converted into actual money?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>It depends on the will; I don’t think PluralityBook’s PMP token will do it.” It would ruin “what we want to achieve” which is “global trade based on social networks, not money.
+<ul>
+<li>The decision to redeem depends on whether you want to redeem it or not, but basically I don’t want to redeem it.</li>
+<li>Well, I think it depends on how much money people want.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Would it be redeemable if the owner decided to buy it?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Oh, for example, if I were to say in my open source project, “If you fix this bug, I will give you 10,000 credits, and I will buy them back for 1 yen per credit,” that would be a redeemable credit.
+<ul>
+<li>However, I believe the tax office will tell those who receive 10,000 credits to declare it as miscellaneous income and pay tax on it.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Whether or not to make it redeemable is how the project owner wants to do it, not a layer of the PMP itself?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Yes, outside of PMP, the Open Question in the PMP paper states [” While management credits are not by default monetary, the decision to distribute such rewards based on them must Therefore, the decision to distribute such rewards based on them must be made in the context of existing organizational cultures. He wrote.
+<ul>
+<li>Currently, the value is managed in a ledger on Github, but if it were implemented to be output in <a href="./ERC-20" class="internal" data-slug="ERC-20">ERC-20</a> format on Ethereum, for example, it would be able to be exchanged on exchanges like existing cryptocurrencies.</li>
+<li>What would be the problem if we did that, uh, what would be the problem?</li>
+<li>Me personally, I wouldn’t want to do that because it would require me to pay taxes. That’s my perspective as an individual participating in the project.</li>
+<li>For those managing the system, the quickest way to reduce the risk of someone with a lot of money coming in and taking the project is to not allow the money to be exchanged in the first place.</li>
+<li>It is preferable to create a situation where only those who have actively contributed to the project can obtain the right to govern the project.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>The issuance and distribution of tokens is the source of power. … Conversely, if it becomes too big to overlook, the state (or existing power) will want to control it. On the other hand, the state could ensure that the issuance and distribution of tokens is transparent and fair.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Does the state have control over tokens that have become too big to overlook, e.g. Bitcoin or Ethereum?
+<ul>
+<li>What exactly is control?</li>
+<li>For example, if China wanted to control Ethereum and attacked servers in the U.S., the U.S. would be upset.</li>
+<li>I understand the state’s desire to control, but you don’t have the ability to implement control. Isn’t <a href="./the-Network-State" class="internal alias" data-slug="the-Network-State">the Network State</a> stronger than the state? It’s a situation like that.</li>
+<li>I think China is doing its best to control the flow of assets out of the country by converting them to Bitcoin and other forms of capital control, which they don’t like, but I think it will be a challenge to see how this area will develop.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>I realized that PMP tokens are “virtues” in the sense that they are contributions to OSS projects, and that virtues and tokens are similar.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Funny joke, yes, I am now virtuously working on the Plurality project. w
+<ul>
+<li>To put it in Christian terms, you are piling up wealth in that heaven. So, you are not spending your wealth in cash, Japanese yen, or other trivial assets on earth, but in this way, you are training and contributing in order to send wealth to the heavenly realms, and you are devoting your labor and loyalty to the realization of God’s Kingdom. Heavenly wealth does not need to be convertible into Japanese yen, nor do we want to. This kind of joke makes people think we are a cult. w</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>A class called Introduction to Web3 at Chiba Institute of Technology issues tokens that cannot be redeemed for completing reports and quests, and grades students according to the number of tokens.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Interesting. It’s <a href="./gamification" class="internal" data-slug="gamification">gamification</a> of education, <a href="./edutainment" class="internal" data-slug="edutainment">edutainment</a>, <a href="./token-economy" class="internal alias" data-slug="token-economy">token economy</a>.</li>
+<li><a href="https://www.it-chiba.ac.jp/topics/pr20230822/" class="external">254 students who took Introduction to web3 were issued NFT/VC digital study history certificates | Topics/Announcements | Chiba Institute of Technology<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>
+<blockquote>
+<p>The web3 overview course offered at Chiba Institute of Technology in the spring semester of 2023 has been completed and students who met certain criteria were issued NFTs and VCs, certifying their academic history.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>The use of web3 tools such as tokens and <a href="./Dework" class="internal" data-slug="Dework">Dework</a> and the gamification element in the classes encouraged students to learn from each other, with 68% of the students saying that the web3 tools enhanced their knowledge acquisition.</p>
+</blockquote>
+</li>
+<li>Do you also issue <a href="./verifiable-credentials" class="internal alias" data-slug="verifiable-credentials">verifiable credentials</a>?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>So far you have finally read the four paragraphs on the cover. Yes, we are moving on.</li>
+</ul>
+</li>
+</ul>
+<p>Changes in interactions due to technological developments affect the way public</p>
+<ul>
+<li>The reason why we are talking about telepathy and global trade is because we believe that “changes in interactions due to technological development will affect the way public life is conducted.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Whose statement was it that if the way people interact with each other changes as a result of technological development, the structure of society needs to change as well?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/⿻Plurality Assistant/icon" alt="⿻Plurality Assistant.icon" height="19.5"/>With regard to the subject you are talking about, you seem to be referring to Glen Weyl’s idea that “technology changes the way people interact, so democracy needs to change with it. This idea is based on the thought of <a href="./John-Dewey" class="internal alias" data-slug="John-Dewey">John Dewey</a> that every time a new technology comes along, it changes the way people interact and therefore the form of democracy needs to change accordingly!</li>
+</ul>
+</li>
+<li>Give Claude <a href="./John-Dewey" class="internal alias" data-slug="John-Dewey">John Dewey</a>’s <a href="./The-Public-and-Its-Problems" class="internal alias" data-slug="The-Public-and-Its-Problems">The Public and Its Problems</a>, which is available on the Gutenbeng Project, and ask questions (finally, my summary is in bold, so read there).</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Q: Quote and explain the part about “Every time a new technology comes along, people interact in new ways.”
+<ul>
+<li>The following is the part of this statement that relates to the way technological developments are changing the way society interacts with each other.</li>
+<li>“(English paragraph)”</li>
+<li>In other words, as new technologies emerge, the consequences that result from them extend beyond the scope of those directly involved with them. Therefore, special institutions and measures are formed to deal with and manage the consequences, or existing groups must assume new functions. This leads to the organization of the public (public) or the state, the obvious external feature of which is described as the existence of public officials.</li>
+<li>Thus, Dewey offers the insight that technological developments will change the way society interacts, and the public and the state will change in response. As new technologies have far-reaching effects on society, new mechanisms are required to manage them.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Summarize in bullet points, including before and after.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/Claude/icon" alt="Claude.icon" height="19.5"/>Yes. The following is a summary, including the paragraphs before and after.
+<ul>
+<li>The consequences of interconnected actions may be spatially and temporally expansive, uniform, repetitive, and irreversible. The importance of such consequences is a matter of degree, and there are no clear boundaries within which the public (public) is created.</li>
+<li>The public consists of recognizing indirect and lasting results and is organized as a state through special institutions to systematically manage its interests.
+<ul>
+<li>インタラクションの結果は、インタラクションの行われた場所・時間に限定されない広い範囲の影響を引き起こすことがある。変化の中には、変化前に戻すことが困難なものもある。ある特定の行動パターンが繰り返されると、変化は積み重なっていって大きな影響を持つことがある。インタラクションそれ自体ではなく、それがもたらした”間接的で持続的な結果”によって「公共」が形成される<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/></li>
+</ul>
+</li>
+<li>With the development of technology, the consequences of combined actions extend beyond the scope of those directly involved. Therefore, addressing and managing those consequences will require the formation of special agencies and measures, or the taking charge of new functions of existing groups.</li>
+<li>An obvious external feature of the organization of the public and the state is the presence of public officials. Government is not the state, but includes both the public and the rulers who have special duties and powers. The public is organized through the civil service.</li>
+<li>The main issue for the public is to achieve a self-awareness that will carry the weight of the public interest and influence the election of public officials and the definition of their responsibilities and rights.
+<ul>
+<li>技術の発展によりインタラクションの形が変わる。インタラクションの形が変わると「公共」の形も変わる。それを組織化する「公務員」も変わる。「公務員」の定義が公共の主要な問題だ。<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I think most people associate the term “public servant” with “someone who is paid by the government.”<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>
+<ul>
+<li>But here it means something a little different</li>
+<li>For example, with the birth and spread of television technology, a “ruler with special authority” was born who had the power to decide “what to broadcast on television. This was the “civil servant,” and the public at that time was organized through this civil servant.</li>
+<li>Later, with the spread of social media, anyone could post and it was up to people to decide which posts to spread widely. Many “influencers” were created who were referenced by many people, and through them a new public was formed.</li>
+<li>The American perspective is that this is a problem because of the extreme divisions that are occurring as a result of this. There are more people who think there will be a civil war in the next decade than those who think there won’t, in the U.S. (<a href="./Majority-believe-civil-war-will-break-out-in-the-U.S." class="internal alias" data-slug="Majority-believe-civil-war-will-break-out-in-the-U.S.">Majority believe civil war will break out in the U.S.</a>). Can we do something to make this a good thing? So I’m thinking something like.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>The idea that the definition of public servant explains the public is new to me!
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>This morning, I also thought that I didn’t have this explanation, so I asked Claude to pull it from the original text and make a commentary. The reason it’s not very coherent is that I just finished it, and I wrote it about 30 minutes ago, so it’s fresh for me, too.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>So this story is not in the books.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I think there are bits and pieces that may or may not be listed, but they don’t seem to use “public servant” in this sense
+<ul>
+<li>It is said that the development of technology will change the form of interaction, which in turn will change the form of society.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>find one’s way</p>
+<ul>
+<li>A text explaining where to start reading</li>
+<li><a href="https://scrapbox.io/plurality-japanese/0-2-find-your-way(Dao)" class="external">/plurality-japanese/0-2-find-your-way(Dao)<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>The book is about Taoism, Taoism of Taoism, and Tao refers to this “Tao”, and so on, without any particular notes. I am getting worried about the translation of this book. I think you need to add a lot of notes to make the text easy to understand.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>As discussed in this book, books with a linear narrative structure have the major drawback of forcing all readers onto a single learning path. The online version avoids this problem by making extensive use of hyperlinks, but for those who have the paper book, it may be more difficult to read through. To alleviate some of this problem, we have structured our text in a “circular” fashion. Readers can start reading at various points, then continue from there, and finally come back to the “previous” part of the book.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>In particular, we recommend the following</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p>If you are primarily interested in current events, politics, or current events, start at the beginning of the book, i.e., the preface, and read in order.</p>
+</blockquote>
+<ul>
+<li>[/plurality-japanese/1-0-see plurality](<a href="https://scrapbox.io/plurality-japanese/1-0-see" class="external">https://scrapbox.io/plurality-japanese/1-0-see<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> plurality).</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>If you have a more conceptual, theoretical, or broadly intellectual interest, I suggest you skip parts 1 and 2 and start reading from part 3.</p>
+</blockquote>
+<ul>
+<li>What is <a href="https://scrapbox.io/plurality-japanese/3-0-%E2%BF%BB" class="external">/plurality-japanese/3-0-⿻<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Is the double □-like symbol (Plurarity) garbled or intentional? If it is intentional, why does the shape represent plurarity?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/><a href="https://scrapbox.io/plurality-japanese/%E2%BF%BB" class="external">/plurality-japanese/⿻<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> is a Unicode character intentionally used to represent Plurality. This was originally one of the CJK composite Kanji conventions. It is a Unicode character meant to represent the overlapping of multiple characters to create a new character. In this document, Plurality is represented by this. It expresses the feeling that people with different opinions should also overlap. The Unicode characters are perfect for expressing the idea that new and better things can be created by combining different things, and the process of replacing the words “plurality” and “plural” in the text with these pictograms began around March. The process of replacing all the words “plurality” and “plural” in the text with this pictogram was started in March.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Those with a more technical, technological, or engineering focus may want to start with part 4.</p>
+</blockquote>
+<ul>
+<li>[/plurality-japanese/4-0-rights,operating-system,⿻ freedom](<a href="https://scrapbox.io/plurality-japanese/4-0-rights,operating-system,%E2%BF%BB" class="external">https://scrapbox.io/plurality-japanese/4-0-rights,operating-system,⿻<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> freedom)</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Those interested in specific techniques and their applications should consider starting their reading with Part 5.</p>
+</blockquote>
+<ul>
+<li><a href="https://scrapbox.io/plurality-japanese/5-0-cooperation-technology-and-democracy" class="external">/plurality-japanese/5-0-cooperation-technology-and-democracy<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Those interested in the impact on the real world in specific social areas may want to start with Part 6.</p>
+</blockquote>
+<ul>
+<li>[/plurality-japanese/6-0-⿻ to reality](<a href="https://scrapbox.io/plurality-japanese/6-0-%E2%BF%BB" class="external">https://scrapbox.io/plurality-japanese/6-0-⿻<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> to reality).</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>If your focus is on publicpolicy, government, or social movements, we recommend that you start reading Part 7.</p>
+</blockquote>
+<ul>
+<li><a href="https://scrapbox.io/plurality-japanese/7-0-policy" class="external">/plurality-japanese/7-0-policy<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>No matter where they start, most readers who find value will find it beneficial to continue reading and supplement the theoretical framework of the “second half” of the book with content from the “first half.”</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>This book is a <a href="./living-document" class="internal alias" data-slug="living-document">living document</a>. If you are reading the print version, it is most likely already out of date. You can read or download the latest version for free at <a href="https://www.plurality.net/." class="external">https://www.plurality.net/.<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+<ul>
+<li>Related: Scrapbox Philosophy <a href="./Not-a-warehouse-to-put-dead-text-in." class="internal alias" data-slug="Not-a-warehouse-to-put-dead-text-in.">Not a warehouse to put dead text in.</a>.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>I also thought that the only real up-to-date version is in my head, and the articles on the web are kind of old.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Yes, the real Plurality is the one that is collectively and intellectually dispersed and recorded within each person in the community. And the first version that was brought together and written out in the form of a single book is the current version, and the paper book is a printed snapshot of that.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>I wonder if the print version is positioned as a gateway to Plurality.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>It’s one of many entrances, and there should be many entrances.
+<ul>
+<li>I hear a documentary film on Audrey is being made.</li>
+<li>Regarding the activity of joining the Discord Server and sending a Pull Request to GitHub, how many people are coming in from the print version? I have a feeling that there is a big difference as a segment. I have a feeling that there is a difference in segmentation.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>More importantly, we want you all to be co-creators of this project, not just readers. You can raise concerns or issues with the text (as “issues”) for the community to prioritize, or submit suggestions for improvement (as “<a href="./pull-requests" class="internal alias" data-slug="pull-requests">pull requests</a>”) to <a href="https://github.com/pluralitybook/plurality." class="external">https://github.com/pluralitybook/plurality.<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> All contributions are valued and earn the contributor recognition and governance rights as described below.</p>
+</blockquote>
+<ul>
+<li>Actual case study: (translation note)[/plurality-japanese/Immersive Reality 加筆Issue](<a href="https://scrapbox.io/plurality-japanese/Immersive" class="external">https://scrapbox.io/plurality-japanese/Immersive<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Reality 加筆Issue)<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/></li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>It’s open source-like!</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>When we make mistakes, see them as opportunities. If you feel we are wrong, correct us. If we are not speaking in your community’s language, please make a version that tells us in your language. If you don’t want to communicate with your community, this material is not copyrighted, so use only the parts you need and don’t worry about the rest. Instead of asking, “Why isn’t anyone doing this?” be that someone yourself.</p>
+</blockquote>
+<ul>
+<li>(Translator’s note: The last sentence is<a href="./Don't-say,-&quot;Why-isn't-anyone-doing-it&quot;-You're-one-of-them." class="internal alias" data-slug="Don't-say,-&quot;Why-isn't-anyone-doing-it&quot;-You're-one-of-them.">Don’t say, “Why isn’t anyone doing it?” You’re one of them.</a> 由来<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>
+<ul>
+<li>You don’t need to ask me what someone else does. That’s why “沒有人” is so versatile.</li>
+<li>沒有人=nobody</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Where shall I start reading?</p>
+<ul>
+<li>Naturally, it is not possible to read all of it in this one-hour study session.
+<ul>
+<li>In terms of the lab, maybe chapters 4~6 first?</li>
+<li>
+<blockquote>
+<p>Those with a more technical, technological, or engineering focus may want to start with part 4.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Those interested in specific techniques and their applications should consider starting their reading with Part 5.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Those interested in the impact on the real world in specific social areas may want to start with Part 6.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>First, see the Table of Contents
+<ul>
+<li>Chapter 4
+<ul>
+<li>4-0-Rights, Operating System, ⿻ Freedom</li>
+<li>4-1-Identity and personality</li>
+<li>4-2-Association and ⿻ Public
+<ul>
+<li>The word “association” is “association,” and I’m having a hard time deciding what to translate.</li>
+</ul>
+</li>
+<li>4-3-Commerce and Trust</li>
+<li>4-4-Property rights and contracts</li>
+<li>4-5-Access</li>
+</ul>
+</li>
+<li>Chapter 5
+<ul>
+<li>5-0-Cooperation Technology and Democracy</li>
+<li>5-1-Post Symbolic Communication</li>
+<li>5-2-Immersive Shared Reality</li>
+<li>5-3-Creative Collaboration</li>
+<li>5-4-Extended Deliberation</li>
+<li>5-5-Adaptive management</li>
+<li>5-6-⿻ Voting</li>
+<li>5-7 Social market</li>
+</ul>
+</li>
+<li>Chapter 6.
+<ul>
+<li>6-0-⿻ to reality</li>
+<li>6-1-Workplace</li>
+<li>6-2-Health</li>
+<li>6-3-Media</li>
+<li>6-4-Environment</li>
+<li>6-5 Learning</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Which chapters might be of interest to a researcher in a groupware company? Explain with reasons (I gave a summary by <img src="https://scrapbox.io/api/pages/nishio/FractalReader/icon" alt="FractalReader.icon" height="19.5"/>).</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/claude/icon" alt="claude.icon" height="19.5"/>The following chapters are likely to be of most interest to corporate researchers in groupware.
+<ol>
+<li>6-1-Workplace
+<ul>
+<li>The chapter discusses improvements to the work environment, including strengthening remote teams, designing effective corporate campuses, improving communication, more inclusive access to talent, and more effective delivery of common corporate infrastructure. Groupware will be of great interest to researchers because it provides tools and technologies directly related to these issues.</li>
+</ul>
+</li>
+<li>5-1-Post Symbolic Communication
+<ul>
+<li>It is stated that in the future, direct sensory sharing, such as telepathy, could fundamentally change human relationships and social structures. Groupware researchers are keenly interested in advances in communication technology, so the content of this chapter will be of interest to them.</li>
+</ul>
+</li>
+<li>5-3-Creative Collaboration
+<ul>
+<li>This chapter describes a vision of the future of creative collaboration that integrates human and non-human, past and future intelligence and harnesses collective creativity to address global challenges. Researchers will be interested in the content of this chapter because groupware is a tool that facilitates collaboration.</li>
+</ul>
+</li>
+<li>5-4-Extended Deliberation
+<ul>
+<li>It describes experimental attempts to improve the quality and depth of remote interaction using the latest technology. Groupware researchers are interested in improving the quality of remote communication and discussion, so the content of this chapter should appeal to them.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<p>6-1-Workplace</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/FractalReader/icon" alt="FractalReader.icon" height="19.5"/> Level3 <a href="https://fractal-summarizer-fe6eaa294c58.herokuapp.com/view/6d88c5c3-a42c-4175-85ca-f31eb2ab557f" class="external">https://fractal-summarizer-fe6eaa294c58.herokuapp.com/view/6d88c5c3-a42c-4175-85ca-f31eb2ab557f<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>
+<blockquote>
+<p>The workplace produces about 70% of the world’s GDP, and efficiency gains are needed, so this chapter focuses on restructuring the workplace.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>COVID-19 pandemic has led to widespread remote work, an increase in digital nomads, and the establishment of hybrid workstyles.</p>
+</blockquote>
+<ul>
+<li>So far, so Cybozu-esque, it’s like, “Yeah, right!”</li>
+<li>The question here is how to make new team members and new professionals “part of the organization” and how to do team building</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Remote Immersive Shared Reality (ISR) promotes collaborative and creative teamwork in a virtual environment and greatly enhances team building and training by overcoming geographic barriers.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>The use of digital tools allows for deeper connections beyond the barriers of physical distance.</p>
+</blockquote>
+</li>
+<li>What is the office in the first place?
+<ul>
+<li>
+<blockquote>
+<p>Comprehensive campus design</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>The main role of a corporate campus is to realize the “agglomeration” effect within a company, which is an important source of economic benefit for the city.</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p>Many workplaces, especially white-collar jobs, are physically concentrated on large “corporate campuses.” While many of the functions concentrated on these campuses may be organizationally quite independent, extensive co-locations are aimed at providing opportunities for incidental interactions between different departments. This “agglomeration” effect has been shown by the extensive economics literature to be an important source of economic benefits for cities. The primary role of the corporate campus is to realize these benefits within the corporation.</p>
+</blockquote>
+</li>
+<li>In other words, people who are business-related interact with each other even when they work remotely.</li>
+<li>That creating opportunities for unrelated people to interact with each other should have the same benefits as the “economic effects caused by the concentration of population in the city”.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Steve Jobs’ redesigned Pixar headquarters includes shared spaces that encourage accidental encounters and cross-pollination.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>The ISR campus allows employees to explore potential placements and participate in virtual meetings, making the physical campus design more flexible.</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p>Faster and more flexible prototyping than physical campus construction.</p>
+</blockquote>
+</li>
+<li>In 2021 I set up an in-house Minecraft server and tried to use it as a virtual office platform.
+<ul>
+<li>At this point, the use of a virtual office was not feasible because of the lack of audio conversation with people in close proximity and seamless connection to high-definition video conferencing.</li>
+<li>If that area is improved, it could become the de facto virtual 3D space creation tool that most people below a certain age are familiar with how to operate.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Conference</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p>⿻ practices and tools can enable more open and inclusive conversations about an organization’s biggest challenges, turning top-down rituals into exciting participatory exploration.</p>
+</blockquote>
+<ul>
+<li>This is the “operation” and “culture” that’s been established in Cybozu’s way, where you bang on the actual thread, regardless of whether the CEO is speaking or not.</li>
+<li>Mechanisms have also been created to seek bottom-up advice asynchronously and broadly.
+<ul>
+<li><a href="https://logmi.jp/business/articles/325852" class="external">Cybozu’s “advice-gathering app” is a revolutionary attempt to eliminate “unreasonable opinions because you’re an important person” - Log Me Biz<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="./Even-the-Opinions-of-&quot;Rinpai&quot;-are-Overturned-Cybozu's-unique-management-decision-making-style-when-we-asked-Cybozu-about-the-process-of-selecting-the-classification-for-the-TSE's-new-market." class="internal alias" data-slug="Even-the-Opinions-of-&quot;Rinpai&quot;-are-Overturned-Cybozu's-unique-management-decision-making-style-when-we-asked-Cybozu-about-the-process-of-selecting-the-classification-for-the-TSE's-new-market.">Even the Opinions of “Rinpai” are Overturned? Cybozu’s unique management decision-making style when we asked Cybozu about the process of selecting the classification for the TSE’s new market.</a></li>
+<li><a href="https://hybridwork.cybozu.co.jp/condition/decision-making/" class="external">THE HYBRID WORK Cybozu’s media specializing in hybrid work<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>⿻ hiring</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p>Many businesses and roles have a “standard career path” and recruit primarily from a specific degree program or professional background, but regret that this excludes many talented and diverse candidates.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Social identity systems, modern large-scale language models (LLMs), and remote shared reality technology may help address these challenges.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>These tools can help understand the scope of diversity covered by a company’s customer base and can help HR optimize diversity in a more sophisticated and intersectional way.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Aligning wisdom and influence</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p>Power within an organization is based on position, but in the social web power may emerge from below to above, illustrating the limitations of the traditional hierarchical system.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>New technologies can create a work environment that does not rely on formal hierarchical structures, using natural language processing and generative infrastructure models to assess individual “natural leadership,” with power shifting fluidly based on contributions.</p>
+</blockquote>
+</li>
+<li>This kind of de-hierarchization is also what Cybozu has done.
+<ul>
+<li><a href="https://cybozushiki.cybozu.co.jp/articles/m001504.html" class="external">What is a teal organization?　What are the points that are often misunderstood? ─ ─ I asked Mr. Kenshu Kamura, a leading expert on the subject | Cybozu Style<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>
+<blockquote>
+<p>Teal organizations often use the “advice process” rather than the approval process or consensus (decision-making through meetings) as a means of decision-making.</p>
+</blockquote>
+</li>
+<li>Cybozu’s “Advice App” is a software realization of the “advice process” here using kintone.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Microsoft Case Study
+<ul>
+<li>
+<blockquote>
+<p>Nadella stimulates intra-company entrepreneurship through her role at OCTO, which coordinates cross-sectoral investments to achieve “solidarity and dynamism” in the organization.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>OCTO has achieved much, including business-to-business technology projects related to the Web3 strategy, but has faced the challenge of utilizing a small staff not familiar with the business needs of the field when making major investment and incubation decisions.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>OCTO provides truly cross-organizational support over the traditional “20% time model” by identifying clusters of interest among organizations, hosting fun events to build connections between organizations, and providing <a href="./matching-funds" class="internal alias" data-slug="matching-funds">matching funds</a> when diverse organizations support investments.</p>
+</blockquote>
+<ul>
+<li>The “20% time model” refers to Google’s [20% rule</li>
+<li>Cybozu copied and expanded this when they created the lab.
+<ul>
+<li>
+<blockquote>
+<p>“Within the scope of the R&amp;D areas set by <a href="./Cybozu-Labs" class="internal alias" data-slug="Cybozu-Labs">Cybozu Labs</a>, it is guaranteed that you can devote at least 50% of your work time to R&amp;D themes that you set yourself. In a nutshell, we say, ‘You can do whatever you want half the time,’ but if you look closely, you may be doing what you like 100% of the time (laughs)” (Aono) <a href="https://japan.cnet.com/article/20367070/2/" class="external">src<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>On the other hand, there is talk that not only the lab but also the headquarters should have the discretion to do spontaneous projects.
+<ul>
+<li>The “hackathon” started in 2013 at the Cybozu Lab Youth Center and now also at the head office was based on this awareness of the issue.</li>
+</ul>
+</li>
+<li>The idea of “providing matching funds when diverse organizations support an investment” is interesting.
+<ul>
+<li>Creating a fund because it is difficult to evaluate whether discretionary actions are beneficial to the company as a whole.</li>
+<li>However, this can only address “needs known in advance”.</li>
+<li>I can’t appreciate something that I’m glad I did after about three years.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>I envision a future workplace where remote and in-person teams form equally strong bonds and leverage diversity to achieve a more productive and inclusive future.</p>
+</blockquote>
+<ul>
+<li>This is a theme that Cybozu would like to consider as its own.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>remaining</p>
+<ul>
+<li>I probably don’t have much time, so I’ll start with a brief introduction to the rest.
+<ul>
+<li>If I have extra time, I’ll read it in the fractal summary.</li>
+</ul>
+</li>
+<li>5-1-Post Symbolic Communication
+<ul>
+<li>From the story of the aging experience available at the “Aging Park” at the National Museum of Emerging Science and Innovation.</li>
+<li>Effects of “shared experiences” that are not “verbal” communication</li>
+<li><a href="https://fractal-summarizer-fe6eaa294c58.herokuapp.com/view/2590c159-2dac-42d0-8237-b9fe400d5084" class="external">https://fractal-summarizer-fe6eaa294c58.herokuapp.com/view/2590c159-2dac-42d0-8237-b9fe400d5084<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>5-3-Creative Collaboration
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/claude/icon" alt="claude.icon" height="19.5"/>This chapter integrates human and non-human, past and future intelligence…</li>
+<li>Human intelligence and “AI as non-human intelligence” can collaborate creatively.</li>
+<li>Collaboration in the present with “thinking in the past” is possible by passing classic masterpieces written in the past to a generative AI that can generate text according to current conditions.</li>
+<li>Homogenization of creativity is a problem; it is important to regenerate cultural diversity</li>
+<li><a href="https://fractal-summarizer-fe6eaa294c58.herokuapp.com/view/98ada576-6e88-4179-aae5-3197f633201b" class="external">https://fractal-summarizer-fe6eaa294c58.herokuapp.com/view/98ada576-6e88-4179-aae5-3197f633201b<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>5-4-Extended Deliberation
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/claude/icon" alt="claude.icon" height="19.5"/>Experimental attempt to improve the quality and depth of remote dialogues through the use of the latest technology</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/FractalReader/icon" alt="FractalReader.icon" height="19.5"/>Extensions of systems such as Polis and Community Notes using graph theory and GFM are being actively developed, which allow participants to move beyond limited short statements and simple voting to full representations of the conversation, and models summarize the conversation to make it easier for other participants to participate The model summarizes the conversation and makes it easier for other participants to participate.</li>
+<li><a href="https://fractal-summarizer-fe6eaa294c58.herokuapp.com/view/ce786073-501a-4dcb-96c5-0489a5f11901" class="external">https://fractal-summarizer-fe6eaa294c58.herokuapp.com/view/ce786073-501a-4dcb-96c5-0489a5f11901<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/Plurality%E5%8B%89%E5%BC%B7%E4%BC%9A1" class="external">/nishio/Plurality勉強会1<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Scrapbox-as-a-real-time-sharing-of-thoughts" class="internal">Scrapbox as a real-time sharing of thoughts</a></li><li><a href="./Weekly-journal-2024-04-29~2024-05-12" class="internal">Weekly journal 2024-04-29~2024-05-12</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

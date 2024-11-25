@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>⿻Plurality and Plural Management Protocol</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="⿻Plurality and Plural Management Protocol"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="⿻Plurality and Plural Management Protocol"/><meta name="twitter:description" content="2024-03-30 Namera Conference 4 Lecture Cybozu Labs/Mitoh Incorporated Association Yasukazu Nishio ⿻Plurality Book ”⿻ 數位 Plurality: The Future of Collaborative Technology and ..."/><meta property="og:description" content="2024-03-30 Namera Conference 4 Lecture Cybozu Labs/Mitoh Incorporated Association Yasukazu Nishio ⿻Plurality Book ”⿻ 數位 Plurality: The Future of Collaborative Technology and ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="2024-03-30 Namera Conference 4 Lecture Cybozu Labs/Mitoh Incorporated Association Yasukazu Nishio ⿻Plurality Book ”⿻ 數位 Plurality: The Future of Collaborative Technology and ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/⿻Plurality-and-Plural-Management-Protocol"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/⿻Plurality-and-Plural-Management-Protocol"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="2024-03-30 Namera Conference 4 Lecture Cybozu Labs/Mitoh Incorporated Association Yasukazu Nishio ⿻Plurality Book ”⿻ 數位 Plurality: The Future of Collaborative Technology and ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="⿻Plurality-and-Plural-Management-Protocol"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>⿻Plurality and Plural Management Protocol</a></div></nav><h1 class="article-title">⿻Plurality and Plural Management Protocol</h1><p show-comma="true" class="content-meta"><span>Apr 14, 2024</span><span>13 min read</span></p></div></div><article class="popover-hint"><p>2024-03-30 <a href="./Namera-Conference-4" class="internal alias" data-slug="Namera-Conference-4">Namera Conference 4</a> Lecture</p>
+<ul>
+<li>Cybozu Labs/Mitoh Incorporated Association Yasukazu Nishio</li>
+</ul>
+<p>⿻Plurality Book</p>
+<ul>
+<li>”⿻ 數位 Plurality: The Future of Collaborative Technology and Democracy.”</li>
+<li><a href="./Audrey-Tang" class="internal alias" data-slug="Audrey-Tang">Audrey Tang</a> and <a href="./Glen-Weyl" class="internal alias" data-slug="Glen-Weyl">Glen Weyl</a> are writing a “<a href="./book-as-OSS" class="internal alias" data-slug="book-as-OSS">book as OSS</a>” on Github.</li>
+<li>The English version of the manuscript was completed on 2024-03-24. PDF is <a href="https://github.com/pluralitybook/plurality/releases/tag/latest" class="external">here<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>!</li>
+<li><img src="https://gyazo.com/849e79ba434c6ed6e748912659a1653d/thumb/1000" alt="image"/>
+<ul>
+<li>It has been mentioned several times at the <a href="./name-your-price-conference" class="internal alias" data-slug="name-your-price-conference">name-your-price conference</a>, but I’ll take this opportunity to explain it for those who know nothing about it.</li>
+</ul>
+</li>
+</ul>
+<p>Audrey Tang</p>
+<ul>
+<li>Programmer, active in the open source community</li>
+<li>At 32 <a href="./Sunflower-Student-Movement" class="internal alias" data-slug="Sunflower-Student-Movement">Sunflower Student Movement</a> (2014)
+<ul>
+<li>
+<blockquote>
+<p>A social movement that began on March 18, 2014, when students and citizens of the Republic of China (Taiwan) occupied the Legislative Yuan (the Japanese equivalent of the National Assembly building). --- <a href="https://ja.wikipedia.org/wiki/%E3%81%B2%E3%81%BE%E3%82%8F%E3%82%8A%E5%AD%A6%E7%94%9F%E9%81%8B%E5%8B%95" class="external">Sunflower Student Movement - Wikipedia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+</li>
+<li>Cable pulled, broadband connection, Live relay
+<ul>
+<li>Created a means of direct information dissemination sharing instead of existing media</li>
+<li>
+<blockquote>
+<p>(Audrey) I supported the students’ movement by <a href="./live-transmission" class="internal alias" data-slug="live-transmission">live transmission</a> online with members of <a href="./g0v" class="internal" data-slug="g0v">g0v</a> inside the Legislative Yuan, where the students were holed up. We connected the inside and outside of the Legislative Yuan with live cameras so that 20 private organizations could discuss human rights, labor, and environmental issues. Then we put together four demands in three weeks and proposed them to the Speaker of the Legislative Yuan. The Speaker of the Legislative Yuan at the time found the four demands to be reasonable and agreed to all of them. --- <a href="https://gentosha-go.com/articles/-/33224" class="external">Taiwanese IT genius who once occupied the Legislative Yuan talks about his roots | Gold Online<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Serve as <a href="./Reverse-Mentoring" class="internal alias" data-slug="Reverse-Mentoring">Reverse Mentoring</a> for the Minister</li>
+<li>Digital Minister at age 40 (2022~)</li>
+</ul>
+<p>Glen Weyl</p>
+<ul>
+<li>
+<p>At the age of 27, he proposed a <a href="./voting-mechanism" class="internal alias" data-slug="voting-mechanism">voting mechanism</a> called <a href="./QV" class="internal alias" data-slug="QV">[Quadratic Voting]</a> (2012, preprint) (see below for details).</p>
+</li>
+<li>
+<p>At 33, proposed <a href="./QF" class="internal alias" data-slug="QF">[Quadratic Funding]</a>, a <a href="./funding-distribution-mechanism" class="internal alias" data-slug="funding-distribution-mechanism">funding distribution mechanism</a> for public goods (2018)(see below).</p>
+<ul>
+<li>Co-authored with <a href="./Vitalik-Buterin" class="internal alias" data-slug="Vitalik-Buterin">Vitalik Buterin</a> of Ethereum</li>
+</ul>
+</li>
+<li>
+<p>Book <a href="./Radical-Markets" class="internal alias" data-slug="Radical-Markets">Radical Markets</a> (2018)</p>
+<ul>
+<li>Many of you have probably read it since it was translated into Japanese.</li>
+</ul>
+</li>
+<li>
+<p>Establishment of <a href="./RadicalxChange" class="internal" data-slug="RadicalxChange">RadicalxChange</a> (2018)</p>
+<ul>
+<li>Founded a non-profit organization for social change with Audrey and Vitalik</li>
+<li>X” comes from <a href="./Yukito-Emaya" class="internal alias" data-slug="Yukito-Emaya">Yukito Emaya</a>’s <a href="./interchange-format" class="internal alias" data-slug="interchange-format">interchange format</a> (see below for details)</li>
+</ul>
+</li>
+<li>
+<p>Proposed <a href="./an-organizational-governance-mechanism" class="internal alias" data-slug="an-organizational-governance-mechanism">an organizational governance mechanism</a> called <a href="./Plural-Management" class="internal alias" data-slug="Plural-Management">Plural Management</a> this year.</p>
+<ul>
+<li>January 2024 preprint release, freshly completed (the main theme of this issue).</li>
+</ul>
+</li>
+<li>
+<p><a href="./Miscellaneous-Explanations-of-Exchange-Styles" class="internal alias" data-slug="Miscellaneous-Explanations-of-Exchange-Styles">Miscellaneous Explanations of Exchange Styles</a></p>
+</li>
+<li>
+<p><a href="./Structure-of-World-History" class="internal alias" data-slug="Structure-of-World-History">Structure of World History</a> (2010)<del><a href="./Yuuheng-Theory" class="internal alias" data-slug="Yuuheng-Theory">Yuuheng Theory</a> (2014)</del><a href="./Study-of-D" class="internal alias" data-slug="Study-of-D">Study of D</a> (2015-2016)~ <a href="./power-and-modes-of-exchange" class="internal alias" data-slug="power-and-modes-of-exchange">power and modes of exchange</a> (2022)</p>
+</li>
+<li>
+<p>1:</p>
+<ul>
+<li>They shared the food they took in a small group of blood relatives.
+<ul>
+<li><a href="./joint-deposit" class="internal alias" data-slug="joint-deposit">joint deposit</a>, <a href="./reciprocal-gift" class="internal alias" data-slug="reciprocal-gift">reciprocal gift</a>, community, exchange style A</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>2:</p>
+<ul>
+<li>The more people, the less successful it will be <span>→</span> need a “governing” (RULE) mechanism</li>
+<li>Protect if you obey, punish if you don’t follow the rules, state, exchange style B</li>
+</ul>
+</li>
+<li>
+<p>3:</p>
+<ul>
+<li>Private “contracts” made possible by the power of the state to “punish you if you don’t play by the rules”.
+<ul>
+<li>If you break the contract, the state power retaliates against you, which creates a deterrent and protects the contract.</li>
+</ul>
+</li>
+<li>Currency, investment, markets, division of labor with faceless people, capitalism, mechanisms broader than the state, modes of exchange C</li>
+</ul>
+</li>
+<li>
+<p>Through the exchange style A <span>→</span> B <span>→</span> C, <a href="./recovery-at-a-higher-level-of-exchange-style-A" class="internal alias" data-slug="recovery-at-a-higher-level-of-exchange-style-A">recovery at a higher level of exchange style A</a> takes place, which is the X of Gyoto Karatani.</p>
+</li>
+<li>
+<p>RadicalxChange’s superposition of meanings</p>
+<ul>
+<li>Radical Markets→Radical Exchange</li>
+<li>Radical x Change</li>
+<li>Change to Radical X</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>(Audrey) Vitalik’s “new mode of exchange” researched and developed on Ethereum allows an unspecified number of people to exchange for the public good. While this may at first glance appear to be for the benefit of the individual, it ultimately leads to a common understanding that it is for the benefit of the community as a whole. These are ways to utilize mechanism design, and I try to apply this to Taiwanese politics as much as possible… Why did you name this style of exchange RadicalxChange and not label it as Radical x Change in separate words? Because it was inspired by <a href="./interchange-format" class="internal alias" data-slug="interchange-format">interchange format</a> X, or “<a href="./interchange-format" class="internal alias" data-slug="interchange-format">interchange format</a>” as proposed by the Japanese literary scholar and philosopher <a href="./Yukito-Emaya" class="internal alias" data-slug="Yukito-Emaya">Yukito Emaya</a>.</p>
+</blockquote>
+<ul>
+<li><a href="https://toyokeizai.net/articles/-/363750" class="external">Teachings and environment that nurtured “Tang Feng,” Taiwan’s Digital Minister: The words of his mentor and the education of his parents that made him a genius | Toyo Keizai education×ICT<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+<p>Trade-off between depth and breadth of cooperation</p>
+<ul>
+<li>Key Concepts in the Plurality book</li>
+<li><img src="https://scrapbox.io/files/657fc12e986d8d0025e6dce1.png" alt="image"/></li>
+<li>Vertical Axis: Depth of Cooperation / Horizontal Axis: Extent of Cooperation
+<ul>
+<li>Top left: familial intimacy: can’t do it in large numbers</li>
+<li>Bottom right: Broader relationships through the market: Shallow</li>
+</ul>
+</li>
+<li>Depth vs. space is a trade-off.
+<ul>
+<li>Technology pushes this frontier (production possibility frontier metaphor)</li>
+</ul>
+</li>
+<li>This is associated with [recovery at a higher level of exchange style A
+<ul>
+<li>The community / state / comodity in the figure corresponds to the exchange forms A/B/C.</li>
+<li>
+<blockquote>
+<p>(Audrey) This trichotomy of <a href="./interchange-format" class="internal alias" data-slug="interchange-format">interchange format</a> into community, nation, and commodity was inspired by the work of <a href="./Yukito-Emaya" class="internal alias" data-slug="Yukito-Emaya">Yukito Emaya</a> in <a href="./Structure-of-World-History" class="internal alias" data-slug="Structure-of-World-History">Structure of World History</a> (2014). Emaya proposes a new mode of exchange, named “X,” which seeks to transcend the limits of previous modes by fostering a global network of <a href="./reciprocity" class="internal" data-slug="reciprocity">reciprocity</a> and <a href="./cooperation" class="internal" data-slug="cooperation">cooperation</a>. --- [/plurality-japanese/gyojin emaritani and Plurality](<a href="https://scrapbox.io/plurality-japanese/gyojin" class="external">https://scrapbox.io/plurality-japanese/gyojin<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> emaritani and Plurality).</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>The power of technology is creating a “new social system” that combines the strengths of “small communities based on reciprocal giving” and “large capitalist societies based on contracts.
+<ul>
+<li>This is the direction ⿻Plurality is heading.</li>
+</ul>
+</li>
+</ul>
+<p>Plural Management Protocol</p>
+<ul>
+<li>Various technologies are being explored to move in the direction of ⿻Plurality</li>
+<li>One of them is Glen’s <a href="./PMP" class="internal alias" data-slug="PMP">[Plural Management Protocol]</a></li>
+<li>Glen is not only proposing in the <a href="./Plural-Management" class="internal alias" data-slug="Plural-Management">Plural Management</a> paper, he is trying to validate it by actually operating it!
+<ul>
+<li>The Plurality book project itself is a PMP experiment.</li>
+<li>Gov4Git (GitRules), which implements PMP, has been introduced to Github</li>
+<li>Github Bot written in Golang</li>
+<li>
+<blockquote>
+<p>A decentralized protocol for governing open-source communities based on git</p>
+</blockquote>
+<ul>
+<li><a href="https://gitrules.ai/" class="external">gov4git: Decentralized governance for git communities<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Why PMP is needed</p>
+<ul>
+<li>Hierarchical organization problem: decision-making bottlenecks tend to occur</li>
+<li>Flat organization problem: difficult to act in a consistent direction</li>
+<li>It’s a given, isn’t it?<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>
+<ul>
+<li>“Let’s work together on this project!” and a team is formed, but tasks that are important to the execution of the project are left unattended, while unimportant tasks are carried out.</li>
+<li>In order to execute a project, you eventually need someone who sees the project as a <a href="./personal-affair" class="internal alias" data-slug="personal-affair">personal affair</a> and “picks up all the important tasks when they spill over”, this is the leader</li>
+<li>Leaders are essential for project start-up, but as the project is launched and grows in size, the leader becomes the decision-making bottleneck <a href="./leader-becomes-the-bottleneck" class="internal alias" data-slug="leader-becomes-the-bottleneck">leader becomes the bottleneck</a>.</li>
+</ul>
+</li>
+<li>Difficulty in evaluating and prioritizing contributions as the project grows, especially with OSS development
+- <a href="./Tragedy-of-Common-Land" class="internal alias" data-slug="Tragedy-of-Common-Land">Tragedy of Common Land</a> will be discussed. Source code is a resource that can be replicated at almost zero cost. What “limited resources” are being gobbled up?
+<ul>
+<li>When a bug report or pull request is sent in, the “assessment” of whether it is of importance to the project is high cost</li>
+<li>If decision-making is not distributed, the load will be concentrated on the “leader,” i.e., organization is necessary, but an engineer who is good at writing software alone is not necessarily good at organizing</li>
+</ul>
+</li>
+<li>I propose a PMP to solve this.</li>
+</ul>
+<p>PMP Mechanism</p>
+<ul>
+<li>Primarily a combination of Quadratic Voting (QV) and Quadratic Funding (QF)</li>
+<li><img src="https://gyazo.com/470f14aa288673827449ebae4ac4130c/thumb/1000" alt="image"/></li>
+<li>Prioritization of issues (QF):.
+<ul>
+<li>Members use credits to prioritize assignments</li>
+<li>If each member <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> assigns <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> credits, the priority of the assignment is
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.4057em;vertical-align:-0.35em;"></span><span class="minner"><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.162em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2997em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8517em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.8117em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1883em;"><span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.0557em;"><span style="top:-3.3046em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>.</li>
+</ul>
+</li>
+<li>The person who solves this task gets credit for it (QF principle, more on this later).</li>
+</ul>
+</li>
+<li>Vote to approve contributions (QV):.
+<ul>
+<li>Members vote on whether or not to “adopt” the proposed problem-solving contribution with credit</li>
+<li>At this time, <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> credits are consumed to cast <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> votes (QV principle)</li>
+<li>(Forecast markets are also combined, but omitted.)</li>
+</ul>
+</li>
+<li>Rewards for contributions:.
+<ul>
+<li>If the contribution is approved by a vote, the contributor is rewarded with “credits collected in priority setting.</li>
+<li>Additional bonuses from matching funds.</li>
+<li>Credits used to vote on approval of contributions are transferred to matching funds to incentivize new contributions</li>
+</ul>
+</li>
+</ul>
+<p>example</p>
+<ul>
+<li>
+<p>PMP in Operation in the Plurality Book Project</p>
+</li>
+<li>
+<p>Priority setting of issues</p>
+<ul>
+<li><img src="https://gyazo.com/61aabde782f7a6b0f2c227499bb382df/thumb/1000" alt="image"/>
+<ul>
+<li>QF against Github Issues in order of funds acquired.</li>
+</ul>
+</li>
+<li><img src="https://gyazo.com/0cab73c154ff746854f67426bcc662e5/thumb/1000" alt="image"/>
+<ul>
+<li>When you click “Vote” on an Issue, it looks like this and you can vote</li>
+</ul>
+</li>
+<li>Credits for voting
+<ul>
+<li><img src="https://gyazo.com/5ba85fbc4c3794b078c091e872b36435/thumb/1000" alt="image"/></li>
+<li>The degree of contribution to the project is quantified and information is shared</li>
+<li>Like a game score board</li>
+<li>It’s also the in-game currency.</li>
+</ul>
+</li>
+<li><a href="https://github.com/pluralitybook/plurality/commit/6e2695e4a9547c767bb2401590b07451fcd10874" class="external">e.g.<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> of the proposed contribution.
+<ul>
+<li><img src="https://gyazo.com/a278d132379139b4c839a15b0eb0ddf3/thumb/1000" alt="image"/></li>
+<li>
+<blockquote>
+<p><code>[^PICSY]</code>: An early implementation of such a value-propagating system is exemplified by PICSY, pioneered by Ken Suzuki in 2009.</p>
+</blockquote>
+</li>
+<li>I thought about whether I could insert the PICSY story somewhere and put a footnote at Liquid Democracy.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Current status of the project</p>
+<ul>
+<li>Now is still “the time for one leader to lead.”</li>
+<li>Glen is making contribution decisions and issuing new credits to contributors.</li>
+<li>I haven’t experienced the approval voting process yet.</li>
+<li>Looking forward to seeing what happens in the future.</li>
+</ul>
+</li>
+<li>
+<p><a href="./Smoothing&quot;-of-organizational-management" class="internal alias" data-slug="Smoothing&quot;-of-organizational-management">Smoothing” of organizational management</a></p>
+</li>
+<li>
+<p>PMP creates a middle ground between hierarchical and flat organizations, decentralizing authority and decision-making in organizational operations</p>
+</li>
+<li>
+<p>Main differences from a hierarchical organization</p>
+<ul>
+<li>If it were traditional OSS, it would be a binary of “a few trusted committers with commit privileges” and “ordinary people without commit privileges who can propose contributions without permissions”.</li>
+<li>Many hierarchical organizations also have “authorized” and “other” <a href="./step-functions" class="internal alias" data-slug="step-functions">step functions</a>.</li>
+<li>PMPs get credit based on their contributions and are given management privileges dynamically based on the amount of credit they receive.
+<ul>
+<li>For example, if you find a typo and make a pull request, you’ll get about 1000 credits and be able to participate in the voting.</li>
+</ul>
+</li>
+<li><a href="./Smooth-transfer-of-authority" class="internal alias" data-slug="Smooth-transfer-of-authority">Smooth transfer of authority</a></li>
+</ul>
+</li>
+<li>
+<p>Main differences from a flat organization</p>
+<ul>
+<li>In a flat organization, each individual tends to think about “what to do” and “what is the contribution” in a discrete way
+<ul>
+<li>In PMP, QFs collectively and intelligently prioritize issues and determine “what needs to be done.</li>
+<li>In the PMP, the QV collectively and intellectually determines the acceptance or rejection of a proposed solution and “what is the contribution”.</li>
+<li>The act of pursuing personal gain to earn credits on PMP leads to the formation of collective knowledge in a cooperative game-like manner.</li>
+</ul>
+</li>
+<li>Meritocracy, where members’ influence is linked to their contributions
+<ul>
+<li>It’s not a <a href="./one-vote-per-person" class="internal alias" data-slug="one-vote-per-person">one vote per person</a> vote where the number of people determines your voice, and it’s not a <a href="./one-dollar-per-vote" class="internal alias" data-slug="one-dollar-per-vote">one dollar per vote</a> vote where your voice is bought with money.</li>
+<li>A greater voice is given to those “capable” of understanding the project’s objectives and making a useful contribution.</li>
+</ul>
+</li>
+<li>Credit incentives to encourage participation and cooperation
+<ul>
+<li>As with traditional OSS, contribution proposals are accepted permissionless</li>
+<li>I’m a total newcomer too, I didn’t even know the repository existed until last October.</li>
+<li>From there, a few months of activity
+<ul>
+<li>Look at Issues and think about how to get credit.</li>
+<li>I found something that could be done, and I’ll propose a contribution.</li>
+<li>I was accepted and gradually got the hang of contributing, so I contributed more and more.</li>
+<li>Their contributions are accumulated and visualized as credits.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Finally.</p>
+<ul>
+<li>I think this is a very interesting thing that is happening.</li>
+<li>The English version of the manuscript was completed on 2024-03-24 and we invite you to read it: <a href="https://github.com/pluralitybook/plurality/releases/tag/latest" class="external">PDF<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>I’ll publish a Japanese translation of the book from Cybozu Style Books, meeting with the translator scheduled for Monday.</li>
+<li>If you speak English, join the official Discord: <a href="https://discord.gg/db9spxpGJF" class="external">Invite link<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Support in Japanese here: <a href="https://scrapbox.io/plurality-japanese" class="external">/plurality-japanese<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</li>
+</ul>
+<p>Below are unused fragments</p>
+<ul>
+<li>
+<p>A mechanism that dynamically links contribution and influence is essential to both the active participation of members and the strategic direction of the organization.</p>
+</li>
+<li>
+<p>PMP is a method of governance that bridges the gap between hierarchical governance and market governance (a mechanism where everyone does as they please with individual incentives, resulting in a division of labor and cooperation)</p>
+<ul>
+<li>Q: Why not market-based governance? A: If that were the case, there would be no need for organizations. The purpose of an organization’s existence is to accumulate “resources that cannot be procured in the marketplace” within the organization, and to enable more efficient cooperation than the division of labor in the marketplace.</li>
+</ul>
+</li>
+<li>
+<p>It can be said that the PMP seeks to achieve flexibility and adaptability, strategic decision-making, and a cooperative organizational culture through dynamic allocation of authority based on contributions and the use of collective knowledge, while maintaining a balance between hierarchy and equality. As a new paradigm of <a href="./organization-theory" class="internal alias" data-slug="organization-theory">organization theory</a>, the significance of PMP is significant.</p>
+</li>
+<li>
+<p>PMP’s potential to bring about a paradigm shift in organizational management</p>
+<ul>
+<li>PMP has the potential to bring about a paradigm shift in organizational theory through decentralization of authority and decision-making in organizational management</li>
+<li>First, PMP challenges the assumptions of traditional hierarchical organizations by introducing a dynamic allocation of authority based on contribution and participation
+<ul>
+<li>Meritocratic system in which influence is determined by actual performance, not position.</li>
+<li>Can be expected to increase members’ motivation and commitment to the organization</li>
+<li>It will also help eliminate decision-making bottlenecks and increase organizational agility and adaptability.</li>
+</ul>
+</li>
+<li>Second, PMPs have the potential to improve the quality of organizational decision-making by providing a mechanism to leverage the collective knowledge of members. By allowing members to anticipate organizational priorities and participate in the evaluation of their contributions, feedback from diverse perspectives can be obtained and more appropriate decisions can be made. In this regard, the PMP is noteworthy as a paradigm that facilitates organizational learning and evolution.</li>
+<li>Third, PMP presents a new model of organizational management that encourages cooperation and the creation of public good through an incentive design called credit. This approach, which dynamically links individual gain with organizational benefit, sheds light on the issue of cooperation, which has often been overlooked in traditional organizational theory. what PMP suggests is the importance of mechanism design that links individual rationality and organizational rationality.</li>
+</ul>
+</li>
+<li>
+<p>Of course, PMPs have their challenges and limitations. Practical problems remain, such as friction with existing organizational cultures, new power relations among members, and the stability of credit economies. However, PMP’s approach to challenging the dilemmas of hierarchy and decentralization, individuals and organizations, and competition and cooperation, can be evaluated as presenting new possibilities for a paradigm shift in organizational theory. It is hoped that a new paradigm for organizational management will open up through the continued development and implementation of PMP in the future.</p>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from [/nishio/⿻PluralityとPlural Management Protocol](<a href="https://scrapbox.io/nishio/%E2%BF%BBPlurality%E3%81%A8Plural" class="external">https://scrapbox.io/nishio/⿻PluralityとPlural<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Management Protocol) using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Miscellaneous-Explanations-of-Exchange-Styles" class="internal">Miscellaneous Explanations of Exchange Styles</a></li><li><a href="./Namera-Conference-4" class="internal">Namera Conference 4</a></li><li><a href="./Record-for-2023~2024" class="internal">Record for 2023~2024</a></li><li><a href="./Weekly-journal-2024-04-01~2024-04-06" class="internal">Weekly journal 2024-04-01~2024-04-06</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

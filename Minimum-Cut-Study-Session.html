@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Minimum Cut Study Session</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Minimum Cut Study Session"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Minimum Cut Study Session"/><meta name="twitter:description" content="2021-03-19 Cybozu Labs Study Session Explain “solving by attributing to a minimum cut problem” that can be used to solve certain optimization problems ..."/><meta property="og:description" content="2021-03-19 Cybozu Labs Study Session Explain “solving by attributing to a minimum cut problem” that can be used to solve certain optimization problems ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="2021-03-19 Cybozu Labs Study Session Explain “solving by attributing to a minimum cut problem” that can be used to solve certain optimization problems ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Minimum-Cut-Study-Session"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Minimum-Cut-Study-Session"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="2021-03-19 Cybozu Labs Study Session Explain “solving by attributing to a minimum cut problem” that can be used to solve certain optimization problems ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Minimum-Cut-Study-Session"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Minimum Cut Study Session</a></div></nav><h1 class="article-title">Minimum Cut Study Session</h1><p show-comma="true" class="content-meta"><span>Mar 19, 2021</span><span>13 min read</span></p></div></div><article class="popover-hint"><p>2021-03-19 Cybozu Labs Study Session
+Explain “solving by attributing to a minimum cut problem” that can be used to solve certain optimization problems.</p>
+<p>Simple optimization problem</p>
+<ul>
+<li>There are n two choices.</li>
+<li>You get 100 yen for each choice you make.</li>
+<li>But it costs Ci yen to choose.</li>
+<li>What are the choices that maximize profit?</li>
+</ul>
+<p>answer</p>
+<ul>
+<li>Profit 100 - Choose the one with positive Ci</li>
+</ul>
+<p>Simple optimization problem 2</p>
+<ul>
+<li>There are n two choices.</li>
+<li>You get 100 yen for each choice you make.</li>
+<li>But it costs Ci yen to choose.</li>
+<li>If you choose M alternatives what choice maximizes profit?</li>
+</ul>
+<p>answer</p>
+<ul>
+<li>Sort and take M pieces from the one with the largest profit.</li>
+</ul>
+<p>A problem one step further.</p>
+<ul>
+<li>There are N choices of two options (N=20)</li>
+<li>You get 100 yen for each choice you make.</li>
+<li>But it costs Ci yen to choose.</li>
+<li>If one chooses option i and does not choose option j, it costs an additional Dij.
+<ul>
+<li>M non-zero costs (M=100).</li>
+</ul>
+</li>
+<li>What are the choices that maximize profit?</li>
+</ul>
+<p>answer</p>
+<ul>
+<li>Search all <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8413em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span></span></span></span></span></span></span></span> streets</li>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">20</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1048576</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span> to calculate Dij * 100 so about <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span></span></span></span> times</li>
+<li>Python3 <code>11.3 s ± 173 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)</code></li>
+<li>PyPy3 <code>1.1 s ± 37 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)</code></li>
+<li><a href="https://gyazo.com/ebcccd3c36cf60a0b1ecac5b39a598ed" class="external">spec<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<p>problem to be solved this time</p>
+<ul>
+<li>There are N choices of two options (N=100) ←🤔</li>
+<li>You get 100 yen for each choice you make.</li>
+<li>But it costs Ci yen to choose.</li>
+<li>If one chooses option i and does not choose option j, there is an additional Dij cost
+<ul>
+<li>Non-zero cost is M (M=100)</li>
+</ul>
+</li>
+<li>What are the choices that maximize profit?</li>
+</ul>
+<p>What if it’s a full search?</p>
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">100</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">30</span></span></span></span></span></span></span></span></span></span></span></span></li>
+<li>Even if we use a machine that can calculate <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span></span></span></span></span></span></span></span></span> times in 1 second, it would take <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">3</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7936em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span></span></span></span></span><span class="mord mathnormal">im</span><span class="mord mathnormal">es</span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">12</span></span></span></span></span></span></span></span></span></span></span></span> years.</li>
+</ul>
+<p>answer</p>
+<ul>
+<li>Attribute to the minimum cut problem, transform it into a maximum flow problem with the maximum flow minimum cut theorem, and solve it with the Dinic algorithm.</li>
+<li>Quite fast.</li>
+<li>When N=M=100, it was less than one millisecond.
+<ul>
+<li>Time repeated 1000 times</li>
+<li>Python3 <code>858 ms ± 222 ms per loop (mean ± std. dev. of 5 runs, 1000 loop each)</code></li>
+<li>PyPy3 <code>214 ms ± 139 ms per loop (mean ± std. dev. of 7 runs, 1000 loop each)</code></li>
+</ul>
+</li>
+<li>N=M=10000, but about 0.2 seconds.
+<ul>
+<li>Python3 <code>243 ms ± 40 ms per loop (mean ± std. dev. of 5 runs, 1 loop each)</code></li>
+<li>PyPy3 <code>114 ms ± 45 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)</code></li>
+</ul>
+</li>
+<li>N=M=100000, PyPy would be about 1-2 seconds.
+<ul>
+<li>PyPy3 <code>1.4 s ± 172 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)</code></li>
+</ul>
+</li>
+</ul>
+<p>What is Cutting?</p>
+<ul>
+<li>
+<blockquote>
+<p>The bipartition (S, T) of a graph G(V, E) at vertex V is called a cut.</p>
+</blockquote>
+</li>
+<li><img src="https://gyazo.com/43aabb7d6bc127d28e6a30af2587f230/thumb/1000" alt="image"/></li>
+<li>Just split the “set of vertices” in two.
+<ul>
+<li>As a physical image, “painting in two colors” fits.</li>
+</ul>
+</li>
+<li>The word “cut” is a confusing word to think of “cutting the graph in two”.
+<ul>
+<li>I don’t care what side you’re on.</li>
+<li>Here’s another cut.
+<ul>
+<li><img src="https://gyazo.com/bef1cd4eb2267d237c915778a1bbcedb/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Some descriptions in the world say “what about flow” at this point, but I don’t care here because it is fine to think about flow in the later phase of “mapping the minimum cut to the maximum flow”.
+<ul>
+<li>Thinking about flow at this stage is also confusing. Since there is no flow corresponding to the above cuts.</li>
+</ul>
+</li>
+</ul>
+<p>What is the minimum cut problem?</p>
+<ul>
+<li>(This time we are only talking about directed graphs.)</li>
+<li>Given a cut <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mclose">)]</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">a</span><span class="mord mathnormal">d</span><span class="mord mathnormal">i</span><span class="mord mathnormal">rec</span><span class="mord mathnormal">t</span><span class="mord mathnormal">e</span><span class="mord mathnormal">d</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal">p</span><span class="mord mathnormal">h</span><span class="mopen">[</span></span></span></span> G = (V, E)], the edge [<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span></span></span></span> of G that is <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">u</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span> is called a cut edge.</li>
+<li><img src="https://gyazo.com/359c47fe470936b043715e30d037e816/thumb/1000" alt="image"/></li>
+<li>The sum of the weights of the cut edges is called the size of the cut, and the cut with the smallest size is called the smallest cut.</li>
+<li>Often it is convenient to consider “vertex s that always goes into S” and “vertex t that always goes into T.” A cut such that s and t are so is sometimes called an “s-t cut.</li>
+<li>Q: Is an edge that has a T at the base and an S at the end not a cut edge?
+<ul>
+<li>A: Good question, confirm understanding on next slide</li>
+</ul>
+</li>
+</ul>
+<p>Confirm understanding of minimum cuts</p>
+<ul>
+<li>What would be the s-t minimum cut on this graph?</li>
+<li><img src="https://gyazo.com/168b48ffc582651499fb4f302efeb396/thumb/1000" alt="image"/></li>
+<li>(Note: In the original figure, vertices were written in uppercase, but this was changed to lowercase to distinguish between vertex set S and vertex s.)</li>
+</ul>
+<p>answer</p>
+<ul>
+<li>
+<p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span> when cut size is minimum at 3</p>
+</li>
+<li>
+<p><img src="https://gyazo.com/995e58aae1d3cb623ed98988226a491e/thumb/1000" alt="image"/></p>
+</li>
+<li>
+<p>It’s easy to get confused when you think of a cut as “cutting the graph” and not cutting the “middle 5 edges”.</p>
+<ul>
+<li>The size of the cut is irrelevant because the edge is such that the root is a T and the tip is an S</li>
+</ul>
+</li>
+<li>
+<p>There are four ways to paint the vertices with two colors since s and t are fixed.</p>
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span> when 15
+<ul>
+<li><img src="https://gyazo.com/7fc7471991992121307a80ca0a58899e/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>6 when both are S or both are T.</li>
+<li>So 3 is the minimum</li>
+<li><a href="./Cutting-the-smallest-cut-is-not-&quot;cutting-an-edge&quot;." class="internal alias" data-slug="Cutting-the-smallest-cut-is-not-&quot;cutting-an-edge&quot;.">Cutting the smallest cut is not “cutting an edge”.</a></li>
+<li><a href="./Cut-=-Two-color-painting-of-apex" class="internal alias" data-slug="Cut-=-Two-color-painting-of-apex">Cut = Two-color painting of apex</a></li>
+</ul>
+</li>
+<li>
+<p><a href="./Comes-down-to-the-smallest-cut." class="internal alias" data-slug="Comes-down-to-the-smallest-cut.">Comes down to the smallest cut.</a></p>
+</li>
+<li>
+<p>reprint</p>
+<ul>
+<li>
+<blockquote>
+<p>Transformed into a maximum flow problem by the maximum flow-minimum cut theorem, attributed to the minimum cut problem and solved by the Dinic algorithm</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>I just finished explaining what a “minimum cut problem is.”</p>
+</li>
+<li>
+<p>Next, I will explain how the following problem can be attributed to a minimum cut problem</p>
+<ul>
+<li>
+<blockquote>
+<p>There are N choices of two options (N=100) ←🤔</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>You get 100 yen for each choice you make.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>But it costs Ci yen to choose.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>If one chooses option i and does not choose option j, there is an additional cost of Dij. M non-zero costs (M=100)</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>What choice maximizes profit?</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>Want to maximize profit = minimize cost</p>
+<ul>
+<li>Cost can be minimized with the smallest cut if cost is the weight of the edge</li>
+</ul>
+</li>
+<li>
+<p>If “choose option i” is set to “put vertex i into S</p>
+<ul>
+<li>
+<p>What is “Choice and Cost Ci”?</p>
+<ul>
+<li>Subtract an edge of weight Ci from vertex i to vertex t</li>
+<li><img src="https://gyazo.com/524e99154d4027721faf1f2af574617a/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>
+<p>What is “Reward 100 if you choose”?</p>
+<ul>
+<li>Since the reward is negative cost, subtract the edge of weight -100 from vertex i to vertex t</li>
+<li><img src="https://gyazo.com/b2661c356bfd0ec6c234db5bde167683/thumb/1000" alt="image"/></li>
+<li>(Negative sides will need to be removed later, but don’t think about that now.)</li>
+</ul>
+</li>
+<li>
+<p>If you pick i and don’t pick j, cost Dij.”</p>
+<ul>
+<li>Subtract an edge of weight Dij from vertex i to vertex j</li>
+<li><img src="https://gyazo.com/ccff2a4b41fcc2c2762313d0efd2635a/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Find the minimum cut in this graph and you will get the answer you want to get</p>
+</li>
+</ul>
+<p>concrete example</p>
+<ul>
+<li>There are three two-option choices a, b, and c</li>
+<li>There is a reward of 100 for choosing</li>
+<li>Each choice costs 10,70,150.</li>
+<li>If you don’t choose c when you choose a, you’ll have to pay an additional cost of 40.</li>
+<li>Graph to be constructed
+<ul>
+<li><img src="https://gyazo.com/33e4fbbd0f7a27cc4e6044c398f4be2b/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>Q: “Is it okay to have the s separated? Is that the obvious place to make the smallest cut?”
+<ul>
+<li>A: There is an edge with negative weight, so that is not necessarily the minimum solution.</li>
+<li>This confusion is caused by confusing “cut” with “split the graph in two”.</li>
+<li>From the next slide, convert this minimum cut problem to a maximum flow problem. In the process, s is connected and becomes a graph suitable for considering flow</li>
+</ul>
+</li>
+</ul>
+<p>What’s next?</p>
+<ul>
+<li>reprint
+<ul>
+<li>
+<blockquote>
+<p>Transformed into a maximum flow problem by the maximum flow-minimum cut theorem, attributed to the minimum cut problem and solved by the Dinic algorithm</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>I was able to attribute it to the minimum cut issue.</li>
+<li>Next convert to maximum flow</li>
+</ul>
+<p>maximum flow problem</p>
+<ul>
+<li>Given a graph <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">G</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mclose">)</span></span></span></span> with non-negative edge weights
+<ul>
+<li>This weight is called “capacity” in the context of flow</li>
+</ul>
+</li>
+<li>Consider the flow between two vertices s, t of this graph
+<ul>
+<li>Image of water flowing from s to t</li>
+<li>How much will flow when the maximum flow? is the maximum flow problem</li>
+<li><img src="https://gyazo.com/8758e36faec9134793d689cb4a264558/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>A flow on G is a weighted graph <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mclose">)</span></span></span></span>, where:.
+<ul>
+<li>The weight of each side does not exceed the capacity at G: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span></li>
+<li>The incoming and outgoing flows match for vertex i except s,t: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1858em;vertical-align:-0.4358em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.162em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4358em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">ji</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1858em;vertical-align:-0.4358em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.162em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4358em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span></li>
+</ul>
+</li>
+</ul>
+<p>maximum flow minimum cut theorem</p>
+<ul>
+<li>It is known that the size of the s-t minimum cut of a graph with non-negative edge weights and the flow rate of the maximum flow from s to t coincide</li>
+<li>No proof this time.
+<ul>
+<li>see <a href="http://www.dais.is.tohoku.ac.jp/~shioura/teaching/mp08/mp08-08.pdf" class="external">Akiyoshi Shioura Mathematical Programming 8th<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>rough image
+<ul>
+<li><img src="https://gyazo.com/c8d058721468b3e5e979c138c46398d0/thumb/1000" alt="image"/></li>
+<li>Considering the graph (residual network) of the maximum flow F from s to t reduced from the capacity of G, this is always split into two or more connected components</li>
+<li>If not, it would further increase the flow and contradict the assumption (e in the figure).</li>
+<li>The “divide the graph vertex into two” is a cut, and maximizing the flow results in a bottleneck in the area of the smallest cut.</li>
+</ul>
+</li>
+</ul>
+<p>Negative side removal</p>
+<ul>
+<li>
+<p>Convert a minimum cut problem to a maximum flow problem and solve it.</p>
+</li>
+<li>
+<p>Negative edges need to be removed because the capacity of the edges must be non-negative in the maximum flow problem</p>
+</li>
+<li>
+<p>If we focus on a vertex i, it can either be in S or in T</p>
+<ul>
+<li><img src="https://gyazo.com/7b1dc6c9b05f46514a98a792ac9c34c1/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>
+<p>So make it so that the same amount of additional cost c is charged when you enter S and when you enter T</p>
+<ul>
+<li><img src="https://gyazo.com/d492c8b93c3c6a738e72feb7f74f30a1/thumb/1000" alt="image"/></li>
+<li>Now the negative side disappears.</li>
+<li>The minimum cut size of the modified graph will increase by c</li>
+<li>Keep track of the sum (offset) of the values added in the process of negative side removal, and subtract it after the answer is obtained.</li>
+</ul>
+</li>
+<li>
+<p>example</p>
+<ul>
+<li><img src="https://gyazo.com/070b43a35881de73f82f59ef008cf290/thumb/1000" alt="image"/></li>
+<li>Negative side removal
+<ul>
+<li><img src="https://gyazo.com/3ac01c8a8e471f03a7c9d8d987883e90/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>Minimum cut is -80
+<ul>
+<li><img src="https://gyazo.com/c25e7a10f970b57f811c98482084fd7f/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>(Negative edge removal between free vertices is described below.)</p>
+</li>
+</ul>
+<p><a href="./Dinic" class="internal" data-slug="Dinic">Dinic</a> Algorithm</p>
+<ul>
+<li>Efficient algorithm for finding the maximum flow of a graph</li>
+<li>A slightly modified version of the classic Ford-Fulkerson
+<ul>
+<li>(Although, Dinic is also 1970, so it is a classic.)</li>
+</ul>
+</li>
+<li>I won’t explain in detail this time. see: <a href="https://www.slideshare.net/KuoE0/acmicpc-dinics-algorithm" class="external">Slide by Guo Zhixian<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>If you put in a directed graph with non-negative edge weights and a start point s end point t, you get an s-t max flow</li>
+<li>This matches the size of the smallest cut</li>
+</ul>
+</li>
+<li>After calculating the maximum flow, we can search on the residual network we have inside to find the vertices that can be reached from each vertex’s s. That will be the S of the minimum cut.</li>
+</ul>
+<p>Dinic’s computational complexity</p>
+<ul>
+<li>Dinic’s computational complexity is assumed to be O(V^2E)</li>
+<li>But it’s a search-based method, so even 10^4 vertices and 10^4 edges are not always calculated 10^12 times
+<ul>
+<li>When N=M=10000 in the previous problem, the graph has 10002 vertices and 20000 edges</li>
+<li>This could be calculated in 114 ms.</li>
+</ul>
+</li>
+<li>Up to what size problem can you solve?</li>
+<li>Tried with N=10000 fixed and increasing M (horizontal axis M, vertical axis ms) <a href="https://gist.github.com/nishio/b6fb56b7a4ffe179d3e8ecd9336e01d8" class="external">data<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.
+<ul>
+<li><img src="https://gyazo.com/d8cbd60649437758dbe21e1879792551/thumb/1000" alt="image"/></li>
+<li>Almost linear (a little worse?) in this range.</li>
+<li>This is fixed V and increasing E, so it’s linear in theory.</li>
+</ul>
+</li>
+<li>Move N and observe under the condition N=M <a href="https://gist.github.com/nishio/9a2c26ca27dc3a6f7387a333011ed1f3" class="external">data<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li><img src="https://gyazo.com/d1c993d547f697e4c28d1e7493af4eef/thumb/1000" alt="image"/></li>
+<li>N^3 in terms of computational complexity, but the actual measurement appears to be linear.</li>
+<li>Perhaps “the graph produced from this optimization problem” has “features that are convenient for Dinic”.</li>
+<li><a href="./Dinic-speed" class="internal alias" data-slug="Dinic-speed">Dinic speed</a> : When the edge weights are integers, the computational complexity goes down under various conditions.</li>
+<li>In this experiment, each cost is a “random integer between 1 and 200” so the edge weights are integer and capped</li>
+<li>In this case, the upper bound is C. <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2/3</span></span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
+</ul>
+<p>application</p>
+<ul>
+<li>Constraints of type “When i is chosen, j must be chosen
+<ul>
+<li>Just make i→j a large enough cost.</li>
+<li><img src="https://gyazo.com/a36987a1132e4c91363ac279fc885823/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>and: “If you chose i, you must choose j and k.”
+<ul>
+<li><img src="https://gyazo.com/1a4707c9a418f24645f793d329639594/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>OR: “If i or j is chosen, then k must be chosen.”
+<ul>
+<li><img src="https://gyazo.com/931213f2a1843b8e75140af39990962e/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+<p><a href="./Project-Selection-Problem" class="internal alias" data-slug="Project-Selection-Problem">Project Selection Problem</a></p>
+<ul>
+<li>With the knowledge so far, you can solve a type of problem called Project Selection Problem.
+<ul>
+<li>There are N projects.
+<ul>
+<li>Doing project i yields income [$ r_i</li>
+</ul>
+</li>
+<li>There are m machines.
+<ul>
+<li>Buying machine j costs [$ c_j</li>
+</ul>
+</li>
+<li>In order to do a project, you have to buy the machinery needed for that project.</li>
+<li>Which project should I choose to maximize profit = revenue - cost?</li>
+</ul>
+</li>
+<li><img src="https://gyazo.com/052e99dda764a20363b0fea423f5cf79/thumb/1000" alt="image"/></li>
+</ul>
+<p>Application Continued</p>
+<ul>
+<li>not
+<ul>
+<li>When you pick i, don’t pick j.”</li>
+<li>This is generally not always possible.</li>
+<li>Express choosing i by putting i in S and expressing choosing j by putting j in T</li>
+<li>This way we can express the above constraints, but we need to decide in advance “which way it will go when selected”.</li>
+<li>At this time, the above constraint can only be applied between “the vertex that enters S when selected” and “the vertex that enters T when selected
+<ul>
+<li>In a word: “bipartite graph.”</li>
+</ul>
+</li>
+<li>Adjacency of a single row or two-dimensional square
+<ul>
+<li>Just alternate S and T.</li>
+<li>Use this for problems where painting squares and adjacent squares incur costs.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>More than two choices</p>
+<ul>
+<li>be made</li>
+<li>Example of three choices
+<ul>
+<li><img src="https://gyazo.com/25b91d664ab124974644d9b1ddcff4e2/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>Similarly, N choices can be represented by arranging N-1 vertices</li>
+<li>Similarly, for a real-valued variable, “if i is greater than or equal to x, then j must be greater than or equal to y” can be done
+<ul>
+<li><img src="https://gyazo.com/72ecfe85ce3e414d2a0e00f5c3fd4b7a/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+<p>Negative edge removal between free vertices</p>
+<ul>
+<li>
+<p>How do we remove these types of negative sides?</p>
+<ul>
+<li><img src="https://gyazo.com/10039fd078d02c20d1146ff98eec2658/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>
+<p>Maybe we can’t keep this up.</p>
+</li>
+<li>
+<p>Change j to the vertex j’ of “T when chosen”.</p>
+</li>
+<li>
+<p><img src="https://gyazo.com/4cc6a94cbf16b1eeeac29997edad9df8/thumb/1000" alt="image"/></p>
+</li>
+<li>
+<p>It is even easier if the infinity edge is facing the opposite way.</p>
+<ul>
+<li><img src="https://gyazo.com/0e17acaac7437f7a2b7e5cf93268f9a8/thumb/1000" alt="image"/></li>
+<li>Since there is no problem with a larger “sufficiently large weight”</li>
+<li><img src="https://gyazo.com/d6313aacf7e7bf0b63ab598d7a99d51e/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+<p>What I don’t know yet</p>
+<ul>
+<li>Can we have and of the form “if i and j are S, then k is also S”?</li>
+<li>Can we have an or of the form “if i is S, then j or k is S”?</li>
+<li>Can’t we solve this by sandwiching an intermediate layer in the same way we used to represent the n choices?</li>
+<li>For example, in the case where there are two choices (0/1) for N objects (A, B), the pattern is “cost c if Ai=1 and Bi=0”, “cost d if Ai=1 and Bi=1”, and “cost e if Ai=0
+<ul>
+<li>I’m having a hard time figuring out how to realize AND if I think these are the two choices.</li>
+<li>If you treat it as one of the three options, it’s a straightforward form of cost for each option.</li>
+</ul>
+</li>
+<li>Perhaps the problem lies in the fact that we, who are accustomed to expressing problems in logical expressions, first express them in logical expressions and then try to convert them to minimum cuts.
+<ul>
+<li>I don’t think there is a conversion from a general logical expression to a minimum cut.</li>
+<li>Rather, the problem needs to be expressed in the smallest possible cut from the beginning.</li>
+<li>This is similar to the composition of “thinking of a logical equation and then turning it into a neural net” and “thinking of a logical equation and then turning it into a Hamiltonian”.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E6%9C%80%E5%B0%8F%E3%82%AB%E3%83%83%E3%83%88%E5%8B%89%E5%BC%B7%E4%BC%9A" class="external">/nishio/最小カット勉強会<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./✅ARC074D" class="internal">✅ARC074D</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

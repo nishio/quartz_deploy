@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Kanban in Regroup</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Kanban in Regroup"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Kanban in Regroup"/><meta name="twitter:description" content="[2020-02-04 I actually did the idea in 2020-02-04 Regroup+Kanban. final form regroup.netlify.com/#/key=mKmQdr3m4oyOQJXH1uYw&amp;cx=839&amp;cy=2570&amp;top=1448&amp;left=-1610 Regroup→Kanban, final form."/><meta property="og:description" content="[2020-02-04 I actually did the idea in 2020-02-04 Regroup+Kanban. final form regroup.netlify.com/#/key=mKmQdr3m4oyOQJXH1uYw&amp;cx=839&amp;cy=2570&amp;top=1448&amp;left=-1610 Regroup→Kanban, final form."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="[2020-02-04 I actually did the idea in 2020-02-04 Regroup+Kanban. final form regroup.netlify.com/#/key=mKmQdr3m4oyOQJXH1uYw&amp;cx=839&amp;cy=2570&amp;top=1448&amp;left=-1610 Regroup→Kanban, final form."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Kanban-in-Regroup"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Kanban-in-Regroup"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="[2020-02-04 I actually did the idea in 2020-02-04 Regroup+Kanban. final form regroup.netlify.com/#/key=mKmQdr3m4oyOQJXH1uYw&amp;cx=839&amp;cy=2570&amp;top=1448&amp;left=-1610 Regroup→Kanban, final form."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Kanban-in-Regroup"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Kanban in Regroup</a></div></nav><h1 class="article-title">Kanban in Regroup</h1><p show-comma="true" class="content-meta"><span>Feb 10, 2020</span><span>6 min read</span></p></div></div><article class="popover-hint"><ul>
+<li>[2020-02-04 I actually did the idea in <a href="./2020-02-04-Regroup+Kanban" class="internal alias" data-slug="2020-02-04-Regroup+Kanban">2020-02-04 Regroup+Kanban</a>.</li>
+</ul>
+<p>final form
+<img src="https://gyazo.com/0757d474ff86fc5e3041da9bb56bd4bb/thumb/1000" alt="image"/></p>
+<ul>
+<li><a href="https://regroup.netlify.com/#/key=mKmQdr3m4oyOQJXH1uYw&amp;cx=839&amp;cy=2570&amp;top=1448&amp;left=-1610" class="external">https://regroup.netlify.com/#/key=mKmQdr3m4oyOQJXH1uYw&amp;cx=839&amp;cy=2570&amp;top=1448&amp;left=-1610<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Regroup→Kanban, final form.
+<ul>
+<li>I’m not dancing my heart out because it looks like a mere kanban when it comes to this.</li>
+<li>The process of putting it all together is important.</li>
+</ul>
+</li>
+</ul>
+<p>flow
+2020-02-06</p>
+<ul>
+<li>I’m jotting down ideas on my phone about a development I’ll do tomorrow.
+<ul>
+<li><img src="https://gyazo.com/70ba2d515847e7cf07e6b4374fc4d911/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>It’s hard to use a smartphone when there are more and more of them, but it’s not impossible to move some of them around.
+<ul>
+<li><img src="https://gyazo.com/f55879eaf1fb6e567e32408da9ff5c7e/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>When I open it on my iPad, it looks like this
+<ul>
+<li><img src="https://gyazo.com/ece19836a927eb6890c5fc0a2c37726b/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>Here’s how it’s organized.
+<ul>
+<li><img src="https://gyazo.com/8d5b090070ea42e6808e16ffa5f215fd/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>I want to group
+- <a href="./Demonstration-of-grouping-in-Regroup" class="internal alias" data-slug="Demonstration-of-grouping-in-Regroup">Demonstration of grouping in Regroup</a>
+<ul>
+<li>Like this
+<ul>
+<li><img src="https://gyazo.com/e64a2ba37a56c40d127d6f2c08c9b2d6/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>Only a few can be neatly organized.</li>
+</ul>
+</li>
+</ul>
+<p>Consideration of 2020-02-10</p>
+<ul>
+<li>I’m starting to think that the “one pocket principle” is violated because the means to export from Regroup in text format has not yet been implemented, so ideas written directly to Regroup cannot be exported back to Scrapbox.</li>
+<li>Regroup is not yet in a position to meet the one pocket principle on its own, so I want to write it back to Scrapbox.</li>
+<li>→ <a href="./Copy-selected-text" class="internal alias" data-slug="Copy-selected-text">Copy selected text</a></li>
+</ul>
+<p>It is written out, but not [easy-to-read order and bullet points</p>
+<p>DONE
+- Add close balloon to [Groups with no nameplate</p>
+<ul>
+<li>Thumbnail display when the group does not contain any stickies</li>
+<li>If you drag the background of a group, the entire group moves.</li>
+<li>If you drag a sticky in a group, only that sticky should move.</li>
+<li>I want the menu to appear to ungroup when I click on a group.</li>
+<li>When a sticky or group in a group is moused down, it is treated as a click if it is moused up.</li>
+<li>Clicking on a group causes the group to disappear.</li>
+<li>Ghost covered by balloon clicks.</li>
+<li>You get a menu that opens even if it’s not a link.</li>
+<li>Bring up grouping in the balloon menu when selecting a lasso.
+<ul>
+<li><a href="./Do-not-force-them-to-wear-a-nameplate." class="internal alias" data-slug="Do-not-force-them-to-wear-a-nameplate.">Do not force them to wear a nameplate.</a></li>
+</ul>
+</li>
+<li>When a drag is started, it should be displayed as a drag in progress.</li>
+<li>If dropped to a group you belong to, just an update of the position.</li>
+<li>Bring up grouping in the balloon menu when selecting a lasso.</li>
+<li>When I click in lasso mode, I want it to be like a normal click.</li>
+<li>If I mouse down on a sticky with a lasso, I want it to be a single sticky drag.
+<ul>
+<li>
+<p><a href="./Indication-when-there-is-no-nameplate-in-the-closed-group" class="internal alias" data-slug="Indication-when-there-is-no-nameplate-in-the-closed-group">Indication when there is no nameplate in the closed group</a></p>
+</li>
+<li>
+<p><a href="./Change-handling-of-mouse-events" class="internal alias" data-slug="Change-handling-of-mouse-events">Change handling of mouse events</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>TODO</p>
+<ul>
+<li>
+<p>I’d rather have the letters in chunks than in pieces when I write them on a path.</p>
+<ul>
+<li>So it is grouped by default and can be ungrouped after the fact if necessary.</li>
+<li>What’s up with this “grouped paths” display?
+<ul>
+<li>The yellow on the current sticky might be too strong.</li>
+<li>If you try it and it doesn’t feel right, you can fix it.</li>
+<li>Proposal to lighten the color or increase transparency</li>
+<li>→ <a href="./Remove-the-border-from-the-group" class="internal alias" data-slug="Remove-the-border-from-the-group">Remove the border from the group</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>I want to copy text on a sticky.</p>
+<ul>
+<li>Lassoed and copied, text and JSON</li>
+<li>Text: <a href="./Copy-selected-text" class="internal alias" data-slug="Copy-selected-text">Copy selected text</a>.</li>
+</ul>
+</li>
+<li>
+<p>I want to click even with a pen.</p>
+</li>
+<li>
+<p>I want Undo on a path I’m about to write, I mistakenly wrote a line with a drag.</p>
+</li>
+<li>
+<p>Positioning of newly added stickies</p>
+<ul>
+<li>I don’t see a way to reset the position of the added sticky, or how to reset it.</li>
+<li>Do I have to?
+<ul>
+<li>It stretches all the way down, like a notebook.</li>
+<li>Scaling will change how many sheets you get out before a line break.</li>
+<li>I feel like that’s fine.</li>
+</ul>
+</li>
+<li>→ Lose track of where stickies are added if they are off-screen.
+<ul>
+<li>Reset to upper left if the location to be added is off-screen.</li>
+</ul>
+</li>
+<li>It’s a hassle if they get mixed up when moving later.
+<ul>
+<li>I want to skip when it interferes with other stickies, etc.</li>
+<li>Just apply the decision at the intersection.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>If they’re differentiated by hash, they’ll be identified at the time of the airdrop.</p>
+</li>
+<li>
+<p>When displayed with the group open, it is bulky even though it is folded.</p>
+<ul>
+<li>If you close a group of children without permission, it is a hassle to open it.</li>
+<li>I’m currently switching between drawings in the group drawing with my open/close state, but I should probably do an “inherit” on the group drawing.</li>
+<li>Even if the actual group is open, a closed drawing should be made and that should be used as the faceplate.</li>
+<li>Display when folded for a group with the group in the upper left corner.
+<ul>
+<li>What happens if the upper left corner is a group</li>
+<li>Now it’s gone.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Sometimes a dialog box appears before the canvas drawing is completed, and I wonder if I missed adding a sticky. I wondered if I missed adding a sticky.</p>
+<ul>
+<li>Let’s change it so that it is issued in the handler after the canvas is redrawn.</li>
+</ul>
+</li>
+</ul>
+<p>PENDING
+- <a href="./Should-we-also-hit-test-while-dragging-and-show-what-happens-when-we-let-go-now" class="internal alias" data-slug="Should-we-also-hit-test-while-dragging-and-show-what-happens-when-we-let-go-now">Should we also hit test while dragging and show what happens when we let go now?</a>
+- Specifically highlight groups that receive drops, etc.</p>
+<pre><code>- [[Do we need a hit test at drop time as well?]]
+- If you drop outside the group, take them out of the group.
+- If you drop it in another group, move it there.
+</code></pre>
+<ul>
+<li>
+<p>Is it strange that closed groups can be opened with one click?</p>
+</li>
+<li>
+<p>Moya Moya Map and Kanban</p>
+<ul>
+<li>Would it be good if the mounted stickies could be colored?</li>
+<li>Maybe multiple views would be nice.</li>
+<li>I made a kanban zone and moved on.</li>
+<li>Move the stickies in the moyamoya map to kanban to break the moyamoya.</li>
+<li>Keep the link or duplicate it
+<ul>
+<li>Even if you duplicate it, you have to realize that “the same thing is over there,” so eventually you need a link.</li>
+</ul>
+</li>
+<li>But is it equivalent to displaying it on one screen and linking it?</li>
+<li>The transition in the video is cool, but it’s just a look.</li>
+</ul>
+</li>
+<li>
+<p>The most recent sticky I added is not synced?</p>
+<ul>
+<li>Does the fact that prompt is blocking make the race condition more likely to happen?</li>
+</ul>
+</li>
+<li>
+<p>Not updating to correct position when moved with two finger gesture</p>
+<ul>
+<li>It breaks when a two-finger gesture is initiated during a one-finger drag.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<pre><code>- [[kanban work methods]] Maybe I should do that.
+    - [[Kanban workflow with Regroup+Scrapbox for Regroup development]]
+- I wrote out the idea and summarized it: [[2020-02-04 Regroup+Kanban]].
+    - What I actually thought when I did it.
+    - There is a painful delay in writing in the current situation.
+            - Resolved by [Faster path drawing
+    - Movement with the lasso is sluggish because it is not ghosted.
+    - There is also a delay after the lasso move.
+    - Palm contact may cause violent screen movement
+        - If [[Groups with no nameplate]] is not easily available, it is inconvenient to enclose each group in a box.
+        - done
+    - Single drag movement mode when mouse down on stickies in lasso
+        - done:  [[Mouse down on a sticky in lasso mode should not be a move of the sticky]]
+</code></pre>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/Regroup%E3%81%A7%E3%82%AB%E3%83%B3%E3%83%90%E3%83%B3" class="external">/nishio/Regroupでカンバン<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Change-handling-of-mouse-events" class="internal">Change handling of mouse events</a></li><li><a href="./Do-not-force-them-to-wear-a-nameplate." class="internal">Do not force them to wear a nameplate.</a></li><li><a href="./Indication-when-there-is-no-nameplate-in-the-closed-group" class="internal">Indication when there is no nameplate in the closed group</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

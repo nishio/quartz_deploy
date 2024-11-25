@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Polis in EC2</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Polis in EC2"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Polis in EC2"/><meta name="twitter:description" content="summary Create an instance with Ubuntu / t2.medium / 8GB as appropriate Install Docker Install Polis SSL certificate required if running on anything other than localhost log on 2023-05-22 ..."/><meta property="og:description" content="summary Create an instance with Ubuntu / t2.medium / 8GB as appropriate Install Docker Install Polis SSL certificate required if running on anything other than localhost log on 2023-05-22 ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="summary Create an instance with Ubuntu / t2.medium / 8GB as appropriate Install Docker Install Polis SSL certificate required if running on anything other than localhost log on 2023-05-22 ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Polis-in-EC2"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Polis-in-EC2"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="summary Create an instance with Ubuntu / t2.medium / 8GB as appropriate Install Docker Install Polis SSL certificate required if running on anything other than localhost log on 2023-05-22 ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Polis-in-EC2"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Polis in EC2</a></div></nav><h1 class="article-title">Polis in EC2</h1><p show-comma="true" class="content-meta"><span>Jun 05, 2023</span><span>7 min read</span></p></div></div><article class="popover-hint"><p>summary</p>
+<ul>
+<li>Create an instance with Ubuntu / t2.medium / 8GB as appropriate</li>
+<li>Install Docker</li>
+<li>Install Polis
+<ul>
+<li>SSL certificate required if running on anything other than localhost</li>
+</ul>
+</li>
+</ul>
+<p>log on 2023-05-22
+Create an instance with Ubuntu / t2.micro / 8GB as appropriate</p>
+<ul>
+<li>As soon as I started the instance, I got a screen that looked like I could connect to the terminal from the browser, and I thought, “I guess I’m in good shape now,” and clicked on it, but then I got discouraged because I couldn’t connect because the instance was still running.</li>
+</ul>
+<p>Install Docker</p>
+<ul>
+<li><a href="https://docs.docker.com/engine/install/ubuntu/" class="external">Install Docker Engine on Ubuntu | Docker Documentation<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Hello world: OK</li>
+</ul>
+<p>Install Polis</p>
+<ul>
+<li><a href="https://github.com/compdemocracy/polis" class="external">GitHub - compdemocracy/polis: Open Source AI for large scale open ended feedback<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><code>$ git clone https://github.com/compdemocracy/polis.git</code></li>
+<li><code>$ sudo apt install make</code></li>
+<li>Follow the README</li>
+<li><code>$ cp example.env .env</code></li>
+<li><code>$ make start</code>
+<ul>
+<li><code>docker compose -f docker-compose.yml -f docker-compose.dev.yml --env-file .env up</code></li>
+<li>ERROR: <code>permission denied while trying to connect to the Docker daemon ...</code></li>
+<li>
+<img src="https://scrapbox.io/api/pages/nishio/gpt-4/icon" alt="gpt-4.icon" height="19.5"/>
+  - The Docker daemon runs as the root user and by default no other user can interact with it. This is why you get &quot;permission denied&quot; errors.
+  - Try the following steps to resolve this issue:
+      - Adding a user to the docker group: This is the recommended way to solve this problem. You can add a user to the docker group with the following command
+      - `$ sudo usermod -aG docker $USER`
+  - After executing this command, you must log out and log in again to reevaluate your group membership.
+</li>
+<li>Fixed!</li>
+</ul>
+</li>
+</ul>
+<p>The build is not finished after 10 minutes.</p>
+<ul>
+<li>Was the t2.micro too small?</li>
+<li>Let’s try t2.medium</li>
+<li><a href="https://aws.amazon.com/jp/ec2/instance-types/t2/" class="external">Amazon EC2 T2 Instance | AWS<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<p>SSL Certificate</p>
+<ul>
+<li><img src="https://gyazo.com/c0e9f95d8c7b2a598a88e4aaa860b009/thumb/1000" alt="image"/></li>
+<li>
+<blockquote>
+<p>The Docker Compose infrastructure described in the main README uses an insecure self-signed SSL certificate. This is pre-generated and stored publicly in the source code. This HTTPS implementation is only suitable for testing.</p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/compdemocracy/polis/blob/edge/docs/ssl.md" class="external">polis/ssl.md at edge · compdemocracy/polis · GitHub<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>I’ll do it later.</li>
+</ul>
+<p>create account</p>
+<ul>
+<li>ERROR: <code>unauthorized domain: https://3.87.68.32</code>
+server.ts</li>
+</ul>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="typescript" data-theme="github-light github-dark"><code data-language="typescript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  !</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">domainOverride </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">&amp;&amp;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  !</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">hasWhitelistMatches</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(host) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">&amp;&amp;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  !</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">routeIsWhitelistedForAnyDomain</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) {</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  logger.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">info</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;not whitelisted&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, { headers: req.headers, path: req.path });</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  return</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> next</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;unauthorized domain: &quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> +</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> host);</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span></code></pre></figure>
+<ul>
+<li><code>.env</code>
+<ul>
+<li><img src="https://gyazo.com/a8cdf4dc6d10f29fc4c0ddc4a109dc70/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>I’m not on localhost, so I don’t know if I need to do any configuration around this.</li>
+<li>It’s done.
+<ul>
+<li><img src="https://gyazo.com/8ad5ca4a532c28ff9da40035e9309f92/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+<p>SSL Certificate</p>
+<ul>
+<li>Add an A record to the DNS that you manage.</li>
+<li>Confirmation that nslookup can be pulled properly</li>
+<li>Try accessing the site with a browser
+<ul>
+<li>
+<blockquote>
+<p>Can’t access this site DNS_PROBE_FINISHED_NXDOMAIN</p>
+</blockquote>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/gpt-4/icon" alt="gpt-4.icon" height="19.5"/>Local DNS Cache: Your computer stores a local DNS cache to speed up the resolution of domain names. If this cache is outdated or corrupt, it can cause this error. You can clear your local DNS cache with the following command …
+<ul>
+<li>(OSX) <code>% sudo killall -HUP mDNSResponder</code></li>
+</ul>
+</li>
+<li>Changed to ERR_CONNECTION_REFUSED
+<ul>
+<li>Oh, I didn’t start the server.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Let’s Encrypt certbot uses 80, so not with Polis server built
+:</li>
+</ul>
+<pre><code>Certbot failed to authenticate some domains (authenticator: standalone). The Certificate Authority reported these problems:
+  Domain: *****
+  Type:   dns
+  Detail: DNS problem: NXDOMAIN looking up A for ***** - check that a DNS record exists for this domain; DNS problem: NXDOMAIN looking up AAAA for ***** - check that a DNS record exists for this domain
+</code></pre>
+<ul>
+<li>I thought it was the DNS, so I waited a bit or something, but no, this is not it.
+<ul>
+<li>EC2 security rules only opened 443 and 22.</li>
+<li>Open 80 and make sure it is accessible from the outside.
+<ul>
+<li><code>$ sudo python3 -mhttp.server 80</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1660488886341234690?s=20" class="external">@nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: I don’t know how to make an SSL certificate or anything, but I have a layman’s question: I’m trying to make a certificate with Let’s Encrypt for a subdomain that I newly added an A record to the DNS about 30 minutes ago. I’m trying to make a certificate with Let’s Encrypt for a subdomain to which I newly added an A record in DNS about 30 minutes ago, and I get an NXDOMAIN error.</p>
+</blockquote>
+<ul>
+<li>(I may have simply misplaced the domain name, orz)</li>
+</ul>
+</li>
+</ul>
+<p>The certificate is ready.
+Tweak <code>file-server/nginx.Dockerfile</code> and `file-server/nginx/nginx-ssl.site.default.conf</p>
+<ul>
+<li>The <code>nginx-ssl.site.default.conf</code> is copied
+diff</li>
+</ul>
+<pre><code>--- a/file-server/nginx.Dockerfile
++++ b/file-server/nginx.Dockerfile
+@@ -1,10 +1,12 @@
+ FROM docker.io/nginx:1.21.5-alpine
+ 
+-COPY nginx/nginx-ssl.site.default.conf /etc/nginx/conf.d/default.conf
++COPY nginx/nginx-ssl.site.nhiro.conf /etc/nginx/conf.d/default.conf
+ 
+ # We only use these in testing.
+ COPY nginx/certs/snakeoil.cert.pem /etc/nginx/certs/snakeoil.cert.pem
+ COPY nginx/certs/snakeoil.key.pem  /etc/nginx/certs/snakeoil.key.pem
++COPY fullchain.pem /etc/nginx/certs/fullchain.pem
++COPY privkey.pem /etc/nginx/certs/privkey.pem
+</code></pre>
+<p>conf.diff</p>
+<pre><code>     server_name _;
+ 
+-    ssl_certificate /etc/nginx/certs/snakeoil.cert.pem;
+-    ssl_certificate_key /etc/nginx/certs/snakeoil.key.pem;
++    ssl_certificate /etc/nginx/certs/fullchain.pem;
++    ssl_certificate_key /etc/nginx/certs/privkey.pem;
+     ssl_session_timeout 10m;
+</code></pre>
+<ul>
+<li><code>$ docker compose up --detach --build --no-deps nginx-proxy</code>
+<ul>
+<li><a href="https://gist.github.com/nishio/917ae036c22c55fc4763d6864898aa5c" class="external">https://gist.github.com/nishio/917ae036c22c55fc4763d6864898aa5c<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>In fact, it would be better to get the certificate file from Let’s encrypt’s certbot, since it seems to update it automatically, but it was too much trouble, so I cp’d it.
+<ul>
+<li>When a file could not be read due to its location, the owner of the directory or file being root, or permissions, etc., it would simply disconnect from the server instead of stopping with a clear error, and it was a pain to find out what was causing the problem.</li>
+<li>Finally, just sudo cp’ing the certificate didn’t work, chmod 666 did.</li>
+</ul>
+</li>
+</ul>
+<p>After a while, Bad Gateway killed it.
+<code>polis-dev-nginx-proxy-1  | 2023/05/24 04:16:35 [error] 32#32: *12492 connect() failed (111: Connection refused) while connecting to upstream, client: ::ffff:133.200.136.32, server: _, request: &quot;GET /7xrm9snjcc HTTP/2.0&quot;, upstream: &quot;http://172.18.0.5:5000/7xrm9snjcc&quot;, host: &quot;polis.nhiro.org&quot;, referrer: &quot;https://t.co/&quot;</code>
+Hmmm, dead at the end of nginx.
+Maybe it’s not good if access is concentrated, since the development server is operated in production as it is for the purpose of development observation.
+It would be good to see the logs to determine the cause, where is it?</p>
+<p>Error in detailed report display</p>
+<ul>
+<li>
+<blockquote>
+<p>GET /report/undefined/api/v3/reports?report_id=r2bafdsneascdm6sbmnad 404</p>
+</blockquote>
+<ul>
+<li><code>undefined</code></li>
+</ul>
+</li>
+<li>Only the report screen is reading the URL prefix from the .env.</li>
+<li>I’m using document.origin instead when it’s not pointed out, but it’s undefined</li>
+</ul>
+<p>from <a href="https://scrapbox.io/villagepump/2023/05/24" class="external">/villagepump/2023/05/24<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<img src="https://scrapbox.io/api/pages/villagepump/inajob/icon" alt="/villagepump/inajob.icon" height="19.5"/></p>
+<ul>
+<li>The UI is the same, so it’s a mystery to me that I’m not logged in (though of course I should be).</li>
+<li>I was confused because when I clicked on the link for the login lead, I was sent to the main <a href="./Polis" class="internal" data-slug="Polis">Polis</a>.</li>
+<li>I can’t <a href="./link-to-Twitter" class="internal alias" data-slug="link-to-Twitter">link to Twitter</a> (haven’t set the key?)
+<ul>
+<li>Maybe I haven’t!<img src="https://scrapbox.io/api/pages/villagepump/nishio/icon" alt="/villagepump/nishio.icon" height="19.5"/>
+<ul>
+<li>Opinion posting is allowed anonymously, the seed opinion created by the administrator and the opinion posted by the participants are indistinguishable!</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Background: I wanted to plug Polis for a discussion that occurred within the company.<img src="https://scrapbox.io/api/pages/villagepump/nishio/icon" alt="/villagepump/nishio.icon" height="19.5"/>
+<ul>
+<li>pol.is is treated as an “external cloud service”, so it is troublesome
+<ul>
+<li>I think it would be beneficial to the world if it were easier to understand the procedure for getting it up quickly and using it for internal purposes.<img src="https://scrapbox.io/api/pages/villagepump/nishio/icon" alt="/villagepump/nishio.icon" height="19.5"/>
+<ul>
+<li>Especially since I’m thinking, “Wouldn’t this be beneficial for decision making within the private sector?” I think it could be useful for decision making in the private sector.
+—
+<a href="./polis" class="internal" data-slug="polis">polis</a>ってログインせずに投票できたんだ<img src="https://scrapbox.io/api/pages/villagepump/takker/icon" alt="/villagepump/takker.icon" height="19.5"/></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>When I vote and leave, I lose my vote results. I don’t know what to do.<img src="https://scrapbox.io/api/pages/villagepump/issac/icon" alt="/villagepump/issac.icon" height="19.5"/>
+<ul>
+<li>There is no Twitter to link to, so I can’t even go back through the icons.
+<ul>
+<li>Only the memory of my vote remains.</li>
+</ul>
+</li>
+<li>You can’t (and shouldn’t) be able to see which of each question you answered when you work together.<img src="https://scrapbox.io/api/pages/villagepump/inajob/icon" alt="/villagepump/inajob.icon" height="19.5"/>
+<ul>
+<li>No list of votes answered in the past, etc. (I’d like to have one)</li>
+<li>Understanding that the icon will be yours when the diagram is available, and that you will only receive email notifications when there are additional questions.</li>
+<li>I want to tinker with various things (my own instance for that).<img src="https://scrapbox.io/api/pages/villagepump/nishio/icon" alt="/villagepump/nishio.icon" height="19.5"/></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/EC2%E3%81%A7Polis" class="external">/nishio/EC2でPolis<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Analyze-Polis-data" class="internal">Analyze Polis data</a></li><li><a href="./Export-data-from-Polis-DB" class="internal">Export data from Polis DB</a></li><li><a href="./Polis-Study-Group" class="internal">Polis Study Group</a></li><li><a href="./Summer-2024-Polis-Festival:-Instance-Preparation" class="internal">Summer 2024 Polis Festival: Instance Preparation</a></li><li><a href="./Weekly-journal-2023-05-23~05-28" class="internal">Weekly journal 2023-05-23~05-28</a></li><li><a href="./pPersonalPolis" class="internal">pPersonalPolis</a></li><li><a href="./pPolis" class="internal">pPolis</a></li><li><a href="./pPolis2024-02-22" class="internal">pPolis2024-02-22</a></li><li><a href="./quarterly-(journal)" class="internal">quarterly (journal)</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

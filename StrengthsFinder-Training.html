@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>StrengthsFinder Training</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="StrengthsFinder Training"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="StrengthsFinder Training"/><meta name="twitter:description" content="..."/><meta property="og:description" content="..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/StrengthsFinder-Training"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/StrengthsFinder-Training"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="StrengthsFinder-Training"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>StrengthsFinder Training</a></div></nav><h1 class="article-title">StrengthsFinder Training</h1><p show-comma="true" class="content-meta"><span>Nov 23, 2024</span><span>10 min read</span></p></div></div><article class="popover-hint"><ul>
+<li>
+<p>StrengthsFinder is a pattern of thinking, not a personality test, so it changes when the work environment and requirements change, and the thinking of arrangement grows when the work requires arrangement.</p>
+<ul>
+<li>There are qualities that are temporarily heightened by the demands of the workplace.
+<ul>
+<li>If your boss is an analytical thinker, you’ll gradually become more analytical.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Interesting to see the Excel sheet on the side of the group work, the first person to speak up has the strongest “Influence: sociability”.</p>
+</li>
+<li>
+<p>Many people have good relationship-building skills.</p>
+<ul>
+<li>Japanese have more relationship-building qualities and less influence.</li>
+<li>My Top 5 <a href="./strength" class="internal" data-slug="strength">strength</a> are all <a href="./strategic-thinking" class="internal alias" data-slug="strategic-thinking">strategic thinking</a>, 4 <a href="./influence" class="internal" data-slug="influence">influence</a>, 1 <a href="./ability-to-get-things-done" class="internal alias" data-slug="ability-to-get-things-done">ability to get things done</a>, and 0 <a href="./relationship-building" class="internal alias" data-slug="relationship-building">relationship building</a>, which seems to be a very small minority.</li>
+</ul>
+</li>
+<li>
+<p>It’s not about strengths, it’s about the degree to which they are natural to me.”</p>
+<ul>
+<li>It’s like a tool that you don’t have to work hard to use.</li>
+<li>You take it for granted, and that’s what causes you to fall into a hole when you use it the wrong way.</li>
+<li>So the knife can be used for cooking, but it can also be used for murder.</li>
+<li>Top 5 right hand, bottom left hand
+<ul>
+<li>It’s not that I can’t build relationships either, I can if I try, but it’s hard to do so. It’s like writing with your left hand, he said.</li>
+</ul>
+</li>
+<li>The top 5 are often unconscious and already used, but the top 10 can be used only consciously.
+<ul>
+<li>I see, you’re good at it, but it’s not being utilized, so you could use it more.</li>
+<li>The top five are biased toward strategic thinking skills, and the top ten are activism, ego, topmost, goal oriented, and self-belief.</li>
+<li>The best relationship-building skill is individualization.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Liveness and prudence</p>
+<ul>
+<li>I’m not thinking carefully about my post, so I’ll just write it right into the live thread lol.</li>
+<li>I write before I think, “What will people think of me if I write this?” lol</li>
+</ul>
+</li>
+<li>
+<p>Strengths are unacknowledged talent x conscious investment</p>
+</li>
+<li>
+<p>I don’t expect that what comes natural to me will come natural to others.”</p>
+<ul>
+<li>Can we say that StrengthsFinder is a tool to help us understand that there are diverse people?</li>
+</ul>
+</li>
+<li>
+<p>When they are similar, it’s easy at first, and they go along like this and like that, but they fall into the pit at the same time because they are seeing the same scenery!</p>
+</li>
+<li>
+<p>Achievers have a lot of stamina, work is a treat.</p>
+</li>
+<li>
+<p>Arrangement people leave more and more to others.</p>
+</li>
+<li>
+<p>I’m 32 fairness and 34 discipline, so I might look like an alien to the fairness people.</p>
+<ul>
+<li>When you’re highly disciplined, you don’t have three-day-olds.”</li>
+<li>Doing the routine properly is also discipline.
+<ul>
+<li>Indeed I sometimes forget to log in to Garoon and don’t notice the notifications.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Goal-oriented thinking “lowers the priority of non-goals.”</p>
+</li>
+<li>
+<p>Highly responsible people are clear about “their area of responsibility” and get zonked when they are told “one of you two do it”.</p>
+</li>
+<li>
+<p>A person with prudence is more likely to notice risks and a person with a restorative mindset is more likely to notice problems, but can be interpreted by those who are not as “all negative.”</p>
+</li>
+<li>
+<p>I see… “I have both responsibility and arrangement” → “I can satisfy my sense of responsibility while exercising my arrangement by expanding my sense of responsibility to accomplish this as a team.</p>
+</li>
+<li>
+<p>People with strong egos are more powerful when the spotlight is on them.</p>
+</li>
+<li>
+<p>I’m guessing the groupware makes it a friendly environment for higher level communicators because they can talk electronically without having to hold up anyone who will listen in time.</p>
+</li>
+<li>
+<p>From “top thinking” and “strategizing,” I thought, “Isn’t that an uncommon dislike of waste?” I didn’t think of it on the spur of the moment when I was asked, but after thinking about it, “I don’t see the benefit of having hair and I waste time going for a haircut, so I clip it” is uncommon?</p>
+<ul>
+<li>Ha, maybe “voice communication is inefficient because you can’t look back and reuse it later, text is better” is also unusual?</li>
+</ul>
+</li>
+<li>
+<p>Self-Confidence.</p>
+<ul>
+<li>‘Unfounded confidence’ lol.</li>
+<li>You need to be careful not to be perceived as someone who doesn’t listen to opinions, so you need to be careful.</li>
+<li>More discretion to self-determine is more likely to be active.
+<ul>
+<li>So the lab is just fine.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>harmony</p>
+<ul>
+<li>avoid confrontation</li>
+<li>Who doesn’t avoid confrontation?
+<ul>
+<li>I feel that the expression, “Thinking from one point of view is a pitfall, so we should dare to clash with major opinions and different points of view,” is more reasonable to be confrontational but is interpreted by harmonizers as, “You’re disturbing the scene.”</li>
+<li><a href="https://ja.wikipedia.org/wiki/%E6%82%AA%E9%AD%94%E3%81%AE%E4%BB%A3%E5%BC%81%E8%80%85" class="external">Devil’s Advocate - Wikipedia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li><a href="https://capla-kensyu.jp/column/archives/29" class="external">The “Devil’s Advocate” to Revitalize Organizations｜Organizational Development｜Human Resource Development Column｜Capra Training Search<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://business.nikkei.com/atcl/skillup/16/012600016/050100016/" class="external">30-something employees speak “devil”: Nikkei Business e-edition<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Inclusive thinkers don’t exclude people; when they find someone who is alone, they bring them back into the conversation.</p>
+<ul>
+<li>I appreciate it to the point where they bring me into the loop, but when I’m expected to act like everyone else, it’s painful for me as a self-confident person, so I’d rather be left alone than be forced to think.</li>
+</ul>
+</li>
+<li>
+<p>Me, who doesn’t have the numbers on relationship-building skills, I was wondering if there wasn’t something to do at this time, but it would be “from my point of view it looks like the opposite.”</p>
+<ul>
+<li>Empathic people are easily influenced by other people’s feelings and are highly sensitive to others’ feelings</li>
+<li>It’s likely to rebel against the empathic person’s “I didn’t write it, but you should get it” approach, saying that it’s harmful to expect others to read what you didn’t write because there’s no guarantee that they will read what you expect them to read.</li>
+</ul>
+</li>
+<li>
+<p>Surprisingly low growth promotion.</p>
+<ul>
+<li>Top thinking likes people who are already strong, and growth promotion likes people who are becoming stronger.</li>
+<li>Growth promoters, they think everyone can grow, so if they teach three times and fail three times, it’s like, “Well, I didn’t teach him well enough.</li>
+<li>Surprisingly low growth promotion I “It is cost-effective to accelerate with appropriate leverage those who have the ability to learn on their own, and the cost to those who cannot learn is not an appropriate resource allocation and should be quickly discarded.”</li>
+<li>I see, this is not growth promotion, he said.</li>
+<li>Another example, active + restorative thinking, pointing out all the problems that need to be solved <span>→</span> those who catch on well will grow as a result.
+<ul>
+<li>We don’t act on growth as an end in itself or wait for that person to grow.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Socializing is friends now with people you meet today, and intimacy is slow and deliberate over time, so you may feel a wall in the beginning.</p>
+</li>
+<li>
+<p>Positive is a shape memory alloy, it dents but returns quickly.</p>
+</li>
+<li>
+<p>introspection</p>
+<ul>
+<li>It seems to me that during the meeting you start introspection and don’t listen.”</li>
+</ul>
+</li>
+<li>
+<p>Strategy is more like making strategic moves than direct moves.</p>
+<ul>
+<li>Very useful when used for the team, but black-hearted when used for personal gain lol.</li>
+<li>Satellites for strategy, ground warfare for harmony
+<ul>
+<li>These two can easily cause miscommunication.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Future-oriented people spend a lot of time thinking ahead to tomorrow.”</p>
+<ul>
+<li>What, people don’t think about it much?</li>
+<li>“Be proactive and understand that what you are seeing is an outlier.”</li>
+</ul>
+</li>
+<li>
+<p>desire to learn</p>
+<ul>
+<li>The moment you figure it out, you lose interest.</li>
+<li>I’m uncomfortable doing what I know I can do, lol.</li>
+</ul>
+</li>
+<li>
+<p>collecting spirit</p>
+<ul>
+<li>If you don’t show that you have it, there’s no way for the other members to know about it.</li>
+<li>If you don’t output as well as input, you will lose your treasure.</li>
+<li>I’m a collector minded 13
+<ul>
+<li>Maybe under the influence of activeness 6 ego 7, learning and collecting and then immediately transmitting what he’s learned and collected.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Inspiration: “Connecting totally unrelated things.”</p>
+<ul>
+<li>No, no, no, that’s the point of view of the uninspired, while the inspired think, “It’s relevant, why can’t I see it?” lol.</li>
+<li>Harmonious people don’t like it when I speak up about the idea when they are trying to put it together lol.</li>
+</ul>
+</li>
+<li>
+<p>Positive people, seemingly unwilling to improve.</p>
+<ul>
+<li>I’m willing to improve, but if I can’t find the answer to my problems, I won’t bother.</li>
+</ul>
+</li>
+<li>
+<p>Inclusion “Is it okay if I don’t invite that person to this drinking party?”</p>
+<ul>
+<li>I see. I never thought of it that way.</li>
+<li>I’ve never thought about who I would invite, and I’ve never thought about who I would invite, and I’ve never thought about who I would invite, and I’ve never thought about who I would invite. Do you want to join or not?” That’s all I do.</li>
+</ul>
+</li>
+<li>
+<p>Intimacy “I made an appointment to talk one-on-one with someone who has helped me” Inclusion “Can I invite this person too?”</p>
+</li>
+<li>
+<p>analytical thinking</p>
+<ul>
+<li>I feel like I’m being asked a question.</li>
+<li>I can’t understand why you think that way unless you put it into words properly, so I ask, “Why do you think that?” But this is sometimes interpreted as an intention to say that it is wrong to think that way.
+<ul>
+<li>anti-sympathetic</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Tips on how to get rid of unmotivated work by people with a desire to learn.</p>
+<ul>
+<li>Title the task “An Experiment in ~“.</li>
+</ul>
+</li>
+<li>
+<p>StrengthsFinder is a way to find ways to let yourself shine, a way to be yourself instead of trying to be someone else, but you don’t know what you are, so it shows you ‘this area seems strong’.</p>
+</li>
+<li>
+<p>When the boss-subordinate relationship is strong, harmony can lead to the opposite behavior: “When I am the subordinate, I say yes to my boss,” or “When the team is not cohesive, I am the leader and strongly express my opinions and pull the team together.</p>
+</li>
+<li>
+<p>How do we manage our weaknesses…</p>
+<ul>
+<li>Trying to develop the qualities of the bottom is like a fish trying to fly.</li>
+</ul>
+</li>
+<li>
+<p>What to do when the top qualities are showing badly.</p>
+<ul>
+<li>Reduce the relative amount by stepping back on the accelerator and shifting the center of gravity to other qualities.</li>
+</ul>
+</li>
+<li>
+<p>Q: Why do you do what you do now?</p>
+<ul>
+<li>When I think about the future in 5 or 10 years (future orientation 4), I am self-convinced (10) that there should be a system to make introspection (5) more efficient (top thinking 8), but to achieve that goal (goal orientation 9), I have an implementation idea (1) to experiment and see if it works (desire to learn 3). In doing that, I am in a current position, in the present. Doing what you are doing is strategically optimal (Strategicity 2)</li>
+<li>Remaining: actively communicates (active 6) + wants the individual to be in the spotlight (ego 7)</li>
+<li>I forced myself to use all of them.</li>
+</ul>
+</li>
+<li>
+<p>Create an environment that nurtures your talents into strengths.</p>
+<ul>
+<li>What is the WHY for me?
+<ul>
+<li>Realization of ideal system</li>
+</ul>
+</li>
+<li>What do you do to further develop your talents?
+<ul>
+<li>Only a few have all the Top 5 in strategic thinking, so verbalize and share the view from your perspective.</li>
+<li>Ask people who share your goals (realization of an ideal system) to shoulder the burden of building relationships that you are not good at.</li>
+</ul>
+</li>
+<li>To keep it going in our daily lives, we need
+<ul>
+<li>Do you transmit regularly?</li>
+<li>In terms of the actual situation?</li>
+<li>The best way to build relationships is to individualize, and to develop this by multiplying it with your strengths?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E3%82%B9%E3%83%88%E3%83%AC%E3%83%B3%E3%82%B0%E3%82%B9%E3%83%95%E3%82%A1%E3%82%A4%E3%83%B3%E3%83%80%E3%83%BC%E7%A0%94%E4%BF%AE" class="external">/nishio/ストレングスファインダー研修<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li>No backlinks found</li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

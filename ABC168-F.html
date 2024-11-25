@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>ABC168 F</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="ABC168 F"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="ABC168 F"/><meta name="twitter:description" content="Given 2000 vertical and horizontal line segments and a space about 10^9 wide delimited, find the area of the area reachable from the origin problem. summary - coordinate compression and then just DFS the AC TLE when submitting I built the graph in advance using maspy’s code as a reference, but MLE I thought the MLE cause was a graph represented by a dens matrix, but I was wrong."/><meta property="og:description" content="Given 2000 vertical and horizontal line segments and a space about 10^9 wide delimited, find the area of the area reachable from the origin problem. summary - coordinate compression and then just DFS the AC TLE when submitting I built the graph in advance using maspy’s code as a reference, but MLE I thought the MLE cause was a graph represented by a dens matrix, but I was wrong."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="Given 2000 vertical and horizontal line segments and a space about 10^9 wide delimited, find the area of the area reachable from the origin problem. summary - coordinate compression and then just DFS the AC TLE when submitting I built the graph in advance using maspy’s code as a reference, but MLE I thought the MLE cause was a graph represented by a dens matrix, but I was wrong."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/ABC168-F"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/ABC168-F"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Given 2000 vertical and horizontal line segments and a space about 10^9 wide delimited, find the area of the area reachable from the origin problem. summary - coordinate compression and then just DFS the AC TLE when submitting I built the graph in advance using maspy’s code as a reference, but MLE I thought the MLE cause was a graph represented by a dens matrix, but I was wrong."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="ABC168-F"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>ABC168 F</a></div></nav><h1 class="article-title">ABC168 F</h1><p show-comma="true" class="content-meta"><span>Jun 24, 2020</span><span>11 min read</span></p><ul class="tags"><li><a href="./tags/Rectangular" class="internal tag-link">Rectangular</a></li></ul></div></div><article class="popover-hint"><p>Given 2000 vertical and horizontal line segments and a space about 10^9 wide delimited, find the area of the area reachable from the origin <a href="https://atcoder.jp/contests/abc168/tasks/abc168_f" class="external">problem<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</p>
+<p>summary
+- <a href="./coordinate-compression" class="internal alias" data-slug="coordinate-compression">coordinate compression</a> and then just DFS the AC</p>
+<ul>
+<li>TLE when submitting</li>
+<li>I built the graph in advance using maspy’s code as a reference, but MLE</li>
+<li>I thought the MLE cause was a graph represented by a dens matrix, but I was wrong.
+<ul>
+<li>It was a set that recorded visited vertices in the process of DFS <a href="./set-is-a-memory-hog" class="internal alias" data-slug="set-is-a-memory-hog">set is a memory hog</a>.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>During the contest, I was completely untouched. Read the commentary and then give it a try.</p>
+<p>Searching one pixel at a time is slow, so it is processed by chopping it into meaningful rectangular squares.
+- It’s referred to by the term <a href="./coordinate-compression" class="internal alias" data-slug="coordinate-compression">coordinate compression</a>.</p>
+<ul>
+<li>You can sort and unique the values that appear, and bisect each value against them.</li>
+</ul>
+<p>First written.</p>
+<ul>
+<li>Submittal Results, 11/96 TLE <a href="https://atcoder.jp/contests/abc168/submissions/14612194" class="external">https://atcoder.jp/contests/abc168/submissions/14612194<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>I think this is obvious. I have the coordinates in real coordinates, and I have to bisect every time to find a neighboring vertex.</li>
+<li>Let’s bisect it first and use it.</li>
+</ul>
+</li>
+<li>I later verified it at hand and found AC: 96, max_time: 56.97.
+<ul>
+<li>The calculations were correct, but too late.
+python</li>
+</ul>
+</li>
+</ul>
+<pre><code>N, M = map(int, input().split())
+vlines = defaultdict(list)
+hlines = defaultdict(list)
+vticks = {0}
+hticks = {0}
+
+for i in range(N):
+    A, B, C = map(int, input().split())
+    vlines[C].append((A, B))
+    hticks.add(C)
+    vticks.update((A, B))
+
+for i in range(M):
+    D, E, F = map(int, input().split())
+    hlines[D].append((E, F))
+    vticks.add(D)
+    hticks.update((E, F))
+
+vticks = [-INF] + list(sorted(vticks)) + [INF, INF]
+hticks = [-INF] + list(sorted(hticks)) + [INF, INF]
+
+
+def up(y):
+    return vticks[bisect.bisect_left(vticks, y) - 1]
+
+
+def down(y):
+    return vticks[bisect.bisect_left(vticks, y) + 1]
+
+
+def left(x):
+    return hticks[bisect.bisect_left(hticks, x) - 1]
+
+
+def right(x):
+    return hticks[bisect.bisect_left(hticks, x) + 1]
+
+
+def area(x, y):
+    i = bisect.bisect_left(hticks, x)
+    width = hticks[i + 1] - hticks[i]
+    j = bisect.bisect_left(vticks, y)
+    height = vticks[j + 1] - vticks[j]
+    return width * height
+
+
+total_area = 0
+visited = set()
+
+
+def visit(x, y):
+    global total_area
+    if (x, y) in visited:
+        return
+    # dp(&quot;visited: x,y&quot;, x, y)
+    a = area(x, y)
+    total_area += a
+    visited.add((x, y))
+    # visit neighbors
+    l = left(x)
+    if (l, y) not in visited:
+        for a, b in vlines[x]:
+            if a &lt;= y &lt; b:
+                # blocked
+                break
+        else:
+            # can move left
+            to_visit.append((l, y))
+
+    u = up(y)
+    if (x, u) not in visited:
+        for a, b in hlines[y]:
+            if a &lt;= x &lt; b:
+                # blocked
+                break
+        else:
+            # can move up
+            to_visit.append((x, u))
+
+    r = right(x)
+    if (r, y) not in visited:
+        for a, b in vlines[r]:
+            if a &lt;= y &lt; b:
+                # blocked
+                break
+        else:
+            # can move left
+            to_visit.append((r, y))
+
+    d = down(y)
+    if (x, d) not in visited:
+        for a, b in hlines[d]:
+            if a &lt;= x &lt; b:
+                # blocked
+                break
+        else:
+            # can move up
+            to_visit.append((x, d)) 
+
+to_visit = [(0, 0)]
+while to_visit:
+    x, y = to_visit.pop()
+    if x == INF or x == -INF or y == INF or y == -INF:
+        print(&quot;INF&quot;)
+        break
+    visit(x, y)
+else:
+    print(total_area)
+</code></pre>
+<p>Pre-bisect policy (proper coordinate compression)</p>
+<ul>
+<li>RE with out-of-range access by mistaking x and y
+<ul>
+<li>Corrected but also 11 TLE</li>
+<li>Hmmm <a href="./numba" class="internal" data-slug="numba">numba</a>.</li>
+</ul>
+</li>
+</ul>
+<p>Error on closure in numba</p>
+<ul>
+<li>I’m not sure under what conditions it happens.</li>
+<li>I had made the “visit” a function somehow, but I didn’t want to call it recursively, so I expanded it inline.</li>
+</ul>
+<p>I’m having trouble getting data in the form <code>int => [(int, int)]</code> into numba world.</p>
+<ul>
+<li>I refilled my own np.array.</li>
+<li>I can run it on hand and it’s usually AC, but some of it is WA.
+<ul>
+<li>PS: The cause is that you forgot to add 0 to the coordinates, so when you bisect it, it goes into a different square than expected.
+python</li>
+</ul>
+</li>
+</ul>
+<pre><code>>>> xs = [-1, 1, 2]
+>>> xs[bisect.bisect_left(xs, 0)]
+1
+</code></pre>
+<pre><code>- ![image](https://gyazo.com/089dd5c0366f3fd127dcb989cdf2f247/thumb/1000)
+
+- I broke it in the process of porting to numba.
+</code></pre>
+<p>python</p>
+<pre><code> vticks = {0}
+ hticks = {0}
+</code></pre>
+<pre><code>- At this point, I was unaware of the cause and sought another way to pass it on (see below).
+</code></pre>
+<ul>
+<li><a href="./Passing-complex-types-to-NUMBA" class="internal alias" data-slug="Passing-complex-types-to-NUMBA">Passing complex types to NUMBA</a></li>
+<li>You can pass dict and list, too!</li>
+<li><a href="./numba-bisect" class="internal alias" data-slug="numba-bisect">numba bisect</a>
+<ul>
+<li>The standard library bisect does not work as it is, so I copied and pasted it into main.</li>
+<li>In this case, it’s a function within a function, but it works fine.</li>
+</ul>
+</li>
+<li>Submit: all RE
+<ul>
+<li>atcoder’s numba is 0.48 and old so typed.List can’t take arguments orz</li>
+<li>We should not be doing this.
+<ul>
+<li>Knowledge that “the latest version can do this, but atcoder’s is an older version, so it needs to be rewritten this way” is a type of knowledge that has no other application and will become obsolete with atcoder’s version upgrade, and should not be tried.</li>
+<li>Knowledge that is likely to change and become obsolete in the future where the behavior changes with minor version differences.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Read others’ explanations and codes.</p>
+<ul>
+<li><a href="https://maspypy.com/atcoder-%E5%8F%82%E5%8A%A0%E6%84%9F%E6%83%B3-2020-05-18abc-168" class="external">https://maspypy.com/atcoder-参加感想-2020-05-18abc-168<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li><a href="https://atcoder.jp/contests/abc168/submissions/13389928" class="external">tuned code<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://atcoder.jp/contests/abc168/submissions/13359130" class="external">blog posting code<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://atcoder.jp/contests/abc168/submissions/13349468" class="external">first ac<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li><code>data = np.int64(read().split())</code>
+<ul>
+<li>Ahhh, I see. It’s complicated because you have to create the structure and then figure out how to pass it on, so you pass it on as a column as you read it…</li>
+</ul>
+</li>
+<li><a href="./numpy.unique" class="internal" data-slug="numpy.unique">numpy.unique</a>
+<ul>
+<li>Similar to set, but a sorted array.</li>
+</ul>
+</li>
+<li>data structure
+<ul>
+<li>My implementation is checking every time I move to an adjacent square, “Does it collide with a line segment on that line?” check.
+<ul>
+<li>So I had an <code>int => [(int, int)]</code> with a “line segment on a line” and I was having trouble numba-ing it.</li>
+</ul>
+</li>
+<li>maspy’s code is a graph structure with vertices arranged in a rectangle<a href="./tags/Rectangular" class="tag-link internal alias" data-slug="tags/Rectangular">Rectangular</a> graph search
+<ul>
+<li>Packs x,y into integers, so <code>int[:, :]</code>.
+<ul>
+<li>The number of edges per vertex is also fixed at 4</li>
+<li>Q: What about the edges of the rectangle?
+<ul>
+<li>A: I put <a href="./sentry" class="internal" data-slug="sentry">sentry</a> on the end, and when it reaches it, it returns INF and ends the search, so it doesn’t have to have the correct value in it.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I somehow assumed that it was impossible to construct a graph in the yang.</li>
+<li>It seems that a scale of this size (3000 * 3000 * 4) would not be a problem.</li>
+<li>If you devise it, it will be 1000 * 1000 * 4.
+<ul>
+<li><a href="https://atcoder.jp/contests/abc168/submissions/13389928" class="external">tuned code<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> pruning the end of the line segment</li>
+<li><img src="https://gyazo.com/7006b27454eb8b4aaa230b1e3c7e1fa8/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>What to do next</p>
+<ul>
+<li>Stop passing complex types to NUMBA.</li>
+<li>Try to see if you can build the same complex molds in the numba world as you do now.</li>
+</ul>
+<p><code>vlines[C] = []</code>
+python</p>
+<pre><code>There are 10 candidate implementations:
+   - Of which 8 did not match due to:
+   Overload in function 'setitem': File: &lt;built-in>: Line &lt;N/A>.
+     With argument(s): '(DictType[undefined,undefined], int64, list(undefined))':
+    No match.
+   - Of which 2 did not match due to:
+   Overload in function 'impl_setitem': File: numba/typed/dictobject.py: Line 669.
+     With argument(s): '(DictType[undefined,undefined], int64, list(undefined))':
+    Rejected as the implementation raised a specific error:
+      TypingError: list(undefined) as value is forbidden
+</code></pre>
+<p><code>vlines[C] = [(0, 0)]</code>
+<code>TypingError: list(UniTuple(int64 x 2)) as value is forbidden</code></p>
+<p>Nope, let’s give up using complex types in numba.</p>
+<p>Numba’s fine story
+python</p>
+<pre><code># OK 
+xticks = np.unique(np.concatenate((A, B, D, np.array([-INF, 0, INF]))))
+# NG
+yticks = np.unique(np.concatenate((E, F, C, [-INF, 0, INF])))
+</code></pre>
+<ul>
+<li>The code below is an error due to mixed types in the argument tuple of np.concatenate see <a href="./numba-np.concatenate" class="internal alias" data-slug="numba-np.concatenate">numba np.concatenate</a>.</li>
+</ul>
+<p><code>AC: 25, WA: 65, RE: 6, max_time: 0.53</code></p>
+<ul>
+<li>I misunderstood how to write a horizontal line.</li>
+<li>RE is Segmentation fault</li>
+</ul>
+<p><code>AC: 96, max_time: 2.91</code></p>
+<ul>
+<li>submit
+<ul>
+<li>sub1_93.txt	MLE</li>
+<li>This is the first time I’ve ever run into a memory limit.</li>
+<li>I’m new to this so I’m not sure how to deal with it, but I guess I’ll just throw away A-F since I don’t need them when I’m done making the graph?</li>
+<li>No, you can’t.</li>
+<li>Try to make graph edges bool instead of int</li>
+<li>Is this still not good enough?</li>
+<li>I tried using scipy.sparse.<a href="./csr_matrix" class="internal" data-slug="csr_matrix">csr_matrix</a> but numba doesn’t support it.</li>
+</ul>
+</li>
+</ul>
+<p>I re-read maspy’s code again.</p>
+<ul>
+<li><a href="https://atcoder.jp/contests/abc168/submissions/13389928" class="external">tuned code<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> is waiting for a straightforward 4*N matrix, but</li>
+<li><a href="https://atcoder.jp/contests/abc168/submissions/13349468" class="external">first AC<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> do you have it in 2*|E| of vertex pairs?
+python</li>
+</ul>
+<pre><code>def add(v, w):
+    nonlocal p
+    nxt[p] = head[v]
+    head[v] = p
+    ng[p] = w
+    p += 1
+</code></pre>
+<pre><code>- Ah, I see, this is [[linked list]]!
+    - p is the free position
+    - The previous writing about `v' is in `head[[p]]`, so transcribe it to `next[[p]]` to connect the link.
+    - head is initialized with -1, so -1 is terminal
+    - ![image](https://gyazo.com/cd9568515772bf6b0b7aeb340b69bc4d/thumb/1000)
+</code></pre>
+<ul>
+<li><a href="https://atcoder.jp/contests/abc168/submissions/13349468" class="external">first AC<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> is 227MB with this devise</li>
+<li><a href="https://atcoder.jp/contests/abc168/submissions/13359130" class="external">blog-posted code<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> is a straightforward bool matrix, 86MB</li>
+<li>I, on the other hand, have 1532 MB…</li>
+</ul>
+<p>I don’t know…</p>
+<ul>
+<li>
+<p>The first code is on the link list, so it saves memory.</p>
+</li>
+<li>
+<p>The tuned code drops the ends of the lines, so the number of super points is reduced to 1/9, saving memory.</p>
+</li>
+<li>
+<p>But the blog code is normally 9_000_000 * 4 dens np.array.</p>
+<ul>
+<li>Same as my code.</li>
+<li>If there is a slight difference, why is there a 20-fold difference?</li>
+</ul>
+</li>
+<li>
+<p><code>solve(*precompute(N, M, data))</code> is a two-step process.</p>
+<ul>
+<li>have nothing to do with (something)</li>
+</ul>
+</li>
+<li>
+<p>Have integers in 32-bit instead of 64-bit</p>
+<ul>
+<li><code>10 ** 9 &lt; 2 ** 31</code></li>
+<li>Unresolved.</li>
+</ul>
+</li>
+<li>
+<p>Have 16-bit compressed coordinate values.</p>
+<ul>
+<li><code>3000 &lt; 2 ** 15</code></li>
+<li>Unresolved.</li>
+</ul>
+</li>
+<li>
+<p>Instead of having the graph as N * 4, pack 4 values into an integer and have it as uint8</p>
+<ul>
+<li>Unresolved.</li>
+</ul>
+</li>
+<li>
+<p><code>INF = 10 ** 9 + 1</code></p>
+<ul>
+<li>I had set <code>INF = 10 ** 10</code>, which actually exceeds Int32.MaxValue.</li>
+<li><code>10 ** 10 > 2 ** 31</code></li>
+<li>I’ve tried changing it, but it doesn’t affect me.</li>
+</ul>
+</li>
+</ul>
+<p>I’ll try <a href="./mprof" class="internal" data-slug="mprof">mprof</a> at hand since it doesn’t solve the problem at all.</p>
+<ul>
+<li>My code
+<ul>
+<li><img src="https://gyazo.com/b7f0e30e84651d516ec7d6e0e824edfc/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>maspy’s code
+<ul>
+<li><img src="https://gyazo.com/2be679307b2e46e272231527258c0d8d/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>Hmmm, it sure eats up a lot of memory.</li>
+</ul>
+<p>I checked the number of vertices and they were both (9018009, 4), so the number of vertices is not exploding due to the bug.</p>
+<p>Oh, okay.</p>
+<ul>
+<li>The cause is not the construction of the graph.</li>
+<li>It’s a SET that kept track of visited vertices in the DFS process.
+python</li>
+</ul>
+<pre><code>x = set()
+for i in range(9_000_000):
+    x.add(i)
+</code></pre>
+<ul>
+<li><img src="https://gyazo.com/afd0afef705664b82f9b3628c428add9/thumb/1000" alt="image"/>
+<ul>
+<li><a href="./set-is-a-memory-hog" class="internal alias" data-slug="set-is-a-memory-hog">set is a memory hog</a></li>
+<li>They’re eating 90 bites per entry.</li>
+<li>I was only concerned about the size 4N graph, but the size N SET was on it by a factor of several dozen.</li>
+<li>Replace with np.zeros and AC <a href="https://atcoder.jp/contests/abc168/submissions/14647413" class="external">https://atcoder.jp/contests/abc168/submissions/14647413<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li><img src="https://gyazo.com/45ec66aaf39e1d10441d5ff68e6fae69/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>consideration of the causes of defeat</p>
+<ul>
+<li>I assumed the graph was bad because I changed to a pre-built graph implementation and got an MLE.
+<ul>
+<li>Assumption that the problem lies in the most recent change.</li>
+<li>In fact, the previous implementation was a TLE, so they just ran out of time before it became an MLE.</li>
+</ul>
+</li>
+<li>mprof has the ability to produce memory consumption per row. If you had used this early on, you would have realized that the problem is not in the graph construction.
+<ul>
+<li>I didn’t try it because I’m compiling it in NUMBA - so I didn’t try it.</li>
+</ul>
+</li>
+<li>Trial and error process
+<ul>
+<li><img src="https://gyazo.com/0caddaabf0befdb5c74626f7f6dae131/thumb/1000" alt="image"/></li>
+<li>I focused only on the MLE and thought, “This is not a solution at all!” but the memory consumption was properly reduced.</li>
+<li>The fact that “the fixes have reduced memory consumption, but as a percentage of the total, it’s not much” means that “there are other sources of memory consumption besides the ones we’re focusing on now.”</li>
+<li>I should have realized at this point and investigated with <a href="./mprof" class="internal" data-slug="mprof">mprof</a> to see what was eating memory.</li>
+</ul>
+</li>
+</ul>
+<p>Large data takes too much time, small data consumes too little memory to understand well.
+I found just the right one (below).
+Since it seems difficult to find out during the contest, it seems important not to write code that is likely to be MLE in the first place
+:</p>
+<pre><code>2510957991
+Filename: f_mle.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    24   79.117 MiB   79.117 MiB   @profile
+    25                             def main(N, M, data):
+...
+    40   79.223 MiB    0.105 MiB       xticks = np.unique(np.concatenate((E, F, C, np.array([-INF, 0, INF]))))
+    41   79.223 MiB    0.000 MiB       yticks = np.unique(np.concatenate((A, B, D, np.array([-INF, 0, INF]))))
+    42   79.230 MiB    0.008 MiB       width = xticks[1:] - xticks[:-1]
+    43   79.230 MiB    0.000 MiB       height = yticks[1:] - yticks[:-1]
+    44                             
+    45                                 # compress
+    46   79.238 MiB    0.008 MiB       A = np.searchsorted(yticks, A)
+...
+    56                             
+    57   79.266 MiB    0.027 MiB       ng_egdes = np.zeros((NUM_VERTEXES, 4), dtype=np.bool_)
+    87   79.484 MiB    0.000 MiB       while to_visit:
+...
+    88   79.484 MiB    0.000 MiB           pos = to_visit.pop()
+    89   79.484 MiB    0.004 MiB           y, x = divmod(pos, GRAPH_WIDTH)
+    90   79.484 MiB    0.012 MiB           if pos in visited:
+...
+    96   79.484 MiB    0.000 MiB           total_area += width[x] * height[y]
+    97   79.484 MiB    0.125 MiB           visited.add(pos)
+    98                                     # plan to visit neighbors
+    99   79.484 MiB    0.000 MiB           for i in range(4):
+   100   79.484 MiB    0.012 MiB               if not ng_egdes[pos, i]:
+   101   79.484 MiB    0.008 MiB                   to_visit.append(pos + direction[i])
+   102                                 else:
+   103   79.484 MiB    0.000 MiB           print(total_area)
+</code></pre>
+<p><a href="./atcoder" class="internal" data-slug="atcoder">atcoder</a></p>
+<hr/>
+<p>This page is auto-translated from [/nishio/ABC168 F](<a href="https://scrapbox.io/nishio/ABC168" class="external">https://scrapbox.io/nishio/ABC168<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> F) using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li>No backlinks found</li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

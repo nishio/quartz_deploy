@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Kozaneba Development Diary 2021-09-03</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Kozaneba Development Diary 2021-09-03"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Kozaneba Development Diary 2021-09-03"/><meta name="twitter:description" content="from Kozaneba Development Diary 2021-09-02 2021-09-03Kozaneba Development Diary I was happy to see a series of tweets about the Markdownization of administrative texts, which ..."/><meta property="og:description" content="from Kozaneba Development Diary 2021-09-02 2021-09-03Kozaneba Development Diary I was happy to see a series of tweets about the Markdownization of administrative texts, which ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="from Kozaneba Development Diary 2021-09-02 2021-09-03Kozaneba Development Diary I was happy to see a series of tweets about the Markdownization of administrative texts, which ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Kozaneba-Development-Diary-2021-09-03"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Kozaneba-Development-Diary-2021-09-03"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="from Kozaneba Development Diary 2021-09-02 2021-09-03Kozaneba Development Diary I was happy to see a series of tweets about the Markdownization of administrative texts, which ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Kozaneba-Development-Diary-2021-09-03"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Kozaneba Development Diary 2021-09-03</a></div></nav><h1 class="article-title">Kozaneba Development Diary 2021-09-03</h1><p show-comma="true" class="content-meta"><span>Jan 25, 2022</span><span>6 min read</span></p></div></div><article class="popover-hint"><p>from  <a href="./Kozaneba-Development-Diary-2021-09-02" class="internal alias" data-slug="Kozaneba-Development-Diary-2021-09-02">Kozaneba Development Diary 2021-09-02</a>
+2021-09-03Kozaneba Development Diary</p>
+<blockquote>
+<p>I was happy to see a series of tweets about the Markdownization of administrative texts, which had about 300,000 impressions, and I was happy to see that some people tweeted about it, drawing me into action, which is the civic tech culture. this. you are the “nobody”! <a href="https://twitter.com/hal_sk/status/1433552759593189377?s=21" class="external">https://twitter.com/hal_sk/status/1433552759593189377?s=21<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+<ul>
+<li>I’m going to create a function to import Scrapbox content as Kozane because I need it, but maybe it would be nice to be able to import Markdown as well.</li>
+</ul>
+<p>Auto Layout, if you think about it, the system doesn’t save on position update, but on user operation, so you don’t have to turn off auto save to do it.</p>
+<p>release notes</p>
+<ul>
+<li>Fix to make only one user have the right to edit when cloud saving is turned on.
+<ul>
+<li>When user Y opened a Ba created and read-only shared by user X and saved it as another name, the information that X had editing privileges was saved as well.</li>
+<li>Therefore, the Ba saved by this user Y was displayed in the place list of user X and could be rewritten.</li>
+</ul>
+</li>
+<li>Automatic backup to browser’s IndexedDB
+<ul>
+<li>Currently default: off, will change to default: on after using it myself for a while</li>
+</ul>
+</li>
+<li>Added ability to save backup data to a new Ba</li>
+<li>Fixed padding when the group has a low free space ratio.
+<ul>
+<li>Solved a problem that made it difficult to click on a group instead of its contents when, for example, 9 kozanes were added.</li>
+</ul>
+</li>
+<li>Automatic deletion of empty groups with no title</li>
+</ul>
+<p>Rebuild Kozaneba Development</p>
+<ul>
+<li>
+<p>Because it also served as a demonstration for users, it was used in a way that was contrary to its original purpose of “getting your head out of the clouds.</p>
+<ul>
+<li>I put Scrapbox Kozane and draw illustrations even though I don’t need it.</li>
+</ul>
+</li>
+<li>
+<p><img src="https://gyazo.com/ed1b782cc5f75ac38432b464fe1c3b70/thumb/1000" alt="image"/></p>
+</li>
+<li>
+<p>Required Functions</p>
+</li>
+<li>
+<p>I use it and find it.</p>
+<ul>
+<li>Functions found in Regroup
+<ul>
+<li>Handwritten additions
+<ul>
+<li>Fewer people than expected had iPad+Apple Pencil</li>
+<li>Hand-drawn “enclosures and arrows” prevent “moving items”.
+<ul>
+<li>putting the cart before the horse</li>
+</ul>
+</li>
+<li>A figure that is easy to move should have an “image item” since that is the item</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Fine Features
+<ul>
+<li>First, try to realize it with user extensions
+<ul>
+<li>More samples.</li>
+<li>Designed to be easily expandable.</li>
+</ul>
+</li>
+<li>Placement of expansion
+<ul>
+<li>I’d love to try it without reloading the browser.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Scrapbox Link Expansion</p>
+<ul>
+<li>Only add pages that are not already there.</li>
+<li>Connect the arrows</li>
+</ul>
+</li>
+<li>
+<p>Scrapbox Content Import</p>
+<ul>
+<li>From BaDialog</li>
+<li>Options for AddKozaneDialog</li>
+<li>Ignore code regions</li>
+<li>Treat indented bullets as a group</li>
+<li>Hopefully Markdown can do the same.</li>
+</ul>
+</li>
+<li>
+<p>Selection textualization</p>
+<ul>
+<li>Scrapbox Kozane cannot determine the appropriate wording until the default project is determined.
+<ul>
+<li>Texting is by title only.</li>
+<li>Create a separate Scrapbox format export?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>I want to scroll the screen with a selection.</p>
+<ul>
+<li>status quo
+<ul>
+<li>Selection display does not scroll</li>
+</ul>
+</li>
+<li>two-finger gesture</li>
+<li>At least show the whole thing in spaces.
+<ul>
+<li>If you can do this, you can “place it at a magnification that allows you to see what’s inside, use the overall zoom to place it in the proper position within the whole, and then go back to the original viewpoint”.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Manage selections without ReactN</p>
+</li>
+</ul>
+<p>Multilingualization of tutorials
+Paste from Regroup
+Additional user rendering methods</p>
+<p>Arrow function
+Tablet Support
+Keichobot</p>
+<p>Add yesterday’s <a href="./Arrows-are-a-way-to-express-clear-relationships-and-make-them-unbreakable" class="internal alias" data-slug="Arrows-are-a-way-to-express-clear-relationships-and-make-them-unbreakable">Arrows are a way to express clear relationships and make them unbreakable</a> to Ba about arrow functions and organize</p>
+<ul>
+<li><a href="https://youtu.be/5aYxi_l3IJk" class="external">https://youtu.be/5aYxi_l3IJk<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<p><img src="https://gyazo.com/9a23774ba94b281eff638253525d8529/thumb/1000" alt="image"/>
+In other words, “If the dependency is a tree, it’s fine” and “If it’s circular, it’s bad” are resolved as “We just need to make a bipartite graph”.</p>
+<ul>
+<li><img src="https://gyazo.com/fedbceccc7836eb80c868172d7b5fb87/thumb/1000" alt="image"/></li>
+</ul>
+<p>I called it an arrow function, but even arrows need to “switch between double and single arrows” to begin with.</p>
+<ul>
+<li>Without a head on both sides, it’s just a line.</li>
+</ul>
+<p>This week’s summary</p>
+<ul>
+<li>Scrapbox Kozane</li>
+<li>picture sumo wrestler</li>
+<li>Reduce unnecessary redraws due to misunderstanding of ReactN hook specifications</li>
+<li>Copy and paste a selection (JSON to clipboard so it can be pasted to another location)</li>
+<li>Create backup locally</li>
+</ul>
+<p>I made a backup without thinning it out to try it out, and it came out to about 7 megs.</p>
+<ul>
+<li>About Thinning
+<ul>
+<li>If there’s another backup in, say, a second, you can delete it.
+<ul>
+<li>In other words, the shorter the “time until next backup,” the less you need.</li>
+<li>Just erase them in order of shortest to longest.</li>
+</ul>
+</li>
+<li>If it’s over 12 hours, it should be eligible for preservation.
+<ul>
+<li>Even if you kept updating 24 hours a day for a year, you wouldn’t get a thousand.</li>
+<li>About 11KB with “arrow function Ba”
+<ul>
+<li>10 times the size, updated 24 hours a day for a year, 110 MB, no problem.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>js</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="javascript" data-theme="github-light github-dark"><code data-language="javascript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">kozaneba</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  .</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">fetch_api</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">    &quot;https://scrapbox.io/api/pages/nishio/2021-09-03Kozaneba%E9%96%8B%E7%99%BA%E6%97%A5%E8%A8%98/text&quot;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  )</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  .</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">then</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">((</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">res</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> res.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">text</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">())</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  .</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">then</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">((</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">text</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> console.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">log</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(kozaneba.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">parse_scrapbox</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(text)));</span></span></code></pre></figure>
+<p><img src="https://gyazo.com/a92410d360f2d6323ad1d0ff685afc90/thumb/1000" alt="image"/></p>
+<ul>
+<li><img src="https://gyazo.com/dd9a2099d4991c2f40f764a2f0ca5624/thumb/1000" alt="image"/></li>
+</ul>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1433740238799572998" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: put “hit the Scrapbox API” and “parse the given string with scrapbox-parser” on Kozaneba’s API. But I haven’t figured out what to do after this yet.</p>
+</blockquote>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1433741644185047043" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: Is “<code>a[b]c[d]e</code>” good because it would be 5 alternating rows of regular kozane and Scrapbox kozane?</p>
+</blockquote>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1433742430591807495" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: I made the Scrapbox kozane about 3 times bigger than the regular kozane the other day, but if I keep this in mind, should I have kept the default size the same? Should I have kept the default size the same?
+No, but considering the way it looks on Scrapbox, the card is not inserted in the sentence, so I added it as a regular kozane and the card is at the end?</p>
+</blockquote>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1433764680435048448" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: first Cloud Function, the design is clunky. It converts the Scrapbox URL to an API URL on the server side, so you can only hit a specific URL. Either rewrite it so it can hit anything…</p>
+</blockquote>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1433772246380605451" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: If we create a mutual conversion between Scrapbox and Kozaneba, and then create a mutual conversion between Markdown Kozaneba, we could eventually create a mutual conversion between Scrapbox and Markdown interconversion could be made (typical desktop theory).</p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/markdown-it/markdown-it" class="external">https://github.com/markdown-it/markdown-it<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1433779469777453063" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: of course I’m not aiming to be a converter, so I’m willing to throw away code notation and tables</p>
+</blockquote>
+<ul>
+<li><a href="./Kozaneba-Development-Diary-2021-09-06" class="internal alias" data-slug="Kozaneba-Development-Diary-2021-09-06">Kozaneba Development Diary 2021-09-06</a></li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/Kozaneba%E9%96%8B%E7%99%BA%E6%97%A5%E8%A8%982021-09-03" class="external">/nishio/Kozaneba開発日記2021-09-03<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Kozaneba-Development-Diary-2021-09-02" class="internal">Kozaneba Development Diary 2021-09-02</a></li><li><a href="./Kozaneba-Development-Diary-2021-09-06" class="internal">Kozaneba Development Diary 2021-09-06</a></li><li><a href="./pKozaneba" class="internal">pKozaneba</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

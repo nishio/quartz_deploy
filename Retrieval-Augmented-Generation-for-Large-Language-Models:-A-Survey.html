@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Retrieval-Augmented Generation for Large Language Models: A Survey</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Retrieval-Augmented Generation for Large Language Models: A Survey"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Retrieval-Augmented Generation for Large Language Models: A Survey"/><meta name="twitter:description" content="2312.10997 Retrieval-Augmented Generation for Large Language Models: A Survey This is a comprehensive survey paper on Retrieval-Augmented Generation (RAG) techniques that ..."/><meta property="og:description" content="2312.10997 Retrieval-Augmented Generation for Large Language Models: A Survey This is a comprehensive survey paper on Retrieval-Augmented Generation (RAG) techniques that ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="2312.10997 Retrieval-Augmented Generation for Large Language Models: A Survey This is a comprehensive survey paper on Retrieval-Augmented Generation (RAG) techniques that ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Retrieval-Augmented-Generation-for-Large-Language-Models:-A-Survey"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Retrieval-Augmented-Generation-for-Large-Language-Models:-A-Survey"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="2312.10997 Retrieval-Augmented Generation for Large Language Models: A Survey This is a comprehensive survey paper on Retrieval-Augmented Generation (RAG) techniques that ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Retrieval-Augmented-Generation-for-Large-Language-Models:-A-Survey"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Retrieval-Augmented Generation for Large Language Models: A Survey</a></div></nav><h1 class="article-title">Retrieval-Augmented Generation for Large Language Models: A Survey</h1><p show-comma="true" class="content-meta"><span>May 01, 2024</span><span>7 min read</span></p></div></div><article class="popover-hint"><p><a href="https://arxiv.org/abs/2312.10997" class="external">2312.10997 Retrieval-Augmented Generation for Large Language Models: A Survey<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<img src="https://scrapbox.io/api/pages/nishio/claude/icon" alt="claude.icon" height="19.5"/>This is a comprehensive survey paper on Retrieval-Augmented Generation (<a href="./RAG" class="internal" data-slug="RAG">RAG</a>) techniques that improve the performance of large-scale language models (LLMs). The main contents of the paper are as follows.</p>
+<ol>
+<li>the development of RAG can be categorized into three paradigms: Naive RAG, <a href="./Advanced-RAG" class="internal alias" data-slug="Advanced-RAG">Advanced RAG</a>, and <a href="./Modular-RAG" class="internal alias" data-slug="Modular-RAG">Modular RAG</a>. Each has been developed to overcome the limitations of the previous paradigm.</li>
+</ol>
+<ul>
+<li>The three foundational components of the RAG framework are Retrieval, Generation, and Augmentation. State-of-the-art technologies in each component are examined in detail.</li>
+</ul>
+<ol start="3">
+<li>the main downstream tasks of RAGs and the state-of-the-art evaluation frameworks and benchmarks for evaluating them are presented.</li>
+<li>RAGs currently face several challenges, but future R&amp;D directions include improving robustness, adapting to longer contexts, and extending to multimodal.</li>
+<li>RAG technology can significantly improve the capacity of LLMs by synergistically integrating parametric knowledge and non-parametric external databases.</li>
+</ol>
+<p>RAG technology is developing rapidly and is attracting significant attention from academia and industry. It is expected to have a significant impact on the future development of the AI field.</p>
+<p><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>What problems does Advanced RAG solve?</p>
+<p><img src="https://scrapbox.io/api/pages/nishio/claude/icon" alt="claude.icon" height="19.5"/>Advanced RAG is a method developed to overcome the limitations of Naive RAG. Specifically, it solves the following problems</p>
+<ol>
+<li>improve the quality of search:
+<ul>
+<li>In the pre-retrieval phase, the index structure and the original query are optimized to improve the accuracy and reproducibility of the retrieval. For example, increasing the granularity of data, optimizing the index structure, adding metadata, and rewriting or transforming the query are used.</li>
+<li>In the post-retrieval stage, retrieved information is re-ranked based on relevance and important information is selected and compressed to improve the quality of the context to be passed to the generation stage.</li>
+</ul>
+</li>
+<li>improvement of the quality of generation:
+<ul>
+<li>Instead of inputting retrieved information directly into the language model, rearrange the information according to its importance and delete unnecessary information to improve the quality of the responses generated. In addition, fine-tuning the language model specific to the task will enable more appropriate responses to be generated.</li>
+</ul>
+</li>
+<li>efficiency of the expansion phase:
+<ul>
+<li>When integrating retrieved information, remove duplicate information or convert it to a format more appropriate for the task, thereby increasing the efficiency of the expansion phase. In addition, search and generation should be iterative so that more appropriate answers can be generated for complex problems.</li>
+</ul>
+</li>
+</ol>
+<p>By combining these methods, Advanced RAG aims to comprehensively solve the problems of Naive RAG and improve the performance of the entire RAG system.</p>
+<p><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>What improvements in pre-retrieval can be made?</p>
+<p><img src="https://scrapbox.io/api/pages/nishio/claude/icon" alt="claude.icon" height="19.5"/>Pre-retrieval improvements include the following techniques</p>
+<ol>
+<li>optimization of index structure:</li>
+</ol>
+<ul>
+<li>
+<ul>
+<li>Build a hierarchical index structure to enable quick retrieval of relevant information.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Knowledge graphs are used to represent relationships between documents to improve search accuracy.</li>
+</ul>
+</li>
+</ul>
+<p>Optimization of chunk partitioning:</p>
+<ul>
+<li>
+<ul>
+<li>Semantic integrity is maintained by dividing documents at sentence boundaries rather than by fixed-length token counts.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Allow overlap between chunks using the sliding window method to prevent missing context.</li>
+</ul>
+</li>
+</ul>
+<p>Add metadata:</p>
+<ul>
+<li>
+<ul>
+<li>Document metadata (page number, file name, author, category, timestamp, etc.) is assigned to the chunk and used for filtering when searching.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Bridging the semantic gap between questions and answers by adding artificial metadata such as summaries and hypothetical questions.</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>query optimization:</li>
+</ol>
+<ul>
+<li>
+<ul>
+<li>Expanding on multiple queries complements context that cannot be captured by a single query.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Improve search accuracy by breaking down complex queries into sub queries.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Rewrite the query using LLM to convert it into a format suitable for searching.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Use step-back prompting to abstract queries to allow for more extensive searches.</li>
+</ul>
+</li>
+</ul>
+<ol start="5">
+<li>query routing:</li>
+</ol>
+<ul>
+<li>
+<ul>
+<li>Select appropriate search methods and search targets based on query metadata and semantic information.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Combine multiple search methods to increase the comprehensiveness of the search.</li>
+</ul>
+</li>
+</ul>
+<p>The right combination of these techniques can improve the accuracy and efficiency of searches and provide higher quality context for the generation phase.</p>
+<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>
+Why does building a [[hierarchical indexing structure]] allow for quick retrieval of relevant information?
+- How exactly does [[knowledge graph]] work?
+- Learn more about the use of [[summary]].
+How do we [[decompose]] a query into [[secondary queries]]?
+What is [[step-back prompting]]?
+<img src="https://scrapbox.io/api/pages/nishio/claude/icon" alt="claude.icon" height="19.5"/>
+1. why building a hierarchical index structure allows for quick retrieval of relevant information:
+- - Documents can be organized by parent-child relationship and chunks can be associated with them to narrow down the search target.
+- - Storing a [[summary]] of the data at each node provides a quick overview of the data and makes it easier to determine which chunks should be retrieved.
+- - By following a hierarchical structure, related chunks can be searched efficiently.
+<ol start="2">
+<li>specific uses of the knowledge graph:</li>
+</ol>
+<ul>
+<li>
+<ul>
+<li>Explicitly expressing relationships between different concepts and entities can maintain contextual coherence and reduce hallucination.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Translating the information retrieval process into instructions that LLMs can understand improves the accuracy of knowledge retrieval and enables the generation of contextualized answers.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>When building an index among multiple documents, the knowledge graph can be used to capture the logical relationships between document content and structure.</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>the use of summaries:</li>
+</ol>
+<ul>
+<li>
+<ul>
+<li>Adding document summaries as artificial <a href="./metadata" class="internal" data-slug="metadata">metadata</a> can bridge the semantic gap between questions and answers.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>The summary can be used for filtering when searching to improve the accuracy of the search.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Recursive search] based on summaries allows efficient processing of long documents and PDFs with complex structures.</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>how to decompose a query into sub queries:</li>
+</ol>
+<ul>
+<li>
+<ul>
+<li>Decompose a complex query into the simpler sub-queries that make it up.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Derive an answer to the original query by combining secondary queries.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>For decomposition, use the <a href="./LEAST-TO-MOST-PROMPTING-METHOD" class="internal alias" data-slug="LEAST-TO-MOST-PROMPTING-METHOD">LEAST-TO-MOST PROMPTING METHOD</a> or other methods.</li>
+</ul>
+</li>
+</ul>
+<ol start="5">
+<li>what is step-back prompting?</li>
+</ol>
+<ul>
+<li>
+<ul>
+<li>A technique that abstracts the original query to generate a high-level conceptual question (<a href="./step-back-question" class="internal alias" data-slug="step-back-question">step-back question</a>).</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>The RAG system uses both the step-back question and the original query in the search and uses the results as the basis for generating answers in the language model.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Generating more abstract questions broadens the scope of the search and allows for more comprehensive information to be obtained.</li>
+</ul>
+</li>
+</ul>
+<p>The proper combination of these methods can improve the efficiency of the RAG system’s search and the quality of the responses it generates.</p>
+<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>
+What is a recursive search based on a summary?
+What is the least-to-most prompting method?
+<img src="https://scrapbox.io/api/pages/nishio/claude/icon" alt="claude.icon" height="19.5"/>
+1. recursive search based on summaries:
+- This technique is useful for processing long documents and PDFs with complex structures. It is performed in the following steps
+    - a) Process and search a portion of a document (e.g., a section or page) using a structured index.
+    - b) Create a summary of the retrieved portion.
+    - c) Based on that summary, conduct a more detailed search within the document.
+<ul>
+<li>This recursive, summary-based search allows for step-by-step refinement of large amounts of information. It may also be combined with multi-hop search to extract more deeply relevant information from graph-structured data sources.</li>
+</ul>
+<ol start="2">
+<li>least-to-most prompting method:</li>
+</ol>
+<ul>
+<li>
+<p>This technique is used to decompose a complex question into a series of simpler sub-questions. It is done in the following steps</p>
+<ul>
+<li>a) Receive complex questions.</li>
+<li>b) Break the question down into simpler, more specific sub-questions.</li>
+<li>c) Secondary questions are in turn entered into the language model to generate answers.</li>
+<li>d) Combine the generated answers to derive the final answer to the original complex question.</li>
+</ul>
+</li>
+<li>
+<p>For example, “What were the primary causes of World War II?” can be broken down into the following sub-questions</p>
+<ul>
+<li>
+<ul>
+<li>When did World War II occur?</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Which major countries participated in World War II?</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>How did the rise of Nazi Germany cause World War II?</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>How did the Japanese invasion cause World War II?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>By answering these sub-questions in turn, a comprehensive answer to the original complex question can be generated.</p>
+</li>
+<li>
+<p>Using the least-to-most prompting method, complex questions can be converted into a more manageable format and take full advantage of the language model’s capabilities.</p>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from [/nishio/Retrieval-Augmented Generation for Large Language Models: A Survey](<a href="https://scrapbox.io/nishio/Retrieval-Augmented" class="external">https://scrapbox.io/nishio/Retrieval-Augmented<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Generation for Large Language Models: A Survey) using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li>No backlinks found</li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

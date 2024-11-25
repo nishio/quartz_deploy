@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Programming Change Study Group</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Programming Change Study Group"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Programming Change Study Group"/><meta name="twitter:description" content="2023-02-10 I tweeted on “Changes in programming languages over the past decade” while waiting for an eye exam the other day, and the response was more than I expected ..."/><meta property="og:description" content="2023-02-10 I tweeted on “Changes in programming languages over the past decade” while waiting for an eye exam the other day, and the response was more than I expected ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="2023-02-10 I tweeted on “Changes in programming languages over the past decade” while waiting for an eye exam the other day, and the response was more than I expected ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Programming-Change-Study-Group"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Programming-Change-Study-Group"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="2023-02-10 I tweeted on “Changes in programming languages over the past decade” while waiting for an eye exam the other day, and the response was more than I expected ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Programming-Change-Study-Group"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Programming Change Study Group</a></div></nav><h1 class="article-title">Programming Change Study Group</h1><p show-comma="true" class="content-meta"><span>Nov 15, 2023</span><span>21 min read</span></p></div></div><article class="popover-hint"><p>2023-02-10</p>
+<ul>
+<li>I tweeted on “<a href="./Changes-in-programming-languages-over-the-past-decade" class="internal alias" data-slug="Changes-in-programming-languages-over-the-past-decade">Changes in programming languages over the past decade</a>” while waiting for an eye exam the other day, and the response was more than I expected.
+<ul>
+<li>The above page, summarized in bullet points, has been viewed over 10,000 PV.</li>
+</ul>
+</li>
+<li>I put this together in [Kozaneba digital stationery to organize your thoughts
+- <a href="Kozaneba:Changes%20in%20programming%20languages%20in%20the%20last%20decade" class="external">Kozaneba:Changes in programming languages in the last decade<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>(This is also a test of the easy line-drawing function I added to Kozaneba last week.)</li>
+</ul>
+</li>
+<li>Today I’ll explain it in a nutshell, then explain the important points with code.</li>
+</ul>
+<h2 id="first-the-big-picture">First, the big picture<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#first-the-big-picture" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>.</p>
+<ul>
+<li><img src="https://gyazo.com/69c8676477b96050ae696d51b7206796/thumb/1000" alt="image"/>
+<ul>
+<li>This is the real big picture</li>
+</ul>
+</li>
+<li><img src="https://gyazo.com/b4784d52c52797355c8566cf07125941/thumb/1000" alt="image"/>
+<ul>
+<li>Zoom a little</li>
+<li>We started out with the question, “What are the major changes in programming language specifications that have occurred in the last 10 years?</li>
+<li>However, looking at the opinions gathered, there are some that do not fit within the framework of “programming language specifications.
+<ul>
+<li>Biggest: Browser</li>
+<li>Other machine learning and container technologies have had a major impact on the activity of programming in the last decade.</li>
+</ul>
+</li>
+<li>Before we get into the programming language specifications, let’s take a quick look at this first</li>
+</ul>
+</li>
+</ul>
+<h2 id="browser">Browser<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#browser" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><img src="https://gyazo.com/93b2e5ee8df55544778ed45a0f64b700/thumb/1000" alt="image"/></li>
+<li>The iPhone 5S came out 10 years ago in 2013.
+<ul>
+<li>In the decade that followed, smartphones became widespread.</li>
+<li>More work to create smartphone apps.</li>
+<li>On the other hand, making separate versions for iOS and Android is expensive</li>
+<li>A movement to do it with WebView (browser component) is born.</li>
+</ul>
+</li>
+<li>At the same time, something similar was happening in the desktop environment.
+<ul>
+<li>Electron appeared in 2013</li>
+<li>It is expensive to create separate GUI applications for Windows, Mac, and Linux.</li>
+<li>A movement to realize this with the Chromium rendering engine and Node.js is born.</li>
+<li>That this is a realistic option was really demonstrated in Microsoft’s IDE Visual Studio Code (2015), which is built on Electron</li>
+<li>If something as complex as an IDE can run with decent performance, then why not this?</li>
+</ul>
+</li>
+<li>What has happened in the last decade
+<ul>
+<li>Technological Advances in Browsers</li>
+<li>This is not the narrow scope of “providing web services”.</li>
+<li>It affected a wide range of “GUI offerings.”</li>
+</ul>
+</li>
+<li>Q&amp;A
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Has the relative importance of the OS decreased?</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>The browser has taken away a lot of the “operation” of the OS as a “system that performs operations.
+<ul>
+<li>I recently bought an electronic instrument called InstaChord, and when I did a firmware update for it, it no longer requires a native app, but instead allows serial communication directly from the browser to USB-connected peripherals.</li>
+<li>
+<blockquote>
+<p>Web Serial API provides a way for websites to receive data from and send data to serial devices. The target can be a device connected via a serial port, or a USB or Bluetooth device acting as a serial port. <a href="https://developer.mozilla.org/ja/docs/Web/API/Web_Serial_API" class="external">MDN<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+</li>
+<li>Ten years ago, you would have been told to “run this exe file in Windows”, but now you can do things that have nothing to do with the OS.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>return one’s gaze</p>
+<ul>
+<li>
+<p><img src="https://gyazo.com/2b3acb8b22ae82979a0687e63a677081/thumb/1000" alt="image"/></p>
+<ul>
+<li>There are three big topics.
+<ul>
+<li>I want to be able to do what I want.</li>
+<li>async/await</li>
+<li>Avoid destructive renewal</li>
+</ul>
+</li>
+<li>There are many more factors involved with regard to programming styles that avoid destructive updates.
+<ul>
+<li>I haven’t fully organized it at this stage of preparing this lecture material, but let’s take a quick look at it.</li>
+<li>(Note: Although “de-object-oriented” is prominently displayed in the figure, we chose to avoid this because it is a vague phrase that people have different images of what they imagine by the term “object-oriented.)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>GUI development and moves to avoid destructive updates</p>
+<ul>
+<li>The story of programming styles that avoid destructive updates is quite related to the GUI story.</li>
+<li><img src="https://gyazo.com/770ae9733b7c4e687a5bdd3a71a8d588/thumb/1000" alt="image"/></li>
+<li>GUI used to be an important application area for object-oriented
+<ul>
+<li>Individual buttons are instances of the Button class, individual labels are instances of the Label class, …</li>
+<li>GUI was an easy application domain to understand the benefits of object orientation in a straightforward manner.</li>
+<li>But as of a decade ago, there were signs of change in its use.
+<ul>
+<li>
+<blockquote>
+<p>There is a movement around Java to avoid “inheritance for the purpose of implementation reuse. For example, the Abstract Window Toolkit (AWT) released in 1995 had a rule of “inheritance and overriding various methods. However, the Standard Widget Toolkit (SWT) used by Eclipse and others now has a “do not inherit” rule.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>What developed instead was the concept of “delegation.”</p>
+</blockquote>
+<ul>
+<li>( <a href="./Technology-Supporting-Coding" class="internal alias" data-slug="Technology-Supporting-Coding">Technology Supporting Coding</a>  p.222)</li>
+<li>(Side note: I made the mistake of writing “now” in the text, readers today in 2023 may not understand Eclipse…)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2019, React “Hooks API”
+<ul>
+<li>Programmers do not use classes when defining stateful GUI components</li>
+<li>Use a function without state instead.</li>
+<li>The Hooks API is the mechanism that allows this function component to do the same things as the class component.</li>
+<li>We will consider the function component to be the standard usage.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Hooks API and Function Components</p>
+<ul>
+<li>GUI components with state
+<ul>
+<li>Consider, for example, a switch that turns on and off when clicked.</li>
+<li>This is an “on/off” state</li>
+</ul>
+</li>
+<li>When defining a component in a class, naively, the state of the component is held as a member variable</li>
+<li>In the function component, the React side has the state
+<ul>
+<li>Get the current value of the state and setter by a mechanism called the Hooks API</li>
+<li><img src="https://gyazo.com/a16e89398f997015f385a40f8fed22ef/thumb/1000" alt="image"/></li>
+<li>When updating the state, call its setter</li>
+<li>By letting React handle state changes, the component no longer has state, so functions are better.</li>
+</ul>
+</li>
+<li>What makes me happy about this?
+<ul>
+<li>React’s side can know “that the state has been updated”.
+<ul>
+<li>Implementation style where classes rewrite member variables makes it difficult for the framework to detect changes</li>
+<li>Especially with past object-oriented thinking, it tends to be “let’s make the members private so they can’t be seen from the outside”.</li>
+</ul>
+</li>
+<li>React also knows “components that refer to that state”.
+<ul>
+<li>Only components that have read that state will behave in a way that depends on that state.</li>
+<li>Only this component requires redrawing</li>
+<li><img src="https://gyazo.com/34daca8ccd87549b9ce7fa42076fabbd/thumb/1000" alt="image"/></li>
+<li>React calls the target function component and redraws with the result</li>
+<li>Q: Describe only the method of state transitions, without taking responsibility for managing the state?</li>
+<li>A: Well, yes. If each object manages its own state, it would be chaotic. That’s why we’re talking about putting it all in one place in React.</li>
+</ul>
+</li>
+<li>Function components can be designed as stateless functions that get their latest state from the Hooks API and return a rendering result (virtual DOM)
+<ul>
+<li>If the programmer writes it properly, it will be a function with no side effects.</li>
+<li>That is, you don’t have to call it the same number of times as the number of state updates.</li>
+<li>It doesn’t even have to be synchronous with state updates.</li>
+<li>For example, if you write code that toggles on and off 101 times when a button is pressed, the rendering will only be performed once, and so on.</li>
+<li>This is important for performance, so let’s all use the function component to be able to do this, and then it will be faster.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Q: It is also common to create web apps without state, but with state in the database.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>A: Hmmm, that seems to be a different thing you are referring to by the word “state”.
+<ul>
+<li>There are “persistent states” and “non-persistent states” in the state.</li>
+<li>State” in GUI includes which text box has the focus.</li>
+<li>It is not practical to send all state on the browser to the database</li>
+<li>There must also exist a state that is only on the browser</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>I can say that even in the React model, there are local variables in the function component and the detailed state is held there.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>A local variable of a function is not accessible after exiting the function, so you don’t really think of it as a state, do you?
+<ul>
+<li>There could be a component that is not shown on the screen that watches for updates with respect to some of the React state and writes to the database when there is an update.</li>
+<li>When a state is updated, it is the programmer’s choice as to which of them are stored in the database and which are not.</li>
+<li>Since all the state is gathered in React, the design that when the “state you want to persist” is updated, it goes to write it to the database will be easier to implement than if the components have their own state in pieces.</li>
+</ul>
+</li>
+<li>Add specific examples
+<ul>
+<li>In Kozaneba, moving elements by drag-drop is all saved to the database at the time of drop.</li>
+<li>In Kozaneba, clicking on an element opens a context menu</li>
+<li>This “which menu is open where” is also a “state” that React manages and affects the rendering of the GUI</li>
+<li>If saved, it can be restored at the next startup in exchange for the cost of writing the database.</li>
+<li>I don’t think this should be stored in a database. I don’t see any benefit to the cost.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Q2: Is it preferable to have no state not because of reuse but because of the wider application?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>A: I want to make it loosely coupled.
+<ul>
+<li>Redrawing is necessary if the state changes</li>
+<li>But that’s where synchronous calls are too tightly coupled.</li>
+<li>Do we actually need that tight coupling?</li>
+<li>The time resolution of the human eye is low, so a slight display refresh delay on the browser is not a problem.</li>
+<li>Some updates can be made asynchronous so that they are no longer needed.</li>
+<li>So I wanted to separate “state rewriting” from “redraw triggered by state rewriting”.</li>
+<li>I suspect this was the biggest motivation for the inclusion of the Hooks API.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Reactive Programming System Flow</p>
+<ul>
+<li><img src="https://gyazo.com/fa53b2b0babf79eda645d5b80af0f684/thumb/1000" alt="image"/>
+<ul>
+<li>Varying names, shaky concepts.</li>
+<li>I realize I don’t know enough about it to explain it, so I’ll just take a quick look at the facts this time.</li>
+</ul>
+</li>
+<li>2007 C# LINQ(Language INtegrated Query)
+c#</li>
+</ul>
+<pre><code>// Specify the data source.
+int[] scores = { 97, 92, 81, 60 };
+
+// Define the query expression.
+IEnumerable&lt;int> scoreQuery =
+    from score in scores
+    where score > 80
+    select score;
+
+// Execute the query.
+foreach (int i in scoreQuery)
+{
+    Console.Write(i + &quot; &quot;);
+}
+
+// Output: 97 92 81
+</code></pre>
+<pre><code>- [Language-Integrated Query (LINQ) (C#) | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/)
+- Write SQL-like query language for arrays and other collections
+</code></pre>
+<ul>
+<li>2009~2011 C# Rx(ReactiveExtensions)
+<ul>
+<li>LINQ thinking applied to asynchronous processing</li>
+<li>As an extension of the trend to treat databases and arrays as “similar” in a unified manner, the concept of streams was used to describe asynchronous processing</li>
+<li><a href="https://learn.microsoft.com/ja-jp/archive/msdn-magazine/2016/june/reactive-framework-scale-asynchronous-client-server-links-with-" class="external">reactive Reactive Framework - Scaling Asynchronous Client/Server Links with Reactive Extensions | Microsoft Learn<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>2014 Java Stream API
+java</li>
+</ul>
+<pre><code> int sum = widgets.stream()
+           .filter(w -> w.getColor() == RED)
+           .mapToInt(w -> w.getWeight())
+           .sum();
+</code></pre>
+<pre><code>- [Stream (Java Platform SE 8)](https://docs.oracle.com/javase/jp/8/docs/api/java/util/stream/Stream.html)
+- Of course, each method call does not create a large temporary object
+</code></pre>
+<ul>
+<li>2020 Java / C#: Record type
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record" class="external">Records - C# reference | Microsoft Learn<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+c#</li>
+</ul>
+</li>
+</ul>
+<pre><code>public record Person(string FirstName, string LastName);
+</code></pre>
+<pre><code>- [record-class](https://docs.oracle.com/javase/jp/15/language/records.html)
+</code></pre>
+<p>java</p>
+<pre><code>record Rectangle(double length, double width) { }
+</code></pre>
+<pre><code>    - > The record class declares a set of fields, and the appropriate accessors, constructors, equals, hashCode and toString methods are automatically created. The fields are FINAL because this class is intended to function as a simple &quot;data carrier&quot;.
+    - > This concise declaration is equivalent to the following standard classes
+</code></pre>
+<p>java</p>
+<pre><code>public final class Rectangle {
+    private final double length;
+    private final double width;
+
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    double length() { return this.length; }
+    double width()  { return this.width; }
+
+    // Implementation of equals() and hashCode(), which specify
+    // that two record objects are equal if they
+    // are of the same type and contain equal field values.
+    public boolean equals...
+    public int hashCode...
+
+    // An implementation of toString() that returns a string
+    // representation of all the record class's fields,
+    // including their names.
+    public String toString() {...}
+}
+</code></pre>
+<pre><code>- Q: Very simple struct?
+- A: The major difference between STRUCT and STRUCT is that destructive renewal is prohibited.
+- Q: Can't I just assign first? object that simply transfers data?
+- A: Yes. Until now, the means to create such objects could not be realized without writing a lot of code.
+    - In the course of development in 2009 or so, Java and C# changed because &quot;it's not right that the object conveyed here is destructible&quot; and &quot;we need a way to easily apply an indestructible object&quot;.
+- Q2: Do you mean const data?
+    - A2: I would say so.
+</code></pre>
+<ul>
+<li>
+<p>Q3: I think only mutexes will have the desire to have variable</p>
+<ul>
+<li>A: I haven’t followed anything around Mutex, I don’t know.</li>
+</ul>
+</li>
+<li>
+<p>The same way the function component returned a virtual DOM in React that I mentioned earlier.</p>
+<ul>
+<li>Avoid human-disruptive updates to the browser’s raw DOM</li>
+<li>Return virtual DOM = create and return a new object</li>
+<li>The work of destructive updating to reflect it in the raw DOM is done by React, not humans.</li>
+</ul>
+</li>
+<li>
+<p>Brief summary</p>
+<ul>
+<li>Describes things as a series of functions that take an immutable, final “data carrier” object and return a new object</li>
+<li>Instead of destructively rewriting objects, a trend was born to use such methods</li>
+<li>A way to describe it effortlessly went into the language side.</li>
+</ul>
+</li>
+</ul>
+<p><a href="./Promise" class="internal" data-slug="Promise">Promise</a> and <a href="./async/await" class="internal" data-slug="async/await">await</a></p>
+<ul>
+<li>This is significant as it relates to asynchronous processing</li>
+<li><img src="https://gyazo.com/aeda341c5e9ddd54bb6bffe639b64f32/thumb/1000" alt="image"/></li>
+<li>async function returns Promise, await blocks until Promise is resolved</li>
+<li>Promise (or future) is an old idea.
+- <a href="./History-of-Promise" class="internal alias" data-slug="History-of-Promise">History of Promise</a></li>
+<li>The 1997 E language was implemented as it is used today.</li>
+<li>C#, Python, ECMAScript, Rust, etc. have successively adopted this approach over the past decade</li>
+<li>What is Promise?
+<ul>
+<li>The value is returned immediately without blocking when asynchronous processing is performed, which is Promise</li>
+<li>The promise, “I’ll provide the value later.”</li>
+</ul>
+</li>
+<li>If you’d rather see definitions than metaphors, this is for you.
+<ul>
+<li><a href="https://promisesaplus.com/" class="external">Promises/A+<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>
+<blockquote>
+<p>An open standard for sound, interoperable JavaScript promises—by implementers, for implementers.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Promise has three states
+<ul>
+<li><img src="https://gyazo.com/607ca5a38fb90ddbb4ef57eae202abb8/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>then method
+js</li>
+</ul>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="javascript" data-theme="github-light github-dark"><code data-language="javascript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">promise2 </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> promise1.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">then</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(onFulfilled, onRejected);</span></span></code></pre></figure>
+<ul>
+<li><img src="https://gyazo.com/8834e1646f07cd1ee5ce56e1196a27cb/thumb/1000" alt="image"/></li>
+<li>Other ways of expressing asynchronous processing were passing callbacks or registering event handlers
+js</li>
+</ul>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="javascript" data-theme="github-light github-dark"><code data-language="javascript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">// callback style</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">do_something</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(params, on_success, on_error);</span></span></code></pre></figure>
+<p>js</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="javascript" data-theme="github-light github-dark"><code data-language="javascript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">r </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> new</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> Request</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(params);</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">r.on_success </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> on_success;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">r.on_error </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> on_error;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">r.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">send</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">()</span></span></code></pre></figure>
+<pre><code>- In the past, JavaScript used `XMLHttpRequest` to hit APIs of other services, which was a style of using event handlers
+    - [Using XMLHttpRequest - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest)
+    - This was troublesome, so third-party libraries tried, and the style of using Promise became the de facto standard.
+    - After that, a Promise-using style API was standardized.
+        - [Fetch API - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- What was the trouble? Many things:.
+    - Writing what you want to do after asynchronous processing first in the source code is confusing the flow of thought.
+    - Error handling when asynchronous process 1 is performed, followed by asynchronous process 2 using the result of asynchronous process 1, and so on.
+        - It is defined this way at [Promises/A+](https://promisesaplus.com/) so it can be written in one place
+            - > If `onRejected` is not a function and `promise1` is rejected, `promise2` must be rejected with the same reason as `promise1`.
+        - In the style of callbacks and event handlers, you would make it a named function and specify it in `on_error` here and there
+</code></pre>
+<ul>
+<li><a href="./incremental-typing" class="internal alias" data-slug="incremental-typing">incremental typing</a></li>
+<li><img src="https://gyazo.com/6ca93fa1196d2124f7c7ecc0a484c065/thumb/1000" alt="image"/></li>
+<li>A dynamically typed language said “I still want types” and introduced <a href="./incremental-typing" class="internal alias" data-slug="incremental-typing">incremental typing</a> (Gradual Typing)</li>
+<li>Example
+python</li>
+</ul>
+<pre><code>def foo(x: int):
+    y: str = x  # NG
+</code></pre>
+<pre><code>- `error: Incompatible types in assignment (expression has type &quot;int&quot;, variable has type &quot;str&quot;)  [assignment]`
+</code></pre>
+<ul>
+<li>I don’t want to write type declarations for everything.
+<ul>
+<li>So what is the one that doesn’t have a type declaration written on it?</li>
+<li>implicit any type</li>
+</ul>
+</li>
+<li>Is the any type like Java’s <code>java.lang.Object</code> type?
+<ul>
+<li>No, sir.
+python</li>
+</ul>
+</li>
+</ul>
+<pre><code>def foo(x: int):
+    y: object = x  # OK
+</code></pre>
+<p>python</p>
+<pre><code>def foo(x: object):
+    y: str = x  # NG
+</code></pre>
+<pre><code>- `error: Incompatible types in assignment (expression has type &quot;object&quot;, variable has type &quot;str&quot;)  [assignment]`
+- Attempting to assign a value of type Object to a value of type String (implicit downcasting) is not allowed.
+    - This is normal type behavior.
+    - That ANY is a special type that can implicitly perform both upcasting and downcasting.
+    - ![image](https://gyazo.com/8e18254db69518ccc099cf724fdb1f86/thumb/1000)![image](https://gyazo.com/802836aae4333668c25a40bf1f6b5120/thumb/1000)
+- In TypeScript, the types corresponding to these two behaviors are unknown and any
+</code></pre>
+<p>ts</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="typescript" data-theme="github-light github-dark"><code data-language="typescript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">const</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> take_number</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">x</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> number</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">)</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> void</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> =></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {};</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  let</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> x</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> any</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">  take_number</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(x);  </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">// OK</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  let</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> x</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> unknown</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">  take_number</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(x);  </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">// NG</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span></code></pre></figure>
+<pre><code>    - `Argument of type 'unknown' is not assignable to parameter of type 'number'.`
+</code></pre>
+<ul>
+<li>Current Python (mypy) does not guess the return type.
+python</li>
+</ul>
+<pre><code>def foo(x: int):
+    return x
+
+print(typing.reveal_type(foo))
+</code></pre>
+<pre><code>- `note: Revealed type is &quot;def (x: builtins.int) -> Any&quot;`
+- This is a different behavior from TypeScript
+    - ![image](https://gyazo.com/485b1234b2e40fa0839bf9379e8ddce3/thumb/1000)
+- It is expected that humans will explicitly state this
+</code></pre>
+<p>python</p>
+<pre><code>def foo(x: int) -> int:
+    return x
+
+print(typing.reveal_type(foo))
+</code></pre>
+<pre><code>    - `note: Revealed type is &quot;def (x: builtins.int) -> builtins.int&quot;`
+</code></pre>
+<p>Nomenclatural and structural typing</p>
+<ul>
+<li>
+<p><img src="https://gyazo.com/dbb2e686e58f68db832dcc6ab1d0ad05/thumb/1000" alt="image"/></p>
+</li>
+<li>
+<p>from <a href="./Draft-addition-to-&quot;The-Difference-Between-Named-Type-Systems-and-Structural-Type-Systems&quot;" class="internal alias" data-slug="Draft-addition-to-&quot;The-Difference-Between-Named-Type-Systems-and-Structural-Type-Systems&quot;">Draft addition to “The Difference Between Named Type Systems and Structural Type Systems”</a></p>
+<ul>
+<li><img src="https://gyazo.com/df9ab60204aa68fff5318dccb0c6a6da/thumb/1000" alt="image"/></li>
+<li>Just having a row of 0s and 1s in memory does not tell you whether it is an integer or a floating point number.</li>
+<li>Static typing is used to attach information such as “this is an integer” to a variable by declaring it as <code>int n;</code> or something like that.</li>
+<li>Dynamic typing attaches the information “this value is an integer” to the value.</li>
+</ul>
+</li>
+<li>
+<p>There are two approaches to this “meta-information on variables”</p>
+<ul>
+<li>Schools that use structure to make decisions</li>
+<li>School of judging by name</li>
+<li><img src="https://gyazo.com/d5e7ab2fc66dd5cecc55a95e5667d199/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>
+<p>C++, born in 1985, and Java, born in 1995, used a nominal type system.</p>
+<ul>
+<li>Different names are not interchangeable.
+<ul>
+<li>Declare subtype relationships with <code>extends</code> and <code>implements</code>.</li>
+</ul>
+</li>
+<li>Since these two languages have become so major, many people are probably familiar with this approach.</li>
+</ul>
+</li>
+<li>
+<p>On the other hand, structural type systems were more dominant in type theory research.</p>
+<ul>
+<li>As a result, when designing statically typed languages to generate JavaScript, we ended up with a mixture of languages that adopt a naming type system with reference to Java and other languages (such as Dart) and languages that adopt a structural type system with reference to type theory (such as TypeScript).</li>
+</ul>
+</li>
+<li>
+<p>Example in TypeScript
+TypeScript</p>
+</li>
+</ul>
+<pre><code>type T1 = {
+    x : number
+}
+
+type T2 = {
+    x : number
+}
+
+let a: T1;
+let b: T2 = {x: 1};
+a = b; // OK
+</code></pre>
+<pre><code>- The `{x: 1}` part of `let b:T2 = {x: 1}` in this code is an unnamed object type.
+- This has the same form as both T1 and T2, so it can be substituted without error.
+</code></pre>
+<ul>
+<li>An example of giving different names to the same type of structure and expecting it to be distinguished.
+- <a href="./True-story-due-to-misunderstanding-of-nomenclatural-and-structural-types" class="internal alias" data-slug="True-story-due-to-misunderstanding-of-nomenclatural-and-structural-types">True story due to misunderstanding of nomenclatural and structural types</a></li>
+</ul>
+<p>Rust: Ownership/Lifetime</p>
+<ul>
+<li>Rust was released in 2010.
+<ul>
+<li>Rust 1.0 was released in 2015</li>
+<li>Rust remained #1 in “Developers’ Most Loved Programming Languages” by Stack Overflow from 2016-2020</li>
+</ul>
+</li>
+<li>Rust is said to be characterized by the concepts of ownership and lifetime, but ownership is not a concept unique to Rust
+<ul>
+<li>std::unique_ptr` is adopted in C++11</li>
+<li>This means “the only pointer pointing to the allocated memory.”</li>
+<li>When this pointer exits the scope, there will be no way to reference that memory, so it can be freed.</li>
+</ul>
+</li>
+<li>C++ is bound to be compatible with past code: simple notation for conventional behavior, new notation for new behavior.
+<ul>
+<li>Rust escapes this compatibility bind by becoming a different language.
+rust</li>
+</ul>
+</li>
+</ul>
+<pre><code>let x = String::from(&quot;hello&quot;);
+let y = x;
+println!(&quot;x: {}&quot;, x);  // NG
+println!(&quot;y: {}&quot;, y);
+</code></pre>
+<pre><code>- `error: borrow of moved value: x`
+- x and y are unique_ptr in C++, and the move is done with `y = x`.
+- C++ usually tries to copy references.
+    - Use `std::move` to express &quot;we intend to move, not copy&quot;.
+    - The &quot;right side value/left side value&quot; distinction was added in C++11 to achieve this without breaking existing code
+        - If a value is a right-hand side value, then it is not used in the future and should be moved, not copied.
+        - Thus, a move constructor that accepts right-hand side value references is added
+    - std::move casts to a right-hand side value reference so that the move is performed
+</code></pre>
+<ul>
+<li>In C++, it is not the compiler’s job to “take care not to dereference a pointer that is not valid”.
+<ul>
+<li>Human care or check with static analysis tools.</li>
+<li>In Rust, the compiler checks it.</li>
+<li>I tried to do the same thing as the above Rust code in C++ and got a Segmentation fault.
+cpp</li>
+</ul>
+</li>
+</ul>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cpp" data-theme="github-light github-dark"><code data-language="cpp" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">#include</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &lt;iostream></span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">#include</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &lt;string></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> </span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">#include</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &lt;memory></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> </span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">int</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> main</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> () {</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">    std</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">::unique_ptr</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">&lt;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">std</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">::string</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> x </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> std</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">::</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">make_unique</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">std</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">::</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">string</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">>(</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">std</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">::</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">string</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;abc&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">));</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">    std</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">::unique_ptr</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">&lt;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">std</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">::string</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> y;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    y </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> std</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">::</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">move</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(x);</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">    std</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">::cout </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">&lt;&lt;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> *</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">y </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">&lt;&lt;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> std</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">::endl;</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">    std</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">::cout </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">&lt;&lt;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> *</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">x </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">&lt;&lt;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> std</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">::endl;</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">  // here</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span></code></pre></figure>
+<p>output</p>
+<pre><code>abc
+Segmentation fault
+</code></pre>
+<pre><code>- In this code, x is null so that it cannot be read or released by mistake
+</code></pre>
+<ul>
+<li>‘Isn’t it the same as RAII to be released when you get out of scope?’ What’s unusual about that?” I thought.
+<ul>
+<li>I think the important thing is more the change in the default behavior of “move when writing simple”.</li>
+<li>Example
+rust</li>
+</ul>
+</li>
+</ul>
+<pre><code>let x = String::from(&quot;hello&quot;);
+foo(x);  // move
+println!(&quot;x: {}&quot;, x);  // NG
+</code></pre>
+<pre><code>    - In this example, x moves at the function call, so it can't be used after that.
+    - The compiler will follow the move by assignment or function call and release at &quot;the point where it exits the scope without moving&quot;.
+</code></pre>
+<p>Concept of Lifetime</p>
+<ul>
+<li>Scope for which the reference is valid</li>
+<li>Since many people now associate the word scope with a block on the source code (since they have come to interpret it as lexical scope), calling it scope causes confusion.
+<ul>
+<li>The feature that references made in the caller are also valid in the destination is similar to dynamic scopes in Perl and other languages.
+rust</li>
+</ul>
+</li>
+</ul>
+<pre><code>let x;
+let y;
+// println!(&quot;x: {}&quot;, x);  // NG
+// error[E0381]: used binding `x` is possibly-uninitialized
+x = String::from(&quot;hello&quot;);
+println!(&quot;x: {}&quot;, x);  // OK
+y = x;
+// println!(&quot;x: {}&quot;, x);  // NG
+// error[E0382]: borrow of moved value: `x`
+</code></pre>
+<pre><code>- The use of x before initialization and after move is shown to be a compile error
+</code></pre>
+<ul>
+<li>lifetime designator
+<ul>
+<li>Notation to tell when the compiler cannot guess the lifetime.</li>
+<li>Many people seem to be confused by the unique notation.
+<ul>
+<li>This is the act of assigning metadata to a variable, so in a broad sense “type”</li>
+<li>The lifetime specifier “must be named” and is conventionally named <code>'a</code>, the same as naming a type variable <code>T</code> in generics.</li>
+<li>The name itself does not have meaning, but the same name is used in multiple places to express the relationship between the elements.</li>
+</ul>
+</li>
+<li>Example 1
+<ul>
+<li>Multiple references with the same name lifetime specifier make their common subset lifetime
+rust</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>fn longest(x: &amp;str, y: &amp;str) -> &amp;str {  // NG
+    if x.len() > y.len() {
+        x
+    } else {
+        y
+    }
+}
+</code></pre>
+<p>error</p>
+<pre><code>error[E0106]: missing lifetime specifier
+  --> src/main.rs:14:33
+   |
+14 | fn longest(x: &amp;str, y: &amp;str) -> &amp;str {
+   |               ----     ----     ^ expected named lifetime parameter
+   |
+   = help: this function's return type contains a borrowed value, but the signature does not say whether it is borrowed from `x` or `y`
+help: consider introducing a named lifetime parameter
+   |
+14 | fn longest&lt;'a>(x: &amp;'a str, y: &amp;'a str) -> &amp;'a str {
+   |           ++++     ++          ++          ++
+</code></pre>
+<pre><code>- Example 2
+    - static lifetime
+        - Lifetime specifiers named in advance by the system
+        - It represents &quot;lifetime across the entire program.&quot;
+</code></pre>
+<p>rust</p>
+<pre><code>fn dangle() -> &amp;String {
+    let s = String::from(&quot;hello&quot;);
+    &amp;s
+}
+</code></pre>
+<p>error</p>
+<pre><code>error[E0106]: missing lifetime specifier
+  --> src/main.rs:22:16
+   |
+22 | fn dangle() -> &amp;String {
+   |                ^ expected named lifetime parameter
+   |
+   = help: this function's return type contains a borrowed value, but there is no value for it to be borrowed from
+help: consider using the `'static` lifetime
+   |
+22 | fn dangle() -> &amp;'static String {
+   |                 +++++++
+</code></pre>
+<pre><code>    - This is inherently no good.
+        - Because s is released when exiting the function.
+        - But the compiler decides, &quot;Well, if I change it to a constant, I can make the whole program lifetime.
+            - The result is an error message that's two steps ahead of the rest of us.
+    - If you make it so that the compiler doesn't know if it can be made into a constant, you'll get a straightforward error message.
+</code></pre>
+<p>rust</p>
+<pre><code>fn dangle(x: &amp;String) -> &amp;String {
+    let s = x.clone();
+    &amp;s
+}
+</code></pre>
+<p>error</p>
+<pre><code>error[E0515]: cannot return reference to local variable `s`
+  --> src/main.rs:31:5
+   |
+31 |     &amp;s
+   |     ^^ returns a reference to data owned by the current function
+</code></pre>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E5%A4%89%E5%8C%96%E5%8B%89%E5%BC%B7%E4%BC%9A" class="external">/nishio/プログラミングの変化勉強会<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class aria-controls="toc-content" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content" class><ul class="overflow"><li class="depth-0"><a href="#first-the-big-picture" data-for="first-the-big-picture">First, the big picture</a></li><li class="depth-0"><a href="#browser" data-for="browser">Browser</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./🤖2023-08-12-02:56" class="internal">🤖2023-08-12 02:56</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

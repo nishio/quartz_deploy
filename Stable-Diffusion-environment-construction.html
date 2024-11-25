@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Stable Diffusion environment construction</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Stable Diffusion environment construction"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Stable Diffusion environment construction"/><meta name="twitter:description" content="Stable Diffusion 2022-09-22 SSH to WSL2 from a Mac I have two pieces of code checked out of stable diffusion, A and B. After creating a conda environment in A, I tried to experiment with B."/><meta property="og:description" content="Stable Diffusion 2022-09-22 SSH to WSL2 from a Mac I have two pieces of code checked out of stable diffusion, A and B. After creating a conda environment in A, I tried to experiment with B."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="Stable Diffusion 2022-09-22 SSH to WSL2 from a Mac I have two pieces of code checked out of stable diffusion, A and B. After creating a conda environment in A, I tried to experiment with B."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Stable-Diffusion-environment-construction"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Stable-Diffusion-environment-construction"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Stable Diffusion 2022-09-22 SSH to WSL2 from a Mac I have two pieces of code checked out of stable diffusion, A and B. After creating a conda environment in A, I tried to experiment with B."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Stable-Diffusion-environment-construction"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Stable Diffusion environment construction</a></div></nav><h1 class="article-title">Stable Diffusion environment construction</h1><p show-comma="true" class="content-meta"><span>Sep 22, 2022</span><span>7 min read</span></p><ul class="tags"><li><a href="./tags/6307bc45774b170000b7fa8a" class="internal tag-link">6307bc45774b170000b7fa8a</a></li></ul></div></div><article class="popover-hint"><p><a href="./Stable-Diffusion" class="internal alias" data-slug="Stable-Diffusion">Stable Diffusion</a></p>
+<p>2022-09-22</p>
+<ul>
+<li><a href="./SSH-to-WSL2-from-a-Mac" class="internal alias" data-slug="SSH-to-WSL2-from-a-Mac">SSH to WSL2 from a Mac</a></li>
+</ul>
+<p>I have two pieces of code checked out of stable diffusion, A and B. After creating a conda environment in A, I tried to experiment with B.</p>
+<ul>
+<li>You can think of it as an operational and experimental environment.</li>
+<li>I edited the source in the experimental environment, but for some reason it won’t read.</li>
+</ul>
+<p>answer volume</p>
+<ul>
+<li><code>$ conda env create -f environment.yaml</code></li>
+<li>In this, <code>pip -e . A is in the library path and import is done from A because of </code>pip -e .</li>
+<li>I created a conda environment with a different name for the experimental environment.</li>
+</ul>
+<p>--- old log 1
+All-in-one rar for Windows</p>
+<ul>
+<li><a href="https://grisk.itch.io/stable-diffusion-gui" class="external">https://grisk.itch.io/stable-diffusion-gui<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Just unzip and run the exe to use it in the GUI.</li>
+<li>I put this in my gaming PC last night anyway.
+<ul>
+<li>Each piece can be made in about 40 seconds.
+<ul>
+<li><a href="./Diary-2022-08-25" class="internal alias" data-slug="Diary-2022-08-25">Diary 2022-08-25</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Gaming PCs do not include a development environment.</p>
+<ul>
+<li>Start by Googling “how to use WSL”…</li>
+<li>I took the “just put Ubuntu from the store” thing in stride, and it stopped in the folded display, warning me that “wsl is not turned on.”
+<ul>
+<li>I didn’t realize it was taking so long until I turned on the detail view.</li>
+</ul>
+</li>
+<li>I did wsl —install from a command prompt with administrator privileges and the installation started straight away.</li>
+<li><a href="https://github.com/CompVis/stable-diffusion" class="external">https://github.com/CompVis/stable-diffusion<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>It says the GPU needs 10GB of VRAM, but I don’t know if I meet the requirements first.</li>
+<li>Find out how to check
+<ul>
+<li>Win-R <a href="./dxdiag" class="internal" data-slug="dxdiag">dxdiag</a>
+<ul>
+<li><img src="https://gyazo.com/7dc99a5760ace58f1c0d2205d6cf59ca/thumb/1000" alt="image"/></li>
+<li>Looks like only 8GB to me…w</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Install Anaconda for Linux and
+<ul>
+<li><code>$ conda env create -f environment.yaml</code></li>
+<li><code>$ conda activate ldm</code></li>
+<li>LDM: <a href="./latent-diffusion-model" class="internal alias" data-slug="latent-diffusion-model">latent diffusion model</a></li>
+</ul>
+</li>
+<li>Download sd-v1-4.ckpt from [Hugging Face
+<ul>
+<li><a href="https://huggingface.co/CompVis/stable-diffusion-v-1-4-original" class="external">https://huggingface.co/CompVis/stable-diffusion-v-1-4-original<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li><code>$ python scripts/txt2img.py --prompt &quot;cat&quot; --plms --ckpt sd-v1-4.ckpt</code>
+<ul>
+<li><code>RuntimeError: No CUDA GPUs are available</code></li>
+<li>🤔</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Troubleshooting</p>
+<p>:</p>
+<pre><code>$ nvidia-smi
+Fri Aug 26 21:21:14 2022
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 495.47       Driver Version: 496.76       CUDA Version: 11.5     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA GeForce ...  On   | 00000000:01:00.0 Off |                  N/A |
+| N/A   52C    P8     6W /  N/A |    111MiB /  8192MiB |     N/A      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+</code></pre>
+<p>WSL environment is GPU hardware aware</p>
+<p>::</p>
+<pre><code>Python 3.8.5 (default, Sep  4 2020, 07:30:14)
+[GCC 7.3.0] :: Anaconda, Inc. on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+>>> import torch
+>>> torch.version.cuda
+'11.3'
+>>> torch.cuda.is_available()
+False
+</code></pre>
+<p>Torch does not recognize CUDA capable GPUs</p>
+<p><a href="https://zenn.dev/utahka/articles/ed881a568246f4" class="external">https://zenn.dev/utahka/articles/ed881a568246f4<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>
+<blockquote>
+<p>The wheel file in PyTorch includes CUDA, so you don’t actually need the part in WSL that puts CUDA and cudnn into Ubuntu.</p>
+</blockquote>
+</li>
+<li>Installing NVIDIA Drivers in Windows
+<ul>
+<li><a href="https://developer.nvidia.com/cuda/wsl" class="external">https://developer.nvidia.com/cuda/wsl<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+<p>:</p>
+<pre><code>$ nvidia-smi
+Fri Aug 26 22:32:57 2022
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 515.65.01    Driver Version: 516.94       CUDA Version: 11.7     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA GeForce ...  On   | 00000000:01:00.0 Off |                  N/A |
+| N/A   51C    P8    10W /  N/A |      0MiB /  8192MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+</code></pre>
+<p><code>CUDA Version: 11.7</code></p>
+<ul>
+<li>11.5→11.7</li>
+<li>This seems to be the maximum version supported by the driver</li>
+</ul>
+<p>CUDA Toolkit
+:</p>
+<pre><code>(ldm) nishio@DESKTOP-0ET2LJF:/mnt/c/WINDOWS/system32$ nvcc -V
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2019 NVIDIA Corporation
+Built on Sun_Jul_28_19:07:16_PDT_2019
+Cuda compilation tools, release 10.1, V10.1.243
+</code></pre>
+<p>Torch expects CUDA to be 11.3 when in fact it is 10.1?</p>
+<p>Install CUDA Toolkit on WSL (Ubuntu)</p>
+<ul>
+<li><a href="https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;target_arch=x86_64&amp;Distribution=WSL-Ubuntu&amp;target_version=2.0&amp;target_type=deb_local" class="external">https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;target_arch=x86_64&amp;Distribution=WSL-Ubuntu&amp;target_version=2.0&amp;target_type=deb_local<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+:</li>
+</ul>
+<pre><code> wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
+ sudo mv cuda-wsl-ubuntu.pin /etc/apt/preferences.d/cuda-repository-pin-600
+ wget https://developer.download.nvidia.com/compute/cuda/11.7.1/local_installers/cuda-repo-wsl-ubuntu-11-7-local_11.7.1-1_amd64.deb
+ sudo dpkg -i cuda-repo-wsl-ubuntu-11-7-local_11.7.1-1_amd64.deb
+ sudo cp /var/cuda-repo-wsl-ubuntu-11-7-local/cuda-*-keyring.gpg /usr/share/keyrings/
+ sudo apt-get update
+ sudo apt-get -y install cuda 
+</code></pre>
+<p>:</p>
+<pre><code>$ nvcc -V
+...
+Cuda compilation tools, release 10.1, V10.1.243
+</code></pre>
+<p>Still on 10.1.</p>
+<p>:</p>
+<pre><code>(ldm) $ sudo update-alternatives --config cuda
+There is only one alternative in link group cuda (providing /usr/local/cuda): /usr/local/cuda-11.7
+Nothing to configure.
+conda install pytorch torchvision -c pytorch
+</code></pre>
+<p>Uh, CUDA is only supposed to have 11.7 installed, right?</p>
+<ul>
+<li>Do I need to install 11.3?
+<ul>
+<li>Opinion that PyTorch should work with 11.7</li>
+</ul>
+</li>
+</ul>
+<p>:</p>
+<pre><code>(ldm) nishio@DESKTOP-0ET2LJF:~/stable-diffusion$ lspci
+27fa:00:00.0 3D controller: Microsoft Corporation Device 008e
+9e5b:00:00.0 3D controller: Microsoft Corporation Device 008e
+</code></pre>
+<p>Is it strange that I can’t see it in lspci?</p>
+<ul>
+<li>It seems that’s how it is in a WSL environment if you can’t see it in lspci.
+<ul>
+<li><a href="https://qiita.com/ksasaki/items/ee864abd74f95fea1efa" class="external">https://qiita.com/ksasaki/items/ee864abd74f95fea1efa<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+<p>:</p>
+<pre><code>$ sudo apt-get remove nvidia-cuda-toolkit
+...
+The following packages will be REMOVED:
+  nvidia-cuda-toolkit
+0 upgraded, 0 newly installed, 1 to remove and 2 not upgraded.
+...
+
+$ nvcc -V
+
+Command 'nvcc' not found, but can be installed with:
+
+sudo apt install nvidia-cuda-toolkit
+
+$ sudo apt-get install cuda
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+cuda is already the newest version (11.7.1-1).
+</code></pre>
+<p>Hmm, nvcc is tied to nvidia-cuda-toolkit, version 10.1
+I installed 1.17 of the CUDA Toolkit, but it won’t turn that way.
+Uninstall both, autoremove and remove all packages with dependencies, and then just apt-get install cuda.</p>
+<p>I’m getting <code>Command 'nvcc' not found</code>.</p>
+<p>Oh, it just doesn’t pass.
+:</p>
+<pre><code>$ /usr/local/cuda/bin/nvcc -V
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2022 NVIDIA Corporation
+Built on Wed_Jun__8_16:49:14_PDT_2022
+Cuda compilation tools, release 11.7, V11.7.99
+Build cuda_11.7.r11.7/compiler.31442593_0
+</code></pre>
+<p>Delete and recreate the conda environment.
+:</p>
+<pre><code>(ldm) $ python
+>>> import torch
+>>> torch.cuda.is_available()
+True
+</code></pre>
+<p>Finally cuda available!</p>
+<p>:</p>
+<pre><code>$ python scripts/txt2img.py --prompt &quot;cat&quot; --plms --ckpt sd-v1-4.ckpt
+...
+   attn = sim.softmax(dim=-1)
+RuntimeError: CUDA error: unknown error
+</code></pre>
+<p>Yeah, yeah, yeah.</p>
+<p><code>$ python scripts/txt2img.py --prompt &quot;cat&quot; --plms --ckpt sd-v1-4.ckpt --n_samples 1 --W 256 --H 256</code></p>
+<ul>
+<li>
+<p>I was able to do it!</p>
+</li>
+<li>
+<p>[/motoso/Stable diffusion img2img with GTX1070 (8GB VRAM)<a href="./tags/6307bc45774b170000b7fa8a" class="tag-link internal alias" data-slug="tags/6307bc45774b170000b7fa8a">6307bc45774b170000b7fa8a</a>](<a href="https://scrapbox.io/motoso/Stable" class="external">https://scrapbox.io/motoso/Stable<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> diffusion img2img with GTX1070 (8GB VRAM)<a href="./tags/6307bc45774b170000b7fa8a" class="tag-link internal alias" data-slug="tags/6307bc45774b170000b7fa8a">6307bc45774b170000b7fa8a</a>)</p>
+<ul>
+<li>It seemed surprisingly easy to make it semi-precise.</li>
+</ul>
+</li>
+<li>
+<p>I was able to do it!</p>
+<ul>
+<li>I can now run the Python script side and get the same thing instead of the exe version.</li>
+<li>When multiple prompts are thrown from a file, a folder is created for each prompt, and each is created in iter specified number of copies.
+<ul>
+<li>I can do a “make 50 of this and 50 of that” before I go to bed.</li>
+</ul>
+</li>
+<li>In addition, JSON with parameter information is output like the exe version.</li>
+</ul>
+</li>
+<li>
+<p>Fine Tuning Tried and True Information</p>
+<ul>
+<li><a href="https://birdmanikioishota.blog.fc2.com/blog-entry-8.html" class="external">https://birdmanikioishota.blog.fc2.com/blog-entry-8.html<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>
+<blockquote>
+<p>This time we used COLAB, 16 images and about 3 hours of learning.</p>
+</blockquote>
+<ul>
+<li>It could teach new concepts in a realistic way.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/basujindal/stable-diffusion" class="external">https://github.com/basujindal/stable-diffusion<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>A version that forks and sends the image to the GPU separately, and that can work with less VRAM, and even those who are running now can create larger images (I haven’t tried it yet).</li>
+</ul>
+</li>
+</ul>
+<p><code>$ python scripts/my.py --from-file prompts.txt --n_iter 100 --seed 130</code>
+<code>$ python scripts/my.py --prompt &quot;black cats&quot; --n_iter 100 --seed 130</code></p>
+<hr/>
+<p>This page is auto-translated from [/nishio/Stable Diffusion 環境構築](<a href="https://scrapbox.io/nishio/Stable" class="external">https://scrapbox.io/nishio/Stable<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Diffusion 環境構築) using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li>No backlinks found</li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

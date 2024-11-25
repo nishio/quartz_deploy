@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Omoikane Study Group</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Omoikane Study Group"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Omoikane Study Group"/><meta name="twitter:description" content="2023-08-04 Cybozu Labs Study Session Up to now. 2023-03-24 Story study session about connecting my Scrapbox to ChatGPT. ChatGPT’s API is now open to the public, so I talked about doing it."/><meta property="og:description" content="2023-08-04 Cybozu Labs Study Session Up to now. 2023-03-24 Story study session about connecting my Scrapbox to ChatGPT. ChatGPT’s API is now open to the public, so I talked about doing it."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="2023-08-04 Cybozu Labs Study Session Up to now. 2023-03-24 Story study session about connecting my Scrapbox to ChatGPT. ChatGPT’s API is now open to the public, so I talked about doing it."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Omoikane-Study-Group"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Omoikane-Study-Group"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="2023-08-04 Cybozu Labs Study Session Up to now. 2023-03-24 Story study session about connecting my Scrapbox to ChatGPT. ChatGPT’s API is now open to the public, so I talked about doing it."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Omoikane-Study-Group"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Omoikane Study Group</a></div></nav><h1 class="article-title">Omoikane Study Group</h1><p show-comma="true" class="content-meta"><span>Aug 21, 2023</span><span>23 min read</span></p></div></div><article class="popover-hint"><p>2023-08-04　 <a href="./Cybozu-Labs-Study-Session" class="internal alias" data-slug="Cybozu-Labs-Study-Session">Cybozu Labs Study Session</a></p>
+<ul>
+<li>Up to now.
+<ul>
+<li>2023-03-24  <a href="./Story-study-session-about-connecting-my-Scrapbox-to-ChatGPT." class="internal alias" data-slug="Story-study-session-about-connecting-my-Scrapbox-to-ChatGPT.">Story study session about connecting my Scrapbox to ChatGPT.</a>
+<ul>
+<li>ChatGPT’s API is now open to the public, so I talked about doing it.</li>
+</ul>
+</li>
+<li>2023-05-12 <a href="./Plurality-and-Polis-Study-Group" class="internal alias" data-slug="Plurality-and-Polis-Study-Group">Plurality and Polis Study Group</a> (mainly explained the context of <a href="./Plurality" class="internal" data-slug="Plurality">Plurality</a>)</li>
+<li>2023-06-23  <a href="./Polis-Study-Group" class="internal alias" data-slug="Polis-Study-Group">Polis Study Group</a></li>
+</ul>
+</li>
+<li>Today I’m going to talk about the <a href="./Omoikane-Project" class="internal alias" data-slug="Omoikane-Project">Omoikane Project</a> I’ve been working on recently.
+<ul>
+<li>For Thumbnails:.
+<ul>
+<li><img src="https://scrapbox.io/files/64cbd8e0f223a1001c80bbc8.png" alt="image"/></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>But first, a topic of current events:.
+<ul>
+<li>7/24 <a href="https://worldcoin.org/blog/announcements/worldcoin-project-launches" class="external">Worldcoin project launches<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+<h1 id="worldcoin"><a href="./Worldcoin" class="internal" data-slug="Worldcoin">Worldcoin</a><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#worldcoin" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>7/24 <a href="https://worldcoin.org/blog/announcements/worldcoin-project-launches" class="external">Worldcoin project launches<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>
+<p>OpenAI CEO <a href="./Sam-Altman" class="internal alias" data-slug="Sam-Altman">Sam Altman</a>’s <a href="https://twitter.com/sama/status/1684297687708098565?s=46&amp;t=gkSZtjGEtUZPO0JCzBxCBw" class="external">posted at<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>‘Scanning my retinas gives me virtual currency? What does that mean?” I see people who are like.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p><a href="./World-ID" class="internal alias" data-slug="World-ID">World ID</a>, a privacy-preserving digital identity designed to help solve important, identity-based challenges, including proving an individual’s unique personhood</p>
+</blockquote>
+<ul>
+<li>(DeepL) World ID is a privacy-preserving digital identity designed to help solve important identity-based challenges, such as the unique <a href="./Proof-of-Humanity" class="internal alias" data-slug="Proof-of-Humanity">Proof of Humanity</a> of an individual.</li>
+<li>
+<blockquote>
+<p>World ID is a new privacy-first <a href="./decentralized-identity" class="internal alias" data-slug="decentralized-identity">decentralized identity</a> protocol.  --- <a href="https://worldcoin.org/blog/announcements/introducing-world-id-and-sdk" class="external">Introducing World ID and SDK<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+</li>
+<li>It’s been talked about a few times before <a href="./distributed-ID" class="internal alias" data-slug="distributed-ID">distributed ID</a>.
+<ul>
+<li>(I haven’t read the protocol, it will be a big Identity Provider <img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p><a href="./Worldcoin" class="internal" data-slug="Worldcoin">Worldcoin</a> token (WLD), where laws allow, the first digital currency to be freely distributed to people for just being a unique human*</p>
+</blockquote>
+<ul>
+<li>(DeepL) World Coin Token (WLD): the first digital currency* that is freely distributed to people just for being a unique person, as far as the law allows.</li>
+<li>Sam Altman has been advocating <a href="./Universal-Basic-Income" class="internal alias" data-slug="Universal-Basic-Income">Universal Basic Income</a> for years.</li>
+<li><a href="./American-Equity" class="internal alias" data-slug="American-Equity">American Equity</a>: <a href="./Sam-Altman" class="internal alias" data-slug="Sam-Altman">Sam Altman</a> 2017
+<ul>
+<li>
+<blockquote>
+<p>Every adult American citizen should receive a share of the U.S. <a href="./GDP" class="internal" data-slug="GDP">GDP</a>.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><a href="./Moore's-Law-for-Everything" class="internal alias" data-slug="Moore's-Law-for-Everything">Moore’s Law for Everything</a>: <a href="./Sam-Altman" class="internal alias" data-slug="Sam-Altman">Sam Altman</a> 2021
+<ul>
+<li>
+<blockquote>
+<p>The sources of wealth are 1) companies, especially <a href="./companies-using-AI" class="internal alias" data-slug="companies-using-AI">companies using AI</a> 2) land in fixed supply</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="./Let's-tax-capital,-not-labor." class="internal alias" data-slug="Let's-tax-capital,-not-labor.">Let’s tax capital, not labor.</a></p>
+</blockquote>
+</li>
+<li>The claim is to use this <a href="./asset-taxation" class="internal alias" data-slug="asset-taxation">asset taxation</a> as a source of <a href="./Universal-Basic-Income" class="internal alias" data-slug="Universal-Basic-Income">Universal Basic Income</a>.</li>
+</ul>
+</li>
+<li>This one is also in the context of <a href="./UBI" class="internal" data-slug="UBI">UBI</a>.
+<ul>
+<li>Basic income for people proven to be human by World ID</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>network effect
+<ul>
+<li>Cites “the unique <a href="./Proof-of-Humanity" class="internal alias" data-slug="Proof-of-Humanity">Proof of Humanity</a> of the individual” as a “key challenge based on identity.”</li>
+<li>For example, <a href="./SybilRank" class="internal" data-slug="SybilRank">SybilRank</a>.
+<ul>
+<li>
+<blockquote>
+<p>SybilRank is computationally efficient… Scalable to graphs with hundreds of millions of nodes</p>
+</blockquote>
+</li>
+<li><img src="https://gyazo.com/cdc9b35a99ccc5919bdb81c4ffd7dd33/thumb/1000" alt="image"/></li>
+<li>“<a href="./Trust-Seeds" class="internal alias" data-slug="Trust-Seeds">Trust Seeds</a>”, an algorithm that propagates trust from highly trusted accounts.
+<ul>
+<li>Efficient algorithms have been created, and it’s time to make it practical to apply them to the entire human network.</li>
+</ul>
+</li>
+<li>How can “accounts that correspond to retinal scans” be “Trust Seeds” with a high degree of trust?</li>
+</ul>
+</li>
+<li>It is more beneficial for an individual to be part of a larger network
+<ul>
+<li>Businesses that have built large networks can compete favorably as platformers.
+<ul>
+<li>The <a href="./network-effect" class="internal alias" data-slug="network-effect">network effect</a> story has been repeated over and over again.</li>
+</ul>
+</li>
+<li>Elon Musk tried to buy the giant social network Twitter and turn it into X</li>
+<li>Sam Altman’s strategy is to take a platform by scattering
+<ul>
+<li>Like <a href="./PayPay" class="internal" data-slug="PayPay">PayPay</a> [10 Billion Yen Giving Campaign</li>
+<li>Disperse through virtual currency payments issued by the company itself.</li>
+<li>The expectation that the virtual currency will create value in the future allows for cost-free disbursement.
+<ul>
+<li>Smart…</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Personally, I think <a href="./UBI-to-avoid-monopolizing-access-to-AI" class="internal alias" data-slug="UBI-to-avoid-monopolizing-access-to-AI">UBI to avoid monopolizing access to AI</a>, but that’s a long story, so I’ll pass.</li>
+</ul>
+<h1 id="omoikane-project"><a href="./Omoikane-Project" class="internal alias" data-slug="Omoikane-Project">Omoikane Project</a><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#omoikane-project" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>
+<p><a href="https://scrapbox.io/omoikane" class="external">/omoikane<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+<li>
+<p>In a nutshell, “a project that combines SF prototyping and AI technology to create a better discussion mechanism.”</p>
+</li>
+<li>
+<p>Create a better discussion mechanism(<a href="./deliberation-support-system" class="internal alias" data-slug="deliberation-support-system">deliberation support system</a>)</p>
+<ul>
+<li>Democratic Inputs to AI,” which <a href="./OpenAI" class="internal" data-slug="OpenAI">OpenAI</a> called for in May, which we talked about last time.
+<ul>
+<li>AI has far-reaching economic and social implications</li>
+<li>It is not right that <a href="./decision-making" class="internal" data-slug="decision-making">decision-making</a> of “what AI should be” is done by “<a href="./a" class="internal" data-slug="a">a</a> few people” (like the management of a for-profit company).
+<ul>
+<li>Should be shaped by “<a href="./Diverse-perspectives" class="internal alias" data-slug="Diverse-perspectives">Diverse perspectives</a>” that reflect [public interest (e.g., public good)</li>
+</ul>
+</li>
+<li>Recruit a <a href="./team" class="internal" data-slug="team">team</a> to develop a <a href="./proof-of-concept" class="internal alias" data-slug="proof-of-concept">proof of concept</a> for a <a href="./democratic-process" class="internal alias" data-slug="democratic-process">democratic process</a> to take the first steps in this direction</li>
+<li>We (OpenAI) want to learn from these experiments and use them as the basis for a <a href="./more-global,-more-ambitious-process" class="internal alias" data-slug="more-global,-more-ambitious-process">more global, more ambitious process</a>.
+<ul>
+<li>It is interesting to look at the Worldcoin news at the beginning of this article in light of this statement in May</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The founding members of the Omoikane Project have repeatedly discussed applying for this [Democratic Inputs to AI
+<ul>
+<li>We had a very interesting story, so we started working on it without waiting for it to be adopted.</li>
+<li>Unfortunately, the result was not accepted, but by that time, interesting things were happening in the online community, so we decided to continue with fine-tuning the plan.</li>
+</ul>
+</li>
+<li>We talked about <a href="./Polis" class="internal" data-slug="Polis">Polis</a> in the last and previous workshops.
+<ul>
+<li>Polis is a beneficial component</li>
+<li>However, it is not a stand-alone deliberation support system.</li>
+<li>Pre- and post-stage design is required</li>
+</ul>
+</li>
+<li>As a preliminary step, <a href="./share-the-world-view" class="internal alias" data-slug="share-the-world-view">share the world view</a> in SF prototyping.
+<ul>
+<li><img src="https://gyazo.com/def130484660e621bd11bf759c7c88c0/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>What is SF, Space Fantasy?</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Science Fiction here is Science Fiction, but I don’t think it’s worth worrying about since the term itself doesn’t have a clear definition to begin with.
+<ul>
+<li>If I had to describe it in my own words, I would say that it is “a story of what is likely to happen in the near future.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="sf-prototyping"><a href="./SF-Prototyping" class="internal alias" data-slug="SF-Prototyping">SF Prototyping</a><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#sf-prototyping" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>What is Prototyping?
+<ul>
+<li>
+<blockquote>
+<p>The idea is to create a rough model that represents the concept using materials at hand. You can use blocks, foam core, tubular material, strong adhesive tape, whatever seems useful.
+- <a href="./A-company-that-conceives" class="internal alias" data-slug="A-company-that-conceives">A company that conceives</a>! - Innovation techniques from IDEO, the world’s best design firm Tom Kelly p.74</p>
+</blockquote>
+</li>
+<li>The idea is to get the “experience” of having the product in your hands faster by making a low-cost “approximation” of the final product</li>
+</ul>
+</li>
+<li>So how can we prototype not a physical product, but a vision of the future and the direction we should go in the future?
+<ul>
+<li>The method is SF prototyping.
+<ul>
+<li>To put it crudely, “make an approximation of the future by means of a near-future science fiction short-short.”</li>
+<li>Can sympathize or rebel with the protagonist’s “experience”.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Interesting interpretation that SF can be prototyping.</li>
+</ul>
+</li>
+<li>Moreover, this process can be assisted by AI.
+<ul>
+<li><img src="https://gyazo.com/a9cbed512af0304482aea9a095782782/thumb/1000" alt="image"/></li>
+<li>In fact, several people in the Omoikane project have published their own AI-generated science fiction novels
+<ul>
+<li>[/omoikane/AI Novel: “AI’s Classroom for Improving Communication Skills”](<a href="https://scrapbox.io/omoikane/AI" class="external">https://scrapbox.io/omoikane/AI<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Novel: “AI’s Classroom for Improving Communication Skills”).</li>
+<li><a href="https://scrapbox.io/omoikane/memory-mountain" class="external">/omoikane/memory-mountain<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</li>
+<li>[/omoikane/AI Novel: make future 2ea176d2-0d4f-4a4a-b4b6-0b667b11e906](<a href="https://scrapbox.io/omoikane/AI" class="external">https://scrapbox.io/omoikane/AI<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Novel: make future 2ea176d2-0d4f-4a4a-b4b6-0b667b11e906)</li>
+<li>[/omoikane/AI Novel: Jolene](<a href="https://scrapbox.io/omoikane/AI" class="external">https://scrapbox.io/omoikane/AI<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Novel: Jolene).</li>
+<li>[/omoikane/AI Novel: “Interstice: Beyond the Conversation” (Interstice: Beyond the Conversation)](<a href="https://scrapbox.io/omoikane/AI" class="external">https://scrapbox.io/omoikane/AI<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Novel: “Interstice: Beyond the Conversation” (Interstice: Beyond the Conversation))</li>
+<li>[/omoikane/AI Novel: Maki’s Silent Pot](<a href="https://scrapbox.io/omoikane/AI" class="external">https://scrapbox.io/omoikane/AI<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Novel: Maki’s Silent Pot).</li>
+<li>All different authors.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Surprisingly easy, let’s look at some concrete examples</li>
+<li>Prompt: you are a science fiction writer. Write a near-future science fiction story. Constraint: The protagonist works for a software company whose motto is “creating a society full of teamwork. The story begins when he hears a researcher claim that prototyping the future by having an AI write science fiction is beneficial.</li>
+</ul>
+<h1 id="title-future-prototypes">Title: “Future Prototypes”<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#title-future-prototypes" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>.</p>
+<ul>
+<li>
+<p>Chapter 1: “Encounters with AI”</p>
+<ul>
+<li>The main character, Itsuki, is an engineer at the software company TeamWork Tech. His creed is to create a society full of teamwork. One day, he becomes interested in a researcher’s claim that AI is prototyping the future by writing science fiction. His heart leaps that this may be the key to shaping a new vision.</li>
+</ul>
+</li>
+<li>
+<p>Chapter 2: “Teamwork and Future Projections”</p>
+<ul>
+<li>The tree will launch a project to find ideas for how to utilize the AI’s capabilities to instill teamwork in society. That AI, named Asimov, Asimov’s task is to write a prototype of the future based on the data and goals provided by Tree and his team.</li>
+</ul>
+</li>
+<li>
+<p>Chapter 3: “The Future as Depicted”</p>
+<ul>
+<li>The future envisioned by Asimov is one in which collaboration shapes society. Individual ideas intersect and generate new ideas. But Asimov’s story also contained a warning: a warning about the shrinking role of humans in a future dominated by AI.</li>
+</ul>
+</li>
+<li>
+<p>Chapter 4: “The Need for Coordination.”</p>
+<ul>
+<li>Trees will challenge against this future envisioned by AI. Emphasizing that teamwork stems not only from AI, but also from the connections between humans, he seeks a future that uses AI’s capabilities but does not lose its humanity.</li>
+</ul>
+</li>
+<li>
+<p>Epilogue: “The Future of Teamwork”</p>
+<ul>
+<li>Ultimately, Trees and Team envisions a future that combines human creativity with AI’s predictive capabilities. It is a future where teamwork takes center stage and AI provides support. And it is also the beginning of a new science fiction, a prototype of the future.</li>
+</ul>
+</li>
+<li>
+<p>This story illustrates the possibilities of AI and humans shaping the future together and offers readers a new vision of the future.</p>
+</li>
+</ul>
+<h1 id="comments">Comments<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#comments" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>.</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Is this an unadjusted AI-generated text on the site? That’s a pretty interesting sentence.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Yes, I didn’t modify anything except the indentation, no trial and error, one shot out: <a href="https://chat.openai.com/share/7f7ca59b-1fe8-40af-889e-2652375875b1" class="external">chatlog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>“AI and humans will shape the future together.”
+<ul>
+<li>That’s a nice phrase!</li>
+</ul>
+</li>
+<li>Collaboration as “the intersection of individual ideas to generate new ideas.”
+- Interesting that you describe <a href="./collaboration" class="internal" data-slug="collaboration">collaboration</a> this way.</li>
+<li>“The future of teamwork” / “A future where teamwork is central and AI provides support.”
+<ul>
+<li>What does “<a href="./teamwork" class="internal" data-slug="teamwork">teamwork</a>” look like in this world?</li>
+<li>It could be something different from the “before GPT” teamwork.</li>
+<li>Teamwork… also derives from the connections between people.
+<ul>
+<li>I feel like this is an important perspective.</li>
+</ul>
+</li>
+<li>Would it be interesting to build a sci-fi prototype on the issue of the unclear definition of “teamwork” and the future of teamwork?
+<ul>
+<li>Postscript:.
+<ul>
+<li>I asked <span>→</span>[/omoikane/the future of teamwork](<a href="https://scrapbox.io/omoikane/the" class="external">https://scrapbox.io/omoikane/the<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> future of teamwork).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>“Write future prototypes based on data and goals.”
+<ul>
+<li>No data or goals were given in this prototyping process.</li>
+<li>Sure, it’s possible to make better prototypes by giving them data and goals…</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>It sounds very plausible as a synopsis, but I’m not sure what exactly it will be about.
+<ul>
+<li>Is this good enough as long as it is prototyping?</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I think the prototype is complete at this stage.
+<ul>
+<li>The “novel as entertainment” and the “novel as prototype” offer different kinds of value.
+<ul>
+<li>Entertainment fiction doesn’t have to generate controversy, as long as it’s interesting to read.
+<ul>
+<li>Interesting, but nice to have a MUST to make you think.</li>
+</ul>
+</li>
+<li>Novels as prototypes are valuable for generating discussion, even better if they are interesting, but just being interesting is futile.
+<ul>
+<li>Make you think is MUST and interesting is nice to have.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Since GPT4 is writing the story instead of me thinking up the story, unexpected stories and phrases come up for me.
+<ul>
+<li>This time I read it myself and wrote my thoughts, but I can do that because I’m not 100% in control of the story.</li>
+<li>Like, “I see what you mean, it’s important to be based on data and goals.”</li>
+</ul>
+</li>
+<li>I can’t share with others if I’m just mulling around in my brain, but I can share this sci-fi prototype and the verbalized impressions triggered by it.
+<ul>
+<li>Sharing triggers thoughts in others.</li>
+<li>If doing a vague “let’s all think together” or “let’s all come up with ideas” doesn’t work very well, then making something readable first will lead to more concrete discussions.</li>
+<li>So I suggest we do SF prototyping first before discussion.</li>
+<li>I’m already convinced that this would be beneficial to me, after trying it myself first in making my proposal.</li>
+<li>The cost of the work is lower than expected, and when you see what comes out, you say, “Oh, well, I didn’t have that perspective.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Do you think this usage is teamwork with AI?
+<ul>
+<li>I think it’s a new form of teamwork, but it’s also an interesting story, and I think the world is divided on it!</li>
+<li>In Japan, there is a culture of recognizing the personalities of non-human things, such as <a href="./Doraemon-(dwarf-planet)" class="internal alias" data-slug="Doraemon-(dwarf-planet)">Doraemon (dwarf planet)</a> and <a href="./artifact-spirit" class="internal alias" data-slug="artifact-spirit">artifact spirit</a>, and I resonate with that.</li>
+<li>On the other hand, there are those in the world who believe that tools should not be allowed to have personalities and that AI’s capabilities should be limited, and from that perspective, AI will never be a team member.</li>
+<li>I believe that AI can be a team member and that we should have more conversations with AI as a team member.</li>
+</ul>
+</li>
+</ul>
+<h1 id="prototypes-activate-thinking"><a href="./Prototypes-activate-thinking" class="internal alias" data-slug="Prototypes-activate-thinking">Prototypes activate thinking</a><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#prototypes-activate-thinking" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>Even when used alone, ChatGPT will create unexpected stories to activate it.</li>
+<li>Share your <a href="./prototype" class="internal" data-slug="prototype">prototype</a> with others to stimulate conversation.
+<ul>
+<li>This explanation, which I just introduced, was given in “Chapter 4: Ultimate <a href="./brainstorming" class="internal" data-slug="brainstorming">brainstorming</a>”.
+<ul>
+<li>
+<blockquote>
+<p>The idea is to create a rough model that represents the concept using materials at hand. You can use blocks, foam core, tubular material, strong adhesive tape, whatever seems useful.
+- <a href="./A-company-that-conceives" class="internal alias" data-slug="A-company-that-conceives">A company that conceives</a>! - Innovation techniques from IDEO, the world’s best design firm Tom Kelly p.74</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Instead of “thinking,” “ideating,” and “discussing” in a vague way, making things visible and touchable allows for more concrete thinking, more concrete ideas, and better discussions.</li>
+</ul>
+</li>
+<li>So, in creating a better discussion mechanism(<a href="./deliberation-support-system" class="internal alias" data-slug="deliberation-support-system">deliberation support system</a>), it is a good idea to “do SF prototyping first before discussion”.
+<ul>
+<li>This was only an idea at the proposal stage, but became a conviction as we tried it out.</li>
+<li>The cost is lower than expected because prototypes like the above example are really quick and easy to produce.</li>
+</ul>
+</li>
+<li>There are two supp projects that will delve into this.
+<ul>
+<li>[/omoikane/「EBSFP: 根拠データに基づくSFプロトタイピング」プロジェクト](<a href="https://scrapbox.io/omoikane/%E3%80%8CEBSFP" class="external">https://scrapbox.io/omoikane/「EBSFP<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: 根拠データに基づくSFプロトタイピング」プロジェクト)<img src="https://scrapbox.io/api/pages/omoikane/siramatu/icon" alt="/omoikane/siramatu.icon" height="19.5"/>
+<ul>
+<li>Create search keywords based on SF prototypes and load the prompts with the abstracts of the papers hit by the search with those keywords and have them refined.</li>
+<li>This is the direction suggested earlier in the SF prototype “write future prototypes based on data and goals”.</li>
+</ul>
+</li>
+<li><a href="https://scrapbox.io/omoikane/%E8%87%AA%E6%B2%BB%E4%BD%93%E3%82%84%E5%A4%A7%E5%AD%A6%E3%81%AA%E3%81%A9%E3%81%A7SF%E3%83%97%E3%83%AD%E3%83%88%E3%82%BF%E3%82%A4%E3%83%94%E3%83%B3%E3%82%B0%E3%81%AE%E5%AE%9F%E8%A8%BC%E5%AE%9F%E9%A8%93%E3%81%97%E3%81%9F%E3%81%84" class="external">/omoikane/自治体や大学などでSFプロトタイピングの実証実験したい<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a><img src="https://scrapbox.io/api/pages/omoikane/hal_sk/icon" alt="/omoikane/hal_sk.icon" height="19.5"/>
+<ul>
+<li>Nagoya Institute of Technology <a href="https://cms7.ict.nitech.ac.jp/moodle40a/syllabus/view.php?id=76650" class="external">Advanced Community Creation B<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> is being considered for implementation.</li>
+<li>Workshop for teachers scheduled for the end of September</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[/omoikane/Polis preliminaries with SF prototypes will lower the hurdle for Polis](<a href="https://scrapbox.io/omoikane/Polis" class="external">https://scrapbox.io/omoikane/Polis<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> preliminaries with SF prototypes will lower the hurdle for Polis).
+<ul>
+<li>
+<blockquote>
+<p><a href="https://scrapbox.io/omoikane/Polis:AI%E5%B0%8F%E8%AA%AC:%E3%80%8C%E3%83%95%E3%82%A1%E3%83%B3%E3%83%88%E3%83%A0%E3%80%8D" class="external">/omoikane/Polis:AI小説:「ファントム」<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>で初polis！<img src="https://scrapbox.io/api/pages/omoikane/teyoda7/icon" alt="/omoikane/teyoda7.icon" height="19.5"/></p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>I had seen it in <img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>‘s project and knew it existed, but felt the hurdle and hadn’t been able to vote for it.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Would it lower the hurdle if it’s your opinion of a creative work?</p>
+</blockquote>
+</li>
+<li>Consideration 1: With political topics, there are cases where people hesitate because they think they don’t have enough prerequisite knowledge to vote.
+<ul>
+<li>If it’s “please read the novel and vote on what you think,” then once you’ve read the novel, you can assume that you have enough prerequisite knowledge.</li>
+</ul>
+</li>
+<li>Consideration 2: The hurdle was high because of the “must write a correct opinion” atmosphere
+<ul>
+<li>This time, by being called “impression,” I can express how I felt, not how “right” I was.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="qa">Q&amp;A<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#qa" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>
+<p>What are the specific ways in which AI will assist? For example, in what areas will the AI assist with plot generation, character development, dialog creation, etc.?<img src="https://scrapbox.io/api/pages/nishio/gpt/icon" alt="gpt.icon" height="19.5"/></p>
+<ul>
+<li>GPT is General Purpose Technology, so people are trying different things.<a href="https://scrapbox.io/omoikane/%E4%BA%BA%E3%80%85%E3%81%AB%E3%82%88%E3%82%8B%E6%8E%A2%E7%B4%A2%E7%9A%84%E7%A0%94%E7%A9%B6%E3%81%8C%E7%8F%BE%E5%A0%B4%E3%81%A7%E8%B5%B7%E3%81%93%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B" class="external">/omoikane/人々による探索的研究が現場で起こっている<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>
+<ul>
+<li>Personally, I like the use of having a near-future science fiction plot created, cost-effective.
+<ul>
+<li>This is because I consider “effectiveness” to be “prototyping”.</li>
+<li>I feel that [/omoikane/value as an entertaining novel](<a href="https://scrapbox.io/omoikane/value" class="external">https://scrapbox.io/omoikane/value<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> as an entertaining novel) and [/omoikane/value as a prototype](<a href="https://scrapbox.io/omoikane/value" class="external">https://scrapbox.io/omoikane/value<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> as a prototype) are two different things.
+<ul>
+<li>There is a sense of narrative: [/omoikane/AI novel “Pink Float and AI Summer”](<a href="https://scrapbox.io/omoikane/AI" class="external">https://scrapbox.io/omoikane/AI<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> novel “Pink Float and AI Summer”).</li>
+<li>No sense of narrative: [/omoikane/AI Novel “Meeting a Transfer Student: A Shift in Vision”](<a href="https://scrapbox.io/omoikane/AI" class="external">https://scrapbox.io/omoikane/AI<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Novel “Meeting a Transfer Student: A Shift in Vision”).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Another favorite usage is ”[/omoikane/explanation for those unfamiliar with Japanese culture](<a href="https://scrapbox.io/omoikane/explanation" class="external">https://scrapbox.io/omoikane/explanation<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> for those unfamiliar with Japanese culture)“.
+<ul>
+<li>Prompted for various keywords, “Explain in English for people who are not familiar with Japanese culture.</li>
+<li><a href="https://scrapbox.io/omoikane/convincing" class="external">/omoikane/convincing<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.
+<ul>
+<li>
+<blockquote>
+<p>“Convincing” is a richly nuanced Japanese expression that cannot be directly translated into English.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><a href="https://scrapbox.io/omoikane/annoyance" class="external">/omoikane/annoyance<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.
+<ul>
+<li>
+<blockquote>
+<p>The Japanese word “nuisance” (meiwaku) translates directly to “nuisance” or “trouble” in English. However, the cultural meaning of the word goes beyond these translations in the context of Japanese society. In Japan, <a href="./social-harmony" class="internal alias" data-slug="social-harmony">social harmony</a> and <a href="./collectivism" class="internal" data-slug="collectivism">collectivism</a> are greatly emphasized…</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>When Japanese people are thinking in Japanese, they unknowingly think “<a href="./everyone-knows" class="internal alias" data-slug="everyone-knows">everyone knows</a>” <a href="./common-sense-concepts" class="internal alias" data-slug="common-sense-concepts">common sense concepts</a>, but they often realize that these <a href="./Galapagos-concepts" class="internal alias" data-slug="Galapagos-concepts">Galapagos concepts</a> are only accepted in the <a href="./minority" class="internal" data-slug="minority">minority</a> inner circle when viewed from a global perspective.</li>
+<li>I made him read this commentary <a href="https://scrapbox.io/omoikane/%E5%B0%8A%E7%8E%8B%E6%94%98%E5%A4%B7" class="external">/omoikane/尊王攘夷<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> and write <a href="https://scrapbox.io/omoikane/%E5%B0%8A%E7%8E%8B%E6%94%98%E5%A4%B72.0" class="external">/omoikane/尊王攘夷2.0<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>What specific insights or lessons learned from the written science fiction stories?<img src="https://scrapbox.io/api/pages/nishio/gpt/icon" alt="gpt.icon" height="19.5"/></p>
+<ul>
+<li>[/omoikane/story in which protagonists with different ideas act out of the same situation](<a href="https://scrapbox.io/omoikane/story" class="external">https://scrapbox.io/omoikane/story<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> in which protagonists with different ideas act out of the same situation).</li>
+<li>In a setting where local government has gone digital due to a lack of manpower, we created a storyline of those in favor of digitalization and those opposed to it.</li>
+<li>[/omoikane/ChatGPT wants to make it a good story](<a href="https://scrapbox.io/omoikane/ChatGPT" class="external">https://scrapbox.io/omoikane/ChatGPT<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> wants to make it a good story) has had a positive effect
+<ul>
+<li>At first I subconsciously thought that older people who resist change are unhappy by their choice.</li>
+<li>When I saw that ChatGPT generated a happy ending with that constraint, I realized I had an <a href="./unconscious-bias" class="internal alias" data-slug="unconscious-bias">unconscious bias</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>What are the main benefits of using AI to create stories?<img src="https://scrapbox.io/api/pages/nishio/gpt/icon" alt="gpt.icon" height="19.5"/></p>
+<ul>
+<li>To create a near-future science fiction story is to start from the current situation and create a prediction of the future by connecting small steps that “such a thing is likely to happen.<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>
+<ul>
+<li>(I’m not talking about [/omoikane/ value as an entertaining novel](<a href="https://scrapbox.io/omoikane/" class="external">https://scrapbox.io/omoikane/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> value as an entertaining novel) here.)</li>
+<li>Some people are not very good at making these future predictions in the first place, or they make narrow predictions based on unconscious assumptions.</li>
+<li>Mechanical support here has the effect of reducing costs and broadening horizons.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>This is the first half of the story so far, so I’ll question it.</p>
+</li>
+</ul>
+<p>Post-Polis phase</p>
+<ul>
+<li>We think of it as an “<a href="./improvement-cycle" class="internal alias" data-slug="improvement-cycle">improvement cycle</a>.”
+<ul>
+<li><img src="https://gyazo.com/c24a617eaefe6f4124accce7f2cb7d18/thumb/1000" alt="image"/>
+<ul>
+<li><a href="./Gradual-improvement" class="internal alias" data-slug="Gradual-improvement">Gradual improvement</a> by <a href="./iteration" class="internal" data-slug="iteration">iteration</a> in an <a href="./agile" class="internal" data-slug="agile">agile</a> manner.</li>
+</ul>
+</li>
+<li>SF prototype corresponds to <a href="./Minimum-Viable-Product" class="internal alias" data-slug="Minimum-Viable-Product">Minimum Viable Product</a> in <a href="./Build-Measure-Learn-Loop" class="internal alias" data-slug="Build-Measure-Learn-Loop">Build-Measure-Learn Loop</a> of [Lean Startup
+<ul>
+<li>Minimal product” that can be learned by releasing it to others and observing their reactions.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>By reading the novel and doing Polis, you can realize that “different people feel differently even though they read the same thing”.
+<ul>
+<li>Read [/omoikane/AI Novel: “Phantom”](<a href="https://scrapbox.io/omoikane/AI" class="external">https://scrapbox.io/omoikane/AI<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Novel: “Phantom”) and vote for it at [/omoikane/Polis:AI Novel: “Phantom”](<a href="https://scrapbox.io/omoikane/Polis:AI" class="external">https://scrapbox.io/omoikane/Polis:AI<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Novel: “Phantom”)!
+<ul>
+<li><img src="https://scrapbox.io/files/64cba5450400ec001cd713bd.png" alt="image"/></li>
+<li>I voted and was in the minority, so I wanted to write my opinion.<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>
+<ul>
+<li>After that, I wanted to make SF based on that opinion, and this became the first SF prototype for <img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>!
+<ul>
+<li>[/omoikane/deep-dive: mine-memory](<a href="https://scrapbox.io/omoikane/deep-dive" class="external">https://scrapbox.io/omoikane/deep-dive<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: mine-memory).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I wanted to improve this “Novel to Polis” process.
+<ul>
+<li>Polis does not show visualization until 7 people have voted, and there is no feedback for those who have taken voting action, so it is difficult to increase the number of votes in the middle</li>
+<li>For example, opinions on why the clusters are divided into clusters are shown on the visualization screen, but this cannot be retrieved via the API.
+<ul>
+<li>It would be interesting to have the AI role-play the opinion clusters as virtual personas, but the only way to do that is to copy-paste them into each other.</li>
+</ul>
+</li>
+<li>The needs in this area led to the list of “areas for improvement” in the previous <a href="./Polis-Study-Group" class="internal alias" data-slug="Polis-Study-Group">Polis Study Group</a>.</li>
+<li>This “improved Polis-like system” was later named “Komorebikagami”.</li>
+<li>A mirror that collects and reflects (reflects/contemplates) the “emotional data” that leaks out of people like sunlight leaking through a tree.
+<ul>
+<li>(GPT4 named: [/omoikane/naming of Komorebikagami](<a href="https://scrapbox.io/omoikane/naming" class="external">https://scrapbox.io/omoikane/naming<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> of Komorebikagami))</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Japanese cockchafer (Melolontha japonica)</p>
+<ul>
+<li>✅Return immediate feedback on ballots</li>
+<li>✅You can check your own past votes.</li>
+<li>✅Can update ballot content
+<ul>
+<li>I think of this as “a system that helps people update their thoughts”, it’s only natural that people with updated thoughts would want to update their votes, so I supported that.</li>
+</ul>
+</li>
+<li><img src="https://gyazo.com/3598f4f5c65e11b910a734ff7400eb2c/thumb/1000" alt="image"/></li>
+<li>(Planned) to be able to share on Twitter and vote directly…
+<ul>
+<li>I’m still waiting to see if Twitter will turn into X or not…</li>
+<li>You can vote against Bluesky with a script, but…</li>
+<li>In the end, it’s not about which social network, but about being able to share easily on each platform where people are congregating.</li>
+</ul>
+</li>
+<li>In the case of Polis, it was “a visualization is read by a human, a thought is triggered, and a post is written (by some people)”
+<ul>
+<li>Polis clusters are virtual personas, so GPT could read them directly and role-play them.</li>
+<li>Virtual personalities played by AI’s could argue with each other.</li>
+</ul>
+</li>
+</ul>
+<p>Community-centric AI</p>
+<ul>
+<li>[/omoikane/“Building Community-Centered AI” Project](<a href="https://scrapbox.io/omoikane/%22Building" class="external">https://scrapbox.io/omoikane/“Building<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Community-Centered AI” Project).
+<ul>
+<li>
+<blockquote>
+<p>The “<a href="./Building-Community-Centered-AI" class="internal alias" data-slug="Building-Community-Centered-AI">Building Community-Centered AI</a>” project is an attempt to create a “<a href="./Community-AI" class="internal alias" data-slug="Community-AI">Community AI</a>” (<a href="./Community-Centered-AI" class="internal alias" data-slug="Community-Centered-AI">Community-Centered AI</a>). This refers to an AI that learns about a particular community’s history, culture, challenges, and people’s opinions to understand and represent them. Specifically, it will interact with people involved in the issues facing the community, providing an environment that not only provides knowledge, but also creates a forum for discussion and the creation of solutions. Our initial goal is to create an AI for the Omoikane community.</p>
+</blockquote>
+</li>
+<li>What we called “<a href="./Japanese-Culture-AI" class="internal alias" data-slug="Japanese-Culture-AI">Japanese Culture AI</a>” at the time of grant application</li>
+<li>As a result of the iteration, a lot of data was accumulated by community members, and we thought it would be interesting to turn it into a chatbot with <a href="./Retrieval-Augmented-Text-Generation" class="internal alias" data-slug="Retrieval-Augmented-Text-Generation">Retrieval-Augmented Text Generation</a>.
+<ul>
+<li>To use a figurative expression, “the AI is watching every conversation in the community.”</li>
+<li>When spoken to, “remember the similarity” and respond with reference to it.</li>
+<li>This “recall of similarities” is <a href="./vector-search" class="internal alias" data-slug="vector-search">vector search</a>.</li>
+</ul>
+</li>
+<li>How it works, which I discussed in March at [Story study session about connecting my Scrapbox to ChatGPT.
+<ul>
+<li>[/omoikane/Omoikane Embed](<a href="https://scrapbox.io/omoikane/Omoikane" class="external">https://scrapbox.io/omoikane/Omoikane<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Embed)</li>
+<li>At that time, the vector index was updated manually.</li>
+<li>They only experimented with personal Scrapboxes.</li>
+<li>This is “automatically updated once a day” for “community groupware that is updated by multiple people”.</li>
+</ul>
+</li>
+<li>I started automatically updating from the Omoikane Project’s Scrapbox once a day in June.
+<ul>
+<li>✅Vector search function is already in service release, chat function is not yet added.</li>
+<li>Essentially, there is no need for it to be Scrapbox.
+<ul>
+<li>It would be good if the text data of the exchange could be automatically extracted from the communication platform (= groupware) that the community primarily uses.</li>
+</ul>
+</li>
+<li>I’m using Scrapbox right now because it’s convenient and automatable to export in JSON format.</li>
+<li>Scrapbox is also a good place to find several communities in the public
+<ul>
+<li>Groupware for corporate use is generally not allowed to disclose its contents.</li>
+<li>If a public community is used as a test case, it is easy to introduce a case study that says, “This is what happened when we introduced the system to this kind of community.</li>
+</ul>
+</li>
+<li>As a start, anything with text data is good.
+<ul>
+<li>For example, the Taiwanese civic tech community <a href="./g0v" class="internal" data-slug="g0v">g0v</a> has its minutes published on HackMD, which you can crawl
+<ul>
+<li><a href="./Cybozu-style" class="internal alias" data-slug="Cybozu-style">Cybozu style</a> article crawls, it becomes a chatbot that talks about Cybozu culture</li>
+</ul>
+</li>
+<li>But even if you build a chatbot that learns these things as a start, it’s not very interesting if you can’t build a feedback loop for it.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Building a feedback loop is important.</p>
+<ul>
+<li>What is a feedback loop?
+<ul>
+<li><img src="https://gyazo.com/e2ef115531a07b58e362c723f59f3e16/thumb/1000" alt="image"/></li>
+<li>1: AI reads groupware</li>
+<li>2: When someone speaks to you, answer based on your memory of 1.</li>
+<li>3: This exchange is automatically written to the groupware.</li>
+<li>4: Vote on it in Komorebikagami and additional discussion will take place.</li>
+<li>✅The current implementation is to update the vector index (1), then the AI will post its impressions of the past day’s updates to Scrapbox (3’), and then you can write your impressions (4’).</li>
+<li>[Reinforcement learning from human feedback, from <a href="./Human-in-the-loop" class="internal alias" data-slug="Human-in-the-loop">Human in the loop</a> to [People in the loop</li>
+</ul>
+</li>
+<li>Anonymous Comorebikagami for AI output is superior in three ways
+<ul>
+<li>Compared to “the case against human speech.”
+<ul>
+<li>No hesitation to argue because the opponent is not a human but an AI.</li>
+</ul>
+</li>
+<li>Compared to verbal rebuttals or submissions with apparent names.
+<ul>
+<li>I am anonymous so I don’t have to worry about putting my opinion out there.</li>
+</ul>
+</li>
+<li>Since it’s a “yes/no” vote
+<ul>
+<li>Unspeakable “faltering” and “<a href="./uncomfortable-feeling" class="internal alias" data-slug="uncomfortable-feeling">uncomfortable feeling</a>” can be honestly expressed.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The “community atmosphere” changes from “vague and only vaguely understandable” to one where questions can be explicitly asked.
+<ul>
+<li>You can ask questions without social risk, and the AI will answer them first.</li>
+<li>Whether the answer was good or not, and how it should be improved, will be the subject of discussion in the community.</li>
+<li>In this process, no one human is attacked and the “virtual character” called AI is “improved by everyone” <a href="./cooperative-game" class="internal alias" data-slug="cooperative-game">cooperative game</a>.</li>
+</ul>
+</li>
+<li>Bringing “<a href="./a" class="internal" data-slug="a">a</a> better discussion mechanism” in a Japanese culture that values consensus rather than top-down direction, but fears conflict with others.
+<ul>
+<li>Also, the GPT portion absorbs language differences, which should support cultural integration of teams across different language areas</li>
+</ul>
+</li>
+<li>This is what Nishio wants to create with the Omoikane Project</li>
+<li>However, the Omoikane Project is a group of volunteers, unlike a corporation, so it may be more difficult than in the case of a corporation.
+<ul>
+<li>Participation is open-ended, allowing participants to work freely based on their own interests.</li>
+<li>It increases diversity and creativity, leading to new discoveries and results.</li>
+<li>When looking back at the past after a period of time, it becomes clear “what was produced”.
+<ul>
+<li><a href="./Connecting-the-Dots" class="internal alias" data-slug="Connecting-the-Dots">Connecting the Dots</a></li>
+</ul>
+</li>
+<li>We cannot predict in advance what will be born, we can only create an environment conducive to birth.</li>
+</ul>
+</li>
+</ul>
+<p>The “Thinking and Making the Future While Reading and Writing” Project</p>
+<ul>
+<li>The most meta of the Omoikane project’s sap projects (by <img src="https://scrapbox.io/api/pages/omoikane/niryuu/icon" alt="/omoikane/niryuu.icon" height="19.5"/>)</li>
+<li>SF prototyping is a tool that allows us to think more concretely and deeply about the future by concretizing the future in the form of a novel.</li>
+<li>But this “act of reading and writing SF” of “SF prototyping” itself is already evolving into a new form in this Omoikane project</li>
+<li>The act of writing science fiction
+<ul>
+<li>AI assistance has lowered the bar.</li>
+<li>The writing process, which used to be handled in a black box manner in the minds of science fiction writers, is now shared as a chat log with GPT.</li>
+<li>And then people who had never thought they’d ever have the time to write their own novels got involved in writing science fiction.</li>
+</ul>
+</li>
+<li>The act of reading science fiction
+<ul>
+<li>If you read science fiction in a book, your impressions are made in a different medium than the book</li>
+<li>But by reading on the Scrapbox, which can be co-edited, your impressions become content on the same page as the science fiction, and conversations with other readers and links to other science fiction occur.</li>
+<li>Voting on what you read in Polis and Komorebikagami, and being counted and clustered is an experience not found in existing novels.</li>
+</ul>
+</li>
+<li>And many other things going on that I can’t classify.
+<ul>
+<li>Ideas and plots that have not reached completion are shared,<a href="https://scrapbox.io/omoikane/shared-universe" class="external">/omoikane/shared-universe<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</li>
+<li>Add development in the form of answer songs to those made by others, and use image-generating AI to create illustrations.</li>
+<li>Interactive fiction, abstracting and transforming the novel</li>
+</ul>
+</li>
+<li>Clearly a unique social interaction is occurring here.
+<ul>
+<li>This is the emergence of a new culture. In other words, a new future is being born here.</li>
+<li>A project to observe and understand this phenomenon itself from a social scientific perspective.</li>
+</ul>
+</li>
+<li>In designing this community, we were aware of <a href="./Legitimate-Peripheral-Participation" class="internal alias" data-slug="Legitimate-Peripheral-Participation">Legitimate Peripheral Participation</a>.
+<ul>
+<li>It’s more legitimate peripheral participation than I’m aware of.</li>
+<li>Start with <a href="./Peripheral-Participation" class="internal alias" data-slug="Peripheral-Participation">Peripheral Participation</a> of “reading” and “reading and writing feedback” and gradually move on to “writing”.</li>
+<li>The acquisition of this “way of writing” is not only through abstract knowledge transfer, but also through participation and experience in specific contexts and situations “<a href="./Situation-embedded-learning" class="internal alias" data-slug="Situation-embedded-learning">Situation-embedded learning</a>.”</li>
+<li>The result is a “<a href="./community-of-practice" class="internal alias" data-slug="community-of-practice">community of practice</a>” of people with common interests.</li>
+</ul>
+</li>
+</ul>
+<p>Everyone is welcome to participate.</p>
+<ul>
+<li>Join <a href="https://scrapbox.io/omoikane/omoikane" class="external">/omoikane/omoikane<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</li>
+<li>Currently 45 people, 614 pages</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E3%82%AA%E3%83%A2%E3%82%A4%E3%82%AB%E3%83%8D%E5%8B%89%E5%BC%B7%E4%BC%9A" class="external">/nishio/オモイカネ勉強会<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class aria-controls="toc-content" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content" class><ul class="overflow"><li class="depth-0"><a href="#worldcoin" data-for="worldcoin">Worldcoin</a></li><li class="depth-0"><a href="#omoikane-project" data-for="omoikane-project">Omoikane Project</a></li><li class="depth-0"><a href="#sf-prototyping" data-for="sf-prototyping">SF Prototyping</a></li><li class="depth-0"><a href="#title-future-prototypes" data-for="title-future-prototypes">Title: “Future Prototypes”</a></li><li class="depth-0"><a href="#comments" data-for="comments">Comments</a></li><li class="depth-0"><a href="#prototypes-activate-thinking" data-for="prototypes-activate-thinking">Prototypes activate thinking</a></li><li class="depth-1"><a href="#qa" data-for="qa">Q&amp;A</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Broad-Listening-&quot;That-Figure&quot;-Study-Group" class="internal">Broad Listening &quot;That Figure&quot; Study Group</a></li><li><a href="./Diary-2023-08-21" class="internal">Diary 2023-08-21</a></li><li><a href="./Diary-2023-08-22" class="internal">Diary 2023-08-22</a></li><li><a href="./Examples-of-Reorganizing" class="internal">Examples of Reorganizing</a></li><li><a href="./Intellectual-Productivity-Study-Group-by-LLM" class="internal">Intellectual Productivity Study Group by LLM</a></li><li><a href="./Preparation-for-Omoikane-Study-Group" class="internal">Preparation for Omoikane Study Group</a></li><li><a href="./SybilRank" class="internal">SybilRank</a></li><li><a href="./Weekly-journal-2023-08-06~2023-08-11" class="internal">Weekly journal 2023-08-06~2023-08-11</a></li><li><a href="./Weekly-journal-2023-08-11~2023-08-21" class="internal">Weekly journal 2023-08-11~2023-08-21</a></li><li><a href="./Weekly-journal-2024-04-06~2024-04-14" class="internal">Weekly journal 2024-04-06~2024-04-14</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

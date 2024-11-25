@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Where is full-text search headed?</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Where is full-text search headed?"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Where is full-text search headed?"/><meta name="twitter:description" content="voluntas I’m seriously wondering where full-text search is headed. I have a feeling that the current trend will result in infinitely less demand. voluntas For our own documentation (Sphinx), of course, interactive search like ChatGPT is much better than full-text search."/><meta property="og:description" content="voluntas I’m seriously wondering where full-text search is headed. I have a feeling that the current trend will result in infinitely less demand. voluntas For our own documentation (Sphinx), of course, interactive search like ChatGPT is much better than full-text search."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="voluntas I’m seriously wondering where full-text search is headed. I have a feeling that the current trend will result in infinitely less demand. voluntas For our own documentation (Sphinx), of course, interactive search like ChatGPT is much better than full-text search."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Where-is-full-text-search-headed"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Where-is-full-text-search-headed"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="voluntas I’m seriously wondering where full-text search is headed. I have a feeling that the current trend will result in infinitely less demand. voluntas For our own documentation (Sphinx), of course, interactive search like ChatGPT is much better than full-text search."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Where-is-full-text-search-headed"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Where is full-text search headed?</a></div></nav><h1 class="article-title">Where is full-text search headed?</h1><p show-comma="true" class="content-meta"><span>Mar 24, 2023</span><span>8 min read</span></p></div></div><article class="popover-hint"><blockquote>
+<p><a href="https://twitter.com/voluntas/status/1639113470326214656" class="external">voluntas<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> I’m seriously wondering where <a href="./full-text-search" class="internal alias" data-slug="full-text-search">full-text search</a> is headed. I have a feeling that the current trend will result in infinitely less demand.</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/voluntas/status/1639115301156700161" class="external">voluntas<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> For our own documentation (Sphinx), of course, interactive search like ChatGPT is much better than full-text search. I can also see a future where we can generate a lot of sample code to learn. It would also be nice to be able to provide reference links. In this case, I wonder if full-text search is necessary. I’m not so sure.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/voluntas/status/1639116346616352768" class="external">voluntas<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Search is not interactive, and it is too cunning to say that it is interactive.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/voluntas/status/1639116738569859072" class="external">voluntas<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Documentation is seriously important for closed source products like ours, so we have to think a lot about it.</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://twitter.com/tokoroten/status/1639117102698360832" class="external">tokoroten<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> I think that only legal documents, contracts and receipts have lost the meaning of holding the full text anymore.</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p>Other content can be genned as needed.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/voluntas/status/1639117283938435074" class="external">voluntas<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Ah, in my case, it is an “official document”, so I think it is of great value in itself. Only the base information cannot be generated automatically.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/voluntas/status/1639117338749599746" class="external">voluntas<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Is this correct?</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/tokoroten/status/1639117942368669698" class="external">tokoroten<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> I don’t think it even needs to be an official document unless the official document has a legal basis.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Ultimately, a future where documentation can be genned from time to time from the language specification and numerous examples.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/voluntas/status/1639118368098893824" class="external">voluntas<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Ah, I see what you mean. However, in the case of my own products, there is a “range of what can be made public” (I don’t want dynamic generation from the source), and I feel that a human being should do his/her best in that area. It’s like a borderline.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/moriwaka/status/1639120200661618688" class="external">moriwaka<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> It is important to write documentation to clear up the distinction between what is behavior that you can promise the user that you intend to maintain in the future, and what is implementation-dependent behavior that is currently the case but you don’t know if it will change in the future. It is important to write a document to clarify the distinction between what is implementation-dependent behavior and what is implementation-dependent behavior. …</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/voluntas/status/1639120679974080512" class="external">voluntas<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> I agree. I think it will be very important to have an authorization to “release information to whom and to what extent”.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1639129935095926788" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> tokoroten’s point of view is interesting, but it seems to me that V’s focus is different from what he was concerned about in his first tweet, and V’s point of view is interesting too, so I’d like to elaborate. I’m inclined to ask.</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://twitter.com/moriwaka/status/1639138661999718401" class="external">moriwaka<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Considering the old and new versions of the documentation, “When did the XX feature come from? How did it change? In the future, full-text search will be used as a backend for front-end AI to obtain necessary documents when dealing with queries such as “When did the XX feature come out of the old version?</p>
+</blockquote>
+<blockquote>
+<p><a href="https://twitter.com/johtani/status/1639124163679129600" class="external">johtani<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> I guess by full text search here you mean keyword search, which may change how it will look in the future as a UI. I’m not sure if it’s easier to ask in natural language or not, so things may change. I wonder how the UI will be changed in the future. As for how to hold the data, a system to search by vector rather than inverted index is emerging, and I think that’s what will be used.</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/johtani/status/1639124628986789889" class="external">johtani<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> And then there are searches for things that are not full text (is this off topic?). And I’m talking about “full-text search.”</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/voluntas/status/1639124652525260800" class="external">voluntas<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Will the full-text search mechanism itself be superseded? I think so. I think that the search itself is to check the “pointer to the original text”.</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1639154988789403650" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> I put it together.
+<a href="./Where-is-full-text-search-headed" class="internal alias" data-slug="Where-is-full-text-search-headed">Where is full-text search headed?</a>
+My opinion: LLM will do full text search
+<a href="./Toolformer" class="internal" data-slug="Toolformer">Toolformer</a></p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1639155863083712513" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Humans create documents for LLMs to refer to, and at first the LLMs will approach the documents as if they were written for humans to read, and eventually the knowledge that “this format is better for LLMs to read” will build up, and they will write in that format. Eventually, the knowledge that “LLMs can read better if it is formatted in this way” accumulates, and they start to write in such a format.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1639156497258287104" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Readers can explicitly ask questions and get answers, or they can ask “show me a tutorial” and get a generated tutorial. If you design the information well, you can tell them “I have experience with A, I don’t have experience with B” and generate it for that individual, or you can read what comes up and “learn more” when you don’t understand.</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://twitter.com/dmikurube/status/1639153612113997824" class="external">dmikurube<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> So-called “documented” functions imply “you may use”. So, a function that is implemented as a function but not to be used without permission is called “undocumented”. If the undocumented feature is made documented without permission, dependency on it will occur, and it will be a problem later.</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/dmikurube/status/1639154106257506305" class="external">dmikurube<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Just because the code is implemented and works, there is still a bit of a gap between that and an official “feature you can use”. If they look at the code and decide it’s OK to use without permission, it’s going to be extremely difficult to maintain later on.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/dmikurube/status/1639154643765968898" class="external">dmikurube<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Don’t think the existence of “original text” will ever go away, including in that regard.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/dmikurube/status/1639155857790496768" class="external">dmikurube<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> It’s going to happen normally that full-text search for documents will be replaced by queries against the language model, but don’t think that the document, the I don’t think that the existence of the original document will disappear, but it will go in the opposite direction. The query itself will be analyzed to expand the documentation based on the knowledge of “Oh, so this is what you want to know.</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1639156967905312768" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> This pathway is important, a future where the LLM summarizes the query the reader is throwing and suggests “you should write more about ~”!</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/dmikurube/status/1639159506063233024" class="external">dmikurube<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> If something works, there will certainly be people who start using it without permission, and people get angry when the behavior there changes because they were just using it without permission. Documentation is a line of defense to talk back when people get angry there!</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://twitter.com/hrjn/status/1639163467327504384" class="external">hrjn<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Sometimes the original text is important, sometimes it’s not, and if the original text isn’t important, I feel like it’s a good thing that ChatGPT answered the question in the right way.
+On the other hand, in most cases, the origin of information is important in determining the reliability of information, so I don’t think the act of searching for documents will eventually disappear.</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/hrjn/status/1639163865807351808" class="external">hrjn<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> For example, when I look at StackOverflow, I judge the reliability of ChatGPT by looking at the upvotes and comments to some extent. I don’t read that much air, so I have to look at the original text.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/hrjn/status/1639165007035531266" class="external">hrjn<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> At least at present, ChatGPT does not guarantee the quality of information, and if anything, the quality is on the low side.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>To begin with, what is the quality of information is a deep issue, and it is not easily solved, as evidenced by Google’s preference for “How was it?” articles…</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1639164292829446148" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Isn’t it subtle whether a “human” would search “with a keyword exact match full-text search” that the LLM points to a link and reads the original text, since “humans Since “no”.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>hrjn: Well, I kind of understand what you mean, but I think that “full-text search with exact keyword matches” hardly exists nowadays, or at least token-level normalization is done by any full-text search engine, or at least synonym definition or query expansion is done by default. I think that synonym definition and query expansion can be done by default.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>People who are a bit richer have been doing as much as vector searching of distributed documents > > since before LLM, so nothing has changed.</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://twitter.com/voluntas/status/1639164445170761729" class="external">voluntas<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> I’m not sure if I’m making a good premise here, and it’s not ChatGPT or anything, but rather “isn’t full-text search for a particular document switching to interactive search? I think it’s a good idea to make it interactive. I’m not sure if it’s ChatGPT or something else.</p>
+<blockquote>
+<p>hrjn: I feel that the original text may or may not be important, and if the original text is not important, then it’s a good thing that ChatGPT answered the question in the right way.</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/hrjn/status/1639169281542995968" class="external">hrjn<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> I think it would certainly change in terms of searching within a document.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>I’ve been using EDGE lately to search for information on pages by doing things like “what’s the conclusion” or “specific examples”, but I think that’s what I want to know.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/hrjn/status/1639169667171491841" class="external">hrjn<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> This is also rarely a lie, but I think it’s helpful because it’s much easier to confirm if you read the worst of it and find it after you know.</p>
+</blockquote>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E5%85%A8%E6%96%87%E6%A4%9C%E7%B4%A2%E3%81%8C%E3%81%A9%E3%81%93%E3%81%AB%E5%90%91%E3%81%8B%E3%81%86%E3%81%AE%E3%81%8B" class="external">/nishio/全文検索がどこに向かうのか<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Diary-2023-03-24" class="internal">Diary 2023-03-24</a></li><li><a href="./Where-is-full-text-search-headed" class="internal">Where is full-text search headed?</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

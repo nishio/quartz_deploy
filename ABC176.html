@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>ABC176</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="ABC176"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="ABC176"/><meta name="twitter:description" content="Solving 4 questions does not increase the rating. Issue C - Step When the condition is satisfied up to the k-1th person, the k-1st person is the highest So, when determining the height of the kth person’s step, you only need to compare the k-1th person’s step height with the k-1st person’s step height."/><meta property="og:description" content="Solving 4 questions does not increase the rating. Issue C - Step When the condition is satisfied up to the k-1th person, the k-1st person is the highest So, when determining the height of the kth person’s step, you only need to compare the k-1th person’s step height with the k-1st person’s step height."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="Solving 4 questions does not increase the rating. Issue C - Step When the condition is satisfied up to the k-1th person, the k-1st person is the highest So, when determining the height of the kth person’s step, you only need to compare the k-1th person’s step height with the k-1st person’s step height."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/ABC176"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/ABC176"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Solving 4 questions does not increase the rating. Issue C - Step When the condition is satisfied up to the k-1th person, the k-1st person is the highest So, when determining the height of the kth person’s step, you only need to compare the k-1th person’s step height with the k-1st person’s step height."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="ABC176"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>ABC176</a></div></nav><h1 class="article-title">ABC176</h1><p show-comma="true" class="content-meta"><span>Aug 23, 2020</span><span>6 min read</span></p></div></div><article class="popover-hint"><p>Solving 4 questions does not increase the rating.
+<img src="https://gyazo.com/096ba8d1cc428b4f813302c5e7f71ae5/thumb/1000" alt="image"/></p>
+<p>Issue <a href="https://atcoder.jp/contests/abc176/tasks/abc176_c" class="external">C - Step<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>
+<p><img src="https://gyazo.com/0858ad5cbc91a901a8b1fe7e39702cc8/thumb/1000" alt="image"/></p>
+</li>
+<li>
+<p>When the condition is satisfied up to the k-1th person, the k-1st person is the highest</p>
+</li>
+<li>
+<p>So, when determining the height of the kth person’s step, you only need to compare the k-1th person’s step height with the k-1st person’s step height.</p>
+</li>
+<li>
+<p>The answer could be 10^14 digits, but it’s Python, so it’s okay.
+python</p>
+</li>
+</ul>
+<pre><code>def solve(N, AS):
+    ret = 0
+    prevStep = 0
+    for i in range(1, N):
+        if prevStep + AS[i - 1] > AS[i]:
+            prevStep = prevStep + AS[i - 1] - AS[i]
+            ret += prevStep
+        else:
+            prevStep = 0
+    return ret
+</code></pre>
+<p><a href="https://atcoder.jp/contests/abc176/tasks/abc176_d" class="external">D - Wizard in Maze<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<img src="https://gyazo.com/ed9c4a29cba57fc94914dde342c95e95/thumb/1000" alt="image"/></p>
+<ul>
+<li>
+<p>I TLE’d 5 times. The first two times the TLE decreased, so I decided, “This must be just in time,” and did my best to speed it up and let it through.</p>
+<ul>
+<li>It took 23 minutes of trial and error from the first submit to the ac…</li>
+</ul>
+</li>
+<li>
+<p>First, follow all the squares that can be reached by distance N, and when there are no more squares that can be reached by walking, add “places that can be reached by jumping from the squares you have followed so far” to the list of candidates for exploration.</p>
+<ul>
+<li>If the goal is reached during the search for distance N, it may RETURN.
+<ul>
+<li>Since it has already been confirmed that we can’t get there with N-1, we can confirm that N is the shortest.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Careless calculation of “jumps” can take a long time.</p>
+<ul>
+<li>For every square (<code>W*H</code>), “Can you jump here?” You can’t check the
+<ul>
+<li>Many times when the “road is narrow” the “all squares check” runs all over the place.</li>
+<li>The number of jumps will be roughly <code>W*H/6</code>, so <code>W^2 * H^2 / 6</code>.</li>
+</ul>
+</li>
+<li>Every time you walk one step, you put 25 squares around you into the “where you can fly the next time you jump” set.
+<ul>
+<li>The number of times you walk is less than “all the squares”, so you can calculate <code>25 * W * H</code> each time you do it.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>In what way did you hold that “good place to fly the next time you jump”?</p>
+<ul>
+<li>At first, I was marking the same shaped array as the map, but TLE
+<ul>
+<li>Don’t lick the size of the map on every jump.</li>
+</ul>
+</li>
+<li>If you follow all the places you can go at warp N and then try jumping, you don’t need to retain the “warp count”.
+<ul>
+<li>We only need to retain “the point that could be reached on the next jump.”</li>
+<li>Had by the set <code>set</code>.
+<ul>
+<li>Add O(1), all enumerations O(N)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Even in the case of TLE-aimed input, where “a large number of jumps are repeated,” the “next jump destination” set is reset after each jump, so it does not grow larger.</li>
+</ul>
+</li>
+<li>
+<p>I AC’d with this one (654ms).</p>
+<ul>
+<li>I was organizing the source code for commentary and it was much faster (387 ms).</li>
+<li>Hold “a point that could be the starting point for the next jump” instead of “a point that could be reached on the next jump.”
+<ul>
+<li>Because there is no need to calculate the jump destination until it is decided to jump</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Minor topics</p>
+<ul>
+<li>up, down, left, right <code>for d in [-1, +1, -WIDTH, +WIDTH]:</code></li>
+<li>By adding a wall when the map is loaded, it eliminates the conditional branching like “if x == 0, don’t go left”.  <a href="./sentry" class="internal" data-slug="sentry">sentry</a>.
+- <a href="./Putting-a-guard-on-when-loading-a-map" class="internal alias" data-slug="Putting-a-guard-on-when-loading-a-map">Putting a guard on when loading a map</a></li>
+<li>No need to make the jump destination unique using a set
+<ul>
+<li>You can plug it into toVisit with duplicates as it is.
+<ul>
+<li>Because the second and subsequent duplicates are promptly skipped because VISITED is true.</li>
+</ul>
+</li>
+<li>In this case, it is about 20 msec faster without the set.
+<ul>
+<li>I fixed it with the intention of making it faster, but instead it slowed me down.</li>
+<li>Both are O(1), but the set is about 70ns slower because of the hash value calculation. see <a href="./Python-list-v.s.-set" class="internal alias" data-slug="Python-list-v.s.-set">Python list v.s. set</a>.</li>
+<li>More useless search candidates will not reverse this gap.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>python</p>
+<pre><code>def solve(H, W, Ch, Cw, Dh, Dw, walkable):
+    N = HEIGHT * WIDTH
+    visited = [0] * N
+
+    start = (Ch + 1) * WIDTH + (Cw + 1)
+    goal = (Dh + 1) * WIDTH + (Dw + 1)
+    toVisit = []
+    toVisit.append(start)
+
+    currentDistance = 0
+    while True:
+        nextJumpOrigin = []
+        while toVisit:
+            p = toVisit.pop()
+            if p == goal:
+                return currentDistance
+            if visited[p]:
+                continue
+
+            visited[p] = 1
+            nextJumpOrigin.append(p)
+            for d in [-1, +1, -WIDTH, +WIDTH]:
+                if walkable[p + d] and not visited[p + d]:
+                    toVisit.append(p + d)
+
+        # no continuous cell
+        for origin in nextJumpOrigin:
+            for dx in [-2, -1, 0, +1, +2]:
+                for dy in [-WIDTH * 2, -WIDTH, 0, WIDTH, WIDTH * 2]:
+                    p = origin + dx + dy
+                    if not walkable[p]:
+                        continue
+                    if visited[p]:
+                        continue
+                    toVisit.append(p)
+
+        currentDistance += 1
+        if not toVisit:
+            return -1
+
+
+def readMap(H, W):
+    global SENTINEL, HEIGHT, WIDTH
+    SENTINEL = 2
+    HEIGHT = H + SENTINEL * 2
+    WIDTH = W + SENTINEL * 2
+    data = [0] * (HEIGHT * WIDTH)
+    ok = ord(&quot;.&quot;)
+    for i in range(H):
+        S = input().strip()
+        y = (i + SENTINEL) * WIDTH
+        for j in range(W):
+            data[y + (j + SENTINEL)] = 1 if S[j] == ok else 0
+    return data
+
+
+def main():
+    # parse input
+    H, W = map(int, input().split())
+    Ch, Cw = map(int, input().split())
+    Dh, Dw = map(int, input().split())
+    D = readMap(H, W)
+    print(solve(H, W, Ch, Cw, Dh, Dw, D))
+</code></pre>
+<p><a href="https://atcoder.jp/contests/abc176/tasks/abc176_e" class="external">E - Bomber<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<img src="https://gyazo.com/f6b8c7e382d64944aae25946a26e4ec5/thumb/1000" alt="image"/></p>
+<ul>
+<li>Maximum length and width is 3*10^5, so if you multiply the length and width, it will exceed 10^10, no!</li>
+<li>If you count up the vertical and horizontal lines for each bomb, you can see how many vertical and horizontal lines there are in a row.
+<ul>
+<li>This is O(M)</li>
+</ul>
+</li>
+<li>Sum of their respective maximums… not
+<ul>
+<li>If there is a bomb at the intersection, it is -1, so</li>
+</ul>
+</li>
+<li>Check for bombs at the intersection of the lines of maxima…
+<ul>
+<li>The maximum value can be many. 10^5 digits.</li>
+<li>Intersection is still over 10^10.</li>
+</ul>
+</li>
+<li>I’ve thought this far and given up.</li>
+<li>Read the commentary
+<ul>
+<li>The number of bombs is at most M</li>
+<li>So, if there are more intersections of the maximum value line than M, there is certainly more than one “bomb-free intersection”, so the answer should be the sum of the maximum values
+<ul>
+<li>I didn’t need to explore!</li>
+</ul>
+</li>
+<li>Search only for M or less
+python</li>
+</ul>
+</li>
+</ul>
+<pre><code>def solve():
+    from collections import defaultdict
+    H, W, M = map(int, input().split())
+    hcount = defaultdict(int)
+    wcount = defaultdict(int)
+    bombs = set()
+    for _i in range(M):
+        h, w = map(int, input().split())
+        hcount[h] += 1
+        wcount[w] += 1
+        bombs.add((h, w))
+
+    maxh = max(hcount.values())
+    maxw = max(wcount.values())
+    hs = [k for k in hcount if hcount[k] == maxh]
+    ws = [k for k in wcount if wcount[k] == maxw]
+    if len(hs) * len(ws) > M:
+        return maxh + maxw
+    for h in hs:
+        for w in ws:
+            if (h, w) not in bombs:
+                return maxh + maxw
+    return maxh + maxw - 1
+</code></pre>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/ABC176" class="external">/nishio/ABC176<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./ABC" class="internal">ABC</a></li><li><a href="./Python-list-v.s.-set" class="internal">Python list v.s. set</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

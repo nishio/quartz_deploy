@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Difference in skin feel between vector search and RAG</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Difference in skin feel between vector search and RAG"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Difference in skin feel between vector search and RAG"/><meta name="twitter:description" content="from Diary 2023-09-02 Difference between vector search and RAG [skin feel Recently, I have been using Extending the Red Link with AI because it is very useful, but there is a difference ..."/><meta property="og:description" content="from Diary 2023-09-02 Difference between vector search and RAG [skin feel Recently, I have been using Extending the Red Link with AI because it is very useful, but there is a difference ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="from Diary 2023-09-02 Difference between vector search and RAG [skin feel Recently, I have been using Extending the Red Link with AI because it is very useful, but there is a difference ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Difference-in-skin-feel-between-vector-search-and-RAG"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Difference-in-skin-feel-between-vector-search-and-RAG"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="from Diary 2023-09-02 Difference between vector search and RAG [skin feel Recently, I have been using Extending the Red Link with AI because it is very useful, but there is a difference ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Difference-in-skin-feel-between-vector-search-and-RAG"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Difference in skin feel between vector search and RAG</a></div></nav><h1 class="article-title">Difference in skin feel between vector search and RAG</h1><p show-comma="true" class="content-meta"><span>Nov 15, 2023</span><span>9 min read</span></p></div></div><article class="popover-hint"><p>from  <a href="./Diary-2023-09-02" class="internal alias" data-slug="Diary-2023-09-02">Diary 2023-09-02</a></p>
+<ul>
+<li>Difference between <a href="./vector-search" class="internal alias" data-slug="vector-search">vector search</a> and <a href="./RAG" class="internal" data-slug="RAG">RAG</a> [skin feel</li>
+</ul>
+<p>Recently, I have been using <a href="./Extending-the-Red-Link-with-AI" class="internal alias" data-slug="Extending-the-Red-Link-with-AI">Extending the Red Link with AI</a> because it is very useful, but there is a difference in my skin feeling from when I was using <a href="./Vector-Search-in-Nishio" class="internal alias" data-slug="Vector-Search-in-Nishio">Vector Search in Nishio</a>, and I wondered what it was.</p>
+<ul>
+<li><a href="./Search-results-do-not-afford-editing" class="internal alias" data-slug="Search-results-do-not-afford-editing">Search results do not afford editing</a></li>
+<li>Written in Scrapbox <a href="./Afford-edits" class="internal alias" data-slug="Afford-edits">Afford edits</a>.
+<ul>
+<li>That’s because Scrapbox is a collaborative editing tool.</li>
+<li>Not if it’s a RAG or not.
+<ul>
+<li>The other side of the chat doesn’t afford editing of the other side’s statements either.</li>
+</ul>
+</li>
+<li><a href="./Output-of-ideas-by-scraping-instead-of-writing" class="internal alias" data-slug="Output-of-ideas-by-scraping-instead-of-writing">Output of ideas by scraping instead of writing</a>, the AI output needs to afford editing</li>
+</ul>
+</li>
+</ul>
+<p>RAG: <a href="./RETRIEVAL-AUGMENTED-GENERATION" class="internal alias" data-slug="RETRIEVAL-AUGMENTED-GENERATION">RETRIEVAL-AUGMENTED GENERATION</a></p>
+<p>8/29</p>
+<blockquote>
+<p><a href="https://twitter.com/kazunori_279/status/1696336555215053072" class="external">kazunori_279<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> I guess instead of messing around with fine tuning and RAG, we can simply do a vector search with emb and display the results. I thought, “Why not? I thought so.
+<a href="https://note.com/npaka/n/nec63c01f7ee8" class="external">What can and what can’t be done with LLM fine tuning｜npaka<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1696396921903190238" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> I have always been of the “just do a vector search” school of thought, but I feel that RAG is better when used as an intellectual production assistant rather than just a question and answer tool. I feel that RAG is better for use as an assistant for intellectual production, not just for answering questions. The generation part functions as “<a href="./summarizing-the-search-results-to-suit-your-purpose" class="internal alias" data-slug="summarizing-the-search-results-to-suit-your-purpose">summarizing the search results to suit your purpose</a>”. This assumes that the purpose is given separately from the query.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/kazunori_279/status/1696424311870148981" class="external">kazunori_279<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Indeed, RAG is useful if the main service is to interact and assist users.</p>
+</blockquote>
+</li>
+</ul>
+<p><a href="./Search-with-description" class="internal alias" data-slug="Search-with-description">Search with description</a></p>
+<p><strong>BELOW_IS_AI_GENERATED</strong></p>
+<h1 id="ベクトル検索とragの肌感の違い">ベクトル検索とRAGの肌感の違い<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ベクトル検索とragの肌感の違い" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>2023-10-05 16:53 <img src="https://scrapbox.io/api/pages/nishio/omni/icon" alt="omni.icon" height="19.5"/></p>
+<h2 id="digest">digest<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#digest" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>.
+Discusses the difference between using “vector search” and “RAG,” arguing that Scrapbox is a collaborative editing tool and affords editing; AI output must also afford editing. Also introduced a discussion on Twitter about the difference between vector search and RAG.</p>
+<h2 id="relation-to-fragment">Relation to Fragment<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#relation-to-fragment" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>.
+The “next study group” fragment describes the advantages and disadvantages of vector search and relates to the difference in usability between the note “vector search” and “RAG.” The fragment “cross vector search experiment memo 2023-09-20” describes an experiment in vector search and is related to the usability of the note “vector search. The fragment “RAG” describes the concept of RAG and relates to the usability of RAG in the notebook.</p>
+<h2 id="deep-thinking">deep thinking<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#deep-thinking" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>The difference in usability between vector search and RAG may be due to the different “editorial affords” that each provides. Vector searches display results as they are, while RAGs summarize the search results and display them for a specific purpose. In this way, RAGs provide an environment in which users can easily edit information.</p>
+<h2 id="summary-of-thoughts">summary of thoughts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#summary-of-thoughts" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>The difference in the usability of vector searches and RAGs is due to the different “editorial affords” that each provides.</p>
+<h2 id="title">Title<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#title" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>.
+“Vector Search vs. RAG Usability Differences: an Editorial Afford’s Perspective.”</p>
+<h3 id="extra-info">extra info<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#extra-info" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>titles: <code>[&quot;next study group&quot;], &quot;Cross-sectional vector search experiment memo 2023-09-20&quot;, &quot;RAG&quot;, &quot;In the end, what we need is to improve search accuracy&quot;, &quot;pVectorSearch2023-04-29~05-31&quot;, &quot;The reality of collaborative work with AI and S-curves&quot;]</code></p>
+<ul>
+<li><a href="./Intellectual-Productivity-Study-Group-by-LLM" class="internal alias" data-slug="Intellectual-Productivity-Study-Group-by-LLM">Intellectual Productivity Study Group by LLM</a></li>
+<li><a href="./Transverse-Vector-Search-Experiment-Memo-2023-09-20" class="internal alias" data-slug="Transverse-Vector-Search-Experiment-Memo-2023-09-20">Transverse Vector Search Experiment Memo 2023-09-20</a>
+<a href="./RAG" class="internal" data-slug="RAG">RAG</a></li>
+<li><a href="./In-the-end,-what-is-needed-is-improved-search-accuracy" class="internal alias" data-slug="In-the-end,-what-is-needed-is-improved-search-accuracy">In the end, what is needed is improved search accuracy</a>
+<a href="./pVectorSearch2023-04-29~05-31" class="internal" data-slug="pVectorSearch2023-04-29~05-31">pVectorSearch2023-04-29~05-31</a></li>
+<li><a href="./The-reality-of-collaborative-work-with-AI-and-the-S-curve" class="internal alias" data-slug="The-reality-of-collaborative-work-with-AI-and-the-S-curve">The reality of collaborative work with AI and the S-curve</a>
+fragments</li>
+</ul>
+<pre><code>### next study group
+	Vector searches are good for vague searches in natural language conversations because they produce a flurry of hits, but they also produce hits for &quot;the name of the company you visited on a sales trip&quot; or &quot;the product model number&quot; because they produce hits for &quot;different products that look very similar,&quot; which places a high cognitive burden on the user.
+
+
+The following is a summary of the information entered[gpt.icon]
+	7/29: AI writes to Scrapbox, introducing the concept of Scrapbox Agents.
+	Early to mid-August: Omoikane study group, discussion on working with AI, writing research notes with AI, evolution of vector search, and topics on handling AI-generated pages.
+	Mid to end of August: topics related to updating and search, taking into account multi-head, page memory, and user cognitive load.
+	Beginning of September: Explore AI-user interaction, note management, and relevance between different content.
+	Mid-September: various topics related to multi-head thinking, the intellectual production techniques of engineers, and working with AI.
+	Late September: LLM vs. other models, discussion on human concepts, optimal use of Scrapbox, and feedback on non-public tools.
+Overall, this period seems to focus on Scrapbox and AI integration, particularly the concepts of vector search and multi-heading, and AI thinking and interaction with the user.
+
+
+### Cross-sectional vector search experiment memo 2023-09-20
+Transverse Vector Search Experiment Memo 2023-09-20
+We conducted an experiment to increase the number of data to be searched for in [Extending the Red Link with AI], which we have been running publicly on this Scrapbox.
+	Searches include other people's Scrapbox data, books and papers
+		relevance
+		　 [Cross-sectional Vector Search] 
+  		 [Talk about putting books in Scrapbox.] 
+  		 [Individual and aggregated loops] 
+	Since there might be some problems with publishing the generated results as they are without review, the output destination is a private project that is not open to the public.
+　	Subsequent updates changed the search hits to output directly to Scrapbox, making it clearly unpublishable.
+
+[https://gyazo.com/bb1a0bd6cb151fa1b6ffa2d7c498744c]
+　The page is automatically generated by AI at the destination of the red link created like this
+
+mounting
+　Load from local pickle
+　　It takes about 5 seconds to read 100,000 records
+　About 7 seconds to perform a local vector search
+　It's slow when you think of it as a web app response, but with the recent &quot;throw a keyword or page that comes to mind, work on something else, and look at it after a while&quot; style, it's not a problem.
+　　There's about 10-25 minutes between when you throw the query and when I come back to check the results (I don't measure it).
+
+
+### RAG
+RAG
+ [Combine Searches] in [Generative AI]
+
+[Retrieval-Augmented Generation]
+[Retrieval-Augmented Text Generation]
+
+
+
+### In the end, what we need is to improve the accuracy of search
+
+>[nishio https://twitter.com/nishio/status/1704379950743339227] Generation AI is effective when used properly for generation, but what do customers want to generate in the first place? When I think about it, most customers' needs are &quot;to find the important parts among a lot of things that are hard to read&quot;, and even if they finally generate, there is &quot;to find materials for generation&quot; before the generation, so search is necessary after all.
+
+>[nishio https://twitter.com/nishio/status/1704380927970009522] The story is slightly different and I don't think &quot;conventional technology is better&quot; at all. I already use neither conventional search nor my own vector search almost exclusively [RAG]. I think that the domain of competition is to combine and re-rank sparse and dens search when increasing the usefulness of it.
+
+
+
+### pVectorSearch2023-04-29~05-31
+　　　This looks interesting.
+　　　　For example, loading a request with &quot;false dichotomy&quot; will return `https://gyazo.com/80d45ec33ca8cbb138108d71ad7eec02` in the response.
+　　　　	[[誤った二分法.icon]]
+　　　　 [blind spot card] can be drawn in a vector search in the sentence I'm writing, rather than randomly.
+　　　　This is possible because of the accumulation of &quot;image&quot; and &quot;text&quot; pairs in the form of &quot;pages&quot; in Scrapbox
+　　　　 [The image and text pair has value.] 
+
+2023-05-04
+  [Vector search your own Scrapbox and follow the 2hop link] 
+		Examples of vector searching and looking at images
+
+2023-05-11
+	It would be interesting to [collect questions and improve].
+
+2023/5/16
+　A system that recognizes speech when you are speaking and automatically queries it to search this Scrapbox and display matches.
+　Related Pages&quot; for speaking
+　　At first I thought &quot;search only images&quot;, but then I thought I could just use Scrapbox's related page format to display pages without images.
+
+2023/5/31
+　 [Interaction of personal knowledge networks] 
+　 [I want to search other people's Scrapboxes for vectors.] 
+　Maybe it would be good to be able to do a &quot;vector search including things other than yourself&quot; based on this area.
+　I can't really relate to the &quot;Scrapbox by Yasukazu Nishio&quot; vector search function, because it makes me see things differently from the way other people see them, and I have no sympathy for what they should be.
+
+
+### Actual conditions of collaborative work with AI and S-curve
+		It beats the experience of &quot;writing it down to the last word and handing it over to the AI.&quot;
+	On 9/1, he wrote &quot;[Difference in skin feel between vector search and RAG]&quot;.
+		Afford to [edit].&quot;
+	9/9 interpreted as &quot;[Recommendation with context]&quot;
+
+__BELOW_IS_AI_GENERATED__
+[*** AIとの協働作業の実態とS字カーブ] 2023-09-18 00:24 [omni.icon]
+[** digest].
+Collaborative work with AI detects periods of stagnation in thinking and throws the content to AI to move on to another task. Human thinking follows an S-curve, and AI can be helpful in times of stagnation; working with AI can smooth the transition from Task A to Task B. Also, collaborative work with AI can avoid stagnant periods in thinking by sensing when thinking is stagnant and throwing content to AI to move on to another task.
+
+[** Relation to Fragment].
+The fragment &quot;Intelligent Collaboration Between AI and Humans&quot; provides a specific example of AI-human collaborative work, which is directly related to the note. Specifically, the AI and human become team members and create a new form of teamwork, which is consistent with the collaborative work with AI described in the note.
+
+[** deep thinking]
+Collaborative work between AI and humans can avoid periods of stagnant thinking by sensing periods of stagnant thinking and throwing the content to AI to move on to another task. This is based on the characteristic of an S-shaped curve in human thinking, and demonstrates the effectiveness of collaborative work between AI and humans.
+
+
+</code></pre>
+<h2 id="generated-2023-10-05-1653">generated: 2023-10-05 16:53<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#generated-2023-10-05-1653" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E6%A4%9C%E7%B4%A2%E3%81%A8RAG%E3%81%AE%E8%82%8C%E6%84%9F%E3%81%AE%E9%81%95%E3%81%84" class="external">/nishio/ベクトル検索とRAGの肌感の違い<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class aria-controls="toc-content" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content" class><ul class="overflow"><li class="depth-0"><a href="#ベクトル検索とragの肌感の違い" data-for="ベクトル検索とragの肌感の違い">ベクトル検索とRAGの肌感の違い</a></li><li class="depth-1"><a href="#digest" data-for="digest">digest</a></li><li class="depth-1"><a href="#relation-to-fragment" data-for="relation-to-fragment">Relation to Fragment</a></li><li class="depth-1"><a href="#deep-thinking" data-for="deep-thinking">deep thinking</a></li><li class="depth-1"><a href="#summary-of-thoughts" data-for="summary-of-thoughts">summary of thoughts</a></li><li class="depth-1"><a href="#title" data-for="title">Title</a></li><li class="depth-2"><a href="#extra-info" data-for="extra-info">extra info</a></li><li class="depth-1"><a href="#generated-2023-10-05-1653" data-for="generated-2023-10-05-1653">generated: 2023-10-05 16:53</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Diary-2023-09-02" class="internal">Diary 2023-09-02</a></li><li><a href="./Intellectual-Productivity-Study-Group-by-LLM" class="internal">Intellectual Productivity Study Group by LLM</a></li><li><a href="./The-reality-of-collaborative-work-with-AI-and-the-S-curve" class="internal">The reality of collaborative work with AI and the S-curve</a></li><li><a href="./✍️🤖" class="internal">✍️🤖</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

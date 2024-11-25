@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Transverse Vector Search Experiment Memo 2023-09-20</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Transverse Vector Search Experiment Memo 2023-09-20"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Transverse Vector Search Experiment Memo 2023-09-20"/><meta name="twitter:description" content="We conducted an experiment to increase the number of data to be searched for in Extending the Red Link with AI, which we have been running publicly on this Scrapbox ..."/><meta property="og:description" content="We conducted an experiment to increase the number of data to be searched for in Extending the Red Link with AI, which we have been running publicly on this Scrapbox ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="We conducted an experiment to increase the number of data to be searched for in Extending the Red Link with AI, which we have been running publicly on this Scrapbox ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Transverse-Vector-Search-Experiment-Memo-2023-09-20"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Transverse-Vector-Search-Experiment-Memo-2023-09-20"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="We conducted an experiment to increase the number of data to be searched for in Extending the Red Link with AI, which we have been running publicly on this Scrapbox ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Transverse-Vector-Search-Experiment-Memo-2023-09-20"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Transverse Vector Search Experiment Memo 2023-09-20</a></div></nav><h1 class="article-title">Transverse Vector Search Experiment Memo 2023-09-20</h1><p show-comma="true" class="content-meta"><span>Oct 05, 2023</span><span>6 min read</span></p></div></div><article class="popover-hint"><p>We conducted an experiment to increase the number of data to be searched for in <a href="./Extending-the-Red-Link-with-AI" class="internal alias" data-slug="Extending-the-Red-Link-with-AI">Extending the Red Link with AI</a>, which we have been running publicly on this Scrapbox.</p>
+<ul>
+<li>Searches include other people’s Scrapbox data, books and papers
+<ul>
+<li>relevance
+- <a href="./Cross-sectional-Vector-Search" class="internal alias" data-slug="Cross-sectional-Vector-Search">Cross-sectional Vector Search</a>
+- <a href="./Talk-about-putting-books-in-Scrapbox." class="internal alias" data-slug="Talk-about-putting-books-in-Scrapbox.">Talk about putting books in Scrapbox.</a>
+- <a href="./Individual-and-aggregated-loops" class="internal alias" data-slug="Individual-and-aggregated-loops">Individual and aggregated loops</a></li>
+</ul>
+</li>
+<li>Since there might be some problems with publishing the generated results as they are without review, the output destination is a private project that is not open to the public.
+<ul>
+<li>Subsequent updates changed the search hits to output directly to Scrapbox, making it clearly unpublishable.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/bb1a0bd6cb151fa1b6ffa2d7c498744c/thumb/1000" alt="image"/></p>
+<ul>
+<li>The page is automatically generated by AI at the destination of the red link created like this</li>
+</ul>
+<p>mounting</p>
+<ul>
+<li>Load from local pickle
+<ul>
+<li>It takes about 5 seconds to read 100,000 records</li>
+</ul>
+</li>
+<li>About 7 seconds to perform a local vector search</li>
+<li>It’s slow when you think of it as a web app response, but with the recent “throw a keyword or page that comes to mind, work on something else, and look at it after a while” style, it’s not a problem.
+<ul>
+<li>There’s about 10-25 minutes between when you throw the query and when I come back to check the results (I don’t measure it).</li>
+<li>I’ve been updating every 10 minutes to begin with, and I haven’t seen a problem.</li>
+</ul>
+</li>
+</ul>
+<p>impressions</p>
+<ul>
+<li>Do we really want to do it with “all data” or “all except this project <code>/nishio</code>”?
+<ul>
+<li>Generated using the keyword <a href="./Combining-knowledge-is-the-source-of-new-ideas,-which-in-turn-generates-further-knowledge-and-new-combinations" class="internal alias" data-slug="Combining-knowledge-is-the-source-of-new-ideas,-which-in-turn-generates-further-knowledge-and-new-combinations">Combining knowledge is the source of new ideas, which in turn generates further knowledge and new combinations</a>, which I already did in this project in my first experiment, I excluded it because it was not interesting because it hit almost all the pages of my project.
+<ul>
+<li>titles: <code>[&quot;🤖🔁 successful intelligence&quot;, &quot;🤖🔁 successful intelligence&quot;, &quot;🤖🔁 twist&quot;, &quot;Hatena2015-01-07&quot;, &quot;🌀Collaboration with AI&quot;, &quot;Increase personal productivity first&quot;, &quot;🌀successful intelligence&quot;, &quot;tkgshn/ Karabiner not working on macOS Monterey&quot;]</code>
+<ul>
+<li>Maybe the last one is random.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>It may be possible to find unexpected connections by not excluding my own writing, but since I am the one who makes the query, it may be true that it will be more similar to what I have written.</li>
+<li>I wonder if people find value in “Letting my data-derived AI live in my wiki” because it gives them a “different perspective”.</li>
+<li>Not sure why I see the value of different perspectives in my own search from my own Scrapbox.
+<ul>
+<li>Is it really A?” in response to “It is A”. or maybe the same individual has a sufficiently varied point of view due to the accumulation of more than 10 years of experience including Hatena Diary, or maybe I am highly sensitive to read differences by thinking “[Similarity <span>→</span> What is the difference?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If you exclude yourself, it looks like this (long story, so I cut out some unnecessary details)
+<ul>
+<li>titles: <code>[&quot;motoso/discussion&quot;], &quot;tkgshn/knowledge and wisdom&quot;], &quot;nishio-books/MOT knowledge creation management and innovation Ikujiro Nonaka&quot;], &quot;tkgshn/knowledge tightly coupled with business&quot;], &quot;mtane0412/suggestion through ignorance&quot;], &quot;nishio- books/idea generation method and cooperative work support Jun Munemori&quot;, &quot;tkgshn/knowledge&quot;, &quot;nishio-llm2023/Study of methods and systems to support knowledge creation process&quot;, &quot;blu3mo_filtered/dualism of knowledge and ability&quot;, &quot;motoso/wise company&quot;, &quot;blu 3mo_filtered/accounting systems&quot;, &quot;tkgshn/vaccine against false information&quot;, &quot;motoso/Think different&quot;]</code></li>
+<li>It’s interesting that the sources are pretty disparate.</li>
+<li>But this variance makes the current prompt less interesting to say.
+<ul>
+<li>
+<blockquote>
+<p>Notebooks and … fragments are related in that the combination and exchange of knowledge generates new knowledge and ideas.</p>
+</blockquote>
+</li>
+<li>I’m mentioning three of them, not all of them, so it would be more interesting if you talked about how they relate to each other individually.</li>
+<li>I’ve already tried an improved prompt in <a href="./nue" class="internal" data-slug="nue">nue</a>s implementation of this, so I’ll be importing it back in the future.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Later, I tried other styles, such as having multiple lines of text commented on instead of a single line of title, but the search results themselves are more interesting than the generated text
+<ul>
+<li>It’s not that the generated sentences are not interesting, it’s simply interesting to see the results of the vector search</li>
+<li>If the interestingness of the generated results when done with my project’s data is 100, the interestingness in this experiment is 90, and the vector search results are about 300
+<ul>
+<li>I’m writing a summary of today’s experiment first, holding back the urge to write about each of them individually.</li>
+<li>I think the individual stories are overly detailed.
+<ul>
+<li>Well, if you can just imagine the book part as “a system where books pop up and related pages open when you talk about them in front of a bookshelf,” you can understand how interesting it would be.</li>
+<li>In the case of Scrapbox, the other person is still alive (and books can be alive, too, of course), so there is a possibility that the connection found by the AI here could lead to more conversation with that person afterwards.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>So, the vector search results that were only output to the console are now written to Scrapbox as well.
+<ul>
+<li>This naturally led to parts of books and such being written in Scrapbox, making it impossible to publish directly.</li>
+<li>Well, if we were originally going to do something like this, it was within the realm of possibility that we wouldn’t be able to do it in a public forum, so that was the default.
+- <a href="./Eventually,-you-won't-be-able-to-see-it." class="internal alias" data-slug="Eventually,-you-won't-be-able-to-see-it.">Eventually, you won’t be able to see it.</a></li>
+</ul>
+</li>
+<li>The question of whether to include this part of the search results in the AI’s search is a difficult one.
+<ul>
+<li>Effect of increasing number of fragments related to interests</li>
+<li>The effect of interferences between fragments of search results for the same keywords that happen to be next to each other, creating new ones.</li>
+<li>Adverse effects of miscellaneous machine-generated data returning to input</li>
+<li>Include them in the list once, and make a mechanism to mechanically remove them all together when you think it’s a bad idea.
+<ul>
+<li>2023-10-05 I think it’s not good, the mismatch between the title and the content is confusing</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>summary</p>
+<ul>
+<li>Just a casual post on a private project with a smartphone or something, and you can now see the results of vector searches across multiple people’s Scrapbox projects, books and papers.</li>
+<li>We will improve it as we use it in the future.</li>
+<li>It would be interesting to take not only the explicitly triggered ones, but also the ones taken from the recent updates of your project once a day or so, and generate them on your own.</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E6%A8%AA%E6%96%AD%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E6%A4%9C%E7%B4%A2%E5%AE%9F%E9%A8%93%E3%83%A1%E3%83%A22023-09-20" class="external">/nishio/横断ベクトル検索実験メモ2023-09-20<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./(Tentative)-Operation-not-yet-named" class="internal">(Tentative) Operation not yet named</a></li><li><a href="./Diary-2023-09-20" class="internal">Diary 2023-09-20</a></li><li><a href="./Difference-in-skin-feel-between-vector-search-and-RAG" class="internal">Difference in skin feel between vector search and RAG</a></li><li><a href="./Individual-and-aggregated-loops" class="internal">Individual and aggregated loops</a></li><li><a href="./Intellectual-Productivity-Study-Group-by-LLM" class="internal">Intellectual Productivity Study Group by LLM</a></li><li><a href="./Vector-search-is-an-opportunity-to-cut-out" class="internal">Vector search is an opportunity to cut out</a></li><li><a href="./Weekly-note-2023-09-30~2023-10-09" class="internal">Weekly note 2023-09-30~2023-10-09</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

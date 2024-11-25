@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Multi-Paradigm Design</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Multi-Paradigm Design"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Multi-Paradigm Design"/><meta name="twitter:description" content="James O. Coplien July 8, 2000 11:58 am PDF Paradigm p.17 We use these foundations of commonality and variation to formalize the concept of paradigm. A paradigm, as the term is popularly used in contemporary software design, is a way of organizing system abstractions around properties of common- ality and variation."/><meta property="og:description" content="James O. Coplien July 8, 2000 11:58 am PDF Paradigm p.17 We use these foundations of commonality and variation to formalize the concept of paradigm. A paradigm, as the term is popularly used in contemporary software design, is a way of organizing system abstractions around properties of common- ality and variation."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="James O. Coplien July 8, 2000 11:58 am PDF Paradigm p.17 We use these foundations of commonality and variation to formalize the concept of paradigm. A paradigm, as the term is popularly used in contemporary software design, is a way of organizing system abstractions around properties of common- ality and variation."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Multi-Paradigm-Design"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Multi-Paradigm-Design"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="James O. Coplien July 8, 2000 11:58 am PDF Paradigm p.17 We use these foundations of commonality and variation to formalize the concept of paradigm. A paradigm, as the term is popularly used in contemporary software design, is a way of organizing system abstractions around properties of common- ality and variation."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Multi-Paradigm-Design"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Multi-Paradigm Design</a></div></nav><h1 class="article-title">Multi-Paradigm Design</h1><p show-comma="true" class="content-meta"><span>Apr 09, 2021</span><span>6 min read</span></p></div></div><article class="popover-hint"><p><a href="./James-O.-Coplien" class="internal alias" data-slug="James-O.-Coplien">James O. Coplien</a> July 8, 2000 11:58 am <a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.84.7630&amp;rep=rep1&amp;type=pdf" class="external">PDF<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>Paradigm p.17</p>
+<ul>
+<li>
+<blockquote>
+<p>We use these foundations of commonality and variation to formalize the concept of paradigm. A paradigm, as the term is popularly used in contemporary software design, is a way of organizing system abstractions around properties of common- ality and variation. The object paradigm organizes systems around abstractions based on commonality in structure and behavior and variation in structure and algorithm. The template paradigm is based on structural commonality across family members, with variations explicitly factored out into template parameters. Overloaded functions form families whose members share the same name and semantics, and in which each family member is differentiated by its formal param- eter types.</p>
+</blockquote>
+<ul>
+<li>I see… C++ has other means besides object-oriented methods, such as templates and function overloading, which are clearly not object-oriented methods, and strong C++ers use each of these methods differently, but at what point do you know which one to use? Which one is better to use at what point in time?</li>
+</ul>
+</li>
+</ul>
+<p>1.3.4 Domains p.33</p>
+<ul>
+<li>
+<blockquote>
+<p>A domain is an area of specialization or interest. We talk about the application domain—the body of knowledge that is of interest to users. Because it is of interest to users, it is hopefully of interest to us. We break down application domains into application subdomains—we divide and conquer. We talk about the solution domain, which is of central interest to the implementors but of only superficial interest to system users. Any given design may deal with multiple solution domains at once, for example, C++ constructs, patterns, and maybe state machines and parser-generators.</p>
+</blockquote>
+<ul>
+<li>The application domain is a collection of knowledge about what the user is interested in</li>
+<li>Solution domain is a collection of knowledge about what the implementer is interested in</li>
+</ul>
+</li>
+<li>
+<p>Chapter 2 Commonality Analysis p.55</p>
+<ul>
+<li>2.1 Commonality: The Essence of Abstraction
+<ul>
+<li>2.1.1 Deductive and Inductive Commonality</li>
+<li>2.1.2 Software Families
+<ul>
+<li>Finding Domains</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2.2 Priming Analysis: The Domain Vocabulary
+<ul>
+<li>2.2.1 The Domain Dictionary</li>
+<li>2.2.2 Design Epistemology</li>
+</ul>
+</li>
+<li>2.3 Dimensions of Commonality and Commonality Categories p.64
+<ul>
+<li>2.3.1 (Data) Structure</li>
+<li>2.3.2 Name and Behavior</li>
+<li>2.3.3 Algorithm p.75</li>
+</ul>
+</li>
+<li>2.4 Examples of Commonality</li>
+<li>2.5 Reviewing the Commonality Analysis</li>
+<li>2.6 Commonality and Evolution</li>
+</ul>
+</li>
+<li>
+<p>Chapter 3 Variability Analysis p.85</p>
+<ul>
+<li>3.1 Variability: The Spice of Life</li>
+<li>3.2 The Commonality Base</li>
+<li>3.3 Positive and Negative Variability
+<ul>
+<li>3.3.1 Positive Variability</li>
+<li>3.3.2 Negative Variability</li>
+</ul>
+</li>
+<li>3.4 The Domain and Range of Variability
+<ul>
+<li>3.4.1 The Text Editing Buffers Example</li>
+<li>3.4.2 Good Parameters of Variation</li>
+</ul>
+</li>
+<li>3.5 Binding Time
+<ul>
+<li>3.5.1 Binding Time and Flexibility</li>
+<li>3.5.2 Are Objects about Deferred Binding?</li>
+<li>3.5.3 Efficiency and Binding Time</li>
+<li>3.5.4 Binding Time Alternatives p.93
+<ul>
+<li>Source Time</li>
+<li>Compile Time</li>
+<li>Link (and Load) Time</li>
+<li>Run Time</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>3.6 Defaults</li>
+<li>3.7 Variability Tables p.95</li>
+<li>3.8 Some Variability Traps</li>
+<li>3.9 Reviewing the Variability Analysis</li>
+<li>3.10 Variability Dependency Graphs</li>
+</ul>
+</li>
+<li>
+<p>Chapter 4 Application Domain Analysis</p>
+<ul>
+<li>4.1 Analysis, Domain Analysis, and Beyond
+<ul>
+<li>4.1.1 Traditional Analysis</li>
+<li>4.1.2 System Families: Domain Analysis
+<ul>
+<li>Family Members in the Application and Solution Domains</li>
+<li>Balancing Abstraction and Specification</li>
+<li>Levels of Domain Abstraction p.105</li>
+</ul>
+</li>
+<li>4.1.3 Application Domain Analysis and Solution Domain Analysis</li>
+<li>4.1.4 The Activities of Domain Analysis</li>
+</ul>
+</li>
+<li>4.2 Subdomains within a Domain Analysis
+<ul>
+<li>4.2.1 Domain Analysis and Reuse</li>
+<li>4.2.2 Subdomain Modularity</li>
+<li>4.2.3 Iteration and Hierarchy</li>
+</ul>
+</li>
+<li>4.3 The Structure of a Subdomain p.114
+<ul>
+<li>4.3.1 Frameworks as Subdomain Implementations</li>
+<li>4.3.2 The Activities of Subdomain Analysis</li>
+</ul>
+</li>
+<li>4.4 Analysis: The Big Picture</li>
+</ul>
+</li>
+<li>
+<p>Chapter 5 Object-Oriented Analysis</p>
+<ul>
+<li>5.1 About Paradigms and Objects
+<ul>
+<li>5.1.1 Classes and Objects</li>
+<li>5.1.2 Liskov Substitutability Principle</li>
+<li>5.1.3 Virtual Functions</li>
+<li>5.1.4 Object Orientation: Yet Another Definition
+<ul>
+<li>Positive versus Negative Variability</li>
+<li>Binding Time</li>
+<li>Defaults</li>
+</ul>
+</li>
+<li>5.1.5 The Suitability of Object-Oriented Design
+<ul>
+<li>Language and Paradigm</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>5.2 Object-Oriented Commonality Analysis
+<ul>
+<li>5.2.1 Commonality Analysis</li>
+<li>5.2.2 Variability Analysis</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Chapter 6 Solution Domain Analysis</p>
+<ul>
+<li>6.1 The “Other” Domain
+<ul>
+<li>6.1.1 Analysis and Language</li>
+</ul>
+</li>
+<li>6.2 The C++ Solution Domain: An Overview
+:
+| Data  | a mechanism to group families of related values |
+| — | — |
+| Overloading | a mechanism to group families of related functions |
+| Templates | which group related algorithms or gross data structures |
+| Inheritance | which groups classes that behave the same *** |
+| * | which also groups classes that behave the same but with later binding than inheritance alone provides |
+| **  | typically used for fine-grain variations in code and data |
+<ul>
+<li>*: Inheritance with virtual functions</li>
+<li>**: Preprocessor constructs, such as <code>#ifdef</code></li>
+<li>***:  (usually public inheritance; we treat private inheritance separately in Section 6.11)</li>
+</ul>
+</li>
+<li>6.3 Data</li>
+<li>6.4 Overloading
+<ul>
+<li>a mechanism to group families of related functions</li>
+</ul>
+</li>
+<li>6.5 Class Templates
+<ul>
+<li>6.5.1 Template Specialization</li>
+</ul>
+</li>
+<li>6.6 Function Templates</li>
+<li>6.7 Inheritance
+<ul>
+<li>6.7.1 Aligning Domains</li>
+</ul>
+</li>
+<li>6.8 Virtual Functions</li>
+<li>6.9 Commonality Analysis and Polymorphism</li>
+<li>6.10 Preprocessor Directives</li>
+<li>6.11 Negative Variability
+<ul>
+<li>6.11.1 Deciding When to Use Negative Variability
+<ul>
+<li>A Template Example</li>
+<li>An Example of Argument Defaulting</li>
+<li>An Example of Data Cancellation</li>
+<li>An Example of Behavior Cancellation</li>
+<li>An Example of Contravariance</li>
+<li>An Example of <code>#ifdef</code></li>
+</ul>
+</li>
+<li>6.11.2 Negative Variability versus Domain Splitting
+<ul>
+<li>An Example of Behavior Cancellation</li>
+<li>A Template Example</li>
+<li>An Example of Data Cancellation</li>
+<li>An Example of <code>#ifdef</code></li>
+</ul>
+</li>
+<li>6.11.3 A Summary of Negative Variability</li>
+</ul>
+</li>
+<li>6.12 Extended Solution Domain Constructs
+<ul>
+<li>6.12.1 Multiple Inheritance
+<ul>
+<li>First case: Multiple Domains</li>
+<li>Second case: Mix-ins</li>
+</ul>
+</li>
+<li>6.12.2 Design Patterns
+<ul>
+<li>Patterns Beyond Language</li>
+<li>Patterns and Multi-Paradigm Design</li>
+<li>Aliases for Solution Domain Constructs</li>
+<li>Higher-Level Than Programming Language Constructs</li>
+<li>Negative Variability</li>
+<li>Multi-Paradigm Tools as a Patterns Adjunct</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>6.13 A Summary of the C++ Solution Domain: A Family Table</li>
+<li>6.14 Relative Power of Paradigms</li>
+</ul>
+</li>
+<li>
+<p>Chapter 7 Simple Mixing of Paradigms</p>
+<ul>
+<li>7.1 Putting It All Together: An Overview of Multi-Paradigm Design
+<ul>
+<li>7.1.1 One Size Does Not Fit All</li>
+<li>7.1.2 Degrees of Complexity
+<ul>
+<li>Single Domain, Single Paradigm</li>
+<li>Multiple Decoupled Subdomains, Single Paradigm</li>
+<li>Multiple Decoupled Subdomains, Single Paradigm for Each Subdomain</li>
+<li>Multiple Decoupled Subdomains, Multiple Paradigms for Each Subdomain</li>
+<li>Multiple Subdomains in a Directed Acyclic Graph (DAG), Multiple Paradigms</li>
+<li>Circular Subdomains</li>
+</ul>
+</li>
+<li>7.2 Activities of Multi-Paradigm Design
+<ol>
+<li>Divide the problem into intuitive subdomains (Section 4.1.4).</li>
+<li>Has this been done before?</li>
+<li>Analyze each application subdomain (Chapter 4).</li>
+<li>Analyze the solution domains (Chapter 6).</li>
+<li>Map from application domain analysis onto available solution domain anal- yses (Chapter 7).</li>
+<li>Evaluate opportunities for Application-Oriented Languages (AOLs).</li>
+</ol>
+</li>
+<li>7.3 Example: A Simple Language Translator
+<ul>
+<li>7.3.1 Partitioning the Domain into Subdomains
+<ul>
+<li>Choosing a Partitioning</li>
+<li>Domain Analysis</li>
+<li>The “Glue” Domain</li>
+<li>Domain Analysis and Iteration</li>
+</ul>
+</li>
+<li>7.3.2 Finding the Right Paradigms within a Subdomain
+<ul>
+<li>The Domain Vocabulary</li>
+<li>Commonality Analysis of the Domain</li>
+<li>Returning to the Question of Line Numbers and Labels</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>7.4 Design, Not Analysis
+<ul>
+<li>7.4.1 Analysis, Architecture, or Design?</li>
+<li>7.5 Another Example: Automatic Differentiation
+<ul>
+<li>7.5.1 Basic Operations Domain</li>
+<li>7.5.2 Degree Domain</li>
+<li>7.5.3 Value Domain</li>
+<li>7.5.4 Evolving the Design</li>
+</ul>
+</li>
+<li>7.6 Outboard Paradigms</li>
+<li>7.7 Management Issues
+<ul>
+<li>7.7.1 Occam’s Razor: Keeping Things Simple</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from [/nishio/Multi-Paradigm Design](<a href="https://scrapbox.io/nishio/Multi-Paradigm" class="external">https://scrapbox.io/nishio/Multi-Paradigm<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Design) using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Multiparadigm-Design" class="internal">Multiparadigm Design</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

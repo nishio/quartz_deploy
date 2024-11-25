@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Cypress Study Group</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Cypress Study Group"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Cypress Study Group"/><meta name="twitter:description" content="2021-08-27 Cypress written at the stage of using Kozaneba for testing for about a month, with additions made in the second month. Cypress runs test code inside a “real browser” such as Chrome ."/><meta property="og:description" content="2021-08-27 Cypress written at the stage of using Kozaneba for testing for about a month, with additions made in the second month. Cypress runs test code inside a “real browser” such as Chrome ."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="2021-08-27 Cypress written at the stage of using Kozaneba for testing for about a month, with additions made in the second month. Cypress runs test code inside a “real browser” such as Chrome ."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Cypress-Study-Group"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Cypress-Study-Group"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="2021-08-27 Cypress written at the stage of using Kozaneba for testing for about a month, with additions made in the second month. Cypress runs test code inside a “real browser” such as Chrome ."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Cypress-Study-Group"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Cypress Study Group</a></div></nav><h1 class="article-title">Cypress Study Group</h1><p show-comma="true" class="content-meta"><span>Aug 27, 2021</span><span>16 min read</span></p></div></div><article class="popover-hint"><p>2021-08-27</p>
+<ul>
+<li><a href="./Cypress" class="internal" data-slug="Cypress">Cypress</a> written at the stage of using Kozaneba for testing for about a month, with additions made in the second month.</li>
+</ul>
+<h2 id="cypress-runs-test-code-inside-a-real-browser-such-as-chrome">Cypress runs test code inside a “real browser” such as Chrome<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#cypress-runs-test-code-inside-a-real-browser-such-as-chrome" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>.</p>
+<ul>
+<li>Another approach is to use a “library that emulates the browser DOM
+<ul>
+<li>For example, <a href="./Jest" class="internal" data-slug="Jest">Jest</a> / <a href="./jsdom" class="internal" data-slug="jsdom">jsdom</a>.
+<ul>
+<li>
+<blockquote>
+<p>Jest is provided with jsdom, which simulates the DOM environment as if you were using a browser. --- <a href="https://jestjs.io/ja/docs/tutorial-jquery" class="external">DOM manipulation - Jest<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>This approach would raise the issue of library adequacy.
+<ul>
+<li>For example.
+<ul>
+<li>getContext of canvas element is not implemented.
+<ul>
+<li>Most features of Regroup that use canvas could not be tested.</li>
+</ul>
+</li>
+<li>The scrollHeight of the div is always 0
+<ul>
+<li>Kozaneba font size auto-adjustment cannot be tested</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>A simple, common web app could be tested as if you were using a browser.
+<ul>
+<li>but when you try to do something a little more elaborate, you will bump into it immediately.</li>
+<li>And <img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>‘s job is to do “something a little more elaborate…</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The approach of using a real browser reduces this kind of problem considerably.
+<ul>
+<li>Not zero.</li>
+<li>Example: no dataTransfer for dragstart event
+<ul>
+<li>Phenomenon that events synthesized by the test runner are slightly different from native events</li>
+</ul>
+</li>
+<li>Mimic user operations by creating and sending events
+<ul>
+<li>So, if for some reason the “events that occur when the user actually operates the browser” are different from those in the test case, the test will not notice it.</li>
+<li>Example: a recent bug where the coordinates are shifted if the upper left coordinate of a group is changed by dragging within the same group.
+<ul>
+<li>The condition for reproducing the bug was that the mousemove event must occur for that group.</li>
+<li>This was not occurring when mimicking a drag operation.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Cypress first opens a specific page in the browser and then manipulates that page
+<ul>
+<li>(There is also a per-component test function, but since it is a beta version and uses jsdom, we will ignore it this time.)</li>
+<li>Even services on other people’s servers can be tested.
+<ul>
+<li>For example, you can do a test like, “If I do a share operation on my service, Twitter will open and this is what happens.</li>
+<li>You can also test your service on the production server after deployment, rather than in a local environment.
+<ul>
+<li>Realistically, I don’t think it can be done easily, for example, Firebase auth has to be replaced with an emulator to test, <img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/> didn’t do it.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Even services for which we do not have the source code can be tested.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>is putting the app code and the test code in the same repository, sharing type definitions, etc. and having VSCode complement them, though.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="cypress-runs-test-code-inside-the-browser">Cypress runs test code “inside” the browser<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#cypress-runs-test-code-inside-the-browser" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>.</p>
+<ul>
+<li><img src="https://gyazo.com/966ce37818b54d52d17d3cbd946e70e0/thumb/1000" alt="image"/></li>
+<li>Compared to Selenium, which used to be well used
+<ul>
+<li>The HTTP server was embedded in the browser, and the test code operated by sending HTTP requests to the server.</li>
+<li>Communication across processes seems slow? Actually, it was slow.</li>
+<li>You can use Python or Java for writing tests, as long as you can send HTTP requests.</li>
+</ul>
+</li>
+<li>Cypress in the same process
+<ul>
+<li>Since it runs in the browser, it must be written in JavaScript or TypeScript, which is converted to JavaScript.</li>
+</ul>
+</li>
+<li>Note: Very deep down, there are problems caused by the split iframes.
+<ul>
+<li><a href="./Cypress+Firestore=invalid-data" class="internal alias" data-slug="Cypress+Firestore=invalid-data">Cypress+Firestore=invalid data</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="test-only-language-written-in-js">Test-only language written in JS<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#test-only-language-written-in-js" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>.</p>
+<ul>
+<li>Cypress uses an in-language DSL to connect “get commands” and “assertions” to write tests.
+<ul>
+<li>I think it’s very important to have this feeling, if you think you’re writing raw JavaScript, you’re wrong.</li>
+<li>Imagine that executing JavaScript “builds the test by connecting the blocks” and then the test is executed after that is done.</li>
+</ul>
+</li>
+<li><img src="https://gyazo.com/1e2ed0d4667d0599a6b9f288684f752a/thumb/1000" alt="image"/>
+<ul>
+<li>Automatically retries when acquisition or assertion fails for a default of 4 seconds</li>
+<li>This makes it easier to deal with asynchronous behavior of the test object.</li>
+</ul>
+</li>
+<li>For example, suppose the behavior under test is “press a button to make a network request and update the label when the result is returned”.
+<ul>
+<li>Processing flow is cut off in the first half and the second half due to JavaScript specifications.
+<ul>
+<li>As a result, if you execute a “button press” from JavaScript, the process returns to the test code at the point of request</li>
+<li>After the test code has finished running, the latter half of the “when the results are returned” section is executed.</li>
+<li><img src="https://gyazo.com/be4e5f522965311250fca1280dd6eae1/thumb/1000" alt="image"/></li>
+<li>So, if you check synchronously in the test code after triggering the first half to see if the “label has been updated”, it will fail for sure.</li>
+</ul>
+</li>
+<li>This happens because JavaScript in the browser is a cooperative multitasking mechanism, and some APIs are designed to “block and wait for processing is not allowed”.
+<ul>
+<li>This is one of the reasons why writing tests for web apps is so difficult</li>
+</ul>
+</li>
+<li>One solution is to write test code that retries for a period of time until success
+<ul>
+<li>Cypress does it internally so humans don’t have to write it in the test code.</li>
+<li>Another tool, for example <a href="./DOM-Testing-Library" class="internal alias" data-slug="DOM-Testing-Library">DOM Testing Library</a>, requires a human to write test code that explicitly calls <a href="https://testing-library.com/docs/dom-testing-library/api-async/#waitfor" class="external">waitFor<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> provided by the library. that explicitly calls <a href="./waitFor" class="internal" data-slug="waitFor">waitFor</a> provided by the library.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="best-practices-for-dom-acquisition">Best Practices for DOM Acquisition<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#best-practices-for-dom-acquisition" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>.</p>
+<ul>
+<li>Cypress is of the school that “elements accessed from tests should have a data attribute and be retrieved with an attribute selector”.
+<ul>
+<li>Don’t select by id or class.”</li>
+<li>What are data attributes?
+<ul>
+<li><a href="https://developer.mozilla.org/ja/docs/Learn/HTML/Howto/Use_data_attributes" class="external">Using Data Attributes - Learn Web Development | MDN<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Example: <code>&lt;div data-testid=&quot;foobar&quot;></code></li>
+<li>Selected by attribute selector <code>[data-testid=&quot;foobar&quot;]</code>.
+<ul>
+<li>see <a href="https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Selectors" class="external">CSS Selector - CSS: Cascading Style Sheets | MDN<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>This is because information such as id, class, display text, and DOM inclusions related to functionality and rendering can easily change during the implementation process, making tests more fragile.</li>
+<li>Pointing to a specific element should be loosely coupled with function and drawing
+<ul>
+<li>If a particular id or class or display text or inclusion is really important, then make it an assertion, not an element fetch!</li>
+</ul>
+</li>
+<li>Cypress supports this.
+<ul>
+<li>
+<blockquote>
+<p>Anti-Pattern: Using highly brittle selectors that are subject to change.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Best Practice: Use data-* attributes to provide context to your selectors and isolate them from CSS or JS changes.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>…</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Don’t target elements based on CSS attributes such as: id, class, tag</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Don’t target elements that may change their textContent</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Add data-* attributes to make it easier to target elements</p>
+</blockquote>
+<ul>
+<li><a href="https://docs.cypress.io/guides/references/best-practices#Selecting-Elements" class="external">Best Practices | Cypress Documentation<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>also supports this.
+<ul>
+<li>I also made a custom command to get it with data-testid.</li>
+</ul>
+</li>
+<li>On the other hand, there are those of the opposite ideology.
+<ul>
+<li>
+<blockquote>
+<p>Based on the Guiding Principles, your test should resemble how users interact with your code (component, page, etc.) as much as possible. With this in mind, we recommend this order of priority:</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<ol>
+<li>Queries Accessible to Everyone …<code>getByRole('button', {name: /submit/i})</code> … <code>getByLabelText</code> … <code>getByPlaceholderText</code> … <code>getByText</code> … <code>getByDisplayValue</code></li>
+</ol>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<ol start="2">
+<li>Semantic Queries … <code>getByAltText</code> … <code>getByTitle</code></li>
+</ol>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<ol start="3">
+<li>Test IDs … <code>getByTestId</code></li>
+</ol>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>getByTestId: The user cannot see (or hear) these, so this is only recommended for cases where you can’t match by role or text or it doesn’t make sense (e.g. the text is dynamic).</p>
+</blockquote>
+<ul>
+<li><a href="https://testing-library.com/docs/queries/about/#priority" class="external">About Queries | Testing Library<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>In short, “DOM should be selected based on values that look like human behavior.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>My problem now, a little over a month after I wrote this.
+<ul>
+<li>Talk about data-testid or id-independent.
+<ul>
+<li>Under the policy of “selecting elements with a single string,” this string corresponds to “the name of a variable in the global scope.</li>
+<li>Problems with global variables occur here as well.</li>
+<li>Example: The
+<ul>
+<li>T1: Add Kozane button in Add Kozane dialog with testid: <code>add-kozane-button</code>.</li>
+<li>T2: Added Split Kozane dialog</li>
+<li>T3: There is also an Add Kozane button in the Split Kozane dialog, what do we do?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Difficult for humans to remember the correspondence between elements and names
+<ul>
+<li>Well, I’ll check the source for the test subject.</li>
+</ul>
+</li>
+<li>Possibility of unintentional duplication</li>
+<li>If you treat it as a string, you won’t notice the typo.</li>
+<li>Do you want to 🤔 string Enum? (I haven’t done it)</li>
+<li>→ Discussion
+<ul>
+<li>Typo is immediately noticed because the test is mocked up as “no such testid element” immediately.</li>
+<li>As for unintentional duplicates, you can assert whether the one retrieved by cy.get is one or not, and you can notice immediately when there is more than one unintentional duplicate.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="test-pyramid">test pyramid<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#test-pyramid" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>UI testing is slow and expensive</li>
+<li>Unit testing is fast and inexpensive</li>
+<li>So we should do a lot of unit testing.</li>
+<li>…which was written by Martin Fowler in 2012 <a href="https://martinfowler.com/bliki/TestPyramid.html" class="external">article<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>is written mainly for UI testing in Cypress, ignoring the
+<ul>
+<li>I’ll write a unit test in Jest if I ever think I should write one.
+<ul>
+<li>With the default configuration of create-react-app, Jest unit tests run in the background every time a file is modified, and are easy to use without any additional installation.</li>
+<li>The test case has 0 cases.</li>
+</ul>
+</li>
+<li>State with more UI testing than unit testing
+<ul>
+<li>UI testing is faster and less expensive than in the days of Selenium, then the ratio should change.</li>
+<li>I’m typing in a style that doesn’t allow any in TypeScript, so I can say that type integrity testing is done.</li>
+<li>Since the UI is tested, the logic called from it is also tested, of course.</li>
+<li>So I don’t have anything in particular I want to unit test.</li>
+<li>Since we are mainly making the UI part now, it may mean that the UI is the only thing we have to test.
+<ul>
+<li><img src="https://gyazo.com/85ee5fcf8126a1850a540a0ab530edcf/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>UI testing is fragile.”
+<ul>
+<li>We should distinguish whether this is “the function is not broken, only the test is broken” or “the function is broken”.</li>
+<li>When UI testing was done in a way like “hard-code the coordinates to click” or “wait 100ms to test asynchronous processing”, there were many “tests only break”.
+<ul>
+<li>It should be decreasing with the refinement of testing tools.</li>
+<li>Cypress auto-retries, fixed viewports, and other things are making UI testing more reproducible.</li>
+</ul>
+</li>
+<li>If you’re doing something complex with the UI, the latter “broken functionality” is more likely to happen.
+<ul>
+<li>But this is likely to happen, which is why it should be tested and noticed as soon as possible.</li>
+<li>With Cypress, for example, the test code “click this button” automatically tests if the button is not covered by other elements, if it is visible on the screen, etc.
+<ul>
+<li>Example: When a user dialog was opened and closed, the previous menu was forgotten to be closed.
+<ul>
+<li>I noticed that the “close dialog and press tutorial icon to resume tutorial” test FAILS.</li>
+<li>Detected that the DOM covering the tutorial icons for the realization of “Close the menu when you click on the non-menu part”.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>This may be due to the fact that the specifications are not set in stone, so development starts with “this is what I want the display to look like when the internal state is like this”.
+<ul>
+<li>First, set the internal state with the test code, then look at the Cypress screen to see if the display is as expected.
+<ul>
+<li>The fact that it runs in a browser and a human can visually observe the state after execution works.</li>
+<li>If something is wrong here, you can use Chrome’s developer tools or something to investigate.</li>
+<li>One month later and added:.
+<ul>
+<li>It’s a utility cutout of the “function that sets the internal state.”</li>
+<li>For example, “groups are nested” or</li>
+<li>There are test cases that just “put the screen in its internal state” without specific tests, and the screen in a specific internal state can be immediately brought up and operated by a human.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If there is a bug report and you want to fix it, a little manipulation from the existing state will confirm that “the screen is not as expected”.
+<ul>
+<li>A means of reproduction was found here.</li>
+<li>Add test code to reproduce this “not the expected screen”.</li>
+<li>And fix the bugs.</li>
+<li>When you get to the expected screen, make that an assertion in the test code.</li>
+</ul>
+</li>
+<li>Comparison: compared to modifying the code of the app itself to create a specific internal state
+<ul>
+<li>That way, after the work is done, the “code to create the internal state” has to be properly deleted.</li>
+<li>If you’re using Cypress style, it’s test code, so you can leave it as is and run it after you’ve made other changes.</li>
+</ul>
+</li>
+<li>Comparison: compared to checking by hand
+<ul>
+<li>There are many environments that automatically reload the browser after editing a file, but it would be tedious to repeat the same operation by hand from there.
+<ul>
+<li>I made a mistake and had to reload and start over…</li>
+<li>I thought I was repeating the same operation, but I made an operational error…</li>
+</ul>
+</li>
+<li>Automate the process of opening a specific page and performing a specific operation with test code first.
+<ul>
+<li>Can operate faster than a human can.</li>
+<li>And it can be operated accurately and reproducibly.</li>
+<li>For example, you can test the drag function by dragging exactly 10 pixels, then it should be this value.</li>
+<li>Techniques to make various numerical values characteristic
+<ul>
+<li>Put a characteristic value (42, 123, etc.) for each of the values that might be affected.</li>
+<li>You can observe the results and make a decision like “42 shift means that the bug is related to this value.</li>
+</ul>
+</li>
+<li>You can look back at a snapshot of the DOM at each step of the operation so you can see where things went wrong.
+<ul>
+<li>After performing various operations, you may say, “Huh? Is it a little off?”
+<ul>
+<li>You can go back in time and see which operation timing was off.</li>
+</ul>
+</li>
+<li>Example: “4-pixel shift bug” was found with it.</li>
+<li>I might have missed it if I was operating it by hand.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Postscript of 2021-08-24
+<ul>
+<li>I did a major surgery to realize all Kozane’s drags and clicks with onMouseDown system without using onDragStart or onClick, so most of the tests were broken.
+<ul>
+<li>Well, that’s just the way it is…</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="internal-state-setting-api">internal state setting API<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#internal-state-setting-api" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>.</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>manages the internal state with <a href="./ReactN" class="internal" data-slug="ReactN">ReactN</a>.</li>
+<li>The functions for reading and writing this are exposed as a JS API so that the internal state can be set from the outside.
+<ul>
+<li>PS: I further made it a custom Cypress command.</li>
+</ul>
+</li>
+<li>This allows you to set up and test the internal state of the app from the test code.
+ts</li>
+</ul>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="typescript" data-theme="github-light github-dark"><code data-language="typescript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">  it</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;show loading dialog&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, () </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    cy.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">updateGlobal</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">((</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">g</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">      g.dialog </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;Loading&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    });</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  });</span></span></code></pre></figure>
+<pre><code>- I felt like I should explain more about this place.
+- ![image](https://gyazo.com/ef5ebeddb670b083dc1a664b2923b2d2/thumb/1000)
+- To begin with, singleton-like internal state management objects are introduced by ReactN
+- The View is designed to be redrawn when its internal state changes by hooking (using) the object.
+- This internal state get/set is exposed to the test environment
+- If you set, the screen will be updated, so you can test &quot;how it will be displayed if the internal state is such and such value&quot;.
+- You can also get and test &quot;what is the internal state after a specific operation&quot;.
+</code></pre>
+<ul>
+<li>It’s only supposed to be exposed on localhost, so I can’t touch it in the release environment.
+<ul>
+<li>Microwave Oven Parable
+<ul>
+<li>The contents of a microwave oven are dangerous if accidentally touched, so there should be a cover when the public is using it.</li>
+<li>Anyone developing a microwave oven should be able to easily remove the cover and access the interior.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>React-like state checks for changes by object identity, so destructive updates are prohibited.
+<ul>
+<li>With <a href="./immer" class="internal" data-slug="immer">immer</a>, you can comfortably write destructive updates in a non-destructive manner.
+<ul>
+<li>A copy of the non-destructive state is passed to the callback, which destructively rewrites it, and immer internally converts it to a non-destructive update.</li>
+</ul>
+</li>
+<li>So the code to update using immer is also a custom command.</li>
+<li>This is very useful to rewrite a little internal state in a test case and check it.</li>
+</ul>
+</li>
+</ul>
+<h2 id="custom-assertions">Custom assertions<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#custom-assertions" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>.</p>
+<ul>
+<li>The assertion part of Cypress is <a href="./Chai" class="internal" data-slug="Chai">Chai</a>, so you need to learn how to write Chai.</li>
+<li>Not doing much.</li>
+<li>I just added an assertion that confirms the position on the screen.
+<ul>
+<li>Would it match if I created a custom command “get the on-screen position of a given element and return it”, or can I use the original one for assertions? I initially thought that would be a good idea, but that approach doesn’t work.</li>
+<li>That custom command succeeds, so if it fails in a subsequent assertion, no retry is made.
+ts</li>
+</ul>
+</li>
+</ul>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="typescript" data-theme="github-light github-dark"><code data-language="typescript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">it</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;drag inside&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, () </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">  ready_one_group</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">();</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  cy.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">testid</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;1&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">).</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">should</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;hasPosition&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, [</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">184</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">199</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]);</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">  do_drag</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;1&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;G1&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">);</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  cy.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">testid</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;1&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">).</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">should</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;hasPosition&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, [</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">154</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">144</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]);</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">});</span></span></code></pre></figure>
+<ul>
+<li>
+<p>Self-tweezers who say <code>should have</code>.</p>
+<ul>
+<li>I wanted to do <code>cy.testid(&quot;1&quot;).hasPosition(154, 144)</code> but I couldn’t figure out how to do it, so I ended up with this</li>
+</ul>
+</li>
+<li>
+<p>Small story</p>
+</li>
+<li>
+<p>Test cases are now started with <code>test_</code>.</p>
+<ul>
+<li>I wanted to make it easier to distinguish between test cases and non-test cases when opening a file by typing part of the file name with Cmd+P in VSCode.</li>
+</ul>
+</li>
+<li>
+<p>If you use Firebase Auth to use Google or other OAuth-based logins, an emulator is probably a must.</p>
+<ul>
+<li>Normal OAuth flow doesn’t seem to work in the test environment.</li>
+</ul>
+</li>
+<li>
+<p>When using Cloud Firestore</p>
+<ul>
+<li>I use an emulator.
+<ul>
+<li>Editing object contents, etc., is as easy as in a production environment</li>
+<li>Easier than production to change access control rules, etc.
+<ul>
+<li>If you change a local file, it’s automatically reloaded and applied immediately.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Using it from Cypress is… using it, but it’s been a rocky road to get it to work.
+<ul>
+<li>ExperimentalForceLongPolling must be set to true</li>
+<li>You need to do this before you useEmulator.
+<ul>
+<li><a href="./Kozaneba-Development-Diary-2021-08-03#610a84dfaff09e0000e3b656" class="internal alias" data-slug="Kozaneba-Development-Diary-2021-08-03">610a84dfaff09e0000e3b656</a></li>
+</ul>
+</li>
+<li>Objects created in the Cypress environment cannot be saved directly to Firestore
+<ul>
+<li>It’s the iframe.</li>
+<li><a href="./Cypress+Firestore=invalid-data" class="internal alias" data-slug="Cypress+Firestore=invalid-data">Cypress+Firestore=invalid data</a></li>
+<li>Object.assign` on the app side</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>When using Google Analytics</p>
+<ul>
+<li>I’m crushing it by overwriting the gtag so it doesn’t work on localhost.</li>
+<li>Otherwise, the test run will throw away a cookie each time, thus recording “300 new users” and so on.</li>
+</ul>
+</li>
+<li>
+<p>I also write my test code in TypeScript.</p>
+<ul>
+<li>I am already familiar with TypeScript…</li>
+<li>At first I wrote it in JS, but I typo’d <code>position</code> with <code>positionision</code> and did “Hey, I changed the position, but it doesn’t work, why?”, so it was a waste of time.</li>
+<li>Hard to create GUI without completion and type checking</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/Cypress%E5%8B%89%E5%BC%B7%E4%BC%9A" class="external">/nishio/Cypress勉強会<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class aria-controls="toc-content" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content" class><ul class="overflow"><li class="depth-0"><a href="#cypress-runs-test-code-inside-a-real-browser-such-as-chrome" data-for="cypress-runs-test-code-inside-a-real-browser-such-as-chrome">Cypress runs test code inside a “real browser” such as Chrome</a></li><li class="depth-0"><a href="#cypress-runs-test-code-inside-the-browser" data-for="cypress-runs-test-code-inside-the-browser">Cypress runs test code “inside” the browser</a></li><li class="depth-0"><a href="#test-only-language-written-in-js" data-for="test-only-language-written-in-js">Test-only language written in JS</a></li><li class="depth-0"><a href="#best-practices-for-dom-acquisition" data-for="best-practices-for-dom-acquisition">Best Practices for DOM Acquisition</a></li><li class="depth-0"><a href="#test-pyramid" data-for="test-pyramid">test pyramid</a></li><li class="depth-0"><a href="#internal-state-setting-api" data-for="internal-state-setting-api">internal state setting API</a></li><li class="depth-0"><a href="#custom-assertions" data-for="custom-assertions">Custom assertions</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li>No backlinks found</li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

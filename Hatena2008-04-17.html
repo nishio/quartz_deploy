@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Hatena2008-04-17</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Hatena2008-04-17"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Hatena2008-04-17"/><meta name="twitter:description" content="hatena &lt;body> *1208407306*GIL (global interpreter lock) Yesterday's survey added the option to &quot;remove the GIL&quot; I thought I'd give you a brief explanation ..."/><meta property="og:description" content="hatena &lt;body> *1208407306*GIL (global interpreter lock) Yesterday's survey added the option to &quot;remove the GIL&quot; I thought I'd give you a brief explanation ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="hatena &lt;body> *1208407306*GIL (global interpreter lock) Yesterday's survey added the option to &quot;remove the GIL&quot; I thought I'd give you a brief explanation ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Hatena2008-04-17"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Hatena2008-04-17"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="hatena &lt;body> *1208407306*GIL (global interpreter lock) Yesterday's survey added the option to &quot;remove the GIL&quot; I thought I'd give you a brief explanation ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Hatena2008-04-17"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Hatena2008-04-17</a></div></nav><h1 class="article-title">Hatena2008-04-17</h1><p show-comma="true" class="content-meta"><span>Apr 17, 2008</span><span>9 min read</span></p></div></div><article class="popover-hint"><p>hatena</p>
+<pre><code>&lt;body>
+*1208407306*GIL (global interpreter lock)
+Yesterday's survey added the option to &quot;remove the GIL&quot; I thought I'd give you a brief explanation since some of you may not know what a GIL is.
+
+- Matz Nikki (2007-09-13) It isn't Easy to Remove the GIL
+-- http://www.rubyist.net/~matz/20070913.html#p02
+
+I thought it would be better for you to read the following. I'll use an actual example to illustrate this. →I have two CPUs, so if I do it with two threads, it will be twice as fast. →I'll try it... - Hey, only one of the threads is being used...&quot; This is a common pattern of getting stuck. Since each interpreter is locked, even if you use two threads for heavy calculation, it will not be twice as fast but will be slower due to the cost of switching threads. If you want to do that, you need to launch two interpreters. Of course, if there is a lot of I/O waiting, it is worth using threads so that other threads can compute without blocking while waiting.
+
+*1208418992*TopCoder proxy
+TopCoder's Arena is JavaWebStart, which is www.topcoder.com:80からソフトウェアをダウンロードした後www.topcoder.com:5001にアクセスをする. So www.topcoder.comは普段は66.37.210.86. So rewrite hosts to www.topcoder.comが127.0.0.1を指すようにした上でローカルで下のようなスクリプトを起動.
+
+(Deleted)
+
+This works up to the point where I can start it with JavaWebStart from the TopCoder site, but when I try to log in, it times out. I wonder why.
+
+The output is
+(Deleted)
+So I wonder if the part where you receive the server's response and then close it thinking that you have received all of them because you haven't received a response is actually being too hasty.
+
+-----
+
+Oh, that's right, it's different from HTTP, so it's not over when you send it to the server and the server replies. I guess I shouldn't close it there.
+
+>||
+got result, len 31
+sending result
+sent result
+getting result
+timeout('timed out',)
+----------
+getting data
+got data, len 41
+sending data
+sent data
+getting data
+||&lt;
+
+I knew it. But then, when should I close?
+
+-----
+
+In the meantime, you can now download files written by others.
+
+>|python|
+&quot;&quot;&quot;
+topcoder proxy
+&quot;&quot;&quot;
+
+import SocketServer
+
+class ProxyHandler(SocketServer.StreamRequestHandler):
+    PORT = 5001
+    def handle(self):
+        print &quot;connect from:&quot;, self.client_address
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        print &quot;connecting to TopCoder&quot;
+        s.connect((&quot;66.37.210.86&quot;, self.PORT))
+        print &quot;connected to TopCoder&quot;
+        from time import sleep
+        TO_CLOSE = False
+        while not TO_CLOSE:
+            try:
+                while True:
+                    print &quot;getting data&quot;,
+                    data = self.request.recv(8192)
+                    print &quot;got data, len&quot;, len(data)
+                    if len(data) == 0:
+                        TO_CLOSE = True
+                        break
+                    print &quot;sending data&quot;,
+                    s.send(data)
+                    print &quot;sent data&quot;
+            except Exception, e:
+                print repr(e)
+                
+            try:
+                while True:
+                    print &quot;getting result&quot;,
+                    result = s.recv(8192)
+                    print &quot;got result, len&quot;, len(result)
+                    if len(result) == 0:
+                        TO_CLOSE = True
+                        break
+                    if &quot;#include&quot; in result:
+                        print &quot;code found!&quot;
+                        start = result.index(&quot;#include&quot;)
+                        end = result.index(&quot;\x00&quot;, start)
+                        import time
+                        filename = time.strftime(
+                            r&quot;C:\topcoder\dl\%m%d_%H%M%S.cpp&quot;)
+                        file(filename, &quot;w&quot;).write(result[start:end])
+                    
+                    print &quot;sending result&quot;,
+                    self.request.send(result)
+                    print &quot;sent result&quot;
+            except Exception, e:
+                print repr(e)
+            print &quot;----------&quot;
+            sleep(1)
+            
+
+        s.close()
+        self.request.close()
+
+class ProxyHandler80(ProxyHandler):
+    PORT = 80
+
+import thread
+import socket
+socket.setdefaulttimeout(1.0)
+
+server = SocketServer.ThreadingTCPServer(('localhost', 5001), ProxyHandler)
+print 'listening:', server.socket.getsockname()
+thread.start_new_thread(server.serve_forever, ())
+
+server = SocketServer.ThreadingTCPServer(('localhost', 80), ProxyHandler80)
+print 'listening:', server.socket.getsockname()
+thread.start_new_thread(server.serve_forever, ())
+||&lt;
+
+*1208423855*something
+I think there is a widespread misunderstanding about Cybozu Labs, but it's just that the work schedule is negotiable and flexible, and not all employees work 3 days a week as a system. I mean, my peers will say to me, &quot;Labs work 3 days a week? I don't want to hear that from my peers.
+
+*1208425951*[cpp]C++ today
+What I learned.
+
+- using namespace std;
+-- Bumping STL functions into global space, a common practice in TopCoder's view.
+- There are min and max in algorithm, but only 2 arguments. min_element and so on can be used to get the location of the minimum value in the list, so the equivalent of Python's min(xs) would be xs[min_element(xs.begin(), xs.end())]. The following is an example of the use of min(xs).
+- &amp;lt;?=
+-- Minimum operator http://www.asahi-net.or.jp/~WG5K-ICKW/html/online/gcc-2.95.2/gcc_5.html thanks @renha
+-- It has been removed from the latest gcc and should not be used outside of TopCoder
+-- for(int i=0;i&amp;lt;xs.size();i++){result&amp;lt;? =f(xs[i])} to realize what Python calls min(f(x) for x in xs).
+- Read references from the right.
+-- I wrote gcc -lstdc++ foo.cpp and got an error because the reference was not to the right. gcc foo.cpp -lstdc++ is correct. Or g++ foo.cpp.
+- There is a semicolon at the end of the template definition.
+- I wrote template&amp;lt;0> struct Numbers and got angry.
+-- template&amp;lt;> struct Numbers&amp;lt;0> is correct. Weird.
+-- the first one is the degree of freedom, the second one is what is stuck where.
+- template&amp;lt;int N>&amp;lt;int M>
+-- expected unqualified-id before '&lt;' token
+-- &amp;lt;int N, int M>.
+- wrong number of template arguments (1, should be 2)
+-
+
+*1208431832*[cpp]C++ template to calculate prime numbers
+I thought it was perverse to use a C++ template to perform calculations, but when I looked at the FizzBuzz code that the wife quickly wrote in about 10 minutes, it was very straightforward and easy to read, so I decided to try something with the template as well.
+
+-Kazuho@Cybozu Labs: FizzBuzz with C++ templates
+--http://labs.cybozu.co.jp/blog/kazuho/archives/2008/04/fizzbuzz_cpp_template.php
+
+That is how the code to find prime numbers was created. I left the &quot;get all the numbers&quot; and &quot;get multiples of 2&quot; in the middle as comments. isPrime2 and isPrime3 are appropriate names because I can't think of the name of each of the three types that together do the work of isPrime. It seems that the template has default type arguments, so isPrime itself is not necessary.
+
+>|cpp|
+#include &lt;iostream>
+
+using namespace std;
+template&lt;int N, int D> struct isPrime2;
+
+template&lt;int N, int D, int R> struct isPrime3{
+  isPrime3(){
+	// N % D != 0
+	// so we should check if N % (D-1) == 0
+	isPrime2&lt;N, D-1>();
+  }
+};
+
+template&lt;int N, int D> struct isPrime3&lt;N, D, 0>{
+  isPrime3(){
+	// N % D == 0
+	// so N is not prime
+	// cout &lt;&lt; N &lt;&lt; &quot; is not prime&quot; &lt;&lt; endl;
+  }
+};
+
+
+template&lt;int N, int D> struct isPrime2{
+  isPrime2(){
+	// if N % D == 0?
+	isPrime3&lt;N, D, N%D>();
+  }
+};
+
+template&lt;int N> struct isPrime2&lt;N, 1>{
+  isPrime2(){
+	// cout &lt;&lt; N &lt;&lt; &quot; is prime!&quot; &lt;&lt; endl;
+	cout &lt;&lt; N &lt;&lt; &quot; &quot;;
+  }
+};
+
+
+template&lt;int N> struct isPrime{
+  isPrime(){
+	isPrime2&lt;N, N-1>();
+  }
+};
+
+
+
+/* ver.2
+template&lt;int N, int R> struct isDividable_{
+  isDividable_(){
+	cout &lt;&lt; N &lt;&lt; endl;
+  }
+};
+
+template&lt;int N> struct isDividable_&lt;N, 0>{
+  isDividable_(){}
+};
+
+template&lt;int N, int M> struct isDividable {
+  isDividable(){
+	isDividable_&lt;N, N%M>();
+  }
+};
+*/
+
+/* ver.1
+template&lt;int N> struct Print {
+  Print() {
+	cout &lt;&lt; N &lt;&lt; endl;
+  }
+};
+*/
+
+template&lt;int N> struct Numbers {
+  Numbers(){
+	Numbers&lt;N-1>();
+	// insert visiter here
+	/* ver.1
+	   Print&lt;N>();
+	*/
+	/* ver.2
+	   isDividable&lt;N, 2>();
+	*/
+	isPrime&lt;N>();
+  }
+};
+
+template&lt;> struct Numbers&lt;1> {
+  Numbers(){} // empty
+};
+
+int main(){
+  Numbers&lt;100>();
+}
+||&lt;
+
+The one that was renamed and antabified by removing the superfluous ↓.
+
+>|cpp|
+#include &lt;iostream>
+
+using namespace std;
+template&lt;int N, int D> struct isPrime;
+
+template&lt;int N, int D, int R> struct isPrime_{
+  isPrime_(){
+    isPrime&lt;N, D-1>();
+  }
+};
+
+template&lt;int N, int D> struct isPrime_&lt;N, D, 0>{
+  isPrime_(){}
+};
+
+
+template&lt;int N, int D=N-1> struct isPrime{
+  isPrime(){
+    // if N % D == 0?
+    isPrime_&lt;N, D, N%D>();
+  }
+};
+
+template&lt;int N> struct isPrime&lt;N, 1>{
+  isPrime(){
+    cout &lt;&lt; N &lt;&lt; &quot; &quot;;
+  }
+};
+
+
+template&lt;int N> struct Primes {
+  Primes(){
+    Primes&lt;N-1>();
+    isPrime&lt;N>();
+  }
+};
+
+template&lt;> struct Primes&lt;1> {
+  Primes(){} // empty
+};
+
+int main(){
+  Primes&lt;100>();
+}
+||&lt;
+
+*1208438940*[cpp]
+The reason for not moving will be considered later.
+>|cpp|
+class MinDifference {
+public:
+  int closestElements(int A0, int X, int Y, int M, int n) {
+	int res=10000;
+	
+	vector&lt;int> a(1,A0);
+	for(;a.size()&lt;n;a.push_back(((a.back()*X)+Y)%M));
+	sort(a.begin(), a.end());
+	vector&lt;int> buf;
+	adjacent_difference(a.begin(), a.end(), buf);
+	return buf[min_element(buf.begin() + 1, buf.end())];;	
+  }
+};
+||&lt;
+
+The error message is as follows.
+
+>||
+MinDifference.cpp: In member function `int MinDifference::closestElements(int, i
+nt, int, int, int)':
+MinDifference.cpp:113: error: no match for 'operator[]' in 'buf[std::min_element
+ [with _ForwardIterator = __gnu_cxx::__normal_iterator&lt;int*, std::vector&lt;int, st
+d::allocator&lt;int> > >]((&amp;buf)->std::vector&lt;_Tp, _Alloc>::begin [with _Tp = int,
+_Alloc = std::allocator&lt;int>](), (&amp;buf)->std::vector&lt;_Tp, _Alloc>::end [with _Tp
+ = int, _Alloc = std::allocator&lt;int>]())]'
+/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_vector.h:462: note: candi
+dates are: typename _Alloc::reference std::vector&lt;_Tp, _Alloc>::operator[](size_
+t) [with _Tp = int, _Alloc = std::allocator&lt;int>]
+/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_vector.h:476: note:  type
+name _Alloc::const_reference std::vector&lt;_Tp, _Alloc>::operator[](size_t) const
+[with _Tp = int, _Alloc = std::allocator&lt;int>]
+/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_numeric.h: In function `_
+OutputIterator std::adjacent_difference(_InputIterator, _InputIterator, _OutputI
+terator) [with _InputIterator = __gnu_cxx::__normal_iterator&lt;int*, std::vector&lt;i
+nt, std::allocator&lt;int> > >, _OutputIterator = std::vector&lt;int, std::allocator&lt;i
+nt> >]':
+MinDifference.cpp:112:   instantiated from here
+/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_numeric.h:279: error: no
+match for 'operator*' in '*__result'
+MinDifference.cpp:112:   instantiated from here
+/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_numeric.h:283: error: no
+match for 'operator++' in '++__result'
+/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_numeric.h:286: error: no
+match for 'operator++' in '++__result'
+||&lt;
+
+*1208441718*I'm tired.
+
+I am very sleepy. It's supposed to rain heavily tomorrow. I don't like it. I'm so sleepy.
+&lt;/body>
+&lt;comments>
+&lt;comment>
+&lt;username>jbking&lt;/username>
+&lt;body>I wonder if it is better to parse the protocol and calculate the packet length or monitor the lower protocol (TCP) transfer. &lt;/body>
+&lt;timestamp>1208423838&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>kazuhooku&lt;/username>
+&lt;body>A typical coding pattern would look something like this: if read or write fails close&lt;br>&lt;br>while (1) {&lt;br> poll_for_read(client_fd and server_fd);&lt;br> if ( read_is_ready(client_fd)) {&lt;br> write(server_fd, read(client_fd));&lt;br> }&lt;br> if (read_is_ready(server_fd)) {&lt;br> write(client_fd, read( server_fd));&lt;br> }&lt;br>}&lt;/body>
+&lt;timestamp>1208428699&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>herumi&lt;/username>
+&lt;body>std::min_element returns an iterator that points to the smallest element, so *std::min_element(xs.begin(), xs.end()) is correct. &lt;br>If you could have done it with xs[], it would have just worked by chance. And if you use [], you will not be happy because you cannot use it with list. &lt;BR>&lt;BR>I don't think C++ is a language where you have to tinker around to understand the syntax, unlike LL. &lt;BR>&lt;BR>This is because many parts of C++ are not designed to be as natural or easy to use as LL (especially around templates). &lt;br>I think that if you start with the tricky parts, you will end up in unnecessary pitfalls that will cost you a lot of money. &lt;br>And there is no need for a minimum value operator, nor is the code at the top of TopCoder a good example of C++. &lt;br>I'm an old woman, but I recommend that you study the standard books properly here. &lt;/body> &lt;br>&lt;br>TopCoder is not a good example of C++.
+&lt;timestamp>1208440567&lt;/timestamp>
+&lt;/comment>
+&lt;/comments>
+</code></pre>
+<h2 id="hatena-diary-2008-04-17"><a href="https://nishiohirokazu.hatenadiary.org/archive/2008/04/17" class="external">Hatena Diary 2008-04-17<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hatena-diary-2008-04-17" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/Hatena2008-04-17" class="external">/nishio/Hatena2008-04-17<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li>No backlinks found</li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

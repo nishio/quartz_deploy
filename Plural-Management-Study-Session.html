@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Plural Management Study Session</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Plural Management Study Session"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Plural Management Study Session"/><meta name="twitter:description" content="2024-01-26 Cybozu Labs Study Session - Owase 2024-01-23~24 Short version as I was gone and didn’t have time to prepare. Objective: To read Plural Management, which was just released on 1/9."/><meta property="og:description" content="2024-01-26 Cybozu Labs Study Session - Owase 2024-01-23~24 Short version as I was gone and didn’t have time to prepare. Objective: To read Plural Management, which was just released on 1/9."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="2024-01-26 Cybozu Labs Study Session - Owase 2024-01-23~24 Short version as I was gone and didn’t have time to prepare. Objective: To read Plural Management, which was just released on 1/9."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Plural-Management-Study-Session"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Plural-Management-Study-Session"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="2024-01-26 Cybozu Labs Study Session - Owase 2024-01-23~24 Short version as I was gone and didn’t have time to prepare. Objective: To read Plural Management, which was just released on 1/9."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Plural-Management-Study-Session"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Plural Management Study Session</a></div></nav><h1 class="article-title">Plural Management Study Session</h1><p show-comma="true" class="content-meta"><span>Aug 26, 2024</span><span>69 min read</span></p></div></div><article class="popover-hint"><p>2024-01-26  <a href="./Cybozu-Labs-Study-Session" class="internal alias" data-slug="Cybozu-Labs-Study-Session">Cybozu Labs Study Session</a>
+- <a href="./Owase-2024-01-23~24" class="internal alias" data-slug="Owase-2024-01-23~24">Owase 2024-01-23~24</a> Short version as I was gone and didn’t have time to prepare.</p>
+<ul>
+<li>Objective: To read <a href="./Plural-Management" class="internal alias" data-slug="Plural-Management">Plural Management</a>, which was just released on 1/9.</li>
+<li>PS: I did another <a href="./Quadratic-Voting-and-Plural-Management-Study-Group" class="internal alias" data-slug="Quadratic-Voting-and-Plural-Management-Study-Group">Quadratic Voting and Plural Management Study Group</a> at the next session.</li>
+</ul>
+<h1 id="plural-management">Plural Management<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#plural-management" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>
+<blockquote>
+<p>We introduce Plural Management, a model for partially replacing hierarchical organizational authority with plural mechanisms allowing networked authority. Participants earn influence by anticipating and fulfilling organizational priorities and harness this influence to set priorities and validate contributions, fostering a dynamic, merit-based power structure. This approach, which we illustrate with the example of open-source software development, emphasizes valued contributions and diligence without requiring hierarchical choke points, thereby enhancing participation and allowing adaptive collective intelligence.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Keywords: management, plurality, <a href="./quadratic-mechanism" class="internal alias" data-slug="quadratic-mechanism">quadratic mechanism</a>s, open-source, software management, organizational dynamics</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="./Plural-Management" class="internal alias" data-slug="Plural-Management">Plural Management</a>, a model that partially replaces <a href="./hierarchical-organizational-authority" class="internal alias" data-slug="hierarchical-organizational-authority">hierarchical organizational authority</a> with a <a href="./plural-mechanism" class="internal alias" data-slug="plural-mechanism">plural mechanism</a> that enables <a href="./networked-authority" class="internal alias" data-slug="networked-authority">networked authority</a>. Participants gain influence by anticipating and achieving organizational priorities and use this influence to set priorities and validate contributions, thereby fostering a dynamic, <a href="./merit-based-power-structure" class="internal alias" data-slug="merit-based-power-structure">merit-based power structure</a>. This approach, illustrated by <a href="./open-source-software-development" class="internal alias" data-slug="open-source-software-development">open source software development</a>, emphasizes <a href="./valuable-contributions" class="internal alias" data-slug="valuable-contributions">valuable contributions</a> and <a href="./diligence" class="internal" data-slug="diligence">diligence</a> without the need for hierarchical bottlenecks, thereby strengthening <a href="./participation" class="internal" data-slug="participation">participation</a> and enabling <a href="./adaptive-collective-knowledge" class="internal alias" data-slug="adaptive-collective-knowledge">adaptive collective knowledge</a>.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Key words: management, <a href="./plurality" class="internal" data-slug="plurality">plurality</a>, <a href="./secondary-mechanisms" class="internal alias" data-slug="secondary-mechanisms">secondary mechanisms</a>, <a href="./open-source-(software,-etc.)" class="internal alias" data-slug="open-source-(software,-etc.)">open source (software, etc.)</a>, <a href="./software-management" class="internal alias" data-slug="software-management">software management</a>, <a href="./organizational-dynamics" class="internal alias" data-slug="organizational-dynamics">organizational dynamics</a>.</p>
+</blockquote>
+</li>
+<li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4688040" class="external">paper<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>Date Written: January 9, 2024
+<ul>
+<li>Freshly made and ready to go!</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>One of the authors is <a href="./Glen-Weyl" class="internal alias" data-slug="Glen-Weyl">Glen Weyl</a>.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>A world where those with power hold power?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Isn’t that a tautology?</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>When we think in terms of meritocracy, we want those who are competent to have the power.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Oh, I see what you mean about the merit-based power structure” part.
+<ul>
+<li><a href="https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%AA%E3%83%88%E3%82%AF%E3%83%A9%E3%82%B7%E3%83%BC" class="external">Meritocracy - Wikipedia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>
+<blockquote>
+<p>This refers to a society in which an individual’s status is determined by the abilities he or she possesses, and in which those with the highest abilities rule.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>These words come up later.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>I’ll nail it first.</p>
+<ul>
+<li>Sometimes there are sterile debates about democratic systems in the world.</li>
+<li>One of the reasons for this is that the following two types of people fight
+<ul>
+<li>A: Idiots who stop to think that “being democratic is good”.</li>
+<li>B: An asshole who just mentions the word “democratic” in a conversation and assumes that you are a “type A” asshole.</li>
+</ul>
+</li>
+<li>We must properly delve into what exactly the “democratic system” is and what its purpose is and how it works.
+<ul>
+<li>Basically, any system is not “universal magic” or a “silver bullet” and must be used in the right places.</li>
+<li>The “current democratic system” is also malfunctioning in many situations.</li>
+<li>A “new democratic system” is proposed to solve the problem</li>
+<li>If you don’t know the system, you can’t come up with “let’s use it for this” for the appropriate subject.</li>
+</ul>
+</li>
+</ul>
+<h1 id="gov4git"><a href="./Gov4git" class="internal" data-slug="Gov4git">Gov4git</a><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#gov4git" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>Before we get into the abstract, let’s look at some working software to get a clearer picture.</li>
+<li>Used in the Plurality Book writing project <a href="./Gov4git" class="internal" data-slug="Gov4git">Gov4git</a>.</li>
+<li>Screen shot of akinori, a long-time contributor to Plurality Book
+<ul>
+<li><img src="https://gyazo.com/df5184460b4dce6d06c04d9bfa407fe6/thumb/1000" alt="image"/></li>
+<li>[/plurality-japanese/Social Hack Day chat second half#65ab7832aff09e0000b14451](<a href="https://scrapbox.io/plurality-japanese/Social" class="external">https://scrapbox.io/plurality-japanese/Social<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Hack Day chat second half#65ab7832aff09e0000b14451)</li>
+</ul>
+</li>
+<li>Vote for Issues on Github with <a href="./Quadratic-Voting" class="internal alias" data-slug="Quadratic-Voting">Quadratic Voting</a>.
+<ul>
+<li>Vote credits are earned through contributions.</li>
+<li>In the above screenshot, you are about to cast 11 votes, for which you will have to pay 121 credits, which is 11 squared.</li>
+</ul>
+</li>
+<li>Demonstration on my Gov4git screen about integration with Github.</li>
+<li><img src="https://gyazo.com/7b8f2e8440ab6ac09c81033453ca32b7/thumb/1000" alt="image"/>
+<ul>
+<li>Github Issues</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>I guess it means they are applying the git mechanism used in open source.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Or rather <a href="https://github.com/pluralitybook/plurality/labels/gov4git%3Amanaged" class="external">this<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>Github issues normally used by OSS projects managed on Github.
+<ul>
+<li>Issues labeled <code>gov4git:managed</code> are managed by gov4git</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://gyazo.com/9ee28bae96a0469437d8202c8f0b5493/thumb/1000" alt="image"/>
+- In the gov4git app, you can see the managed issues like this
+<ul>
+<li><img src="https://gyazo.com/1094e4a8faf14b0aecc88ca2bc4e0f62/thumb/1000" alt="image"/>
+<ul>
+<li>You can vote here.</li>
+</ul>
+</li>
+<li><img src="https://gyazo.com/40264eb81228b6a822c18fd8d7b68427/thumb/1000" alt="image"/>
+<ul>
+<li>Glenn is labeling the issues, the bot reads them and makes them a target for management.</li>
+</ul>
+</li>
+<li><img src="https://gyazo.com/945e35ef5c481505b661d8b93578d9d2/thumb/1000" alt="image"/>
+<ul>
+<li>When someone votes, the priority value changes.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>References: <a href="https://github.com/pluralitybook/plurality/issues/263" class="external">Gov4Git community dashboard - Issue #263 - pluralitybook/plurality<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>I wonder why they chose to square it. It seems like an item that could be tuned in many ways.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Interesting how you think of this “squaring” (what if the square root of the amount of taxes paid allowed for an additional vote?) I’m not sure how to explain the “square root” of the taxpayers’ money.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>That’s <a href="./Quadratic-Voting" class="internal alias" data-slug="Quadratic-Voting">Quadratic Voting</a>.
+<ul>
+<li><a href="./Quadratic-Voting:-How-Mechanism-Design-Can-Radicalize-Democracy" class="internal alias" data-slug="Quadratic-Voting:-How-Mechanism-Design-Can-Radicalize-Democracy">Quadratic Voting: How Mechanism Design Can Radicalize Democracy</a>
+<ul>
+<li>Steven Lalley, E. Glen Weyl (2018)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>You have a mathematical basis!</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> The value of one person making 100 times more money than you alone is the same as gathering 10 people with the same opinion.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/> Yes</li>
+</ul>
+</li>
+</ul>
+<p>Plural Management</p>
+<ul>
+<li><img src="https://gyazo.com/f1adcb67a3ac4116d16d0425c7ebd729/thumb/1000" alt="image"/></li>
+<li>
+<blockquote>
+<p>Members of the organization can dynamically earn management credits through their work. Issue boards allow members to prioritize assignments through quadratic funding (<a href="./Quadratic-Funding" class="internal alias" data-slug="Quadratic-Funding">Quadratic Funding</a>) using credits. These credits are paid to members who work on these issues through contributions. Payments are made only after a second vote taken by other members who consume management credits to exercise their authority.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Organizational managers may choose to allow members to earn management credit by correctly predicting voting results, rewarding individuals for due diligence in their contributions, or predicting the preferences of existing managers.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>This protocol allows for dynamic administrative control through a mechanism that scales from a small group of members to a large organization with no simplified hierarchy.</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="1-introduction">1 Introduction<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-introduction" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>
+<blockquote>
+<p>The standard dichotomy between the rigidity of hierarchi- cal organizations and the fluidity of flat configurations is a basic challenge for organization design. Traditional hier- archies with clear command structures are still the norm but are often seen as stifling the dynamic capabilities or- ganizations need to thrive in today’s complex landscape. Conversely, flat structures, while inclusive and dynamic, often struggle to maintain coherent direction, momentum, and accountability, often falling into the “<a href="./tyranny-of-structurelessness" class="internal alias" data-slug="tyranny-of-structurelessness">tyranny of structurelessness</a>” (<a href="./Ostrom-and-Hess,-2011" class="internal alias" data-slug="Ostrom-and-Hess,-2011">Ostrom and Hess, 2011</a>).</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>The standard dichotomy between the rigidity of traditional hierarchical organizations and the fluidity of flat organizations is a fundamental challenge in organizational design. Traditional hierarchical systems with clear command structures remain common, but are often seen as inhibiting the dynamic capabilities needed for organizations to thrive in today’s complex environment. Conversely, flat structures that are inclusive and dynamic often struggle to maintain consistent direction, momentum, and accountability and often fall into a “tyranny without structure” (Ostrom and Hess, 2011).</p>
+</blockquote>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/The_Tyranny_of_Structurelessness" class="external">The Tyranny of Structurelessness - Wikipedia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>There is a criticism that hierarchical management is rigid, but if you ask whether it would work if there were no hierarchy in the organizational structure, no one would show leadership and they would just watch each other in a daze, which is very common.
+<ul>
+<li><a href="./social-cut-corners" class="internal alias" data-slug="social-cut-corners">social cut corners</a></li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> I see, you said that if it is too flat, it will be leaderless and inefficient.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>The classic alternative to this dichotomy is the use of markets (Hamel and Zanini, 2020; Coase, 1995). Yet, a critical role of firms is to create internal partially public goods and take advantage of increasing returns, which markets generally do not efficiently supply (Samuelson, 1995). Thus Groves (1973) and Groves and Loeb (1979) argued for using public goods mechanisms to organize pro- duction inside firms in lieu of hierarchies and markets. Yet, these mechanisms have typically been seen as cum- bersome and impractical.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>The classic alternative to this dichotomy is the use of markets (Hamel and Zanini, 2020; Coase, 1995). However, an important role of firms is to partially create public goods internally and to take advantage of the increased revenues that markets do not normally supply efficiently (Samuelson, 1995). Thus, Groves (1973) and Groves and Loeb (1979) argued for the use of <a href="./public-goods-mechanisms" class="internal alias" data-slug="public-goods-mechanisms">public goods mechanisms</a> to organize production within the firm on behalf of hierarchies and markets. However, these mechanisms have usually been regarded as cumbersome and impractical.</p>
+</blockquote>
+<ul>
+<li>Markets cause efficient collaboration on tasks that would be more efficient with a division of labor.
+<ul>
+<li>When I eat bread, the “wheat grower,” the “flour maker,” and the “bread baker” are working together.</li>
+</ul>
+</li>
+<li>On the other hand, why do we have companies, because for certain tasks, it is more efficient to hire humans and generate them in-house than to procure them from outside sources?</li>
+<li>The reason why it is efficient is because we have an internal “system of efficient production” that we do not have outside the company.
+<ul>
+<li><a href="https://cybozushiki.cybozu.co.jp/articles/m005338.html" class="external">Cybozu’s too free way of working was managed in this way!　Cybozu’s too free way of working was managed in this way | Cybozu Style<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Recently, however, variants on these public good mech- anisms, especially Quadratic Voting (Lalley et al., 2016) and Quadratic Funding (Buterin et al., 2019), have been increasingly broadly and successfully applied1. This pa- per seeks to harness these advances to return to Groves’s agenda and outline a framework we call “Plural Manage- ment” that combines these with other successful mechanisms to mimic many features of organizational authority and collaboration without requiring simplistic hierarchy.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>More recently, however, variants of these public goods mechanisms, particularly <a href="./Quadratic-Voting" class="internal alias" data-slug="Quadratic-Voting">Quadratic Voting</a> (Larry et al., 2016) and <a href="./Quadratic-Funding" class="internal alias" data-slug="Quadratic-Funding">Quadratic Funding</a> (Buterin et al., 2019), have been widely and successfully applied. This paper returns to Groves’ agenda by leveraging these advances, outlining a framework called “<a href="./Plural-Management" class="internal alias" data-slug="Plural-Management">Plural Management</a>” and combining these with other successful mechanisms to mimic many characteristics of organizational authority and cooperation without requiring a simple hierarchy.</p>
+</blockquote>
+<ul>
+<li>Over the past few years, QV and QF have been used here and there, and we thought it would be a good idea to use them in the management of public goods. That’s why we came up with this paper.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Traditional hierarchical management systems, the backbone of modern corporate and organizational struc- ture, are predicated on power dynamics that traditionally follow a top-down approach (Drucker, 1974). Employees within such systems often climb the ladder by demon- strating value through hard work and alignment of their actions with a culture articulated by those in authority, a practice sometimes pejoratively caricatured as ‘sucking up.’ Detractors note that such practices can suppress cre- ativity, reduce employee engagement, create bottlenecks in decision-making, and often result in the underutiliza- tion of talent at lower levels of the organization.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Traditional hierarchical management systems are the foundation of modern corporate and organizational structures and are based on power dynamics that traditionally follow a top-down approach (Drucker, 1974). Employees within such systems generally climb the hierarchy by aligning their behavior with the culture expressed by those in power and demonstrating value through their labor. This is sometimes derided as “sycophancy.” Critics point out that such practices stifle creativity, reduce employee engagement, create <a href="./bottlenecks-in-decision-making" class="internal alias" data-slug="bottlenecks-in-decision-making">bottlenecks in decision-making</a>, and often lead to <a href="./underutilization-of-talent" class="internal alias" data-slug="underutilization-of-talent">underutilization of talent</a> at lower levels of the organization.</p>
+</blockquote>
+<ul>
+<li><a href="./top-down-approach" class="internal alias" data-slug="top-down-approach">top-down approach</a> /  <a href="./conveying-the-will-of-the-governing-to-the-governed" class="internal alias" data-slug="conveying-the-will-of-the-governing-to-the-governed">conveying the will of the governing to the governed</a></li>
+<li>By feeling that they will be negatively evaluated if they go against their supervisor’s opinion, subordinates will focus only on satisfying what their supervisor is demanding and will not offer “new things” that may cause conflicts.
+<ul>
+<li>This is “<a href="./talent-underutilized" class="internal alias" data-slug="talent-underutilized">talent underutilized</a>.”</li>
+<li>It causes a <a href="./bottleneck" class="internal" data-slug="bottleneck">bottleneck</a> whereby the supervisor’s competence determines the organization’s competence.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>At the other end of the spectrum, the absence of struc- tured management has its pitfalls, such as the ‘tyranny of structurelessness,’ where the lack of clear roles and re- sponsibilities can lead to chaos, inefficiency, and the emer- gence of informal and often unaccountable power struc- tures (Friedman, 2007). Striking a balance between overly rigid hierarchies and a complete lack of structure has been a complex endeavor. Several innovative manage- ment approaches have been proposed and widely imple- mented, such as flat organizations that minimize hierar- chical levels (Laloux, 2014), holacracy which distributes decision-making through overlapping teams (Robertson, 2015), and sociocracy which emphasizes consensus in gov- ernance (Buck and Endenburg, 2012). Each of these mod- els seeks to address the limitations of traditional hierarchy by promoting a more egalitarian and adaptive approach (Rothschild and Whitt, 1986). None, however, has the mechanistic clarity of either markets or hierarchies, ar- guably undermining their capacity to avoid the challenges Freeman highlights. We aim to harness advances in plural mechanism design to fill this lacuna.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>On the other hand, the lack of structured management also has its problems. For example, there is a situation of “tyranny without structure,” where the lack of clear roles and responsibilities leads to the emergence of informal power structures that are confusing, inefficient, and often irresponsible (Friedman, 2007). Striking a balance between overly rigid hierarchies and a total lack of structure is a complex challenge. Several innovative management approaches have been proposed and widely implemented. Examples include flat organizations that minimize hierarchical levels (Lalou, 2014), holacracy that distributes decision-making through overlapping teams (Robertson, 2015), and sociocracy that emphasizes consensus in governance (Buck and Endenburg, 2012). These models seek to address the limitations of traditional hierarchies by promoting a more egalitarian and adaptive approach (Rothschild and Witt, 1986). However, none of these approaches have a clear mechanism, such as markets or hierarchies, and their ability to avoid the challenges highlighted by Freeman is questionable. We seek to fill this void by leveraging advances in multi-mechanism design.
+- A lot has been said about this in <a href="./teal-organization" class="internal alias" data-slug="teal-organization">teal organization</a>.</p>
+</blockquote>
+<ul>
+<li>Cybozu is also exploring areas of practical
+<ul>
+<li><a href="https://cybozushiki.cybozu.co.jp/articles/m005343.html" class="external">Cybozu’s development headquarters tried to eliminate managers “If you can’t do it without them, just make them again” | Cybozu Style<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>There is no clearly defined “mechanism” to make these various approaches work.
+<ul>
+<li>Maybe it’s just the ability of individuals with strong community management skills to make it work?
+<ul>
+<li>Can’t we create a structure that makes it work by <a href="./mechanism-design" class="internal alias" data-slug="mechanism-design">mechanism design</a><code>? This is the approach of this research</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>In the proposed model, management credits serve as a dynamic ledger of contribution and influence. Internal, non-financial credits are initially assigned based on role or past contributions and are subsequently earned through direct contributions and triage. The expenditure of these credits in setting priorities and approving contributions is governed by a quadratic cost function, steering towards optimal public goods outcomes by avoiding excessive dom- inance of those with greater authority. Prediction markets are used to encourage those with limited authority to act as “analysts”, helping authorities triage contributions, and dynamic evolution of priorities on unaddressed tasks act as a sort of dynamic auction-like bounty system to en- sure tasks are addressed in a timely and well-prioritized manner.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>In the proposed model, management credit serves as a dynamic ledger of contributions and influence. Internal non-financial credits are initially allocated based on role and past contributions, then earned through direct contributions and prioritization. The use of these credits is governed by a <a href="./quadratic-cost-function" class="internal alias" data-slug="quadratic-cost-function">quadratic cost function</a>, which guides them toward optimal public good outcomes by avoiding excessive domination by those with more authority. The <a href="./prediction-market" class="internal alias" data-slug="prediction-market">prediction market</a> is used to allow those with limited authority to act as “analysts” to help the authoritarians sort out contributions, and the dynamic evolution of priorities for outstanding tasks is managed by a dynamic <a href="./auction" class="internal" data-slug="auction">auction</a>, which acts as a sort of bounty system.</p>
+</blockquote>
+<ul>
+<li><a href="./quadratic-cost-function" class="internal alias" data-slug="quadratic-cost-function">quadratic cost function</a>.
+<ul>
+<li><a href="./prediction-market" class="internal alias" data-slug="prediction-market">prediction market</a></li>
+<li><a href="./auction" class="internal" data-slug="auction">auction</a></li>
+</ul>
+</li>
+<li>It combines elements such as</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>We thus aim to combine the flexibility and dynamism of flat structures, the clear and transparent incentives of markets, and the collective orientation and strategic di- rection provided by traditional management. While for concreteness we focus on a fully specified design that will be deployed in several near-term applications that we dis- cuss, we fully expect significant further improvement on these mechanisms as we discuss in the conclusion and thus aim to suggest as much a general structure for combining mechanisms to achieve this synthesis as the specific design we use to illustrate this structure.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Hence, we aim to combine the flexibility and dynamism of flat structures, the clear and transparent incentives of the market, and the collective direction and strategic orientation provided by traditional management. For the sake of concreteness, we will focus on a fully specified design deployed in the few near applications we discuss, but as we will discuss in the conclusion, we expect further significant improvements to these mechanisms, so that a general structure for the combination of mechanisms to achieve this synthesis as well as but also to propose specific designs to be used to illustrate this structure.</p>
+</blockquote>
+<ul>
+<li>Talking about the flexibility of not introducing a fixed hierarchy, the transparency of introducing governance credits, and a good deal of the traditional “organization working together to determine the direction in which it should go”.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>When used within a company, what would be a good currency to use to convert to contribution points to OSS?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Coming up later.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>The rest of this paper is organized as follows: Sec- tion 2 presents the <a href="./Plural-Management-Protocol" class="internal alias" data-slug="Plural-Management-Protocol">Plural Management Protocol</a>, detail- ing the high-level description of the system, roles within the ecosystem, and the processes of earning and spending management credits. It goes on to discuss the practical ap- plication of the Plural Management system in the context of open-source software development, illustrating how it can help address long-standing problems of management in open-source projects as they scale. Section 3 elabo- rates on this to provide a more detailed technical version of the protocol suitable for implementation. In Section 4, we provide a detailed analysis of the protocol properties, examining the voting and prediction behaviors and the optimal parameter choices within the system. Lastly, Sec- tion 5 examines some implications of such a protocol and highlights the open questions and future work it presents.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>The remainder of this paper is organized as follows: in Section 2, we introduce the Prural Management Protocol and provide an overview of the system, its role within the ecosystem, and detail the process of earning and consuming management credits. In addition, it discusses practical applications of the Prural Management System in the context of open source software development and shows how it addresses longstanding management issues of open source projects when scaling up. Section 3 details a more detailed technical version of the protocol suitable for implementation. Section 4 provides a detailed analysis of the protocol’s properties and examines voting and predictive behavior in the system, as well as optimal parameter selection. Finally, Section 5 examines some implications of such a protocol and highlights the outstanding issues it presents and future work.</p>
+</blockquote>
+<ul>
+<li>I don’t have time, and I think it’s a good idea to skip 4 this time.</li>
+</ul>
+</li>
+</ul>
+<h1 id="2-plural-management-protocol">2 Plural Management Protocol<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-plural-management-protocol" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>
+<p><img src="https://gyazo.com/86d0c416d328bda9e40d30ec804828d8/thumb/1000" alt="image"/></p>
+</li>
+<li>
+<blockquote>
+<p>There are three roles in the ecosystem: workers, who make direct contributions to an organization; managers, who determine what work is important and whether a piece of work is of acceptable quality; and administrators, who can determine system properties to sway behavior. Im- portantly, an individual can act in multiple of these roles at any given time and in relation to multiple other indi- viduals; no role is fixed and members of an organization are encouraged to act in a diversity of roles with respect to a diversity of other individuals.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>There are three roles within the ecosystem: the worker, who makes a direct contribution to the organization; the manager, who determines what work is important and acceptable quality of work; and the admins, who can determine system characteristics to guide behavior. Importantly, each individual can play more than one of these roles at any given time and can act in relation to several other individuals. Roles are not fixed and members of the organization are encouraged to act in a variety of roles with respect to a variety of other individuals.</p>
+</blockquote>
+<ul>
+<li>Roles are not fixed.</li>
+<li><img src="https://gyazo.com/505549b07145e90fc3ae6e94b8e9f078/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Instead of a set of hierarchical roles assigned to an in- dividual, each person has a set of management credits for this organization. These credits allow an individual to ex- ercise authority in decision-making and be recognized for contributions made. We walk through each step where credits are gained and spent. These credits are specific only to a particular organization, project, or community and have no value outside of it; in this sense they are similar to a “community” or “artificial” currency (Blanc, 2018). As we discuss later, these credits cannot be traded externally; they serve only to control the flow of dynamic management potential.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Rather than assigning a set of hierarchical roles to individuals, each person has a set of management credits for this organization. These credits allow individuals to exercise authority in decision making and to be recognized for their contributions. We detail each step in which credits are earned and used. These credits are unique to a particular organization, project, or community and have no value outside of it. In this sense, they resemble “community” or “artificial” currency (Blanc, 2018). As discussed below, these credits are not traded externally and are only used to control the flow of dynamic management potentials.</p>
+</blockquote>
+<ul>
+<li>It’s not a token that is intended to be circulated outside the organization, and so it’s not based on financial incentives, such as paying part of your salary in virtual currency or collecting appreciation tokens from your colleagues to increase your bonus.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>This is the answer to [“<img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>When used within a company, what should we use as a currency to convert to OSS contribution points?</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Collect appreciation tokens from colleagues?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Does it feel the same as earning likes?</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>If you’re imagining “appreciation tokens” as something that springs up infinitely at zero cost, like “nice,” that’s not what I’m talking about. You only have a limited amount of tokens.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> It’s going to be quite a challenge to maintain a system that prevents transactions between money and tokens: …
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/> It will come up later, but the tokens are not transferable between individuals.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> So, I created a fictitious task: …
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/> It’s possible that someone other than the trading partner will pull the pull, and even if the trading partner pulls it, it’s likely to be rejected at the (3) contribution voting stage.</li>
+<li><img src="https://gyazo.com/34dbf5a296e61126d6d892bce2b3e766/thumb/1000" alt="image"/>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> The QV will greatly reduce the amount.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I don’t know, I think the tokens you get are before taking the square root. Otherwise, the tokens would be decreasing at a great rate.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> I don’t think you can fill all the RMT holes.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> Even if I can’t actually give you the points, I could tell you to donate to 00 on my behalf too.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/> Collusion is an issue that will come up later, but there are studies such as <a href="./Beyond-Collusion-Resistance:-Leveraging-Social-Information-for-Plural-Funding-and-Voting" class="internal alias" data-slug="Beyond-Collusion-Resistance:-Leveraging-Social-Information-for-Plural-Funding-and-Voting">Beyond Collusion Resistance: Leveraging Social Information for Plural Funding and Voting</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>If the system is that if you process a task, you get the credit that was voted for the task, where does the first source of funds come from?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/> It could spring up over time, or the person who started the project could have it and distribute it to those who came later.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> I wonder if the client of the issue makes the determination that the issue has been resolved.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/> (3) done by Voting</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Consider an organization that has an issue board where all major tasks or initiatives to be completed are listed (similar to open-source issue trackers as in subsection 2.1). Individuals with management credits can set priorities for an organization by assigning a priority value for an is- sue using credits. The priority on an issue is not simply the sum of the credits assigned to it, but instead may be matched by a matching pool (provided by individuals in their role as administrators) consistent with practical ap- plications of Quadratic Funding, as we will discuss further below.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Consider an organization with an issue board listing all major tasks and initiatives (similar to the open source issue tracker in subsection 2.1). Individuals with administrative credits can set organizational priorities by assigning priorities to issues using credits. The total of credits assigned to an issue may be matched by a matching pool by provided by the individual serving as administrator, matching the actual secondary funding application, rather than the total of credits assigned to the issue.</p>
+</blockquote>
+<ul>
+<li>In a crude way, individuals who have a lot of credits can donate to increase the incentive for others to participate.
+<ul>
+<li>Because we’ve been talking about use cases in the enterprise so far, “Incentives to participate?” that might be an “incentive?</li>
+<li>For example, if we consider a situation where engineers are trying to solve a problem that a non-engineering department in the company is having that could be solved by writing a little JS, an individual who thinks “it’s good that such an activity is taking place” can put his/her token into the matching pool. They can put their tokens into the matching pool.</li>
+<li>This would increase the payment of tokens to the engineers who actually write the code and solve the problem, which would be an incentive for more participation.</li>
+<li>If engineers participate more, there will be more incentive on the part of issue owners to register their issues on the issue board.</li>
+<li>The resulting token donation of “I like that this kind of activity is taking place” encourages other members to participate in the activity itself.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>An individual may perform the role of a worker and provide a solution to an issue in the form of a contri- bution. If this contribution is accepted, the worker will receive credits proportional to the total number of cred- its assigned in the priority setting. In essence, from a worker’s perspective, the ‘bounty’ attached to an issue may go up over time similar to a reverse Dutch auction, until a sufficient reward is offered to compensate the cost to the worker of addressing the issue, though there is not a necessary guarantee that the reward will increase over time.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>An individual can play the role of a worker and provide a solution to a problem in the form of a contribution. If this contribution is accepted, the worker receives credit in proportion to the total number of credits assigned in the priority setting. Essentially, from the worker’s perspective, there is no guarantee that the reward will increase over time, although the “reward” associated with the problem may increase over time, as in a reverse Dutch auction, until sufficient compensation is provided to compensate the worker for the cost of addressing the problem.</p>
+</blockquote>
+<ul>
+<li>There are no mathematical guarantees, but the atmosphere seems to be that issues that “no one solved, but this one needs solving” gradually attract additional credits, and the workers get more credits when they do it.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Once a contribution has been made, it goes to a con- tribution vote. In this vote individuals can expend man- agement credits to vote if the contribution should be ap- proved or not. If the vote passes, the worker is rewarded; if not, the issue returns to the board (wherein managers can increase the priority to provide a higher bounty). This vote is done quadratically, this ensures a balanced impact between individuals with varying credit amounts.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>When a contribution is made, it proceeds to a contribution vote. In this vote, individuals can spend management credits to vote on whether or not their contribution should be approved. If the vote passes, the worker is rewarded. If not, the issue goes back to the board (the administrator can raise the priority and offer a higher reward). The vote is secondary, which ensures a balanced impact among individuals with varying amounts of credit.</p>
+</blockquote>
+<ul>
+<li>After a contribution is made, it must be reviewed to ensure that it is appropriate as a contribution
+<ul>
+<li>It is easy to imagine with OSS on Git</li>
+<li>Need to look at the pull request and decide whether to merge or not, rather than allowing commits to be made out of the blue.</li>
+<li>Can I vote for that? I’m sure you’ll be thinking, “I’m not sure,” but I’ll explain a lot more in the next section, so let’s move on here.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>This is the answer to [”<img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> I wonder if the issue requester makes the determination that the issue has been resolved.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>In addition to casting a vote, each individual can choose to ‘bet’ the number of credits they used to vote that their prediction of acceptance or rejection will suc- ceed. If correct, this bet will pay out double the credits used to vote. This vote prediction allows individuals to be rewarded for correctly anticipating the desires of the full community. We introduce a prediction subsidy parameter that can be set by administrators for each contribution vote that reduces the cost of voting and increases the re- ward from betting. By default, voting and then betting on this is strictly unprofitable. However, in many cases, ad- ministrators may wish to increase the subsidy to allow op- portunities for individuals who can anticipate community needs to gain authority. For example, providing a subsidy can incent individuals with fewer management credits to participate in votes that would otherwise be costly, which means that a larger crowd of individuals is performing due diligence on contributions. If many contributions are being made in a large organization, this is akin to reward- ing individuals for administrative processing that “triages” contributions and thus surfaces important divisive votes to managers with more authority.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>In this model, in addition to voting, an individual may choose to “wager” the number of credits used to vote on whether his or her acceptance or rejection prediction will be successful. If the prediction is correct, this wager yields a payout of twice the credits used to vote. This voting prediction allows individuals to be rewarded for accurately predicting the desires of the community as a whole. We introduce a prediction aid parameter that is set for each contributed vote by the administrator to reduce the cost of voting and increase the reward from the wager. By default, voting and wagering is strictly non-profitable. However, in many cases, administrators may wish to increase subsidies to provide an opportunity to empower individuals who can predict community needs. For example, providing subsidies can encourage individuals with less administrative credit to participate in voting that would otherwise be costly. This means that more people are paying appropriate attention to contributions, and if many contributions are made within a larger organization, this can be seen as a reward for individuals for administrative processing to “screen contributions” and highlight critical juncture votes to more empowered administrators.</p>
+</blockquote>
+<ul>
+<li>In other words, by the mechanism of the prediction market, if, for example, “a project that one committer X is making a decision to accept or not” is transferred to this system, the result will be the same because others will vote the same as X’s evaluation if they think that X’s decision is reliable.</li>
+<li>Personally, I feel that there would be an incentive to delay my vote until X votes.
+<ul>
+<li>When X was making decisions alone, the entire burden of decision-making was always concentrated on X.</li>
+<li>When there is no longer a guarantee that X will always rate, will those with strong opinions vote to rate first?
+<ul>
+<li>If no one votes for me, I’ll just cast my own cheap vote, because it’s a convenient conclusion by me.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Put together, these two systems of quadratic agenda setting and hybrid voting-prediction can create a dynamic system of management, where contributions are rewarded in proportion to their public good demand when the broader organization collectively approves of them and individuals who have developed a robust understanding or model of the community preferences are rewarded and empowered for supporting administrative processes.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>The combination of a hybrid system of secondary agenda setting and voting/forecasting can create a dynamic management system in which contributions are rewarded according to demand for public goods, when the broader organization collectively endorses them, and when individuals who have developed a robust understanding or model of community preferences are rewarded and empowered to support the management process can create a dynamic management system in which individuals are rewarded and empowered for supporting the management process.</p>
+</blockquote>
+<ul>
+<li>Well, I’m sure it’s going to be dynamic.</li>
+<li>Not sure if it will get better.</li>
+</ul>
+</li>
+</ul>
+<h1 id="21-an-application-to-open-source">2.1 An application to open-source<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#21-an-application-to-open-source" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>Here’s the story of the open source project</li>
+<li>
+<blockquote>
+<p>Although the plural management protocol can be applied across a wide range of organizations and communities, it has particular relevance to the world of open-source soft- ware and other spaces where peer production is common (Benkler, 2017). Far from being a niche industry, git- based open-source powers over 93% of all modern soft- ware applications (Daigle, 2023), and already operates via community models of governance, where contributions in the form of code are assessed for quality and relevance before being merged into existing work. Despite these im- portant contributions, open-source communities are well- known for their governance and management challenges, documented most famously by Eghbal (2020) and includ- ing the following:</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Prural management protocols can be applied to a wide range of organizations and communities, but are particularly relevant in areas where open source software and peer production are common (Benkler, 2017). Open source is far from a niche industry, with git-based open source supporting over 93% of modern software applications (Daigle, 2023). It also operates through a community governance model, where contributions in the form of code are evaluated based on quality and relevance and may be integrated into existing work. Despite these important contributions, the open source community is well known for governance and management challenges, as most famously documented by Egal (2020). These include:</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<ol>
+<li>While the contributions of open-source contributors are recorded, recognition is hard to track/trace be- cause contributions are not clearly valued in relation to higher-level ob jectives. This reduces motivation and sustainability.</li>
+</ol>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Contributions of open source contributors are recorded, but recognition is difficult to track and trace because contributions are not clearly valued in relation to higher-order objectives. This reduces motivation and sustainability.</p>
+</blockquote>
+<ul>
+<li>That even if there is a commit log.</li>
+<li>If you commit a lot, pull requests, write issues, etc., it doesn’t mean you’re contributing.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>That goes for work in general. No matter how much you collect about what you’ve done, you don’t really know “So, was it profitable for the company?”</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<ol start="2">
+<li>While contributions to open source projects are gen- erally open and participatory, management (often called “maintenance”) of them usually falls in the hands of a “benevolent dictator for life”, contradict- ing the underlying democratic values and leading those who dissent to “fork” projects, fragmenting ef- forts.</li>
+</ol>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Contributions to open source projects are generally open and participatory, but their “management” (usually referred to as “benevolent dictatorship for life”) is often in the hands of a few, contrary to underlying democratic values. Those who oppose this “fork” the project and divide the effort.</p>
+</blockquote>
+<ul>
+<li>
+<p>I’m talking about the “democratic values” that say everyone should participate in open source projects, and anyone can make a pull request, but eventually that management will be a dictatorship (or oligarchy) by a “[benevolent dictator.</p>
+<ul>
+<li>
+<p><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> Yes, open source is made possible by benevolent dictatorships.</p>
+</li>
+<li>
+<p>Whether the results it produces are bad or not is beside the point. Personally, I can’t dismiss the feeling that “In the OSS, dictatorships by competent individuals have performed well, right? Maybe dictatorships by competent individuals are the best way to govern after all.”</p>
+</li>
+<li>
+<p>Of course, the fact that “there have been a number of OSSs that have done well by dictatorships” does not logically negate the “possibility of better governance by democratic mechanisms”</p>
+</li>
+<li>
+<p>Also, it could vary from phase to phase, one dictator should write the barrage of code in the early stages of the project, and then democratic mechanisms could be beneficial when that person is less intense.</p>
+</li>
+<li>
+<p><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>When you say “new democracy,” the image is vague, but when you say “new open source management method,” I think it becomes clearer.</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/> One aspect of the current democracy that makes it difficult to understand is that it is an indirect democracy in which people “elect people who think on their own behalf” for “things like national politics, where the organization is big and the issues are not close at hand. With open source or neighborhood associations, the issues are closer to home.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Oh, you mean, let’s do neighborhood associations in an open-source way! That’s something easy to understand.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Conversely, is there theoretically an indirect democratic management of the OSS?</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/> That’s what happens when you say, “We’re going to elect a committer.”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>When dissatisfied with dictatorial rule, you can fork</p>
+<ul>
+<li>The ability to fork is an advantage of OSS.</li>
+<li>On the other hand, forking disperses people’s efforts.</li>
+<li>(I feel that if there are different projects with different governing policies, it is inevitable that people’s efforts will be spread out.)</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> Now if it’s funny, fork it over, and the previous one becomes unpopular.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Yes, <a href="./If-you-can-fork,-you-don't-need-politics." class="internal alias" data-slug="If-you-can-fork,-you-don't-need-politics.">If you can fork, you don’t need politics.</a>, <a href="./All-forks-are-allowed-to-exist-and-it-is-up-to-the-surrounding-community-to-decide-which-forks-they-are-interested-in" class="internal alias" data-slug="All-forks-are-allowed-to-exist-and-it-is-up-to-the-surrounding-community-to-decide-which-forks-they-are-interested-in">All forks are allowed to exist and it is up to the surrounding community to decide which forks they are interested in</a>, <a href="./No-one-is-forced-to" class="internal alias" data-slug="No-one-is-forced-to">No one is forced to</a>, [If you can fork, you don’t need politics.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> I think the same mechanism is applicable to Wikipedia.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> The OSS is a must-have that it’s forkable. If it’s a town hall meeting or national government, does that mean we’re going to revolutionize it? Can’t we compete more peacefully?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>If it is a national government, it would be like a revolution, but if we talk about how to weight Issues at the local government level, it is within the discretion of each municipality, so each municipality can try it out, and if direct democracy is introduced in a city with a mayor who is willing to take on new challenges, and if people say, “This city is nice,” then the population will increase. Inflow</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> I see, local government is being competed there, he said.</li>
+</ul>
+</li>
+<li>Postscript: <a href="./Forking-the-social-system" class="internal alias" data-slug="Forking-the-social-system">Forking the social system</a> by Audrey Tang
+<ul>
+<li>Actually forking with <a href="./g0v" class="internal" data-slug="g0v">g0v</a>, etc.</li>
+<li>Also <a href="./Democracy-needs-to-evolve-into-a-real-time-system" class="internal alias" data-slug="Democracy-needs-to-evolve-into-a-real-time-system">Democracy needs to evolve into a real-time system</a> <a href="https://www.vodafone-institut.de/aiandi/democracy-needs-to-evolve-into-a-real-time-system/" class="external">“Democracy needs to evolve into a real-time system” - Vodafone Institute<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> also says that “social systems built on an Ethereum foundation are easier to fork because the data and code are publicly available. The Ethereum infrastructure makes it easier to fork, and the choice of which fork to fork can be legitimated after the fact” (<a href="./social-inovation-legitimates-governance" class="internal alias" data-slug="social-inovation-legitimates-governance">social inovation legitimates governance</a>).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<ol start="3">
+<li>Worse, the inability to leverage distributed participation to assist in management makes projects large burdens on maintainers, who begin projects with high motivation but are forced to maintain their quality for years after, forcing them to triage increasing volumes of contributions of dubious quality with little community support.</li>
+</ol>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Worse yet, projects place a heavy burden on maintainers because they are unable to leverage distributed participation for management. They start projects with high initial motivation, but are then forced to maintain quality for years to come. This requires them to deal with an increasing number of contributions of questionable quality with little community support.</p>
+</blockquote>
+<ul>
+<li>Maintenance hassle problem</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<ol start="4">
+<li>Especially as they grow and are more broadly used, potential directions for improvement of a project grow exponentially and there is typically little clar- ity on what improvements are most needed by users, leading to projects that have too many features and insufficient usability.</li>
+</ol>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>As projects grow, especially as they become more widely used, the potential directions for improvement increase exponentially, and there is usually little clarity for users as to what improvements are most needed. This results in projects with many features and inadequate usability.</p>
+</blockquote>
+<ul>
+<li>As the name recognition grows, people will start saying “this feature is missing” or “this feature should be added”.</li>
+<li>And since it’s easier to contribute to adding features in the branches and leaves, if you’re not careful, those pull requests will keep coming.
+<ul>
+<li>The burden of reviewing it and making decisions on whether it should be merged or not is concentrated on a few committers, ugh!</li>
+<li>On the other hand, if you don’t review the pull request, the person who sent the pull request will feel “neglected after having contributed” and will be less motivated.</li>
+</ul>
+</li>
+<li>If you adopt more and more, it becomes like <a href="./a-TV-remote-control-with-a-lot-of-buttons" class="internal alias" data-slug="a-TV-remote-control-with-a-lot-of-buttons">a TV remote control with a lot of buttons</a>, a messy software with a lot of bells and whistles and subtle perfection options.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>By offering greater clarity and empowerment to con- tributors, plural management can help founders to slowly transition management authority to those who prove their merit by contributing code, diligence, or support in a way that is measurably valuable to the community in question. Since the model is lightweight, iterative, and self-directed, it is well suited for commonly used agile environments and tools of the kinds often used by open-source communities. Consider the most popular open-source hosting plat- form GitHub. For any given project there is a reposi- tory of code, set up by an administrator or maintainer, within which any contributor is listed as a member. At- tached to this repository is an Issues section (extremely similar to our described issue board, just without any ex- plicit priorities assigned numerically). Anyone on GitHub can create a contribution on this board in the form of a ‘pull request’ (shorted to PR) that aims to address one or more outstanding issues. After the pull request is dis- cussed in a comment section, the community can decide whether to accept or reject it, and in turn, maintainers can add or ‘merge’ the contribution into the repository. Using Plural Management, with minimal changes to workflows, any maintainer or administrator could set priority tags on GitHub, associate a price in credits, and in turn drive more contributions to their repository as a first step in eventually improving their bus factor from the low average of two (Metabase, 2022).</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Prural management provides greater clarity and authority to contributors, allowing founders to help gradually shift management authority to those who have proven their track record by contributing code, being attentive, or supporting in ways that are measurable and valuable to the community. Because this model is lightweight, iterative, and self-directed, it is highly suited to the agile environments and tools often used by the open source community. Consider GitHub, the most popular open source hosting platform. Any given project has a repository of code set up by an administrator or maintainer that lists any contributors as members. This repository is accompanied by an Issues section (very similar to the Issues board we described, but without the clearly assigned numerical priority), and anyone on GitHub can create a contribution to this board in the form of a ‘pull request’ (abbreviated as PR ), anyone on GitHub can create a contribution in the form of a ‘pull request’ (abbreviated as PR) to this board, which is intended to address one or more outstanding issues. After the pull request is discussed in the comments section, the community can decide to accept or reject it, and the maintainer can then add or ‘merge’ the contribution into the repository. With minimal changes to the workflow using Plural Management, any maintainer or administrator can set priority tags on GitHub, associate prices with credits, increase contributions to the repository, and ultimately increase the low bus factor of an average of 2 (Metabase, 2022 ), a first step toward improving the</p>
+</blockquote>
+<ul>
+<li>Github Issues are not prioritized, so it’s hard to know which ones are important.
+<ul>
+<li>Labels can be used to express importance, but if anyone could add labels, everyone would add “Important! to the issues they write, it will stop working.</li>
+<li>So, do a small number of “maintainers” review and properly prioritize all the issues that are coming in from all over the place with no permissions?
+<ul>
+<li>Problem of concentration of workload</li>
+<li>The Problem of Concentration of Authority</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>People who can be entrusted with a safe and secure environment are a scarce resource, and people have family obligations and other reasons why they may suddenly become inactive.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>It’s worth noting for the general case that, while contributions are typically code, anything could be made a PR. For example, if someone were to be appointed to the social media manager for a project, an issue stating the need for a social media manager could be made, and when someone is to be appointed, a simple PR adding the name of the person to the community notes could be made by the new social media manager. If the community votes to approve this new role, the social media manager will now be rewarded with additional management credits reflect- ing their new role.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>As a general case, it is worth noting that contributions are usually code, but anything can be a PR. For example, if someone is appointed social media manager for a project, you can create an issue indicating that a social media manager is needed, and once appointed, the new social media manager can create a simple PR that adds the person’s name to the community notes The community will approve this new role. If the community approves this new role, the social media manager will be rewarded with additional administrative credit to reflect their new role.</p>
+</blockquote>
+<ul>
+<li>I’ll pull anything.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="22-a-succinct-example-of-use">2.2 A succinct example of use<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#22-a-succinct-example-of-use" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>concrete example</li>
+<li>
+<blockquote>
+<p>A tangible example of the use of plural management be- yond the usual open-source context is the plurality book, an open, git-based experiment around collective author- ship. Initiated by E. Glen Weyl and Audrey Tang, 50 members around the world have contributed to the book, Plurality: The Future of Collaborative Technology and Democracy without any expectation of reward. Using the plural management protocol, this project seeks to tran- sition ownership over future improvements to the book incrementally, including updates to content, translations, and further links to relevant materials. Over time, those who have contributed most meaningfully will therefore help guide not just the book but the field of research itself.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>A specific example of the use of Plurality Management that goes beyond the usual open source context is the Plurality Book. This is an open, Git-based experiment in collective authorship, initiated by E. Glenn Weil and Audrey Tan. Fifty members from around the world are contributing to the book, Plurality: The Future of Collaborative Technology and Democracy, with no expectation of compensation. Using the Plurality Management Protocol, the project aims to gradually transition ownership of future improvements to the book, content updates, translations, and further links to related materials. Over time, it is hoped that those who have made the most meaningful contributions will guide not only the book, but the research field itself.</p>
+</blockquote>
+<ul>
+<li>To learn more about the Plurality Book, see [/plurality-japanese/read first</li>
+<li>I’m active in wanting to be a part of this, and I’m allowed to participate.
+<ul>
+<li>We haven’t earned credit yet, so we haven’t been able to participate in the decision-making process.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Consider an undergraduate student of political econ- omy at a lesser-known university. Seeing a typo, she opens up an issue and submits a PR. This action does not net many credits during voting, but the small number she is given allows her to begin participating in priority setting. Motivated, she continues searching for opportuni- ties to contribute and recognizes that an outstanding issue around additional content for a chapter could benefit from her thesis work. She submits a PR on the board to add a number of key references that get cited in the book and is rewarded with significant credits.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Consider, for example, a political economy undergraduate at a little-known university. She finds a typo, raises an issue, and submits a PR. This action does not earn her much credit during the vote, but the few credits she is given allow her to participate in priority setting. She continues to look for opportunities to contribute with motivation and recognizes that an outstanding issue regarding additional content for a chapter would benefit from her dissertation work. She submits a PR to the board to add some important references that are cited in the book and is rewarded with substantial credit.</p>
+</blockquote>
+<ul>
+<li>It would be nice if The Plurality Book could provide examples from Japan in a way that would be beneficial to people around the world without being too self-serving.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Given the existing challenges of inclusion within the post-secondary context, without the permissionless and community-judged power structure afforded by plural management such a student may never have had the op- portunity to participate in such work (Gvozdanović and Maes, 2018).</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Given the existing inclusion challenges in later education contexts, such students may never have had the opportunity to participate in such work without the permission-free, community-determined power structure provided by prurient management (Gvozdanovic and Maes, 2018 ).</p>
+</blockquote>
+<ul>
+<li>It is difficult to create a consistent story, but it is relatively easy to contribute examples of specific facts to the story</li>
+</ul>
+</li>
+</ul>
+<h1 id="3-model-details">3 Model details<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-model-details" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>
+<blockquote>
+<p>The plural management protocol describes two key ac- tivities: a prioritization subsystem and an approval sub- system. These subsystems exist jointly and constitute a broader organizational structure, where individuals earn management credits that can be used to perform actions. These credits can be initially distributed when an organi- zation is established and are naturally distributed to new members as they participate (in effect lessening the con- trol of founders over time). The credit can be stored in any simple ledger that can be amended over time when interacting with the protocol.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>The Prural Management Protocol describes two main key activities: the Prioritization Subsystem and the Approval Subsystem. These subsystems coexist and constitute the broader organizational structure. Within this structure individuals earn management credits and can use these credits to carry out actions. These credits are distributed for the first time when the organization is established and are distributed naturally to new members who join (in effect reducing the founder’s control over time). Credits can be stored in any simple ledger that can be modified over time by interacting with the protocol.</p>
+</blockquote>
+<ul>
+<li>That the ledger doesn’t have to be a blockchain at all.
+<ul>
+<li>When you’re using Github to manage source code and issues, the information is aggregated, it doesn’t make sense to just decentralize the management system.</li>
+<li>Of course, some people are trying to do it on-chain and decentralized, including management of issues, but the problem this paper is trying to solve is not where issue information is centralized in a specific service.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>There are many additional considerations surrounding the sharing, control, and visibility of these management credits. For example, should an organization dynamically run on management credits to make the score of every member public (in essence creating a ranking of implicit authority)? Should individuals be able to directly send management credits to another member (this would ease the setup challenges for new members and allow old mem- bers to gracefully leave, but could also reduce meritocracy and result in off-the-books gambling or scheming)? We re- turn to these open questions in our conclusion.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>There are many additional considerations regarding the sharing, control, and visibility of these management credits. For example, should the organization operate dynamically with management credits and make all member scores public (essentially creating an implicit authority ranking)? Should individuals be able to send administrative credit directly to other members (which would alleviate the challenge of setting up new members and allow old members to leave gracefully, but would also reduce meritocracy and the potential for off-the-books betting and trickery)? We will address these outstanding issues again in our conclusion</p>
+</blockquote>
+<ul>
+<li><a href="./Meritocracy" class="internal" data-slug="Meritocracy">Meritocracy</a> decreases and may be an off-the-books ploy, which means, in essence, that a “sell me management credits for real money” negotiation will take place.
+<ul>
+<li>If money can buy credit, then those who can afford more money can gain the power to control it.</li>
+<li>And the money doesn’t go into the project’s public pool, but into the pockets of individuals.</li>
+<li>On the other hand, if an individual contributes and gets management credit, but there’s no way to cash it in, only those who can afford to live can participate.</li>
+<li>I’m sure there will be more discussion later, so I’ll move on.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="31-prioritization">3.1 Prioritization<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#31-prioritization" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li><img src="https://gyazo.com/7f55cdbd7e90c02ee08e025888d5d6ad/thumb/1000" alt="image"/>
+<ul>
+<li>All issues are displayed on the board and members can prioritize issues by spending management credits. (How <a href="./Quadratic-Funding" class="internal alias" data-slug="Quadratic-Funding">Quadratic Funding</a> works)</li>
+<li>If each member consumes <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, the priority is</li>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.4057em;vertical-align:-0.35em;"></span><span class="minner"><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.162em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2997em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8517em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.8117em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1883em;"><span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.0557em;"><span style="top:-3.3046em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>
+<ul>
+<li>becomes</li>
+</ul>
+</li>
+<li>Large credit holders can add matching funds.</li>
+<li>If a contribution is made to address an issue, voting and matching credits to the priority are frozen and allocated to the contributor if the contribution vote passes.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>The first subsystem to consider is the priority-setting step via the issue board. Every major task or strategic challenge should be assigned an issue on the board, simi- lar to how most open-source projects operate in GitHub.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>The first subsystem to consider is the priority-setting step through the issue board. Each major task or strategic issue should be assigned as an issue on the board, as most open source projects on GitHub do.</p>
+</blockquote>
+</li>
+<li>A common Issues kind of thing.</li>
+<li>
+<blockquote>
+<p>Each member can spend a portion of their management credits on priority setting. This is done dynamically and members can add or withdraw credits from each issue at any time. For each member who sets a priority to an issue by assigning Pi credits, we sum over the square roots of their priority and take the total square to find the total issue priority. Hence, the quadratic priority for issue j is (equation) . This is exactly akin to quadratic funding, from which we further draw on the idea of a matching fund. A matching fund is generated from credits used in voting or further increased by a large man- agement credit holder (such as an early founding member) who may choose to assign funds as a matching pool to dis- tribute to new contributors as incentives to join.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Each member may use a portion of his or her administrative credit for priority setting. This is done dynamically, and members may add or withdraw credits for each issue at any time. When each member sets priorities for issues by assigning Pi credits, the square roots of their priorities are summed, and the total priority of the issues is found by taking the square of the sum. Thus, the secondary priority of problem j is (equation). This is perfectly analogous to secondary funding, from which we further draw the idea of matching funds. Matching funds may be generated from credits used in voting or may be increased by large administrative credit holders (e.g., early founding members) choosing to allocate as a matching pool as an incentive for new contributors to participate.</p>
+</blockquote>
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord mathnormal">Q</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.604em;vertical-align:-0.95em;"></span><span class="minner"><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.162em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2997em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3179em;"><span class="svg-align" style="top:-3.8em;"><span class="pstrut" style="height:3.8em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9426em;"><span style="top:-2.4231em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span><span style="top:-3.1809em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2769em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.2779em;"><span class="pstrut" style="height:3.8em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.88em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.88em" viewBox="0 0 400000 1944" preserveAspectRatio="xMinYMin slice"><path d="M983 90
+l0 -0
+c4,-6.7,10,-10,18,-10 H400000v40
+H1013.1s-83.4,268,-264.1,840c-180.7,572,-277,876.3,-289,913c-4.7,4.7,-12.7,7,-24,7
+s-12,0,-12,0c-1.3,-3.3,-3.7,-11.7,-7,-25c-35.3,-125.3,-106.7,-373.3,-214,-744
+c-10,12,-21,25,-33,39s-32,39,-32,39c-6,-5.3,-15,-14,-27,-26s25,-30,25,-30
+c26.7,-32.7,52,-63,76,-91s52,-60,52,-60s208,722,208,722
+c56,-175.3,126.3,-397.3,211,-666c84.7,-268.7,153.8,-488.2,207.5,-658.5
+c53.7,-170.3,84.5,-266.8,92.5,-289.5z
+M1001 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.5221em;"><span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.654em;"><span style="top:-3.9029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></li>
+<li>This is, well, <a href="./Quadratic-Funding" class="internal alias" data-slug="Quadratic-Funding">Quadratic Funding</a>.</li>
+<li>That’s where the concept of matching funds comes naturally.
+<ul>
+<li>You can pay credit for the whole, not for a specific issue, and as for the distribution of it, it is determined by other donations.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>In reality, a matching fund may not always have sufficient credits to fully subsidize the quadratic priority. To address this, the total contribution payout (CP) is adjusted proportionally to the matching fund2.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>In reality, matching funds do not always have sufficient credit to fully subsidize secondary priorities. To address this, the total contribution payment (CP) is adjusted proportionately to the matching funds.</p>
+</blockquote>
+<ul>
+<li>Footnotes with formulas, skip this time.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>When a contribution is made to address an issue, the payout should be frozen for that issue3. The contribution then goes to a vote as below. If the vote fails, the issue simply comes back to the board for other contributions to be suggested.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>If a contribution is made to address an issue, the payment for that issue should be frozen. The contribution is then voted on as follows. If the vote fails, the issue simply returns to the board and another contribution is proposed.</p>
+</blockquote>
+<ul>
+<li>Once the pull-rig comes in, it becomes inaccessible.</li>
+<li>Then the evaluation process runs.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> It would be interesting to be able to redo the voting! And even if you don’t finish voting, you can see what’s going on.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Only contributions addressing existing issues are re- warded. To receive a reward for an unsolicited contribu- tion, a contributor would need first to submit an issue and persuade the community it is worth addressing; given the quadratic nature of the matching, an individual adding an issue and contributing to it themselves can never be re- warded more than they contribute to the issue in credits. Thus an individual must persuade others of the value of their contribution in order to receive a net reward.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Only contributions that address an existing problem will be rewarded. To receive a reward for an unsolicited contribution, the contributor must first submit the issue and convince the community that it is worth addressing. Given the secondary nature of matching, an individual who adds an issue and contributes to it on his or her own will never be rewarded for more than a creditable contribution to the issue. Thus, the individual must receive a net reward for convincing others of the value of his or her contribution.</p>
+</blockquote>
+<ul>
+<li>You make it yourself, and then you say, “I need this!” and that just making a pull request doesn’t benefit you because you’re the one who pays for the reward credit.</li>
+<li>First, you need to make a suggestion, “I think this is the kind of contribution we need to make.” and then we need to get support from other people.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> Then there are those who decide it’s better not to publish while they’re making the pulllics on hand.</li>
+</ul>
+</li>
+</ul>
+<h1 id="32-approval">3.2 Approval<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#32-approval" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li><img src="https://gyazo.com/4c3bcfebd114bd03b72b4764af37b320/thumb/1000" alt="image"/>
+<ul>
+<li>
+<blockquote>
+<p>Voting on contributions is done where any member can vote for or against a strength v at a cost v^2.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>This is a standard single-issue secondary ballot.</p>
+</blockquote>
+<ul>
+<li>I’m saying it’s simple <a href="./Quadratic-Voting" class="internal alias" data-slug="Quadratic-Voting">Quadratic Voting</a>.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>The organization’s management may choose to allocate funds from the issue’s incentive fund to incentivize members to predict the likelihood of success of their contributions.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>This is the reward for correct forecasting and encourages small credit holders to understand the needs of the organization as a whole and conduct appropriate research into their contributions.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>The forecaster receives a 2v reward and the administrator can reduce the cost of voting relative to the forecast by setting the parameter K.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Once a contribution is made, it goes to a vote. Any member with management credits can vote, and in line with the quadratic voting approach, it will cost v2 credits for a vote of strength v. Any individual can vote for or against, where votes against can be treated at a negative value of v for the sake of determining the outcome. As with any quadratic vote, there should be an appropriate time to allow for the vote to occur and the verdict after this time is simply the sum of the votes. In the simple case, all of the funds put into the issue during priority setting go to the contributor. All the credits used by members during voting flow directly into the general matching fund for priority setting4 .</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>As contributions are made, they are put to a vote. Any member with administrative credits can vote, and in line with the secondary voting approach, a vote of strength v requires v^2 credits. Individuals can vote for or against, and negative votes are treated as a negative value v to determine the outcome. As with any secondary vote, there should be an appropriate amount of time between when the vote is taken and the result. After this time the decision is simply the sum of the votes. In the simplest case, all funds cast on an issue during priority setting go to the contributors. All credits used by members during voting go directly to the general matching funds for priority setting.</p>
+</blockquote>
+<ul>
+<li>Credits used for declarations of intent go into the matching pool.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>This act of simply voting is costly, meaning that mem- bers can spend earned trust to exert authority and influ- ence the direction of the organization or project. As a result, an early member of the community with few cred- its would find it proportionally quite costly to sway a vote relative to their means. This further means that members with few management credits have no incentive to do due diligence on contributions (often a significant workload) to determine their fit for the project.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>The mere act of voting is costly, allowing members to use the trust they have earned to exercise authority and influence the direction of the organization or project. As a result, early community members with few credits can find that swaying the vote is proportionally considerably more costly than their means. This also means that members with fewer administrative credits have no incentive to do proper research on their contributions (often a significant workload) to determine their suitability for the project.</p>
+</blockquote>
+<ul>
+<li>Members with fewer management credits have no incentive to contribute to the review because their votes don’t move much when they offer some input.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>In order to incent lower authority members to partic- ipate in the vote and provide a signal of quality for the contribution, organization administrators can reward an additional prediction step by voters. Administrators will choose a parameter K that reduces the cost of voting rel- ative to prediction. The cost of voting will be Kv2 if no prediction of a correct vote is made, or Kv2 +v if a wager of v is made alongside the vote. The payouts for these correct predictions will come from the contribution pay- out and can be seen as a processing fee to incent analysis of the contribution.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>To encourage less privileged members to participate in voting and to provide signals about the quality of their contributions, the organization’s administrator may reward voters with an additional prediction step. The administrator chooses a parameter K that reduces the cost of voting relative to the prediction. The cost of voting in the absence of correct voting predictions is <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>, and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span></span></span> if V bets are made at the same time as the vote. The reward for these correct predictions comes from the payment of contributions and can be viewed as a processing fee to facilitate the analysis of contributions.</p>
+</blockquote>
+<ul>
+<li>That’s where the predictive market approach comes in.</li>
+<li>Bonus if predicted correctly</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Predictors can choose to make no prediction without cost or wager exactly v additional credits that the outcome they voted for will succeed5 for a payout of 2v6. For large values of K (e.g., one or greater), voting would only be profitable for exceptionally small numbers of credits due to the quadratic cost of voting (although one can still mini- mize their losses by wagering v credits when the likelihood of passing is believed to be greater than 12 ). When K = 0, there is no cost to voting and one should (if one is risk- neutral) wager the maximum credits if they believe their vote will pass. This setting of K = 0 should be avoided and indeed Theorem 3 will show that K can and should be set high enough not to reduce the contribution payout more than expected. In general, administrators can learn over time what choices of K are needed to incent different mixtures of behavior.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>The forecaster may choose to participate at no cost without a prediction or bet v credits that the outcome he votes for will be successful. (5) In this case, the predictor is rewarded <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span></span></span> for a correct prediction. (6)</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<ol>
+<li>If the value of K is large (e.g., greater than 1), voting will only be profitable for a very small number of credits due to the secondary cost of voting (although you can minimize your losses by betting v credits if you believe you have more than half a chance of passing). k = 0, voting is costless, so in the risk-neutral case, you should bet the maximum credit if you believe your vote will pass. This K = 0 setting should be avoided, and indeed Theorem 3 shows that K can and should be set high enough that it does not reduce contribution payments more than expected. In general, managers can learn over time to choose the K needed to encourage a mixture of different behaviors.</li>
+</ol>
+</blockquote>
+<ul>
+<li>That there are parameters that can be adjusted and that the behavior should be adjusted to be well mixed.</li>
+<li>Footnote
+<ul>
+<li>
+<blockquote>
+<p>(5) Individuals can only be in the direction of their vote and in an amount capped by their vote, as this incents approximately truthful predictions from the logic of quadratic scoring rules (Selten, 1998).</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Individuals may only wager in amounts capped by the direction of their vote and their vote.</p>
+</blockquote>
+</li>
+<li>You can only hang in the direction you think is right.</li>
+<li>
+<blockquote>
+<p>(6) Given no hedging and a quadratic vote, we will see in Theorem 1 that given the ability to wager any number between 0 and v, it is always optimal to wager v when you believe the probability of success is greater than a half.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>If there is no hedging and a second ballot is cast, given the ability to bet any number from 0 to v, it is always optimal to bet v if one believes that the probability of success is more than half.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>An important aspect of the mechanism is that this prediction reward is only positive for small votes. Due to the squared cost of voting, large votes with high impact will not ever be profitable for reasonable non-zero values of K. This is an important property such that existing authority figures with large sums of management credits are not rewarded for understanding the community preferences and rewards go to those who are seeking to increase their influence from modest means.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>An important aspect of this mechanism is that this predictive reward is positive only for small votes. Due to the secondary cost of voting, large votes with large impact will never be profitable for reasonable nonzero values of K. This is an important characteristic and ensures that existing authorities with large administrative credits are not rewarded for understanding community preferences, and that the reward goes to those who seek to increase their influence from humble means.</p>
+</blockquote>
+<ul>
+<li>Because existing authorities with large amounts of management credit don’t need to get incentives to “understand the preferences of the community”.</li>
+</ul>
+</li>
+</ul>
+<p>4 Analysis of protocol properties</p>
+<ul>
+<li>4.1 Mixed utility analysis</li>
+<li>Skip here this time.</li>
+</ul>
+<h1 id="5-open-questions">5 Open questions<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5-open-questions" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>
+<blockquote>
+<p>5 Unresolved issues</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Plural Management, while versatile in theory, encoun- ters practical challenges in diverse organizational scenar- ios. Its adaptability to both modern, open-source en- vironments and traditional hierarchical structures raises questions about its real-world efficacy and implementa- tion strategies. This section probes into these nuances, inviting deeper exploration and collaborative research to navigate the complexities of applying Plural Management in varying contexts.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Prural management is versatile in theory, but faces practical challenges in diverse organizational environments. Its ability to adapt to both modern open source environments and traditional hierarchical structures raises questions about its real-world effectiveness and implementation strategies. This section explores these nuances and calls for deeper exploration and collaborative research to navigate the complexities of applying Prural Management in different contexts.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>(1) In refining Plural Management’s quadratic vot- ing, it’s crucial to recognize and strategically address the potential for collusion within homogeneous socio-cultural groups in organizations, considering dimensions like location, department, role, and origin. Building on foun- dational research (Miller et al.), this approach advocates for a nuanced mechanism that actively discounts the disproportionate influence of these groups. Such a system would not only enhance fairness but also promote a gen- uinely diverse and representative decision-making process, ensuring that no single faction within the organizational tapestry exerts undue control, thus aligning more closely with the realities of complex organizational structures.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>(1) In order to refine the secondary voting in plural management, it is important to recognize and strategically address the potential for collusion within homogeneous socio-cultural groups within the organization. It is proposed (based on basic research by Miller et al.) to construct a sophisticated mechanism that actively discounts the over-influence of these groups, taking into account dimensions such as region, sector, role, and origin. Such a system not only enhances fairness, but also facilitates a truly diverse and representative decision-making process, ensures that no single faction within an organization exercises undue control, and aligns more closely with the realities of complex organizational structures.</p>
+</blockquote>
+<ul>
+<li>Talk about looking at various attributes and automatically discounting them in order to prevent certain social groups from having strong power.</li>
+<li>For example, in the U.S., if all white men are in charge of decision-making, it’s not good.</li>
+<li>In Japan, criticism has been directed at the fact that the management team is “all Japanese men of roughly similar ages.</li>
+<li>There is much debate about the extent to which ensuring diversity based on individual attributes is beneficial to actual performance, but the idea is that it is difficult to take action to increase diversity in thinking, which is difficult to measure, so why not first strengthen diversity, which is easier to measure?
+<ul>
+<li><a href="https://dhbr.diamond.jp/articles/-/4627" class="external">https://dhbr.diamond.jp/articles/-/4627<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> It seems that not all whites attract points…</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>(2) Can we extend this approach to create a multi- layered decision-making framework within organizations? This would involve developing independent yet intercon- nected systems for various organizational strata, such as departments or teams, each with its own tailored voting mechanism. Such a model could facilitate more localized and relevant decision-making, while maintaining coher- ence with the broader organizational objectives. This ap- proach merits exploration for its potential to harmonize individual group dynamics with the overall organizational structure.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>(2) Can this approach be extended to create a multi-tiered decision-making framework within an organization? This would include developing independent but interconnected systems for each layer of the organization, such as departments and teams, with tailored voting mechanisms. This model can facilitate more localized and relevant decision making and maintain alignment with broader organizational goals. This approach merits consideration for its potential to harmonize individual group dynamics with the overall organizational structure.</p>
+</blockquote>
+<ul>
+<li>This is after all, you can’t have one Issues to solve for the entire organization, can you? That’s what I mean.</li>
+<li>For example, whether insider information, or sensitive information about individual employees learned by HR, can be placed in the Issues section, which is open to all employees.</li>
+<li>I’m not saying that hierarchical structures are evil and should be dismantled. I’m not saying that hierarchical structures are bad, so let’s dismantle them!</li>
+<li>Personally, I don’t think you can “look at all of it and prioritize” the Issues of a somewhat large organization due to the flood of information, even if there is no private information or anything like that in the first place.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>(3) While rational actors may be further motivated by extrinsic incentives, their overuse has the potential to cre- ate what is referred to as ’motivation crowding’ in which intrinsically driven contributors are discouraged from par- ticipating in a project (Frey and Jegen, 2000). While management credits are not by default monetary, the decision to distribute such rewards based on them must therefore be made in the context of existing organizational cultures.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>(3) Rational actors can be further motivated by external incentives, but their excessive use can create “motivational chaos” in which intrinsically driven contributors are inhibited from participating in projects (Frey and Jegen, 2000). Management credit is not monetary by default, but decisions to distribute rewards based on it need to be made in the context of the existing organizational culture.</p>
+</blockquote>
+<ul>
+<li>Management credits are not monetary, but the story connects that information to monetary rewards.</li>
+<li>On the other hand, it could be motivational <a href="./undermining" class="internal" data-slug="undermining">undermining</a>.
+<ul>
+<li>[Crowding out motivation - Wikipedia <a href="https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%81%E3%83%99%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%25" class="external">https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%81%E3%83%99%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> AE%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%A2%E3%82%A6%E3%83%88]</li>
+</ul>
+</li>
+<li>Personally, I think that activities driven by money and activities driven by non-monetary factors are essentially different motivational mechanisms and should not be equated.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>(4) The transparency of status hierarchies within orga- nizations, as is often studied with respect to salaries, can have meaningful impacts on contributor behavior (Cullen, 2023). While this can improve employee outcomes, it can also reduce internal collaboration and potentially harm long-term organizational objectives. Given its ease of im- plementation, plural management provides a sandbox for comparing and contrasting how public or private records of credits impact performance within a group.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>(4) Transparency of status hierarchies within an organization, often studied in relation to pay, can have a significant impact on contributor behavior (Cullen, 2023). While this may improve employee outcomes, it may also reduce internal cooperation and negatively impact long-term organizational goals. Because of its ease of implementation, prurals management provides a testing ground for comparing how public or private recording of credits affects performance within a group.</p>
+</blockquote>
+<ul>
+<li>This system uses management credits instead of status hierarchies in a hierarchical organization.</li>
+<li>Is it good or bad to visualize that quantity?</li>
+<li>Personally, I think that ranking people by one type of company-wide credit will discourage all but the top few from doing it, just like the score ranking of online games.
+<ul>
+<li>In that sense, I’d probably prefer to have a number of Issues boards in the company.</li>
+<li>While it is difficult to see the totality of activities when you work in multiple departments, you will be able to explain to the payroll assessor the totality of your contributions, saying, “This year I was less active in my main organization, but I generated more contributions in my cross-sectional team.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>(5) Currently, individuals cannot directly send man- agement credits to another member, as a way to prevent off-book trading of management credit which could result in a market price for management authority. This helps prevent the financialization of management authority, and makes certain behaviors difficult or impossible. For example, if a founder wants to bring in a new member quickly to provide authority, they cannot directly send credits and must conduct elaborate PR rewards for this contributor that are voted on by the whole community (in some sense also preventing nepotism). Further, if a member wants to leave, they cannot transfer credits to others quickly aside from putting all credits in a matching fund. Future re- search into the implications of enabling direct trading is important before incorporating it.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>(5) Currently, individuals cannot send management credits directly to other members. This is designed as a way to prevent off-book trading of administrative credits, which could create a market price for administrative privileges. This prevents financialization of administrative authority and makes certain actions difficult or impossible. For example, if a founder wants to quickly invite a new member in to take authority, he or she cannot send credits directly and must do a PR reward that is voted on by the entire community (in a sense preventing cronyism as well). Furthermore, if a member wants to leave, they cannot quickly transfer credits to others, other than putting all credits into matching funds. Future research on the impact of allowing direct trading is important before incorporating it.</p>
+</blockquote>
+<ul>
+<li>Whether or not credit transfers between individuals should be possible.</li>
+<li>It also “prevents nepotism,” which in the end is not a bad thing per se, but rather a question of “whether it is appropriate to give certain newcomers to an organization different power than other newcomers because of their relationships outside of the organization.”</li>
+<li>Personally, I think we should have a choice of action.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>(6) Deciding when and how to promote an employee is a mission-critical question across organizations. How- ever, in large hierarchies employees are often promoted based on their performance in an existing role rather than their capacity to set high-level priorities leading to bad management (Benson et al., 2018). An evaluation of the effects plural management has on promotion results, for example by evaluating how top contributors perform in administrator roles, would be helpful.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>(6) Deciding when and how to promote employees is a mission-critical question throughout an organization. However, in large hierarchical organizations, employees are often promoted based on performance in their current role, which can lead to poor management rather than the ability to set high-level priorities (Benson et al., 2018). It is useful to assess the impact of prurient management on promotion outcomes, e.g., how higher-level contributors perform in managerial roles.</p>
+</blockquote>
+<ul>
+<li>This is a similar topic to salary assessment and hierarchical status, and the topic of whether to use information from this system for promotions in organizational structures outside of this system.</li>
+<li>Related Next</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>(7) The current design of plural management is fo- cused on a single organization, community, or project. Many large organizations are constructed as many sub- organizations working together in the form of depart- ments, units, or project teams. Future work could exam- ine the use of plural management to create multiple par- tially nested versions that allow management authority to be exercised within a sub-organization, while still allowing individuals to climb the ranks of larger workplaces.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>(7) Current prural management designs focus on a single organization, community, or project. Many large organizations are built as many sub-organizations working together in the form of departments, units, or project teams. Future work may consider using Prural Management to create many partially nested versions that allow individuals to climb the ranks of a larger workplace while exercising administrative authority within the sub-organizations.</p>
+</blockquote>
+<ul>
+<li>Consideration of making this system itself nested</li>
+<li>I think “nesting” would hinder cross-functional teams, so it’s better to have multiple teams that are created and connected to each other.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>(8) Negative voting can provide a useful signal, but also has the potential to create polarization within group contexts (Weber, 2021). This has been observed empiri- cally within the context of quadratic funding rounds, such as those run by Gitcoin (Buterin, 2020). Running instances of plural management with and without negative voting could help further evaluate its psychological effects and impact on cooperative behavior.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>(8) Negative votes can provide useful signals, but can also create polarization within the group context (Weber, 2021). This has been observed empirically in the context of a secondary funding round conducted by Gitcoin (Buterin, 2020). Running instances of prurient management with and without negative voting helps to further evaluate its psychological effects and impact on cooperative behavior.</p>
+</blockquote>
+<ul>
+<li>Whether there should be a negative vote</li>
+<li>Personally, I think it should be there, but I can see how it could affect motivation.</li>
+<li>So anyone can participate in the voting this time, but it’s a problem that existed even before that.
+<ul>
+<li>From the pull requestor’s point of view, I don’t want my pull request to be rejected.</li>
+<li>From the point of view of the person receiving the pull request, the option to reject the pull request is of course essential</li>
+</ul>
+</li>
+<li>Is the message that rejection doesn’t negate your humanity valid?</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>(9) When the result of a prediction market can be influenced by the members participating in it, the possibility of collusion to manipulate outcomes arises (Ottaviani and Sørensen, 2007). An analysis of how participants in plu- ral management vote with and without the opportunity to predict outcomes would be useful for understanding what if any limitations should be placed on rewards from this activity.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>(9) When the outcome of a prediction market is influenced by the members participating in it, the potential for collusion to manipulate the outcome arises (Ottaviani and Sorensen, 2007). An analysis of how participants in prurient management vote with and without forecasting opportunities can help us understand what limits should be placed on the rewards from this activity.</p>
+</blockquote>
+<ul>
+<li>I think the introduction of a prediction market is a new point in this proposal.</li>
+<li>Whether it works or not has not yet been verified by practical experiments.</li>
+<li>Probably implemented first in Gov4git (since one of the authors is Gov4git).</li>
+</ul>
+</li>
+</ul>
+<h1 id="6-conclusion">6 Conclusion<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#6-conclusion" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>
+<blockquote>
+<p>Plural management is a protocol for bridging between the desired properties of rigid management hierarchies and flat decentralized organizations, allowing for the dynamic al- location of management authority based on longitudinal contributions of individuals to outcomes and management decisions. Through the adjustment of a voting-prediction discount parameter, administrators can reward new or low credit-holding members of a community for their work in performing due diligence of new contributions in line with the expected standards or higher-authority mem- bers. This management approach, which uses quadratic funding to solicit preference from a broad base of partici- pants, creates a closed credit system with no external mon- etary value, that can only be exercised within the project. While this design of a management protocol raises open questions about implementation choices and net outcomes on organizations’ productivity, it can built using standard software design practices and fits naturally into the work- flow of open-source projects. In total, this model of plural management could present a dynamic scalable approach to distributing authority and rewarding participation across projects of any scope, mission, or size.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Prural Management is a protocol for bridging the gap between a rigid management hierarchy and the desirable characteristics of a flat, decentralized organization, allowing for the dynamic assignment of management authority based on individual performance and long-term contributions to management decisions. Through the adjustment of the vote projection discount parameter, managers can reward new members and low credit ownership members for their work in conducting appropriate research on new contributions in line with expected criteria and high authority members. This management approach uses secondary financing to solicit preferences from a wide range of participants, creating a closed credit system with no external monetary value that can only be exercised within the project. The design of this management protocol raises unresolved issues regarding implementation choices and overall outcomes for organizational productivity, but can be built using standard software design practices and fits naturally into the workflow of an open source project. In sum, this prurient management model has the potential to present a dynamic and scalable approach to distributing authority and rewarding participation in projects of any size, mission, or size.</p>
+</blockquote>
+</li>
+<li>
+<p><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> We can depend on a benevolent dictator, or we can depend on having only good members,</p>
+</li>
+<li>
+<p><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> If we’re going to do this in general politics, I’d like to design it in a zero-trust fashion.</p>
+</li>
+<li>
+<p><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> As the system becomes more complex, it is likely that people will be left behind because they don’t understand it, or they will oppose it and make the transition to the new system more difficult, and there will be stories about the future and the villagers tearing each other apart (general impression).</p>
+<ul>
+<li>It seems critical that the tearing happens in the governing system.</li>
+</ul>
+</li>
+<li>
+<p><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> Visualization of temperature seems useful. However, it does not seem to be a common number (different people give different weights to different themes and to different pairs of people who vote on them). I agree with the idea of quantification, but I feel that it would be tough to do it in monetary terms.</p>
+</li>
+</ul>
+<p>If I have extra time, I’ll watch this.</p>
+<ul>
+<li>References: <a href="https://github.com/pluralitybook/plurality/issues/263" class="external">Gov4Git community dashboard - Issue #263 - pluralitybook/plurality<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<hr/>
+<p>This page is auto-translated from [/nishio/Plural Management勉強会](<a href="https://scrapbox.io/nishio/Plural" class="external">https://scrapbox.io/nishio/Plural<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Management勉強会) using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class aria-controls="toc-content" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content" class><ul class="overflow"><li class="depth-0"><a href="#plural-management" data-for="plural-management">Plural Management</a></li><li class="depth-0"><a href="#gov4git" data-for="gov4git">Gov4git</a></li><li class="depth-0"><a href="#1-introduction" data-for="1-introduction">1 Introduction</a></li><li class="depth-0"><a href="#2-plural-management-protocol" data-for="2-plural-management-protocol">2 Plural Management Protocol</a></li><li class="depth-0"><a href="#21-an-application-to-open-source" data-for="21-an-application-to-open-source">2.1 An application to open-source</a></li><li class="depth-0"><a href="#22-a-succinct-example-of-use" data-for="22-a-succinct-example-of-use">2.2 A succinct example of use</a></li><li class="depth-0"><a href="#3-model-details" data-for="3-model-details">3 Model details</a></li><li class="depth-0"><a href="#31-prioritization" data-for="31-prioritization">3.1 Prioritization</a></li><li class="depth-0"><a href="#32-approval" data-for="32-approval">3.2 Approval</a></li><li class="depth-0"><a href="#5-open-questions" data-for="5-open-questions">5 Open questions</a></li><li class="depth-0"><a href="#6-conclusion" data-for="6-conclusion">6 Conclusion</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Diary-2024-01-25" class="internal">Diary 2024-01-25</a></li><li><a href="./Diary-2024-01-26" class="internal">Diary 2024-01-26</a></li><li><a href="./Quadratic-Voting-Study-Group" class="internal">Quadratic Voting Study Group</a></li><li><a href="./Quadratic-Voting-and-Plural-Management-Study-Group" class="internal">Quadratic Voting and Plural Management Study Group</a></li><li><a href="./Weekly-journal-2024-01-27~2024-02-08" class="internal">Weekly journal 2024-01-27~2024-02-08</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

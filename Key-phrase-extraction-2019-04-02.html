@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Key phrase extraction 2019-04-02</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Key phrase extraction 2019-04-02"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Key phrase extraction 2019-04-02"/><meta name="twitter:description" content="Cybozu Labs Machine Learning Study Session 2019-04-05 We’ll look back at what we’ve done so far and then we’ll talk about current issues and ambiguous searches ..."/><meta property="og:description" content="Cybozu Labs Machine Learning Study Session 2019-04-05 We’ll look back at what we’ve done so far and then we’ll talk about current issues and ambiguous searches ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="Cybozu Labs Machine Learning Study Session 2019-04-05 We’ll look back at what we’ve done so far and then we’ll talk about current issues and ambiguous searches ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Key-phrase-extraction-2019-04-02"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Key-phrase-extraction-2019-04-02"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Cybozu Labs Machine Learning Study Session 2019-04-05 We’ll look back at what we’ve done so far and then we’ll talk about current issues and ambiguous searches ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Key-phrase-extraction-2019-04-02"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Key phrase extraction 2019-04-02</a></div></nav><h1 class="article-title">Key phrase extraction 2019-04-02</h1><p show-comma="true" class="content-meta"><span>Aug 10, 2020</span><span>8 min read</span></p></div></div><article class="popover-hint"><p>Cybozu Labs Machine Learning Study Session 2019-04-05</p>
+<ul>
+<li>
+<p>We’ll look back at what we’ve done so far and then we’ll talk about current issues and ambiguous searches.</p>
+</li>
+<li>
+<p><a href="./keyphrase-extraction" class="internal alias" data-slug="keyphrase-extraction">keyphrase extraction</a></p>
+</li>
+<li>
+<p>We’ve done a lot of things and we’re going to take a look back and sort it out.</p>
+<ul>
+<li>Pointwise Estimation by [KyTea
+<ul>
+<li><a href="./most-significant-substring" class="internal alias" data-slug="most-significant-substring">most significant substring</a> approach</li>
+</ul>
+</li>
+<li><a href="./SentencePiece" class="internal" data-slug="SentencePiece">SentencePiece</a></li>
+<li><a href="./TextRank" class="internal" data-slug="TextRank">TextRank</a>
+<ul>
+<li><a href="./Phrase-based-TF-IDF" class="internal alias" data-slug="Phrase-based-TF-IDF">Phrase-based TF-IDF</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>KyTea</p>
+<ul>
+<li>A system that divides a string into words using pointwise estimation of whether a word is a word boundary or not.
+<ul>
+<li><a href="http://www.phontron.com/kytea/index-ja.html" class="external">http://www.phontron.com/kytea/index-ja.html<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="./LIBLINEAR" class="internal" data-slug="LIBLINEAR">LIBLINEAR</a></li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>was tinkered with around January 2015.</li>
+<li>I was wondering if this could be used to estimate the boundaries of key phrases</li>
+<li>In the process of this study, <img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/> understood the concept of <a href="./Active-Learning" class="internal alias" data-slug="Active-Learning">Active Learning</a> (01/30/2015).</li>
+<li>2015/03/11
+<ul>
+<li>
+<blockquote>
+<p>I was writing about keyphrase extraction using KyTea at a machine learning workshop on Friday, and while I was writing, I got the feeling that I should do a dependency analysis…</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>After this, Kaggle gets excited and pends for a time.</li>
+</ul>
+<p>Review of April 2017</p>
+<blockquote>
+<p>Try KyTea to do keyword extraction that is not word-by-word in MaCab.
+The approach of trying to extract keywords with KyTea was not correct.</p>
+<blockquote>
+<p>Problem with preparing sufficient training data
+I think it would have been better to add rule-based “words connected” to the morphological analysis by MeCab to the keywords.
+I’m working on a “MeCab chopped and then extreme substring” approach that’s similar to that.</p>
+</blockquote>
+</blockquote>
+<p>maximized substring
+- An approach that applies the idea of <a href="./most-significant-substring" class="internal alias" data-slug="most-significant-substring">most significant substring</a> to a sequence of words rather than a sequence of characters.
+- Extreme substring = a substring such that there is no other string that contains it with the same number of occurrences.</p>
+<ul>
+<li>There are algorithms that can extract substrings that appear repeatedly.
+<ul>
+<li><a href="https://ja.wikipedia.org/wiki/%E6%8E%A5%E5%B0%BE%E8%BE%9E%E9%85%8D%E5%88%97" class="external">Suffix array - Wikipedia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>(SA-IS method)</li>
+<li>All substrings that occur more than N times” and so on can be efficiently retrieved.</li>
+<li>→A key phrase is a sequence of words that appears repeatedly, so this could be used.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I was doing this around April 2017.</li>
+</ul>
+<p>result</p>
+<ul>
+<li>I did indeed extract the long strings of words I was hoping for.</li>
+<li>But a lot of other things were extracted as well.</li>
+<li>Active Learning to learn “Does it look like a key phrase?” filter.</li>
+<li>Results of the experiment around April 2017
+<ul>
+<li>
+<blockquote>
+<p>Higher score (excluding teacher data)</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>“biological” (37 times, 88.0%) “synthetic inhibitor” (20 times, 88.0%) “medial temporal lobe” (28 times, 88.0%)</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Lower score</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>“will be (figure)” (5 times, 14.7%) “after” (6 times, 14.4%) “if” (5 times, 14.4%)</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>After this, the Deep Learning course was so exciting that it was put on hold for a while.</li>
+</ul>
+<p>Monday, May 1, 2017 17:32
+Experiment with keyphrase extraction into Scrapbox</p>
+<blockquote>
+<p>Summary of experiments with each page of the book as the target object
+・ Chapter headings tend to be extracted as frequent key phrases
+・It is interesting that there are examples of key phrases included in chapter headings appearing together in different places than in the chapter.
+・Maybe we can combine the appearances on consecutive pages into one.
+・It is not good that you can’t read the text even if you click the link and jump to the page of the target object.
+・Technically it is possible to embed the text there, or embed images of the page, but it is not copyrightable, so it cannot be published.
+→You can try with “Presentation Slide PDF” which you own the copyright.</p>
+</blockquote>
+<ul>
+<li>‘All appearances on successive pages are combined into one.’
+<ul>
+<li>2020 postscript, this is <a href="./page-level-DF" class="internal alias" data-slug="page-level-DF">page-level DF</a>.</li>
+<li>Not very useful since it is obvious that it appears repeatedly (foreshadowing).</li>
+</ul>
+</li>
+</ul>
+<p>word segmentation</p>
+<ul>
+<li>I used MeCab to split the words beforehand.</li>
+<li>Muddled in processing key phrases that contain blanks in a way that can properly restore the blanks.</li>
+<li>The question of whether the word segmentation approach is the right one to begin with…</li>
+<li>The Problem of Unknown Words</li>
+</ul>
+<p><a href="./SentencePiece" class="internal" data-slug="SentencePiece">SentencePiece</a></p>
+<ul>
+<li>Language model-based tokenizer
+<ul>
+<li>Reversible Text Segmentation</li>
+<li>Eliminates the problem of unknown words.</li>
+<li>The concept of grammatical words is irrelevant.</li>
+</ul>
+</li>
+<li>Use the suffix array to extract the top 1 million occurrences of substrings and then reduce the vocabulary.</li>
+<li>2018/12/18
+<ul>
+<li>
+<blockquote>
+<p>When I plugged in a corpus of 1700 character types of “The Art of Intellectual Production of Engineers” and had it divided into 10000, it’s good that it recognizes “The Art of Intellectual Production of Engineers” as a single unit of mass, etc.</p>
+</blockquote>
+</li>
+<li>But what comes out is of course “10,000 tokens that can express that sentence,” so it takes some effort to pick out key phrases from them that are interesting to humans.</li>
+<li>
+<blockquote>
+<p>Based on, valid, based on, output example, paste, room cleanup, too little, inexperienced, coding, supervise, shrink, history, finally, radar chart, continuous, Dutch, move near related, compare, top down, one dimensional reading experience, ▁ Bacon, double fast, wall, mountain, gentle, refactoring, photos, handy, technical review, professor, mature, pull out, seen in chapter, display code, SMART, gather all first</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>After this, I started working on the English version of the Intellectual Production Techniques of Engineers, and once pending</li>
+</ul>
+<p><a href="./PositionRank" class="internal" data-slug="PositionRank">PositionRank</a></p>
+<ul>
+<li>April 2019 (i.e., now)</li>
+<li>PositionRank (2017 paper)
+<ul>
+<li>Multiply the Google PageRank algorithm on a graph of word sequences.</li>
+<li>So far, the same as in the previous study TextRank (2004)</li>
+<li>A paper that says that when a modification based on the position of word occurrence was added to this, it won the TF-IDF type keyphrase extraction.</li>
+</ul>
+</li>
+<li>I’m not sure why it works, so I implemented it from TextRank.</li>
+</ul>
+<p><a href="./TextRank" class="internal" data-slug="TextRank">TextRank</a></p>
+<ul>
+<li>Create a graph based on word adjacencies and pagerank</li>
+<li>Eigenvalue decomposition by creating a dens matrix of transition probabilities
+<ul>
+<li>It takes a little over 1 second for 1000 vertices (MacBook)</li>
+</ul>
+</li>
+<li>Naturally the Rank of many words and adjacent words will be higher?
+<ul>
+<li>→That’s right, if you do it normally, the “ha” etc. would be higher.</li>
+</ul>
+</li>
+<li>Original paper filters out all but nouns and adjectives
+<ul>
+<li>→Subtle, as <a href="./Scrapbox-Statistics-2019-2" class="internal alias" data-slug="Scrapbox-Statistics-2019-2">Scrapbox Statistics 2019-2</a> shows that key phrases containing other than nouns and adjectives are used about 10-30% of the time.</li>
+</ul>
+</li>
+</ul>
+<p>TextRank: What is your multi-word key phrase?</p>
+<ul>
+<li>This is ultimately a “score the words in some way” method
+<ul>
+<li>I’m using PageRank for that “method”.</li>
+<li>So how do you find key phrases that consist of multiple words?
+<ul>
+<li>The top 1/3 of the score is used as candidate key phrases, and if they are adjacent to each other in the source text, they are combined.</li>
+<li>This could use some more work…</li>
+<li>For example, “Lean Startup” is divided into “Lean” and “Startup” because the middle black is a symbol, but it seems that these can be connected regardless of what the score of the middle black is.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>TextRank: good results if limited to nouns?</p>
+<ul>
+<li>
+<blockquote>
+<p>For, thing, like, where, it, if …</p>
+</blockquote>
+</li>
+<li>Frequent nouns are extracted as key phrases.</li>
+<li>Do you put them on the blacklist?</li>
+<li>I mean, IDF…</li>
+</ul>
+<p>TextRank and TF-IDF</p>
+<ul>
+<li>
+<p>After all, the great thing about TextRank is that it doesn’t require anything other than the document to be processed.</p>
+<ul>
+<li>I don’t even need information about the IDF.</li>
+<li>But you use language-specific knowledge to extract only nouns…</li>
+</ul>
+</li>
+<li>
+<p>In a kintone or Scrapbox-like use case, using information on high-frequency words is not a real problem.</p>
+<ul>
+<li>I’d rather use “information from other texts” and especially with Scrapbox, “information from key phrases that have already been manually added.</li>
+<li>I want to improve incrementally.</li>
+</ul>
+</li>
+<li>
+<p><a href="./Phrase-based-TF-IDF" class="internal alias" data-slug="Phrase-based-TF-IDF">Phrase-based TF-IDF</a></p>
+</li>
+<li>
+<p>Approaches to using tfidf</p>
+</li>
+<li>
+<p>A method in which the phrase score is the sum of the TF-IDFs of each word that makes up the phrase score</p>
+</li>
+<li>
+<p>Use only the longest noun phrase as a candidate key phrase.</p>
+<ul>
+<li><a href="./Phrase-based-TF-IDF:-Application-of-Noun-Phrase-Analysis" class="internal alias" data-slug="Phrase-based-TF-IDF:-Application-of-Noun-Phrase-Analysis">Phrase-based TF-IDF: Application of Noun Phrase Analysis</a> (2013), which employs a mechanism to assign scores not only to the longest noun phrase, but also to partial noun phrases</li>
+<li>Better for longer sentences averaging 8,000 words, but worse for shorter sentences averaging 134 words</li>
+</ul>
+</li>
+<li>
+<p><a href="./The-Problem-of-Too-Large-Links" class="internal alias" data-slug="The-Problem-of-Too-Large-Links">The Problem of Too Large Links</a></p>
+</li>
+<li>
+<p>The use case for the Scrapbox link:.
+- <a href="./It-is-not-beneficial-to-join-a-link-with-many-participants" class="internal alias" data-slug="It-is-not-beneficial-to-join-a-link-with-many-participants">It is not beneficial to join a link with many participants</a>
+- <a href="./Links-to-faraway-places" class="internal alias" data-slug="Links-to-faraway-places">Links to faraway places</a> is good</p>
+<ul>
+<li>Even if they don’t connect, it’s good because it gives room for future connections.</li>
+</ul>
+</li>
+<li>
+<p>in other words</p>
+<ul>
+<li>If N is the number of participants in the link, does it cost 1/N to score?
+<ul>
+<li>This is almost the same idea as IDF, except instead of word Frequency, it is phrase Frequency</li>
+</ul>
+</li>
+<li>Define “far.”
+<ul>
+<li>On Scrapbox, the link is already displayed as a link up to 2 hops away on the existing link.</li>
+<li>It is preferable to link to a page 3 hops or more ahead that is not included there</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="./Links-to-faraway-places" class="internal alias" data-slug="Links-to-faraway-places">Links to faraway places</a></p>
+</li>
+<li>
+<p>In the case of Scrapbox, the distance between pages is determined based on the connection relationship of links</p>
+<ul>
+<li>This is because links between contents are manually assigned in advance.</li>
+</ul>
+</li>
+<li>
+<p>Not so with use cases such as kintone?</p>
+<ul>
+<li>Not really.</li>
+<li>Each record in the app has a distance difference depending on whether it is the “same app” or not.</li>
+<li>Data that has a hierarchical structure has a hierarchical inclusion relationship as a link to determine the distance.</li>
+</ul>
+</li>
+<li>
+<p>Consideration <a href="./Auto-Bracketing" class="internal alias" data-slug="Auto-Bracketing">Auto Bracketing</a>.</p>
+</li>
+<li>
+<p><a href="./hierarchical" class="internal" data-slug="hierarchical">hierarchical</a></p>
+</li>
+<li>
+<p><a href="./Bitap-Algorithm" class="internal alias" data-slug="Bitap-Algorithm">Bitap Algorithm</a></p>
+</li>
+</ul>
+<p>What we cut down</p>
+<ul>
+<li>Even in Scrapbox, “other projects” and “newly added content” are distance ∞.</li>
+<li>Would you prefer a system that can discover links between these things?</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E3%82%AD%E3%83%BC%E3%83%95%E3%83%AC%E3%83%BC%E3%82%BA%E6%8A%BD%E5%87%BA2019-04-02" class="external">/nishio/キーフレーズ抽出2019-04-02<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li>No backlinks found</li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

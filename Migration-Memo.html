@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Migration Memo</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Migration Memo"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Migration Memo"/><meta name="twitter:description" content="pKeicho I want to put a Web UI on a chatbot built with CUI and connected to Mattermost. It’s all jumbled up and confusing, so I’m going to proceed as I write."/><meta property="og:description" content="pKeicho I want to put a Web UI on a chatbot built with CUI and connected to Mattermost. It’s all jumbled up and confusing, so I’m going to proceed as I write."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="pKeicho I want to put a Web UI on a chatbot built with CUI and connected to Mattermost. It’s all jumbled up and confusing, so I’m going to proceed as I write."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Migration-Memo"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Migration-Memo"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="pKeicho I want to put a Web UI on a chatbot built with CUI and connected to Mattermost. It’s all jumbled up and confusing, so I’m going to proceed as I write."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Migration-Memo"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Migration Memo</a></div></nav><h1 class="article-title">Migration Memo</h1><p show-comma="true" class="content-meta"><span>Jan 18, 2021</span><span>8 min read</span></p></div></div><article class="popover-hint"><p><a href="./pKeicho" class="internal" data-slug="pKeicho">pKeicho</a>
+I want to put a Web UI on a chatbot built with CUI and connected to Mattermost.
+It’s all jumbled up and confusing, so I’m going to proceed as I write.</p>
+<ul>
+<li>The existing repository is a jumbled mess of various ties, so let’s separate it into a new repository.</li>
+<li><code>$ git init keicho-server</code>
+<ul>
+<li>Working with [Natural Language Processing on Heroku</li>
+<li><code>$ heroku create keicho</code>
+<ul>
+<li>It’s obvious that putting it on Heroku is a server.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Minimal code runs on the server.
+<ul>
+<li>This is where it gets tricky.</li>
+</ul>
+</li>
+<li>Understand and organize past codes.
+<ul>
+<li><img src="https://gyazo.com/b9ae8e5954c15ae5acd949fb026235af/thumb/1000" alt="image"/></li>
+<li>In the CUI era, information was held on-memory.</li>
+<li>Connecting Mattermost with Outgoing Webhooks
+<ul>
+<li>That’s why I started putting the information into Firebase at the stage where I was trying to bring it to the server.</li>
+</ul>
+</li>
+<li>call <code>chat.connect_slack(username, text)</code> from server
+<ul>
+<li>I didn’t package it then, but should I take this opportunity now?</li>
+</ul>
+</li>
+<li>environment.py takes care of defining the env object and persisting it in Firebase.
+<ul>
+<li>Ah, here’s where putting credentials for access rights in the repository makes it harder to publish…</li>
+<li>Then I thought, “If I separate the secret part of the repository, how can I attach them together in Heroku?</li>
+<li>Keep the default private, and only cut out the parts that can be made public to a public repository.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The import so far has worked fine.
+<ul>
+<li>Create a test URL for Firebase connection and try to hit it.
+<ul>
+<li>Calling state.py from environment.py</li>
+<li>See INITIAL_STATE</li>
+<li>I didn’t want to make this too tightly coupled, so I split it into state_constant.py / state_action_map.py.</li>
+<li>The persistence perimeter is now working.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>next
+python</li>
+</ul>
+<pre><code>def connect_slack(name, text):
+    &quot;Top-level interface for chat server&quot;
+    env = environment.load(name)
+    env.log.append([1, text])
+    if text[0] in &quot;!(>#~@&quot;:  # (1)
+        environment.save(name, env)
+        return &quot;&quot;
+
+    process_command(env, text)  # (2)
+    res = make_response(env)  # (3)
+    if res:
+        env.log.append([0, res])
+    environment.save(name, env)
+    return res
+</code></pre>
+<pre><code>- Not sure what (1) is needed for...
+- process_command
+    - The first important thing is feedback when the question is &quot;not a good one&quot;.
+        - If it's NGKW, then the keyword choice itself is bad.
+        - NG can't answer the question because the keywords themselves are not bad, but the combination with the question is not good enough.
+        - It's not clear that humans can properly distinguish between the two, so if you use the latter two or three times, you may want to consider it a bad keyword.
+    - The environment is being reset when the reset command is sent.
+        - This is because in the case of chat, there is no &quot;session&quot; or anything like that, so there is no reset timing.
+    - Normal flow is initiated by &quot;let's talk&quot; etc.
+        - This also serves the purpose of waking up Heroku from sleep.
+        - For the Web UI, input should be available when the page is accessed, and should happen in the background
+    - Return to normal mode by &quot;first listen&quot; phase mode and &quot;end&quot; mode
+    - Experimental code that drops the score with statements like, &quot;Not really.&quot;
+        - Feeling that should be done with NG command handling, etc.
+        - Comment out once, review later
+    - I'm outputting the logs in an easy-to-read format for later reading, but it's written in a local file because it's CUI era code.
+        - I feel like I've added a log display function in the Slack era, so I guess it's a good thing I don't have it.
+    - Storage of environment and response length data
+        - This is the idea that &quot;questions that get a lot of answers back are good questions&quot;.
+    - env updates
+        - later mention
+    - Update data for question keywords vs.
+        - The data for the study was spit out to a local file, commented out in the Slack days.
+</code></pre>
+<ul>
+<li>
+<p>Hmmm, I see.</p>
+<ul>
+<li><img src="https://gyazo.com/f8c2d6a5951c8eb8bfff9cc08807b89d/thumb/1000" alt="image"/></li>
+<li>process_command is bloated because of its ambiguous, anything-goes function name, and it calls a function that could be anything, such as update_env.</li>
+<li>Conversely, make_response has two lines (and one of them is assert).</li>
+<li>This one doesn’t have proper division boundaries, it’s a labyrinth of repeated buildups.
+<ul>
+<li>Let’s put them together and then divide them appropriately.</li>
+</ul>
+</li>
+<li>In update_env, there are more calls to state_transition.
+<ul>
+<li>I’m mainly working on state transitions here.</li>
+<li>I’m logging state transitions, but still only on the local file system.</li>
+<li>Shouldn’t we have created a separate location in Firebase for the logs that are written to a file at the same time we rewrote the on-memory information to be persistent in Firebase? (to be discussed later).</li>
+</ul>
+</li>
+<li>liquidation
+<ul>
+<li>The part of process_command that really processes the string as a command wants to escape with return, so it is natural to split it into functions</li>
+<li>The same goes for state_transition</li>
+<li><img src="https://gyazo.com/00bcda856bb76dab5bbd5af342a2e3e0/thumb/1000" alt="image"/></li>
+<li>I was doing keyphrase extraction in update_env_with_input, too deep.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>keyphrase extraction</p>
+<ul>
+<li>I’ll leave the code as it was once in the past for now, but will be updating it soon, so I’ll cut it out.</li>
+<li>Key phrase extraction will be used in other projects, so let’s package it.</li>
+</ul>
+</li>
+<li>
+<p>Delete key phrase in NGKW</p>
+<ul>
+<li>Both with and without phrase specification are implemented, but they are never used with a phrase specification.</li>
+<li>Here, I’m simply deleting it from my memory, but that doesn’t leave any information that it was “deleted”.
+<ul>
+<li>May be added again.</li>
+<li>It should be blacklisted or otherwise not added during the session, and in the long run, it should be played on the blacklist during the keyphrase extraction portion (to be discussed later).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>While connecting to Mattermost has made it easier to use, it has also made it harder to improve by disabling various logs, I regret that.</p>
+</li>
+<li>
+<p>Next, around the action.</p>
+<ul>
+<li>Designed to have an action for each state, which is executed with the env as an argument.
+<ul>
+<li><code>state_action_map[env.state](env)</code></li>
+</ul>
+</li>
+<li>But in practice, with a few exceptions, the action “choose from a list of questions received in the argument and ask a question”.
+<ul>
+<li>I thought the selection was random, but it wasn’t.
+<ul>
+<li>Calculate scores for all key phrases x questions
+<ul>
+<li>Exclude items that have already been mentioned or are on the NG list.
+<ul>
+<li>I wonder where this NG list comes from…</li>
+<li>It’s in the env persistence target, but when you stop exporting the NG list file, it also stops adding to the list, so it’s always empty.</li>
+</ul>
+</li>
+<li>I’m clogging up the basic two questions.</li>
+<li>There is a positive correction for the keywords used in the previous question.</li>
+<li>There’s an adjustment here to see if it’s a natural question, but it hasn’t been tested to see if it’s working effectively.
+<ul>
+<li>I think it’s unverified, but did you verify it? I’m not sure.</li>
+<li>Remove it and consider later.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Then select the one with the largest score
+<ul>
+<li>put to use</li>
+<li>For symmetric questions, the keywords exchanged are also included in the used category.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>question</p>
+<ul>
+<li>For each type of question, “choose one key phrase”, “choose two”, etc. are implemented.</li>
+<li>Some sampling based on score.</li>
+<li>Huh? I thought you just calculated the scores for all the key phrase question pairs and chose the largest one.</li>
+<li>Yes, this wasn’t called for.</li>
+<li>The exception, ChainQuestion, is “continue to use the previous keyword”…
+<ul>
+<li>I don’t think this has been properly tested.
+<ul>
+<li>Maybe it just so happens that “the keyword with the highest score last time has a higher probability of being the highest next time,” but it could be reversed.</li>
+<li>They should be flagged as “questions that continue to use the immediately preceding keyword” and given special treatment when calculating scores.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Remove unused codes.</li>
+</ul>
+</li>
+<li>
+<p>It worked on the local server.</p>
+<ul>
+<li>It worked on Heroku too.</li>
+</ul>
+</li>
+</ul>
+<p>We’ll discuss it later.</p>
+<ul>
+<li>How about a way to fix the part or seed that is treated as random, so that we can test regression?
+<ul>
+<li>Randomness has already been removed to begin with.</li>
+<li>Lack of fine granularity testing is not good.</li>
+</ul>
+</li>
+<li>A: Logs that are exported to a file should also have a separate location in Firebase.
+<ul>
+<li>Yes</li>
+<li>What logs should be kept?
+<ul>
+<li>Currently, the “human readable log” itself is also placed in the realm of being reset, which is odd.</li>
+<li>At a minimum, logs should be kept for human reading</li>
+<li>Plus, it would be nice to be able to look at the logs and see the internal data later when the “not-so-good response” was happening.
+<ul>
+<li>This is going to take a lot of capacity if we are not careful…</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>B: In the long run, the blacklist should be played in the key phrase extraction section.
+<ul>
+<li>I don’t have a place to keep track of this right now.</li>
+<li>Do A first.</li>
+</ul>
+</li>
+<li>C: Experimental code that drops the score with a statement like “nothing special”.
+<ul>
+<li>Feeling that should be done with NG command handling, etc.</li>
+<li>B and then put it together.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E7%A7%BB%E8%A1%8C%E3%83%A1%E3%83%A2" class="external">/nishio/移行メモ<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li>No backlinks found</li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

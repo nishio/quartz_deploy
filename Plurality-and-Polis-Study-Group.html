@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Plurality and Polis Study Group</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Plurality and Polis Study Group"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Plurality and Polis Study Group"/><meta name="twitter:description" content="Plurality and Polis Study Session - Cybozu Labs Study Session 2023-05-12 Talking about Plurality is too abstract, so I’ll start with a more familiar theme ..."/><meta property="og:description" content="Plurality and Polis Study Session - Cybozu Labs Study Session 2023-05-12 Talking about Plurality is too abstract, so I’ll start with a more familiar theme ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="Plurality and Polis Study Session - Cybozu Labs Study Session 2023-05-12 Talking about Plurality is too abstract, so I’ll start with a more familiar theme ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Plurality-and-Polis-Study-Group"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Plurality-and-Polis-Study-Group"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Plurality and Polis Study Session - Cybozu Labs Study Session 2023-05-12 Talking about Plurality is too abstract, so I’ll start with a more familiar theme ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Plurality-and-Polis-Study-Group"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Plurality and Polis Study Group</a></div></nav><h1 class="article-title">Plurality and Polis Study Group</h1><p show-comma="true" class="content-meta"><span>Jun 23, 2023</span><span>26 min read</span></p></div></div><article class="popover-hint"><p><a href="./Plurality" class="internal" data-slug="Plurality">Plurality</a> and <a href="./Polis" class="internal" data-slug="Polis">Polis</a> Study Session
+- <a href="./Cybozu-Labs-Study-Session" class="internal alias" data-slug="Cybozu-Labs-Study-Session">Cybozu Labs Study Session</a>  2023-05-12</p>
+<ul>
+<li>Talking about Plurality is too abstract, so I’ll start with a more familiar theme.</li>
+<li>We will delve into the specific technical component of Plurality, Polis, at the end (because we may run out of time if we start here).</li>
+</ul>
+<p>Occurrence of hierarchical organization and changes due to technology</p>
+<ul>
+<li>I’ll summarize again what I’ve written several times.
+- <a href="./layered-organization" class="internal alias" data-slug="layered-organization">layered organization</a> (2018)
+- <a href="./Changes-in-organizational-structure-brought-about-by-LLM" class="internal alias" data-slug="Changes-in-organizational-structure-brought-about-by-LLM">Changes in organizational structure brought about by LLM</a> (2023-03)</li>
+<li><img src="https://gyazo.com/8ee1bf4b0b2ea910dfee7e89aa333290/thumb/1000" alt="image"/>
+<ul>
+<li>There is a limit to the number of people one can communicate with.
+- <a href="./Number-of-Dunbars" class="internal alias" data-slug="Number-of-Dunbars">Number of Dunbars</a></li>
+<li>If you try to communicate in a group of 100 people, if you speak one, you have to listen to 99 others.</li>
+<li>As the size of the organization grows, it becomes harder and harder to communicate like a simple one-on-one conversation.</li>
+</ul>
+</li>
+<li><img src="https://gyazo.com/c809ecc731b9a7b5441b363bbdd4e755/thumb/1000" alt="image"/>
+<ul>
+<li>That’s where the organizational hierarchy came in.
+<ul>
+<li>Create a group responsible for an area.</li>
+<li>One person in the group shall be the representative of that group</li>
+<li>Communicate only with that person.</li>
+</ul>
+</li>
+<li>This solved the “it’s hard to communicate with everyone in the organization” problem.</li>
+<li>But another problem arose.</li>
+<li>By lengthening the chain of message games:.
+<ul>
+<li>Increased frequency of information being hidden or distorted during transmission</li>
+<li>Increases the time it takes to gather the necessary information.</li>
+<li>These are now recognized as major organizational problems</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://gyazo.com/9cfcddde776b9bf6a6b7e4798eaff276/thumb/1000" alt="image"/>
+<ul>
+<li>The development of technology for reproduction and transmission of information has solved the problem first in one direction only.
+<ul>
+<li>Direction for communicating the president’s thoughts to employees
+<ul>
+<li>Video lectures by <a href="./national-radio-(esp.-an-NHK-radio-station)" class="internal alias" data-slug="national-radio-(esp.-an-NHK-radio-station)">national radio (esp. an NHK radio station)</a> and [Konosuke Matsushita</li>
+</ul>
+</li>
+<li>President writes thoughts on groupware</li>
+<li>As of 2023, this is often done in the form of Zoom + recording</li>
+</ul>
+</li>
+<li>But since this is a replication and transmission technique, it does not solve the problem of information transmission in the reverse direction
+<ul>
+<li>If 1,000 employees send a video message to the president for 10 minutes each, it would take the president 7 days x 24 hours to watch it.</li>
+<li>Totally unrealistic.</li>
+</ul>
+</li>
+<li>This issue also arises with respect to a single employee.
+<ul>
+<li><img src="https://gyazo.com/bce5b25b3d888673b421ade41f9c5716/thumb/1000" alt="image"/></li>
+<li>A hierarchical organization would have been able to limit the amount of information to be processed by focusing only on the smaller organizations to which they belonged.</li>
+<li>With a company-wide information sharing system, the total amount of information shared from all departments would be so large that it would be impossible to see it all</li>
+<li>Individuals filter appropriately.
+<ul>
+<li>I guess I’ll have to see if I get a menschon.</li>
+<li>I guess I’ll have to see what’s within the same location.</li>
+<li>I guess I don’t need to look at the faraway places.</li>
+</ul>
+</li>
+<li>That makes it difficult to understand the company-wide situation.
+<ul>
+<li>Because most people try to look only at “information in departments close to their own”.</li>
+<li><a href="./Siloed" class="internal" data-slug="Siloed">Siloed</a></li>
+<li>Once information is gathered around the president, it is digested at a reasonable cost and then disseminated to all employees.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://gyazo.com/01f286ba41e02b8bda44af91ea938882/thumb/1000" alt="image"/>
+<ul>
+<li>The problem so far has arisen because the transmission and reproduction of information has “increased the amount of information</li>
+<li>The solution will come when technologies to “reduce the amount of information” are created.
+<ul>
+<li>I wrote <a href="./Changes-in-organizational-structure-brought-about-by-LLM" class="internal alias" data-slug="Changes-in-organizational-structure-brought-about-by-LLM">Changes in organizational structure brought about by LLM</a> thinking as of March 2023 that “<a href="./LLM" class="internal" data-slug="LLM">LLM</a> will lead to that technology.”</li>
+<li>Then in April I learned about the concept of <a href="./Plurality" class="internal" data-slug="Plurality">Plurality</a>.
+<ul>
+<li>In reading the draft written by <a href="./Audrey-Tang" class="internal alias" data-slug="Audrey-Tang">Audrey Tang</a> about Plurality, I learned about the concept of [broad listening</li>
+<li>
+<blockquote>
+<p>Broad Listening, where millions of people can hear the essence extracted from the distribution of opinions of their peers</p>
+</blockquote>
+</li>
+<li>The opinions of many people can be digested by a machine to obtain a reduced amount of
+<ul>
+<li>Conversely, for the same cognitive cost, you get to hear more people’s opinions</li>
+<li>Digital technology is enhancing “the ability to understand what many other people are doing.</li>
+<li>This is <a href="./Human-Augmentation" class="internal alias" data-slug="Human-Augmentation">Human Augmentation</a>.</li>
+</ul>
+</li>
+<li>This technology not only “allows the CEO to better understand the organization,” but also allows each and every employee “to better understand the organization for everyone.
+<ul>
+<li><img src="https://gyazo.com/01f286ba41e02b8bda44af91ea938882/thumb/1000" alt="image"/> Reprinted in</li>
+<li>The role of maintaining a hierarchical network to convey information out of the president’s business is no longer needed.
+<ul>
+<li>Role of the “hub in the organization’s information network</li>
+</ul>
+</li>
+<li>Differences in knowledge, experience, and other attributes of each individual, or “diversity,” rather than hierarchical roles, will become more important.
+<ul>
+<li>Drucker <a href="./The-knowledge-society-is-not-a-society-of-bosses-and-subordinates." class="internal alias" data-slug="The-knowledge-society-is-not-a-society-of-bosses-and-subordinates.">The knowledge society is not a society of bosses and subordinates.</a></li>
+</ul>
+</li>
+<li>Decentralized and autonomous decision making, except for decisions that really need to be made by the president, will allow him to act more quickly.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>This technology eliminates most of the reasons why hierarchical organization was needed
+<ul>
+<li>So the organizational structure changes.
+<ul>
+<li>Audrey Tang「 <a href="./Horizontal-organization-is-easier-than-hierarchical-organization" class="internal alias" data-slug="Horizontal-organization-is-easier-than-hierarchical-organization">Horizontal organization is easier than hierarchical organization</a> 」</li>
+<li>Of course there are organizations that don’t want to change.</li>
+<li>It means fewer constraints for organizations that are trying to change.</li>
+</ul>
+</li>
+<li>So far, I have explained the topic in the image of a private company as a familiar topic.</li>
+<li>Audrey Tang believes this will bring similar changes to <a href="./the-governance-structure" class="internal alias" data-slug="the-governance-structure">the governance structure</a>.
+<ul>
+<li>Audrey Tang「 <a href="./Elections-are-slow-communications,-sending-5-bits-every-four-years." class="internal alias" data-slug="Elections-are-slow-communications,-sending-5-bits-every-four-years.">Elections are slow communications, sending 5 bits every four years.</a> 」
+<ul>
+<li>Bandwidth too narrow</li>
+<li>That’s due to historical circumstances that once there was no digest technology available to handle the collection.</li>
+<li>Digital technology should allow us to gather people’s thoughts more efficiently.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>At this point in time, it is actually being used to make policy decisions in Taiwan <a href="./vTaiwan" class="internal" data-slug="vTaiwan">vTaiwan</a>.
+<ul>
+<li>(and <a href="./Polis" class="internal" data-slug="Polis">Polis</a> as its elemental technology)</li>
+<li>These are not using <a href="./LLM" class="internal" data-slug="LLM">LLM</a> at this time
+<ul>
+<li>In the years to come, they will merge and create something better.</li>
+</ul>
+</li>
+<li>Software assists in better understanding what members are thinking.”
+<ul>
+<li>It will be a very important technical element in realizing Cybozu’s vision “<a href="./Creating-a-society-full-of-teamwork" class="internal alias" data-slug="Creating-a-society-full-of-teamwork">Creating a society full of teamwork</a>”.</li>
+<li>I’m sure there are many organizations among Cybozu’s customers that would love to have this technology.</li>
+<li>The needs are not verbalized now, and only when they are shown in a form will they say, “Oh yes, this is what I wanted.</li>
+</ul>
+</li>
+<li>vTaiwan is used for decision-making by the Taiwanese government because of Audrey Tang’s strong top-down leadership.
+<ul>
+<li>In Japan, I don’t see it being used for government decision making anytime soon.
+<ul>
+<li>Private companies with forward-thinking presidents and local governments with forward-thinking chief executives will move first.</li>
+<li>I think a few pilot cases will be created and gradually spread out.</li>
+<li>It is beneficial to expand the “experience of using this kind of thing” at the grassroots.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>question
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>There’s still a need to build a team, right?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>If there’s a task to be performed by multiple people working together, then a team is created in the broadest sense.
+<ul>
+<li>The need for that team to be static is reduced.</li>
+<li>In particular, it reduces the need for a structure where “there is a fixed team of members, and one person on that team is the point of contact for communication with the rest of the team.”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Of the constraints that determine the structure of an organization, does this mean that communication constraints are reduced and thus the structure of the organization is more flexible?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>something like that</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Need to design a communication structure to ensure that decisions made by different departments within the organization do not contradict each other
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Important point, I’m still not clear on the solution there.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Plurality
+- <a href="./Technology-is-neutral" class="internal alias" data-slug="Technology-is-neutral">Technology is neutral</a> and can be <a href="./good-use" class="internal alias" data-slug="good-use">good use</a> or <a href="./bad-use" class="internal alias" data-slug="bad-use">bad use</a>.</p>
+<ul>
+<li>What happens when the powers that be monopolize Broad Listening’s “ability to understand what a lot of people are doing”?
+- <a href="./panopticon" class="internal" data-slug="panopticon">panopticon</a></li>
+<li>There is a strong sense of urgency about this in the Chinese-speaking world.
+<ul>
+<li>Concerned that the government will use the “power of digital technology to understand what a lot of people are doing” for [surveillance
+<ul>
+<li><a href="./Social-Credit-System" class="internal alias" data-slug="Social-Credit-System">Social Credit System</a></li>
+<li>2019 <a href="https://globe.asahi.com/article/12277192" class="external">AI to determine your creditworthiness, Japan: China to rate 1.4 billion people: Asahi Shimbun GLOBE+<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>
+<blockquote>
+<p>“Social Credit System” is a project launched by China’s State Council in June 2014 under the banner of improving social norms. The target year is 2020, when 1.4 billion citizens will have their “social credit” scores in place…</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>The points in the score range from traffic safety and paying taxes to online behavior. If you are found to have spread fake news on the Internet, your “social credibility” will go down.</p>
+</blockquote>
+<ul>
+<li>Who decides what is <a href="./fake-news" class="internal alias" data-slug="fake-news">fake news</a> or not?</li>
+<li>Is it fake news to say there is an event that the government says there is not?</li>
+<li>Social credibility will be disadvantaged if it is lowered → Cannot speak against the government’s wishes</li>
+</ul>
+</li>
+<li>Surveillance camera to [image recognition</li>
+<li>2021 <a href="https://www.asahi.com/articles/ASP6944Z6P68UHBI01M.html" class="external">China’s surveillance network identifies 2 billion people in seconds, violating privacy or not: Asahi Shimbun Digital<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>
+<blockquote>
+<p>Chinese media reports that in 2018… Popular singer… Suspects who were wanted in various cases and whose whereabouts were tracked down by the authorities were detained one after another at various venues on a national tour. A total of about 60 people were detained nationwide after AI matched the faces of the suspects captured by surveillance cameras installed at the venues with the police’s own mug shot data.</p>
+</blockquote>
+</li>
+<li>This is what happens when digital technology allows the government to know “who is where”.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>I think many people in Japan might welcome the idea of “catching the culprit with surveillance cameras.”
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Japanese people don’t think they’re included in the “criminal” category.
+<ul>
+<li>Implicitly assumes that the “culprit” is a “bad person” who is “not like you.</li>
+<li>Trusting that “my beliefs” will not affect the government’s definition of “culprit”</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The reason Japanese are not very familiar with the fear of losing democracy in Chinese-speaking countries is largely due to the language barrier.
+<ul>
+<li>China, Hong Kong, and Taiwan can understand each other’s spoken language quite well.</li>
+<li>Most Japanese do not understand Chinese.</li>
+</ul>
+</li>
+<li>Taiwan is geographically close to China and Hong Kong, so it is easy to feel close to them.
+<ul>
+<li><img src="https://gyazo.com/07762a676e4e4a24a4ca1024545d1ccd/thumb/1000" alt="image"/></li>
+<li>Taiwan and China are closer than Fukuoka and Korea.</li>
+<li>In terms of geographical distance, Hong Kong from Taiwan is about the same distance as Kyushu from Tokyo.
+- <a href="./campaign-to-prevent-a-public-construction-work-by-acquiring-a-building-or-landmark-(e.g.-housing-development,-etc.)" class="internal alias" data-slug="campaign-to-prevent-a-public-construction-work-by-acquiring-a-building-or-landmark-(e.g.-housing-development,-etc.)">campaign to prevent a public construction work by acquiring a building or landmark (e.g. housing development, etc.)</a> (2014)
+<ul>
+<li>[2019-2020 Hong Kong democracy protests - Wikipedia <a href="https://ja.wikipedia.org/wiki/2019%E5%B9%B4-2020%E5%B9%B4%E9%A6%99%E6%B8%AF%E6%B0%91%E4%B8%BB%E5%8C%25" class="external">https://ja.wikipedia.org/wiki/2019%E5%B9%B4-2020%E5%B9%B4%E9%A6%99%E6%B8%AF%E6%B0%91%E4%B8%BB%E5%8C%<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 96%E3%83%87%E3%83%A2]</li>
+<li>Like the demonstrations on Dejima Island in Nagasaki.</li>
+<li>We share a common language, so I feel very close to them.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>It is also significant that China does not recognize Taiwan as an independent country in the first place.</li>
+</ul>
+</li>
+<li>Concerns and Countermeasures
+<ul>
+<li>Concerns that linking AI to government will increase the power of government</li>
+<li>We need to consider using AI to make the people more powerful to balance the situation.</li>
+<li>This direction is called “Plurality” using the synonym “Plural” for “Singular” in “<a href="./singularity" class="internal" data-slug="singularity">singularity</a>” which is supposed to be brought by AI.</li>
+</ul>
+</li>
+</ul>
+<p>implementation method</p>
+<ul>
+<li>elemental technology
+<ul>
+<li>Means of <a href="./Broad-Listening" class="internal alias" data-slug="Broad-Listening">Broad Listening</a> already in use: <a href="./vTaiwan" class="internal" data-slug="vTaiwan">vTaiwan</a>(and <a href="./Polis" class="internal" data-slug="Polis">Polis</a>)
+<ul>
+<li>For example, when Uber came in, they have a track record of using it to make policy decisions, using it to discuss “should it be regulated or not?”</li>
+<li>Since this is already an available technology, it would be beneficial to know this better and be able to apply it to the purposes we want to use it for!</li>
+</ul>
+</li>
+<li>Taiwan’s current focus: <a href="./DID" class="internal alias" data-slug="DID">[Decentralized ID]</a>
+<ul>
+<li>Simply put, a non-centralized method of personal identification.
+<ul>
+<li>Non-Centralized: i.e., without dependence on the government</li>
+</ul>
+</li>
+<li>2023/01/06 <a href="https://jp.taiwantoday.tw/news.php?unit=148,149,150,151,152&amp;post=231252" class="external">Ministry of Digital Development Becomes Official Member of W3C, Representing Taiwan in Web Technology Standardization : Taiwan Today<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>By creating a Galapagos standard, improvements can only be made with domestic resources, so by standardizing, we are relying on resources from all over the world.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Declared to be introduced in the future: <a href="./Quadratic-Funding" class="internal alias" data-slug="Quadratic-Funding">Quadratic Funding</a>, <a href="./Retroactive-Funding" class="internal alias" data-slug="Retroactive-Funding">Retroactive Funding</a>, <a href="./social-impact-bond" class="internal alias" data-slug="social-impact-bond">social impact bond</a>
+<ul>
+<li>Simply put, the mechanism of income redistribution
+<ul>
+<li>Decision-making on “how much resource to allocate to what?”</li>
+</ul>
+</li>
+<li>A method to uniquely identify people is needed to achieve this
+<ul>
+<li>For example, a naive majority should not allow a single person to have multiple accounts
+<ul>
+<li>The current Polis allows anonymous voting and personal identification by social networking accounts, so multiple accounts can vote.</li>
+<li>It’s just not done because the incentive to do so is not that high.</li>
+</ul>
+</li>
+<li>Need to address the increased incentive to create multiple accounts as money starts to move.</li>
+<li>There are two ways to achieve this: using a government-verified ID or using a DID, and Taiwan is pushing for the latter.</li>
+</ul>
+</li>
+<li>Cases that do not go as far as income redistribution
+<ul>
+<li>As for <a href="./Quadratic-Voting" class="internal alias" data-slug="Quadratic-Voting">Quadratic Voting</a>, which does not redistribute income, attempts are underway to combine it with Polis: <a href="https://www.radicalxchange.org/media/blog/introducing-rxc-voice/" class="external">Introducing RxC Voice - RadicalxChange<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>An extension of this for income redistribution is <a href="./Quadratic-Funding" class="internal alias" data-slug="Quadratic-Funding">Quadratic Funding</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The DID story doesn’t seem very familiar to the Japanese.
+<ul>
+<li>I think they have a high degree of trust in the government.</li>
+<li>He thinks the government won’t say to him, “We’re not going to issue you a passport.
+<ul>
+<li>I’m assuming it won’t be, “Let’s stop my number from being integrated with the health insurance card of anyone who makes a critical Tweet against the administration.”</li>
+<li>If this concern were to arise, we would be atrophied and unable to speak freely.</li>
+</ul>
+</li>
+<li>Use your driver’s license to open a bank account,
+<ul>
+<li>Use that bank account to debit your cell phone bill,</li>
+<li>If you use that cell phone number for two-factor authentication when creating a social networking account,</li>
+<li>Of course the government can figure out who the social networking accounts are tied to!</li>
+<li>…and few people in Japan are afraid.</li>
+<li>Side note: I had a hard time trying to create a Weibo account because it required a mainland China phone number.</li>
+</ul>
+</li>
+<li>Very peaceful compared to the situation in Hong Kong.
+<ul>
+<li>
+<blockquote>
+<p>Avoid using Octopus (Hong Kong’s IC card, which can be used as a transportation IC card or electronic money like Suica or PASMO in Japan) when traveling by train. It can be used as a transportation IC card or electronic money like Suica or PASMO in Japan), and instead of using it, they buy tickets in cash and travel to avoid having their usage history traced later. It is reported that the police actually seized IC card information of users on the day of the demonstration from a major bus company through the court.</p>
+</blockquote>
+</li>
+<li>[2019-2020 Hong Kong democracy protests - Wikipedia <a href="https://ja.wikipedia.org/wiki/2019%E5%B9%B4-2020%E5%B9%B4%E9%A6%99%E6%B8%AF%E6%B0%91%E4%B8%BB%E5%8C%25" class="external">https://ja.wikipedia.org/wiki/2019%E5%B9%B4-2020%E5%B9%B4%E9%A6%99%E6%B8%AF%E6%B0%91%E4%B8%BB%E5%8C%<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 96%E3%83%87%E3%83%A2]</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Is that kind of inconvenience caused when the government can’t be trusted?</li>
+</ul>
+</li>
+<li>I think it’s obvious why Taiwan is trying to focus on this technology.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>I don’t see how you can have a one-to-one correspondence between a person and their identity without a governing body.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>DID alone cannot give one person a unique identity.
+<ul>
+<li>
+<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>
+  - W3C Recommendation: [[Decentralized Identifiers]]
+  - Talk about being able to detach the verifier at this stage.
+  - I think &quot;I don't feel like I can&quot; is probably one verifier, an image that identifies &quot;humanness&quot; at 0% or 100%.
+      - However, there are other approaches that can be considered to increase the reliability of personal identification by linking multiple verifiers together.
+          - Related [[Gitcoin Passport]].
+      - In this use case, we don't need a 100% human guarantee, just a vote count based on humaneness.
+      - If the cost of a bot account acquiring human-like characteristics becomes high enough, there is no practical problem.
+  - Other non-governmental organizations that provide human assurance, such as OpenAI's Sam Altman's [[Worldcoin]], are starting up, so that in the near future we will have enough human assurance to be practical without relying on the government.
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>DID is being discussed by the Digital Agency and the Financial Services Agency in Japan.
+<ul>
+<li><a href="https://www.digital.go.jp/councils/web3/f39e29a1-f172-483b-a584-8613569ed708/" class="external">Digital Agency Web 3.0 Study Group (8th)<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.fsa.go.jp/policy/bgin/ResearchPaper_NRI_ja.pdf" class="external">Financial Services Agency Research Report on the Use of Digital Identity Using Blockchain Technology, etc. (PDF)<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Oh yeah. The government properly tracks the sober side of Web3.</li>
+<li>On social networking sites, there are engineers who say things like <a href="./Web3-is-wacky." class="internal alias" data-slug="Web3-is-wacky.">Web3 is wacky.</a> I think they feel that way only after seeing the buzz NFT has generated.
+- <a href="./The-only-reason-it-looks-like-it's-over-is-because-all-you-see-is-an-upswing-in-the-trend." class="internal alias" data-slug="The-only-reason-it-looks-like-it's-over-is-because-all-you-see-is-an-upswing-in-the-trend.">The only reason it looks like it’s over is because all you see is an upswing in the trend.</a></li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Would it be better to have one account than to have multiple accounts if there is a benefit to doing so?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Right. To put it the other way around, you can create a composition that loses money if the credentials that prove you are a human being are spread across multiple accounts.</li>
+</ul>
+</li>
+</ul>
+<p>empathy</p>
+<ul>
+<li>In order to get a lot of people involved and get things moving, you need to get “<a href="./empathy" class="internal" data-slug="empathy">empathy</a>”.
+<ul>
+<li>Trying to solve a problem by claiming that people don’t think it’s a problem is hard to get sympathy.
+<ul>
+<li>I suspect that many people in Japan at present DID not sympathize.</li>
+<li>Because they don’t feel the issue of “untrustworthy government” is personal to them.</li>
+</ul>
+</li>
+<li>In Japan, <a href="./broad-listening" class="internal alias" data-slug="broad-listening">broad listening</a> would be more sympathetic.
+<ul>
+<li>In Japan, there is a cultural tendency to value everyone’s consensus over top-down decision making.</li>
+<li>On the other hand, many people want to avoid confrontation and don’t want to speak their mind.</li>
+<li><img src="https://gyazo.com/16e6ee4613d836798ba1ae35f78ea58b/thumb/1000" alt="image"/>
+- <a href="./Intercultural-Comprehension" class="internal alias" data-slug="Intercultural-Comprehension">Intercultural Comprehension</a></li>
+<li>It is easy to recognize that making decisions with a large group of people is difficult, a problem that is personal to you.</li>
+<li>So the broad listening aspect of Plurality is more in demand as a <a href="./decision-making" class="internal" data-slug="decision-making">decision-making</a> or <a href="./consensus-building" class="internal alias" data-slug="consensus-building">consensus building</a> tool</li>
+<li>PS: I wrote this section in more detail after this study session
+- <a href="./Broad-Listening-is-Important-in-Japan,-Where-Air-Rules" class="internal alias" data-slug="Broad-Listening-is-Important-in-Japan,-Where-Air-Rules">Broad Listening is Important in Japan, Where Air Rules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>After all, the core of my interest is “strengthening human capacity”, so I’ll leave the DID talk to others and focus on broad listening!
+<ul>
+<li><a href="./human-augmentation" class="internal alias" data-slug="human-augmentation">human augmentation</a></li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>I would like to confirm the relationship between Plurality and Polis, Plurality is the nature and Polis is the software service?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Plurality is a vision or tagline, similar to Cybozu’s “<a href="./Creating-a-society-full-of-teamwork" class="internal alias" data-slug="Creating-a-society-full-of-teamwork">Creating a society full of teamwork</a>”.
+<ul>
+<li>A vision of “singularity is coming, not here and now, plurality is important.”
+<ul>
+<li><a href="./When-we-hear-“the-singularity-is-near”,-let-us-remember:-the-plurality-is-here" class="internal alias" data-slug="When-we-hear-“the-singularity-is-near”,-let-us-remember:-the-plurality-is-here">When we hear “the singularity is near”, let us remember: the plurality is here</a></li>
+</ul>
+</li>
+<li>Polis is the name of the software</li>
+<li>To use an analogy, “Source code should be version controlled, right?” is the vision, and Git is the name of the software.</li>
+<li>The Polis story and the DID story connect in a way that “both are useful components to realize the vision.
+<ul>
+<li>And I’m interested in the Polis side.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>How Polis Works</p>
+<ul>
+<li>Open source, licensed under AGPL</li>
+<li>There is a pre-deployed server pol.is, so anyone can quickly try it out for a bit.
+<ul>
+<li>I wrote an explanation: <a href="./how-to-start-a-topic-in-/japol/Polis" class="internal alias" data-slug="how-to-start-a-topic-in-/japol/Polis">Polis</a>.</li>
+<li>I think it would be beneficial for Japan if more Japanese people use Polis after seeing this.</li>
+</ul>
+</li>
+<li>If a company is using it for internal use, they’ll want to set up their own instance.
+<ul>
+<li>Docker service is up and running in about 2 lines of command after cloning from Github.</li>
+</ul>
+</li>
+<li>You can turn on machine translation of posts, so you can use it with a community of people who speak different languages.</li>
+<li>How hard is it to customize?
+<ul>
+<li>I could read the source code and rewrite the UI.</li>
+<li>Client side is React
+<ul>
+<li>But there’s quite a bit of jQuery-based code.</li>
+<li>Polls and such are hitting <code>api/v3/votes</code> with jQuery.</li>
+<li>This comes to <code>handle_POST_votes</code> in <code>server/app.ts</code> or something like that.</li>
+</ul>
+</li>
+<li>It feels like it was made in a college lab.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Do you mean simple construction?</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>It feels like it’s all pieced together, not by the CTO who selected the technologies, but by the individual “doers” who came to the lab and used what they wanted to use the most, without thinking about maintainability or anything like that.</li>
+</ul>
+</li>
+<li>The process of determining the next voting target to be displayed on the server was not random.
+<ul>
+<li>I previously answered “randomly selected,” but I was wrong.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>I was talking about “it’s random, you don’t have to answer all of them” in the context of there being so many questions that it’s hard to answer them all.</li>
+<li>Yes, and the actual implementation was further ahead, designed to ask the questions in such a way that even if you stop in the middle of an answer, you can still get as much information as possible in the process.</li>
+<li><code>getNextPrioritizedComment</code>
+<ul>
+<li>Roughly speaking, it looks like they multiply the PCA by the PCA, and then determine a probabilistic priority based on that.</li>
+<li>
+<img src="https://scrapbox.io/api/pages/nishio/GPT-4/icon" alt="GPT-4.icon" height="19.5"/>
+  - This getNextPrioritizedComment function is used to obtain the next comment with the highest priority.
+      - Three functions, getComments, getPca, and getNumberOfCommentsRemaining, are called asynchronously. Each function retrieves the comments, the result of principal component analysis, and the number of comments remaining.
+      - The selectProbabilistically function is used to select comments probabilistically. The function is passed the list of comments, the priority of the comments, the total number of comments, and the number of comments remaining as parameters.
+</li>
+</ul>
+</li>
+<li><code>selectProbabilistically</code> only selects with probability proportional to the value coming from `getPca
+<ul>
+<li><a href="./Roulette-Wheel-Selection" class="internal alias" data-slug="Roulette-Wheel-Selection">Roulette Wheel Selection</a> <a href="https://www.obitko.com/tutorials/genetic-algorithms/japanese/selection.php" class="external">https://www.obitko.com/tutorials/genetic-algorithms/japanese/selection.php<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>So I guess it’s called getPca, but it returns “priority calculated using PCA results”.</li>
+<li>This implementation is just taken from the DB.</li>
+</ul>
+</li>
+<li>The visualization part is polled by a PolisMath server, written in Clojure.
+<ul>
+<li>The getPca above would also read the value this created.</li>
+<li>In essence, there is a “visualization server” that reads and updates statistics as soon as it is available.
+<ul>
+<li>If it’s crowded, the update interval will increase.</li>
+</ul>
+</li>
+<li>Dimensional reduction is UMAP
+<ul>
+<li><a href="https://github.com/lmcinnes/umap" class="external">GitHub - lmcinnes/umap: Uniform Manifold Approximation and Projection<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Something like <a href="./t-SNE" class="internal" data-slug="t-SNE">t-SNE</a>.
+<ul>
+<li>Mapping higher dimensional vectors to lower dimensional space by nonlinear mapping</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The opinion groups were clustered.
+<ul>
+<li>It says the clustering uses Leiden graph based community detection.
+<ul>
+<li><a href="https://github.com/vtraag/leidenalg" class="external">GitHub - vtraag/leidenalg: Implementation of the Leiden algorithm for various quality functions to be used with igraph in Python.<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>This is a graph-based method
+<ul>
+<li>So we need to convert distances into graph connectivity relationships.</li>
+<li>I wonder how they do it.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>You mention that you are using the above method, but you don’t seem to be using it as a Python library? Maybe you’re implementing it all in Clojure?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PS: There was a paper <a href="Polis:%20Scaling%20Deliberation%20by%20Mapping%20High%20Dimensional%20Opinion%20Spaces" class="external">Polis: Scaling Deliberation by Mapping High Dimensional Opinion Spaces<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</li>
+<li>PS: I explained in detail in <a href="./Polis-Study-Group" class="internal alias" data-slug="Polis-Study-Group">Polis Study Group</a>.</li>
+</ul>
+<p>question</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>What is the origin of Polis?
+<ul>
+<li>
+<blockquote>
+<p>Polis is a Greek term referring to a city, city-state, citizenship or government by citizens. When used in reference to ancient Greece, such as ancient Athens, it is usually translated as <a href="./city-state" class="internal" data-slug="city-state">city-state</a>.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>It is also the origin of the words police, policy, politics, etc.</p>
+</blockquote>
+<ul>
+<li><a href="https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%AA%E3%82%B9" class="external">Polis - Wikipedia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/gpt-4/icon" alt="gpt-4.icon" height="19.5"/>Democracy was first implemented in an inclusive form in the polis of Athens around the 5th century BC.
+<ul>
+<li>Polis provided the context for democracy to develop, and the institution of polis facilitated the functioning of the democratic system.</li>
+<li>For example, the agora, the central public space of the polis, was used as a place for citizens to gather and discuss public issues.</li>
+<li>This was a practical expression of the democratic ideal of open debate and public decision-making.</li>
+<li>In Athenian democracy, each citizen of the polis had the right to participate in the ekklesia (assembly), where he could speak and vote on public matters.</li>
+<li>The Boulez, composed of 500 citizens elected by lot, was also an integral part of the polis, playing an important role in the democratic process by setting the agenda for the ekklesia.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>It was a direct democracy, and the political system differed from polis to polis.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Important Points
+<ul>
+<li>Modern Japanese democracy is an indirect democracy in which “first we elect representatives, and then those representatives make decisions.</li>
+<li>Audrey Tan pokes at it, “That’s too little bandwidth, isn’t it, just the way it was to achieve democracy in an era without digital technology, and digital natives are not happy with that slow upload speed.”
+- <a href="./Elections-are-slow-communications,-sending-5-bits-every-four-years." class="internal alias" data-slug="Elections-are-slow-communications,-sending-5-bits-every-four-years.">Elections are slow communications, sending 5 bits every four years.</a>
+- <a href="./Digital-natives-don't-think-that-once-every-four-years-upload-bandwidth-is-enough." class="internal alias" data-slug="Digital-natives-don't-think-that-once-every-four-years-upload-bandwidth-is-enough.">Digital natives don’t think that once-every-four-years upload bandwidth is enough.</a></li>
+<li>People should be able to upload more information.
+<ul>
+<li>Answering 30 questions in Polis is 30 bits, more information than an election.</li>
+</ul>
+</li>
+<li>Directly express approval or disapproval of individual agenda items
+- <a href="./Democracy-by-Paper-and-Box" class="internal alias" data-slug="Democracy-by-Paper-and-Box">Democracy by Paper and Box</a> was not done, because the cost was too high.
+<ul>
+<li>Digital technology has lowered costs.</li>
+</ul>
+</li>
+<li>If you say <a href="./digital-voting" class="internal alias" data-slug="digital-voting">digital voting</a>, there are a lot of problems to be pointed out, etc.
+<ul>
+<li>I don’t want to advocate “replacing” the current <a href="./Democracy-by-Paper-and-Box" class="internal alias" data-slug="Democracy-by-Paper-and-Box">Democracy by Paper and Box</a> of electing representatives with digital voting.</li>
+<li>Useful as a tool to help elected representatives better gather and understand people’s views</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>You mean instead of a poll?</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Yes. But there’s more progress there, too.
+<ul>
+<li>Audrey Tan, “<a href="./Open-up-agenda-setting-authority-to-people" class="internal alias" data-slug="Open-up-agenda-setting-authority-to-people">Open up agenda-setting authority to people</a>”
+<ul>
+<li>
+<blockquote>
+<p>Opening the agenda-setting authority to the people would return the people’s approval or disapproval of each agenda to the people. Public officials no longer have exclusive ownership of the agenda. --- Audrey Tang</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>It is important to release the people to decide what questions should be asked</li>
+<li>Instead of bureaucrats and the media deciding what questions to ask and then asking them, people post what they think should be discussed on this point, others agree or disagree with them, it is visualized, and then it is repeated</li>
+<li>That’s the difference between this and today’s so-called “polls”.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Polls, different newspapers may ask different questions in different ways and get different results, and there may be a discussion about which way to ask the questions.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>For that matter, even if you did it with Polis, if the question or population is biased, you’ll get biased results.
+<ul>
+<li>There’s an argument that if a newspaper or some other company calls you and polls you, claiming that they’re doing random sampling to avoid bias, you’re already biased at the time whether or not you get such a call.</li>
+<li>I think it would be better to allow anyone to participate on the Internet.</li>
+<li>Of course, even if we did it in that form, there would be another bias, specifically the suppression of the opinions of the elderly who don’t do the internet, which I would prefer.</li>
+<li>Because of the <a href="./silver-democracy" class="internal alias" data-slug="silver-democracy">silver democracy</a> issue, the power of voice is biased toward the elderly, and society as a whole would be better if we had a structure that allows younger people to express their opinions more easily, in my personal opinion.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>It’s hard to answer questions correctly because it requires studying the context.
+<ul>
+<li>Even if you write an agenda, you will not get good answers if the intent is not understood. The good thing about indirect democracy is that it allows legislators to spend time studying. With direct democracy, people have to study.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>There is no requirement to do so, just delegate those who don’t want to do so.
+<ul>
+<li>In today’s indirect democracy, we give our legislators 100% delegation on every agenda item with a “you study it for me.”</li>
+<li>You can express your opinion on the issues on which you want to express your opinion, and deligitimize those that do not, as in the past.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>I don’t know if we should have a system where you can state who you trust.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Some people are thinking of doing something like that, and although it has not been implemented in Polis so far, I think it could be implemented.
+<ul>
+<li>In the current indirect democracy, everything is delegated to a single person regardless of the theme, but I would like to decide who to delegate each theme. For example, in my case, I would like to be involved in policies involving digital technology, but I am not a party to the issue of married couples’ surnames, so I would like to delegate to someone who is actually disadvantaged by the issue. It would be good if we could decide who to entrust with each agenda item. Well, if people can’t be bothered to choose, they throw the whole thing to one person, but that’s the baseline of indirect democracy we have now, so it would be better than that.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Image of people with interest and knowledge to participate</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Correct. Not everyone is equally interested in every agenda item, nor are they all willing to devote the same amount of time to it.
+<ul>
+<li>So it is preferable that people with a lot of enthusiasm and interest can disseminate more information. What I am comparing this to is a paper-and-box voting system <a href="./one-vote-per-person" class="internal alias" data-slug="one-vote-per-person">one vote per person</a>. Whether a person is uninterested and votes randomly, or whether a person is very enthusiastic, only the same amount of information can be sent out to all of them. But wouldn’t it be a more accurate statistic if the weight of the votes were increased depending on the enthusiasm of the voter?
+<ul>
+<li>Related: <a href="./Quadratic-Voting" class="internal alias" data-slug="Quadratic-Voting">Quadratic Voting</a> is the mechanism that makes it happen</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Polis can only “interpret” what emerges from the vote?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>We do not believe that decision making is done by Polis alone. The perception is that it is a tool to efficiently collect “how other people feel” after there is a separate person making the decision.</li>
+<li>Taiwan’s case is also in the form of “the Taiwanese government gathers everyone’s opinions and decides what kind of law to make.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>If a lot of people do Polis to get a comprehensive view of the issues, it would be helpful to organize them by saying, “Oh, there is this point of view?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Yes, I guess you could call it “<a href="./brainstorming-the-issues" class="internal alias" data-slug="brainstorming-the-issues">brainstorming the issues</a>”? If the government decides “this is the issue” and then puts it to a vote, then the “not on that axis” opinion loses a way to come up with an opinion. Instead, the issues themselves should be made available for people to submit, and through mutual voting on each issue, it would be possible to visualize which ones everyone agrees on, and which ones there is a difference of opinion on. And, based on that, it will be easier for decision makers to make better decisions.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Maybe it would be nice to be able to go back and forth between visualization and discussion of Polis.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I believe the Uber case study in <a href="./vTaiwan" class="internal" data-slug="vTaiwan">vTaiwan</a> had four rounds of visualization and discussion.
+<ul>
+<li>So, in other words, Polis is not a decision-making tool by itself, but a tool to gather opinions from a large number of people to guide better decisions.</li>
+<li>It could be a tool for safe brainstorming on controversial topics.</li>
+<li>A mechanism that prevents “disputes between A and B who have different opinions” from occurring.</li>
+<li>It is difficult to become a person-to-person confrontation because it is abstracted and seen as an “opinion group” made up of many people.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/Plurality%E3%81%A8Polis%E5%8B%89%E5%BC%B7%E4%BC%9A" class="external">/nishio/PluralityとPolis勉強会<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Broad-Listening-&quot;That-Figure&quot;-Study-Group" class="internal">Broad Listening &quot;That Figure&quot; Study Group</a></li><li><a href="./From-One-Subjective-to-Many,-Not-Subjective-or-Objective:-Q-and-A" class="internal">From One Subjective to Many, Not Subjective or Objective: Q&amp;A</a></li><li><a href="./Horizontal-organization-is-easier-than-hierarchical-organization" class="internal">Horizontal organization is easier than hierarchical organization</a></li><li><a href="./Not-subjective-or-objective,-but-from-the-subjectivity-of-one-to-the-subjectivity-of-many." class="internal">Not subjective or objective, but from the subjectivity of one to the subjectivity of many.</a></li><li><a href="./Omoikane-Study-Group" class="internal">Omoikane Study Group</a></li><li><a href="./Plurality-Study-Session-1" class="internal">Plurality Study Session 1</a></li><li><a href="./Polis-Study-Group" class="internal">Polis Study Group</a></li><li><a href="./Replication-of-information-has-made-information-transmission-more-efficient,-but-reception-has-not-improved;-technology-to-reduce-information-is-needed" class="internal">Replication of information has made information transmission more efficient, but reception has not improved; technology to reduce information is needed</a></li><li><a href="./Talk-to-the-City-Study-Group" class="internal">Talk to the City Study Group</a></li><li><a href="./democratic-process" class="internal">democratic process</a></li><li><a href="./managerial-thinking" class="internal">managerial thinking</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

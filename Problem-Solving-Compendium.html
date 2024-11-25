@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Problem Solving Compendium</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Problem Solving Compendium"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Problem Solving Compendium"/><meta name="twitter:description" content="..."/><meta property="og:description" content="..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Problem-Solving-Compendium"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Problem-Solving-Compendium"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Problem-Solving-Compendium"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Problem Solving Compendium</a></div></nav><h1 class="article-title">Problem Solving Compendium</h1><p show-comma="true" class="content-meta"><span>Apr 22, 2019</span><span>4 min read</span></p></div></div><article class="popover-hint"><p><img src="https://gyazo.com/9ec2c853b9e5bdd4a57149d3767d5e27/thumb/1000" alt="image"/></p>
+<ul>
+<li>Problem Solving Compendium—37 tools to overcome hurdles in business and life
+<ul>
+<li><a href="./book-monkey-(any-monkey-of-family-Cercopithecidae)" class="internal alias" data-slug="book-monkey-(any-monkey-of-family-Cercopithecidae)">book monkey (any monkey of family Cercopithecidae)</a></li>
+</ul>
+</li>
+<li><a href="https://amzn.to/2N5gNyp" class="external">Amazon<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<p>Very good book, but also crunchy, so it’s not a book you can read once off the top of your head like most books.
+- <a href="./Books-to-chew-on" class="internal alias" data-slug="Books-to-chew-on">Books to chew on</a></p>
+<ul>
+<li>【 <a href="./Linear-problem-solving" class="internal alias" data-slug="Linear-problem-solving">Linear problem solving</a> 】
+<ul>
+<li>A problem-solving method based on linear causality.</li>
+<li>By tracing causality back in a linear fashion and removing or changing the ultimate cause that has been arrived at, the result is changed and the problem is solved.</li>
+</ul>
+</li>
+<li>【 <a href="./Circular-Problem-Solving" class="internal alias" data-slug="Circular-Problem-Solving">Circular Problem Solving</a> 】
+- A problem-solving method used when the cause and effect relationship is a loop, as in the <a href="./Chicken-and-Eggs" class="internal alias" data-slug="Chicken-and-Eggs">Chicken and Eggs</a> relationship.
+<ul>
+<li>Change the perception of the problem, not eliminate or change the ultimate cause</li>
+<li>Bring change to a vicious circle and indirectly change the problem.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/> Related to [systems thinking</li>
+</ul>
+</li>
+</ul>
+<p>7/37 is now a blue link, but digging into the red links also connects to various pages</p>
+<ul>
+<li>linear
+<ul>
+<li>Acknowledgement of the Problem
+<ul>
+<li>01  <a href="./100-year-rule" class="internal alias" data-slug="100-year-rule">100-year rule</a>
+<ul>
+<li>Does it matter a hundred years from now?”</li>
+</ul>
+</li>
+<li>02  <a href="./Niebuhr-sorting" class="internal alias" data-slug="Niebuhr-sorting">Niebuhr sorting</a>
+<ul>
+<li>It’s hard to know what to change if the problem is still large, so split it up and evaluate <a href="./variable-degree" class="internal alias" data-slug="variable-degree">variable degree</a>.</li>
+</ul>
+</li>
+<li>03  <a href="./nominal-group-process" class="internal alias" data-slug="nominal-group-process">nominal group process</a>
+- Method developed in the 1970s based on <a href="./brainstorming" class="internal" data-slug="brainstorming">brainstorming</a> and [brainwriting</li>
+<li>04  <a href="./Camelot" class="internal" data-slug="Camelot">Camelot</a>
+<ul>
+<li>When you don’t know what the <a href="./question-(e.g.-on-a-test)" class="internal alias" data-slug="question-(e.g.-on-a-test)">question (e.g. on a test)</a> is, think about the <a href="./ideal-state" class="internal alias" data-slug="ideal-state">ideal state</a> and consider the gap with reality
+<ul>
+<li>[The problem is the gap between what it should be and what it is.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>05  <a href="./Sato's-Problem-Structure-Diagram" class="internal alias" data-slug="Sato's-Problem-Structure-Diagram">Sato’s Problem Structure Diagram</a>
+<ul>
+<li>Issues that need to be addressed are not easy to close the gap</li>
+<li>After listing the causes of the inability to close the gap, organize them according to the template</li>
+</ul>
+</li>
+<li>06  <a href="./Tinbergen's-Four-Questions" class="internal alias" data-slug="Tinbergen's-Four-Questions">Tinbergen’s Four Questions</a>
+<ul>
+<li>The claim that there are four kinds of “why.”</li>
+<li>Partially the same, partially different from my [Why four types of</li>
+</ul>
+</li>
+<li>07  <a href="./logic-tree" class="internal alias" data-slug="logic-tree">logic tree</a>
+- <a href="./Why-Why-Analysis" class="internal alias" data-slug="Why-Why-Analysis">Why-Why Analysis</a> and related
+<ul>
+<li>The <a href="./why-why-tree" class="internal alias" data-slug="why-why-tree">why-why tree</a> <a href="./diagnostic-tree" class="internal alias" data-slug="diagnostic-tree">diagnostic tree</a> that delved into the <a href="./why" class="internal" data-slug="why">why</a> and the <a href="./why-why-tree" class="internal alias" data-slug="why-why-tree">why-why tree</a>.</li>
+<li>I delved into the how <a href="./how-how-tree" class="internal alias" data-slug="how-how-tree">how-how tree</a> <a href="./resolution-tree" class="internal alias" data-slug="resolution-tree">resolution tree</a>.</li>
+<li>Related: <a href="./Dig-into-the-why--and--how-to-achieve-your-goals" class="internal alias" data-slug="Dig-into-the-why--and--how-to-achieve-your-goals">Dig into the why &amp; how to achieve your goals</a>.</li>
+<li>Pointing out that the term “logic tree” as used in the world today is not logical.
+<ul>
+<li>→Something similar is called an <a href="./Issue-Tree" class="internal alias" data-slug="Issue-Tree">Issue Tree</a>.</li>
+<li><a href="./Cause-and-effect-are-in-a-loop." class="internal alias" data-slug="Cause-and-effect-are-in-a-loop.">Cause and effect are in a loop.</a> In the case of a growing tree, the top one reappears at the bottom.
+<ul>
+<li><a href="./Causal-Loop-Diagram" class="internal alias" data-slug="Causal-Loop-Diagram">Causal Loop Diagram</a> (→page 326) and <a href="./status-quo-analysis-tree" class="internal alias" data-slug="status-quo-analysis-tree">status quo analysis tree</a> (→page 314) should be used.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>08  <a href="./characteristic-factor-diagram" class="internal alias" data-slug="characteristic-factor-diagram">characteristic factor diagram</a>
+<ul>
+<li>Characteristics (results) cannot be directly controlled</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Solution Seeking
+<ul>
+<li>09  <a href="./document-retrieval" class="internal alias" data-slug="document-retrieval">document retrieval</a></li>
+<li>10  <a href="./search-carried-out-with-great-effort" class="internal alias" data-slug="search-carried-out-with-great-effort">search carried out with great effort</a></li>
+<li>11  <a href="./Fermi-estimation" class="internal alias" data-slug="Fermi-estimation">Fermi estimation</a></li>
+<li>12  <a href="./mind-map" class="internal" data-slug="mind-map">mind-map</a> (R)</li>
+<li>13  <a href="./brainwriting" class="internal" data-slug="brainwriting">brainwriting</a></li>
+<li>14  <a href="./Concept-Map" class="internal alias" data-slug="Concept-Map">Concept Map</a></li>
+<li>15  <a href="./KJ-method" class="internal alias" data-slug="KJ-method">KJ method</a></li>
+<li>16  <a href="./king-of-the-mountain" class="internal alias" data-slug="king-of-the-mountain">king of the mountain</a></li>
+<li>17  <a href="./Franklin's-Table-of-Merits-and-Demerits" class="internal alias" data-slug="Franklin's-Table-of-Merits-and-Demerits">Franklin’s Table of Merits and Demerits</a></li>
+<li>18  <a href="./opportunity-cost" class="internal alias" data-slug="opportunity-cost">opportunity cost</a></li>
+<li>19  <a href="./Kepner-Tregoe-Decision-Analysis" class="internal alias" data-slug="Kepner-Tregoe-Decision-Analysis">Kepner-Tregoe Decision Analysis</a></li>
+</ul>
+</li>
+<li>Solution Implementation
+<ul>
+<li>20  <a href="./Sheet-for-Overcoming-Stagnationism" class="internal alias" data-slug="Sheet-for-Overcoming-Stagnationism">Sheet for Overcoming Stagnationism</a></li>
+<li>21  <a href="./Process-Decision-Planning-Chart" class="internal alias" data-slug="Process-Decision-Planning-Chart">Process Decision Planning Chart</a></li>
+<li>22  <a href="./Odysseus'-chain" class="internal alias" data-slug="Odysseus'-chain">Odysseus’ chain</a></li>
+<li>23  <a href="./Behavioral-Design-Sheet" class="internal alias" data-slug="Behavioral-Design-Sheet">Behavioral Design Sheet</a></li>
+</ul>
+</li>
+<li>Examining the results
+<ul>
+<li>24  <a href="./self-monitoring" class="internal" data-slug="self-monitoring">self-monitoring</a></li>
+<li>25  <a href="./Problem-Solving-Timeline" class="internal alias" data-slug="Problem-Solving-Timeline">Problem Solving Timeline</a></li>
+<li>26  <a href="./Floyd-unraveling" class="internal alias" data-slug="Floyd-unraveling">Floyd unraveling</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>circular
+<ul>
+<li>Acknowledgement of the Problem
+<ul>
+<li>27  <a href="./Miracle-Question" class="internal alias" data-slug="Miracle-Question">Miracle Question</a></li>
+<li>28  <a href="./ladder-of-reasoning" class="internal alias" data-slug="ladder-of-reasoning">ladder of reasoning</a></li>
+<li>29  <a href="./reframing" class="internal" data-slug="reframing">reframing</a></li>
+<li>30  <a href="./Consultation-for-problems" class="internal alias" data-slug="Consultation-for-problems">Consultation for problems</a></li>
+<li>31  <a href="./status-quo-analysis-tree" class="internal alias" data-slug="status-quo-analysis-tree">status quo analysis tree</a></li>
+<li>32  <a href="./Causal-Loop-Diagram" class="internal alias" data-slug="Causal-Loop-Diagram">Causal Loop Diagram</a></li>
+</ul>
+</li>
+<li>Solution Seeking
+<ul>
+<li>33  <a href="./scaling-question" class="internal alias" data-slug="scaling-question">scaling question</a></li>
+<li>34  <a href="./ethnography" class="internal" data-slug="ethnography">ethnography</a></li>
+<li>35  <a href="./dual-listening" class="internal alias" data-slug="dual-listening">dual listening</a></li>
+</ul>
+</li>
+<li>Solution Implementation
+<ul>
+<li>36  <a href="./Pyrenees-Map" class="internal alias" data-slug="Pyrenees-Map">Pyrenees Map</a></li>
+<li>37  <a href="./symptom-prescription" class="internal alias" data-slug="symptom-prescription">symptom prescription</a>
+- <a href="./Milton-Erickson" class="internal alias" data-slug="Milton-Erickson">Milton Erickson</a>
+<ul>
+<li>Dare to intensify symptoms when efforts to resolve them are causing them
+<ul>
+<li><a href="./double-bind" class="internal alias" data-slug="double-bind">double bind</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E5%95%8F%E9%A1%8C%E8%A7%A3%E6%B1%BA%E5%A4%A7%E5%85%A8" class="external">/nishio/問題解決大全<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Herbert-Simon-Problem-Solving" class="internal">Herbert Simon Problem Solving</a></li><li><a href="./KJ-Method-Considerations-for-Problem-Solving-Compendium" class="internal">KJ Method Considerations for Problem Solving Compendium</a></li><li><a href="./Linear-and-circular-problem-solving" class="internal">Linear and circular problem solving</a></li><li><a href="./Miracle-Question" class="internal">Miracle Question</a></li><li><a href="./Nodal-Point-of-Thought-20190419" class="internal">Nodal Point of Thought 20190419</a></li><li><a href="./Process-Decision-Planning-Chart" class="internal">Process Decision Planning Chart</a></li><li><a href="./Sato's-Problem-Structure-Diagram" class="internal">Sato's Problem Structure Diagram</a></li><li><a href="./Sheet-for-Overcoming-Stagnationism" class="internal">Sheet for Overcoming Stagnationism</a></li><li><a href="./Structured-procrastination" class="internal">Structured procrastination</a></li><li><a href="./Vicious-Cycle-of-Problems-and-False-Solutions" class="internal">Vicious Cycle of Problems and False Solutions</a></li><li><a href="./kinematic-incoherence" class="internal">kinematic incoherence</a></li><li><a href="./social-vicious-circle" class="internal">social vicious circle</a></li><li><a href="./status-quo-analysis-tree" class="internal">status quo analysis tree</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

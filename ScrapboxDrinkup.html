@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>ScrapboxDrinkup</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="ScrapboxDrinkup"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="ScrapboxDrinkup"/><meta name="twitter:description" content="2017-05-26 Cybozu at Nihonbashi office notes organized after completion . 1/4 of the members are replaced at the university, so a system to encourage externalization of knowledge is needed To reduce the cost of output Keep it in outline form so others can easily add to it."/><meta property="og:description" content="2017-05-26 Cybozu at Nihonbashi office notes organized after completion . 1/4 of the members are replaced at the university, so a system to encourage externalization of knowledge is needed To reduce the cost of output Keep it in outline form so others can easily add to it."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="2017-05-26 Cybozu at Nihonbashi office notes organized after completion . 1/4 of the members are replaced at the university, so a system to encourage externalization of knowledge is needed To reduce the cost of output Keep it in outline form so others can easily add to it."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/ScrapboxDrinkup"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/ScrapboxDrinkup"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="2017-05-26 Cybozu at Nihonbashi office notes organized after completion . 1/4 of the members are replaced at the university, so a system to encourage externalization of knowledge is needed To reduce the cost of output Keep it in outline form so others can easily add to it."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="ScrapboxDrinkup"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>ScrapboxDrinkup</a></div></nav><h1 class="article-title">ScrapboxDrinkup</h1><p show-comma="true" class="content-meta"><span>Jan 22, 2022</span><span>16 min read</span></p><ul class="tags"><li><a href="./tags/Class" class="internal tag-link">Class</a></li></ul></div></div><article class="popover-hint"><p>2017-05-26 <a href="./Cybozu" class="internal" data-slug="Cybozu">Cybozu</a> at Nihonbashi office</p>
+<h1 id="notes-organized-after-completion">notes organized after completion<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#notes-organized-after-completion" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>.</p>
+<ul>
+<li>
+<p>1/4 of the members are replaced at the university, so a system to encourage externalization of knowledge is needed</p>
+</li>
+<li>
+<p>To reduce the cost of output</p>
+<ul>
+<li>Keep it in outline form so others can easily add to it.
+<ul>
+<li>State like a tree board</li>
+</ul>
+</li>
+<li>The message is not structured from the beginning.
+<ul>
+<li>Write it in outline for now, and others will ask questions.</li>
+<li>Questions encourage verbalization.</li>
+</ul>
+</li>
+<li>It is important to be able to write in a simple way
+<ul>
+<li>High learning costs prevent new people from outputting.</li>
+</ul>
+</li>
+<li>A system that does not break the link even if the title is modified later.
+<ul>
+<li>The initial thought of “I have to give it a proper title” makes me sit up and take notice.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>If you create your own page and put photos on it, you can use Ctrl-i to put icons on it.<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/></p>
+<ul>
+<li>Recommended for collaborative editing by multiple people</li>
+</ul>
+</li>
+<li>
+<p>Better expressed in links between pages than relying on classification by hashtags
+- <a href="./Scrapbox-and-Mind-Map" class="internal alias" data-slug="Scrapbox-and-Mind-Map">Scrapbox and Mind Map</a> wrote</p>
+</li>
+<li>
+<p>One private project.</p>
+</li>
+<li>
+<p>Make the title interesting; words alone are indistinguishable from a dictionary description.</p>
+<ul>
+<li>I’ve included this and other information in <a href="./Scrapbox-Best-Practices" class="internal alias" data-slug="Scrapbox-Best-Practices">Scrapbox Best Practices</a>.</li>
+</ul>
+</li>
+<li>
+<p>In a multi-person editing environment, you can also set up notifications to go to Slack when you write.</p>
+</li>
+<li>
+<p>Title is date, tags are year, month, day of the week</p>
+<ul>
+<li>By writing the day of the week, you’ll notice that it’s been a week and you haven’t started.</li>
+</ul>
+</li>
+<li>
+<p>lecture notes</p>
+<ul>
+<li>I’m trying to open two so that I can edit the story and the word description at the same time.</li>
+<li>Don’t make a page of lecture names, different lectures may touch on the same concept, write in pieces.
+<ul>
+<li>Tag the name of the lecture at the end for review before the exam</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Scrapbox is a purifier of ideas</p>
+<ul>
+<li>See related pages for simplicity.</li>
+<li>The best time to read back is when it comes naturally to your eyes.</li>
+</ul>
+</li>
+<li>
+<p>You may create a page with just the title.</p>
+<ul>
+<li>Add a “later” tag
+<ul>
+<li>The “Later” page shows that “Later” is piling up.</li>
+</ul>
+</li>
+<li>Whenever I think of something, someone writes it down.</li>
+<li>When sorted by “modified” or “visited”, unnecessary items are sunk, so you can write as much as you like without worrying about them.</li>
+<li>Hashtags are good for reading back, in-sentence links are good at first.</li>
+</ul>
+</li>
+<li>
+<p>Smaller cards increase listability.</p>
+</li>
+<li>
+<p>Separate browsers for public and private projects.</p>
+<ul>
+<li>I’m afraid to write in the public section because it’s supposed to be private.</li>
+</ul>
+</li>
+<li>
+<p>I use Chrome on my iPhone.</p>
+</li>
+<li>
+<p>Safari is good for scaling when projecting.</p>
+</li>
+<li>
+<p>Blog</p>
+<ul>
+<li>Title is “4770-170519 Title.”
+<ul>
+<li>Sequential number - Date - Title Style</li>
+</ul>
+</li>
+<li>I was going to draft it at first, but I’m having trouble changing it to markdown.</li>
+<li>I thought it would be nice to have public/private on every page, but it got tedious and everything was public.
+<ul>
+<li>Pinned the writing
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Surprising operation, what is the first place a visitor to your blog should look?
+<ul>
+<li>If you look at the pinning, do you see any confusion in the drafts?</li>
+</ul>
+</li>
+<li>But if search inflows are the main source of traffic, then pinning is the way to go.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>You need to accumulate a certain amount before you find it very useful.</p>
+</li>
+<li>
+<p>Need an organizational culture that allows everyone to share information in a flat manner</p>
+</li>
+<li>
+<p>Suspicion that a facilitator like Dr. Masui is needed.</p>
+<ul>
+<li>Scrapbox Master</li>
+<li>of a scrum master kind of position.</li>
+<li>Lower the cost of writing anyway.</li>
+</ul>
+</li>
+<li>
+<p>I use it more as a knowledge repository than a communication tool.</p>
+<ul>
+<li>I’ve seen others use it as a communication tool.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I was looking at it this time and thinking that in many cases it’s used like a tree board.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>  I’ll write about <a href="./Wiki-mode" class="internal alias" data-slug="Wiki-mode">Wiki mode</a> later.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Many people really want a hierarchical structure but don’t want to put it on, but we haven’t been able to provide an alternative.</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Isn’t the problem that few machines learn non-hierarchical information structuring methods? Do the <a href="./KJ-method" class="internal alias" data-slug="KJ-method">KJ method</a> in elementary school!</li>
+</ul>
+</li>
+<li>
+<p>IMS The more you write down ideas and forget them, the more new ones you get.</p>
+</li>
+<li>
+<p>Scrapbox for Parenting</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Maybe it would be good to give the kids a place to have an output.</li>
+</ul>
+</li>
+<li>
+<p>Write and sell books on Scrapbox</p>
+<ul>
+<li>Can be freely edited by the purchasing user</li>
+<li>I hope it’s linked Scrapbox-like.
+<ul>
+<li>That’s true, but I’m thinking that the phase of serializing the output in the form of a paper book is necessary to get on board with the current commercial publishing.</li>
+<li>The book writing process is too waterfall development and not good enough, so I’m inclined to go agile.</li>
+</ul>
+</li>
+<li>Wiki-like books are good for <a href="./Incremental-Reading" class="internal alias" data-slug="Incremental-Reading">Incremental Reading</a>, so if excerpt UserScript is introduced, it would be great to read while editing on Scrapbox!
+<ul>
+<li>Can we sell the JSON file to the purchasing user?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>The one that lets you move places.</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>You can do the KJ method.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>But one page in Scrapbox is much more granular than one sticky in the KJ method. I wonder if it will become smaller when I become more familiar with Scrapbox.</li>
+</ul>
+</li>
+<li>
+<p>I was cleaning up my room and Mann was reading it, and then it happened.</p>
+</li>
+<li>
+<p><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I don’t know if this is something that should be done in Scrapbox, but it would be interesting to be able to arrange some of the pages that I choose, not all, on top of the uploaded images.</p>
+</li>
+<li>
+<p>Movies Tagged with the year and month you saw them and the movie theater so you can see what you saw at that time of year or in the same theater.</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Various people do it to organize by month, I’ll copy them too.</li>
+</ul>
+</li>
+<li>
+<p>Create a Template</p>
+<ul>
+<li>the pros and cons</li>
+<li>Every copy and paste is a psychological barrier.</li>
+<li>I’d like to put in the date, but it’s too much trouble to type it in.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I would like to include the date too. It seems important to put it in the same format.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Raw data under ----- -----</p>
+<h1 id="shokai-san">shokai-san<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#shokai-san" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>UserScript convenience for writing excerpts
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I would love to have <a href="./Incremental-Reading" class="internal alias" data-slug="Incremental-Reading">Incremental Reading</a> in <a href="./SuperMemo" class="internal" data-slug="SuperMemo">SuperMemo</a>, same concept. If you have it, you can do Incremental Reading with Scrapbox. (SuperMemo is famous but the software quality is not so good…)</li>
+</ul>
+</li>
+<li>1/4 of the members change every year at the university.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Knowledge is lost if it is stocked within individuals. Mechanisms to encourage externalization of knowledge are needed.</li>
+</ul>
+</li>
+<li>Create your own page and use Ctrl-i to enter the icon.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I see. So this is how you do it.</li>
+</ul>
+</li>
+<li>Don’t write a lot on one page.</li>
+<li>Outlining makes it easier for others to add to it.</li>
+<li>What you want to say is not structured from the beginning, just gurgling in an outline for now, and others will ask questions.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Questions encourage verbalization.</li>
+</ul>
+</li>
+<li>Double brackets make it bigger.</li>
+<li>Simple Writing
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>High learning costs prevent new people from outputting.</li>
+</ul>
+</li>
+<li>A system that does not break the link even if the title is modified later.</li>
+<li>The automatic last editorship would change with typo corrections and such.</li>
+<li>It would be interesting to create a network of links between pages.</li>
+<li>Time passes differently for different people.
+<ul>
+<li>People who aren’t sticking around.</li>
+<li>I know what’s hot right now when I come back after 3 months, I want to know what I used to write on my page that got a response.</li>
+</ul>
+</li>
+<li>Allow UNDO for everything.</li>
+<li>API: We know from experiments that an API that creates a page when POSTed is not good enough. Please wait for me to make a great one.</li>
+<li>I don’t want to put a comment box at the end of the page.
+<ul>
+<li>why?</li>
+</ul>
+</li>
+<li>Ability to make a portion of a private project a public page
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Fun!</li>
+</ul>
+</li>
+<li>There is a project called FORUM</li>
+<li>Better expressed in links between pages than relying on classification by hashtags
+<ul>
+<li>I don’t know the latitude and longitude of this venue, I know how to get there from the station.</li>
+</ul>
+</li>
+<li>Notation distortion problem: Case is the same, and if a page is created, it will appear in the completion candidates.</li>
+<li>Individual and group use
+<ul>
+<li>I write to the group for consultation, seeds of ideas, and things I want others to expand on.</li>
+<li>But everything seems so.</li>
+<li>Copying between groups</li>
+</ul>
+</li>
+</ul>
+<h1 id="mr-daiiz">Mr. daiiz<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#mr-daiiz" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>.</p>
+<ul>
+<li>Is one private project enough?
+<ul>
+<li>Don’t worry, you can write everything down together and still find it surprisingly well.</li>
+<li>It’s interesting to see the connection later on.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I’ll combine them later.</li>
+</ul>
+</li>
+<li>group note
+<ul>
+<li>A place for friends to share miscellaneous information</li>
+<li>Notifications go to Slack when you write.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>This looks important.</li>
+</ul>
+</li>
+<li>Write whatever comes to mind.</li>
+<li>That’s an increase of about 200 pages in two months.</li>
+</ul>
+</li>
+<li>Public Projects
+<ul>
+<li>More than a memo, less than an article</li>
+<li>Unlike a blog, you don’t think about placement, bullet points are all you have.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>As shokai said, “in outline” seems important.</li>
+</ul>
+</li>
+<li>I want to disclose everything except what needs to be kept secret.
+<ul>
+<li>But there’s a copyright issue.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>deep empathy</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Application Examples
+<ul>
+<li>When planning a trip together, everyone has a different idea of where they want to start.</li>
+<li>Support for environment construction
+<ul>
+<li>Unlike chat rooms, I don’t worry about quantity.</li>
+<li>Take and share screenshots</li>
+</ul>
+</li>
+<li>Idea Memo
+<ul>
+<li>Make the title interesting; words alone are indistinguishable from a dictionary description.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Looks important!</li>
+</ul>
+</li>
+<li>ideabot as a tag, change to ideabotsu if you think it’s not working.</li>
+</ul>
+</li>
+<li>TODO
+<ul>
+<li>Write a bulleted list of what you did or wanted to do and <a href="./link" class="internal" data-slug="link">link</a> keywords.</li>
+<li>Browser extension to open Scrapbox diary pages
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>(handheld) looks convenient</li>
+</ul>
+</li>
+<li>Title is date, tags are year, month, day of the week
+<ul>
+<li>By writing the day of the week, you’ll notice that it’s been a week and you haven’t started.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Great.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>lecture notes
+<ul>
+<li>I’m trying to open two so that I can edit the story and the word description at the same time.</li>
+<li>Don’t make a page of lecture names, different lectures may touch on the same concept, write in pieces.</li>
+<li>Tag the name of the lecture at the end for review before the exam</li>
+</ul>
+</li>
+<li>Scrapbox notation is comfortable in my hands.
+<ul>
+<li>Convert to Markdown with bookmarklet</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I want that! I can use Scrapbox to write the manuscript I’m working on!</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Organizing Ideas
+<ul>
+<li>I thought handwritten was best, but it’s hard to coordinate across one book.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I know.</li>
+</ul>
+</li>
+<li>Copy paper operation failure
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>The same experience w</li>
+</ul>
+</li>
+<li>See related pages for simplicity.</li>
+<li>The best time to read back is when it comes naturally to your eyes.</li>
+<li>Scrapbox is a purifier of ideas</li>
+</ul>
+</li>
+<li>You may create a page with just the title.
+<ul>
+<li>Later tag</li>
+<li>Not when you think of it, but someone else will write it.</li>
+<li>Sorting by modified, visited will sink the ones you don’t want.</li>
+<li>Hashtags are good for reading back and in-sentence links.</li>
+</ul>
+</li>
+<li>Smaller cards increase listability.</li>
+</ul>
+<h1 id="dr-shiozawa">Dr. Shiozawa<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#dr-shiozawa" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>shio</li>
+<li>Separate browsers for public and private projects.</li>
+<li>I’m afraid to write in the public section because it’s supposed to be private.</li>
+<li>I use Chrome on my iPhone.</li>
+<li>Safari is good for scaling when projecting.</li>
+<li>I’ve been using various services, but moved entirely to Scrapbox in April.</li>
+<li>Blog
+<ul>
+<li>4770-170519 Title.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>What is 4770? →It looks like a serial ID.</li>
+</ul>
+</li>
+<li>I was going to draft it at first, but I’m having trouble changing it to markdown.</li>
+<li>I thought it would be nice to have public/private on every page, but it got tedious and everything was public.
+<ul>
+<li>Pinned the writing
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Surprising operation, what is the first place a visitor to your blog should look? If they see pinning, won’t they be confused by the drafts?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>After pouring through 4300 pages for 12 years, I’m impressed.
+- <img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Part of the reason it looks good is because it’s a photo blog, my Twitter statements were not good enough to pour over.</li>
+</ul>
+</li>
+<li>Educational use in seminars and classes
+<ul>
+<li>All the answers and arguments are in Scrapbox, migrated from Workflowy.
+<ul>
+<li>Highly flexible and connected by links.</li>
+<li>Workflowy is constrained by the tree structure, so it has to be connected somewhere.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>From tree to [lysozyme</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Anyway, I’m going to put my PUBLIC into one, I’m starting to feel like it’s not a good idea to have separate projects.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>One person’s answer is commented on by another.
+<ul>
+<li>Outline mode is super utilized.</li>
+</ul>
+</li>
+<li>When I say in class, “Let’s write an example sentence using ~,” everyone writes it in bullet points on one page.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I thought I was supposed to write on individual pages.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Class, not lecture, PE, coach.<a href="./tags/Class" class="tag-link internal alias" data-slug="tags/Class">Class</a> is physical education
+<ul>
+<li>Why don’t you just use a video for one-sided lectures?</li>
+<li>I wish to bestow my karma</li>
+<li>Physical education is not only for the teacher to exercise, but for everyone.</li>
+</ul>
+</li>
+<li>What is Education?
+<ul>
+<li>Students are nurtured by students teaching, not by teachers teaching and nurturing.</li>
+</ul>
+</li>
+<li>Team projects are better than individual projects</li>
+<li>Personal projects should be combined into one.</li>
+<li>I want a constant character count indicator, when writing answers.</li>
+<li>I’m working on a translation project in Scrapbox.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Maybe I’ll translate my book in Scrapbox too.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I’m running a book manuscript review site on Scrapbox right now, but can I make it editable and operational?</li>
+</ul>
+</li>
+<li>I’m sad to see so much of what I wrote disappear.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I wish they would export it to JSON once a day.</li>
+</ul>
+</li>
+<li>I want reverse order for sorting.</li>
+<li>belief that human nature is fundamentally good</li>
+</ul>
+<h1 id="pizza-lt">Pizza LT<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#pizza-lt" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Mr. <a href="./rakusai" class="internal" data-slug="rakusai">rakusai</a>.</p>
+<ul>
+<li>There is a healthy debate going on in Masuiken.</li>
+<li>You need to accumulate a certain amount before you find it very useful.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I’m worried about writing a lot without a backup feature.</li>
+</ul>
+</li>
+<li>Need an organizational culture that allows everyone to share information in a flat manner
+<ul>
+<li>The culture of erasing information about the discussion process when it reaches a conclusion (>&lt;</li>
+</ul>
+</li>
+<li>Hierarchical Organizing Thinking Barrier
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>You say, “You know what?” but give up on classification and do it in chronological order, or the KJ method.</li>
+</ul>
+</li>
+<li>Suspicion that a facilitator like Dr. Masui is needed.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/> <a href="https://scrapbox.io/cybozu-make-club/" class="external">https://scrapbox.io/cybozu-make-club/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> was fixed by Dr. Masui, but it doesn’t ring a bell.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I wonder if I could buy the on-prem version and do my own automatic backups.</li>
+<li>Beaver, mascot character, putting more and more things on his back that have not yet taken shape.</li>
+</ul>
+<p><a href="./htomine" class="internal" data-slug="htomine">htomine</a>.</p>
+<ul>
+<li>
+<p>Scrapbox on remote work <a href="https://scrapbox.io/remote" class="external">/remote<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</p>
+</li>
+<li>
+<p>I don’t want to think about hierarchy.</p>
+</li>
+<li>
+<p>Lower the cost of writing anyway, I can look for a good one later.</p>
+</li>
+<li>
+<p>I use it more as a knowledge repository than a communication tool.</p>
+<ul>
+<li>I’ve seen others use it as a communication tool.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I was looking at it this time and thinking that in many cases it’s used like a tree board.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>  I’ll write about <a href="./Wiki-mode" class="internal alias" data-slug="Wiki-mode">Wiki mode</a> later.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Many people really want a hierarchical structure but don’t want to put it on, but we haven’t been able to provide an alternative.</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Isn’t the problem that few machines learn how to structure information in a non-hierarchical way? We should do the KJ method in elementary school!</li>
+</ul>
+</li>
+<li>
+<p><a href="./television-drama-aired-on-a-small-TV-screen-during-the-low-season-(usually-starring-a-woman)" class="internal alias" data-slug="television-drama-aired-on-a-small-TV-screen-during-the-low-season-(usually-starring-a-woman)">television drama aired on a small TV screen during the low season (usually starring a woman)</a></p>
+</li>
+<li>
+<p>Centralize your bar exam preparation in Scrapbox</p>
+</li>
+<li>
+<p>I’m making a page to write down the information I commented on.</p>
+<ul>
+<li>Use as chat and update notification, flow</li>
+</ul>
+</li>
+<li>
+<p>Handwritten and pasted on Gyazo</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I wonder how easy it would be to take a picture and put it up.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/tsuna/icon" alt="tsuna.icon" height="19.5"/>What do you mean by “what is to be done”?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>How do you put up the photos? I don’t really know how to do it, so I send the photos to myself via email, then drag and drop them on my PC and upload them.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>I would be happy if I could share my personal projects only with my teachers or make them public.</p>
+</li>
+</ul>
+<p><a href="./jishihara" class="internal" data-slug="jishihara">jishihara</a>.</p>
+<ul>
+<li>I want to use it at CoderDojo Chofu CoderDojo</li>
+<li><a href="https://scrapbox.io/prog-exercise" class="external">/prog-exercise<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>IMS The more you write down ideas and forget them, the more new ones you get.</li>
+<li>I want to paste an image from my iPhone.</li>
+<li>Scrapbox for Parenting
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Maybe it would be good to give the kids a place to have an output.</li>
+</ul>
+</li>
+</ul>
+<p><a href="./masui" class="internal" data-slug="masui">masui</a>.</p>
+<ul>
+<li>Write and sell in Scrapbox</li>
+<li>Can be freely edited by the purchasing user
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>This is a hot WW.</li>
+</ul>
+</li>
+<li>I hope it’s linked Scrapbox-like.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>That’s true, but I’m thinking that the phase of serializing the output in the form of a paper book is necessary to get on board with the current commercial publishing.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>The book writing process is too waterfall development and not good enough, so I’m inclined to go agile.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Wiki-like books are suitable for Incrementnal Reading, so if excerpt UserScript is introduced, it would be great to read while editing on Scrapbox!</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Can we sell the JSON file to the purchasing user?
+<ul>
+<li>That’s right.<img src="https://scrapbox.io/api/pages/nishio/増井俊之/icon" alt="増井俊之.icon" height="19.5"/></li>
+</ul>
+</li>
+</ul>
+<p><a href="./sushitecture" class="internal" data-slug="sushitecture">sushitecture</a>.</p>
+<ul>
+<li>The one that lets you move places.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>You can do the KJ method.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>But one page in Scrapbox is much more granular than one sticky in the KJ method. I wonder if it will become smaller when I become more familiar with Scrapbox.</li>
+</ul>
+</li>
+<li>I was cleaning up my room and Mann was reading it, and then it happened.</li>
+<li>Arrange them on a map of Japan.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>interesting</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I don’t know if this is something that should be done in Scrapbox, but it would be interesting to be able to arrange some of the pages that I choose, not all, on top of the uploaded images.</li>
+</ul>
+<p><a href="./pastak" class="internal" data-slug="pastak">pastak</a></p>
+<ul>
+<li>Import various items into Scrapbox</li>
+<li>enex2sb</li>
+<li>Movies Tagged with the year and month you saw them and the movie theater so you can see what you saw at that time of year or in the same theater.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Various people do it to organize by month, I’ll copy them too.</li>
+</ul>
+</li>
+</ul>
+<p><a href="./kanata" class="internal" data-slug="kanata">kanata</a></p>
+<ul>
+<li>
+<p>Create a Template</p>
+</li>
+<li>
+<p>the pros and cons</p>
+</li>
+<li>
+<p>Every copy and paste is a psychological barrier.</p>
+</li>
+<li>
+<p>I’d like to put in the date, but it’s too much trouble to type it in.</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I would like to include the date too. It seems important to put it in the same format.</li>
+</ul>
+</li>
+<li>
+<p>Other</p>
+<ul>
+<li>I wonder if a separate project would be better for importing large amounts of data, or if that should be the same project.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/ScrapboxDrinkup" class="external">/nishio/ScrapboxDrinkup<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class aria-controls="toc-content" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content" class><ul class="overflow"><li class="depth-0"><a href="#notes-organized-after-completion" data-for="notes-organized-after-completion">notes organized after completion</a></li><li class="depth-0"><a href="#shokai-san" data-for="shokai-san">shokai-san</a></li><li class="depth-0"><a href="#mr-daiiz" data-for="mr-daiiz">Mr. daiiz</a></li><li class="depth-0"><a href="#dr-shiozawa" data-for="dr-shiozawa">Dr. Shiozawa</a></li><li class="depth-0"><a href="#pizza-lt" data-for="pizza-lt">Pizza LT</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./How-did-you-get-involved-with-Scrapbox" class="internal">How did you get involved with Scrapbox?</a></li><li><a href="./No-separate-drafts,-etc." class="internal">No separate drafts, etc.</a></li><li><a href="./Scrapbox-and-Mind-Map" class="internal">Scrapbox and Mind Map</a></li><li><a href="./Scrapbox-period" class="internal">Scrapbox period</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

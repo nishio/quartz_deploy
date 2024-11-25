@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Polis Study Group</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Polis Study Group"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Polis Study Group"/><meta name="twitter:description" content="2023-06-23 Cybozu Labs Study Session In the last Plurality and Polis Study Group, we mainly explained the context of Plurality, and only lightly touched on Polis ..."/><meta property="og:description" content="2023-06-23 Cybozu Labs Study Session In the last Plurality and Polis Study Group, we mainly explained the context of Plurality, and only lightly touched on Polis ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="2023-06-23 Cybozu Labs Study Session In the last Plurality and Polis Study Group, we mainly explained the context of Plurality, and only lightly touched on Polis ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Polis-Study-Group"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Polis-Study-Group"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="2023-06-23 Cybozu Labs Study Session In the last Plurality and Polis Study Group, we mainly explained the context of Plurality, and only lightly touched on Polis ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Polis-Study-Group"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Polis Study Group</a></div></nav><h1 class="article-title">Polis Study Group</h1><p show-comma="true" class="content-meta"><span>Jul 21, 2024</span><span>19 min read</span></p></div></div><article class="popover-hint"><p>2023-06-23　 <a href="./Cybozu-Labs-Study-Session" class="internal alias" data-slug="Cybozu-Labs-Study-Session">Cybozu Labs Study Session</a></p>
+<ul>
+<li>
+<p>In the last <a href="./Plurality-and-Polis-Study-Group" class="internal alias" data-slug="Plurality-and-Polis-Study-Group">Plurality and Polis Study Group</a>, we mainly explained the context of <a href="./Plurality" class="internal" data-slug="Plurality">Plurality</a>, and only lightly touched on <a href="./Polis" class="internal" data-slug="Polis">Polis</a>.</p>
+</li>
+<li>
+<p>thereafter</p>
+<ul>
+<li>Call for a paper describing the algorithm <a href="Polis:%20Scaling%20Deliberation%20by%20Mapping%20High%20Dimensional%20Opinion%20Spaces" class="external">Polis: Scaling Deliberation by Mapping High Dimensional Opinion Spaces<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> or
+<ul>
+<li><a href="./Polis-in-EC2" class="internal alias" data-slug="Polis-in-EC2">Polis in EC2</a> and running instances of</li>
+<li>[Export data from Polis DB</li>
+</ul>
+</li>
+<li>Public pol.is instances are easy and convenient to use, but they do not provide access to raw data, so we can experiment with raw data by setting up our own instances.</li>
+</ul>
+</li>
+<li>
+<p>Polis is a useful tool for better deliberation</p>
+<ul>
+<li>So it’s used in many applications here and there.</li>
+<li>But it’s not a magic wand like “put Polis in and it’s a deliberative process”.</li>
+<li>In observing the various applications, I could see specific areas of mismatch with the situation and areas I wanted to change.</li>
+<li>To adjust a tool to a situation, we need to know how it works.</li>
+<li>So, in this issue, we delve into the inner workings of Polis.</li>
+</ul>
+</li>
+<li>
+<p>Before I do that, I’ll add a little context about <a href="./democratic-process" class="internal alias" data-slug="democratic-process">democratic process</a>.</p>
+</li>
+<li>
+<p>About [democratic process</p>
+</li>
+<li>
+<p>What I thought after talking to various people and seeing their reactions.</p>
+<ul>
+<li>Sometimes, “<a href="./democratic-process" class="internal alias" data-slug="democratic-process">democratic process</a>” and “<a href="./majority-rule" class="internal alias" data-slug="majority-rule">majority rule</a> by <a href="./voting" class="internal" data-slug="voting">voting</a>” are equated.</li>
+<li>As a result, “<a href="./digital-democracy" class="internal alias" data-slug="digital-democracy">digital democracy</a>” is sometimes equated with “<a href="./digital-voting" class="internal alias" data-slug="digital-voting">digital voting</a>.”</li>
+<li>Polis are sometimes misunderstood as a tool for <a href="./decision-making" class="internal" data-slug="decision-making">decision-making</a> by voting.</li>
+</ul>
+</li>
+<li>
+<p>Definition by OpenAI</p>
+<ul>
+<li>What is a “democratic process?”
+<ul>
+<li>(A) a broadly representative group of people exchanging views and <a href="./careful-deliberation" class="internal alias" data-slug="careful-deliberation">careful deliberation</a>; and (B) a broadly representative group of people exchanging views and <a href="./careful-deliberation" class="internal alias" data-slug="careful-deliberation">careful deliberation</a>,</li>
+<li>(b) Through <a href="./transparent-decision-making-process" class="internal alias" data-slug="transparent-decision-making-process">transparent decision-making process</a>.</li>
+<li>(c) It means the process that ultimately determines the outcome.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Majority vote by ballot satisfies (B) and (C), but (A) is doubtful.</p>
+</li>
+<li>
+<p>We need to support more deliberations.</p>
+<ul>
+<li>The word in focus here is “<a href="./deliberation-democracy" class="internal alias" data-slug="deliberation-democracy">deliberation democracy</a>.”</li>
+<li>Digital technology has enabled new forms of communication, so an important aspect of <a href="./digital-democracy" class="internal alias" data-slug="digital-democracy">digital democracy</a> is to support deliberation through digital technology.
+<ul>
+<li>Communication before digital technology meant, for example, politicians making speeches in front of train stations or going to petition politicians to express their opinions.</li>
+<li>Communication was inefficient.</li>
+</ul>
+</li>
+<li>Polis is “technology that scales deliberations.”
+<ul>
+<li><a href="Polis:%20Scaling%20Deliberation%20by%20Mapping%20High%20Dimensional%20Opinion%20Spaces" class="external">Polis: Scaling Deliberation by Mapping High Dimensional Opinion Spaces<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Designing a form of communication that will allow deliberations to be more scalable.</li>
+<li>Non-traditional formats and communication mechanisms more suited to deliberative discussions are being explored</li>
+</ul>
+</li>
+<li>This year, advances in LLM technology have led to the state of “Couldn’t we create a better deliberation mechanism by combining LLMs?” This is the state of the art.
+<ul>
+<li>On 5/25, OpenAI announced [Democratic Inputs to AI
+<ul>
+<li>The definition of “democratic process” by OpenAI mentioned earlier is also written in this</li>
+</ul>
+</li>
+<li>On June 20, <a href="./Anthropic" class="internal" data-slug="Anthropic">Anthropic</a> and Polis’ <a href="./The-Computational-Democracy-Project" class="internal alias" data-slug="The-Computational-Democracy-Project">The Computational Democracy Project</a> teamed up to publish a paper entitled “<a href="./Opportunities-and-Risks-of-LLMs-for-Scalable-Deliberation-with-Polis" class="internal alias" data-slug="Opportunities-and-Risks-of-LLMs-for-Scalable-Deliberation-with-Polis">Opportunities and Risks of LLMs for Scalable Deliberation with Polis</a>. The Computational Democracy Project] and Polis
+<ul>
+<li>Anthropic is the organization that makes Claude, which has a wider context range than OpenAI.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Additional information on “Digital Voting</p>
+<ul>
+<li>Taiwan and Estonia are active in digital voting due to geopolitical risks.</li>
+<li>In 2014-, Hong Kong experienced “election nonsense” and demonstrations against it (<a href="./campaign-to-prevent-a-public-construction-work-by-acquiring-a-building-or-landmark-(e.g.-housing-development,-etc.-.)" class="internal alias" data-slug="campaign-to-prevent-a-public-construction-work-by-acquiring-a-building-or-landmark-(e.g.-housing-development,-etc.-.)">campaign to prevent a public construction work by acquiring a building or landmark (e.g. housing development, etc. .)</a>) took place.</li>
+<li>Taiwan fears a similar “electoral nonsense” will take place.
+<ul>
+<li>Military power could change “elections in the physical world today” into “bad ones”.</li>
+</ul>
+</li>
+<li>I would like to move “elections” to the online world to counter this possibility.
+<ul>
+<li>Estonia once thought the same thing and started electronic voting.
+<ul>
+<li>
+<blockquote>
+<p>Estonia still has a strong sense of urgency that its land may one day be controlled again…</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>… Even if a country is invaded and physically loses its “territory,” as long as it has the “data” of its citizens, it can regenerate itself… Estonia is working on an idea of “<a href="./data-embassies" class="internal alias" data-slug="data-embassies">data embassies</a>” where all the country’s data will be stored in embassies outside the country, with the first location to be opened in Luxembourg in 2018.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Even if the government ceases to function due to physical occupation of the territory, if there is a government as software on the Internet, citizens with ID cards can access it and function as a country called Estonia. This is the very idea of “<a href="./Government-as-a-Service" class="internal alias" data-slug="Government-as-a-Service">Government as a Service</a>. The former CIO of the Estonian government also said that this idea is the ultimate goal of national security that the country should aim for.</p>
+</blockquote>
+<ul>
+<li><a href="https://forbesjapan.com/articles/detail/19386/page1" class="external">Three Success Factors That Made Estonia’s “e-Government” Possible | Forbes JAPAN Official Website (Forbes Japan)<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li><a href="./States-that-do-not-need-territory" class="internal alias" data-slug="States-that-do-not-need-territory">States that do not need territory</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2023, <a href="./Majority-of-votes-cast-electronically-in-Estonia." class="internal alias" data-slug="Majority-of-votes-cast-electronically-in-Estonia.">Majority of votes cast electronically in Estonia.</a></li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Is the online world easier to defend?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Online here is supposed to be moved onto <a href="./Ethereum" class="internal" data-slug="Ethereum">Ethereum</a>, a <a href="./world-computer" class="internal alias" data-slug="world-computer">world computer</a> distributed all over the planet.
+<ul>
+<li>That would make it harder to destroy them.</li>
+<li>That’s why <a href="./Taiwan's-Ministry-of-Digital-Development-Participates-in-Distributed-ID-Standardization" class="internal alias" data-slug="Taiwan's-Ministry-of-Digital-Development-Participates-in-Distributed-ID-Standardization">Taiwan’s Ministry of Digital Development Participates in Distributed ID Standardization</a>.</li>
+<li>Because it is more suitable for their purposes to create an internationally standardized standard than to create a Taiwanese-only standard.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>This is the background behind these countries’ promotion of <a href="./digital-voting" class="internal alias" data-slug="digital-voting">digital voting</a>, and to be frank, Japan does not have the threat that Taiwan feels today, so it is not surprising that most Japanese do not share this awareness of the issue.</li>
+<li>Therefore, Nishio’s personal opinion is that “in promoting <a href="./Plurality" class="internal" data-slug="Plurality">Plurality</a> in Japan, it is difficult to be understood when talking about <a href="./digital-voting" class="internal alias" data-slug="digital-voting">digital voting</a>, so it is better to explain it by putting more weight on the aspect of ‘it is beneficial to visualize the distribution of everyone’s opinions’“.
+<ul>
+<li>In other words, it becomes “Polis interesting, let’s try it.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Japan’s problem is <a href="./silver-democracy" class="internal alias" data-slug="silver-democracy">silver democracy</a>, but I digress.</p>
+<ul>
+<li>When we try to implement “a voting system that is not <a href="./one-vote-per-person" class="internal alias" data-slug="one-vote-per-person">one vote per person</a>” because we want to correct the inequality that minors are not entitled to vote (<a href="./domain-voting-system" class="internal alias" data-slug="domain-voting-system">domain voting system</a>) or because it is unequal to have the same voting power regardless of whether a person has a long or short life expectancy (<a href="./life-expectancy-voting-system" class="internal alias" data-slug="life-expectancy-voting-system">life expectancy voting system</a>), people say “it is difficult to implement <a href="./paper-and-box-voting" class="internal alias" data-slug="paper-and-box-voting">paper and box voting</a>, so <a href="./digital-voting" class="internal alias" data-slug="digital-voting">digital voting</a> would be better. and box voting] is difficult to implement, so <a href="./digital-voting" class="internal alias" data-slug="digital-voting">digital voting</a> would be better,” but I have a feeling that these voting systems have not been widely discussed yet.</li>
+<li>For the time being, I am not interested in changing the electoral system, but in the form of <a href="./unsuccessful-campaigns" class="internal alias" data-slug="unsuccessful-campaigns">unsuccessful campaigns</a> such as <a href="./Operation-Coconut" class="internal alias" data-slug="Operation-Coconut">Operation Coconut</a>, or <a href="./technological-use-of-force" class="internal alias" data-slug="technological-use-of-force">technological use of force</a>.</li>
+</ul>
+</li>
+<li>
+<p><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Regarding “representativeness,” can digital technology reduce “representatives” to ultimately “individuals”?</p>
+</li>
+<li>
+<p><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Offline <a href="./representative" class="internal" data-slug="representative">representative</a> democracy had to represent the entire population by a few hundred people at most, so minority opinions could not be represented</p>
+<ul>
+<li>Digital technology allows individuals to express their opinions.</li>
+<li>However, the current social networking sites are not able to unite them, resulting in a flood of information, and being small alone is not an ideal state of affairs.</li>
+<li>So a good balancing and clustering (=representation) mechanism is needed.</li>
+</ul>
+</li>
+</ul>
+<p>What we would like to change about Polis</p>
+<ul>
+<li>
+<p>Not visible until there are at least 7 voters.</p>
+<ul>
+<li>Not visualizing when there are fewer people has the advantage of making individual opinions less visible.</li>
+<li>Inconvenient for situations where you want to visualize internal discussions with a small number of people</li>
+</ul>
+</li>
+<li>
+<p>Opinion submissions from general users are considered “agree”.</p>
+<ul>
+<li>In other words, “Who’s more in favor of it, those who are for it or against it?” I can’t post with the feeling that</li>
+<li>But when I see situations where polls are made on Twitter and elsewhere, I wonder, “What do people think?” There’s a lot of “What do you think?</li>
+<li>The current Polis makes it difficult to know how others voted on the opinions you posted.
+<ul>
+<li>View individual opinion polls in the detailed report.</li>
+<li>If you’re lucky enough to be chosen as the main opinion of the cluster, you’ll see it in the visualization.</li>
+</ul>
+</li>
+<li>There should be permalinks to individual opinion polls.
+<ul>
+<li>When you vote, you can see the results of everyone’s vote.</li>
+<li>If you have already voted, you can see recent results.</li>
+<li>Share this URL so others can vote too!</li>
+<li>Create incentives for opinion contributors to post on social networking sites</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Unable to update vote.</p>
+<ul>
+<li>When you see it in the image of “election” and “voting,” you think you shouldn’t change your vote after the fact.</li>
+<li>But to see the output of others and change one’s opinion is what “deliberation” is all about.
+<ul>
+<li>If it doesn’t change, it’s just a statistical survey.</li>
+</ul>
+</li>
+<li>Currently, there is no view to look back on what I voted for and how I voted.
+<ul>
+<li>I’d like to be able to change my vote from there.</li>
+</ul>
+</li>
+<li>Maybe this is because Polis focuses on collecting the “emotions” of “people who don’t think”.
+<ul>
+<li>The README expresses <a href="./SENTIMENT-GATHERING-PLATFORM" class="internal alias" data-slug="SENTIMENT-GATHERING-PLATFORM">SENTIMENT GATHERING PLATFORM</a> in the README.
+<ul>
+<li>[Sentiment / emotion collection platform</li>
+</ul>
+</li>
+<li>When Nishio did Polis, many of the people who participated and returned feedback were “thinkers”.</li>
+<li>I, personally, would rather observe “10 thinking people’s thoughts” than “1000 unthinking people’s feelings”.</li>
+<li>As a democratic process, “a few people thought about it and decided” is not convincing to those who could not participate.
+<ul>
+<li>Need to create a subjective feeling of “<a href="./understanding" class="internal" data-slug="understanding">understanding</a>”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The current design cannot respond to the “thinking person’s” need to know.
+<ul>
+<li>Some say, “It would be nice if some material was presented to help us make a decision before we answer Yes/No.”
+<ul>
+<li>If we actually do that, the majority who don’t want to read the material will disengage.</li>
+<li><a href="./People-have-individual-differences." class="internal alias" data-slug="People-have-individual-differences.">People have individual differences.</a> to <a href="./no-one-way-can-meet-everyone's-needs" class="internal alias" data-slug="no-one-way-can-meet-everyone's-needs">no one way can meet everyone’s needs</a>.</li>
+</ul>
+</li>
+<li>Polis needs an approach to broaden its base, a mechanism to reach out to a wide range of people and then scoop up and gather those who are interested and feel a desire to become deeply involved.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>comments make me want to write a reply.</p>
+<ul>
+<li>Polis’ deliberate design is not to apply opinions directly to opinions
+<ul>
+<li>Avoid framing (wrestling)</li>
+<li><a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%AC%E3%83%BC%E3%83%9F%E3%83%B3%E3%82%B0_" class="external">(Internet term) Framing (Internet term) - Wikipedia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>Often, however, users’ “desire to write their thoughts” increases
+<ul>
+<li>This state has a heightened incentive to verbalize.</li>
+<li>Wouldn’t it be more beneficial to have more data if we let them write honestly?</li>
+<li>I just have a problem with feeding it directly back to “the person who wrote the original opinion”.</li>
+<li>Writing a reply is not in itself a problem.</li>
+<li>It would be nice if the LLM could take the replies and convert them into useful feedback.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Moderation issues.</p>
+<ul>
+<li>In Nishio’s Polis operation, it is usually always set to “no moderation, user posts are instantly visible to other users”.
+<ul>
+<li>“No comments shown without moderator approval”</li>
+</ul>
+</li>
+<li>If this setting is turned off, it will not appear until approved by a human moderator (still off by default).</li>
+<li>I have a problem with this moderation.
+<ul>
+<li>The human burden is heavy.</li>
+<li>Opportunity loss due to hidden period of time waiting for moderation</li>
+<li>Concern that moderator bias may be introduced.</li>
+</ul>
+</li>
+<li>In fact, the bias comes in.
+<ul>
+<li>Because the determination of “opinion not relevant to the topic” is influenced by the individual’s opinion on the topic
+<ul>
+<li>Case: <a href="./Polis-Experience-Report:-Should-same-sex-marriage-be-legalized#644b6d99aff09e00006a4a55" class="internal alias" data-slug="Polis-Experience-Report:-Should-same-sex-marriage-be-legalized">644b6d99aff09e00006a4a55</a> <a href="./Too-many-irrelevant-questions." class="internal alias" data-slug="Too-many-irrelevant-questions.">Too many irrelevant questions.</a></li>
+</ul>
+</li>
+<li>Nishio thinks this way because of his background in the KJ method.
+<ul>
+<li>What may appear to be unrelated <a href="./may-later-be-found-to-be-related" class="internal alias" data-slug="may-later-be-found-to-be-related">may later be found to be related</a>.</li>
+<li>At least one person thought it was relevant and posted it, so don’t be too quick to throw it away.
+- <a href="./ape" class="internal" data-slug="ape">ape</a></li>
+<li>→If it were, you wouldn’t have to moderate it because you wouldn’t throw it away anyway.</li>
+</ul>
+</li>
+<li>In reality, there will be a lot of “emotional or unclear documents” posted, which will cause problems for voters to be upset.
+<ul>
+<li>The LLM will do something about it.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Tends to become less interesting when there are two clusters.</p>
+<ul>
+<li>If you take a vote on a subject that is divided into two sides, and you are given a visualization of the two sides, you will say, “Of course…</li>
+<li>When you look at the details, there is some interesting data, but most people are not aware of it.
+<ul>
+<li>You’re splitting it in two.</li>
+<li>I’m in the majority, thank God.</li>
+<li>I am in the minority, this system is not a good one.</li>
+</ul>
+</li>
+<li>In encouraging deeper thinking, maybe it would be better to have more than three clusters?</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Are we aiming for “fun” or “problem solving”?</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>That is an important perspective. I think it is important to be interesting first in order to encourage the participation of many people.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Skewing statistical results for the sake of fun would be a hindrance to solving the problem.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>That’s true, it seems like a good idea to add another view instead of distorting it</li>
+</ul>
+</li>
+<li>
+<p>I want to take over the voting results from a past dialogue.</p>
+<ul>
+<li>Using one CONVERSATION for a long time is not a good experience.
+<ul>
+<li>The number of comments is only increasing.</li>
+<li>I want to re-partition periodically.</li>
+</ul>
+</li>
+<li>But every time it’s reset to zero, that’s not so subtle.</li>
+<li>What do we take over?
+<ul>
+<li>Comments that were agreed upon need not be carried over.</li>
+<li>Comments with many “I don’t know” would be redone with additional information or rewritten to make them easier to understand.</li>
+<li>I’d like to recycle the ones that are split, if it’s possible to re-vote.
+<ul>
+<li>However, I don’t want several comments with nearly the same voting trends.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>How Polis Works</p>
+<ul>
+<li>Papers:.
+<ul>
+<li><a href="Polis:%20Scaling%20Deliberation%20by%20Mapping%20High%20Dimensional%20Opinion%20Spaces" class="external">Polis: Scaling Deliberation by Mapping High Dimensional Opinion Spaces<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>Create [voting matrix
+<ul>
+<li>Matrix with +1/0/-1/NaN for each user and opinion</li>
+<li>What you haven’t voted for yet is represented by NaN.</li>
+</ul>
+</li>
+<li>Fill in missing values with user averages per opinion
+<ul>
+<li>For an agenda item for which everyone who voted for it is in favor of it, even those who did not vote for it are considered to be in favor of it.</li>
+</ul>
+</li>
+<li>This will create a matrix with “-1 to +1” values.</li>
+<li>Basically just do “high-dimensional data visualization” from here.
+<ul>
+<li>There are many and varied ways to do this.</li>
+<li>Various things are being tried in Polis.</li>
+<li>Basically <a href="./principal-component-analysis" class="internal alias" data-slug="principal-component-analysis">principal component analysis</a> (PCA)</li>
+</ul>
+</li>
+<li>Average Care
+<ul>
+<li>The missing values are filled with the mean, which inevitably leads to a large number of samples near the mean.</li>
+<li>Clustering this as it is would create a cluster of “people who haven’t voted much yet” around the mean, which isn’t interesting.</li>
+<li>So we’ll use the number of opinions voted on to make adjustments.
+<ul>
+<li>Vector from the mean by a factor of 1 for those voting for all, and by a factor of sqrt(2) for those voting for only half.</li>
+</ul>
+</li>
+<li>He writes that this was used at least in the early days, but that the need for this adjustment has since been reduced by “showing users the pros and cons of the opinions first”.
+<ul>
+<li>It wasn’t clear from reading the code whether they were making adjustments in the current implementation or not.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Clustering with an undetermined number of clusters
+<ul>
+<li>There have always been diverse ways to do this, too.
+<ul>
+<li>Hierarchical clustering is typical</li>
+<li>However, the number of clusters does not have to be determined, but the threshold must be determined</li>
+</ul>
+</li>
+<li>Polis uses <a href="./K-means-method" class="internal alias" data-slug="K-means-method">K-means method</a> and [silhouette coefficient
+<ul>
+<li>What is silhouette coefficient?
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Silhouette_(clustering)" class="external">Silhouette (clustering) - Wikipedia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><img src="https://gyazo.com/7a18c06ed7f46ed755dcd3a1e344714d/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>Try K=2~5 and choose the one with the best score</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://gyazo.com/f6e42bdef2612da442f54e526178edba/thumb/1000" alt="image"/><img src="https://gyazo.com/41dbf7cf1ac885827d28dc9bbbae9d20/thumb/1000" alt="image"/>
+<ul>
+<li>I was able to get a similar result with the Python implementation of the calculation, but I wonder why the shape is slightly different.</li>
+</ul>
+</li>
+<li>Opinions on behalf of the cluster
+<ul>
+<li>Representativeness measure <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">v</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">c</span><span class="mclose">)</span></span></span></span>.
+<ul>
+<li><img src="https://gyazo.com/d7cca6a96e32a604aa79cd627c774aea/thumb/1000" alt="image"/></li>
+<li>I think Pv is the mode of <a href="./beta-distribution" class="internal alias" data-slug="beta-distribution">beta distribution</a>.
+<ul>
+<li>Beta distribution is <a href="./conjugate-prior-distribution" class="internal alias" data-slug="conjugate-prior-distribution">conjugate prior distribution</a> of <a href="./Bernoulli-distribution" class="internal alias" data-slug="Bernoulli-distribution">Bernoulli distribution</a></li>
+<li>
+<blockquote>
+<p>The Bernoulli distribution is a discrete probability distribution in mathematics that takes 1 with probability p and 0 with probability q = 1 - p.</p>
+</blockquote>
+</li>
+<li>That is, I’m making a <a href="./Bayesian-estimation" class="internal alias" data-slug="Bayesian-estimation">Bayesian estimation</a> of this p, thinking that whether a person in a given group g votes v for a given comment c follows a Bernoulli distribution with probability p.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The paper further states that <a href="./Fisher's-exact-probability-test" class="internal alias" data-slug="Fisher's-exact-probability-test">Fisher’s exact probability test</a>.
+<ul>
+<li><a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%A3%E3%83%BC%E3%81%AE%E6%AD%A3%E7%A2%BA%E7%A2%BA%E7%8E%87%E6%A4%9C%E5%AE%9A" class="external">Fisher’s exact probability test - Wikipedia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>
+<blockquote>
+<p>Fisher’s exact probability test … It is used to examine whether there is a statistically significant association between two variables in a 2 x 2 contingency table (when dealing with data where two populations are classified into two categories, with one degree of freedom)… When the sample size is large, the chi-square test is used because the sample distribution of the statistic is approximately equal to the chi-square distribution… Fisher showed that the probability p of obtaining such a combination of numbers is represented by the following hypergeometric distribution</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Source code-wise, they’re using <a href="./hypergeometric-functions" class="internal alias" data-slug="hypergeometric-functions">hypergeometric functions</a>.
+<ul>
+<li><a href="https://ja.wikipedia.org/wiki/%E8%B6%85%E5%B9%BE%E4%BD%95%E5%88%86%E5%B8%83" class="external">Hypergeometric distribution - Wikipedia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>
+<blockquote>
+<p>The hypergeometric distribution is a type of discrete probability distribution that gives the probability of how many success states there are in a non-restored extraction from a population with success states. It is applied to non-repeat extraction from a finite population that can be divided into two exclusive attributes, such as male/female, pass/fail, and so on.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>So there are two exclusive characteristics of voting for comment c, “v or otherwise,” and they’re collected from two populations, “people in group g” and “people outside group g.”</li>
+<li>“Does it make a difference to the group?” I would like to know</li>
+<li>So, assuming that “there is no difference between groups,” find the probability that the results are more radical than observed in that case
+<ul>
+<li>So much for the accuracy test.</li>
+</ul>
+</li>
+<li>I don’t know why I’m multiplying these probabilities by Rvgc, but why am I doing this?
+<ul>
+<li>The paper states that it “reflects both the estimated effect size and the statistical confidence associated with the effect.”</li>
+<li>The mathematical interpretation of the resulting values is not quite clear.</li>
+</ul>
+</li>
+<li>Finally, sorting by this value and choosing from the smallest, comments that characterize the group are selected
+<ul>
+<li><img src="https://gyazo.com/8a746a484dff28c8c0971b0b0207b3cb/thumb/1000" alt="image"/></li>
+<li>It’s a mystery, multiplying a smaller better p-value by an odds ratio that looks like a larger better p-value.</li>
+<li>Why not just use the p-value?</li>
+</ul>
+</li>
+<li>The paper states, “First select the significant ones from the affirmative comments, and if none, from the negative comments.”
+<ul>
+<li>Human beings, because the negative form is hard to understand.</li>
+</ul>
+</li>
+<li>Degree of <a href="./consensus" class="internal" data-slug="consensus">consensus</a> per comment is calculated by [$ \prod_g P_v(g,c)
+<ul>
+<li>This means ignoring the number of people in the group and multiplying the probability that each group agrees</li>
+<li>If one of them is zero, it’s zero.</li>
+<li>It means that the decision is not made by the majority group alone, but must be supported by all groups, including the minority group.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>It’s like the <a href="./veto" class="internal" data-slug="veto">veto</a> of the Permanent Council.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Resemblance.
+<ul>
+<li>The good thing is that “closer to consensus” can now be expressed rather than a binary Yes or No.</li>
+<li>It would be nice to be able to visualize this and make suggestions like “we need to convince this group of people to get closer to a consensus”.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Cases where a minority group of experts is opposed, persuade the experts?</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>If we have a majority vote, the opinions of a minority of experts will be crushed, but this method sounds good because it generates communication for persuasion.
+<ul>
+<li>The expert side will come up with evidence and other counter evidence.</li>
+<li>I tend to implicitly assume the direction of “experts persuade the masses,” but the masses can “close their ears because it’s too hard and they don’t understand it well,” and it would be interesting to do the opposite.
+<ul>
+<li>LLM support seems necessary.</li>
+</ul>
+</li>
+<li>The current Polis does not involve a place for “communication for persuasion”, so something else is needed.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>So, with some trepidation, I was able to reproduce the statistical processing done by the Polis backend using Python from the raw CSV of the polling data.</li>
+</ul>
+<p>Reexamination of proposed improvements</p>
+<ul>
+<li>Not visible until there are at least 7 voters.
+<ul>
+<li>Aside from appearance, visualization (digest report) can be done from the second person voting stage.</li>
+<li>So we can share the URL after the people who prepared it have voted.</li>
+<li>Of course, in this case, we know what the first person voted for, so this is for use cases where this is not a problem.
+<ul>
+<li>I don’t think there’s anything in particular that you want to keep secret if it’s a situation where you’re trying to organize an internal verbal discussion that’s getting out of hand, so I think this is fine.</li>
+</ul>
+</li>
+<li>Especially in small cases of about 10 people, it may be useful in some cases to summarize in a way that does not involve dimensionality reduction by PCA.
+<ul>
+<li>Specifically, LLMs can give feedback on a controversial opinion, such as, “This opinion is divided, but let’s delve into it from different perspectives.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Opinion submissions from general users are considered “agree”.
+<ul>
+<li>Just a UI issue, just stop writing one to the DB.</li>
+</ul>
+</li>
+<li>Unable to update vote.
+<ul>
+<li>Just a UI issue, just update the DB.</li>
+</ul>
+</li>
+<li>comments make me want to write a reply.
+<ul>
+<li>How to use this comment in a situation where participants could fight would require a layer of ingenuity that has nothing to do with statistics.</li>
+<li>If there is trust between members, such as for internal use, you could allow them to reply to each other.
+<ul>
+<li>Do you want a <a href="./Cotonoha" class="internal" data-slug="Cotonoha">Cotonoha</a>-like screen?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Moderation issues.
+<ul>
+<li>This is another LLM layer story.</li>
+<li>If there’s trust among the members, it might be better to go through bare bones.</li>
+</ul>
+</li>
+<li>Tends to become less interesting when there are two clusters.
+<ul>
+<li>Can force clusters to three or more
+<ul>
+<li>If you fix it to three, it looks like <a href="./MAGI-System" class="internal alias" data-slug="MAGI-System">MAGI System</a>.</li>
+</ul>
+</li>
+<li>In this situation, the “first principal component axis” is the “obvious axis of conflict”.
+<ul>
+<li>So it would be interesting to discard that and cluster them in other dimensions?
+<ul>
+<li>When there is <a href="./confrontation" class="internal" data-slug="confrontation">confrontation</a>, sometimes it works better to seek another axis rather than push and pull on that axis of conflict.</li>
+<li>A case study of the debate over whether to change Taiwan’s time zone: <a href="./Audrey-Tan-on-Digital-Democracy#6489dff1aff09e00000cfcf1" class="internal alias" data-slug="Audrey-Tan-on-Digital-Democracy">6489dff1aff09e00000cfcf1</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I want to take over the voting results from a past dialogue.
+<ul>
+<li>be made</li>
+<li>
+<blockquote>
+<p>I don’t need several comments with nearly the same voting trends.</p>
+</blockquote>
+<ul>
+<li>This is, in essence, just picking out the comments with the largest variance along each principal component axis of the vote distribution.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>summary
+<ul>
+<li>I have a good idea of how to solve some of these problems with the statistical layer.</li>
+<li>Some of the rest are UI layers, some are LLM layers</li>
+<li>Polis’ visualization of updates per second is interesting to watch
+<ul>
+<li>Whether it is more than interesting to be updated every second is tenuous.</li>
+<li>Maybe we could explore more alternative visualization methods?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/Polis%E5%8B%89%E5%BC%B7%E4%BC%9A" class="external">/nishio/Polis勉強会<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Diary-2023-06-22" class="internal">Diary 2023-06-22</a></li><li><a href="./Omoikane-Study-Group" class="internal">Omoikane Study Group</a></li><li><a href="./Plurality-and-Polis-Study-Group" class="internal">Plurality and Polis Study Group</a></li><li><a href="./Polis" class="internal">Polis</a></li><li><a href="./Public-Opinion-Map-Study-Group" class="internal">Public Opinion Map Study Group</a></li><li><a href="./Talk-to-the-City-Study-Group" class="internal">Talk to the City Study Group</a></li><li><a href="./Weekly-journal-2023-06-26~2023-07-02" class="internal">Weekly journal 2023-06-26~2023-07-02</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Introduction to the Ten Ox Chart</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Introduction to the Ten Ox Chart"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Introduction to the Ten Ox Chart"/><meta name="twitter:description" content="..."/><meta property="og:description" content="..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Introduction-to-the-Ten-Ox-Chart"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Introduction-to-the-Ten-Ox-Chart"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Introduction-to-the-Ten-Ox-Chart"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Introduction to the Ten Ox Chart</a></div></nav><h1 class="article-title">Introduction to the Ten Ox Chart</h1><p show-comma="true" class="content-meta"><span>Oct 30, 2023</span><span>8 min read</span></p></div></div><article class="popover-hint"><ul>
+<li>
+<p>Introduction to <a href="./Ten-Bulls-(ten-signs-of-the-Chinese-zodiac)" class="internal alias" data-slug="Ten-Bulls-(ten-signs-of-the-Chinese-zodiac)">Ten Bulls (ten signs of the Chinese zodiac)</a> - The Way to the [New You
+<img src="https://gyazo.com/643ecf70a4625d2f1126f65eda33df11/thumb/1000" alt="image"/></p>
+</li>
+<li>
+<p><a href="https://amzn.to/499Y2oB" class="external">Amazon<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+<li>
+<p>Approach from a <a href="./Consciousness-Only-Thought" class="internal alias" data-slug="Consciousness-Only-Thought">Consciousness-Only Thought</a> perspective</p>
+</li>
+<li>
+<p>Yogic thought is a thorough consideration of facing oneself</p>
+</li>
+<li>
+<p><a href="./self-inquiry" class="internal" data-slug="self-inquiry">self-inquiry</a> → <a href="./narrowing-the-gap-between-life-and-death" class="internal alias" data-slug="narrowing-the-gap-between-life-and-death">narrowing the gap between life and death</a> → <a href="./relief-for-others" class="internal alias" data-slug="relief-for-others">relief for others</a></p>
+</li>
+<li>
+<p>self-inquiry</p>
+<ul>
+<li><a href="./bull-=-true-self" class="internal alias" data-slug="bull-=-true-self">bull = true self</a>.</li>
+</ul>
+</li>
+<li>
+<p>narrowing the gap between life and death</p>
+<ul>
+<li><a href="./Vihara" class="internal" data-slug="Vihara">Vihara</a></li>
+</ul>
+</li>
+<li>
+<p>relief for others</p>
+<ul>
+<li><a href="./Mercy-Row" class="internal alias" data-slug="Mercy-Row">Mercy Row</a></li>
+<li><a href="./rain-ni-mo-makezu" class="internal alias" data-slug="rain-ni-mo-makezu">rain ni mo makezu</a></li>
+<li>Lighten yourself up.</li>
+<li>↔ <a href="./Person-centeredness" class="internal" data-slug="Person-centeredness">Person-centeredness</a>.</li>
+</ul>
+</li>
+</ul>
+<p>[Zenji Kakuan
+- [Ten Bulls (ten signs of the Chinese zodiac)</p>
+<ul>
+<li>[Northern Song dynasty</li>
+</ul>
+<p>Consciousness-Only Thought
+- <a href="./yoga" class="internal" data-slug="yoga">yoga</a>
+- [Zen (Buddhism) is also a form of yoga.</p>
+<ul>
+<li>There exists only knowledge
+<ul>
+<li>[There is only the mind, so if you do yoga and purify your mind, you will go from being lost to being enlightened.</li>
+<li>↔ <a href="./all-are-empty" class="internal alias" data-slug="all-are-empty">all are empty</a>.</li>
+</ul>
+</li>
+<li>brought to China by <a href="./Xuanzang" class="internal" data-slug="Xuanzang">Xuanzang</a> Sanzang.
+<ul>
+<li>Introduced to Japan during the Nara period (710-794)</li>
+</ul>
+</li>
+</ul>
+<p>[Araya-sense = “all-knowledge”.</p>
+<p>The author is the originator of <a href="./Kantou-Jyugyuzu" class="internal alias" data-slug="Kantou-Jyugyuzu">Kantou Jyugyuzu</a>.</p>
+<ul>
+<li><img src="https://gyazo.com/a497485d867bb009a39fef705b2c5f2a/thumb/1000" alt="image"/>
+<ul>
+<li>from <a href="https://wakaneko.hatenadiary.org/entry/20121126/1353895992" class="external">The Three Purposes of Life (Learning from the “Ten Ox Chart”) - wakaneko’s Diary<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>The above painting, titled “Kanso Jugyuzu,” was created by the painter Mitsuhiro Masuno over a period of ten years under my direction and supervision.</p>
+</blockquote>
+</li>
+</ul>
+<p><a href="./Interrogation-cow" class="internal alias" data-slug="Interrogation-cow">Interrogation cow</a></p>
+<ul>
+<li>cattle (Bos taurus)
+<ul>
+<li>The “new me” becoming more and more clear.</li>
+</ul>
+</li>
+<li><a href="./One-man,-one-universe." class="internal alias" data-slug="One-man,-one-universe.">One man, one universe.</a>
+<ul>
+<li><a href="./Kant" class="internal" data-slug="Kant">Kant</a></li>
+<li><a href="./Time-and-space-are-inborn-intuitive-forms" class="internal alias" data-slug="Time-and-space-are-inborn-intuitive-forms">Time and space are inborn intuitive forms</a>.</li>
+</ul>
+</li>
+<li>From what (<a href="./existence" class="internal" data-slug="existence">existence</a>) to how (<a href="./当為" class="internal alias" data-slug="当為">当為</a>) p.59
+<ul>
+<li>Kitaro Nishida</li>
+<li>Tolstoy</li>
+<li>From Being to Being
+<ul>
+<li>From <a href="./Sein" class="internal" data-slug="Sein">Sein</a> to [Sollen</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="./Sightseeing-trail" class="internal alias" data-slug="Sightseeing-trail">Sightseeing trail</a>.</p>
+<ul>
+<li>[The light of the lamp is the light of the lamp itself.</li>
+<li><a href="./Self" class="internal" data-slug="Self">Self</a>=new self</li>
+<li>Law = Elements of Existence → Teachings → Truth
+Transform the self from the deepest level</li>
+<li>[Shomon kunju p.77</li>
+<li><a href="./Indiscriminate-Wisdom" class="internal alias" data-slug="Indiscriminate-Wisdom">Indiscriminate Wisdom</a>.</li>
+</ul>
+<p><a href="./hiyu-himu" class="internal alias" data-slug="hiyu-himu">[Non-owner-occupied]</a> p.80
+- <a href="./False-dichotomy" class="internal alias" data-slug="False-dichotomy">False dichotomy</a>
+- <a href="./middle-way" class="internal alias" data-slug="middle-way">middle way</a></p>
+<ul>
+<li>the hardest thing about being dead is being extremely ruthless
+<ul>
+<li>
+<blockquote>
+<p>The Great Sutra says, “The Buddha nature is non-possessive, non-existent, non-causal, non-existent, non-inside, non-external, non-extreme, non-negligent, etc.” (p. 44, a4-6. Choi p. 339). The original text is Nanpon Nirvana Sutra, Vol. 25, Shikhang Bodhisattvahin, “The Buddha-natured one is also non-colorful, also non-phase, also non-phase, also non-unity, also non-unity, also non-existence, also non-exhaustion, also cause and effect, also righteousness, also non-righteousness, also character, also non-character, also non-character, also non-character. (T12, no. 375, p. 770, b20-25). --- <a href="https://soka.repo.nii.ac.jp/record/36804/files/sokadaigakujinbunronsyu0_24_5.pdf" class="external">PDF<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>↔ Relative thinking with and without
+<ul>
+<li><a href="./Parmenides" class="internal" data-slug="Parmenides">Parmenides</a>
+<ul>
+<li><a href="./Descartes" class="internal" data-slug="Descartes">Descartes</a></li>
+<li><a href="./The-Creator" class="internal alias" data-slug="The-Creator">The Creator</a> in <a href="./Christianity" class="internal" data-slug="Christianity">Christianity</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>[The “Shogitai” and the “Sezoku Taisetsu” are the two most important principles of the “Shogitai” and the “Sezoku Taisetsu”.</p>
+<ul>
+<li><a href="./Discard" class="internal" data-slug="Discard">Discard</a></li>
+<li><a href="./語りえぬものについては，沈黙せねばならない" class="internal alias" data-slug="語りえぬものについては，沈黙せねばならない">語りえぬものについては，沈黙せねばならない</a><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/></li>
+</ul>
+<p><a href="./GETSUYU" class="internal" data-slug="GETSUYU">GETSUYU</a></p>
+<ul>
+<li>class=Note</li>
+<li>Clearly stated and unforgettable
+<ul>
+<li>Obviously, write it down and don’t forget it.</li>
+</ul>
+</li>
+<li>awareness
+- <a href="./attention" class="internal" data-slug="attention">attention</a> っぽさ<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/></li>
+</ul>
+<p><a href="./cattle-ranching" class="internal alias" data-slug="cattle-ranching">cattle ranching</a></p>
+<ul>
+<li>tame (e.g. animal)</li>
+<li>No more rebellion.
+<ul>
+<li><a href="./心の欲するところに従えども矩を踰えず" class="internal alias" data-slug="心の欲するところに従えども矩を踰えず">心の欲するところに従えども矩を踰えず</a><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>
+<ul>
+<li>[What does “follow your heart’s desire, but don’t go beyond the bounds of the law” mean? Meaning and usage - Kotobank <a href="https://kotobank.jp/word/%E5%BF%83%E3%81%AE%E6%AC%B2%E3%81%99%E3%82%8B%E3%81%A8%E3%81%93%E3%82%8D%E3%81%AB%E5%BE%93%E3" class="external">https://kotobank.jp/word/%E5%BF%83%E3%81%AE%E6%AC%B2%E3%81%99%E3%82%8B%E3%81%A8%E3%81%93%E3%82%8D%E3%81%AB%E5%BE%93%E3<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> %81%88%E3%81%A9%E3%82%82%E7%9F%A9%E3%82%92%E8%B8%B0%E3%81%88%E3%81%9A-2037879]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[The following is a summary of the “all seeds” concept.
+<ul>
+<li>If the seed burns out, it will not sprout.</li>
+<li>The Indiscriminate Wisdom of the Three-Wheeled Purity (Sanrin-syo)
+<ul>
+<li>No distinction is made between the person who did it, the person who was done it to, and the act.</li>
+<li>
+<blockquote>
+<p>The three persons (1) the donor, (2) the recipient, and (3) the object to be donated must be free from any preconceived notions of adherence to any of the three.</p>
+</blockquote>
+<ul>
+<li><a href="http://jodoshuzensho.jp/daijiten/index.php/%E4%B8%89%E8%BC%AA%E6%B8%85%E6%B5%84" class="external">Miwa Seiyo - Shin Compendium of Pure Land Buddhism<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I don’t separate myself from the phenomenon.</li>
+<li>[When the time is right to meet with misfortune, meet with misfortune; when the time is right to die, die.
+<ul>
+<li><a href="./Ryokan" class="internal" data-slug="Ryokan">Ryokan</a></li>
+</ul>
+</li>
+</ul>
+<p><a href="./cavalry-returning-to-home" class="internal alias" data-slug="cavalry-returning-to-home">cavalry returning to home</a></p>
+<ul>
+<li>know</li>
+<li>wisdom</li>
+<li>wisdom</li>
+<li>
+<blockquote>
+<p><a href="./Through-the-individual,-the-universal-becomes-manifest" class="internal alias" data-slug="Through-the-individual,-the-universal-becomes-manifest">Through the individual, the universal becomes manifest</a> p.130</p>
+</blockquote>
+</li>
+</ul>
+<p><a href="./forgetting-cow-survivor" class="internal alias" data-slug="forgetting-cow-survivor">forgetting cow survivor</a></p>
+<ul>
+<li>flow
+<ul>
+<li>Denial of false self
+<ul>
+<li>Acquisition of a new self</li>
+<li>cattle (Bos taurus)</li>
+</ul>
+</li>
+<li>Denial of a new self
+<ul>
+<li><a href="./forgetting-cow-survivor" class="internal alias" data-slug="forgetting-cow-survivor">forgetting cow survivor</a></li>
+<li>Acquisition of True Self</li>
+</ul>
+</li>
+<li>Denial of one’s true self
+<ul>
+<li>[The same as the above.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[If you don’t want to die, die now. Once you die, you will never die again.</li>
+<li>[When the time is right to meet with misfortune, meet with misfortune; when the time is right to die, die.</li>
+<li>[Immortality
+<ul>
+<li>narrowing the gap between life and death</li>
+</ul>
+</li>
+<li>If you are in a state of forgetfulness, if you are in a state of ecstasy, you are going backwards.
+<ul>
+<li>I saw a well-written story in another book that said</li>
+<li>It says the same thing.</li>
+</ul>
+</li>
+<li>We must burn out those egos.</li>
+</ul>
+<p>[The same as the above.</p>
+<ul>
+<li><a href="./Sorai-Ippen-Sangyo" class="internal alias" data-slug="Sorai-Ippen-Sangyo">Sorai Ippen Sangyo</a>
+<ul>
+<li><a href="./selflessness" class="internal" data-slug="selflessness">selflessness</a> - <a href="./origin" class="internal" data-slug="origin">origin</a> - <a href="./bodhisattva-practice" class="internal alias" data-slug="bodhisattva-practice">bodhisattva practice</a></li>
+</ul>
+</li>
+<li>What is the sky?
+<ul>
+<li><a href="./Mystery" class="internal" data-slug="Mystery">Mystery</a>.
+<ul>
+<li>I can neither think nor speak</li>
+</ul>
+</li>
+<li>[Insufficient Discourse</li>
+<li>[The “word of the day” is a word that is used to refer to the end of the year.
+<ul>
+<li><a href="http://jodoshuzensho.jp/daijiten/index.php/%E8%A8%80%E4%BA%A1%E6%85%AE%E7%B5%B6" class="external">Kotobuki kankeisetsu - 新纂浄土宗大辞典<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="./I-am-empty." class="internal alias" data-slug="I-am-empty.">I am empty.</a>
+<ul>
+<li><a href="./countless-edges" class="internal alias" data-slug="countless-edges">countless edges</a>.</li>
+<li>It is only other forces that exist, not you.
+<ul>
+<li><a href="./There-is-no-such-thing-as-self." class="internal alias" data-slug="There-is-no-such-thing-as-self.">There is no such thing as self.</a></li>
+<li><a href="./One-person,-one-universe-bursting-into-a-whole-universe" class="internal alias" data-slug="One-person,-one-universe-bursting-into-a-whole-universe">One person, one universe bursting into a whole universe</a></li>
+<li><a href="./The-boundary-between-inside-and-outside-has-disappeared." class="internal alias" data-slug="The-boundary-between-inside-and-outside-has-disappeared.">The boundary between inside and outside has disappeared.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Dogen: Learning the Way of Buddha - p.161
+<ul>
+<li>
+<blockquote>
+<p>To learn the Way of Buddha is to learn self. To learn the Buddha’s Way is to learn oneself. To be able to practice the Way of the Buddha means to be able to practice one’s own self. To be proven by all the laws is to make one’s own body and mind, as well as the bodies and minds of others, fall away. --- Shobogenzo, Genjikouan (Genjo Kouan), vol.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="./Returned-by..." class="internal alias" data-slug="Returned-by...">Returned by…</a></p>
+<ul>
+<li><a href="./Self-seeking-and-purified-mind" class="internal alias" data-slug="Self-seeking-and-purified-mind">Self-seeking and purified mind</a>.</li>
+<li>We’ve come back to the source.
+<ul>
+<li><a href="./魂のルフラン" class="internal alias" data-slug="魂のルフラン">魂のルフラン</a>を連想した<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/></li>
+</ul>
+</li>
+<li>nature
+<ul>
+<li>natural: a translation of the word “nature” applied after the Meiji era (1868-1912)</li>
+<li>the next year
+<ul>
+<li>as a matter of course</li>
+</ul>
+</li>
+<li>No action, no nature
+<ul>
+<li><a href="http://labo.wikidharma.org/index.php/%E8%87%AA%E7%84%B6" class="external">Nature - WikiArc<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>Natural Houji
+<ul>
+<li>What is <a href="https://dictionary.goo.ne.jp/word/%E8%87%AA%E7%84%B6%E6%B3%95%E7%88%BE/" class="external">jinen-ho-ni (natural law)? Meaning, reading and usage - List of four-character compounds - goo Dictionary<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>(1) The place where the person is born.
+<ul>
+<li><a href="http://www.wikidharma.org/index.php/%E3%81%97%E3%82%87%E3%81%A1%E3%81%97%E3%82%87%E3%81%86" class="external">Shochisho - WikiDharma<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>What is <a href="https://kotobank.jp/word/%E6%89%80%E7%9F%A5%E9%9A%9C-1341441" class="external">shochishou (所知障)? Meaning and usage - Cotobank<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Preventing us from knowing what we need to know (Shinnyo).
+<ul>
+<li>Shinnyo=sky</li>
+<li>Prevents us from knowing the true nature</li>
+<li>The “thing” spoken of by the word prevents</li>
+<li>Repeatedly deny “stuff.”
+- <a href="./methodic-doubt" class="internal alias" data-slug="methodic-doubt">methodic doubt</a> っぽさ<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>
+- What is <a href="https://kotobank.jp/word/%E6%96%B9%E6%B3%95%E7%9A%84%E6%87%90%E7%96%91-132442" class="external">methodical skepticism (hōhōteki kaigi)? Meaning and usage - Cotobank<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="./attachment" class="internal" data-slug="attachment">attachment</a>
+<ul>
+<li><a href="./obstinacy" class="internal" data-slug="obstinacy">obstinacy</a> : attachment to oneself</li>
+</ul>
+</li>
+<li>[Attachment to “things</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>the view of nature in the philosophy of materialism
+<ul>
+<li>There is no “tree” outside of each person’s mind.
+<ul>
+<li><a href="./コペルニクス的転回" class="internal alias" data-slug="コペルニクス的転回">コペルニクス的転回</a>ぽさ<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>
+<ul>
+<li>
+<blockquote>
+<p>The term by which Kant characterized his epistemological position. Reversing the traditional view that subjectivity follows the object and reflects it, he argued that the object follows subjectivity and is constituted by the antecedent form of subjectivity, likening this to the position of Copernicus, who argued for a geocentric theory as opposed to a celestial theory.</p>
+</blockquote>
+<ul>
+<li>What is <a href="https://kotobank.jp/word/%E3%82%B3%E3%83%9A%E3%83%AB%E3%83%8B%E3%82%AF%E3%82%B9%E7%9A%84%E8%BB%A2%E5%9B%9E-65998" class="external">Copernican turn (Copernican turn)? Meaning and usage - Cotobank<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="./Only-the-mindless" class="internal alias" data-slug="Only-the-mindless">Only the mindless</a>.
+<ul>
+<li>There is only knowledge (mind) and no boundary (objects)
+<ul>
+<li>doctrine that all phenomena are produced from consciousness (a central teaching of the Avatamska sutra)<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>
+<ul>
+<li>
+<blockquote>
+<p>Yui-shin <a href="./Yui-mind" class="internal" data-slug="Yui-mind">Yui-mind</a> That all existence is a manifestation of the mind, and only the mind exists.  The central idea of the <a href="./Avatamska-sutra" class="internal alias" data-slug="Avatamska-sutra">Avatamska sutra</a>.</p>
+</blockquote>
+<ul>
+<li>What is <a href="https://dictionary.goo.ne.jp/word/%E5%94%AF%E5%BF%83/" class="external">yuishin? Meaning, reading and usage explained in simple terms - goo Japanese dictionary<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The <a href="./successor" class="internal" data-slug="successor">successor</a>’s <a href="./twenty-theories-of-materialism" class="internal alias" data-slug="twenty-theories-of-materialism">twenty theories of materialism</a> refuted the criticisms of this ideology.</li>
+</ul>
+</li>
+<li>Lostness and suffering arise when we think of the shadow image inside our mind as the actual situation outside our mind.
+<ul>
+<li>「<a href="./法執" class="internal alias" data-slug="法執">法執</a>: ものへの執着」が苦しみを生むわけだ<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/></li>
+</ul>
+</li>
+</ul>
+<p>[Irimin-dakutei
+- <a href="./relief-for-others" class="internal alias" data-slug="relief-for-others">relief for others</a> practice line
+- The child is lost <a href="./ordinary-man" class="internal alias" data-slug="ordinary-man">ordinary man</a>.
+- The pastor is <a href="./a-bodhisattva" class="internal alias" data-slug="a-bodhisattva">a bodhisattva</a>.
+- The phase where the Buddha was saving others before he became enlightened.
+- Entering into the philosophy of “consciousness”, “bodhisattva way” and “bodhisattva conduct”.
+- bodhisattva
+- Enlightenment Seekers
+- <a href="./Kamigyubodhi" class="internal" data-slug="Kamigyubodhi">Kamigyubodhi</a>, <a href="./lower-incarnation-of-sentient-beings" class="internal alias" data-slug="lower-incarnation-of-sentient-beings">lower incarnation of sentient beings</a>.
+- A way of life that seeks to gain <a href="./wisdom" class="internal" data-slug="wisdom">wisdom</a>.
+- > Jogu Bodhi <a href="./Kamigu-Bodhi" class="internal alias" data-slug="Kamigu-Bodhi">Kamigu Bodhi</a>.
+- > The Bodhisattva is a person who seeks a higher level of enlightenment. In Buddhist terminology, it is the path that a bodhisattva should take. Kami-gu” means to seek a higher state of being. Bodhi” refers to the state of wisdom and enlightenment, having renounced worldly desires.
+- What is [jogu bodhi? Meaning, reading and usage - List of four-character compounds - goo dictionary <a href="https://dictionary.goo.ne.jp/word/%E4%B8%8A%E6%B1%82%E8%8F%A9%E6%8F%90_%28%E5%9B%9B%E5%AD%97%E7%86%9F%E8%AA" class="external">https://dictionary.goo.ne.jp/word/%E4%B8%8A%E6%B1%82%E8%8F%A9%E6%8F%90_%28%E5%9B%9B%E5%AD%97%E7%86%9F%E8%AA<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> %9E%29/]]
+- A way of life that seeks to practice <a href="./compassion" class="internal" data-slug="compassion">compassion</a>.
+- > Lower sentient beings.
+- > To teach and save all beings that are born. It is performed by Bodhisattvas as an act of altruism.
+- What is <a href="./geke-shujo" class="internal alias" data-slug="geke-shujo">geke shujo</a><code>? Meaning and usage - Kotobank </code>[]](<a href="https://kotobank.jp/word/%E4%B8%8B%E5%8C%96%E8%A1%86%E7%94%9F-59331" class="external">https://kotobank.jp/word/%E4%B8%8B%E5%8C%96%E8%A1%86%E7%94%9F-59331<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>)
+- Gaining wisdom and developing compassionate deeds
+- <a href="./rain-ni-mo-makezu" class="internal alias" data-slug="rain-ni-mo-makezu">rain ni mo makezu</a>
+- All things without accounting for myself - that’s the kind of thing I want to be.</p>
+<ul>
+<li>Parable of the Candles
+<ul>
+<li>The candle itself is ego.</li>
+<li>Light is wisdom, warmth is compassion.</li>
+<li>Burn up your ego so that it is gone and you die.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E5%8D%81%E7%89%9B%E5%9B%B3%E5%85%A5%E9%96%80" class="external">/nishio/十牛図入門<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Namera-Conference-2" class="internal">Namera Conference 2</a></li><li><a href="./Weekly-journal-2023-10-28~2023-11-04" class="internal">Weekly journal 2023-10-28~2023-11-04</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

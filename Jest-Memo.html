@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Jest Memo</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Jest Memo"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Jest Memo"/><meta name="twitter:description" content="..."/><meta property="og:description" content="..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Jest-Memo"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Jest-Memo"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Jest-Memo"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Jest Memo</a></div></nav><h1 class="article-title">Jest Memo</h1><p show-comma="true" class="content-meta"><span>Mar 12, 2021</span><span>8 min read</span></p></div></div><article class="popover-hint"><ul>
+<li><a href="./Jest-Memo-Day1" class="internal alias" data-slug="Jest-Memo-Day1">Jest Memo Day1</a></li>
+<li><a href="./Jest-Memo-Day2" class="internal alias" data-slug="Jest-Memo-Day2">Jest Memo Day2</a></li>
+<li><a href="./Jest-Memo-Day3" class="internal alias" data-slug="Jest-Memo-Day3">Jest Memo Day3</a></li>
+</ul>
+<p>2021-02-22
+- <a href="./Test-asynchronous-React-state-updates" class="internal alias" data-slug="Test-asynchronous-React-state-updates">Test asynchronous React state updates</a>
+- <a href="./Replace-useState" class="internal alias" data-slug="Replace-useState">Replace useState</a>
+- <a href="./Export-Promise-created-with-useEffect" class="internal alias" data-slug="Export-Promise-created-with-useEffect">Export Promise created with useEffect</a></p>
+<ul>
+<li>
+<p>Finally a decent test of “when there is a previous dialogue ID, there is a menu, when there is not, there is not”.</p>
+</li>
+<li>
+<p>How do I test the code “when the server is sleeping, wait a second and try again”?</p>
+<ul>
+<li>I see, so instead of using setTimeout raw, you wrap it in a Promise and make a “Promise to be resolved after 1 second”.
+<ul>
+<li><a href="./Wrap-setTimeout-with-Promise" class="internal alias" data-slug="Wrap-setTimeout-with-Promise">Wrap setTimeout with Promise</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>I’m trying to test the Regroup one, and the problem is that there’s a lot of drag.</p>
+</li>
+</ul>
+<p>2021-02-25</p>
+<ul>
+<li>I’m wondering how to test for drags, etc. on Regroup in Jest…
+<ul>
+<li>I want to record events and use them for testing, but the problem is that if I record all the mousemove events, the amount of events is too large.
+<ul>
+<li>That kind of event should be recorded only immediately before, and only when the space key is pressed, the previous event is added to the event record.</li>
+</ul>
+</li>
+<li>This will allow “Surrounding with the long rope tool” to be expressed with fewer events.
+<ul>
+<li>The problem is that “pressed the space key” can be done on a PC, but it’s hard to do on an iPad…</li>
+<li>Do you want to thin it out by hours? Then can you have it recorded by stopping for a moment when you type?</li>
+<li><a href="./Sentry-with-MouseMove-thinned-out" class="internal alias" data-slug="Sentry-with-MouseMove-thinned-out">Sentry with MouseMove thinned out</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I got the value of the coordinates, but I’m fireEventing in the test and nothing is happening, it’s hard to track where you’re getting a grip…
+<ul>
+<li>As for testing needs, I don’t need to test the “event arrives when mousedown on canvas” because it has been tested enough, but I want to test the part after the event arrives.</li>
+<li>It sounds tough, but I managed it.
+<ul>
+<li>Use an object that looks like a ToolEvent, IGNORE the type error, say it’s a ToolEvent, and pass it on.</li>
+<li>Emulate drag and automate “lassoing nothing”.
+<ul>
+<li>This was a pile of bugs: “it dies when the mouse is down”, “you can select it, but lines appear in weird places”, and “dragging an enclosed area dies because there’s nothing to move”.</li>
+</ul>
+</li>
+<li>I’ve reproduced it in a test, and when there was nothing in the enclosed area, I reverted to the mode before it was enclosed, and even if the same bug occurs, the test should tell me next time.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I want to refactor it because it feels like I was forced to test it and forced to fix it.
+<ul>
+<li>I really wanted to refactor first, but I knew that if I refactored the buggy stuff without writing any tests, it would break a lot, so I held off.</li>
+<li>It’s not a good design to have the lasso or balloon menu disappear directly in the collision detection between the lasso and the selected object.</li>
+</ul>
+</li>
+</ul>
+<p>2021-02-26</p>
+<ul>
+<li>I checked the screen size before writing the sticky drag test and found that it was 600 x 300, and every time I resized it, it doubled in size, a mysterious phenomenon…
+<ul>
+<li>Simply doing nothing and causing a resize event doubles the canvas size.</li>
+<li>One pixel and one unit on the canvas may be off by a factor of 2 or something.</li>
+<li>For now, it seems that the actual position of a sticky when it is added is determined regardless of its size, so let’s separate it as a separate story and move on.</li>
+</ul>
+</li>
+<li>I’m reminded of the Legacy Code Improvement Guide.
+<ul>
+<li>‘To refactor safely you need to test, but to test you need to refactor.’ LOL.
+<ul>
+<li><a href="./The-Legacy-Code-Dilemma" class="internal alias" data-slug="The-Legacy-Code-Dilemma">The Legacy Code Dilemma</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I was able to test the balloon menu by clicking on the sticky, so I thought it was surprisingly easy, but when I tested the drag, the test runner stopped exiting, why…
+<ul>
+<li>Maybe an infinite loop when Jest strings some kind of object for screen display.</li>
+<li>It’s not supposed to be a circular reference…</li>
+</ul>
+</li>
+<li>I was able to test it to the point where a sticky is selected by lasso selection.
+<ul>
+<li>I was able to eliminate the unpleasant situation of manipulating the menu UI from within the collision detection code, after covering it with tests, happily ever after!</li>
+</ul>
+</li>
+<li>Coverage is about 39%.</li>
+<li>46% by adding the tests for selecting multiple items and grouping them together and moving them together.
+<ul>
+<li>Well, let’s add to it, piece by piece.</li>
+</ul>
+</li>
+<li>When I test with jest’s normal test runner, I’m so worried about asynchrony, but when I use electron, I write without worrying about it, and it works fine.
+<ul>
+<li>However, testing takes time.</li>
+</ul>
+</li>
+<li>Hmmm, I clicked on the pen button but it didn’t switch to the pen, inexplicable…
+<ul>
+<li>You’re saying that the pen implementation is grabbing events before where the mouse events are currently being poured, so switching to the pen can’t be automated.</li>
+<li>I was able to test the pen drawing, but after drawing with the pen, both the path and the group that encompasses the path appear in the display order… this must be a bug that is drawing twice…</li>
+</ul>
+</li>
+<li>Coverage is now 51%.
+<ul>
+<li>Let’s do it next week for the issue that may be double drawing.</li>
+</ul>
+</li>
+</ul>
+<p>2021-03-01</p>
+<ul>
+<li>The double drawing was a simple bug that I fixed.
+<ul>
+<li>If this unexpected inconsistency is left unchecked, another problem is likely to occur</li>
+<li>Selecting and ungrouping paths is going to develop into an even stranger situation.</li>
+</ul>
+</li>
+<li>Paper.js project was created in a test case and accumulated because it was not deleted.
+<ul>
+<li>I removed them all in the afterteach that runs after each test case.</li>
+</ul>
+</li>
+<li>I’ve been looking at the coverage from the smallest percentage of coverage, but I wonder if it’s possible to order the number of uncovered statements - that would mean the coverage would increase efficiently if you tested it!
+<ul>
+<li>There were none, so I’ll look at them in order of number of rows, or I’ll do the red one with the most rows.</li>
+<li><img src="https://gyazo.com/b795c664b893480f62eb605cabcdaf41/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+<p>2021-03-02
+- <a href="./Test-asynchronous-processing-in-third-party-libraries" class="internal alias" data-slug="Test-asynchronous-processing-in-third-party-libraries">Test asynchronous processing in third-party libraries</a>
+- I wanted to test drawing two passes to investigate the <a href="./first-pass-jumps-bug" class="internal alias" data-slug="first-pass-jumps-bug">first pass jumps bug</a>, but the canvas redraw in Paper.js was asynchronous.</p>
+<p>2021-03-03
+- <a href="./Sentry-with-MouseMove-thinned-out" class="internal alias" data-slug="Sentry-with-MouseMove-thinned-out">Sentry with MouseMove thinned out</a>
+- <a href="./console.log-in-Safari-on-iPad" class="internal alias" data-slug="console.log-in-Safari-on-iPad">console.log in Safari on iPad</a></p>
+<ul>
+<li><code>60.32% Statements 1444/2394 41.48% Branches 358/863 59.55% Functions 240/403 60.93% Lines 1421/2332</code></li>
+</ul>
+<p>2021-03-04</p>
+<ul>
+<li>Testing multi-touch operation with touch events</li>
+<li>I haven’t been able to reproduce the problem of the two-finger tap becoming a click when released without moving, due to the same “ToolEvent not reaching for some reason” as before, but I found another bug when I was chasing down the cause of the mysterious error.
+<ul>
+<li>Zoom to zero if two-finger tap is released without moving</li>
+<li>Maybe this is what caused the rare blank slate problem.</li>
+</ul>
+</li>
+<li>Unexplained Phenomena
+<ul>
+<li>Throwing a mouse event on the canvas is not responsive.</li>
+<li>I threw a touch event and he responded.</li>
+<li>I wrote a test case thinking that touch would respond, but it doesn’t.</li>
+<li>Depending on the order in which the test cases were executed, “touchmove only reacts without touchstart reacting” occurred.</li>
+</ul>
+</li>
+</ul>
+<p>2021-03-05</p>
+<ul>
+<li>
+<p>I notice that there is a warning on elecron side to the effect that “React status updates are not wrapped in act” (not relayed to jest side).</p>
+</li>
+<li>
+<p>Elecron does not show where there are unwrapped status updates.</p>
+</li>
+<li>
+<p>Narrow down the range by putting console.log</p>
+</li>
+<li>
+<p>I know where it is, but when you replaced the state update with the mock, shouldn’t that have been replaced as well? That’s what it looks like.</p>
+</li>
+<li>
+<p>The code to replace useState with mock is working.</p>
+</li>
+<li>
+<p>Then actually that replaced useState is called</p>
+</li>
+<li>
+<p>But it wasn’t called at the time of the useState in question.</p>
+<ul>
+<li><a href="./It-wasn't-replaced-by-just.spyOn." class="internal alias" data-slug="It-wasn't-replaced-by-just.spyOn.">It wasn’t replaced by just.spyOn.</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.facebook.com/1129148772/posts/10224268346672864/?d=n" class="external">Discussion on Facebook at<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>UseState, maybe replace it with jest.mock.
+<ul>
+<li>Create a mock module that imports React, rewrites it, and re-exports it.</li>
+</ul>
+</li>
+<li>Instead of calling setState directly, try calling it in fireEvent with onClick that calls it, and if the interpretation is correct, there should be no warning that there is no act</li>
+<li>Try to apply the component separation technique to solve the asynchronous problem by testing separately before and after Promise is used.</li>
+<li>Container/Presentation separation
+<ul>
+<li>Designing it that way makes it easier to test.</li>
+<li>On the other hand, when “adding tests to something that doesn’t yet have test code,” we want to cover it with tests and then refactor it, rather than refactor it and then test it.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>I wrapped it honestly because I was warned to “wrap it in ACT” in the first place, but you don’t understand what is done when you wrap it…</p>
+<ul>
+<li>react-dom/test-utils
+<ul>
+<li><a href="https://github.com/facebook/react/blob/master/packages/react-dom/src/test-utils/ReactTestUtilsPublicAct.js#L76" class="external">https://github.com/facebook/react/blob/master/packages/react-dom/src/test-utils/ReactTestUtilsPublicAct.js#L76<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>react-testing-library
+<ul>
+<li>act
+<ul>
+<li><a href="https://github.com/testing-library/react-testing-library/blob/master/src/act-compat.js" class="external">https://github.com/testing-library/react-testing-library/blob/master/src/act-compat.js<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>tests
+<ul>
+<li><a href="https://github.com/testing-library/react-testing-library/tree/master/src/__tests__" class="external">https://github.com/testing-library/react-testing-library/tree/master/src/<strong>tests</strong><svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>2021-03-08
+- <a href="./What-does-react-dom/test-utils-act-do" class="internal alias" data-slug="What-does-react-dom/test-utils-act-do">test-utils act do?</a></p>
+<ul>
+<li>
+<blockquote>
+<p>useState, maybe we can replace it with jest.mock</p>
+</blockquote>
+<ul>
+<li><code>Do not import @jest/globals outside of the Jest test environment</code></li>
+<li>I’m not quite sure why I’m getting this error.</li>
+</ul>
+</li>
+<li><a href="./requestAnimationFrame-+-jest-electron-=-unstable-behavoir" class="internal alias" data-slug="requestAnimationFrame-+-jest-electron-=-unstable-behavoir">requestAnimationFrame + jest-electron = unstable behavoir</a></li>
+</ul>
+<p>2021-03-09~2021-03-12</p>
+<ul>
+<li><a href="./Can't-perform-a-React-state-update-on-an-unmounted-component" class="internal alias" data-slug="Can't-perform-a-React-state-update-on-an-unmounted-component">Can’t perform a React state update on an unmounted component</a></li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/Jest%E3%83%A1%E3%83%A2" class="external">/nishio/Jestメモ<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Can't-perform-a-React-state-update-on-an-unmounted-component" class="internal">Can't perform a React state update on an unmounted component</a></li><li><a href="./Jest-Memo-Day1" class="internal">Jest Memo Day1</a></li><li><a href="./Jest-Memo-Day2" class="internal">Jest Memo Day2</a></li><li><a href="./Jest-Memo-Day3" class="internal">Jest Memo Day3</a></li><li><a href="./Jest-mocking-does-not-affect-calls-within-the-same-module" class="internal">Jest mocking does not affect calls within the same module</a></li><li><a href="./Test-asynchronous-processing-in-third-party-libraries" class="internal">Test asynchronous processing in third-party libraries</a></li><li><a href="./Wrap-setTimeout-with-Promise" class="internal">Wrap setTimeout with Promise</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

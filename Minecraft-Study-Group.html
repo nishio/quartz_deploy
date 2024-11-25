@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Minecraft Study Group</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Minecraft Study Group"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Minecraft Study Group"/><meta name="twitter:description" content="Minecraft Becomes a Web of Voxels PDF. 2021-09-08 Slides by Kenmotsu Nakajima in “Technologies Supporting Online Games Nishio agrees with this interpretation, adding that Minecraft in the first place."/><meta property="og:description" content="Minecraft Becomes a Web of Voxels PDF. 2021-09-08 Slides by Kenmotsu Nakajima in “Technologies Supporting Online Games Nishio agrees with this interpretation, adding that Minecraft in the first place."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="Minecraft Becomes a Web of Voxels PDF. 2021-09-08 Slides by Kenmotsu Nakajima in “Technologies Supporting Online Games Nishio agrees with this interpretation, adding that Minecraft in the first place."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Minecraft-Study-Group"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Minecraft-Study-Group"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Minecraft Becomes a Web of Voxels PDF. 2021-09-08 Slides by Kenmotsu Nakajima in “Technologies Supporting Online Games Nishio agrees with this interpretation, adding that Minecraft in the first place."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Minecraft-Study-Group"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Minecraft Study Group</a></div></nav><h1 class="article-title">Minecraft Study Group</h1><p show-comma="true" class="content-meta"><span>Oct 30, 2021</span><span>11 min read</span></p></div></div><article class="popover-hint"><p>Minecraft Becomes a Web of Voxels <a href="https://github.com/kengonakajima/blog/blob/master/articles/minecraft_web.pdf" class="external">PDF<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</p>
+<ul>
+<li>2021-09-08 Slides by Kenmotsu Nakajima in “Technologies Supporting Online Games</li>
+<li>Nishio agrees with this interpretation, adding that
+<ul>
+<li>Minecraft in the first place.
+<ul>
+<li>In a 3D virtual space</li>
+<li>We can collaborate.</li>
+<li>platform</li>
+</ul>
+</li>
+<li>Cannot be ignored when considering the virtualization of physical offices</li>
+<li>Good features: low cost for users to improve the place
+<ul>
+<li>Just as kintone has enabled “any employee can create and improve business applications</li>
+<li>Virtual offices on Minecraft can be created and improved by any employee.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Minecraft’s ecosystem as of 2021</p>
+<ul>
+<li>
+<p>I’ll explain this first.</p>
+</li>
+<li>
+<p>vanilla</p>
+<ul>
+<li>An official original release (common noun).</li>
+</ul>
+</li>
+<li>
+<p>MOD (MOD server/MOD client)</p>
+<ul>
+<li>Some were created early on and are still under development (e.g., <a href="https://files.minecraftforge.net/net/minecraftforge/forge/" class="external">Forge<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>).</li>
+<li>Modified server and client
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>How can you do that without documentation or source code?</li>
+</ul>
+</li>
+<li>Mojang hired mod authors and developed an API to facilitate mod creation</li>
+<li>Need to match mod versions on client and server</li>
+</ul>
+</li>
+<li>
+<p>Two important elements arose after this</p>
+<ul>
+<li><a href="https://www.spigotmc.org/wiki/about-spigot/" class="external">SpigotMC<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>2012
+<ul>
+<li>A community of mod authors &amp; users advocating free/open source</li>
+<li>More than 300,000 members</li>
+</ul>
+</li>
+<li>Knowledge sharing is now taking place.</li>
+</ul>
+</li>
+<li>Now available in vanilla client
+<ul>
+<li><img src="https://gyazo.com/5841196691409c19e1603c045517e672/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Why is it now available to vanilla clients?</p>
+<ul>
+<li>Resource Pack” feature added to vanilla
+<ul>
+<li>Additional model and texture changes can be made to create a new look and feel without modifying the client-side program</li>
+</ul>
+</li>
+<li>Accumulation of know-how to create additional function GUI with vanilla clients (see below)</li>
+</ul>
+</li>
+<li>
+<p>Available in vanilla clients, i.e.</p>
+<ul>
+<li>Without using different software (MOD clients) for each server,</li>
+<li>Serviced by a single software (vanilla client)</li>
+</ul>
+</li>
+<li>
+<p>This is the Web’s</p>
+<ul>
+<li>Without using different software for each server,</li>
+<li>Services are available through a single software (Internet browser)</li>
+</ul>
+</li>
+<li>
+<p>So the same situation was created as</p>
+</li>
+<li>
+<p>Comparing to Web technology</p>
+<ul>
+<li>Common Gateway Interface (CGI) is invented,</li>
+<li>Run the program on the server side.</li>
+<li>Dynamic behavior changes are now possible instead of static content delivery</li>
+<li>This is what happened in Minecraft with the development of the plugin API</li>
+<li>(To put a finer point on it, it runs in the same process as the server, rather than launching a separate process, so the situation is about the same as after mod_perl was born.)</li>
+<li>Server-side implementation can be replaced as long as the API is followed.
+<ul>
+<li>Like turning Apache into Nginx.</li>
+<li>This also occurs in Minecraft
+<ul>
+<li>Nowadays, PaperMC/Paper, which is touted as having improved performance over Spigot, is the mainstream.</li>
+<li><a href="https://github.com/PaperMC/Paper" class="external">PaperMC/Paper: High performance Spigot fork that aims to fix gameplay and mechanics inconsistencies<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>So “Minecraft becomes a web of voxels.”</p>
+<ul>
+<li>Technically, it’s already in that state.</li>
+<li>Whether or not Minecraft becomes the de facto standard is the same as the browser market share battle.
+<ul>
+<li>Different layers of technology</li>
+</ul>
+</li>
+<li>What company owns Minecraft now?
+<ul>
+<li>September 17, 2014 <a href="https://ascii.jp/elem/000/000/933/933106/" class="external">ASCII.jp: Minecraft acquisition is Microsoft’s ‘defensive move’<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>
+<blockquote>
+<p>It also seems that Microsoft wanted the ecosystem that Minecraft would create.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Minecraft is not just a game, but can also be considered a cloud-based digital entertainment platform. The future potential of Minecraft may have been highly evaluated because of its aspects that go beyond the realm of a simple game, such as being not only a game itself, but also killer content for live-action videos and modification content through mods (modification data, an abbreviation for modification).</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Minecraft Extensibility</p>
+<ul>
+<li>
+<p>Create additional functionality GUI with vanilla client</p>
+<ul>
+<li><img src="https://gyazo.com/44401bcbf823b2d103ef59b4d54824e9/thumb/1000" alt="image"/>
+<ul>
+<li>This is an in-game guide to a big-name industrialization plugin called Slimefun</li>
+<li>It is actually a hack using the UI of a chest (a tool to store items)
+<ul>
+<li>The real chest is like this
+<ul>
+<li><img src="https://gyazo.com/26d50a46a1f704e3ef3e96034b306ee7/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Guide detail screen
+<ul>
+<li><img src="https://gyazo.com/d4661d7820e35c8566e0219ca1911008/thumb/1000" alt="image"/></li>
+<li>The UI of the chest and the hover text of the items explain what materials a nuclear power plant can be made from and what fuel it requires</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Another example
+<ul>
+<li><img src="https://gyazo.com/f899286d33e604335e721a48d0dde903/thumb/1000" alt="image"/></li>
+<li>This is EconomyShopGUI, a plugin that introduces buying and selling of currency and items, which is also a chest</li>
+</ul>
+</li>
+<li>Plugin hooks into what is displayed in each slot and which slot is clicked</li>
+<li>This is reminiscent of the “table layout” that used to be done on the web.
+<ul>
+<li>Hack to use the table tag for tabular layouts by removing all the rules and making it not look like a table, since HTML did not have the functionality to allow flexible layouts at that time.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Plug-in development</p>
+<ul>
+<li>Spigot carefully explains how to make one from scratch.
+<ul>
+<li><a href="https://www.spigotmc.org/wiki/spigot-plugin-development/" class="external">https://www.spigotmc.org/wiki/spigot-plugin-development/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>Nishio never built from scratch, but modifying existing plug-ins was easy.
+<ul>
+<li>Clone source code from Github</li>
+<li>Install Maven</li>
+<li>Fix source code</li>
+<li>build</li>
+<li>Put it in the server plugin folder and restart the server</li>
+</ul>
+</li>
+<li>Slimefun’s Programmable Android has been
+<ul>
+<li><img src="https://gyazo.com/13bbb1e3f3ead884f0b242b49ace8b6c/thumb/1000" alt="image"/></li>
+<li>It was just a matter of repeating and executing a specified sequence of instructions.
+<ul>
+<li><img src="https://gyazo.com/421282cca9dbe33e2b6735d6bdb2c1b7/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>Enabled Python to run w
+<ul>
+<li><img src="https://gyazo.com/3c2874d8a7d6c3b3609124bdf9744f58/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>protocol</p>
+<ul>
+<li>
+<p>Already analyzed.</p>
+</li>
+<li>
+<p>The chest hack I mentioned earlier would</p>
+<ul>
+<li>What kind of ID each slot in the chest has.
+<ul>
+<li><img src="https://gyazo.com/b196dbe84fb8b2c7b6b9c9f2cdc17261/thumb/1000" alt="image"/></li>
+<li><a href="https://wiki.vg/Inventory" class="external">https://wiki.vg/Inventory<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>What packets fly when you click on a slot?
+<ul>
+<li><img src="https://gyazo.com/522cdd83cae6491bf1264624f76543cc/thumb/1000" alt="image"/></li>
+<li><a href="https://wiki.vg/Protocol" class="external">https://wiki.vg/Protocol<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>is known</li>
+</ul>
+</li>
+<li>
+<p>RCON</p>
+<ul>
+<li>Protocol for executing administrative commands</li>
+<li>Can throw packets from another process to execute in-game commands</li>
+<li><a href="https://wiki.vg/RCON" class="external">https://wiki.vg/RCON<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Some commands are provided by vanilla, others are added by plug-ins
+<ul>
+<li>Examples of vanilla commands:.
+<ul>
+<li>Places a specific block on a rectangle at specified coordinates</li>
+<li><code>/fill &lt;x> &lt;y> &lt;z> &lt;x> &lt;y> &lt;z> &lt;block></code></li>
+<li><a href="https://minecraft.fandom.com/wiki/Commands/fill" class="external">https://minecraft.fandom.com/wiki/Commands/fill<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>In the Java version, the destroy option performs itemization equivalent to mining with a pickaxe.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>There is already a small program that throws RCON packets, so it is easy to control the server by throwing packets with cron.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Bot Development</p>
+<ul>
+<li>PrismarineJS/mineflayer
+<ul>
+<li><a href="https://github.com/PrismarineJS/mineflayer" class="external">GitHub - PrismarineJS/mineflayer: Create Minecraft bots with a powerful, stable, and high level JavaScript API.<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Can write client side in Node.js</li>
+</ul>
+</li>
+<li>Example of Nishio’s work
+<ul>
+<li>Bots to harvest grown crops and plant new ones</li>
+<li><a href="https://scrapbox.io/files/61517e27f11b61001db4a93b.mp4" class="external">https://scrapbox.io/files/61517e27f11b61001db4a93b.mp4<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+js</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="javascript" data-theme="github-light github-dark"><code data-language="javascript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> find_grown_nether_wart</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">() {</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> bot.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">findBlock</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">({</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    point: bot.entity.position,</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    maxDistance: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">SEARCH_RADIUS</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">,</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">    matching</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">: (</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">block</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">      return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        block </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">&amp;&amp;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        block.type </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">===</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> mcData.blocksByName.nether_wart.id </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">&amp;&amp;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        block.metadata </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">===</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> 3</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">      );</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    },</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  });</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span></code></pre></figure>
+<p>js</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="javascript" data-theme="github-light github-dark"><code data-language="javascript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> toHarvest</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> find_grown_nether_wart</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">();</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (toHarvest) {</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  const</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> { </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">x</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">y</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">z</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> toHarvest.position;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> goal</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> =</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> new</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> GoalNearXZ</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(x, z, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">);</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">!</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">goal.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">isEnd</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(bot.entity.position)) {</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">    log</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">`move to harvest: ${</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">[</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">x</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">, </span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">y</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">, </span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">z</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">]</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">}`</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">);</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">    await</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> bot.pathfinder.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">goto</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(goal);</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  }</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">  log</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;harvest&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">);</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  await</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> bot.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">dig</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(toHarvest);</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">  log</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;done&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">);</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span></code></pre></figure>
+<ul>
+<li>
+<p>Building Export</p>
+<ul>
+<li>Server file format is also known so it can be read or generated programmatically</li>
+<li>Even vanilla actually implements reading and writing to files.
+<ul>
+<li>Using “Structural Blocks”</li>
+<li><img src="https://gyazo.com/59dbb384903d640ec60abdf31a1992eb/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>What Nishio hasn’t tried yet</p>
+<ul>
+<li>It should be possible to copy a part of a world and paste it into another world
+<ul>
+<li>Added: <a href="./Copy-and-Paste-between-Worlds" class="internal alias" data-slug="Copy-and-Paste-between-Worlds">Copy&amp;Paste between Worlds</a>.</li>
+</ul>
+</li>
+<li>It seems that the Java version and the Bedrock version (the version that runs on Switch, etc.) can be connected to the same server.
+<ul>
+<li><a href="https://github.com/GeyserMC/Geyser" class="external">https://github.com/GeyserMC/Geyser<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>However, the Switch version does not have the ability to connect by specifying an IP address.</li>
+<li>
+<blockquote>
+<p>On Minecraft Bedrock Edition, players on Xbox One, Nintendo Switch, and PS4 are limited to playing on ‘Featured Servers’ approved by Mojang/Microsoft.  <a href="https://github.com/Pugmatt/BedrockConnect" class="external">https://github.com/Pugmatt/BedrockConnect<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+</li>
+<li>BedrockConnect Solution
+<ul>
+<li>Server administrator sets up a DNS server</li>
+<li>People who play on Switch will have to tweak their network settings to use that DNS server.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>That’s… not a way I’d recommend to anyone for a minute…</li>
+</ul>
+</li>
+<li>Added: <a href="./Connect-to-Minecraft-Java-server-from-Switch" class="internal alias" data-slug="Connect-to-Minecraft-Java-server-from-Switch">Connect to Minecraft Java server from Switch</a>.
+<ul>
+<li>I was able to connect, but it was slow.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Virtualization of physical offices</p>
+<ul>
+<li>A lot of people have moved to remote areas assuming they don’t come to work in the after-corona.
+<ul>
+<li>Physical offices became less usable as a place for employee collaboration.</li>
+</ul>
+</li>
+<li>Many people think about creating a virtual place.
+<ul>
+<li>Related services are myriad, but a few examples will be discussed</li>
+<li>Oculus Room
+<ul>
+<li>Well-built model</li>
+<li>Voice presentation utilizing device features</li>
+<li>But customization is only a small option provided by the app
+<ul>
+<li><img src="https://gyazo.com/c6c59b2bb9b4b76005d010212ea96163/thumb/1000" alt="image"/></li>
+<li><a href="https://www.youtube.com/watch?v=dYas7tyMfuM" class="external">src<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>VRChat
+<ul>
+<li>Both worlds and avatars are overwhelmingly customizable.</li>
+<li>But if you try to create a world?
+<ul>
+<li>First, install Unity.”</li>
+<li>Many people drop out here.</li>
+</ul>
+</li>
+<li>Creating your own avatar is even more difficult than modeling, such as making sure the joints do not break down during animation.
+<ul>
+<li>Most people choose from what is available.</li>
+<li>No sense of “being myself.”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Minecraft
+<ul>
+<li>The world is composed of a combination of larger boxes.
+<ul>
+<li>Human-sized buildings are relatively easy to build by stacking blocks.</li>
+<li>Anyone can make small tweaks, such as decorating with flowers.</li>
+</ul>
+</li>
+<li>Avatar is also a combination of square boxes
+<ul>
+<li>Paint is also coarse pixelated.</li>
+<li>Easy to make by coloring in the browser.</li>
+<li>Example: <a href="https://minecraft.novaskin.me/#" class="external">https://minecraft.novaskin.me/#<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li><img src="https://gyazo.com/d8c85588b8c8f8c76242ecc596cfb9e9/thumb/1000" alt="image"/></li>
+<li>It looks like a complex shape that doesn’t look like just a square box painted with color.
+<ul>
+<li>In fact, there’s one more layer to each body part, and it’s used well for clothing and hair.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I made one too.
+<ul>
+<li>I don’t have a particular idea of what I want to do, so I tried on clothes that I would normally wear. w</li>
+<li><img src="https://gyazo.com/d64736b2460b59fd7b4ee6359d497d09/thumb/1000" alt="image"/></li>
+<li>This is basically without layers, only the pupils of the eyes are layered and placed in a non-pixel-like position.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Not being able to customize it doesn’t give it a “feel of our own”.</li>
+<li>Outsourcing customization is expensive, and even if the financial cost is solved, it is a burden to translate requests into language.</li>
+<li>This is the same approach as the popular “employees create their own business systems using kintone” approach.
+<ul>
+<li>Business systems that cannot be customized cannot be fixed even if dissatisfied.</li>
+<li>If you don’t like it and outsource the system, it’s expensive, and modifications are also expensive, so in the end you can’t fix it even if you are dissatisfied with it.</li>
+</ul>
+</li>
+<li>Shortfalls in the current Minecraft
+<ul>
+<li>No voice chat
+<ul>
+<li>We need voice chat with only those who have entered a certain distance or only those in the same room.</li>
+<li>Technically, it should be possible to control the Discord audio channel from a plugin…</li>
+</ul>
+</li>
+<li>Let’s have a party where all employees can get together on the micra!
+<ul>
+<li>This is a technical challenge, although it is easy to anticipate that the idea of</li>
+<li>Limited to 20 simultaneous connections by default</li>
+<li>It is easy to loosen the limit with options, but not easy to test how many people the server can withstand</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Support for IT club activities</p>
+<ul>
+<li>
+<p>If you already have a clear idea of what you want to do, then support it.</p>
+</li>
+<li>
+<p>People who do not have a clear idea of what they want to do.</p>
+<ul>
+<li>While games are an incentive, we don’t want them to just end up playing games.</li>
+</ul>
+</li>
+<li>
+<p>That’s where Micra comes in.</p>
+<ul>
+<li>
+<p>It is better to build an automated device than to have a human being repeat a simple task.</p>
+<ul>
+<li>In fact, in an unexplored junior server full of players who can think programmatically…</li>
+<li><img src="https://gyazo.com/02a3a4236531d4ba9debf26461609371/thumb/1000" alt="image"/></li>
+<li><img src="https://gyazo.com/48ba56f96cfd31f0349c13027800f1d1/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>
+<p>It’s better for a human to learn commands than to repeat simple tasks.</p>
+</li>
+<li>
+<p>Add plug-ins to add useful tools, commands, and new game features</p>
+<ul>
+<li>To do that, you basically need to read the English documentation on Spigot and Github.</li>
+</ul>
+</li>
+<li>
+<p>Plug-ins are open source</p>
+<ul>
+<li>If you don’t understand something from the documentation, you need to read the source code.</li>
+<li>Or put an issue on Github.</li>
+<li>Or consult with us in English on our Discord channel.</li>
+</ul>
+</li>
+<li>
+<p>If you’re not happy with the plugin’s functionality, you need to tweak the implementation.</p>
+</li>
+<li>
+<p>and creates an incentive for a seamless modern programming experience from the game.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>In China, they fight with tank robots that eject gel bullets.</p>
+<ul>
+<li><img src="https://gyazo.com/0144b1af634190716b3caf22ef34dffa/thumb/1000" alt="image"/></li>
+<li>Writing a program that compensates for manual control and creating an incentive to “learn programming to get stronger and win”.
+<ul>
+<li>Learn to win” is the catchphrase.
+<ul>
+<li><img src="https://gyazo.com/5170fa1ab74a3453ea083169c5c64836/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>To win, there will be an incentive to learn image recognition, etc.</li>
+</ul>
+</li>
+<li>But this approach would be difficult to adopt in Japan because of the strong allergic reaction to anything that reminds them of weapons.</li>
+<li>Peaceful incentives are needed.</li>
+</ul>
+</li>
+<li>
+<p>cost</p>
+<ul>
+<li>Server costs are a bottleneck for Minecraft multiplayer.</li>
+<li>Roughly this kind of cost with Conoha VPS
+<ul>
+<li><img src="https://gyazo.com/4f1d68559de5d04a260a1bca4027316f/thumb/1000" alt="image"/></li>
+<li>I’m not sure this time, so I’m trying the middle one for now for 3 months.
+<ul>
+<li>40,000 a year would be a heavy burden for elementary, middle, and high school students.</li>
+<li>(I thought it would be convenient to have it installed as a template, but it was a vanilla server and I had to stop and re-install it on the first day of the program.)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If Cybozu were to provide this?
+<ul>
+<li>Looks good with lower SLAs than business system infrastructure.</li>
+</ul>
+</li>
+<li>How to avoid simply playing?
+<ul>
+<li>The same scheme as Cybozu’s club support for employees could be used.</li>
+<li>In other words, instead of providing funding, they ask for a report in a shared forum.</li>
+<li>I want you to experience being on the side of disseminating technical information.</li>
+<li>On the other hand, many teacher-parents have negative feelings about posting on the public Internet.</li>
+<li>For example, how about using kintone as a closed social networking service?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="./Online-Collaboration" class="internal alias" data-slug="Online-Collaboration">Online Collaboration</a></p>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/Minecraft%E5%8B%89%E5%BC%B7%E4%BC%9A" class="external">/nishio/Minecraft勉強会<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Minecraft" class="internal">Minecraft</a></li><li><a href="./Their-place" class="internal">Their place</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

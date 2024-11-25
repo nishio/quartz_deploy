@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Azure Tech Day ~March 2024 Edition~</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Azure Tech Day ~March 2024 Edition~"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Azure Tech Day ~March 2024 Edition~"/><meta name="twitter:description" content="Azure Tech Day March 2024 Edition - MICUG Microsoft intends to use AI technology not only in Azure cloud services, but also in all its products and services, including Microsoft 365 ..."/><meta property="og:description" content="Azure Tech Day March 2024 Edition - MICUG Microsoft intends to use AI technology not only in Azure cloud services, but also in all its products and services, including Microsoft 365 ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="Azure Tech Day March 2024 Edition - MICUG Microsoft intends to use AI technology not only in Azure cloud services, but also in all its products and services, including Microsoft 365 ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Azure-Tech-Day-~March-2024-Edition~"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Azure-Tech-Day-~March-2024-Edition~"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Azure Tech Day March 2024 Edition - MICUG Microsoft intends to use AI technology not only in Azure cloud services, but also in all its products and services, including Microsoft 365 ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Azure-Tech-Day-~March-2024-Edition~"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Azure Tech Day ~March 2024 Edition~</a></div></nav><h1 class="article-title">Azure Tech Day ~March 2024 Edition~</h1><p show-comma="true" class="content-meta"><span>Mar 28, 2024</span><span>15 min read</span></p></div></div><article class="popover-hint"><p><a href="https://micug.jp/event/atd_march_27/" class="external">Azure Tech Day <del>March 2024 Edition</del> - MICUG<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>Microsoft intends to use AI technology not only in Azure cloud services, but also in all its products and services, including Microsoft 365. The company is moving from the phase of touching on a function-by-function basis to the implementation and development phase.
+The use of AI is an extension of DX, and it is inefficient to think of AI completely in isolation; the system integration, data integration, security, governance, etc. aimed for in DX are also important foundations for advancing AI.</p>
+<ul>
+<li><a href="./Requires-deliberate-daily-practice" class="internal alias" data-slug="Requires-deliberate-daily-practice">Requires deliberate daily practice</a></li>
+<li>Microsoft’s analysis of feedback from 10,000 prior users of Copilot for Microsoft 365 found that “deliberate daily practice is necessary.</li>
+<li>To get used to interacting with AI, it is important to practice continuously with a clear intention, not just to use it vaguely.</li>
+<li>There are tricks to successfully utilizing AI assistants such as ChatGPT.
+<ul>
+<li>Clear and specific instructions need to be given for better results</li>
+<li>It is also important to understand the capabilities and limitations of AI before requesting appropriate tasks.</li>
+</ul>
+</li>
+<li>These skills are not acquired overnight.
+<ul>
+<li>That’s why it’s important to be intentional, even if it’s just a little bit at a time, to build up your practice every day.</li>
+<li>Gradually become accustomed to interacting with AI and learn how to use it more effectively and productively</li>
+</ul>
+</li>
+<li><a href="./I-don't-want-to-work-without-an-AI-assistant" class="internal alias" data-slug="I-don't-want-to-work-without-an-AI-assistant">I don’t want to work without an AI assistant</a></li>
+<li><a href="./Enable-every-individual-and-organization-on-the-planet-to-achieve-more" class="internal alias" data-slug="Enable-every-individual-and-organization-on-the-planet-to-achieve-more">Enable every individual and organization on the planet to achieve more</a>
+When promoting AI projects, it is advisable to first think of DX results and company data and systems, then apply AI functions to narrow down the themes with high business impact. It is inefficient to solicit ideas from all employees.
+<ul>
+<li><a href="./Don't-solicit-ideas-from-all-employees." class="internal alias" data-slug="Don't-solicit-ideas-from-all-employees.">Don’t solicit ideas from all employees.</a></li>
+</ul>
+</li>
+</ul>
+<p>People who say, “<a href="./Data-utilization-is-a-challenge" class="internal alias" data-slug="Data-utilization-is-a-challenge">Data utilization is a challenge</a>,” and “What happens when <a href="./the-challenge-is-solved" class="internal alias" data-slug="the-challenge-is-solved">the challenge is solved</a>?” cannot answer the question “What happens if <a href="./the-issue-is-solved" class="internal alias" data-slug="the-issue-is-solved">the issue is solved</a>?</p>
+<ul>
+<li>Lack of a clear image of the issue</li>
+<li>Effort is being put into clarifying the story here.
+- <a href="./PRO-Model" class="internal alias" data-slug="PRO-Model">PRO Model</a> だな<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>
+- They think it’s a “Problem,” and the Remedy and Outcome are not clear.</li>
+<li><a href="./affinity-with-collaboration-layer" class="internal alias" data-slug="affinity-with-collaboration-layer">affinity with collaboration layer</a>.</li>
+</ul>
+<p>The value that AI brings.</p>
+<ul>
+<li><a href="./Discover-Value" class="internal alias" data-slug="Discover-Value">Discover Value</a> → <a href="./Increased-Productivity" class="internal alias" data-slug="Increased-Productivity">Increased Productivity</a> → <a href="./Create-Innovation" class="internal alias" data-slug="Create-Innovation">Create Innovation</a></li>
+<li>Game Changing area is <a href="./connection-to-own-data" class="internal alias" data-slug="connection-to-own-data">connection to own data</a>.</li>
+</ul>
+<p>Company deploying company-wide chat AI with no updates since then.</p>
+<ul>
+<li>Usage rates will drop, there is a
+<ul>
+<li>Employees are not able to “<a href="./discover-value" class="internal alias" data-slug="discover-value">discover value</a>.</li>
+</ul>
+</li>
+<li>Would you be given a chat box to discuss your own work?
+<ul>
+<li>Accustomed to searching for 20 years, never had “<a href="./consultation" class="internal" data-slug="consultation">consultation</a>” with computer, need training</li>
+</ul>
+</li>
+</ul>
+<p>Roundtable discussion with companies that have increased sales</p>
+<ul>
+<li>
+<p>Same as in the early days of the cloud</p>
+<ul>
+<li>Are you sure you want to use it?”</li>
+<li>“Will they learn what I type?” If I copy and paste the output, won’t I be accused of copyright infringement or plagiarism?”</li>
+<li>Insecurity prevents them from using it.</li>
+</ul>
+</li>
+<li>
+<p>Companies that have done well have used rules and guidelines</p>
+<ul>
+<li>Disclaimer is important, not throwing out long-form rules.</li>
+<li>The drumbeat is, “If this is how you want to use it, don’t worry about it.”</li>
+<li>Rules for clarifying what you are allowed to do</li>
+</ul>
+</li>
+<li>
+<p>Monitoring.</p>
+<ul>
+<li>I’m measuring how much better by what metric.</li>
+<li>Company-wide functions are not recommended.
+<ul>
+<li>Specific tasks should be pinpointed and shot.</li>
+<li>Easier to measure effectiveness and appeal</li>
+<li>Happy with chat on the infamous system.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="./AI-chat-is-a-user-interface-revolution-that-allows-users-to-take-advantage-of-technology-without-programming-knowledge" class="internal alias" data-slug="AI-chat-is-a-user-interface-revolution-that-allows-users-to-take-advantage-of-technology-without-programming-knowledge">AI chat is a user interface revolution that allows users to take advantage of technology without programming knowledge</a></p>
+</li>
+<li>
+<p><a href="./Cybercrime-is-the-world's-third-largest-economy" class="internal alias" data-slug="Cybercrime-is-the-world's-third-largest-economy">Cybercrime is the world’s third largest economy</a>
+Criminals also use AI, and win because AI is stronger.</p>
+</li>
+<li>
+<p>In terms of AI security, attackers are also utilizing AI, so the defenders need to be able to use AI well. It is important for the defenders to have a lot of information and be ready to grasp and respond in real time.
+AI is also being incorporated into security products such as Microsoft Defender to enhance SOAR-like automation and analysis. Automatic generation of queries, automatic creation of incident reports, etc. are now possible.</p>
+</li>
+<li>
+<p><a href="./Do-not-create-tables-with-pre-determined-field-items" class="internal alias" data-slug="Do-not-create-tables-with-pre-determined-field-items">Do not create tables with pre-determined field items</a></p>
+</li>
+<li>
+<p><a href="./graph-database" class="internal alias" data-slug="graph-database">graph database</a>.
+ransomware</p>
+</li>
+<li>
+<p>Cloud is DXed and details are known, which is a defensive advantage</p>
+</li>
+<li>
+<p>On-premises has holes because of omissions of grasp, which is advantageous to the attacker</p>
+</li>
+<li>
+<p><a href="./OSINT" class="internal" data-slug="OSINT">OSINT</a>: equal
+<a href="./Human-Parity" class="internal alias" data-slug="Human-Parity">Human Parity</a></p>
+</li>
+<li>
+<p>Triage of incidents</p>
+</li>
+</ul>
+<p><a href="./Industrial-Metaverse" class="internal alias" data-slug="Industrial-Metaverse">Industrial Metaverse</a></p>
+<ul>
+<li>When the <a href="./digital-twin" class="internal alias" data-slug="digital-twin">digital twin</a> world is established, we can see the state of the trouble and fix it without actually going to the site. In a complete <a href="./metaverse" class="internal" data-slug="metaverse">metaverse</a> world, all processes from development to design and testing can be performed in a virtual environment. We look forward to working with Microsoft to bring the industrial metaverse to life.”
+<ul>
+<li><a href="https://www.khi.co.jp/news/detail/20220525_1.html" class="external">Kawasaki DX was featured in “Microsoft Build 2022” | News | Kawasaki Heavy Industries, Ltd.<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://it.impress.co.jp/articles/-/23238" class="external">Kawasaki Heavy Industries launches “Industrial Metaverse” to build a digital twin of all manufacturing processes | IT Leaders<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>[Industrial Metaverse” by MS and Kawasaki Heavy Industries, Inc.</li>
+</ul>
+</li>
+</ul>
+<p><a href="./Human-speed" class="internal alias" data-slug="Human-speed">Human speed</a> vs.</p>
+<ul>
+<li>We can input data much faster than humans.</li>
+</ul>
+<p>Copilot out in Edge and YouTube summary</p>
+<ul>
+<li>
+<p>Value of eliminating screen transitions
+Easy to share context when files are stored in OneDrive.</p>
+</li>
+<li>
+<p><a href="./Parable-of-the-Washing-Machine" class="internal alias" data-slug="Parable-of-the-Washing-Machine">Parable of the Washing Machine</a></p>
+</li>
+<li>
+<p>Use it even if it’s not perfect.</p>
+</li>
+<li>
+<p><a href="./ChatGPT-and-Nobunaga-Oda" class="internal alias" data-slug="ChatGPT-and-Nobunaga-Oda">ChatGPT and Nobunaga Oda</a>
+Accounting with an abacus? Make slides by hand?</p>
+</li>
+<li>
+<p><a href="./Talking-with-Tech-Leads-about-how-to-use-OpenAI-in-your-company" class="internal alias" data-slug="Talking-with-Tech-Leads-about-how-to-use-OpenAI-in-your-company">Talking with Tech Leads about how to use OpenAI in your company</a>
+<a href="https://diamond.jp/articles/-/329732" class="external">Daidoh supports ChatGPT super fast! How we were able to develop an in-house AI within 3 months of “I want to use it, but…” | Mayumi Sakai’s DX Frontline | Diamond Online<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+</ul>
+<p>KMS Corporation</p>
+<ul>
+<li>
+<p>The problem of a sharp decrease in the use of internal ChatGPT</p>
+</li>
+<li>
+<p>gamification</p>
+<ul>
+<li>As if people are making AI for the fun of it.</li>
+</ul>
+</li>
+<li>
+<p>KBS is a game company, but it is using AI and cloud computing to efficiently perform high-load service operations with a small workforce. The company faces challenges in securing manpower and specialized personnel.</p>
+</li>
+<li>
+<p>AI is used in various aspects of game development. Image rough creation, scenario checking, debugging, user data analysis, and automated response to inquiries. AI is also used in the back office to streamline recruitment interviews and support personnel evaluations.</p>
+</li>
+<li>
+<p>At first, the implementation of AI was frustrating. The usage rate dropped because they did not know how to use it. Therefore, the company developed an in-house system and gamified AI to make it more familiar to employees, thereby successfully changing their mindset.</p>
+</li>
+<li>
+<p>For the demonstration, we created an AI that recommends kitchen cars coming near our office. By tuning the data and configuring the AI’s behavior in detail, we created an AI that can have natural conversations.</p>
+</li>
+<li>
+<p>He also showed that by applying game characterization to AI, it is possible to create a friendly and engaging AI assistant.</p>
+</li>
+<li>
+<p>By controlling AI appropriately and devising data and settings, it can be applied to a wide variety of applications. A culture has been created in which employees spontaneously create AI to improve operational efficiency.</p>
+</li>
+<li>
+<p>The gaming industry is also facing a serious shortage of human resources, and the company aims to improve operational efficiency and alleviate the shortage of human resources through the use of AI. After much trial and error, AI is beginning to permeate the company.</p>
+</li>
+<li>
+<p>AI is not difficult, and we want to make it accessible to everyone. He encouraged people to experience AI at the booths at the seminar.</p>
+</li>
+</ul>
+<p>It is important to let them enter through play.</p>
+<ul>
+<li>Suddenly, “We have to create something useful for our business” is a high hurdle.</li>
+<li>Same as “how to make people pay” for games.
+<ul>
+<li>We need to lower the hurdles and let them experience it first.</li>
+</ul>
+</li>
+<li>First, make something to play with.
+<ul>
+<li>I’ll use it for fun.</li>
+<li>Some people who use it for fun will ask, “How does it work?” There are people who become</li>
+</ul>
+</li>
+<li>Show how it works, surprisingly easy to make.
+<ul>
+<li>If you make it, you’ll want others to use it.
+<ul>
+<li>viral marketing</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>As you make them for fun, you’ll be able to construct mental models that will be beneficial to your work.
+<ul>
+<li>For example, creating a recruiting email
+<ul>
+<li>The play bots and the mechanics are the same.</li>
+</ul>
+</li>
+<li>There is a lot of technical terminology, etc., in engineering recruiting, so there is difficulty in including that information in a draft for someone without technical knowledge.</li>
+</ul>
+</li>
+</ul>
+<p><a href="./Microsoft-Fabric" class="internal alias" data-slug="Microsoft-Fabric">Microsoft Fabric</a></p>
+<ul>
+<li>Microsoft Fabric provides a single SaaS service that delivers the analytics capabilities needed by the enterprise. From the data lake to the business user, they can work and leverage in one place.</li>
+<li>[Building a Data Lakehouse｜Databricks <a href="https://www.databricks.com/jp/resources/ebook/building-the-data-lakehouse?scid=7018Y000001Fi15QAC&amp;utm_" class="external">https://www.databricks.com/jp/resources/ebook/building-the-data-lakehouse?scid=7018Y000001Fi15QAC&amp;utm_<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> medium=paid+search&amp;utm_source=google&amp;utm_campaign=17367027484&amp;utm_adgroup=139781182920&amp;utm_content=ebook&amp;utm_offer=building-the- data-lakehouse&amp;utm_ad=665996192349&amp;utm_term=databricks&amp;gad_source=1&amp;gclid=CjwKCAjw5ImwBhBtEiwAFHDZx1fsCEgX_k03iZAiueZZ7iI9N5L_ VOXMebt_crSCWeJeUMzvGlsKkxoCu04QAvD_BwE]</li>
+<li><a href="https://www.databricks.com/jp/glossary/what-is-parquet" class="external">Parquet | Databricks<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li><a href="./column-oriented" class="internal alias" data-slug="column-oriented">column oriented</a></li>
+</ul>
+</li>
+<li>Fabric features include a complete analytical infrastructure, one-lake, one-copy data sharing, friendly UI, integration with Microsoft365, and co-pilot.</li>
+<li>Yamashita, a welfare equipment rental company, is promoting DX with the goal of tripling sales by 2030. One of the pillars of this is the democratization of data utilization.
+<ul>
+<li><a href="https://prtimes.jp/main/html/rd/p/000000031.000072683.html" class="external">Yamashita, a leading provider of welfare equipment, has developed a data analytics environment based on Microsoft Fabric | Yamashita Corporation Press Release<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</li>
+<li>Mr. Yamashita started with data analysis in the sales area and automated the Excel work. The goal is to build on small successes first, and in the future, to expand the system company-wide and bring it in-house.</li>
+</ul>
+</li>
+<li>As the importance of data utilization grows, the ever-evolving Microsoft Fabric is a strong option. GEAL offers a menu of fabric experience workshops, validation, and implementation support.</li>
+<li>In data utilization, it is essential to proceed steadily with a series of quick wins and realize the effects, rather than starting on a large scale out of the blue. It is desirable to proceed with a skilled supporter.</li>
+</ul>
+<p>Microsoft offers a designated engineering menu as part of Unified Support. This allows Microsoft engineers to directly assist users with their AI projects.</p>
+<ul>
+<li>Creating a copilot requires Azure OpenAI Service, Azure AI Studio, development tools, Microsoft Fabric, and application infrastructure. AI orchestration plays a central role.</li>
+<li>When creating a copilot, a wide range of skills are required, including basic knowledge of rags and prompts, knowledge of models and services, index design, security design, reliability design, and prompt engineering.</li>
+<li>Microsoft solution architects will support user co-pilot development through upskilling assistance, AI infusions, hackathons, and security reviews of infrastructure aspects.</li>
+<li>Co-pilot development requires different skills and knowledge than traditional application development. Solution architects’ know-how can be utilized to make the process more efficient.</li>
+<li>Assistance by a solution architect is highly sought after and demand is expected to increase. Early consideration and consultation is recommended.</li>
+</ul>
+<p><a href="./Provisioned-Throughput-Unit" class="internal alias" data-slug="Provisioned-Throughput-Unit">Provisioned Throughput Unit</a></p>
+<ul>
+<li>[Azure OpenAI Service provisioned throughput - Azure AI services | Microsoft Learn <a href="https://learn.microsoft.com/ja-jp/azure/ai-services/openai/" class="external">https://learn.microsoft.com/ja-jp/azure/ai-services/openai/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> concepts/provisioned-throughput]</li>
+</ul>
+<p>[From “mono-seller” to platformer: DX realized in a year and a half by a manufacturer in Kagawa: “Ambidextrous DX” despite lack of cloud talent - ITmedia Enterprise <a href="https://www.itmedia.co.jp/" class="external">https://www.itmedia.co.jp/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> enterprise/articles/2311/27/news002.html]
+<a href="https://dcross.impress.co.jp/docs/talk/003247.html" class="external">Sewer equipment manufacturer Ishigaki develops “myoru” to monitor, predict and control equipment from a smartphone - DIGITAL X (Digital Cross)<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<a href="https://www.ishigaki.co.jp/info/2023/0803103244/4285/" class="external">Started using “myoruGPT Powered by ChatGPT” | Ishigaki Corporation<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<a href="https://cloud.watch.impress.co.jp/docs/topic/special/1454293.html" class="external">Based on user requests, cloud service developed in Azure for remote monitoring combining IoT and sewer equipment - Cloud Watch<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<a href="https://prtimes.jp/main/html/rd/p/000000006.000078219.html" class="external">Ishigaki Corporation Begins Using “myoruGPT Powered by ChatGPT” | Ishigaki Corporation Press Release<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<img src="https://scrapbox.io/api/pages/nishio/claude/icon" alt="claude.icon" height="19.5"/>Ishigaki has developed a remote monitoring cloud service called miyoru, which combines IoT and sewer equipment using Microsoft Azure.
+The main points can be summarized as follows</p>
+<ul>
+<li>Ishigaki is a leading company in sewer equipment, and around 2020 began full-fledged efforts to promote DX.
+<ul>
+<li>Mr. Ishigaki is a manufacturer active in the water infrastructure field in Kagawa Prefecture. He is a group company with about 2,000 employees.</li>
+</ul>
+</li>
+<li>In 2021, started developing the “miyoru” cloud service, which allows users to remotely check the operating status of automated submersible pumps from their smartphones by attaching IoT sensors to them.
+<ul>
+<li>Around 2021, he began to get involved with Microsoft and conducted an assessment. My impression of Microsoft has changed dramatically.</li>
+<li>MYORU was developed with the support of Microsoft Azure. The goal was to solve the customer’s issues while consolidating the opinions of each department.</li>
+</ul>
+</li>
+<li>Guerrilla IoT efforts began in 2015. Despite some internal opposition, the company began considering full-scale cloud services in 2021.
+<ul>
+<li>Open Data from the Ministry of Land, Infrastructure, Transport and Tourism</li>
+<li>Raspberry Pi</li>
+</ul>
+</li>
+<li>The high productivity of easy Azure parts made it possible to develop MYORU in just one year. Development was accelerated through remote meetings, etc.
+<ul>
+<li>FTA (technical assistance)
+<ul>
+<li>Four months of development</li>
+<li>Assessment results confirmed the cost benefits of Azure migration. Utilizing Fast Track for Azure as well, Miyoru developed the cloud service “Miyoru” in just four months.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>MIYORU was first shown at the Sewerage Exhibition in August 2022. It attracted a great deal of attention from customers.
+<ul>
+<li>Miyoru is a platform that uses AI to provide insight into the water environment. There is a plan to use AI for after-sales service for machinery manufacturers, such as proposing renewal of aging pumps.</li>
+<li>Through participation in exhibitions, Miyoru became a member of the product lineup. The company received inquiries from overseas and became a platform for the group.</li>
+<li>Ishigaki aims to create new business value through miyoru by utilizing IoT and data. The company hopes to contribute to solving issues in the water environment.</li>
+</ul>
+</li>
+<li>Employees became attached to the name Miyoru, and various ideas began to emerge from within the company.</li>
+<li>In August 2023, the company will begin using miyoruGPT for employees, using Azure OpenAI Service to improve internal productivity.
+As described above, Ishigaki is an advanced case of DX in the manufacturing industry. The company is unique in that it took customer needs as its starting point and combined its strengths with the cloud to create a new service in a short period of time.</li>
+</ul>
+<hr/>
+<p>LIFULL
+Providing the real estate industry’s first “service for general users using generative AI” and achieving a high level of stability and security by adopting Azure OpenAI Service
+Beautiful search results on <a href="./Bing" class="internal" data-slug="Bing">Bing</a>.
+<a href="./Prompt-flow" class="internal alias" data-slug="Prompt-flow">Prompt flow</a></p>
+<ul>
+<li>
+<p>Rifle established the Generative AI Product Development Office in May 2023, releasing four products using OpenAI products to first try to make something anyway.</p>
+</li>
+<li>
+<p>The first two products used the OpenAI platform. We struggled to achieve the designed user experience and provide a stable service.</p>
+</li>
+<li>
+<p>Later, they realized that Azure OpenAI Service was easy to use and implemented it starting with the third product. The abundance of cloud services and the Prompt Flow enabled a large amount of trial and error.</p>
+</li>
+<li>
+<p>The latest work was developed with Azure OpenAI in collaboration with Nomura Real Estate Solutions. We were able to take advantage of Azure’s benefits in terms of stability and security.</p>
+</li>
+<li>
+<p>Azure OpenAI addresses privacy protection and overseas relocation challenges; AI content safety features provide tamper protection.</p>
+</li>
+<li>
+<p>Azure is also quick to provide previews of the latest models. However, the lack of quota in the Japan region is an issue.</p>
+</li>
+<li>
+<p>The four products we released in one year gave us insight into how users ask questions and use the products in what situations, which is important for UX strategy.</p>
+</li>
+<li>
+<p>Full-stack Azure is effective for generative AI product development. Use it together to strengthen the Japan Region.</p>
+</li>
+<li>
+<p>According to Mr. Ando of Price.com, the most important thing in a development organization is psychological safety. It is important to create an environment where everyone can openly express their opinions.</p>
+<ul>
+<li>Price.com separates the definition of productivity from creative work. While Copilot is effective for repetitive tasks, productivity is difficult to measure easily.</li>
+</ul>
+</li>
+<li>
+<p>The introduction of Copilot has lowered the psychological hurdle to coding and the automatic generation of test codes has improved the overall quality. It has also increased knowledge and improved skills.</p>
+</li>
+<li>
+<p>On the other hand, there is a concern that they may become too dependent on Copilot and stop learning on their own. Depending on how the tool is used, there could be a difference in the degree of growth of engineers.</p>
+<ul>
+<li>With those who accelerate more with Copilot,<a href="./ハンドルを委ねてしまう人" class="internal alias" data-slug="ハンドルを委ねてしまう人">ハンドルを委ねてしまう人</a>がいる<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>
+<ul>
+<li>The latter were doing copy-and-paste programming before AI, so the situation would be no different.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Price.com, which has been in operation for 27 years, faces the challenge of balancing the challenge of new technology with a sincere commitment to legacy systems. The company is moving forward while gaining the organization’s understanding of costs and regrets.</p>
+</li>
+<li>
+<p>In the future, we expect to see AI that can understand the context of source code, generate documentation, explain functions, etc. This will help to eliminate black boxing.</p>
+</li>
+<li>
+<p>Mr. Kobayashi concluded his presentation by saying that Microsoft, as a user of Copilot, is also conducting business while utilizing it, and that the name “Copilot” comes from “co-pilot,” and that he wants to be in a position to help user companies grow.</p>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from [/nishio/Azure Tech Day <del>March 2024 Edition</del>](<a href="https://scrapbox.io/nishio/Azure" class="external">https://scrapbox.io/nishio/Azure<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Tech Day <del>March 2024 Edition</del>) using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li>No backlinks found</li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

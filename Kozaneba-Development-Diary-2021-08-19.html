@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Kozaneba Development Diary 2021-08-19</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Kozaneba Development Diary 2021-08-19"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Kozaneba Development Diary 2021-08-19"/><meta name="twitter:description" content="prev Kozaneba Development Diary 2021-08-18 Yesterday I implemented the copy function by selecting a range of text and copying it as text. There are some things I want to improve, and I can see how to improve, and some input patterns I forgot to assume, and I’m tempted to continue, but the implementation of the user page is a higher priority."/><meta property="og:description" content="prev Kozaneba Development Diary 2021-08-18 Yesterday I implemented the copy function by selecting a range of text and copying it as text. There are some things I want to improve, and I can see how to improve, and some input patterns I forgot to assume, and I’m tempted to continue, but the implementation of the user page is a higher priority."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="prev Kozaneba Development Diary 2021-08-18 Yesterday I implemented the copy function by selecting a range of text and copying it as text. There are some things I want to improve, and I can see how to improve, and some input patterns I forgot to assume, and I’m tempted to continue, but the implementation of the user page is a higher priority."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Kozaneba-Development-Diary-2021-08-19"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Kozaneba-Development-Diary-2021-08-19"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="prev Kozaneba Development Diary 2021-08-18 Yesterday I implemented the copy function by selecting a range of text and copying it as text. There are some things I want to improve, and I can see how to improve, and some input patterns I forgot to assume, and I’m tempted to continue, but the implementation of the user page is a higher priority."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Kozaneba-Development-Diary-2021-08-19"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Kozaneba Development Diary 2021-08-19</a></div></nav><h1 class="article-title">Kozaneba Development Diary 2021-08-19</h1><p show-comma="true" class="content-meta"><span>Jan 25, 2022</span><span>8 min read</span></p></div></div><article class="popover-hint"><h2 id="prev--kozaneba-development-diary-2021-08-18">prev  <a href="./Kozaneba-Development-Diary-2021-08-18" class="internal alias" data-slug="Kozaneba-Development-Diary-2021-08-18">Kozaneba Development Diary 2021-08-18</a>
+<img src="https://gyazo.com/107bd4bafc8adf5e990a2a8d5575a6e8/thumb/1000" alt="image"/><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#prev--kozaneba-development-diary-2021-08-18" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Yesterday I implemented the copy function by selecting a range of text and copying it as text.</p>
+<ul>
+<li>There are some things I want to improve, and I can see how to improve, and some input patterns I forgot to assume, and I’m tempted to continue, but the implementation of the user page is a higher priority.</li>
+<li>I’m tempted to do the former, comparing a task of the type “I’ve got the functionality implemented and want to improve the quality of its output” to “a user page I’ve long thought should be there but doesn’t exist at all yet”.</li>
+<li><img src="https://gyazo.com/ca78606811aa900613d8a7790b1fa90f/thumb/1000" alt="image"/></li>
+<li>I think it has something to do with this.
+- <a href="./Better-off-investing-in-a-new-S-curve." class="internal alias" data-slug="Better-off-investing-in-a-new-S-curve.">Better off investing in a new S-curve.</a></li>
+</ul>
+<p>If I don’t write down what I’m thinking, I’m anxious to forget it and want to implement it now.</p>
+<ul>
+<li>The search to find clusters and the search to make it one dimensional at the same time was a mistake.</li>
+<li>Because it is not right to connect words in the upper right direction, although the branches should be connected as a cluster even if they extend to the upper right.
+<ul>
+<li><img src="https://gyazo.com/b8cdd03f5e47af787c7580e7cb9b22d6/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>Clusters should be determined first and then made one-dimensional.</li>
+<li>I still don’t support when groups are mixed.
+<ul>
+<li>It’s designed to be expressed by indentation.</li>
+</ul>
+</li>
+<li>I omitted to take into account the large size of the stickies.
+<ul>
+<li>Distance function should be distance between edges, not distance between centers</li>
+<li>In that case, the larger the area of the dent, the closer is the dent to the surface?</li>
+<li>What if it’s not stuck?</li>
+<li><img src="https://gyazo.com/0d438fd048acec502dffe860d928d8cb/thumb/1000" alt="image"/>
+<ul>
+<li>C is closer according to physical distance as next to A, but it is more natural that B is chosen</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Selection doubled by dragging? Moves, scale dependent?</p>
+<p><img src="https://gyazo.com/3764a3109dbfc6ce37787e01c0a0f6fe/thumb/1000" alt="image"/></p>
+<p>[/shokai/ clean up UserScript after moving to another project (event version)](<a href="https://scrapbox.io/shokai/" class="external">https://scrapbox.io/shokai/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> clean up UserScript after moving to another project (event version)).</p>
+<ul>
+<li>UserScript is determined by a cross between User and Project.</li>
+<li>Is that really necessary?
+<ul>
+<li>Especially in Kozaneba</li>
+<li>YAGNI because I don’t feel like I need it.</li>
+</ul>
+</li>
+</ul>
+<p>When using JS code read from a service that distributes JS code (e.g. Scrapbox)</p>
+<ul>
+<li>There is a risk of unknowing updates and backdoors being planted.</li>
+<li>Users want to use imports because they are easy, but they don’t realize when the fundamentals have been updated.</li>
+<li>Make import “read, cache, and use” instead of “read the latest”.</li>
+</ul>
+<p><a href="https://scrapbox.io/shokai/dogfooding" class="external">/shokai/dogfooding<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.
+- I didn’t think of <a href="./user-extensibility-and-dogfooding" class="internal alias" data-slug="user-extensibility-and-dogfooding">user extensibility and dogfooding</a> as related, but they certainly are.</p>
+<hr/>
+<ul>
+<li>
+<p>The list screen is now ready, title has been changed, and loading display has been added.</p>
+</li>
+<li>
+<p>I was going to be able to change the title or delete it from this list screen, but on second thought, why delete it without checking the contents? I felt that it would be better to just have the delete option at the end of the list.</p>
+</li>
+<li>
+<p>make the ✅summation better</p>
+<ul>
+<li><img src="https://gyazo.com/6a642c431c7205936b2999fcee798d59/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>
+<p>Fixed ✅selection dragging bug</p>
+<ul>
+<li>Drag bugs are scale-dependent</li>
+</ul>
+</li>
+<li>
+<p>✅Text copy group support</p>
+</li>
+</ul>
+<p>Making Tutorials Helpful
+<img src="https://gyazo.com/6756e2e0e9b67b6d268ad5a7abcbfa9b/thumb/1000" alt="image"/></p>
+<ul>
+<li>We have a lot of convergence of things to do, let’s improve the tutorial system and change it to a form where a chapter of help is a tutorial.
+<ul>
+<li>Now the content is an unnamed list, and the headings are simply headline tags.</li>
+<li>If we can organize this and mechanically handle the headings, we can create a “table of contents.</li>
+<li>Tutorials are just reading the “tutorial chapters,” which would be</li>
+<li>It’s just in the list now, but make it a list of objects with title and body.</li>
+<li>Keep tutorial listings separate from the overall listing.</li>
+<li>I used to resume the tutorial with the hatena on the status bar when in tutorial mode, but there’s no point in hiding that hatena when not in tutorial mode, it would be nice to get help from there.</li>
+<li>First of all, we need to change the inside design to a form that can provide help while keeping the current tutorials available.</li>
+<li>And I can run automated tests to make sure it’s not broken.</li>
+</ul>
+</li>
+<li>Allow you to proceed by keyboard? YAGNI</li>
+</ul>
+<p>removed: The following pages will explain the advanced features and the philosophy behind Kozaneba.</p>
+<p><img src="https://gyazo.com/92792948d612218ab6d37f679a48d5d6/thumb/1000" alt="image"/></p>
+<ul>
+<li>It has a table of contents and you can jump from the table of contents to individual pages and back to the table of contents.</li>
+<li>But I left the tutorial table of contents out, and it’s a pretty long list, so I wanted to fold it up.</li>
+</ul>
+<p><img src="https://gyazo.com/107bd4bafc8adf5e990a2a8d5575a6e8/thumb/1000" alt="image"/></p>
+<p>Kozaneba Help</p>
+<ul>
+<li>
+<p>What we already have</p>
+<ul>
+<li>Table of contents</li>
+<li>Welcome to Kozaneba!</li>
+<li>digital stationery to organize your thought</li>
+<li>You can open the tutorial</li>
+<li>Let’s add some Kozane!</li>
+<li>Let’s move Kozane!</li>
+<li>Let’s scroll and zoom the Ba</li>
+<li>Let’s click to show context menu</li>
+<li>Automatic font size adjustment</li>
+<li>You can ungroup a group</li>
+<li>Let’s select objects!</li>
+<li>It’s not saved yet!</li>
+<li>Let’s enable auto-save!</li>
+<li>Saved?</li>
+<li>Tutorial Finished🎉</li>
+<li>We need the practice to use stationery effectively</li>
+<li>Don’t classify, organize!</li>
+</ul>
+</li>
+<li>
+<p>Movement with cursor</p>
+</li>
+<li>
+<p>Opening and Closing Groups</p>
+</li>
+<li>
+<p>Give the group a title</p>
+</li>
+<li>
+<p>Division of stickies</p>
+<ul>
+<li>I can use it to duplicate and update.</li>
+<li>I’d like to see it after Replace is on.</li>
+</ul>
+</li>
+<li>
+<p>Feedback function</p>
+</li>
+<li>
+<p>Make important things bigger.</p>
+</li>
+<li>
+<p>Spacebar to full screen</p>
+</li>
+<li>
+<p>origin of Kozane</p>
+</li>
+</ul>
+<p>Other</p>
+<ul>
+<li>Updating ReactN during range selection is slow and I want to use only DOM.</li>
+<li>No way to make it smaller if you make it bigger by mistake.</li>
+<li>I’m sure English speakers would like to see a space between the two when combining text in copy text.
+<ul>
+<li>Need to make it configurable.</li>
+</ul>
+</li>
+<li>User-defined constants
+<ul>
+<li>I’d like to be able to put it on the net, but waiting to get it from the net before doing any other processing…</li>
+<li>Constants should be cached locally.</li>
+</ul>
+</li>
+<li>There’s no way for someone without a wheel to zoom in.
+<ul>
+<li>Enlarge by b</li>
+</ul>
+</li>
+</ul>
+<p>Anne Group Page</p>
+<p>After creating a group, I want to close and title it.</p>
+<p>On the finish page</p>
+<ul>
+<li>Send feedback anonymously.</li>
+<li>You can also post in the forum
+Announcing that</li>
+</ul>
+<p>When I organized my TODO, I realized that I could make the things I need to do bigger and then make them smaller when I’m done.</p>
+<ul>
+<li><img src="https://gyazo.com/8a08585193ba67fa6416105c029b98f3/thumb/1000" alt="image"/></li>
+</ul>
+<p>User-defined constants, wheel sensitivity, etc. are easy because they are determined by the time the user operates the system, but it is difficult to make a sticky note square, for example.
+StyledComponent is created based on the constant value. Since these are module-level constants, they are calculated at the time the module is read and are not reflected if changed later.
+To make this kind of thing changeable, it would require a delay in finalizing the affected items across the board.</p>
+<p>There’s a difference between individual hand customization and overall customization in the first place.</p>
+<ul>
+<li>For example, if you want to change the color of the border of a group, you don’t want it to change only in your hand, but about all the people who see it, so the data for this customization should be owned by Ba
+<ul>
+<li>And this is after the ability to share without write permissions.</li>
+</ul>
+</li>
+</ul>
+<p>In that sense, the menu expansion is for me.</p>
+<ul>
+<li>Adding more buttons to the AppBar and</li>
+<li>Change key bindings</li>
+</ul>
+<p>Changing the sensitivity of the wheel, for example, should be stored per device because it’s basically tightly coupled to the device.
+If it’s too much trouble to edit on Kozaneba, you could press the fetch button to fetch from a specific URL.</p>
+<p>The developer menu, the one I use, is hidden for once, but it could display an extended menu for those who want to do customization.</p>
+<p>I just converted it on DeepL and it’s not bad.</p>
+<ul>
+<li>[/kozaneba-forum/Make wheel sensitivity configurable.](<a href="https://scrapbox.io/kozaneba-forum/Make" class="external">https://scrapbox.io/kozaneba-forum/Make<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> wheel sensitivity configurable.)</li>
+</ul>
+<p>How about posting what you have written in the Japanese forum in the English forum by machine translation first, and then correcting it when you feel like it?</p>
+<p><a href="./pScrapboxAutoTrans" class="internal" data-slug="pScrapboxAutoTrans">pScrapboxAutoTrans</a></p>
+<p>As for user extensibility, I was going to set it from the user dialog, but maybe I’ll set it from a new dialog from DevMenu for a while.</p>
+<ul>
+<li>It’s not a good idea to put it in a place where users can see it until it’s done right to some extent.</li>
+</ul>
+<p>It’s tempting to push the edge of what is technically feasible or not, but that would make the room look like a room with prototypes scattered all over the floor, and most users would not be comfortable, so I need to isolate me.</p>
+<p>next  <a href="./Kozaneba-Development-Diary-2021-08-20" class="internal alias" data-slug="Kozaneba-Development-Diary-2021-08-20">Kozaneba Development Diary 2021-08-20</a></p>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/Kozaneba%E9%96%8B%E7%99%BA%E6%97%A5%E8%A8%982021-08-19" class="external">/nishio/Kozaneba開発日記2021-08-19<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Kozaneba-Development-Diary-2021-08-20" class="internal">Kozaneba Development Diary 2021-08-20</a></li><li><a href="./Kozaneba-Development-Diary-2021-10-01" class="internal">Kozaneba Development Diary 2021-10-01</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

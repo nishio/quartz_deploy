@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>LENCHI_Day8</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="LENCHI_Day8"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="LENCHI_Day8"/><meta name="twitter:description" content="2024-06-01 The process of creating [Intellectual Production Techniques for Engineers Using LLM (Presentation Material) I created the above page and started writing ..."/><meta property="og:description" content="2024-06-01 The process of creating [Intellectual Production Techniques for Engineers Using LLM (Presentation Material) I created the above page and started writing ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="2024-06-01 The process of creating [Intellectual Production Techniques for Engineers Using LLM (Presentation Material) I created the above page and started writing ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/LENCHI_Day8"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/LENCHI_Day8"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="2024-06-01 The process of creating [Intellectual Production Techniques for Engineers Using LLM (Presentation Material) I created the above page and started writing ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="LENCHI_Day8"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>LENCHI_Day8</a></div></nav><h1 class="article-title">LENCHI_Day8</h1><p show-comma="true" class="content-meta"><span>Jun 06, 2024</span><span>11 min read</span></p></div></div><article class="popover-hint"><p>2024-06-01</p>
+<ul>
+<li>The process of creating [Intellectual Production Techniques for Engineers Using LLM (Presentation Material)</li>
+<li>I created the above page and started writing.
+<ul>
+<li>I started while waiting for ramen.</li>
+<li><a href="./Initiating-is-the-first-step-in-making-progress" class="internal alias" data-slug="Initiating-is-the-first-step-in-making-progress">Initiating is the first step in making progress</a>.</li>
+</ul>
+</li>
+</ul>
+<p>I’ll do one pomodoro.
+🍅</p>
+<ul>
+<li><a href="./Restricted-Media" class="internal alias" data-slug="Restricted-Media">Restricted Media</a></li>
+<li><a href="./The-Importance-of-Practitioner-Experience-in-the-Art-of-Intellectual-Production" class="internal alias" data-slug="The-Importance-of-Practitioner-Experience-in-the-Art-of-Intellectual-Production">The Importance of Practitioner Experience in the Art of Intellectual Production</a></li>
+</ul>
+<p><a href="./LENCHI_Day7" class="internal" data-slug="LENCHI_Day7">LENCHI_Day7</a>
+- <a href="./I-had-LENCHI_LLM-comment-from-a-2024-perspective." class="internal alias" data-slug="I-had-LENCHI_LLM-comment-from-a-2024-perspective.">I had LENCHI_LLM comment from a 2024 perspective.</a>
+- Do you want to introduce this as it is or change it based on the latter part of the story?
+- Well, it’s more fun to change things up.
+- Fitting components is faster if you don’t have time to spare.
+- There’s room this time.</p>
+<p>p.122
+<img src="https://gyazo.com/b8b22598fa9451ff2e37c2e6810624a8/thumb/1000" alt="image"/></p>
+<blockquote>
+<p>If you read too fast and do not understand enough, you can read again, but if you read too slow and waste time, there is no way to recover, so if you do not know the right balance, you should err on the side of fast.</p>
+</blockquote>
+<p>🍅Detailing the second part of the story.</p>
+<ul>
+<li><a href="./Benefits-of-using-Scrapbox" class="internal alias" data-slug="Benefits-of-using-Scrapbox">Benefits of using Scrapbox</a></li>
+<li><a href="./Advantages-of-&quot;drawing-the-line" class="internal alias" data-slug="Advantages-of-&quot;drawing-the-line">Advantages of “drawing the line</a>
+<img src="https://gyazo.com/3ba1ec93054af29bf61e6e4020b58f6a/thumb/1000" alt="image"/></li>
+</ul>
+<p>As for the “LENCHI_LLM commented from the perspective of 2024,” it would be more interesting to blend it in as a knowledge network, but as a one-dimensional lecture, it would become a seamless story and the audience would not be able to keep up.
+- <a href="./Writing-is-one-dimensional" class="internal alias" data-slug="Writing-is-one-dimensional">Writing is one-dimensional</a></p>
+<p>2024-06-04</p>
+<ul>
+<li>Inefficient to watch real-time lectures that can only be played back at 1x speed
+<ul>
+<li>I wonder if the management would be confused if I said…</li>
+<li>No double-speed playback, no letting the AI summarize the transcription, no discussion among viewers</li>
+</ul>
+</li>
+</ul>
+<p>🍅</p>
+<ul>
+<li>“What triggered this time?” and “Is the content really valuable in the future?” Fixed the</li>
+<li>By actually generating the lowest level of description, I can see how you feel, even though “this is where it should end up in terms of quantity”.
+<ul>
+<li><a href="./making-finite" class="internal alias" data-slug="making-finite">making finite</a>
+<ul>
+<li><a href="./Books-are-a-tool-for-finitization" class="internal alias" data-slug="Books-are-a-tool-for-finitization">Books are a tool for finitization</a></li>
+<li><a href="./Without-finitization,-people-will-be-crushed-by-information-pressure." class="internal alias" data-slug="Without-finitization,-people-will-be-crushed-by-information-pressure.">Without finitization, people will be crushed by information pressure.</a></li>
+<li><a href="./If-books-are-a-system-of-finitization,-we-should-help-readers-connect-to-the-infinite-network-behind-them." class="internal alias" data-slug="If-books-are-a-system-of-finitization,-we-should-help-readers-connect-to-the-infinite-network-behind-them.">If books are a system of finitization, we should help readers connect to the infinite network behind them.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>🍅
+cut
+- <a href="./The-Importance-of-Practitioner-Experience-in-the-Art-of-Intellectual-Production" class="internal alias" data-slug="The-Importance-of-Practitioner-Experience-in-the-Art-of-Intellectual-Production">The Importance of Practitioner Experience in the Art of Intellectual Production</a></p>
+<ul>
+<li>
+<blockquote>
+<p>For more information <a href="./I-had-LENCHI_LLM-comment-from-a-2024-perspective." class="internal alias" data-slug="I-had-LENCHI_LLM-comment-from-a-2024-perspective.">I had LENCHI_LLM comment from a 2024 perspective.</a></p>
+</blockquote>
+</li>
+</ul>
+<p>Scrapbox</p>
+<ul>
+<li>Mentioned in a footnote on p. 175.</li>
+</ul>
+<blockquote>
+<p>In the long run, the form in which humans express knowledge will also change as the expressive power of peripheral devices advances. You are in a transitional period. While you are still reading literature in print format, which is much the same as 100 years ago, you are also reading in a way that did not exist 100 years ago, i.e., finding articles that seem relevant to your interests from a large amount of digital data and following hyperlinks from those articles to gather knowledge about the surrounding area.
+p.107</p>
+</blockquote>
+<p><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Below are the presentation materials being prepared. Continue by making a draft <a href="https://gist.github.com/nishio/6f90dc78e26b42ac6236376ad4b5f146" class="external">draft<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<img src="https://scrapbox.io/api/pages/nishio/claude/icon" alt="claude.icon" height="19.5"/>
+Continued draft.
+Intellectual Production Techniques for Engineers Using LLM (Presentation Material)
+Practicing Intellectual Production with LLM
+Creating and utilizing custom GPTs
+Create a custom GPT for ChatGPT to vector search and converse with your own Scrapbox.
+Attempts to directly connect individuals’ knowledge base with LLM
+Can use my past knowledge and ideas in my interactions with LLMs
+New forms of intellectual production that integrate personal knowledge base and LLM
+Understanding and dealing with LLM constraints
+Derailment due to context size constraints
+The problem of forgetting the past when doing repeated searches
+Importance of giving proper context
+Need to understand the characteristics of LLM and get along with them
+Balance between divergent and convergent thinking
+Accelerated brainstorming with LLM is useful for divergent thinking
+On the other hand, how to support convergent thinking in LLM is a challenge
+Context wide LLMs may converge while maintaining purpose and context
+Combining the KJ method and LLM to support convergent thinking</p>
+<p>Toward a New Model of Intellectual Production
+Possibility of fractal summarization
+Presenting summaries in different levels of detail allows users the flexibility to obtain the information they need
+Value as a tool for a “rough-and-ready” approach
+Summary diversity and information liquefaction
+Create different variations by keeping some aspects and changing others.
+Variations that take the form of summary levels, language, and unjargoned state chats.
+Pivotal transformation of information to create new knowledge
+Relevance to Asymmetric Reality
+Shared Axis Legs” and “Individually Optimized Other Legs” Structure
+Virtual time frame, spatial arrangement, and sentence structure are the axes.
+Importance of connecting content through the axis leg
+A new way of intellectual production that uses LLM to create diverse variations</p>
+<p>summary
+The development of LLM is bringing about significant changes in intellectual production
+The ideas advocated by “The Engineer’s Art of Intellectual Production” continue to have value today
+It is important to utilize LLM while taking into account the evolution of tools and human creativity
+The way of learning is changing, and the ability to identify what to learn on one’s own is becoming increasingly important.
+Practice intellectual production while balancing divergent and convergent thinking using LLM
+The concepts of fractal summarization and Asymmetric Reality suggest a new paradigm in structuring and utilizing knowledge
+Important to continue to explore the transformative potential of intellectual production brought about by LLM and the methodologies to take advantage of it</p>
+<hr/>
+<p>I threw it out there with the hope of making a little progress, but surprisingly, they made it to the final summary.</p>
+<ul>
+<li><a href="./Done-is-better-than-perfect" class="internal alias" data-slug="Done-is-better-than-perfect">Done is better than perfect</a>, but AI will make it Done.</li>
+<li>I feel like I’m overloading the Asymmetrci Reality story, but the effect is that the presentation of a slap in the face encourages the verbalization of how to improve it.</li>
+</ul>
+<p>after dinner</p>
+<ul>
+<li>Feeling vaguely unwell.</li>
+<li>Lack of exercise!</li>
+<li>Let’s go walk.</li>
+</ul>
+<p>🍅
+I was going to let ChatGPT summarize the benefits of the electronic KJ method, but the service is down.</p>
+<p>2024-06-05
+🍅</p>
+<ul>
+<li><a href="./Expand-context-→-maintain-context-for-long-term-projects" class="internal alias" data-slug="Expand-context-→-maintain-context-for-long-term-projects">Expand context → maintain context for long-term projects</a></li>
+</ul>
+<p>I’ve been working on it for about 2h without a timer.</p>
+<ul>
+<li><a href="./Difference-between-&quot;same&quot;-and-&quot;similar.&quot;" class="internal alias" data-slug="Difference-between-&quot;same&quot;-and-&quot;similar.&quot;">Difference between “same” and “similar.”</a></li>
+</ul>
+<p>2024-06-06
+Let’s go to bed.
+I’ll have Claude make a summary later.
+Let Claude organize the Scrapbox place.</p>
+<p>(Sleeping/waking up)</p>
+<p><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/> Write a summary paragraph <a href="https://gist.github.com/nishio/18ebd5936c6f8e5d8119d8f8f0dcc007" class="external">text<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<img src="https://scrapbox.io/api/pages/nishio/claude/icon" alt="claude.icon" height="19.5"/>summary</p>
+<p>While the development of LLM has brought about significant changes in intellectual production, the ideas advocated by “The Engineer’s Art of Intellectual Production” continue to have value today. The importance of human independent intellectual activities, such as the cycle of learning and the ability to identify subjects to learn on one’s own, is rather increasing.</p>
+<p>At the same time, there is a need to leverage LLM while taking into account the evolution of tools and unleashing human creativity. From blogs to Scrapbox, from paper KJ method to Kozaneba, personal intellectual production platforms are evolving, and new possibilities are opening up through fusion with LLM.</p>
+<p>LLM can be used to accelerate divergent thinking and expand the knowledge base. At the same time, new models of intellectual production are being explored, including the use of LLM to support convergent thinking and the realization of “broad listening” through the development of summarization technology.</p>
+<p>Engineers of the future will be required to use LLM appropriately and advance their own intellectual production. To do so, they will need to flexibly adopt new tools and approaches and put them into practice, while building on the ideas underlying the “Engineer’s Art of Intellectual Production.</p>
+<p>I myself would like to continue to be at the forefront of intellectual production, utilizing Scrapbox, Custom Search, Claude 3 Opus, and other tools. I would also like to continue to explore the possibilities of intellectual production using LLM by sharing and discussing the insights gained in the process.</p>
+<p>I hope that you, too, will face LLM with your own intellectual curiosity as a driving force and continue to learn. By doing so, we can enhance our collective intelligence and co-create a better future.</p>
+<hr/>
+<p>LENCHI preface, I thought I might not have enough time, but I spoke and it seemed OK, so I decided to embed it instead of a separate page</p>
+<p><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Please review the following lecture materials and point out areas that are difficult for the audience to understand and need to be reworded, and suggest what you would like to see supplemented <a href="https://gist.github.com/nishio/7a285c7026657b6cb094a0b2c00df2f9" class="external">txt<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.
+<img src="https://scrapbox.io/api/pages/nishio/claude/icon" alt="claude.icon" height="19.5"/>I think it would be better to supplement the wording of the following section, as it may be difficult for viewers to understand.</p>
+<ul>
+<li>
+<p>RAG (<a href="./Retrieval-Augmented-Generation" class="internal alias" data-slug="Retrieval-Augmented-Generation">Retrieval-Augmented Generation</a>, retrieval-enhanced generation)“.</p>
+<ul>
+<li>It would be good to add a brief explanation of the term and concept of RAG.</li>
+<li>E.g., “RAG is a technique for generating more specific, contextualized responses by retrieving and leveraging information from a specific database in addition to the LLM’s general knowledge.”</li>
+</ul>
+</li>
+<li>
+<p>LLM for Commodities.”</p>
+<ul>
+<li>Since the term “commodity” may not be common, an explanation would be a good addition.</li>
+<li>E.g., “A commoditized LLM is one that has not undergone any special adjustments or additional learning with data and is in a universally available state.”</li>
+</ul>
+</li>
+<li>
+<p>Zoom function.”</p>
+<ul>
+<li>It would be good to add an explanation of the specific effects of Kozaneba’s zoom feature.</li>
+<li>Example: “Using the zoom function, you can change the display range at will, for example, to get a bird’s eye view of the whole picture or to focus on a specific part. This makes it easier to explore the relevance of ideas.”</li>
+</ul>
+</li>
+<li>
+<p>Broadcasting” and “Broad Listening.”</p>
+<ul>
+<li>It would be good to add more clarification on these two terms.</li>
+<li>Example: “Broadcasting refers to the one-way dissemination of information, as in broadcasting. Broad listening, on the other hand, is a new form of communication that utilizes LLM’s summarization technology to enable the opinions of many people to be heard efficiently.”</li>
+</ul>
+</li>
+<li>
+<p>Context window.”</p>
+<ul>
+<li>It would be good to add a brief explanation of the term context window.</li>
+<li>Example: “The context window is the maximum amount of text that the LLM can process at one time. The larger this context window, the better the LLM can understand longer sentences and conversational flow and generate consistent responses.”</li>
+</ul>
+</li>
+</ul>
+<p>By adding the above explanations to these sections, the audience will be able to better understand and smoothly follow the content of the lecture. Throughout the entire lecture material, it is a good idea to include brief explanations of technical terms and new concepts.</p>
+<hr/>
+<h2 id="i-still-cant-tell-you-everything-in-50-minutes">I still can’t tell you everything in 50 minutes.<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#i-still-cant-tell-you-everything-in-50-minutes" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>How would you add more clarity to the story about the possible changes in the activity of “reading a book”?
+<img src="https://scrapbox.io/api/pages/nishio/claude/icon" alt="claude.icon" height="19.5"/>We suggest the following additions to better explain the potential changes in the activity of “reading a book.”</p>
+<p>Overview of traditional “read a book” activities</p>
+<ul>
+<li>He explains that the mainstream reading experience was linear: picking up a paper book and reading through it word by word.</li>
+<li>It presents the challenge that readers were getting the information in the order the author intended, making it difficult for them to tailor their reading to their own pace and interests.</li>
+</ul>
+<p>LLMs bring about a change in “reading a book” activity.</p>
+<ul>
+<li>Explain that by using LLM, you can now summarize the content of the book and extract the parts of the book that interest you.</li>
+<li>Readers will be able to explore the book’s content in a non-linear fashion according to their own interests. Example: “With LLM, you can quickly find the information you want to know without having to read through the entire book. It’s as if the experience is one of acquiring knowledge through interacting with a book.”</li>
+</ul>
+<p>Case Studies</p>
+<ul>
+<li>Examples of LLM-based reading support tools, such as Fractal Reader, will be presented.</li>
+<li>Be specific about how these tools change the “book reading” experience. For example: “Fractal Reader summarizes and presents the content of a book in different levels of detail. You can read a broad summary first, then read a more detailed summary of the parts you are interested in, and so on, at your own pace.”</li>
+</ul>
+<p>Future Possibilities</p>
+<ul>
+<li>Predictions are given as to how the development of LLM will further change the “reading a book” activity.</li>
+<li>Suggest possibilities such as how the reading experience might become optimized for individual interests and purposes. For example: “In the future, LLM may be able to understand the interests and objectives of the reader and reorganize the book content accordingly. The result will be a personalized reading experience, as if it were written for each and every one of us.”</li>
+</ul>
+<h2 id="by-explaining-the-changes-in-the-activity-of-reading-books-in-this-way-by-explaining-the-challenges-of-the-traditional-reading-experience-the-changes-brought-about-by-llm-case-studies-and-future-possibilities-we-believe-it-will-be-easier-for-the-audience-to-understand-and-have-a-concrete-image-of-the-activity-in-addition-by-mixing-in-examples-abstract-concepts-will-be-easier-to-understand">By explaining the changes in the activity of “reading books” in this way, by explaining the challenges of the traditional reading experience, the changes brought about by LLM, case studies, and future possibilities, we believe it will be easier for the audience to understand and have a concrete image of the activity. In addition, by mixing in examples, abstract concepts will be easier to understand.<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#by-explaining-the-changes-in-the-activity-of-reading-books-in-this-way-by-explaining-the-challenges-of-the-traditional-reading-experience-the-changes-brought-about-by-llm-case-studies-and-future-possibilities-we-believe-it-will-be-easier-for-the-audience-to-understand-and-have-a-concrete-image-of-the-activity-in-addition-by-mixing-in-examples-abstract-concepts-will-be-easier-to-understand" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/LENCHI_Day8" class="external">/nishio/LENCHI_Day8<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class aria-controls="toc-content" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content" class><ul class="overflow"><li class="depth-0"><a href="#i-still-cant-tell-you-everything-in-50-minutes" data-for="i-still-cant-tell-you-everything-in-50-minutes">I still can’t tell you everything in 50 minutes.</a></li><li class="depth-0"><a href="#by-explaining-the-changes-in-the-activity-of-reading-books-in-this-way-by-explaining-the-challenges-of-the-traditional-reading-experience-the-changes-brought-about-by-llm-case-studies-and-future-possibilities-we-believe-it-will-be-easier-for-the-audience-to-understand-and-have-a-concrete-image-of-the-activity-in-addition-by-mixing-in-examples-abstract-concepts-will-be-easier-to-understand" data-for="by-explaining-the-changes-in-the-activity-of-reading-books-in-this-way-by-explaining-the-challenges-of-the-traditional-reading-experience-the-changes-brought-about-by-llm-case-studies-and-future-possibilities-we-believe-it-will-be-easier-for-the-audience-to-understand-and-have-a-concrete-image-of-the-activity-in-addition-by-mixing-in-examples-abstract-concepts-will-be-easier-to-understand">By explaining the changes in the activity of “reading books” in this way, by explaining the challenges of the traditional reading experience, the changes brought about by LLM, case studies, and future possibilities, we believe it will be easier for the audience to understand and have a concrete image of the activity. In addition, by mixing in examples, abstract concepts will be easier to understand.</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Expand-context-→-maintain-context-for-long-term-projects" class="internal">Expand context → maintain context for long-term projects</a></li><li><a href="./Intellectual-production-techniques-for-engineers-who-use-LLM" class="internal">Intellectual production techniques for engineers who use LLM</a></li><li><a href="./LENCHI_Day7" class="internal">LENCHI_Day7</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

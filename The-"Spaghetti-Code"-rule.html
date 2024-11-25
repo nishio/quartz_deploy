@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>The &quot;Spaghetti Code&quot; rule</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="The &quot;Spaghetti Code&quot; rule"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="The &quot;Spaghetti Code&quot; rule"/><meta name="twitter:description" content="Spaghetti Code” rules (2 to 5 players / 10 minutes play time) (The gameplay is very different, so you may want to focus on two players. The playing time depends on the amount of long thinking."/><meta property="og:description" content="Spaghetti Code” rules (2 to 5 players / 10 minutes play time) (The gameplay is very different, so you may want to focus on two players. The playing time depends on the amount of long thinking."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="Spaghetti Code” rules (2 to 5 players / 10 minutes play time) (The gameplay is very different, so you may want to focus on two players. The playing time depends on the amount of long thinking."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/The-&quot;Spaghetti-Code&quot;-rule"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/The-&quot;Spaghetti-Code&quot;-rule"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Spaghetti Code” rules (2 to 5 players / 10 minutes play time) (The gameplay is very different, so you may want to focus on two players. The playing time depends on the amount of long thinking."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="The-&quot;Spaghetti-Code&quot;-rule"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>The &quot;Spaghetti Code&quot; rule</a></div></nav><h1 class="article-title">The &quot;Spaghetti Code&quot; rule</h1><p show-comma="true" class="content-meta"><span>Aug 24, 2019</span><span>18 min read</span></p></div></div><article class="popover-hint"><p>Spaghetti Code” rules (2 to 5 players / 10 minutes play time)</p>
+<ul>
+<li>(The gameplay is very different, so you may want to focus on two players. The playing time depends on the amount of long thinking. A chess timer is a good idea.)</li>
+</ul>
+<p>What’s in it</p>
+<ul>
+<li>10 command cards (+ 5 extended command cards + 3 blank cards)</li>
+<li>10 flag chips x 5 colors: The colors of the flag chips correspond one-to-one with the players.</li>
+<li>Cursor 1 pc.</li>
+<li>Increment chip 5 pcs.</li>
+<li>Decrement chip 5 pcs.</li>
+<li>Life counter 5 pcs x 5 colors</li>
+</ul>
+<p>Game Objectives</p>
+<ul>
+<li>Defeat all players except yourself.</li>
+<li>way of defeating
+<ul>
+<li>Reduce the opponent’s life to 0 or less.</li>
+<li>Zero flags of the opponent’s color.</li>
+</ul>
+</li>
+</ul>
+<p>rule explanation</p>
+<ul>
+<li>The rules of “Spaghetti Code” are difficult to understand in their entirety at once, so it is recommended that you start with level 1 for two players, and only after you are familiar with the game should you attempt level 2 and level 3 rules.</li>
+</ul>
+<p>■Outline</p>
+<ul>
+<li>
+<p>The “Spaghetti Code” game consists of three phases: the command preparation phase, the flag placement phase, and the program execution phase.</p>
+</li>
+<li>
+<p>In the “Command Preparation Phase,” command cards are lined up on the field to determine the initial state of the game by determining the first and second moves.</p>
+</li>
+<li>
+<p>During the “flag placement phase,” each player places a flag chip on a command card. This represents the program.</p>
+</li>
+<li>
+<p>In the “program execution phase,” commands are executed according to the state of the flags as the cursor is moved. This phase continues until the game ends.</p>
+</li>
+<li>
+<p>Level 1
+<img src="https://gyazo.com/37a0e980e0eb8e750d11b3a6bc309534/thumb/1000" alt="image"/></p>
+</li>
+<li>
+<p>■What to use</p>
+<ul>
+<li>At level 1, only flags and commands that affect the player’s life can be used.</li>
+<li>Select 5 cards marked Level 1 AddFlag, MoveFlag, RemoveFlag, Bug, and ForkBomb from the command cards.</li>
+<li>It also uses 1 cursor chip, 10 flag chips of each color, and 5 life counters of each color.</li>
+</ul>
+</li>
+</ul>
+<p>Level 1 Command Cards: 5
+AddFlag: Add a flag to the end of any command card except this command card.
+MoveFlag: Move any {1} flag to the end of another command card.
+RemoveFlag: Remove any {1} flags from the game
+Bug: Reduce {1} life of any {1} player
+ForkBomb: Reduce any one player’s life by {2} and remove the flag that triggered this command from the game</p>
+<ul>
+<li>
+<p>■Command preparation phase</p>
+<ul>
+<li>Shuffle the five command cards, place them face down on the desk, and place a cursor chip on the first card placed.</li>
+<li>Each player is dealt 5 life counters and 4 flag chips.</li>
+<li>The remaining 6 flag chips of each color that have not been distributed are placed in the “Unused Flag Chip Placement”.</li>
+<li>Decide on the first and second moves.
+<ul>
+<li>Since the first player has the advantage at level 1, the unfamiliar player is placed first.</li>
+<li>If equal, decide by rock-paper-scissors-scissors, or the last person to lose moves first.</li>
+<li>For a more rigorous method of deciding, see “Fair First Move Decision Algorithm” in the Appendix.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>■Flag placement phase</p>
+<ul>
+<li>The first player chooses a command card and places his flag chip on it. Next, the player chooses a command card and places a flag chip on it. This is repeated until all four flags are placed on the command card. Placing a flag chip is called “flagging”.</li>
+<li>During the flag placement phase, no more than two of your flags may be placed on the same command card.
+<ul>
+<li>If this is possible, it is because if the first card is a Bug, ForkBomb, or RemoveFlag, the first player can win by continuing to place on that card.</li>
+</ul>
+</li>
+<li>Flags are arranged in columns in the order they are placed on the command card.
+<ul>
+<li>This means that “the flag set first has a higher priority.</li>
+</ul>
+</li>
+<li>The commands you flag have a significant impact on the outcome of the game, but when playing for the first time, you may not know where to flag the commands to gain an advantage. In that case, it is a good idea to place the flags appropriately and proceed to the program execution phase to experience the program through once.</li>
+</ul>
+</li>
+<li>
+<p>■ Program execution phase</p>
+<ul>
+<li>If the command card the cursor is pointing to is not flagged, the cursor moves to the next command card.</li>
+<li>If flagged, the player with the first flag has the right to execute the command. It is also possible to choose not to execute the command.</li>
+<li>After the command has been issued, if there are other flags in the row, the player with the next flag is given the right to execute it.</li>
+<li>Repeat this until the end of the row, and when all flags have been processed, the cursor moves to the next command card.</li>
+<li>When the cursor finishes with the last command card, it returns to the first command card again. This is repeated until the game is over.</li>
+</ul>
+</li>
+<li>
+<p>The “no more than one flag per command card” restriction only applies to the initial placement of flags.</p>
+<ul>
+<li>There is no problem to have multiple flags on one command card by executing AddFlag or MoveFlag commands.</li>
+</ul>
+</li>
+<li>
+<p>Flags removed by RemoveFlag are removed from the game. They will not revert to “unused flag chips”. If you have used up all 6 unused flag chips, you cannot add flags with AddFlag (Add Flag).</p>
+</li>
+<li>
+<p>■Exit Game</p>
+<ul>
+<li>You win by removing all flag chips of all players except yourself or reducing the life of all players except yourself to 0 or less.</li>
+</ul>
+</li>
+<li>
+<p>Level 2</p>
+<ul>
+<li>■What to use
+<ul>
+<li>Level 2 command cards MoveCommand, RemoveCommand, and Reverse are added to the Level 1 tools. On level 2 islands, you can use commands that have effects on the direction the cursor moves or on the command itself.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Level 2 command cards: 3
+■ MoveCommand: move {1} command card x to any position in the program.</p>
+<ul>
+<li>
+<p>Flag standing at x moves with x
+RemoveCommand: Remove any command card x from the game by its standing flags.</p>
+</li>
+<li>
+<p>If the cursor points to x, the cursor moves to the next command.
+Reverse: Reverses the direction in which the cursor licks the command card.</p>
+</li>
+<li>
+<p>■Flag placement phase</p>
+<ul>
+<li>Place 5 flags, one more than on Level 1. The remaining 5 flags are placed in the “Unused Flag Chip Placement Area”.</li>
+</ul>
+</li>
+<li>
+<p>■ Program execution phase</p>
+<ul>
+<li>
+<p>RemoveCommand, added at level 2, is a very powerful card that removes command cards by their flags. The seemingly poor Reverse and MoveCommand also create powerful combos when combined with other cards.</p>
+</li>
+<li>
+<p>Example</p>
+</li>
+<li>
+<p><code>(AddFlag A)(MoveCommand A)(ForkBomb A)</code></p>
+</li>
+<li>
+<p>In this state, the following winning combo is generated: “AddFlag adds a flag to FormBomb, MoveCommand moves MoveCommand with the cursor in front of AddFlag, AddFlag again adds a flag to FormBomb, and FormBomb is executed 3 times for 6 damage to the opponent. This is a combo to determine victory. In other words, Player B must place a flag on MoveCommand (or AddFlag and then MoveCommand when triggered) during the flag placement phase in order not to lose.</p>
+</li>
+<li>
+<p>In the flag placement phase, you take turns placing flags while “conceiving and implementing a program that will help you win” and “understanding the intent of the program your opponent is writing and interfering with it”. This is the core concept of the game.</p>
+</li>
+<li>
+<p>■Exit Game</p>
+<ul>
+<li>In level 2, in addition to the winning strategy in level 1, there is another possible strategy in which the RemoveCommand removes the last enemy flag; if the RemoveCommand removes all enemy flags, the player with the first flag wins.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Level 3</p>
+<ul>
+<li>■What to use
+<ul>
+<li>Add level 3 command cards Increment, Decrement and Increment/Decrement chip to level 2 tools. Level 3 commands can affect the strength (parameters) of other commands.
+Level 3 Command Cards: 2</li>
+<li>Increment: Increase any parameter (number enclosed in curly brackets) by {1}.</li>
+<li>Decrement: Decrement {1} of any parameter (number enclosed in curly brackets).
+<ul>
+<li>However, the value cannot be negative.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>■Flag placement phase</p>
+<ul>
+<li>Place 6 flags, one more than on Level 2.
+■ Program execution phase</li>
+<li>The Increment and Decrement commands allow you to select any command and change its parameters (the numbers in square brackets). For example, Incrementing “Remove any {1} flags from the game” in RemoveFlag will increase the number by 1 and change it to “Remove any {2} flags from the game. On the other hand, Decrementing “Remove any {0} flags from the game” will change it to “Remove any {0} flags from the game,” a command (NOP) that has no effect.</li>
+<li>The effect of Decrement cannot make the value negative. If a command has multiple parameters, choose one of them to change.</li>
+<li>The fact that an Increment/Decrement is hanging on a parameter is expressed by placing an Increment/Decrement chip on the command card.</li>
+<li>When an Incremented parameter is Decremented, the first Increment chip is removed instead of placing both chips. The reverse is also true.</li>
+<li>It is rare, but if you have used up your 5 increment/decrement chips each, you cannot increment/decrement any more.</li>
+</ul>
+<p>Stalemate Resolution Algorithm
+In rare cases, a situation occurs in which the situation does not change at all when both players choose the action they want to take, like a thousand-day move in Shogi. Once the board situation occurs, it occurs again, and the game ends as soon as one of the players declares “this is a stalemate”. At this time,</p>
+<ul>
+<li>The one with more lives wins.</li>
+<li>In case of life tie, the player with more flag chips on the command card wins.</li>
+<li>In case of a tie, the one with more “flags at the head of the queue” wins.</li>
+<li>If there is a tie, the player with the first flag on the card with the current cursor wins.
+will be. You are free to declare or not. The board status includes the number of unused chips.</li>
+</ul>
+<p>Level 1 Command Cards: 5
+AddFlag: Add a flag to the end of any command card except this command card.
+MoveFlag: Move any {1} flag to the end of another command card.
+RemoveFlag: Remove any {1} flags from the game
+Bug: Reduce {1} life of any {1} player
+ForkBomb: Reduce any one player’s life by {2} and remove the flag that triggered this command from the game</p>
+<p>Level 2 command cards: 3
+■ MoveCommand: move {1} command card x to any position in the program.</p>
+<ul>
+<li>Flag standing at x moves with x
+RemoveCommand: Remove any command card x from the game by its standing flags.</li>
+<li>If the cursor points to x, the cursor moves to the next command.
+Reverse: Reverses the direction in which the cursor licks the command card.</li>
+</ul>
+<p>Level 3 Command Cards: 2
+Increment: Increase any parameter (number enclosed in curly brackets) by {1}.
+Decrement: Decrement {1} of any parameter (number enclosed in curly brackets).</p>
+<ul>
+<li>However, the value cannot be negative.</li>
+</ul>
+<p>Extra: 2 extra cards (+3 Blank cards)
+ReversePriority: Reverse the priority of flags standing on all command cards except this command card.
+Memory: Execute the command that the cursor was pointing to immediately before and after this command card.</p>
+<ul>
+<li>You can only choose to activate both or not activate both.
+Blank: Here you can write new commands and change this game!</li>
+</ul>
+<p>Instant: Immediate Command Cards: 3
+■ MoveCommand: move {1} command card x to any position in the program.</p>
+<ul>
+<li>Flag standing at x moves with x
+MoveFlag: Move any {1} flag to the end of another command card.
+Bug: Reduce {1} life of any {1} player</li>
+</ul>
+<p>Strategy Tip.</p>
+<ul>
+<li>■There are commands for which it is advantageous to flag first, and commands for which it is not. For example, MoveCommand and Reverse favor the later, since the latter can cancel the former’s operation by performing the reverse operation later. On the other hand, RemoveFlag and MoveFlag favor the earlier flag because the earlier flag can remove or move the later flag.</li>
+<li>■If the rules allow only one flag of each color per command in the flag placement phase, it is advantageous not to immediately place a flag on a command card that was flagged first by the enemy. This is because each move in the flag placement phase narrows the opponent’s options, but does not deprive him of the option to place a flag on that command.</li>
+<li>A card disabled by Decrement (NOP) is a very convenient place to move a flag, such as MoveFlag. However, there is a possibility that the card may be Incremented.</li>
+<li>You will want to flag many of your own flags on Incremented cards, but they may be removed all together by RemoveCommand.</li>
+<li>FormBomb first reduces the opponent’s life, then flags are removed. The last flag may cost you your life, and you may win the game just in time.</li>
+<li>■ At level 1, RemoveFlag removes 1 of the opponent’s 4 flags and also reduces the opponent’s number of moves, so as a percentage of damage it is over 25%. Bug, which reduces 1 of your opponent’s 5 life, is weak because it does 20% damage, and ForkBomb, which reduces 1 of your flags and 2 of your opponent’s life, is even weaker at 40% - 25%. However, this strength-weakness relationship is affected when flags are added by AddFlag cards or when the number of flags increases with level.</li>
+<li>The rule that the target flag of RemoveFlag is removed from the game prevents a loop in which one player increases flags with AddFlag and another player decreases flags with RemoveFlag from becoming an infinite loop. The loop will eventually run out of unused flags that can be added with AddFlag. The loop is not considered a stalemate due to the “board status includes the number of unused chips” clause in the “Stalemate Resolution Algorithm”.</li>
+<li>Reverse only changes the order in which the cursor licks commands, but does not change the fact that the first flag in a command is executed first. The reversal of the order is introduced by the extra card ReversePriority. However, no major problems have been found with the Reverse rule that also reverses the order of flag execution, so it can be played as a variant rule if agreed upon by players in advance.</li>
+<li>If all flags are removed by RemoveCommand, the player with the first flag wins. It is important that this rule is clearly defined in advance, and the decision as to whether the first or the last player wins can be made either way. So it can be changed and played.</li>
+</ul>
+<p>Tips for teaching people the rules</p>
+<ul>
+<li>Let’s do it gradually from level 1.</li>
+<li>The first move has the advantage, so let’s give the opponent the first move.</li>
+<li>If your opponent is having trouble figuring out what to do in the flag placement phase, place them alternately, starting with the first island.</li>
+<li>You start at a disadvantage, and you may feel tempted to think long and hard to turn the tables. However, if you do that, your opponent will have to wait a long time and lose, which is no fun at all. Prioritize raising your opponent in the game over winning now.</li>
+</ul>
+<p>extension rule</p>
+<ul>
+<li>For those who are used to the Level 3 rules and find them insufficient, there are extended rules.</li>
+</ul>
+<p>Introduction of Extension Rule::ReversePriority</p>
+<ul>
+<li>Use the ReversePriority extra card. This command reverses the flag order of other commands.</li>
+<li>Under the rule without ReversePriority, if there were multiple flags for the same command, all were given permission to execute in turn. When the ReversePriority card is inserted, this rule is changed. Each time the cursor is visited, only the first flag is given permission to execute. The first flag is moved to the end of the column if the command is executed. If the command is not executed, it remains at the top.</li>
+<li>This rule increases the value of the “do not execute command” option. This is because it has the effect of taking away the chance of activation from the flag behind the row.</li>
+<li>Also, the cursor moves faster, making it easier to create combos.</li>
+</ul>
+<p>Introduction of Extension Rule::Memory</p>
+<ul>
+<li>Use the extra card Memory. The cursor remembers the commands of the immediately preceding and previous visited command cards, and the Memory command allows you to recall and invoke them.</li>
+<li>At this time, it behaves as if Memory’s card had the default description of the immediately preceding and previously visited command card. It does not matter if it is Increment/Decremented in play or if the opponent’s bits are on the island. Also, you can only choose whether to invoke both commands or none of them. The two previous commands are executed first, followed by the immediately preceding command.</li>
+</ul>
+<p>Extended Rules::Introduction of Immediate Command Cards</p>
+<ul>
+<li>The rules of “Spaghetti Code” are like Shogi or Go, with no hidden information and no element of luck. For those who don’t like it, the instant command card expansion introduces hidden information and an element of luck. This expansion increases the unpredictability of the opponent’s actions.</li>
+<li>It is used to add an immediate command card to level 3 tools.</li>
+<li>After the command cards are lined up and before placing the flag, the immediate command cards are shuffled face down by the first player, the second player chooses one card, and the first player chooses one card. The one card not chosen remains face down until the end of the game. This adds unobservable information to the game and increases the difficulty of guessing the program’s intent.</li>
+<li>During the program execution phase, when your flag executes a command, you can execute the command on the immediate command card instead of the command card on which the flag was placed. The immediate command card is removed from the game when executed.</li>
+<li>Immediate command cards can be kept face down until they are used. It is usually preferable to keep it face down to avoid giving information to the opponent. However, “Immediate Command Cards” are included in “Optional Command Cards”.</li>
+</ul>
+<p>Extended Rules::Multiplayer Interrupt</p>
+<ul>
+<li>Theoretically, the game can be played by any number of players as long as they have different colored flag frames. However, because of the strong interaction between players in this game, it is possible for one person to drop out early due to concentrated attacks.</li>
+<li>The eliminated players are bored with nothing to do until the end of the game. Therefore, we came up with an extension rule called “Interrupt”.</li>
+<li>The dropout gets one bit each time the cursor returns to the first command card. At any given time, you can shout “Interrupt” to generate an interrupt and add a flag to the end of any island. (This additional rule has not been tested and played much. It may make the game harder to converge and play longer.)</li>
+</ul>
+<p>Extension Rule::Sequential Open</p>
+<ul>
+<li>This is a variant rule that changes the way the Flag Placement Phase is played. When all cards are open in the flag placement phase, players tend to think long and hard. Therefore, the flag placement phase can be lightened by limiting the information given during the decision making phase, so that the weight is placed on trying to do something during the program execution phase.</li>
+<li>First, the command cards are lined up face down.</li>
+<li>First, the first card is opened and the first player decides whether to place the flag or pass. Then the second player decides whether to place the flag or pass. If both players pass, the next island is opened, since one cannot place more than one flag of one’s own on an island.
+<ul>
+<li>First move, second move, first move pass, second move pass” ●○ Next island, ● is the first move</li>
+<li>First move, second move pass, first move pass” ● Next island, ○ is the first move</li>
+<li>First pass, second place, first pass, second place” ○ Next island, ● is first</li>
+<li>First pass, second place, first place, second place, first pass, first place” ○● Next island, ○ is the first move</li>
+<li>First move passes, second move passes, and the next island is the first.</li>
+</ul>
+</li>
+<li>The rest will be played normally.</li>
+</ul>
+<p>Appendix: Fair First Move Decision Algorithm for Two-Player</p>
+<ul>
+<li>For those who wish to remove the element of luck to the extreme, this section explains how to make a fair first move.</li>
+<li>First, one player A deals cards. The cards may be arranged in any order, or shuffled and arranged in any order.</li>
+<li>If shuffled, player A can look at the cards dealt and then redeal them if he thinks “this lineup favors the first or second player.</li>
+<li>Player B, the player not dealt the cards, can then choose whether to play first or second. Player B can choose whichever side he thinks has the advantage, and Player A can choose whichever side he thinks has the disadvantage, so there should be no complaints.</li>
+</ul>
+<p>History and Acknowledgements
+The inspiration for the game’s “flags over commands” came from Tom Jolly’s Programmer’s Nightmare (2000). Since this game was hard to obtain, Nishio cloned it, and through test play and discussion with Nakayama Tokoroten, made changes to eliminate the randomness in the execution phase (2009). This is called the Simplified version of Programmer’s Nightmare. I then created a fantasy-style version of “Battle of the Spaghetti Monsters,” and after a long period of inactivity, I published the rulebook on the Internet in 2017. This “Spaghetti Code” was re-imported in 2019 in a programming-style flavor.</p>
+<p>Card Image
+<a href="https://www.dropbox.com/s/sjek3kq9hj1gb1n/spagetti.pdf?dl=0" class="external">https://www.dropbox.com/s/sjek3kq9hj1gb1n/spagetti.pdf?dl=0<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>Rulebook (abridged version)
+<a href="https://docs.google.com/document/d/1fzJHFD_aUUwC4biHQLKbZ5Wb5Fks4IDbG24dABXh-dQ/edit?usp=sharing" class="external">https://docs.google.com/document/d/1fzJHFD_aUUwC4biHQLKbZ5Wb5Fks4IDbG24dABXh-dQ/edit?usp=sharing<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E3%80%8C%E3%82%B9%E3%83%91%E3%82%B2%E3%83%83%E3%83%86%E3%82%A3%E3%82%B3%E3%83%BC%E3%83%89%E3%80%8D%E3%83%AB%E3%83%BC%E3%83%AB" class="external">/nishio/「スパゲッティコード」ルール<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./2019-08-15" class="internal">2019-08-15</a></li><li><a href="./20190930-Rule-Amendment" class="internal">20190930 Rule Amendment</a></li><li><a href="./Programmer's-nightmare" class="internal">Programmer's nightmare</a></li><li><a href="./The-&quot;Pasta-Logic&quot;-rule" class="internal">The &quot;Pasta Logic&quot; rule</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

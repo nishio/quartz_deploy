@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>ABC189</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="ABC189"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="ABC189"/><meta name="twitter:description" content="I don’t think I’ll grow if I just enter a contest once a week without doing any diligence, so from this time onward, if I have extra time, I’ll solve one blue problem instead of writing ..."/><meta property="og:description" content="I don’t think I’ll grow if I just enter a contest once a week without doing any diligence, so from this time onward, if I have extra time, I’ll solve one blue problem instead of writing ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="I don’t think I’ll grow if I just enter a contest once a week without doing any diligence, so from this time onward, if I have extra time, I’ll solve one blue problem instead of writing ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/ABC189"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/ABC189"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="I don’t think I’ll grow if I just enter a contest once a week without doing any diligence, so from this time onward, if I have extra time, I’ll solve one blue problem instead of writing ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="ABC189"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>ABC189</a></div></nav><h1 class="article-title">ABC189</h1><p show-comma="true" class="content-meta"><span>Jan 25, 2021</span><span>7 min read</span></p></div></div><article class="popover-hint"><p>I don’t think I’ll grow if I just enter a contest once a week without doing any diligence, so from this time onward, if I have extra time, I’ll solve one blue problem instead of writing an explanation first. approach to make the number of problems in ABC seven on its own. <a href="./ABC110D" class="internal" data-slug="ABC110D">ABC110D</a></p>
+<p><img src="https://gyazo.com/d234f81a5294e5b0a658e36ec971f2f3/thumb/1000" alt="image"/></p>
+<p>I only solved 4 questions because I couldn’t solve the TLE in E. I thought I was going to fall into light blue, but I stayed on.
+<img src="https://gyazo.com/16f946ef228f369f1a0dbf3f3c007f89/thumb/1000" alt="image"/></p>
+<p><a href="https://atcoder.jp/contests/abc189/tasks/abc189_b" class="external">B - Alcoholic<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li><img src="https://gyazo.com/eb68cd541517250df77564e56374120f/thumb/1000" alt="image"/></li>
+<li>Compare large and small floating point numbers, I didn’t want to get into it with errors, so I multiplied by 100 and made it an integer.
+python</li>
+</ul>
+<pre><code>def main():
+    N, X = map(int, input().split())
+    X *= 100
+    total = 0
+    for i in range(N):
+        V, P = map(int, input().split())
+        total += V * P
+        if total > X:
+            print(i + 1)
+            return
+    print(-1)
+</code></pre>
+<p><a href="https://atcoder.jp/contests/abc189/tasks/abc189_c" class="external">C - Mandarin Orange<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li><img src="https://gyazo.com/2f0680970cbdbd53b9343c2020e5d1fa/thumb/1000" alt="image"/></li>
+<li>I was not sure if 10^8 could be solved in time, so I wondered if I should divide the region in order from the smallest value. I thought about it, but I felt it was too difficult, so I put it on hold and solved D first.</li>
+<li>When I come back and think about it again, I think I can lighten the content even 10^8, so let’s give it a try.
+<ul>
+<li>646ms AC
+python</li>
+</ul>
+</li>
+</ul>
+<pre><code>def main():
+    N = int(input())
+    AS = list(map(int, input().split()))
+    ret = max(AS)
+    for i in range(N):
+        maxA = AS[i]
+        width = 1
+        for j in range(i + 1, N):
+            if AS[j] &lt; maxA:
+                maxA = AS[j]
+            width += 1
+            v = maxA * width
+            if v > ret:
+                ret = v
+    print(ret)
+</code></pre>
+<p><a href="https://atcoder.jp/contests/abc189/tasks/abc189_d" class="external">D - Logical Expression<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li><img src="https://gyazo.com/fd1d24b429cec954a5df9d2257d212a9/thumb/1000" alt="image"/></li>
+<li>Think about how it changes when you add one more term.
+<ul>
+<li>When AND is used, the number of cases does not increase because “the term to be increased must also be True”.</li>
+<li>When it is OR, it increases about 2^i because “when the term to be increased is True, it is True regardless of the past situation”.</li>
+<li><img src="https://gyazo.com/f76f3dc694e4fcbd5f14cbcea8e9a8ba/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+<p>python</p>
+<pre><code>def main():
+    N = int(input())
+    prev = 1
+    for i in range(N):
+        S = input().strip().decode('ascii')
+        if S == &quot;OR&quot;:
+            prev = prev + (2 ** (i + 1))
+
+    print(prev)
+</code></pre>
+<p><a href="https://atcoder.jp/contests/abc189/tasks/abc189_e" class="external">E - Rotate and Flip<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>
+<p><img src="https://gyazo.com/9bb7f06e46fed0c174035ca151c9a7a4/thumb/1000" alt="image"/></p>
+</li>
+<li>
+<p>At first I only followed the changes between (1, 0) and (0, 1).</p>
+</li>
+<li>
+<p>The sample didn’t fit and I said, “Oops, there’s a transformation that shifts the origin, so I’ll have to set it to <a href="./asymmetric-matrix" class="internal alias" data-slug="asymmetric-matrix">asymmetric matrix</a>.”</p>
+</li>
+<li>
+<p>Change of policy to go the route of using Numpy</p>
+</li>
+<li>
+<p>I couldn’t get a TLE and it ate up a lot of time.
+python</p>
+</li>
+</ul>
+<pre><code>def main():
+    N = int(input())
+    XY = []
+    for _i in range(N):
+        XY.append(tuple(map(int, input().split())))
+    M = int(input())
+
+    timeline = []
+    for i in range(M):
+        timeline.append(((i + 1) * 2, tuple(map(int, input().split()))))
+
+    Q = int(input())
+    QS = []
+    for i in range(Q):
+        q = tuple(map(int, input().split()))
+        QS.append(q)
+        timeline.append((q[0] * 2 + 1, q))
+    timeline.sort()
+
+    answer = {}
+    trans = np.eye(3, dtype=np.int64)
+
+    OP1 = np.array([
+        [0, -1, 0],
+        [1, 0, 0],
+        [0, 0, 1]], dtype=np.int64)
+    OP2 = np.array([
+        [0, 1, 0],
+        [-1, 0, 0],
+        [0, 0, 1]], dtype=np.int64)
+    OP3 = np.array([
+        [-1, 0, 0],
+        [0, 1, 0],
+        [0, 0, 1]], dtype=np.int64)
+    OP4 = np.array([
+        [1, 0, 0],
+        [0, -1, 0],
+        [0, 0, 1]], dtype=np.int64)
+    for t, x in timeline:
+        if t % 2:
+            # query
+            q = x
+            i = q[1] - 1
+            x, y = XY[i]
+            newXY = np.array([x, y, 1]).dot(trans)
+            answer[q] = (newXY[0], newXY[1])
+        else:
+            # ops
+            if x[0] == 1:
+                trans = trans.dot(OP1)
+            elif x[0] == 2:
+                trans = trans.dot(OP2)
+            elif x[0] == 3:
+                P = x[1]
+                OP3[2, 0] = 2 * P
+                trans = trans.dot(OP3)
+            elif x[0] == 4:
+                P = x[1]
+                OP4[2, 1] = 2 * P
+                trans = trans.dot(OP4)
+
+    for q in QS:
+        x, y = answer[q]
+        print(int(x), int(y))
+</code></pre>
+<ul>
+<li>Twitter
+<ul>
+<li>
+<blockquote>
+<p>E problem can be calculated all by simulating only 3 points (0,0),(1,0),(0,1) / With this solution, it takes 200ms for C and 1400ms for pypy, but it seems that the solution using the cumulative product of the transformation matrix of the affine transformation will take about 2100ms for pypy to TLE -. <a href="https://twitter.com/kyopro_friends/status/1352976782320824327" class="external">src<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+<ul>
+<li>that’s exactly what (somebody) is doing</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If you write your own matrix calculations and submit them on PyPy <a href="https://atcoder.jp/contests/abc189/submissions/19684920" class="external">AC<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>If you’re repeatedly multiplying small matrices, you have a lot of overhead and little benefit from using Numpy.
+python</li>
+</ul>
+</li>
+</ul>
+<pre><code>def dot(a, b):
+    return [
+        a[0] * b[0] + a[1] * b[3] + a[2] * b[6],
+        a[0] * b[1] + a[1] * b[4] + a[2] * b[7],
+        a[0] * b[2] + a[1] * b[5] + a[2] * b[8],
+        a[3] * b[0] + a[4] * b[3] + a[5] * b[6],
+        a[3] * b[1] + a[4] * b[4] + a[5] * b[7],
+        a[3] * b[2] + a[4] * b[5] + a[5] * b[8],
+        a[6] * b[0] + a[7] * b[3] + a[8] * b[6],
+        a[6] * b[1] + a[7] * b[4] + a[8] * b[7],
+        a[6] * b[2] + a[7] * b[5] + a[8] * b[8]
+    ]
+</code></pre>
+<pre><code>- I'm confident that if I were writing during the contest, I'd be unnerved by the indexing errors and bugs.&quot; [src](https://twitter.com/kyasbal_1994/status/1353568891046223872)
+    - Of course, I had the program write it (...)
+</code></pre>
+<p>python</p>
+<pre><code>def gen_dot():
+    for i in range(9):
+        x, y = divmod(i, 3)
+        print(
+            f&quot;a[{x * 3}] * b[{y}] + &quot;
+            f&quot;a[{x * 3 + 1}] * b[{y + 3}] + &quot;
+            f&quot;a[{x * 3 + 2}] * b[{y + 6}],&quot;)
+</code></pre>
+<p><a href="https://atcoder.jp/contests/abc189/tasks/abc189_f" class="external">F - Sugoroku2<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>
+<p><img src="https://gyazo.com/c98e3a76d7f6ec84fb0970d0d5686351/thumb/1000" alt="image"/></p>
+</li>
+<li>
+<p>Solution equivalent to the linear equation DP in the official explanation</p>
+</li>
+<li>
+<p>I used the time in E and implemented it just in time with 20 minutes left, so I couldn’t get the bug and noSub</p>
+</li>
+<li>
+<p>The basics go like this</p>
+</li>
+<li>
+<p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.417em;vertical-align:-0.4358em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">M</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9812em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">M</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4358em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">)</span></span></span></span></p>
+</li>
+<li>
+<p>Exception: when i in AS</p>
+</li>
+<li>
+<p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span></span></span></span></p>
+</li>
+<li>
+<p>If <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span></span></span></span>, then f(i) is of the form ax + b, so DP this coefficient</p>
+</li>
+<li>
+<p>If we finally obtain <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">b</span></span></span></span>:.</p>
+</li>
+<li>
+<p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">b</span></span></span></span></p>
+</li>
+<li>
+<p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">b</span></span></span></span></p>
+</li>
+<li>
+<p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">b</span><span class="mord">/</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mclose">)</span></span></span></span></p>
+</li>
+<li>
+<p>In the production, I tried to speed up the cumulative sum from the beginning, but it was buggy, so I’ll start with a simple description. The following is a sample AC
+python</p>
+</li>
+</ul>
+<pre><code>def solve(N, M, K, AS):
+    setA = set(AS)
+    table = [0] * (N + M + 1)
+    tableF = [0] * (N + M + 1)
+
+    for i in range(N - 1, -1, -1):
+        if i in setA:
+            table[i] = 0
+            tableF[i] = 1
+        else:
+            v = 0
+            f = 0
+            for j in range(1, M + 1):
+                v += table[i + j]
+                f += tableF[i + j]
+            table[i] = v / M + 1
+            tableF[i] = f / M
+
+    if tableF[0] == 1:
+        return -1
+    return table[0] / (1 - tableF[0])
+</code></pre>
+<ul>
+<li>Rewritten and submitted to cumulative sum, 3WA
+python</li>
+</ul>
+<pre><code>def solve(N, M, K, AS):
+    setA = set(AS)
+    table = [0] * (N + M + 1)
+    tableF = [0] * (N + M + 1)
+    sumTable = 0
+    sumTableF = 0
+    for i in range(N - 1, -1, -1):
+        if i in setA:
+            table[i] = 0
+            tableF[i] = 1
+        else:
+            v = sumTable
+            f = sumTableF
+            table[i] = v / M + 1
+            tableF[i] = f / M
+
+        sumTable += table[i] - table[i + M]
+        sumTableF += tableF[i] - tableF[i + M]
+
+    if tableF[0] == 1:
+        return -1
+    return table[0] / (1 - tableF[0])
+</code></pre>
+<ul>
+<li>This is due to unreachable checks being missed, so seriously check the AC</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/ABC189" class="external">/nishio/ABC189<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./AtCoder-Failure-List" class="internal">AtCoder Failure List</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>2023-04-10 LLM Meetup</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="2023-04-10 LLM Meetup"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="2023-04-10 LLM Meetup"/><meta name="twitter:description" content="LLM Meetup Tokyo #1 event info takahiroanno I went to an LLM meetup at a place in Tokyo and it was great. It was a highbrow meetup where all participants were required to bring a demo related to LLM to participate, but about 50 people showed up."/><meta property="og:description" content="LLM Meetup Tokyo #1 event info takahiroanno I went to an LLM meetup at a place in Tokyo and it was great. It was a highbrow meetup where all participants were required to bring a demo related to LLM to participate, but about 50 people showed up."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="LLM Meetup Tokyo #1 event info takahiroanno I went to an LLM meetup at a place in Tokyo and it was great. It was a highbrow meetup where all participants were required to bring a demo related to LLM to participate, but about 50 people showed up."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/2023-04-10-LLM-Meetup"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/2023-04-10-LLM-Meetup"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="LLM Meetup Tokyo #1 event info takahiroanno I went to an LLM meetup at a place in Tokyo and it was great. It was a highbrow meetup where all participants were required to bring a demo related to LLM to participate, but about 50 people showed up."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="2023-04-10-LLM-Meetup"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>2023-04-10 LLM Meetup</a></div></nav><h1 class="article-title">2023-04-10 LLM Meetup</h1><p show-comma="true" class="content-meta"><span>Apr 16, 2023</span><span>5 min read</span></p><ul class="tags"><li><a href="./tags/ChatGPT" class="internal tag-link">ChatGPT</a></li></ul></div></div><article class="popover-hint"><p><code>LLM Meetup Tokyo #1</code></p>
+<ul>
+<li><a href="https://lu.ma/llm-meetup-tokyo-1" class="external">event info<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<blockquote>
+<p><a href="https://twitter.com/takahiroanno/status/1645426627780947969" class="external">takahiroanno<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> I went to an LLM meetup at a place in Tokyo and it was great. It was a highbrow meetup where all participants were required to bring a demo related to LLM to participate, but about 50 people showed up. The participants were distilled down to the bare minimum, and there were a lot of LLM unemployed. It felt like the beginning of an era to me.</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/takahiroanno/status/1645427231710416898" class="external">takahiroanno<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> LLM unemployed = people who unintentionally quit their job after seeing how great LLM is (including people who recently started their own business)</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/takahiroanno/status/1645432162223788032" class="external">takahiroanno<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> This is the episode. They’re going to do it again next month, so I’m hoping for the best.</p>
+</blockquote>
+</li>
+<li><img src="https://gyazo.com/73a9ab870d710714056d12ac43c69e91/thumb/1000" alt="image"/>
+<ul>
+<li><a href="https://lu.ma/llm-meetup-tokyo-1" class="external">event info<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+<h2 id="regulation">Regulation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#regulation" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>.</p>
+<blockquote>
+<p>This is a small meetup only for those who are actually using LLM through API, fine-tuning, creating, etc., and are actually working with LLM in a hands-on way. Only those who can introduce themselves &amp; give a demo during the demo time in the second half of the event are welcome to attend.</p>
+</blockquote>
+<h1 id="self-introduction">self introduction<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#self-introduction" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>.
+<img src="https://gyazo.com/eff4903533bee8c0410d86acf726e270/thumb/1000" alt="image"/></p>
+<ul>
+<li><a href="./self-introduction" class="internal" data-slug="self-introduction">self-introduction</a></li>
+</ul>
+<p><img src="https://gyazo.com/0065adb8c19478da2c88598da7dfc889/thumb/1000" alt="image"/></p>
+<ul>
+<li><a href="./The-Intellectual-Production-of-Engineers" class="internal alias" data-slug="The-Intellectual-Production-of-Engineers">The Intellectual Production of Engineers</a></li>
+<li><a href="./Technology-Supporting-Coding" class="internal alias" data-slug="Technology-Supporting-Coding">Technology Supporting Coding</a></li>
+<li><a href="./Natural-Language-Processing-with-word2vec" class="internal alias" data-slug="Natural-Language-Processing-with-word2vec">Natural Language Processing with word2vec</a></li>
+</ul>
+<p><img src="https://gyazo.com/a2fd1653cff19dce74331dfb829b9a16/thumb/1000" alt="image"/>
+3/8  <a href="./I-connected-my-Scrapbox-to-ChatGPT." class="internal alias" data-slug="I-connected-my-Scrapbox-to-ChatGPT.">I connected my Scrapbox to ChatGPT.</a></p>
+<ul>
+<li>Seems like a long time ago.
+<ul>
+<li>3.5</li>
+<li>ChatGPT API</li>
+<li>3/9 <a href="./Scrapbox-ChatGPT-Connector" class="internal alias" data-slug="Scrapbox-ChatGPT-Connector">Scrapbox ChatGPT Connector</a></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/a31e54ab3d757b4d6f9592716f17effe/thumb/1000" alt="image"/>
+GPT4 API came on 3/18.
+- <a href="./ChatGPT-for-middle-and-high-school-students" class="internal alias" data-slug="ChatGPT-for-middle-and-high-school-students">ChatGPT for middle and high school students</a>
+- <a href="./New-Nature" class="internal alias" data-slug="New-Nature">New Nature</a>   <a href="./No-one-knows-the-right-answer." class="internal alias" data-slug="No-one-knows-the-right-answer.">No one knows the right answer.</a>
+- <a href="./one-must-see-with-one's-own-eyes" class="internal alias" data-slug="one-must-see-with-one's-own-eyes">one must see with one’s own eyes</a></p>
+<p><img src="https://gyazo.com/6750c9f87d1c3bcd996e6d024216bbee/thumb/1000" alt="image"/>
+- <a href="./ChatGPT-Plugins-Experiment" class="internal alias" data-slug="ChatGPT-Plugins-Experiment">ChatGPT Plugins Experiment</a></p>
+<h1 id="participants-tweets">Participants’ Tweets<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#participants-tweets" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>.</p>
+<blockquote>
+<p><a href="https://twitter.com/kenn/status/1645424766864728066?s=20" class="external">@kenn<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: LLM Meetup Tokyo was so much fun! Thank you everyone!</p>
+</blockquote>
+<blockquote>
+<p><a href="https://twitter.com/elmer_mmm/status/1645427077976567808?s=20" class="external">@elmer_mmm<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: Here is the video of the robot running on<a href="./tags/ChatGPT" class="tag-link internal alias" data-slug="tags/ChatGPT">ChatGPT</a> that I showed in the demo at LLM Meetup Tokyo #1! I couldn’t hear the sound at the venue, so please check it out! I also put him on a “kachaka” and made him speak multiple languages!</p>
+</blockquote>
+<blockquote>
+<p><a href="https://twitter.com/yamaguchi_man/status/1645433012140793856" class="external">@yamaguchi_man<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: LLM Meetup Tokyo was great - I learned a lot from the various things people are trying to do in the search area!
+In our case, it’s a combination of rule-based and other things that we’re trying to do.</p>
+</blockquote>
+<blockquote>
+<p><a href="https://twitter.com/_mkazutaka/status/1645443396818079744" class="external">_mkazutaka<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> I attended LLM Meetup Tokyo! It was fun! It was great to be able to talk directly with each other about what’s going on with the prompts!</p>
+</blockquote>
+<blockquote>
+<p><a href="https://twitter.com/wroorurkwao/status/1645422069457518593" class="external">wroorurkwao<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> At the LLM meetup, I wondered what competitive advantages remain? We talked about things like.</p>
+</blockquote>
+<blockquote>
+<p><a href="https://twitter.com/y_matsuwitter/status/1645467743788081152" class="external">y_matsuwitter<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Material from today’s LLM Meetup Tokyo #1. I was experimenting on Saturday and Sunday to see what would happen if I tried to create an Agent with a lightweight LLM that can run on a MacBookPro.
+<img src="https://pbs.twimg.com/card_img/1645467604910510080/Wu3yWlJC?format=jpg&amp;name=medium#.png" alt="image"/></p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/y_matsuwitter/status/1645469554573971456" class="external">y_matsuwitter<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Even though it is a small model, ReAct’s Prompt is English-based, so I think it would work better if I focus on both categories and tasks and Fine-Tuning. I’d like to try Fine-Tuning on Colab with GPT-3 data next.</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://twitter.com/erukiti/status/1645377840790241281" class="external">erukiti<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> y_matsuwitter wearing OepnAI hoodie next!
+“Agent and Lightweight Model Validation”</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/erukiti/status/1645378192923041792" class="external">erukiti<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> “I started a team because I want to do LLM (myself and my ML team)”</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Powerful and</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/erukiti/status/1645378327635697664" class="external">erukiti<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> “I want to make Japan LLM as a national policy”</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>“Large companies are surprisingly reluctant.”</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/erukiti/status/1645379093058449408" class="external">erukiti<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> “I’m sure many of the people who come to LLM Meetups are interested in an agent that works independently.”</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Yes</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/erukiti/status/1645379633121218560" class="external">erukiti<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> “If you combine LangChain and agent too much, it will take too long to get a response.”</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/erukiti/status/1645380011309010945" class="external">erukiti<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> “The main question today is, can we ReAct with LLaMA.cpp or Alpaca or something?”</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>“Bottom line is that with the current free lightweight model, it’s impossible.”</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Vicuna 13B 4bit and RWKV also seem to be impossible</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/erukiti/status/1645380375835967488" class="external">erukiti<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Personally, I think we should generate a lot of datasets for ReAct using GPT-4 and fine-trune them. I think so.</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://twitter.com/chiral/status/1645430479959781376" class="external">chiral<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Here are the slides from today’s presentation. I know it’s a bit shabby, but it’s just to show that I’m implementing it too. drive.google.com
+LLM Meetup Tokyo <code>#1</code> Masayuki Isobe.pdf</p>
+</blockquote>
+<blockquote>
+<p><a href="https://twitter.com/yakigac/status/1645445493047300097/photo/1" class="external">yakigac<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Slides presented at LLM meetup↓.
+<a href="https://docs.google.com/presentation/d/1GqrGrd5aV3HxT_lNryOwTGpOaKsiDj-88jnV17QqjoM/edit?usp=sharing%E2%80%A6" class="external">https://docs.google.com/presentation/d/1GqrGrd5aV3HxT_lNryOwTGpOaKsiDj-88jnV17QqjoM/edit?usp=sharing…<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<img src="https://pbs.twimg.com/media/FtXCFC9aMAA57RR?format=jpg&amp;name=small#.png" alt="image"/> <img src="https://pbs.twimg.com/media/FtXCI-zaMAAnkEy?format=jpg&amp;name=small#.png" alt="image"/> <img src="https://pbs.twimg.com/media/FtXCMrtaMAAjvR7?format=jpg&amp;name=small#.png" alt="image"/> <img src="https://pbs.twimg.com/media/FtXCQVKaIAAreXq?format=jpg&amp;name=small#.png" alt="image"/></p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/yakigac/status/1645447939769397248" class="external">yakigac<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> and demo site</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://yakigac.github.io/role-flow/" class="external">https://yakigac.github.io/role-flow/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/yakigac/status/1645450320049487872" class="external">yakigac<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Please pull bugs here.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://github.com/yakigac/role-flow" class="external">https://github.com/yakigac/role-flow<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://twitter.com/masa_kazama/status/1645422048238538752" class="external">masa_kazama<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> I gave a LT at the LLM Meetup titled “Differentiable Search Indexes”. I’m looking forward to new search methods in the generation era that are different from keyword and vector searches.
+<img src="https://pbs.twimg.com/card_img/1645058959131447297/fRc3IxD8?format=jpg&amp;name=small#.png" alt="image"/></p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/masa_kazama/status/1645422307043852289" class="external">masa_kazama<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> The details of the method are very clear in this explanatory article.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><img src="https://pbs.twimg.com/card_img/1645423319636926465/Umee9ci2?format=png&amp;name=medium#.png" alt="image"/></p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://twitter.com/AkihisaShiozaki/status/1645320688746762242" class="external">@AkihisaShiozaki<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: Sam Altman, CEO of OpenAI, visited Japan to attend the LDP PT on AI evolution and implementation. Citing the active use of ChatGPT in Japan, he said, “I hope Japan will demonstrate a large presence and leadership in the world through the utilization of AI. The following seven proposals were made with expectations for Japan.
+1…
+<img src="https://pbs.twimg.com/media/FtVacYlaAAIdjh9.jpg" alt="image"/></p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/overlast/status/1645362088934789127?s=20" class="external">@overlast<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: all seven of these proposals are proposals that would reduce the technological capability of Japan’s domestic 4 years into the future. And the force of the reduction is different for each one. I would like to see something like these proposals implemented in Japan. And if OpenAI implements the proposals as a for-profit company, and the Japanese government and municipalities do not give preferential treatment to each measure, then it is simply convenient, so it seems to be OK!</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://twitter.com/chiral/status/1645055988331077634" class="external">chiral<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Preparations for tomorrow’s LLM Meetup Tokyo. We’re preparing for tomorrow’s LLM Meetup Tokyo. We’re going to have two gorgeous (but not too expensive) sessions: Help Desk AI (EmbeddingsAPI,Weaviate,CompletionAPI, hosted by docker-compose on in-house PC) and LINE Chat Divination AI (LangChain,Flask. ngrok, hosted by colab, and connected to LINE MessagingAPI)! ngrok to connect to LINE MessagingAPI)!</p>
+</blockquote>
+<blockquote>
+<p><a href="https://twitter.com/tdualdir/status/1643497897269547008" class="external">tdualdir<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> I’ll join you here!
+I will demonstrate automating table data preprocessing using GPT! (Maybe on MatrixFlow in the future.)</p>
+</blockquote>
+<blockquote>
+<p><a href="https://twitter.com/erukiti/status/1645567650565857280" class="external">@erukiti<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: <a href="https://t.co/VWJnFLhgia" class="external">https://t.co/VWJnFLhgia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+Slides presented at LLM Meetup Tokyo #1</p>
+</blockquote>
+<blockquote>
+<p><a href="https://twitter.com/npaka123/status/1643478331512492033" class="external">npaka123<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> I will attend LLM Meetup Tokyo next week.
+<img src="https://pbs.twimg.com/card_img/1641079402430881792/eHGFgpqt?format=png&amp;name=medium#.png" alt="image"/>
+<a href="./2023-04-10-LLM-Meetup" class="internal alias" data-slug="2023-04-10-LLM-Meetup">2023-04-10 LLM Meetup</a></p>
+</blockquote>
+<hr/>
+<p>This page is auto-translated from [/nishio/2023-04-10 LLM Meetup](<a href="https://scrapbox.io/nishio/2023-04-10" class="external">https://scrapbox.io/nishio/2023-04-10<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> LLM Meetup) using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class aria-controls="toc-content" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content" class><ul class="overflow"><li class="depth-1"><a href="#regulation" data-for="regulation">Regulation</a></li><li class="depth-0"><a href="#self-introduction" data-for="self-introduction">self introduction</a></li><li class="depth-0"><a href="#participants-tweets" data-for="participants-tweets">Participants’ Tweets</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./2023-04-10-LLM-Meetup" class="internal">2023-04-10 LLM Meetup</a></li><li><a href="./2023-05-18-LLM-Meetup" class="internal">2023-05-18 LLM Meetup</a></li><li><a href="./Diary-2023-04-07" class="internal">Diary 2023-04-07</a></li><li><a href="./LLM-Unemployed" class="internal">LLM Unemployed</a></li><li><a href="./Weekly-journal-2023-04-17~28" class="internal">Weekly journal 2023-04-17~28</a></li><li><a href="./quarterly-(journal)" class="internal">quarterly (journal)</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

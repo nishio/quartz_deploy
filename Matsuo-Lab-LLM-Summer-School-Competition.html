@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Matsuo Lab LLM Summer School Competition</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Matsuo Lab LLM Summer School Competition"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Matsuo Lab LLM Summer School Competition"/><meta name="twitter:description" content="..."/><meta property="og:description" content="..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Matsuo-Lab-LLM-Summer-School-Competition"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Matsuo-Lab-LLM-Summer-School-Competition"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Matsuo-Lab-LLM-Summer-School-Competition"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Matsuo Lab LLM Summer School Competition</a></div></nav><h1 class="article-title">Matsuo Lab LLM Summer School Competition</h1><p show-comma="true" class="content-meta"><span>Oct 13, 2023</span><span>18 min read</span></p></div></div><article class="popover-hint"><p><img src="https://gyazo.com/b0631db7cfa8ad1bf6d02dc707fc34c6/thumb/1000" alt="image"/> (thanks TaroNakasendo)
+<img src="https://gyazo.com/8c1a991f9f156c0aef595175c7ab22b1/thumb/1000" alt="image"/></p>
+<ul>
+<li>Final Score</li>
+</ul>
+<p>10/10 deadline</p>
+<ul>
+<li>The final exercise of <a href="./Matsuo-Lab-Summer-School-2023-Large-Scale-Language-Models" class="internal alias" data-slug="Matsuo-Lab-Summer-School-2023-Large-Scale-Language-Models">Matsuo Lab Summer School 2023 Large-Scale Language Models</a> was a competition in which participants competed against each other for the best score.</li>
+<li>Three types of tasks are offered in the mix</li>
+<li>Two of them are mechanically quantifiable tasks (five-choice quiz, long summaries) that create leaderboards</li>
+<li>Mutually evaluate the quality of the remaining generated tasks with their top finishers.</li>
+</ul>
+<p>Participants tackle the same issues by asking questions and discussing on Slack</p>
+<ul>
+<li>This is so helpful, it’s like my own trial and error times extended several times over.</li>
+<li>When the “<a href="./Please-provide-an-offload_folder" class="internal alias" data-slug="Please-provide-an-offload_folder">Please provide an offload_folder</a>” that other participants were getting stuck with appeared in my environment, I was able to quickly check and solve the problem by saying, “Oh, this is what was talked about in Slack.</li>
+</ul>
+<p>Matsuo Lab’s exercise environment, omnicampus, can use up to 8 GPUs with 24 GB.</p>
+<ul>
+<li>You get 50 credits to start with, and if you use eight of them, you’ll spend eight credits in an hour.
+<ul>
+<li>The 313 people scoring above baseline as of 10/2 received an additional 75 GPU hours of GPU credit.</li>
+</ul>
+</li>
+</ul>
+<p>digest</p>
+<ul>
+<li>I switched between “TheBloke/StableBeluga2-70B-GPTQ” for the multiple choice and open-ended questions and ‘lightblue/openorca_stx’ for the summary questions.</li>
+<li>multiple-choice question
+<ul>
+<li>It has been hypothesized that knowledge is stored in all the coupling layers, and certainly the change from ‘stabilityai/StableBeluga-13B’ to ‘TheBloke/StableBeluga2-70B-GPTQ’ significantly increased the percentage of correct answers.</li>
+<li>By referring directly to the probability of the occurrence of choices instead of generating sentences, the speed was bombed out and the percentage of correct answers increased.</li>
+</ul>
+</li>
+<li>summary problem
+<ul>
+<li>Tasks suitable for fine tuning because it is difficult to verbally dictate the expected style of output and the cost of doing a Few shot is high due to the lengthy input.</li>
+<li>Trained with 4 L4 GPUs in the exercise environment, a little over 2 hours for 1000 data.</li>
+<li>We have confirmed that performance increases as more data is added. We have a little over 7,000 data available, but it looks like we won’t be able to test it due to the limitations of the GPU credits we were given.</li>
+<li>I decided to use ‘lightblue/openorca_stx’ which is fine tuned with similar data.</li>
+<li>The original prompts scored better with an increased repetition penalty for the summary output, but when aligned with the fine-tuning prompts that we learned about later, the scores were higher without increasing the penalty, so we reverted to the original prompts.</li>
+</ul>
+</li>
+<li>open-ended question
+<ul>
+<li>After looking at the output from each of the two, the StableBeluga2-70B looked better, so I chose that one.</li>
+</ul>
+</li>
+</ul>
+<p>thoughts during competition</p>
+<ul>
+<li>I’m looking back at the notes I wrote during the competition and writing them after the competition is over.</li>
+<li>Dare to write what you think is “natural”.
+<ul>
+<li>I didn’t know what I myself was “used to people taking for granted”.</li>
+<li>Example: record what you are thinking
+<ul>
+<li>So that you can look back later and see what you were thinking.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="before-start">before start<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#before-start" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>.</p>
+<ul>
+<li>The competition probably started on Monday, Sept. 25th, but I was on a trip (<a href="./Kumano-Kodo-2023" class="internal alias" data-slug="Kumano-Kodo-2023">Kumano Kodo 2023</a>) from the 24th, so I was late and joined the competition on Friday the 29th.</li>
+<li>I had a lot of meetings on Fridays, so I listened to the last lecture in between and looked at Slack and thought, “There’s a lot of posts.”</li>
+<li>Saturday the 30th, I read all the Slack logs I had accumulated and put them in a private Scrapbox.
+<ul>
+<li>This could come in handy later when searching for error messages.</li>
+</ul>
+</li>
+<li>On 9/29, an announcement was made to grant additional GPU usage time to those who had submitted by 10/1.</li>
+</ul>
+<h1 id="931">9/31<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#931" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>In the meantime, I’ll run the starter and work up to submittal.
+<ul>
+<li>Check first before tinkering, because if you tinker first, it will be difficult to isolate the problem when it occurs.</li>
+<li>And I’d like to get additional GPU use time.</li>
+</ul>
+</li>
+<li>Beep at the end (thanks chocopan)
+python</li>
+</ul>
+<pre><code>!pip install Jupyter-Beeper
+import jupyter_beeper
+b = jupyter_beeper.Beeper()
+...
+b.beep(frequency=392, secs=3, blocking=True)
+</code></pre>
+<pre><code>- I thought it would be nice to have a different sound on errors as well, but that was never implemented after all.
+</code></pre>
+<ul>
+<li>Falling into the [1GPU + device_map=‘auto’ trap
+<ul>
+<li>The <a href="./device_map='auto'" class="internal alias" data-slug="device_map='auto'">device_map=‘auto’</a> setting automatically puts the model and the tensor in progress in RAM or disk if the model cannot be fully loaded on the GPU, which slows down the inference (thanks shitsutyo).</li>
+<li>You can check which GPU each layer of the model is assigned to by <a href="./hf_device_map" class="internal" data-slug="hf_device_map">hf_device_map</a> (thanks chocopan)</li>
+<li>I noticed later that with Google Colab, the resource consumption is displayed in a graph, so it’s easy to understand the situation.</li>
+<li>I had read about this area earlier in Slack, so I was able to recognize the cause of the problem.
+<ul>
+<li>I wrote: <a href="./Please-provide-an-offload_folder" class="internal alias" data-slug="Please-provide-an-offload_folder">Please provide an offload_folder</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Starter worked fine: score: 2.0.
+<ul>
+<li>I named the output file baseline.json and saved it.</li>
+<li>This has since been utilized dozens of times.</li>
+</ul>
+</li>
+<li>I implemented it because I thought it needed a progress indicator.
+<ul>
+<li>Showing how many tasks are in a task</li>
+<li>The start time of the task and the time required for each task are displayed after</li>
+<li>To understand “how much progress we are making and how much more time it will take.”</li>
+</ul>
+</li>
+<li>I noticed that the summary questions start at the 100th question around here.
+<ul>
+<li>The input on this is very long.</li>
+<li>I thought this was the reason for the flurry of reports on Slack that it ran halfway through and then died due to lack of memory.</li>
+<li>Flags for thinning out the test to 1/10, for solving only one summary question, for skipping the multiple choice questions (the first 100 questions), and so on.</li>
+<li>I made sure these methods didn’t kill me before I let them run full time.</li>
+<li>Number of seconds taken to infer with 1/10 data <code>{'generation': 8.499536145999855, 'summarization': 41.61696943300012, 'multiple_choice': 36.508038440000064}</code>
+<ul>
+<li>A summary task with only 20 questions uses more time than a selection task with 100 questions.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I saw on Slack that people wanted to increase max_length because the summary was broken, and that increasing it made it worse.</li>
+<li>I checked the input size of the summary task and noticed that some of them exceeded 2048
+<ul>
+<li>If max_length is set to 2048 tokens, even 2 GPUs will overflow</li>
+<li>4GPU, 1/10 the number of seconds it took to infer with data <code>{'generation': 2.6214422240000204, 'summarization': 58.79387292899992, 'multiple_choice': 0}</code></li>
+<li>4096 tokens would cost even more.
+<ul>
+<li>I figured I’d either throw it away without seeing the entire input or read it in segments.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Experiments running on Google Colab</li>
+</ul>
+<h1 id="101">10/1<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#101" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>Experiment with Colab</li>
+<li>(A) Prompt change for now: went down
+<ul>
+<li>I thought the format I was used to with ChatGPT would be better, but it wasn’t.</li>
+<li>I guess it’s important for the unwise LLM to give information in a format that is easy for that unwise LLM to understand.</li>
+</ul>
+</li>
+<li>(B) made stabilityai/StableBeluga-13B: 2.67003</li>
+<li>Beluga-13B + max_token for summarization and generation set to 1024: 2.79775.</li>
+<li>(A) and went down, so the prompt is returned to the original from (B).
+<ul>
+<li>2.72885
+<ul>
+<li>(B) is an improvement since it is a comparison from 2.67003</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Experiments in this area are being conducted in parallel at Colab.
+<ul>
+<li>I think it’s good that students can experiment without having to charge, but that doesn’t mean I shouldn’t charge.</li>
+<li>My disposable time is the bottleneck because I can’t just compete all the time, and GPU time is relatively priceless because it can be bought with money.</li>
+<li>Colab Pro+ was contracted to run the experiment and then implement and run new experiments while waiting for results.</li>
+<li><img src="https://gyazo.com/23dd95763cb4e2168c476b7dddcc13a9/thumb/1000" alt="image"/></li>
+<li>It is kind enough to display how much is left.</li>
+</ul>
+</li>
+<li>I wrote code to split it up, summarize each one, and combine them, but stopped when I looked at the correct data and decided that the required summary sentences were shorter than I had imagined and would not score well.</li>
+<li>Talk about <a href="./lightblue/openorca" class="internal" data-slug="lightblue/openorca">openorca</a> being strong in summary tasks (thanks y_morinaga)
+<ul>
+<li>4 points just for the ingenuity of the prompt.</li>
+<li>Fine tuning at XLSUM.</li>
+</ul>
+</li>
+<li>Talk about strong compared to <a href="./TheBloke/StableBeluga2-70B-GPTQ" class="internal" data-slug="TheBloke/StableBeluga2-70B-GPTQ">StableBeluga2-70B-GPTQ</a> (thanks mizoguchicoji)
+<ul>
+<li>multiple_choice:
+<ul>
+<li>baseline: 35 correct answers</li>
+<li>TheBloke/StableBeluga2-70B-GPTQ: 90 questions correct</li>
+<li>lightblue/openorca_stx : 80 correct answers</li>
+</ul>
+</li>
+<li>summarization:
+<ul>
+<li>baseline: 4.044292964896873</li>
+<li>TheBloke/StableBeluga2-70B-GPTQ: 4.705614584018149</li>
+<li>lightblue/openorca_stx : 6.788956451595625</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>thinking
+<ul>
+<li>The summary in <a href="./lightblue/openorca" class="internal" data-slug="lightblue/openorca">openorca</a> is strong because it is trained in <a href="./XLSUM" class="internal" data-slug="XLSUM">XLSUM</a>, so perhaps the test data is also XLSUM-derived.
+<ul>
+<li>This would easily improve performance.</li>
+<li>but for me, “increasing my experience” is a more important strategic goal than “increasing my competition score”.</li>
+<li>So Next Action is Fine Tuning at XLSUM</li>
+</ul>
+</li>
+<li>If the compatibility of each task with the model is so different, we should be able to experiment with each task and get results.
+<ul>
+<li>I expect that the final output will switch between models for each task.</li>
+</ul>
+</li>
+<li>You should try to solve the choice questions with TheBloke/StableBeluga2-70B-GPTQ</li>
+</ul>
+</li>
+</ul>
+<h1 id="104">10/4<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#104" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>model00: Fine tuning with starter
+<ul>
+<li>Notice: long summary inputs are skipped from the training data in the starter to begin with (shared on Slack).</li>
+</ul>
+</li>
+<li>I was looking at xlsum and noticed: I thought this task called “summary task” is not really a summary (I shared it on Slack).</li>
+</ul>
+<blockquote>
+<p>{
+“id”: 19,
+“task_type”: “summarization”,
+“text”: “Moosa Ucavir Suspect Moosa Ucavir, a suspect suspected of involvement in the Barcelona incident, was one of those shot dead by police in Cambrils about eight hours after the Barcelona attack, according to Catalan police in Spain. The suspect was a Spanish national from Girona in northern Catalonia and was believed to have been 17 years old. Police later announced that the driver was at large in the Barcelona attack. Local media reported that this was the suspect Younes Abouyakoub, 22, who is already wanted. The suspects are suspected of also hitting pedestrians with a van in Cambliss, killing one woman and injuring six others. According to the investigation, one officer shot and killed the suspects as they exited the overturned vehicle after hitting the pedestrians. One of the suspects allegedly had a knife in his hand. He was wearing what appeared to be a suicide belt, which was later determined to be a fake. Said Ahraa, 18, and Mohamed Heichami, 24, who were wanted by police along with Ukabir, were also among the four suspects who died in Cambliss. Of the wanted suspects, only Younes Abouyakoub, 22, has not been located. All but one of the suspects, except Uqabil, are said to be from Morocco. From left to right: the suspects Ukabir, Ahraa, Haichami, and Abouyakoub. The three left are dead. The suspect Abouyaqoub is missing. Ukabir suspect is believed to have rented several vehicles using his brother’s ID. His brother’s ID was left in the van used in the Barcelona attack. Another van, believed to have been prepared for the escape, was found in the city of Vic, about 80 km north of Barcelona. Investigators have linked the Barcelona and Cambrils attacks to a house explosion that occurred in Alcanar, about 90 km southwest of Cambrils, on the night of August 16. One person was killed in the house explosion. Authorities suspect that the suspects were attempting to build an explosive device and are investigating the possibility that they were planning a more sophisticated attack. People at the scene of the Barcelona van attack Four other people have been arrested in connection with the series of incidents. One person was arrested after the explosion at a house in Alcanal, and three others were arrested after the Barcelona attack in the city of Lipoy, about 100 km north of Barcelona. Doris, the brother of the Ukabir suspect, was one of the suspects and was arrested after he turned himself in. He stated that his brother stole his identity and procured a car for the raid. One Spanish man and two Italian men were confirmed dead in the Barcelona attack, as well as a Belgian, a Canadian, and an American. According to Australian news reports, a 7-year-old boy with dual British-Australian citizenship is missing after being separated from his seriously injured mother at the scene. (English article Barcelona attack key suspect Moussa Oukabir confirmed dead)”,.
+“answer”: “One of the suspects in the incident in which a van hit a string of pedestrians on the busy Las Ramblas street in Barcelona, the main city in northeastern Spain, on the evening of the 17th, killing at least 13 people and injuring more than 100, was confirmed to be one of five people shot dead by police in Cambrils, about 120 km west of the city earlier the next day. It was confirmed that he was one of the five people shot dead by police in Cambliss, about 120 kilometers west of the city early the next day. The attackers who were shot dead also hit a string of pedestrians in a van in Cambliss, killing and injuring seven people.”
+},</p>
+</blockquote>
+<ul>
+<li>The “Las Ramblas” in answer is not included in the input.</li>
+<li>I thought this was not a “summary task” but a “task to input the second and subsequent paragraphs of a news article and generate the first paragraph
+<ul>
+<li>I don’t know if I can use that kind of data! I thought.</li>
+</ul>
+</li>
+<li>I explicitly prompted this.
+<ul>
+<li>“You are a newspaper reporter. Below is a fragment of a news article, with the title of the English article at the end. Create a plausible first paragraph.”</li>
+<li>It took a long time and the connection to the instance went wrong in the middle of the process.
+<ul>
+<li>Score measurement by having partial data exported, not good.</li>
+</ul>
+</li>
+<li>Observed output. It was determined that the longer output led to a worse score.</li>
+<li>The crux of the summary task seems to be to make the output of moderate length.</li>
+</ul>
+</li>
+<li>Implementation of measuring scores by task type
+<ul>
+<li>Since it is known that the baseline is the basis for calculating the score and that the score is 2.0, you can get the score for each individual task by submitting the baseline results with only the results for the specific task overwritten, where mc is the choice question and sum is the summary question.</li>
+<li>coji made <a href="https://github.com/coji/llm-competition-evaluation" class="external">https://github.com/coji/llm-competition-evaluation<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, a system that allows score calculation at hand, but I did it this way because preparing the correct answer data was too much trouble for me.</li>
+<li>Past SUBMITS were also broken down to check individual scores.</li>
+<li>Best so far</li>
+<li>mc: Beluga-13B + Original Prompt: 3.0</li>
+<li>sam: Beluga-13B + 1024tokens: 1.85658 (losing to baseline: 2.0)</li>
+</ul>
+</li>
+<li>TheBloke/StableBeluga2-70B-GPTQ
+<ul>
+<li>mc: 3.29412 (best!)</li>
+<li>sam: 1.94878 (losing to baseline: 2.0)
+<ul>
+<li>This one has a prompt fix in it too.</li>
+<li>I’ve also compared it to the one with the prompt undone, but not with good results.</li>
+<li>Visual observation of the results made me feel “pretty long”.</li>
+<li>I’m still going to have to use fine tuning to control the length.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="108">10/8<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#108" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>‘lightblue/openorca_stx’
+<ul>
+<li>mc: 1.76471</li>
+<li>sum: 2.45053 (best!)
+<ul>
+<li>It is still strong!</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Experiment to control length with fine tuning
+<ul>
+<li>Experiments with N=100 and N=1000</li>
+<li>model01: sum: 1.42116</li>
+<li>model02: sum: 1.45841</li>
+<li>It seems to get better with more data…</li>
+<li>I have about N=7000 of data prepared using xlsum, but I don’t think the performance will improve for the cost…</li>
+</ul>
+</li>
+<li>openorca + repetition penalty:1.2
+<ul>
+<li>Thought: I observed the results and found a case of word repetition, let’s increase the penalty.</li>
+<li>sum: 2.46645 (best!)</li>
+</ul>
+</li>
+<li>Training Details story on lightblue/openorca_stx (thanks mizoguchicoji)
+<ul>
+<li>The prompts used during the study are written</li>
+<li>Thought: if fine tuning in XLSUM increased the performance of the summary, wouldn’t it be better to align to the prompt at the time of that fine tuning to increase performance?</li>
+<li>sum: 2.63799 (best!)</li>
+<li>It still has a repetition penalty:1.2, but that should be aligned with the one at the time of the study.</li>
+<li>sum: 2.93555 best! (10/9)</li>
+</ul>
+</li>
+<li>Referring to probability without replaying the text in a choice question
+<ul>
+<li><img src="https://gyazo.com/11f25a73f8d219ac189cc71a0957ef5e/thumb/1000" alt="image"/>
+<ul>
+<li><a href="https://huggingface.co/blog/evaluating-mmlu-leaderboard" class="external">What’s going on with the Open LLM Leaderboard?<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>Someone implemented and shared what was presented as an example of improvement in the starter but which I had not gone through because I thought it looked like a pain to implement (thanks piyoketa).</li>
+<li>mc: 3.29→3.52941 (best!)</li>
+</ul>
+</li>
+</ul>
+<h1 id="109">10/9<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#109" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>mc: 3.52941 sum: 2.93555 so I submitted it and was done with it because it was over 4.0 and I felt like this was good enough.</li>
+</ul>
+<h1 id="1013">10/13<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1013" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>I did not understand that to participate in the final test with the additional data, I needed to participate in the creation of the test data!</li>
+</ul>
+<p>Comments</p>
+<ul>
+<li>A free exercise environment would be a good thing for many.
+<ul>
+<li>50 GPU hours will be given out to everyone free of charge, fat chance!</li>
+<li><a href="./24GB" class="internal alias" data-slug="24GB">[NVIDIA L4]</a> for up to 8 cards</li>
+<li>An additional 75 GPU hours were handed out, fat.
+<ul>
+<li>Maybe it’s Mr. Google who’s the fat one.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>First time using <a href="./Google-Colab" class="internal alias" data-slug="Google-Colab">Google Colab</a> pay-as-you-go.
+<ul>
+<li>A100 with 40GB VRAM available for $150 per hour.</li>
+<li>Good for “parallel use” compared to own hardware or exercise environment.
+<ul>
+<li>I’m doing one experiment and something comes to mind that makes me want to do another.</li>
+<li>In an environment where only one experiment can be done at a time, one must wait until the first experiment is completed</li>
+<li>Google Colab can probably experiment with up to 4 in parallel.</li>
+<li>I have a limited amount of time to concentrate on my experiments, so being able to run the experiments I have in mind in parallel has increased the efficiency of my time usage.</li>
+</ul>
+</li>
+<li>The good thing is that you can add 1,000 yen at a time, so you only lose 1,000 yen if you accidentally fall asleep.</li>
+</ul>
+</li>
+<li>Google Colab UI is great!
+<ul>
+<li>I especially like the ability to graph memory and VRAM usage on the side panel.</li>
+<li>I’m like, “Huh? The model isn’t on the GPU?” You’ll notice that</li>
+<li>A model that was supposed to be in VRAM was in VRAM earlier, but now it is not. You can notice such happenings.
+<ul>
+<li>If you don’t notice this, you’ll find yourself in a situation where you’re like, “Hey, I finished in an hour earlier, but I’m not done yet this time.</li>
+<li>It’s important to be able to “quickly recognize when behavior is different than expected.”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>It was a good experience when a service was provided to judge “how much better” and it was possible for hundreds of people to compare “goodness” by the same standard.</li>
+<li>The Slack forum to help each other was very beneficial.
+<ul>
+<li>Typical mistakes and their resolution by someone other than myself, so I didn’t waste time getting into the boring stuff.</li>
+<li>I kept a good log.</li>
+</ul>
+</li>
+<li>I used ipynb so much this time because it was required as a final submission, and I thought it was a good one!
+<ul>
+<li>I was tempted to do what I was used to, which was to put the files locally and manage them in git because I was worried about working in Jupyter Notebook and it was confusing, but in retrospect, I could have moved more toward Notebook.</li>
+<li>Good point, #1, acting as a tax cue.
+<ul>
+<li>When you run a large process, the mental model of local development tends to make it a process, and in that case, the way to do it afterwards is not so easy to understand: “Do this process when that process is done.</li>
+<li>If it’s Notebook, just “add a cell and keep it running”.</li>
+<li>It is also good to have access to namespaces unlike in the case of separate processes</li>
+<li>I should have saved the value of this variable in the code. can be saved after the fact.</li>
+<li>It’s also nice to be able to interrupt a running script to look at the value of a variable.</li>
+</ul>
+</li>
+<li>Output is saved by default
+<ul>
+<li>If you’re developing with local scripts and you print something, it tends to get lost if you want to look back on it later, unless you save it to a file with tee or something.</li>
+<li>Of course, I could just write the logs to a file with logging or something and read them with a tail or something.</li>
+<li>I’d like to see the print and the stack trace on error all together and managed as a set of “code executed at that time” without having to think about that.</li>
+<li>This feature requires that it not be rewritten during execution
+<ul>
+<li>If you want to tinker with it, just save it as a different name and connect it to another kernel.</li>
+<li>Save As” is the equivalent of creating a branch in git</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>file system
+<ul>
+<li>Running it on a browser is where I’d be concerned about persistence and such.</li>
+<li>In the exercise environment, there was a directory that was persistent.</li>
+<li>In Colab, just mount Google Drive.</li>
+<li>I was recommended <a href="./runpod" class="internal" data-slug="runpod">runpod</a> and will consider it in the future (thanks satoru_hataya)</li>
+</ul>
+</li>
+<li>You can do something like Github Copilot on Google Colab.
+<ul>
+<li>Because it’s Pro+?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I’m starting to think that having a deadline and a sense of “everyone is doing it” was a good thing.
+<ul>
+<li>Like studying for an exam in the library.</li>
+<li>Actually, there are 2000 people in Slack and only 500 people have submitted, so it’s not “everyone.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E6%9D%BE%E5%B0%BE%E7%A0%94LLM%E3%82%B5%E3%83%9E%E3%83%BC%E3%82%B9%E3%82%AF%E3%83%BC%E3%83%AB%E3%81%AE%E3%82%B3%E3%83%B3%E3%83%9A" class="external">/nishio/松尾研LLMサマースクールのコンペ<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class aria-controls="toc-content" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content" class><ul class="overflow"><li class="depth-0"><a href="#before-start" data-for="before-start">before start</a></li><li class="depth-0"><a href="#931" data-for="931">9/31</a></li><li class="depth-0"><a href="#101" data-for="101">10/1</a></li><li class="depth-0"><a href="#104" data-for="104">10/4</a></li><li class="depth-0"><a href="#108" data-for="108">10/8</a></li><li class="depth-0"><a href="#109" data-for="109">10/9</a></li><li class="depth-0"><a href="#1013" data-for="1013">10/13</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Diary-2023-10-06" class="internal">Diary 2023-10-06</a></li><li><a href="./Diary-2023-10-07" class="internal">Diary 2023-10-07</a></li><li><a href="./Diary-2023-10-08" class="internal">Diary 2023-10-08</a></li><li><a href="./Diary-2023-10-09" class="internal">Diary 2023-10-09</a></li><li><a href="./Diary-2023-10-11" class="internal">Diary 2023-10-11</a></li><li><a href="./Please-provide-an-offload_folder" class="internal">Please provide an offload_folder</a></li><li><a href="./Weekly-journal-2023-10-07~2023-10-15" class="internal">Weekly journal 2023-10-07~2023-10-15</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

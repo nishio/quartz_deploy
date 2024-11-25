@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>greedy algorithm</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="greedy algorithm"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="greedy algorithm"/><meta name="twitter:description" content="..."/><meta property="og:description" content="..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/greedy-algorithm"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/greedy-algorithm"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="greedy-algorithm"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>greedy algorithm</a></div></nav><h1 class="article-title">greedy algorithm</h1><p show-comma="true" class="content-meta"><span>Jan 12, 2021</span><span>10 min read</span></p></div></div><article class="popover-hint"><blockquote>
+<p>Algorithm that only “selects a sequence of locally optimal cases using appropriate criteria” (<a href="./chokudai" class="internal" data-slug="chokudai">chokudai</a> <a href="https://www.itmedia.co.jp/enterprise/articles/1009/04/news002.html" class="external">src<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>)</p>
+</blockquote>
+<ul>
+<li>In what order do you make your selections?</li>
+<li>What criteria are appropriate?</li>
+<li>Is the method really the best solution (<a href="./Greed-Law-Proof-Patterns" class="internal alias" data-slug="Greed-Law-Proof-Patterns">Greed Law Proof Patterns</a>)?</li>
+</ul>
+<p>Regarding the order</p>
+<ul>
+<li>Cases given in question
+<ul>
+<li>Minimizing the result of repeated operations, etc.</li>
+</ul>
+</li>
+<li>In the case of matroids, etc., it is obvious because the value you want to increase is from the largest value you want to increase.</li>
+<li>Sort by End of Interval” is non-trivial for interval scheduling</li>
+<li>How should we think in these cases?</li>
+<li>I have a few ideas.
+<ul>
+<li>From the largest value you want to maximize
+<ul>
+<li>It’s a case where the sum of the gains of each option is maximized, and there’s a monotonicity in the addition.</li>
+<li><a href="./Greed-from-those-with-fewer-options." class="internal alias" data-slug="Greed-from-those-with-fewer-options.">Greed from those with fewer options.</a></li>
+<li>In order of strictest to least restrictive</li>
+</ul>
+</li>
+<li>From those with the widest sphere of influence
+<ul>
+<li>What you decide later will not affect the optimal solution of your earlier choice.</li>
+<li>Sphere of Influence From Outside to Inside Inclusion</li>
+</ul>
+</li>
+<li>In decreasing order of decreasing options
+<ul>
+<li>Choose the one that leaves the most options.</li>
+<li>The set of choices is inclusive and the outermost one is chosen</li>
+</ul>
+</li>
+<li>From the edge of a number line or graph
+<ul>
+<li>It’s easy to think of it this way because it’s easy to see, but being on the edge leads to “less choice reduction,” “fewer options,” etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Greed Law on Matroids
+- <a href="./matroid" class="internal" data-slug="matroid">matroid</a> (E, F) and given zero or more weights for each element, we want to obtain the element of F with the largest sum of weights</p>
+<ul>
+<li>
+<p>Repeat “Add to the set of elements already selected in order of increasing weight, if it is an element of F even if it is added to the set of elements already selected”.</p>
+</li>
+<li>
+<p>[JSC2019 Qualifier E - Card Collector (Matroid) | maspy’s HP <a href="https://maspypy.com/atcoder-jsc2019%E4%BA%88%E9%81%B8-e-card-collector-%EF%BC" class="external">https://maspypy.com/atcoder-jsc2019%E4%BA%88%E9%81%B8-e-card-collector-%EF%BC<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> %88%E3%83%9E%E3%83%88%E3%83%AD%E3%82%A4%E3%83%89%EF%BC%89]</p>
+</li>
+<li>
+<p><a href="./Kruskal-method" class="internal alias" data-slug="Kruskal-method">Kruskal method</a></p>
+</li>
+<li>
+<p>The problem of constructing a minimum global tree by selecting edges so as not to create a closed path.</p>
+</li>
+<li>
+<p>Repeat “choose if it doesn’t make a closed path with an already chosen edge” in order of decreasing side length.</p>
+</li>
+<li>
+<p>Greedy Law on Matroids Applied to Graphical Matroids</p>
+</li>
+<li>
+<p><a href="./Interval-Scheduling" class="internal alias" data-slug="Interval-Scheduling">Interval Scheduling</a></p>
+</li>
+<li>
+<p>The problem of selecting as many sections as possible so that there are no common parts.</p>
+</li>
+<li>
+<p>Repeat “If there is nothing in common with the already selected one, select it” in the order of the end of the interval.</p>
+</li>
+<li>
+<p>Segments with an interval beginning before the chosen “end of the interval” cannot be chosen in the future</p>
+<ul>
+<li>That is, the one that leaves the most options to choose the one that ends the interval the fastest.</li>
+<li><a href="./Replacement-does-not-make-it-worse." class="internal alias" data-slug="Replacement-does-not-make-it-worse.">Replacement does not make it worse.</a>
+<ul>
+<li><a href="./Algorithms-and-Data-Structures" class="internal alias" data-slug="Algorithms-and-Data-Structures">Algorithms and Data Structures</a> p.112</li>
+</ul>
+</li>
+<li><a href="./Section-is-not-a-matroid." class="internal alias" data-slug="Section-is-not-a-matroid.">Section is not a matroid.</a></li>
+</ul>
+</li>
+</ul>
+<p><a href="./ABC076B" class="internal" data-slug="ABC076B">ABC076B</a></p>
+<ul>
+<li><a href="https://atcoder.jp/contests/abc076/tasks/abc076_b" class="external">https://atcoder.jp/contests/abc076/tasks/abc076_b<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Perform one of two operations on the number 1. We want the minimum value of the result of N operations.</li>
+<li>Both of the two operations have the property “if the number before the operation is small, the result is also small”.</li>
+<li>Just choose the one with the smaller result for each operation.
+- <a href="./The-better-the-present,-the-better-the-future" class="internal alias" data-slug="The-better-the-present,-the-better-the-future">The better the present, the better the future</a>
+- monotonicity</li>
+<li>Repeat “choose the one with the smaller result of the operation” in the order of time axis.</li>
+</ul>
+<p>Coin Issues</p>
+<ul>
+<li>I want to pay a certain amount in coins and minimize the number of coins</li>
+<li>The amount of the coin is a multiple of the coin in front of it, a property that</li>
+<li>Pay as much as you can in big coins.</li>
+<li>Repeat “pay as much as you can” in order of the size of the coins</li>
+<li>If coin A is a multiple of coin B, the only way to pay the shortfall in amount due to a reduction of one coin A by B is to use two or more Bs, which always increases the number of coins
+<ul>
+<li>If it is not a multiple, for example, 5,4,1 to pay 8, there is a pattern that 5 is reduced by 1, 1 is also reduced by 3, and 4 can be paid with 2 cards, -2 cards, and so on</li>
+<li>The coin amounts are multiples of each other, so there is zero “too much” and you don’t have to worry about the smaller number of coins</li>
+<li>Cases like 15,5,3,1 are the same in 9.</li>
+</ul>
+</li>
+</ul>
+<p><a href="./POJ3617" class="internal" data-slug="POJ3617">POJ3617</a></p>
+<ul>
+<li>Take one character from the beginning or end of string S and add it to T. I want T to be the smallest in dictionary order.</li>
+<li>The lexical order criterion has the property that if the first letter is smaller, it is smaller in lexical order, regardless of what comes after it.</li>
+<li>Prepare S’ with S inverted.</li>
+<li>Repeat “Select the smallest of S and S’ in lexicographic order and take the first letter” in chronological order.</li>
+</ul>
+<p><a href="./POJ3069" class="internal" data-slug="POJ3069">POJ3069</a></p>
+<ul>
+<li>
+<p>There are N points on a number line. We want to select some of them so that all the points are included in the “range within distance R from the selected point”. Minimize the number of points to be chosen.</p>
+</li>
+<li>
+<p>Repeat the process of “choosing the rightmost point on the number line that can cover the points not covered by the points already chosen” from left to right.</p>
+</li>
+<li>
+<p><a href="./Dijkstra-method" class="internal alias" data-slug="Dijkstra-method">Dijkstra method</a></p>
+</li>
+<li>
+<p>The problem of finding the shortest path</p>
+</li>
+<li>
+<p>Initialize the visited vertex with a single starting point</p>
+</li>
+<li>
+<p>Repeat “Select vertices that have not been visited and can be reached by a single edge from the visited vertices in order of shortest distance from the starting vertex.</p>
+</li>
+<li>
+<p>Assuming that the distance between the sides is positive</p>
+</li>
+<li>
+<p>Since the distance of the edge is positive, “V”, which is the shortest distance from the starting point among the vertices that are unvisited and reachable by one edge from the visited vertex, has no shortest path through the other unreachable vertices, so</p>
+</li>
+</ul>
+<p><a href="./AGC009A" class="internal" data-slug="AGC009A">AGC009A</a></p>
+<ul>
+<li>Given two number sequences A and B, pressing the i-th button increments A0 to Ai. We want Ai to be a multiple of Bi for all i. Minimize the number of button presses.</li>
+<li>Repeat “press the minimum number of times that Ai and Bi satisfy the condition” in order of increasing i</li>
+<li>Inclusion of the sphere of influence, the small one does not affect the large one because the large one with i encompasses the small one</li>
+</ul>
+<p>Knapsack-like problem</p>
+<ul>
+<li>There are several kinds of goods, given their value and number of pieces, there is a knapsack that holds N pieces of goods, maximize the value of the goods in the knapsack.</li>
+<li>Unlike the so-called knapsack problem, it is not “the weight of one undividable item” but “the number of items”, so the fact that it can be divided is important.</li>
+<li>Repeat “choose as many as you can” in order of value.</li>
+</ul>
+<p><a href="https://www.itmedia.co.jp/enterprise/articles/1009/04/news002_3.html" class="external">https://www.itmedia.co.jp/enterprise/articles/1009/04/news002_3.html<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>Given two vertex sets A, B and the rank of the vertices. Determine if there is a bipartite graph that satisfies the conditions.</li>
+<li>Repeat “select and connect the vertex with the highest remaining degree from B” in the appropriate order of A</li>
+<li>Actions that do not reduce options the most</li>
+</ul>
+<p><a href="./ARC111" class="internal" data-slug="ARC111">ARC111</a>C</p>
+<ul>
+<li>A person is holding a piece of luggage, I want to exchange the luggage so that it is held by the original owner. The maximum weight a person can hold differs, and if a person holds a heavy item, it cannot be exchanged afterwards.</li>
+<li>Repeat “exchange the luggage for the original owner” in order of weight.</li>
+<li>You can always “trade for the original owner.”
+<ul>
+<li>It might put the recipient out of action, but it doesn’t matter because he already has the original package.</li>
+<li>What the sender receives is always “lighter than what he had.”</li>
+<li>Any other order could cause “what comes back is too heavy”.</li>
+</ul>
+</li>
+</ul>
+<p>Sort by difference between two choices</p>
+<ul>
+<li>Ai/Bi and K A’s are chosen for the gain of choice A/B, respectively, and I want to maximize the gain.</li>
+<li>Repeat “Select K A’s” in the order of Ai-Bi.</li>
+<li>variant: <a href="./ABC187" class="internal" data-slug="ABC187">ABC187</a>D
+<ul>
+<li>Ai+Bi with “choose A”, -Ai without, want to make the sum positive with the smallest choice</li>
+<li>Repeat “Choose A” until the sum is positive in the order of the greater of 2*Ai+Bi.</li>
+</ul>
+</li>
+</ul>
+<p><a href="./ARC110C" class="internal" data-slug="ARC110C">ARC110C</a></p>
+<ul>
+<li>Sort the given columns in ascending order</li>
+<li>Bring the smallest value to the top, the rest will ignore that value [Same shape issue, one size smaller</li>
+<li>Repeat “bring to top” in order of decreasing value</li>
+</ul>
+<p>Minimizing the difference between pairs of numbers</p>
+<ul>
+<li>I have an even number of numbers, I want to pair them 2 by 2 and minimize the difference.</li>
+<li>Repeat “pair with the next number” in order of decreasing value</li>
+<li>Pairing the smallest number with any number other than the next will always result in a loss</li>
+<li>Removing the pair would result in [Same shape issue, one size smaller</li>
+</ul>
+<p><a href="./AGC049B" class="internal" data-slug="AGC049B">AGC049B</a></p>
+<ul>
+<li>Given a sequence S,T of 0/1, for S you can either shift one 1 to the left or set two 1s in a row to 0. Match T with the least number of moves.</li>
+<li>Repeat “If there is an unresolved 1 to the left of yourself in T, shift it, if not, delete it” in order from the front of S</li>
+</ul>
+<p><a href="./ABC103D" class="internal" data-slug="ABC103D">ABC103D</a></p>
+<ul>
+<li>Given a number of intervals, given a point, all the intervals including that point will be removed. I want to remove all intervals with the minimum number of points</li>
+<li>Repeat “Select the section immediately before the end” in the order of the earliest end of the section.</li>
+<li>This is the option that has the greatest impact on the other sections of the method of removing “the section with the earliest termination”</li>
+</ul>
+<p><a href="./ABC023D" class="internal" data-slug="ABC023D">ABC023D</a></p>
+<ul>
+<li>
+<p>Given a positive number sequence H,S, where subscript i is chosen Ki th and we want to minimize the maximum of H+SK, construct K</p>
+</li>
+<li>
+<p>Not in the order of H or S.</p>
+</li>
+<li>
+<p>Introduce an upper bound X on the maximum value and make it a decision problem to see if it can be realized.</p>
+</li>
+<li>
+<p>Repeat “selection” in decreasing order of (X-H)/S</p>
+</li>
+<li>
+<p>Implication: select in order of decreasing number of options not exceeding X</p>
+</li>
+<li>
+<p><a href="./Maximize-the-sum-ratio" class="internal alias" data-slug="Maximize-the-sum-ratio">Maximize the sum ratio</a></p>
+</li>
+<li>
+<p>I have a positive sequence Ai,Bi, choose K subscripts, and I want to maximize the ratio of the sums of each of AB</p>
+</li>
+<li>
+<p>If the problem is to determine whether the ratio is greater than or equal to X, the transformation of the equation leads to a simple sum of (Bi-XAi), which can be maximized by the greedy method of choosing from the larger values.</p>
+</li>
+<li>
+<p>Repeat “Select” in order of increasing (Bi-XAi)</p>
+</li>
+</ul>
+<hr/>
+<p>Links to many issues
+<a href="https://www.yasu-p.com/entry/python-algorithm-2-2" class="external">https://www.yasu-p.com/entry/python-algorithm-2-2<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>POJ3253</p>
+<ul>
+<li>
+<p>Ant book p.49</p>
+</li>
+<li>
+<p>It’s a little complicated.</p>
+</li>
+<li>
+<p><a href="./unit-time-job-scheduling-problem" class="internal alias" data-slug="unit-time-job-scheduling-problem">unit time job scheduling problem</a></p>
+</li>
+<li>
+<p><a href="https://archive.org/search.php?query=http%3A%2F%2Ftopcoder.g.hatena.ne.jp%2Fspaghetti_source%2F20121103%2F1351911603" class="external">https://archive.org/search.php?query=http%3A%2F%2Ftopcoder.g.hatena.ne.jp%2Fspaghetti_source%2F20121103%2F1351911603<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+</ul>
+<p>[AtCoder D - The real fight (ARC019) | maspy’s HP <a href="https://maspypy.com/atcoder-d-%E3%81%BB%E3%82%93%E3%81%A8%E3%81%86%E3%81%AE%E3%81%25" class="external">https://maspypy.com/atcoder-d-%E3%81%BB%E3%82%93%E3%81%A8%E3%81%86%E3%81%AE%E3%81%<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 9F%E3%81%9F%E3%81%8B%E3%81%84%EF%BC%88arc019%EF%BC%89]
+- <a href="./random-selection-+-greed" class="internal alias" data-slug="random-selection-+-greed">random selection + greed</a></p>
+<p><a href="https://maspypy.com/atcoder-%E5%8F%82%E5%8A%A0%E6%84%9F%E6%83%B3-2020-04-13abc-163" class="external">AtCoder Participation Comments 2020/04/19:ABC 163 | maspy’s HP<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>The justification for the greed law is narrowed down to two options in a validating manner.</li>
+</ul>
+<p><a href="https://maspypy.com/atcoder-%E5%8F%82%E5%8A%A0%E6%84%9F%E6%83%B3-2019-02-16abc-155#toc4" class="external">AtCoder Participation Comments 2019/02/16:ABC 155 | maspy’s website<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>I solved it with a digit DP, but greed can do it too.</li>
+</ul>
+<p><a href="./ABC171-F" class="internal alias" data-slug="ABC171-F">ABC171 F</a></p>
+<ul>
+<li><a href="https://drken1215.hatenablog.com/entry/2020/06/27/125500" class="external">AtCoder ABC 171 F - Strivore (blue, 600 points) - Kenchon’s Competitive Pro Devotion Record<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<p>Problems for which the greedy method can lead to an optimal solution and those for which it cannot</p>
+<ul>
+<li>
+<p>Coins that are and are not optimal for the “spend as much as you can from a large amount of coins” coin problem.</p>
+<ul>
+<li>1,4,5 no.</li>
+<li><a href="./matroid" class="internal" data-slug="matroid">matroid</a></li>
+<li><a href="./discrete-convexity" class="internal alias" data-slug="discrete-convexity">discrete convexity</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://drken1215.hatenablog.com/entry/20121212/1355280288" class="external">Convex structure of matroids - Kenchon’s record of competitive professional diligence<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+<li>
+<p>Fundamentals of Discrete Optimization Part 5: Matroids and Global Trees of Graphs</p>
+<ul>
+<li><a href="http://dopal.cs.uec.ac.jp/okamotoy/lect/2015/matroid/handout05.pdf" class="external">http://dopal.cs.uec.ac.jp/okamotoy/lect/2015/matroid/handout05.pdf<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.jaist.ac.jp/~uehara/course/2014/i431/pdf/04greedy.pdf" class="external">https://www.jaist.ac.jp/~uehara/course/2014/i431/pdf/04greedy.pdf<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+<li>
+<p><a href="http://agent.inf.kyushu-u.ac.jp/~yokoo/lecture/DA2_5A.pdf" class="external">http://agent.inf.kyushu-u.ac.jp/~yokoo/lecture/DA2_5A.pdf<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+<li>
+<p><a href="http://www.iip.ist.i.kyoto-u.ac.jp/member/keisuke/resources/sec16_2.pdf" class="external">http://www.iip.ist.i.kyoto-u.ac.jp/member/keisuke/resources/sec16_2.pdf<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+<li>
+<p>Theory and Algorithms for Discrete Convex Analysis</p>
+<ul>
+<li><a href="http://www.orsj.or.jp/archive2/or58-06/or58_6_332.pdf" class="external">http://www.orsj.or.jp/archive2/or58-06/or58_6_332.pdf<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E8%B2%AA%E6%AC%B2%E6%B3%95" class="external">/nishio/貪欲法<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./ACL1D" class="internal">ACL1D</a></li><li><a href="./Fill-in-the-maximum-matching-on-the-graph-from-the-end." class="internal">Fill in the maximum matching on the graph from the end.</a></li><li><a href="./Greed-Law-Proof-Patterns" class="internal">Greed Law Proof Patterns</a></li><li><a href="./My-way-of-learning-atcoder-(~PAST-Advanced)" class="internal">My way of learning atcoder (~PAST Advanced)</a></li><li><a href="./Problem-to-reduce-computational-complexity-from-O(2^n)" class="internal">Problem to reduce computational complexity from O(2^n)</a></li><li><a href="./matroid" class="internal">matroid</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Difference between a nomenclature-type system and a structural-type system.</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Difference between a nomenclature-type system and a structural-type system."/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Difference between a nomenclature-type system and a structural-type system."/><meta name="twitter:description" content="from Draft addition to “The Difference Between Named Type Systems and Structural Type Systems” Difference between a nomenclature-type system and a structural-type system ..."/><meta property="og:description" content="from Draft addition to “The Difference Between Named Type Systems and Structural Type Systems” Difference between a nomenclature-type system and a structural-type system ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="from Draft addition to “The Difference Between Named Type Systems and Structural Type Systems” Difference between a nomenclature-type system and a structural-type system ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Difference-between-a-nomenclature-type-system-and-a-structural-type-system."/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Difference-between-a-nomenclature-type-system-and-a-structural-type-system."/><link rel="icon" href="./static/icon.png"/><meta name="description" content="from Draft addition to “The Difference Between Named Type Systems and Structural Type Systems” Difference between a nomenclature-type system and a structural-type system ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Difference-between-a-nomenclature-type-system-and-a-structural-type-system."><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Difference between a nomenclature-type system and a structural-type system.</a></div></nav><h1 class="article-title">Difference between a nomenclature-type system and a structural-type system.</h1><p show-comma="true" class="content-meta"><span>Jan 18, 2020</span><span>7 min read</span></p></div></div><article class="popover-hint"><p>from  <a href="./Draft-addition-to-&quot;The-Difference-Between-Named-Type-Systems-and-Structural-Type-Systems&quot;" class="internal alias" data-slug="Draft-addition-to-&quot;The-Difference-Between-Named-Type-Systems-and-Structural-Type-Systems&quot;">Draft addition to “The Difference Between Named Type Systems and Structural Type Systems”</a>
+Difference between a nomenclature-type system and a structural-type system.</p>
+<p>Dart: Currently, typedefs are restricted to function types. We expect this to change.</p>
+<p>I was told at a TypeScript study group that “we study types in <a href="./Technology-Supporting-Coding" class="internal alias" data-slug="Technology-Supporting-Coding">Technology Supporting Coding</a>” and when I checked, there was still no explanation of the difference between structual and nominal. I would like to add it.</p>
+<p>brainstorming
+Type hint flow for dynamically typed languages
+Later research on language rankings for 2014</p>
+<ul>
+<li><a href="https://www.immagic.com/eLibrary/ARCHIVES/GENERAL/TIOBE_NL/T140901I.pdf" class="external">https://www.immagic.com/eLibrary/ARCHIVES/GENERAL/TIOBE_NL/T140901I.pdf<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Java 14% C++ 5% C# 4%</li>
+<li>Python 3% JavaScript 2% Ruby 1%</li>
+<li>Scala 0.4% Haskell 0.3%
+scala story</li>
+<li>scala twitter
+<ul>
+<li><a href="http://kmizu.hatenablog.com/entry/2017/03/22/233335" class="external">Twitter hasn’t abandoned Scala (at least not yet) - kmizu’s Diary<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+2019</li>
+</ul>
+</li>
+<li>Java 15% C++ 9% C# 4%</li>
+<li>Python 8% JavaScript 3% Ruby 1%</li>
+<li>Scala 0.4% TypeScript 0.2% Haskell 0.2%</li>
+</ul>
+<p>TypeScript was released in 2012
+2019</p>
+<p>The dictionary eliminates the need to clarify in advance what attributes are available.
+Hackers and painters</p>
+<ul>
+<li>Pencil for drawing
+But the undefined trap</li>
+<li>&quot;&quot; + 1
+<ul>
+<li>Static Typing Language “Error</li>
+<li>Python runtime error TypeError: cannot concatenate ‘str’ and ‘int’ objects</li>
+<li>JavaScript “1”</li>
+</ul>
+</li>
+<li><code>{}[&quot;x&quot;]</code>
+<ul>
+<li>Python: KeyError</li>
+<li>JavaScript: undefined</li>
+<li>This is not the difference between static typing and dynamic typing, just that JavaScript is particularly bad among dynamically typed (dynamic checking) languages.
+The point of discovery is far away from the problem area.
+Implementation in js rapidly expanded by the needs of society
+Execution occurs on the client side
+Strong need to be aware of problems in advance</li>
+</ul>
+</li>
+<li>Two approaches
+<ul>
+<li>Closure Compiler
+<ul>
+<li>Static checking while following JavaScript syntax</li>
+<li>Assign type annotations in JavaDoc format</li>
+<li>case
+<ul>
+<li>2012
+<ul>
+<li><a href="https://blog.cybozu.io/entry/502" class="external">How to make JavaScript fully compatible with Closure Compiler’s ADVANCED mode! - Cybozu Inside Out | Cybozu Engineer’s Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Cybozu kintone had 100,000 lines of JavaScript code as of 2012.</li>
+</ul>
+</li>
+<li>2015
+<ul>
+<li><a href="https://www.slideshare.net/ama-ch/google-closure-toolsreact" class="external">https://www.slideshare.net/ama-ch/google-closure-toolsreact<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> about introducing React to a large service built with Google Closure Tools.</li>
+<li>Cybozu KINTONE had 300,000 lines of JavaScript code as of 2015.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>AltJS
+<ul>
+<li>Develop in another language and convert to JavaScript</li>
+<li><a href="http://smurfpandey.github.io/altjs/" class="external">http://smurfpandey.github.io/altjs/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Many languages were born.</li>
+<li>TypeScript is one of these</li>
+<li>As of 2015, TypeScript is already the only one
+<ul>
+<li><a href="https://www.buildinsider.net/hub/survey/201504-techtrend-en#altjs" class="external">https://www.buildinsider.net/hub/survey/201504-techtrend-en#altjs<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li><img src="https://gyazo.com/d057a2390e793eefeb1211c3196e8bf8/thumb/1000" alt="image"/>
+<ul>
+<li>It’s reversed around February 2015.</li>
+</ul>
+</li>
+<li>Incidentally, there is also a <a href="http://jsx.github.io/" class="external">JSX<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> created by a Japanese person, but as of 2019 it has been overshadowed by JSX as an abbreviation for JavaScript XML, making it difficult to search
+<ul>
+<li>The copyright notice on the project page stops at 2013.
+<ul>
+<li>
+<blockquote>
+<p>Copyright © 2012, 2013 DeNA Co., Ltd. et al.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Python Type hints</p>
+<ul>
+<li><a href="https://www.python.org/dev/peps/pep-0484/" class="external">PEP 484 — Type Hints | Python.org<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.python.org/dev/peps/pep-0483/" class="external">PEP 483 — The Theory of Type Hints | Python.org<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Provided as a library in Version 3.5
+<ul>
+<li>Released in 2015</li>
+</ul>
+</li>
+</ul>
+<p>Liskov’s replacement principle</p>
+<ul>
+<li>
+<p>Subtypes may be used in place of supertypes.”</p>
+</li>
+<li>
+<p>Subtyping is not subclassing, thesis</p>
+<ul>
+<li>Cook, W.R.; Hill, W.L.; Canning, P.S. (January 1990). “Inheritance is not subtyping”. Proceedings of the Seventeenth Annual ACM Symposium on Principles of Programming Languages. San Francisco, California: 125–135.</li>
+</ul>
+</li>
+<li>
+<p>Java was released in 1995, so this paper was out</p>
+<ul>
+<li>In <a href="./Introduction-to-Type-Systems" class="internal alias" data-slug="Introduction-to-Type-Systems">Introduction to Type Systems</a>, “19.3 Named Type Systems and Structural Type Systems”.</li>
+<li>Structual was more mainstream as a type study, the system is simple.</li>
+<li>nominal is a type always accompanied by a name</li>
+<li>class Cat extends Animal { … }
+<ul>
+<li>They are making a “named mold” called Cat.</li>
+<li>Easy to verify if it is a subtype</li>
+</ul>
+</li>
+<li>Maybe Nominal was adopted in Java, etc. because of performance issues.
+<ul>
+<li>The rumor that “Scala is slow.”</li>
+<li>Later research has created a method for fast identification even with Structual.
+<ul>
+<li>Create a hash of type</li>
+</ul>
+</li>
+<li>Did these areas directly contribute to the increase or not?</li>
+<li>It’s been 15 years since Scala was born in 2004, so the machines are probably more powerful now.
+<ul>
+<li>(Would the SSD conversion be greater than the CPU performance?)</li>
+<li>Did improved compile times contribute to the popularity of the Structural Typing language?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Talking about Go’s interface, there was no place to write it.</p>
+</li>
+<li>
+<p><a href="https://stackshare.io/stackups/dart-vs-typescript" class="external">https://stackshare.io/stackups/dart-vs-typescript<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>TypeScript appears to be popular.</li>
+<li>In TIOBE, though, it was Dart 0.5%, TypeScript 0.2%.</li>
+<li>I guess it’s a situation where there are too few of either and the small and large are reversed in the slightest situation.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>the more important idea is the separation of concept: data and behavior are two distinct concepts in Go, not conflated into a single notion of “class”.</p>
+</blockquote>
+<ul>
+<li><a href="https://twitter.com/rob_pike/status/942528032887029760" class="external">https://twitter.com/rob_pike/status/942528032887029760<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Author of Go.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Structural_type_system%E3%81%AB" class="external">https://en.wikipedia.org/wiki/Structural_type_systemに<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+<li>
+<blockquote>
+<p>C++ template functions exhibit structural typing on type arguments.</p>
+</blockquote>
+</li>
+<li>
+<p>but what exactly does this mean in terms of behavior?</p>
+<ul>
+<li>
+<blockquote>
+<p>(<a href="https://twitter.com/moriyoshit/status/1122136706679881729" class="external">moriyoshit<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>)Operations on members of a type given in a type parameter will pass the compile if the structure matches whatever the type is, so either to that effect and</p>
+</blockquote>
+</li>
+<li>This is what you mean?
+cpp</li>
+</ul>
+</li>
+</ul>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cpp" data-theme="github-light github-dark"><code data-language="cpp" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">struct</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> A</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> i;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> j;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">};</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">struct</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> B</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> i;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> k;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">};</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">template</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">class</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> T</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">></span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">int</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> get_i</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">T</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">&amp;</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;"> x</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">){</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> x.i;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">};</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">int</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> main</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(){</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  A a;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  B b;</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">  get_i</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">A</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">>(a);</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">  get_i</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">B</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">>(b);</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span></code></pre></figure>
+<pre><code>    - Is this Structural Typing? It's just that two implementations of get_i have been created that are specialized with the given type parameters, and each one is compiled normally.
+        - In a normal compilation, the code &quot;x.i&quot; succeeds whether x is A or B. Why not call it &quot;Structural&quot;?
+    - Only the `get_i&lt;T>` part is of interest: whether a type can enter T is &quot;determined by the structure, not the name&quot; of &quot;the type that has member i.&quot;
+</code></pre>
+<p>cpp</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cpp" data-theme="github-light github-dark"><code data-language="cpp" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">struct</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> A</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> i;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> j;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">};</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">struct</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> B</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> i;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> k;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">};</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">struct</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> C</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> j;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> k;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">};</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">template</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">class</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> T</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">></span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">int</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> get_i</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(){</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  T x;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> x.i;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">};</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">int</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> main</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(){</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">  get_i</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">A</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">>();</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">  get_i</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">B</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">>();</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">  //get_i&lt;C>();  // error: no member named 'i' in 'C'</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span></code></pre></figure>
+<ul>
+<li>
+<p>Generics (generic type) was introduced in Java in 5.0, 2004.</p>
+<ul>
+<li>
+<blockquote>
+<p>Nominal languages have such “generic” features… Some of them have extensions of the “generic” function. But those with such extensions are no longer purely nominal type systems, but rather a somewhat complex hybrid of the two approaches. Designers of languages with evolving type functions tend to opt for the structural approach.
+- <a href="./Introduction-to-Type-Systems" class="internal alias" data-slug="Introduction-to-Type-Systems">Introduction to Type Systems</a>  P.198</p>
+</blockquote>
+</li>
+<li>When were templates introduced to C++?</li>
+<li>I think that the nominal mechanism is no longer purely nominal, and that the Stractural mechanism is gradually being mixed in with the Nominal mechanism around that time.</li>
+</ul>
+</li>
+<li>
+<p>Constraints and concepts (since C++20) - cppreference.com</p>
+<ul>
+<li><a href="https://en.cppreference.com/w/cpp/language/constraints" class="external">https://en.cppreference.com/w/cpp/language/constraints<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>A predicate can be defined for a type, which is inspected at compile time.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>(Java adopted the generic (generic type) feature in 2004. (Java adopted generic types in 2004. This is the direction in which Java, which used to be a nametype type, is now moving toward a hybrid with structural types, but whether or not to devote a page to explaining this is a matter for discussion).</p>
+<ul>
+<li>In short, in Java, if a type had a different name or was not in an inheritance relationship, it was a different type altogether, especially for containers, where different types T1 and T2 shared the “can be placed in that container” condition.
+<ul>
+<li>If it had certain characteristics, it was good to containerize it.</li>
+<li>I guess you could say that once I started to understand this area, I realized that there are a lot of problems with pure Nominal.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>STL in 1993.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Standard_Template_Library" class="external">https://en.wikipedia.org/wiki/Standard_Template_Library<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>
+<p>function templates, class templates and, since C++14, variable templates. Since C++11</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Template_(C%2B%2B)" class="external">https://en.wikipedia.org/wiki/Template_(C%2B%2B)<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>Huh? That means the early STL was realized without using templates?</li>
+<li>I wonder if templates are commonly used in the 1996 STL commentary.
+<ul>
+<li><a href="http://www.cmapx.polytechnique.fr/~benaych/stl-tutorial-Weidl.pdf" class="external">http://www.cmapx.polytechnique.fr/~benaych/stl-tutorial-Weidl.pdf<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>So you are saying that it was only late in getting into the specification, but individual compilers were implementing it?</li>
+<li>1990
+<ul>
+<li><a href="https://en.cppreference.com/w/cpp/language/history" class="external">https://en.cppreference.com/w/cpp/language/history<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>1990: The Annotated C++ Reference Manual
+<ul>
+<li>This book described the language as designed, including some features that were not yet implemented. It served as the de-facto standard until the ISO.
+<ul>
+<li>New features: namespaces, exception handling, nested classes, templates</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>So it was de facto in 1990, he said.</li>
+</ul>
+</li>
+<li>It was the variable length templates that came in with C++11, the fixed length ones have been around for a while!
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Variadic_template" class="external">https://en.wikipedia.org/wiki/Variadic_template<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E3%80%8C%E5%90%8D%E5%89%8D%E7%9A%84%E5%9E%8B%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%A8%E6%A7%8B%E9%80%A0%E7%9A%84%E5%9E%8B%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E9%81%95%E3%81%84%E3%80%8D%E5%8A%A0%E7%AD%86%E6%A1%88%E3%83%A1%E3%83%A2" class="external">/nishio/「名前的型システムと構造的型システムの違い」加筆案メモ<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Draft-addition-to-&quot;The-Difference-Between-Named-Type-Systems-and-Structural-Type-Systems&quot;" class="internal">Draft addition to &quot;The Difference Between Named Type Systems and Structural Type Systems&quot;</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

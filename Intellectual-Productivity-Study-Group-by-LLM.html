@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Intellectual Productivity Study Group by LLM</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Intellectual Productivity Study Group by LLM"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Intellectual Productivity Study Group by LLM"/><meta name="twitter:description" content="Cybozu Labs Study Session 2023-10-06 - AI started to write a report once a day in Scrapbox on 7/29 at Omoikane Project. - It was two months of porting this to /nishio and improving it to the nth degree."/><meta property="og:description" content="Cybozu Labs Study Session 2023-10-06 - AI started to write a report once a day in Scrapbox on 7/29 at Omoikane Project. - It was two months of porting this to /nishio and improving it to the nth degree."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="Cybozu Labs Study Session 2023-10-06 - AI started to write a report once a day in Scrapbox on 7/29 at Omoikane Project. - It was two months of porting this to /nishio and improving it to the nth degree."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Intellectual-Productivity-Study-Group-by-LLM"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Intellectual-Productivity-Study-Group-by-LLM"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Cybozu Labs Study Session 2023-10-06 - AI started to write a report once a day in Scrapbox on 7/29 at Omoikane Project. - It was two months of porting this to /nishio and improving it to the nth degree."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Intellectual-Productivity-Study-Group-by-LLM"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Intellectual Productivity Study Group by LLM</a></div></nav><h1 class="article-title">Intellectual Productivity Study Group by LLM</h1><p show-comma="true" class="content-meta"><span>Dec 17, 2023</span><span>35 min read</span></p></div></div><article class="popover-hint"><ul>
+<li>Cybozu Labs Study Session 2023-10-06
+- AI started to write a report once a day in Scrapbox on 7/29 at <a href="./Omoikane-Project" class="internal alias" data-slug="Omoikane-Project">Omoikane Project</a>.
+- It was two months of porting this to /nishio and improving it to the nth degree.
+<ul>
+<li>My previous presentation at the study group, “<a href="./Omoikane-Study-Group" class="internal alias" data-slug="Omoikane-Study-Group">Omoikane Study Group</a>” (Aug. 4), was right after the start of the movement.</li>
+<li>Summarize what you experienced and felt during the two months</li>
+</ul>
+</li>
+<li>Up to now.
+<ul>
+<li>2023-03-24 <a href="./Story-study-session-about-connecting-my-Scrapbox-to-ChatGPT." class="internal alias" data-slug="Story-study-session-about-connecting-my-Scrapbox-to-ChatGPT.">Story study session about connecting my Scrapbox to ChatGPT.</a> Talking about a question-and-answer UI for vector searching Scrapbox.</li>
+<li>2023-08-04  <a href="./Omoikane-Study-Group" class="internal alias" data-slug="Omoikane-Study-Group">Omoikane Study Group</a></li>
+</ul>
+</li>
+<li><img src="https://gyazo.com/e86f3facdda9fb550d57325ce06d50a0/thumb/1000" alt="image"/>
+<ul>
+<li>thumbnail (i.e. miniature image)</li>
+</ul>
+</li>
+<li>1: Current Topics: Azure Cognitive Search</li>
+<li>2: Vector Search</li>
+<li>3: <a href="./Omoikane-Embed" class="internal alias" data-slug="Omoikane-Embed">Omoikane Embed</a></li>
+<li>4:  <a href="./Intelligent-collaboration-between-AI-and-humans" class="internal alias" data-slug="Intelligent-collaboration-between-AI-and-humans">Intelligent collaboration between AI and humans</a></li>
+<li>5:  <a href="./Extending-the-Red-Link-with-AI" class="internal alias" data-slug="Extending-the-Red-Link-with-AI">Extending the Red Link with AI</a></li>
+<li>6:  <a href="./Raw-ChatGPT-and-omni-use-cases-are-different." class="internal alias" data-slug="Raw-ChatGPT-and-omni-use-cases-are-different.">Raw ChatGPT and omni use cases are different.</a></li>
+<li>7:  <a href="./Thoughts-on-using-a-private-OMNI" class="internal alias" data-slug="Thoughts-on-using-a-private-OMNI">Thoughts on using a private OMNI</a></li>
+<li>8:  <a href="./Vector-search-is-an-opportunity-to-cut-out" class="internal alias" data-slug="Vector-search-is-an-opportunity-to-cut-out">Vector search is an opportunity to cut out</a></li>
+<li>9: <a href="./Vector-search-serves-as-a-tool-for-cognitive-resolution" class="internal alias" data-slug="Vector-search-serves-as-a-tool-for-cognitive-resolution">Vector search serves as a tool for cognitive resolution</a>.</li>
+</ul>
+<p>1: Current Topics: Azure Cognitive Search</p>
+<ul>
+<li>9/18 <a href="./Azure-Cognitive-Search:-Outperforming-vector-search-with-hybrid-retrieval-and-ranking-capabilities" class="internal alias" data-slug="Azure-Cognitive-Search:-Outperforming-vector-search-with-hybrid-retrieval-and-ranking-capabilities">Azure Cognitive Search: Outperforming vector search with hybrid retrieval and ranking capabilities</a>
+<ul>
+<li><img src="https://gyazo.com/8e2fa02e91d9ee1566bd48aeb6008048/thumb/1000" alt="image"/><a href="https://techcommunity.microsoft.com/t5/azure-ai-services-blog/azure-cognitive-search-outperforming-vector-search-with-hybrid/ba-p/3929167" class="external">src<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Talk about combining both and reranking (≈reordering after looking at the search results) is far better than the common “keyword only” search, or vector search.</li>
+</ul>
+</li>
+<li>It’s been known for a while that “it’s better to combine and rerank.”
+<ul>
+<li>from  <a href="./Combine-Searches" class="internal alias" data-slug="Combine-Searches">Combine Searches</a>
+<ul>
+<li><a href="https://voice.pkshatech.com/n/n83343d0e00e0" class="external">AI King - Japan’s No.1 Quiz AI Competition and won 3rd place｜PKSHA Delta<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 2023-01-04
+<ul>
+<li>
+<blockquote>
+<p><img src="https://gyazo.com/763fb9ae8f7e017772460b9ef471e515/thumb/1000" alt="image"/></p>
+</blockquote>
+</li>
+<li>I’m combining <a href="./DPR" class="internal" data-slug="DPR">DPR</a> and <a href="./BM25" class="internal" data-slug="BM25">BM25</a>.
+<ul>
+<li>DPR is a messy <a href="./vector-search" class="internal alias" data-slug="vector-search">vector search</a>.
+<ul>
+<li>
+<blockquote>
+<p><a href="./Dense-Passage-Retriever" class="internal alias" data-slug="Dense-Passage-Retriever">Dense Passage Retriever</a> (DPR)… Dense vector-based using pre-trained models</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>BM25 is, in a crude way, “modern TF-IDF” BM25: Lexical Match-based.</li>
+<li>Very small overlap in search results for both DPR and BM25
+<ul>
+<li>→ Good of both.</li>
+</ul>
+</li>
+<li>Vector search is available in:.
+<ul>
+<li>Strong semantic similarity</li>
+<li>Missing low-frequency words / Significant performance degradation outside the distribution</li>
+</ul>
+</li>
+<li>Weak on low-frequency words (=weak on proper nouns, technical terms, and product names), so need to combine normal search</li>
+<li>FiD=<a href="./Fusion-In-Decoder" class="internal alias" data-slug="Fusion-In-Decoder">Fusion In Decoder</a>
+<ul>
+<li>A text generation system that reads 100 search results</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Vector search is good for ambiguous searches in natural language conversations because of the flurry of hits, but it has a high cognitive load for users because “the name of the company you visited in sales” or “the product model number” also hits “different things that look very similar”.
+<ul>
+<li>I was thinking that the groupware needs to improve this problem if it is going to use vector search.</li>
+<li><a href="./Azure-Cognitive-Search" class="internal alias" data-slug="Azure-Cognitive-Search">Azure Cognitive Search</a>
+<ul>
+<li>7/18 Public Preview begins</li>
+<li>I’m thinking of trying it soon.</li>
+</ul>
+</li>
+<li>If you look at the configuration, <a href="./BM25" class="internal" data-slug="BM25">BM25</a> + <a href="./HNSW" class="internal" data-slug="HNSW">HNSW</a> + <a href="./rerank" class="internal" data-slug="rerank">rerank</a> is a royal configuration.
+<ul>
+<li>HNSW (<a href="./Hierarchical-Navigable-Small-World" class="internal alias" data-slug="Hierarchical-Navigable-Small-World">Hierarchical Navigable Small World</a>) is a vector neighborhood search method also used in Qdrant and Pinecore.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>What is “search?”
+<ul>
+<li>What is the value you are creating for your customers?</li>
+<li>The “search UI” we provide to users now is not the best way to deliver that customer value.</li>
+<li>Relanker ≈ “a midget who looks at 200 search results and sorts them in good order.”</li>
+<li>Fusion in Decoder ≈ “a little guy who reads 100 search results and writes sentences”</li>
+<li>The era in which these things are becoming available</li>
+<li>Especially in the reranker section, a style that takes into account things other than “text explicitly entered by the user,” such as operations on the groupware immediately before, may lead to differentiation.</li>
+</ul>
+</li>
+</ul>
+<p>2: Vector Search
+- <a href="./Vector-Search-in-Nishio" class="internal alias" data-slug="Vector-Search-in-Nishio">Vector Search in Nishio</a>
+- Vector search for this Scrapbox project, published 2023-06-05</p>
+<ul>
+<li>For me, the usefulness of vector search is <a href="./empirically-evident" class="internal alias" data-slug="empirically-evident">empirically evident</a>, but perhaps I should present an example for those who have not yet experienced vector search
+<ul>
+<li>
+<p><a href="./Cases-where-vector-searches-were-useful" class="internal alias" data-slug="Cases-where-vector-searches-were-useful">Cases where vector searches were useful</a></p>
+</li>
+<li>
+<p>Case 1</p>
+<ul>
+<li>It’s all about “social security spending.”</li>
+<li>I recall a past lecture in which he said, “I’ve talked about the high cost of Social Security.”
+<ul>
+<li>The focus was on the ratio of investment to science and technology.</li>
+</ul>
+</li>
+<li>I’d try to find it, but I can’t find it by searching for “social security payments”.
+<ul>
+<li><a href="./Vector-Search-in-Nishio" class="internal alias" data-slug="Vector-Search-in-Nishio">Vector Search in Nishio</a> for “Social Security Funding Scientific Research” <a href="https://nishio-vecsearch.vercel.app/result/3YZTFccqWXMj6lR6OVkr" class="external">hit<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><img src="https://gyazo.com/34b6beae7ed4d7d5d95fd0d4d08aaff6/thumb/1000" alt="image"/></li>
+<li>The expression was “38 trillion for medical care, 24 trillion for welfare and others, and 120 trillion in total.”
+<ul>
+<li>There’s also “Science and Technology” a little further down the road.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I made an excerpt page with “Social Security Expenses” in the title.
+- <a href="./Comparison-of-Social-Security-Expenditures-and-Science-and-Technology-Expenditures" class="internal alias" data-slug="Comparison-of-Social-Security-Expenditures-and-Science-and-Technology-Expenditures">Comparison of Social Security Expenditures and Science and Technology Expenditures</a></li>
+</ul>
+</li>
+<li>
+<p>Case 2</p>
+<ul>
+<li>I’m trying to come up with a story about a hole in the wall, and I’m searching for wall or hole, but I can’t find it.</li>
+<li>Vector search for “hole in the wall, you have to get close to see it.”</li>
+<li>Second candidate found.</li>
+<li><img src="https://gyazo.com/9c55e099867137986e3be8ead02a9fdb/thumb/1000" alt="image"/>
+<ul>
+<li>[The fact that there is a wall ahead is not a reason not to proceed. <a href="https://scrapbox.io/nishio/%E9%80%B2%E3%82%80%E5%85%88%E3%81%AB%E5%A3%81%E3%81%8C%E3%81%82%E3%82%8B%E3%81%25" class="external">https://scrapbox.io/nishio/%E9%80%B2%E3%82%80%E5%85%88%E3%81%AB%E5%A3%81%E3%81%8C%E3%81%82%E3%82%8B%E3%81%<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 93%E3%81%A8%E3%81%AF%E9%80%B2%E3%81%BE%E3%81%AA%E3%81%84%E7%90%86%E7%94%B1%E3%81%AB%E3%81%AF%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84]
+<ul>
+<li>It’s a match between “you can’t see it unless you get closer” and “you could see it if you got closer.”</li>
+</ul>
+</li>
+<li>The nuance of not being able to see the hole in the wall unless you get close to the wall.</li>
+</ul>
+</li>
+<li>The hole in the wall was pictured, but not texted.
+<ul>
+<li>I’ll add a note.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Q: The search is not looking at a picture, is it? (Confirmation)
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>A: I haven’t seen it.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Case 3</p>
+<ul>
+<li>Vector search on “unfeasible ideas seem original”.</li>
+<li>The one I was looking for was the fifth hit.
+<ul>
+<li><img src="https://gyazo.com/395e22955d484b244995604e4b1664fb/thumb/1000" alt="image"/></li>
+<li>
+<blockquote>
+<p>A layman’s idea may appear original in an oral presentation, but it is not feasible.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>This paper compares amateurs who have never used Mindstorms with robot contest winners and runners-up (hereafter referred to as “experts”) in the task “Build a robot that makes creative progress with Lego Mindstorms…“… There was no difference in originality between the genin and the amateurs… However, most of the amateurs failed to realize their ideas.</p>
+</blockquote>
+</li>
+<li>Didn’t hit on the swing between “original” and “originality,” between “unfeasible” and “unfeasible.”</li>
+<li>When we try to specify the search target with search keywords, we tend to use <a href="./noun-form" class="internal alias" data-slug="noun-form">noun form</a> keywords such as “unfeasible,” but in reality, they are sometimes described by opening them to verb form.</li>
+</ul>
+</li>
+<li>There is a lot of very relevant content in the candidates above this one: <a href="https://nishio-vecsearch.vercel.app/result/jZZIQiDcvPLdpv8EPsc2" class="external">result<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>The pages of this experiment are episodic, which would make them memorable and easily recalled.</li>
+</ul>
+</li>
+<li>I created a new page with “[Unfeasible ideas seem original.</li>
+</ul>
+</li>
+<li>
+<p>Case 4</p>
+<ul>
+<li>Vector search on “kintone talks around data”</li>
+<li>No.1:.
+<ul>
+<li>
+<blockquote>
+<p>I think the ideal situation would be to have the same collaborative editing capability for database schema and customization JavaScript.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>No. 4: The
+<ul>
+<li>
+<blockquote>
+<p>Reforming Municipal Operations with Digital Solutions for Public Utilities</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p>Both municipalities used Cybozu’s “kintone” as a digital solution. kintone allows users to build business applications without programming knowledge, as long as they have a working knowledge of Excel. It allows you to integrate email, Excel, and disparate information and create a unique business environment with your own ingenuity.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>I see - I was wondering how to explain kintone, but you explain it as “email and Excel integration”.</p>
+</blockquote>
+</li>
+<li>I like the term “email and Excel integration.”</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Case 5</p>
+<ul>
+<li>“Bias to measure only what is easy to measure.”
+<ul>
+<li>
+<blockquote>
+<p>While cost is easy to measure numerically, quality is harder to measure and therefore easier to underestimate.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Q: If I do a vector search, will everyone get better at searching?</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>A: Better to search by keywords if the keywords are known, even if the vector search has good features, it is not possible to “read the mind”, so the searcher’s linguistic ability is necessary</li>
+</ul>
+</li>
+<li>
+<p><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>This kind of story feels magical when you hear only (or more) examples of it going well, but you have to be careful (and self-conscious) because it’s often just as (or more overwhelmingly) the case that it actually didn’t go well.</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Of course it is. The service is open to the public, so try it yourself: <a href="./Vector-Search-in-Nishio" class="internal alias" data-slug="Vector-Search-in-Nishio">Vector Search in Nishio</a>.</li>
+</ul>
+</li>
+<li>
+<p>Looking Back</p>
+<ul>
+<li>It’s now possible to search by “this is what I meant” instead of “I must have written this ‘string’.”</li>
+<li>Nishio himself is adapting to the vector search system.
+<ul>
+<li>Early cases search by fragments, as in “social security funding scientific research” and “hole in the wall, you can’t see it unless you get up close.”</li>
+<li>As I get used to it, I’m searching for “short sentences that express meaning” like “unfeasible ideas seem original,” “kintone is a conversation around data,” and “bias to measure only what is easy to measure.”</li>
+</ul>
+</li>
+<li>The other day, when I asked a user to use this vector search while sharing the screen on Zoom, the user typed, “Tell me about your experience of cooking for yourself,” and I thought, “Oh, you don’t understand how to use this at all.
+<ul>
+<li>I don’t know the difference between a vector search and an LLM that is <a href="./Instruction-Tuning" class="internal alias" data-slug="Instruction-Tuning">Instruction Tuning</a>.</li>
+<li>Maybe most people in the world don’t know the difference.</li>
+<li>Only those that have undergone additional learning (<a href="./Instruction-Tuning" class="internal alias" data-slug="Instruction-Tuning">Instruction Tuning</a>) to “regard user input as instructions and follow those instructions” will follow the instructions in the underlying language model.</li>
+<li>Similar input just because ChatGPT does.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>I see…it is different from ChatGPT…</li>
+</ul>
+</li>
+<li>The user then typed in “description about cooking” and found my terrible cooking story, which is a good thing, right?
+<ul>
+<li>Not much vector search goodness.
+<ul>
+<li>Because the “meaning” in the query is in effect one word of “cooking”, so it is no different from a keyword search.</li>
+</ul>
+</li>
+<li>Now when I search for “I made a terrible dish” <a href="https://nishio-vecsearch.vercel.app/result/N6IhY622RdHNl9ebCXSQ" class="external">lots of terrible past dishes<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>www</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Q: Does vector search eliminate the need to add search keywords to absorb distortions and make it easier to get a hit?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>A: That would be unnecessary, but if you only use vector search, you’ll end up needing a combined approach with keyword search like Azure Cognitive Search, because keyword matching is a poor search!
+<ul>
+<li>On the other hand, <a href="./Helpfeel" class="internal" data-slug="Helpfeel">Helpfeel</a> is an approach to make the process of “adding more keywords to absorb the distortion” more efficient with the help of a machine.</li>
+<li>
+<blockquote>
+<p>Our proprietary algorithm “Intent Predictive Search”… technology is further extended using the text-embedding-ada-002 model provided by OpenAI, Inc. of the U.S. <a href="https://prtimes.jp/main/html/rd/p/000000202.000027275.html" class="external">Helpfeel releases “Contact Sense AI” that improves search accuracy by 30% while avoiding AI halcination. Facilitates Self-Resolution of Inquiries｜Press Release from Helpfeel, Inc.<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Q: When combined with a keyword search, are the search queries different from those for a vector search?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>A: No, BM25 can search by sentence, so it’s not that different. Maybe you have the old image of searching by word and returning documents that contain that word, but BM25 is closer to “searching by all words in the input” than to that image.
+<ul>
+<li><a href="https://www.elastic.co/jp/blog/practical-bm25-part-2-the-bm25-algorithm-and-its-variables" class="external">BM25 in Practice - Part 2: BM25 Algorithm and Variables | Elastic Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Q: I’d like to see you handle polysemy as well (is it too hard with the current vector search?).
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>A: I think that the idea of “polysemy” itself is stuck in the “old image of searching by word”. Nowadays, it is possible to create an embedding vector from an entire sentence, so you can write a sentence so that the meaning of the sentence is unique.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Q: Is there both an effect of finding what you want to find but can’t find with keywords alone, and a serendipitous, unexpected encounter with information?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>A: Yes, there is. Even if you have a goal and find it, it is interesting to read the surrounding fragments for unexpected thought provocation. Example: <a href="https://nishio-vecsearch.vercel.app/result/jZZIQiDcvPLdpv8EPsc2" class="external">search results for “unfeasible ideas seem ingenious”<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+<p>3: <a href="./Omoikane-Embed" class="internal alias" data-slug="Omoikane-Embed">Omoikane Embed</a>
+- <a href="./Omoikane-Project" class="internal alias" data-slug="Omoikane-Project">Omoikane Project</a>  6/4~</p>
+<ul>
+<li>from [/omoikane/Omoikane Embed](<a href="https://scrapbox.io/omoikane/Omoikane" class="external">https://scrapbox.io/omoikane/Omoikane<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Embed)
+<ul>
+<li>Mechanism for creating <a href="./vector-index" class="internal alias" data-slug="vector-index">vector index</a> for [Omoikane Vector Search
+<ul>
+<li><a href="./Github-Action" class="internal alias" data-slug="Github-Action">Github Action</a> at 6:00 a.m. Japan time</li>
+<li>Automatically export JSON from Scrapbox</li>
+<li>Vector embedding by inscribing on 500 tokens</li>
+<li>Upload to [Qdrant</li>
+</ul>
+</li>
+<li>Began operation on 6/9, now running daily.</li>
+<li>I started writing reports in Scrapbox on 7/29.
+<ul>
+<li>The previous <a href="./Omoikane-Study-Group" class="internal alias" data-slug="Omoikane-Study-Group">Omoikane Study Group</a> (8/4) was just starting to get up and running.</li>
+</ul>
+</li>
+<li>8/9 Organized code to make it easier to put into other projects.
+<ul>
+<li>People actually showed up to try it.</li>
+<li>I put this <a href="https://scrapbox.io/nishio" class="external">/nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> in this [/nishio
+<ul>
+<li>This is omoikane-embed-nishio, or <a href="./omni" class="internal" data-slug="omni">omni</a> for short.</li>
+</ul>
+</li>
+<li>It’s been two months since we’ve made a lot of improvements to this omni.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>4:  <a href="./Intelligent-collaboration-between-AI-and-humans" class="internal alias" data-slug="Intelligent-collaboration-between-AI-and-humans">Intelligent collaboration between AI and humans</a></p>
+<ul>
+<li>8/16  <a href="./Intelligent-collaboration-between-AI-and-humans" class="internal alias" data-slug="Intelligent-collaboration-between-AI-and-humans">Intelligent collaboration between AI and humans</a>
+<ul>
+<li><img src="https://gyazo.com/9d448f09d2d3c47287128ca2efef61dd/thumb/1000" alt="image"/>
+<ul>
+<li>AI writes a note in Scrapbox, AI reads the note the next day, and writes another note.</li>
+<li>Repeat intellectual production activities in the same way as humans in the collaborative editing space called Scrapbox</li>
+</ul>
+</li>
+<li>Implemented on 8/12,
+- <a href="./AI-writes-research-notes-daily" class="internal alias" data-slug="AI-writes-research-notes-daily">AI writes research notes daily</a>
+- <a href="./Co-operation-with-AI" class="internal alias" data-slug="Co-operation-with-AI">Co-operation with AI</a></li>
+<li>Wrote “<a href="./Intelligent-collaboration-between-AI-and-humans" class="internal alias" data-slug="Intelligent-collaboration-between-AI-and-humans">Intelligent collaboration between AI and humans</a>” on 8/16 and spoke at 8/20 (Unexplored Junior Interim Camp) and 8/21 (Lab Youth Camp).</li>
+</ul>
+</li>
+<li>8/21  <a href="./No-human-has-to-pull-the-trigger." class="internal alias" data-slug="No-human-has-to-pull-the-trigger.">No human has to pull the trigger.</a>
+<ul>
+<li>AI’s once-a-day note-with-comments communication style has the advantage of “no human triggers to pull”.
+<ul>
+<li>Even when humans are too busy to write comments, AI goes ahead on its own.</li>
+<li>Even if you write some comments, there is no “send” action.
+<ul>
+<li>I may come up with something after that and add more.</li>
+<li>No need for human decision-making on when is “the end” or “completion”.</li>
+</ul>
+</li>
+<li>Not sure if it would be better without the “send” action.
+<ul>
+<li>Personally, I think it’s better to have it, and can be accomplished by running scripts in the development environment when you’re in front of a PC.</li>
+<li>I’m on the train to get to the camp site, and I feel like triggering from my phone in these cases.
+<ul>
+<li>→ Later that function was added (<a href="./Pioneer-Mode" class="internal alias" data-slug="Pioneer-Mode">Pioneer Mode</a>).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>8/21  <a href="./I-want-to-fork-a-page." class="internal alias" data-slug="I-want-to-fork-a-page.">I want to fork a page.</a>
+<ul>
+<li>→8/21  <a href="./multi-head" class="internal" data-slug="multi-head">multi-head</a>  /  <a href="./page-memory" class="internal alias" data-slug="page-memory">page memory</a></li>
+<li><img src="https://gyazo.com/ee4e571fa7c0ea7aad70ad241c79ed47/thumb/1000" alt="image"/> from  <a href="./page-memory" class="internal alias" data-slug="page-memory">page memory</a></li>
+<li>AI created a style of adding to the same page instead of creating a new page.
+<ul>
+<li>After that, the style of creating new pages was DISABLED (8/31 main branch stopped).</li>
+</ul>
+</li>
+<li>This allowed “multiple topics” to develop in parallel
+<ul>
+<li>Write a note that a human thinks “I’d like to develop this topic” as a seed and treat it as an AI note (with 🤖🔁 in the title in the implementation at the time).</li>
+<li>→ <a href="./Multi-head-thinking" class="internal alias" data-slug="Multi-head-thinking">Multi-head thinking</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Talk if you can afford it (I can’t afford it)
+<ul>
+<li>8/21 <a href="./page-memory" class="internal alias" data-slug="page-memory">page memory</a> →8/23 Ignore used pages from all history →8/26 <a href="./Pinning-effect-on-the-topic" class="internal alias" data-slug="Pinning-effect-on-the-topic">Pinning effect on the topic</a>.</li>
+<li>8/25 Update page limit <span>→</span> 8/31 <a href="./Update-Interval-of-AI-Notes" class="internal alias" data-slug="Update-Interval-of-AI-Notes">Update Interval of AI Notes</a>.</li>
+<li>Changed the method of addition: 9/11 <a href="./Difference-between-Recurrent-Notes-and-Iterative-Commenter" class="internal alias" data-slug="Difference-between-Recurrent-Notes-and-Iterative-Commenter">Difference between Recurrent Notes and Iterative Commenter</a>.</li>
+</ul>
+</li>
+</ul>
+<p>5:  <a href="./Extending-the-Red-Link-with-AI" class="internal alias" data-slug="Extending-the-Red-Link-with-AI">Extending the Red Link with AI</a></p>
+<ul>
+<li>8/30  <a href="./Extending-the-Red-Link-with-AI" class="internal alias" data-slug="Extending-the-Red-Link-with-AI">Extending the Red Link with AI</a></li>
+<li><img src="https://gyazo.com/4d69e9d9b57633554d06698e00c3ca29/thumb/1000" alt="image"/> from  <a href="./Extending-the-Red-Link-with-AI" class="internal alias" data-slug="Extending-the-Red-Link-with-AI">Extending the Red Link with AI</a>
+- <a href="./AI-writes-research-notes-daily" class="internal alias" data-slug="AI-writes-research-notes-daily">AI writes research notes daily</a> Useful use cases for the system that were not originally intended.</li>
+<li>History
+- If you create a <a href="./red-link" class="internal alias" data-slug="red-link">red link</a> (an empty link) and then specify the red link, the page is now created using the results of a vector search on the link title.
+<ul>
+<li>This is useful
+<ul>
+<li>What kind of experience does it bring?
+<ul>
+<li>Make a link to “I think I’ve written something like this before.”</li>
+<li>Sometimes assisted here by Scrapbox’s link suggestions
+<ul>
+<li>For those not familiar with Scrapbox: Scrapbox runs an ambiguous search when creating a link and suggests a link destination.</li>
+<li>If not, you had to use search and other methods to find them.</li>
+<li>We can leave that to AI.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Further Development
+<ul>
+<li>When there is a good “long phrase” in the AI’s generation or in the past descriptions that the AI has uncovered, make it a link, like a marker.</li>
+<li>Naturally, it would be a red link.
+<ul>
+<li>This is long enough that it is expected that “it will not be a natural connection”</li>
+<li>So we will “red-link extension” this.</li>
+<li>Until now, <a href="./Expansion-of-pertinent-judgment" class="internal alias" data-slug="Expansion-of-pertinent-judgment">Expansion of pertinent judgment</a> was done with the operation <a href="./Long-title-engraving-page" class="internal alias" data-slug="Long-title-engraving-page">Long title engraving page</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Specific example 1
+- <a href="./🌀Exchange-Form-D" class="internal alias" data-slug="🌀Exchange-Form-D">🌀Exchange Form D</a>, omni “reaffirmed the importance of exchange in the problem-solving process.”
+<ul>
+<li>I didn’t know what “the importance of exchange in the problem-solving process” was, so I red-linked it and stretched it.</li>
+<li>When OMNI said, “Problem solving bridges the gap between the ideal and the current situation, and the exchange of information in the process is important,” I understood, “I see, you mean exchange of information is exchange.”</li>
+<li>I wrote about this realization in [Information exchange is exchange
+<ul>
+<li>(The meaning of this realization is probably not conveyed, but that is a case study for later, so I won’t explain it here.)</li>
+</ul>
+</li>
+<li>After a while, “[Is the exchange style of knowledge exchange A?” The question arose</li>
+<li>I extended the “<a href="./Public-as-the-object-of-the-gift" class="internal alias" data-slug="Public-as-the-object-of-the-gift">Public as the object of the gift</a>” that was created there as a red link, and it gave me a lot of examples.</li>
+</ul>
+</li>
+<li>It can be called “<a href="./search-with-description" class="internal alias" data-slug="search-with-description">search with description</a>”.
+<ul>
+<li>Search with explanation of why it was shortlisted.</li>
+<li>Instead of a human directly reading the search results, the AI reads them first and writes a description.</li>
+<li>9/2  <a href="./Difference-in-skin-feel-between-vector-search-and-RAG" class="internal alias" data-slug="Difference-in-skin-feel-between-vector-search-and-RAG">Difference in skin feel between vector search and RAG</a>
+<ul>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/kazunori_279/status/1696336555215053072" class="external">kazunori_279<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> I guess instead of messing around with fine tuning and RAG, we can simply do a vector search with emb and display the results. I thought, “Why not? I thought so.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1696396921903190238" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> I have always been of the “just do a vector search” school of thought, but I feel that RAG is better when used as an intellectual production assistant rather than just a question and answer tool. I feel that RAG is better for use as an assistant for intellectual production, not just for answering questions. The generation part functions as “summarizing the search results according to the purpose”. This assumes that the purpose is given separately from the query.</p>
+</blockquote>
+</li>
+<li>For a long time, I used “Nishio’s Vector Search” and thought, “Isn’t this just fine?” but now that “Extension of red link by AI” is available, I think “this one is better”.</li>
+</ul>
+</li>
+<li>I find it different and more useful than a simple vector search.</li>
+</ul>
+</li>
+<li>It could be called “decoupling search and action.”
+<ul>
+<li>Now “searches” don’t involve updating, so if I don’t update my Scrapbox with the search results, the search never happened!
+<ul>
+<li>Implicitly required that “humans read the results and act on them before they forget they searched.”</li>
+<li>Search and action were coupled.</li>
+</ul>
+</li>
+<li>AI extends the red link” is a human writes the “intention of search” and the AI does the “search, reads it, and writes a beat of explanation”, so the human action after the search is optional.</li>
+</ul>
+</li>
+<li>9/4 <a href="./Pioneer-Mode" class="internal alias" data-slug="Pioneer-Mode">Pioneer Mode</a>
+<ul>
+<li>
+<blockquote>
+<p>Pioneer Mode is a development of “Extending the Red Link with AI</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>If you put a link on the “✍️🤖” page, the AI will check it periodically and generate it automatically.</p>
+</blockquote>
+</li>
+<li>I can now use it from my phone.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Q: Is it possible to distinguish between the page that AI extended the red link and the page that I created? If not, do you feel comfortable mixing them?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>A: I didn’t. I did at first, but I stopped.
+- <a href="./&quot;Which-parts-are-AI-and-which-parts-are-human&quot;-The-question-is-&quot;Which-part-is-AI-and-which-part-is-human" class="internal alias" data-slug="&quot;Which-parts-are-AI-and-which-parts-are-human&quot;-The-question-is-&quot;Which-part-is-AI-and-which-part-is-human">“Which parts are AI and which parts are human?” The question is “Which part is AI and which part is human?</a>
+- > When two people get along well, have a lively discussion, and their comments influence each other, it is difficult to discern which part of the resulting material originates from one person.
+- > The same thing happens with humans and AI. The idea of trying to identify this, or to make it identifiable, can be detrimental to designing a UI.
+- And I was writing my own.
+<ul>
+<li>Especially on Scrapbox, the action of “read a page, and if the thought inspires you, write on that page” is afforded.
+<ul>
+<li>Then, when a human sees an “AI-generated page” and makes a post, it seems strange that the human’s post is not picked up because it was originally an AI-generated page, so the distinction between AI-generated and non-AI-generated pages is abandoned.</li>
+</ul>
+</li>
+<li>For example, it is possible to know who updated each line, so if you create a dedicated account for the AI, it is possible to “ignore AI-generated content and use only human-written content”.
+<ul>
+<li>As to why I haven’t done it, I don’t feel the need to do it…</li>
+<li>I feel like I might discover something new if I try it, but I have a lot of other things I want to try, so it’s not a priority and hasn’t been started.</li>
+</ul>
+</li>
+<li>On the other hand, I also explicitly think it’s a bad idea to write the vector search results directly into Scrapbox as AI output.
+<ul>
+<li>It’s OK up to the point where a human reads it, but once it’s in the search results again, there’s a feeling that the value of the “title to content mapping” is spoiled.</li>
+</ul>
+</li>
+<li>from  <a href="./Why-I-stopped-putting-🤖-in-the-title-of-AI-generated-pages." class="internal alias" data-slug="Why-I-stopped-putting-🤖-in-the-title-of-AI-generated-pages.">Why I stopped putting 🤖 in the title of AI generated pages.</a>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/omni/icon" alt="omni.icon" height="19.5"/>We discussed removing the 🤖 mark from the title of AI-generated pages. Initially, this was to prevent AI from reading AI-generated material, but during operation, it was felt that it was natural for humans to respond to AI-written pages. However, we questioned the fact that the content was not subject to being read by the AI. We also discussed the lack of assumption of a collaborative editing forum.</li>
+<li>That was a good summary.</li>
+<li>This one in the continuation is indeed a problem.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/omni/icon" alt="omni.icon" height="19.5"/>This note relates to a fragment of Nishio’s research note, “<a href="./It's-buried-at-the-bottom-of-the-AI-page." class="internal alias" data-slug="It's-buried-at-the-bottom-of-the-AI-page.">It’s buried at the bottom of the AI page.</a>” The idea that it is natural for humans to respond to AI-generated pages and the problem of human thoughts being buried at the bottom of AI-generated pages, closely related in terms of information transfer between AI and humans.</li>
+<li>This is how we’re dealing with that issue right now.
+<ul>
+<li><a href="./Difference-between-Recurrent-Notes-and-Iterative-Commenter" class="internal alias" data-slug="Difference-between-Recurrent-Notes-and-Iterative-Commenter">Difference between Recurrent Notes and Iterative Commenter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>6:  <a href="./Raw-ChatGPT-and-omni-use-cases-are-different." class="internal alias" data-slug="Raw-ChatGPT-and-omni-use-cases-are-different.">Raw ChatGPT and omni use cases are different.</a></p>
+<ul>
+<li>9/6 I realized I was unconsciously using ChatGPT and <a href="./omni" class="internal" data-slug="omni">omni</a> differently.</li>
+<li>So there is a difference in the utility that the two provide, what is the difference?</li>
+<li>from  <a href="./Raw-ChatGPT-and-omni-use-cases-are-different." class="internal alias" data-slug="Raw-ChatGPT-and-omni-use-cases-are-different.">Raw ChatGPT and omni use cases are different.</a>
+<ul>
+<li>Since most texts in the world are written in “expressions that many people can read and understand”, whereas my research notes are written in “expressions that I can understand”, an AI that <a href="./RAGs" class="internal" data-slug="RAGs">RAGs</a> with the latter accelerates my personal thinking much more efficiently than ChatGPT</li>
+<li>In my research notes I don’t write explanations for words I know, so the AI that reads them doesn’t write explanations for what I know either. <a href="./Concepts-are-tools-for-the-economy-of-thought." class="internal alias" data-slug="Concepts-are-tools-for-the-economy-of-thought.">Concepts are tools for the economy of thought.</a> So it is more efficient to use them without explanation in one’s thinking.</li>
+<li>It is useful to use ChatGPT when explaining it to others</li>
+</ul>
+</li>
+<li><img src="https://gyazo.com/511c4d63f9f6261555474ae1eb44e0e1/thumb/1000" alt="image"/> <a href="./iceberg-model" class="internal alias" data-slug="iceberg-model">iceberg model</a>
+<ul>
+<li>The omni’s output is closer to my personal water surface (the boundary of what is not yet verbalized), so it is more effective in supporting verbalization.</li>
+<li>Maybe it has to do with the different characteristics of blogs and Scrapbox: in Scrapbox, instead of explaining the same concept over and over again, you create a page for that concept and link to it.</li>
+<li>The description of the case study immediately above, “<a href="./iceberg-model" class="internal alias" data-slug="iceberg-model">iceberg model</a>”, is minimal.
+<ul>
+<li><img src="https://gyazo.com/f93a3266d674745e880b61760e8bb721/thumb/1000" alt="image"/>
+<ul>
+<li>from  <a href="./Public-and-private-language" class="internal alias" data-slug="Public-and-private-language">Public and private language</a>  :  <a href="./The-Intellectual-Production-of-Engineers" class="internal alias" data-slug="The-Intellectual-Production-of-Engineers">The Intellectual Production of Engineers</a>  p.206  <a href="./(6.2.5.5)-Public-and-private-language" class="internal alias" data-slug="(6.2.5.5)-Public-and-private-language">(6.2.5.5) Public and private language</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Case 1
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/omni/icon" alt="omni.icon" height="19.5"/>To improve knowledge productivity, we need to understand the importance of collaboration and the importance of sharing tacit knowledge prior to planning.”
+<ul>
+<li>I can tell that this “collaboration” is “the story of Ikujiro Nonaka’s <a href="./SECI-Model" class="internal alias" data-slug="SECI-Model">SECI Model</a>”. This can be read to compensate for a little poor Japanese.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Please put in terms that the average person can understand, “In order to improve knowledge productivity, we need to understand the importance of collaboration and the importance of sharing tacit knowledge prior to planning.”</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/gpt/icon" alt="gpt.icon" height="19.5"/>To use knowledge effectively to get things done, it’s important for everyone to work together, to share information, and for everyone to share their own experiences and tips before the actual work begins.”
+<ul>
+<li>Most people will find it easier to understand.</li>
+<li>From my subjective point of view, it is clearly degrading. Maybe GPT4 doesn’t understand the cooporation correctly.</li>
+</ul>
+</li>
+<li>PS: I’d like to explain this a little more.
+<ul>
+<li>In Ikujiro Nonaka’s SECI model, “collaboration” refers to the sharing of “tacit knowledge” that is difficult to verbalize through “sharing the same experience,” such as through joint work, without the use of language.
+<ul>
+<li>So I get the feeling that you “don’t get it at all” when you describe it as “sharing information, experience, and tips”.</li>
+</ul>
+</li>
+<li>In light of this, this statement can be interpreted as “before making a linguistic plan, it is necessary to first share a nonverbal experience through cooporation.</li>
+<li>And in the context in which this statement came up, we were talking about increasing intellectual productivity through AI.</li>
+<li>Before any linguistic planning can be done on how to improve intellectual productivity with AI, it must first be collaborative.</li>
+<li>This is the first step in the process. One form of this is to let AI live in the place where I usually do my intellectual production by creating a system that allows AI to work on its own, instead of humans giving it instructions every time and AI responding to them.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example 2 (“Information exchange is an exchange” as you just said)
+<ul>
+<li>I found “information exchange is exchange” to be an important realization, but I think most people probably don’t know what’s so interesting about it.</li>
+<li>When I see the word “exchange,” I connect it to the context of “Yukito Emiya’s <a href="./interchange-format" class="internal alias" data-slug="interchange-format">interchange format</a>.</li>
+<li>Very rough description.
+<ul>
+<li>Exchange Form A: Giving a Gift in Return</li>
+<li>Exchange Form B: Obedience and Protection</li>
+<li>Exchange Form C: Pay the price and get the goods</li>
+</ul>
+</li>
+<li>Information exchange is an exchange” is a realization that “since information is also a good, information exchange can be considered within the framework of Gyoto Emorya’s exchange theory.
+<ul>
+<li>“So [Is the exchange style of knowledge exchange A? →No, I think information sharing using <a href="./a-place-of-sharing" class="internal alias" data-slug="a-place-of-sharing">a place of sharing</a> instead of DM is <a href="./New-Exchange-Style" class="internal alias" data-slug="New-Exchange-Style">New Exchange Style</a> because there is <a href="./Public-as-the-object-of-the-gift" class="internal alias" data-slug="Public-as-the-object-of-the-gift">Public as the object of the gift</a>, isn’t it?” This led to the realization that</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Supplemental (if time permits)
+<ul>
+<li>Technically, I think that by loading a lot of the prompts with RAGs, the “chat-ness” is gone and it’s closer to a “summary task,” and the pressure by <a href="./RLHF" class="internal" data-slug="RLHF">RLHF</a> to make the expression more palatable to the general public is down.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>I feel that the style of writing is a major factor in the speed of comprehension, and I have the impression that a sentence that is easier for me to read is generated when I give my own sentence to GPT to generate, rather than just having GPT generate the sentence for me.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Indeed, it may be that OMNI is easier for me to read because it speaks in my style. In the end, it may be that AI assistants are more productive for each individual if they are personalized to the individual.</li>
+</ul>
+</li>
+</ul>
+<p>7:  <a href="./Thoughts-on-using-a-private-OMNI" class="internal alias" data-slug="Thoughts-on-using-a-private-OMNI">Thoughts on using a private OMNI</a></p>
+<ul>
+<li>9/20 I started to create <a href="./Private-omni" class="internal alias" data-slug="Private-omni">Private omni</a> because I found the omni I was running on /nishio publicly useful enough.
+<ul>
+<li><img src="https://gyazo.com/851a1f7001e9afba1c7447e90751e218/thumb/1000" alt="image"/></li>
+<li>To include items (e.g., books) that cannot be placed in the public domain in the search results.
+<ul>
+<li><a href="./Transverse-Vector-Search-Experiment-Memo-2023-09-20" class="internal alias" data-slug="Transverse-Vector-Search-Experiment-Memo-2023-09-20">Transverse Vector Search Experiment Memo 2023-09-20</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>9/27  <a href="./Thoughts-on-using-a-private-OMNI" class="internal alias" data-slug="Thoughts-on-using-a-private-OMNI">Thoughts on using a private OMNI</a></li>
+<li>Vector search alone is pretty interesting.
+<ul>
+<li>If you imagine “a system in which books pop up and related pages open when you talk in front of a bookshelf,” you will understand how interesting it would be.</li>
+<li>If someone else’s Scrapbox is hit, I read it interestingly, “Mr. X, I didn’t know you wrote about this,” which may lead to subsequent communication.</li>
+<li><a href="./Difference-in-sense-of-public-and-private-omni" class="internal alias" data-slug="Difference-in-sense-of-public-and-private-omni">Difference in sense of public and private omni</a></li>
+<li>I’m still using it differently.
+<ul>
+<li>So you must feel different utility, what is it?</li>
+</ul>
+</li>
+<li>Feelings differ depending on whether the data is primarily <a href="./self-inflicted" class="internal" data-slug="self-inflicted">self-inflicted</a> or not</li>
+<li>When it’s self-derived, it’s like the AI and the human are driving the thinking as a unified entity.
+<ul>
+<li>I feel like I’m accelerating.”</li>
+<li>Feel like you’re “seeing things from a different perspective.”</li>
+</ul>
+</li>
+<li>When derived from others, the feeling of “Oh, so this is what Mr. X said about this subject…”
+<ul>
+<li>I feel like I “found someone else’s statement.”</li>
+</ul>
+</li>
+<li>case
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Should scientists who do basic research operate on their own dime, or should the government invest in them as public infrastructure that is underinvested if left to the market?</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/omni/icon" alt="omni.icon" height="19.5"/>The “anti-fragility <a href="./sic" class="internal" data-slug="sic">sic</a> <a href="./sic" class="internal" data-slug="sic">sic</a>” fragment suggests the idea that government investment should be directed toward nonobjective activities, rather than research in general.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Oh, I don’t know if that’s what you’re talking about, I’ll read it.</li>
+<li>
+<blockquote>
+<p>What the government should be spending money on is non-objective tinkering, not research --- Anti-Fragility <a href="./top" class="internal" data-slug="top">top</a>, p. 375</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Fragments derived from oneself are reconstructed once chewed up inside oneself, so there is a sense of smooth connection. Fragments derived from others still have a hard surface.
+<ul>
+<li>However, it may be possible in the future for LLMs to do the “chewing and reconstructing”, “melting together”, and “smoothly connecting” themselves by fine-tuning with their own origin data.
+<ul>
+<li>10/3  <a href="./Teaching-LLM-to-Knowledge-Brewing-in-Scrapbox" class="internal alias" data-slug="Teaching-LLM-to-Knowledge-Brewing-in-Scrapbox">Teaching LLM to Knowledge Brewing in Scrapbox</a></li>
+<li>The process of chewing is not a knowledge problem but a question of what chunks to divide the input into and what format to use, so I feel fine tuning would be useful.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Fragments of different viewpoints originating from oneself drive <a href="./dialectic-development" class="internal alias" data-slug="dialectic-development">dialectic development</a> more strongly than fragments of different viewpoints originating from others
+<ul>
+<li>Is it because I’m naive enough to pass off things of other people’s origin as “that’s one way of thinking” even if it differs from my current opinion?</li>
+<li>The “it’s normal for others to have different opinions” runaround?</li>
+<li>If your self-derived opinion differs from your current opinion, since you are both you, “Why do we disagree?” Since they are both me, does this strongly trigger the question, “Why do we have different opinions?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Q: By different viewpoints derived from yourself, do you mean that you think you are likely to think?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>A: “What I thought in the past” is closer to</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Q: I still wonder if this is a good idea because I keep “books I’ve read once”. Or is it useful if a phrase hits a vector search for a book I’ve never read?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>A: Once you read a book, you don’t remember every detail.
+<ul>
+<li>I started using vector search and it unearths things like blog posts I wrote 8 years ago, but I wrote them myself and I don’t remember them.</li>
+<li>Even a book you read hits you unexpectedly and you say, “Whoa, did I read that in this book? Oh, it sure does! I didn’t pay much attention to it when I read it before!” It’s like that.</li>
+<li>It is said that a good book should be read many times, but in essence, it is an attribute on the part of the reader to be able to accept what is written.</li>
+<li>In that sense, it would be a great reading experience to come across relevant pages of books related to “what I am interested in now” and read them.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Q: Is the identification of whether the source is from you or someone else based on whether it is a public or private Omni? Or is it based on the content?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>A: In that sense, both are the same now that the private Omni does not contain self-derived data.
+<ul>
+<li>I like the idea of experimenting with mixing the two.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>8:  <a href="./Vector-search-is-an-opportunity-to-cut-out" class="internal alias" data-slug="Vector-search-is-an-opportunity-to-cut-out">Vector search is an opportunity to cut out</a></p>
+<ul>
+<li><img src="https://gyazo.com/3f316a9871d2f7ca09716b09a257d512/thumb/1000" alt="image"/></li>
+<li>9/2  <a href="./Hitting-part-of-a-series-that-has-not-been-carved-out-provides-an-opportunity-for-carving-out" class="internal alias" data-slug="Hitting-part-of-a-series-that-has-not-been-carved-out-provides-an-opportunity-for-carving-out">Hitting part of a series that has not been carved out provides an opportunity for carving out</a></li>
+<li>Countless beneficial events that have occurred
+<ul>
+<li>Diaries, chat logs, lecture materials, transcripts of conversations, and other “time-lined descriptions</li>
+<li>AI searches on a topic and hits that “in the middle of the sequence” and mentions it there.</li>
+<li>The person who sees it cuts out that part of the page and creates a new page.</li>
+<li>They did it with the vector search story.
+<ul>
+<li>
+<blockquote>
+<p>I made an excerpt page with “Social Security Expenses” in the title.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><a href="./Topic-oriented-cutouts-from-time-aligned-descriptions" class="internal alias" data-slug="Topic-oriented-cutouts-from-time-aligned-descriptions">Topic-oriented cutouts from time-aligned descriptions</a></li>
+<li>
+<blockquote>
+<p>The balance between time-based and topic-oriented is an important issue in organizing and interpreting information.時間軸に沿った情報の整理は、情報の流れを追体験するのに適しているが、特定のトピックやテーマ性を探求する際には、トピック指向の新しい構造を作るために時系列の構造を破壊する必要があるかもしれない。一方、トピック指向の整理は、情報を特定のテーマやコンテキストに基づいて整理することを可能にする。これらの間での適切なバランスを見つけることが、情報の効率的な整理と理解を促進する。<img src="https://scrapbox.io/api/pages/nishio/omni/icon" alt="omni.icon" height="19.5"/></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Difficult to do in advance
+- <a href="./The-appropriate-way-to-cut-out-the-need-is-determined-after-the-need-is-identified." class="internal alias" data-slug="The-appropriate-way-to-cut-out-the-need-is-determined-after-the-need-is-identified.">The appropriate way to cut out the need is determined after the need is identified.</a></li>
+<li>Explanation of the concept of “<a href="./cutting" class="internal" data-slug="cutting">cutting</a>” as many people may be unfamiliar with it.
+<ul>
+<li>In the realm of personal knowledge management, there is a belief that a short page on a single topic is preferable
+<ul>
+<li>Example: <a href="./Evergreen-notes-should-be-atomic." class="internal alias" data-slug="Evergreen-notes-should-be-atomic.">Evergreen notes should be atomic.</a>.
+<ul>
+<li>
+<blockquote>
+<p>This makes it easier to form connections across topics and contexts!</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Similar to the [single responsibility principle</li>
+</ul>
+</li>
+<li>So the act of extracting a “single topic” from a “page with multiple topics mixed in” is performed.</li>
+<li>In Scrapbox, this can be done by selecting multiple lines and choosing New Page from the balloon menu.
+<ul>
+<li>This is commonly known as “cutting out” and as the name suggests, “cutting” and creating new pages and linking them to each other
+<ul>
+<li>Whether “cut” or “copy” is better is debatable, and I don’t always think cut is better either, there is value in keeping lecture materials readable through.
+<ul>
+<li>With the minutes being placed in groupware, or something like that, users would be resistant to editing them.</li>
+<li>Scrapbox’s philosophy of “<a href="./Not-a-warehouse-for-dead-text." class="internal alias" data-slug="Not-a-warehouse-for-dead-text.">Not a warehouse for dead text.</a>” would say, “Don’t use it that way.”</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Behavior due to the fact that it is a vector search for fragments engraved in chunks
+<ul>
+<li>I’m chopping at 500 tokens right now, which is about the size of a page in a book.</li>
+<li>With chat logs, it’s not an entire thread or one specific person’s statement, but a unit of “several exchanges”.</li>
+<li>The search returns “the most dense mentions of the topic” in a long conversation.</li>
+<li>A human discards the unwanted parts of that chunk, picks the relevant ones around it, or writes a new opinion inspired by it and creates a new page, which is beneficial.</li>
+</ul>
+</li>
+<li>Scrapbox is designed to afford cutouts, which is beneficial when combined with LLM</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Cutting it out could be a problem because you lose the context of the timeline.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Yes</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>I see. →I see what you mean.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>The author’s philosophy, yes, but I personally think “let’s put everything in” is better.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Might it actually be beneficial to keep a stack of books in it?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>It’s better to put it in this system because it doesn’t speak to you when it’s piled up, right? Well, it would eliminate the opportunity to “kind of pick it up” or something like that, because it would lose its actuality.</li>
+</ul>
+</li>
+</ul>
+<p>9: <a href="./Vector-search-serves-as-a-tool-for-cognitive-resolution" class="internal alias" data-slug="Vector-search-serves-as-a-tool-for-cognitive-resolution">Vector search serves as a tool for cognitive resolution</a>.</p>
+<ul>
+<li><img src="https://gyazo.com/5a0d0f0ccf1c48f4060d7fd62f099afa/thumb/1000" alt="image"/></li>
+<li>from 10/3  <a href="./Teaching-LLM-to-Knowledge-Brewing-in-Scrapbox" class="internal alias" data-slug="Teaching-LLM-to-Knowledge-Brewing-in-Scrapbox">Teaching LLM to Knowledge Brewing in Scrapbox</a>
+<ul>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1709155663342186538" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> from my own research notes <a href="./vector-search-serves-as-a-tool-for-cognitive-resolution" class="internal alias" data-slug="vector-search-serves-as-a-tool-for-cognitive-resolution">vector search serves as a tool for cognitive resolution</a>.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>That is because the “similarities” presented <a href="./Observe-what-you-are-thinking-about-now-from-a-slightly-different-direction" class="internal alias" data-slug="Observe-what-you-are-thinking-about-now-from-a-slightly-different-direction">Observe what you are thinking about now from a slightly different direction</a>… The process of “verbalization” includes “increasing the resolution to describe the world” and “re-describing the understanding gained from higher resolution observations in a way that others can understand”, which are two different things and need to be considered separately.</p>
+</blockquote>
+<ul>
+<li>Observe what you are thinking about now from a slightly different direction” increases <a href="./Cognitive-Resolution" class="internal alias" data-slug="Cognitive-Resolution">Cognitive Resolution</a> by thinking “[Similarity <span>→</span> What is the difference? Resolution</li>
+</ul>
+</li>
+<li><a href="./Similarity-->-What-is-the-difference" class="internal" data-slug="Similarity-->-What-is-the-difference">Similarity <span>→</span> What is the difference?</a></li>
+<li>
+<blockquote>
+<p>Patterns of thought that are beneficial for increasing [Cognitive Resolution</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>When you feel “<a href="./Similar." class="internal" data-slug="Similar.">Similar.</a>” for two concepts, the fact that you did not feel “this is exactly the same thing” indicates that you feel “<a href="./difference" class="internal" data-slug="difference">difference</a>” there.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>The “difference” is not <a href="./verbalizing" class="internal" data-slug="verbalizing">verbalizing</a> at this time.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>“What is the difference?” and then you can <a href="./observe-things-in-more-detail" class="internal alias" data-slug="observe-things-in-more-detail">observe things in more detail</a>.</p>
+</blockquote>
+<ul>
+<li>I’ve also compared ChatGPT and omni in this presentation, as well as public and private omni.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Vector search works as a “mechanism to scrape together fragments of similar topics.
+<ul>
+<li>Similar to the KJ method of “gather fragments that may be related in one place, and then think about what kind of relationship they may have.
+<ul>
+<li><a href="./Small-convergent-moves-and-divergence-from-them" class="internal alias" data-slug="Small-convergent-moves-and-divergence-from-them">Small convergent moves and divergence from them</a>  9/3</li>
+<li>
+<blockquote>
+<p>I thought you looked familiar.</p>
+</blockquote>
+<ul>
+<li><img src="https://gyazo.com/72240a24b23c6402b62a5d4a91580a0a/thumb/1000" alt="image"/>
+<ul>
+<li>from  <a href="./Interference-Effects-of-Ideas" class="internal alias" data-slug="Interference-Effects-of-Ideas">Interference Effects of Ideas</a>
+<ul>
+<li><img src="https://gyazo.com/c49e67265b1af15a9684e8ce8778ea6f/thumb/1000" alt="image"/>
+- <a href="./way-of-thinking" class="internal alias" data-slug="way-of-thinking">way of thinking</a>  p.107</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>There is a difference between “similar topics” and “similar opinions.”
+<ul>
+<li>Different opinions on similar topics are rather close in terms of vector search
+- <a href="./Conflict-is-a-close-relationship" class="internal alias" data-slug="Conflict-is-a-close-relationship">Conflict is a close relationship</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>So you’re substituting a dialogue with yourself with the past for a dialogue with yourself with a different seed: …
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>That’s one thing, but I also think that what we think is influenced by “the situation we were in at the time,” as I look at past articles that came up in a vector search.
+<ul>
+<li>I imagine that even at this moment, writing in this Scrapbox, in another Scrapbox, on a social networking service, or in the company’s groupware produces a slightly different intellectual output than writing in another Scrapbox.</li>
+<li>By bundling them together again</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Mr. Nishio is experiencing self-expansion! For Mr. Nishio, how many times more, 1.3x or 2.4x, does it feel?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Maybe 1.2x - not over 2.0 w</li>
+</ul>
+</li>
+</ul>
+<p>Below are my notes before writing
+The following is a summary of the information entered<img src="https://scrapbox.io/api/pages/nishio/gpt/icon" alt="gpt.icon" height="19.5"/></p>
+<ul>
+<li>7/29: AI writes to Scrapbox, introducing the concept of Scrapbox Agents.</li>
+<li>Early to mid-August: Omoikane study group, discussion on working with AI, writing research notes with AI, evolution of vector search, and topics on handling AI-generated pages.</li>
+<li>Mid to end of August: topics related to updating and search, taking into account multi-head, page memory, and user cognitive load.</li>
+<li>Beginning of September: Explore AI-user interaction, note management, and relevance between different content.</li>
+<li>Mid-September: various topics related to multi-head thinking, the intellectual production techniques of engineers, and working with AI.</li>
+<li>Late September: LLM vs. other models, discussion on human concepts, optimal use of Scrapbox, and feedback on non-public tools.
+Overall, this period seems to focus on Scrapbox and AI integration, particularly the concepts of vector search and multi-heading, and AI thinking and interaction with the user.</li>
+</ul>
+<p>Jul 29 AI writes to Scrapbox
+- <a href="./Agents-living-in-Scrapbox." class="internal alias" data-slug="Agents-living-in-Scrapbox.">Agents living in Scrapbox.</a>
+8/4  <a href="./Omoikane-Study-Group" class="internal alias" data-slug="Omoikane-Study-Group">Omoikane Study Group</a></p>
+<p>8/11 [/omoikane/ consulted GPT4 on how to proceed after this 2023-08-11](<a href="https://scrapbox.io/omoikane/" class="external">https://scrapbox.io/omoikane/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> consulted GPT4 on how to proceed after this 2023-08-11).</p>
+<p>8/12
+- <a href="./Co-operation-with-AI" class="internal alias" data-slug="Co-operation-with-AI">Co-operation with AI</a></p>
+<ul>
+<li>Findings: [/unnamed-project/AI’s pace is so fast that humans can’t keep up](<a href="https://scrapbox.io/unnamed-project/AI's" class="external">https://scrapbox.io/unnamed-project/AI’s<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> pace is so fast that humans can’t keep up)</li>
+</ul>
+<p>8/12  <a href="./AI-writes-research-notes-daily" class="internal alias" data-slug="AI-writes-research-notes-daily">AI writes research notes daily</a>
+8/16  <a href="./Nodal-point-of-thought-on-Scrapbox-and-AI-2023/8/16" class="internal alias" data-slug="Nodal-point-of-thought-on-Scrapbox-and-AI-2023/8/16">16</a>
+8/16 Stacking Vector Search Results
+8/16 <a href="./overwrite-mode" class="internal alias" data-slug="overwrite-mode">overwrite mode</a>.
+8/18 Ignore AI-generated pages from vector search
+8/18  <a href="./A-case-study-of-a-new-combination-with-the-assistance-of-AI" class="internal alias" data-slug="A-case-study-of-a-new-combination-with-the-assistance-of-AI">A case study of a new combination with the assistance of AI</a>
+8/21  <a href="./multi-head" class="internal" data-slug="multi-head">multi-head</a>
+- <a href="./page-memory" class="internal alias" data-slug="page-memory">page memory</a>
+8/23 Ignore used pages from all history</p>
+<p>8/25 Update page limit
+8/26  <a href="./Pinning-effect-on-the-topic" class="internal alias" data-slug="Pinning-effect-on-the-topic">Pinning effect on the topic</a></p>
+<p>8/29 Lift Ignore from Vector Search on AI-generated pages
+8/30  <a href="./Extending-the-Red-Link-with-AI" class="internal alias" data-slug="Extending-the-Red-Link-with-AI">Extending the Red Link with AI</a>
+8/31 Main branch stopped
+8/31  <a href="./Questions-encourage-verbalization,-but-there-are-different-kinds-of-questions." class="internal alias" data-slug="Questions-encourage-verbalization,-but-there-are-different-kinds-of-questions.">Questions encourage verbalization, but there are different kinds of questions.</a>
+8/31  <a href="./Introduction-to-ENCHI" class="internal alias" data-slug="Introduction-to-ENCHI">Introduction to ENCHI</a>
+8/31  <a href="./Clarification-of-AI's-role-is-important." class="internal alias" data-slug="Clarification-of-AI's-role-is-important.">Clarification of AI’s role is important.</a>
+8/31  <a href="./Update-Interval-of-AI-Notes" class="internal alias" data-slug="Update-Interval-of-AI-Notes">Update Interval of AI Notes</a>
+8/31  <a href="./A-case-study-of-SF-prototyping-for-a-junior-high-school-student's-work-experience" class="internal alias" data-slug="A-case-study-of-SF-prototyping-for-a-junior-high-school-student's-work-experience">A case study of SF prototyping for a junior high school student’s work experience</a> <img src="https://scrapbox.io/api/pages/villagepump/mtane0412/icon" alt="/villagepump/mtane0412.icon" height="19.5"/>
+9/1  <a href="./Page-as-a-fluid-process" class="internal alias" data-slug="Page-as-a-fluid-process">Page as a fluid process</a>
+9/1 <a href="./Trade-off-between-speculation-and-development" class="internal alias" data-slug="Trade-off-between-speculation-and-development">Trade-off between speculation and development</a> # distress
+9/1  <a href="./What-is-the-role-of-AI-in-this-project" class="internal alias" data-slug="What-is-the-role-of-AI-in-this-project">What is the role of AI in this project?</a>
+9/1  <a href="./Is-there-an-AI-with-multiple-personalities" class="internal alias" data-slug="Is-there-an-AI-with-multiple-personalities">Is there an AI with multiple personalities?</a>
+9/1  <a href="./Why-not-specify-the-purpose-of-each-page-of-the-AI-note" class="internal alias" data-slug="Why-not-specify-the-purpose-of-each-page-of-the-AI-note">Why not specify the purpose of each page of the AI note?</a>
+9/1 <a href="./It's-buried-at-the-bottom-of-the-AI-page." class="internal alias" data-slug="It's-buried-at-the-bottom-of-the-AI-page.">It’s buried at the bottom of the AI page.</a> # Cause of distress
+9/1  <a href="./Discovering-connections-between-different-content" class="internal alias" data-slug="Discovering-connections-between-different-content">Discovering connections between different content</a>
+9/1  <a href="./Summon-other-people's-AI-to-your-diary" class="internal alias" data-slug="Summon-other-people's-AI-to-your-diary">Summon other people’s AI to your diary</a> <img src="https://scrapbox.io/api/pages/villagepump/inajob/icon" alt="/villagepump/inajob.icon" height="19.5"/>
+9/2  <a href="./Difference-in-skin-feel-between-vector-search-and-RAG" class="internal alias" data-slug="Difference-in-skin-feel-between-vector-search-and-RAG">Difference in skin feel between vector search and RAG</a>
+9/2  <a href="./Hitting-part-of-a-series-that-has-not-been-carved-out-provides-an-opportunity-for-carving-out" class="internal alias" data-slug="Hitting-part-of-a-series-that-has-not-been-carved-out-provides-an-opportunity-for-carving-out">Hitting part of a series that has not been carved out provides an opportunity for carving out</a>  +1
+9/2 <a href="./AI-can't-rest-because-it-will-develop-endless-thoughts." class="internal alias" data-slug="AI-can't-rest-because-it-will-develop-endless-thoughts.">AI can’t rest because it will develop endless thoughts.</a> # Cause of distress
+9/2  <a href="./The-realization-that-you-can-read-the-URLs-of-other-projects" class="internal alias" data-slug="The-realization-that-you-can-read-the-URLs-of-other-projects">The realization that you can read the URLs of other projects</a></p>
+<p>9/2  <a href="./Multi-head-thinking" class="internal alias" data-slug="Multi-head-thinking">Multi-head thinking</a>  epoch
+9/2  <a href="./Pages-that-sometimes-emerge" class="internal alias" data-slug="Pages-that-sometimes-emerge">Pages that sometimes emerge</a></p>
+<p>9/3
+- <a href="./Multi-Head-Thinking&quot;-and-&quot;The-Engineer's-Art-of-Intellectual-Production.&quot;" class="internal alias" data-slug="Multi-Head-Thinking&quot;-and-&quot;The-Engineer's-Art-of-Intellectual-Production.&quot;">Multi-Head Thinking” and “The Engineer’s Art of Intellectual Production.”</a>
+- <a href="./Small-convergent-moves-and-divergence-from-them" class="internal alias" data-slug="Small-convergent-moves-and-divergence-from-them">Small convergent moves and divergence from them</a>
+- <a href="./Write-the-summary-above." class="internal alias" data-slug="Write-the-summary-above.">Write the summary above.</a></p>
+<p>9/4
+- [[<em><strong>BELOW_IS_LESS_INTERESTING</strong></em> to <em><strong>BELOW_IS_AI_GENERATED</strong></em>.]]</p>
+<ul>
+<li><a href="./🌀Multi-head-thinking" class="internal alias" data-slug="🌀Multi-head-thinking">🌀Multi-head thinking</a></li>
+<li><a href="./🌀AI-Dejima" class="internal alias" data-slug="🌀AI-Dejima">🌀AI Dejima</a></li>
+</ul>
+<p><a href="./Iterative-Commenter" class="internal alias" data-slug="Iterative-Commenter">Iterative Commenter</a>
+<a href="./Pioneer-mode" class="internal alias" data-slug="Pioneer-mode">Pioneer mode</a></p>
+<p>~</p>
+<ul>
+<li><a href="./AI-Shaman" class="internal alias" data-slug="AI-Shaman">AI Shaman</a></li>
+</ul>
+<p>9/11
+<a href="./LLM-Course-by-Matsuo-Lab" class="internal alias" data-slug="LLM-Course-by-Matsuo-Lab">LLM Course by Matsuo Lab</a></p>
+<ul>
+<li><a href="./Examples-of-AI-providing-different-perspectives" class="internal alias" data-slug="Examples-of-AI-providing-different-perspectives">Examples of AI providing different perspectives</a></li>
+<li><a href="./Experiments-in-having-AI-interpret-lyrics" class="internal alias" data-slug="Experiments-in-having-AI-interpret-lyrics">Experiments in having AI interpret lyrics</a></li>
+<li><a href="./Difference-between-Recurrent-Notes-and-Iterative-Commenter" class="internal alias" data-slug="Difference-between-Recurrent-Notes-and-Iterative-Commenter">Difference between Recurrent Notes and Iterative Commenter</a></li>
+</ul>
+<p>9/12</p>
+<ul>
+<li><a href="./Letting-AI-twist-and-turn-unclear,-long-term-tasks" class="internal alias" data-slug="Letting-AI-twist-and-turn-unclear,-long-term-tasks">Letting AI twist and turn unclear, long-term tasks</a></li>
+<li><a href="./PDF-to-Scrapbox" class="internal alias" data-slug="PDF-to-Scrapbox">PDF to Scrapbox</a></li>
+</ul>
+<p>9/13</p>
+<ul>
+<li>
+<p><a href="./Business-is-Matching-Seeds-and-Needs" class="internal alias" data-slug="Business-is-Matching-Seeds-and-Needs">Business is Matching Seeds and Needs</a></p>
+<ul>
+<li><a href="Meta-discussion:%20Business%20is%20a%20Matching%20of%20Seeds%20and%20Needs" class="external">Meta-discussion: Business is a Matching of Seeds and Needs<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li><a href="./Market-and-Individual-Needs" class="internal alias" data-slug="Market-and-Individual-Needs">Market and Individual Needs</a></li>
+<li>(9/5)  <a href="./In-Depth-Value-Exploration:-Collaboration-and-Growth" class="internal alias" data-slug="In-Depth-Value-Exploration:-Collaboration-and-Growth">In-Depth Value Exploration: Collaboration and Growth</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="./Letting-AI-develop-pages" class="internal alias" data-slug="Letting-AI-develop-pages">Letting AI develop pages</a></p>
+</li>
+</ul>
+<p>9/15</p>
+<ul>
+<li><a href="./Consideration-of-the-long-sleeping-oracle" class="internal alias" data-slug="Consideration-of-the-long-sleeping-oracle">Consideration of the long sleeping oracle</a></li>
+<li><a href="./Recent-Morning-Routine-2023-09-15" class="internal alias" data-slug="Recent-Morning-Routine-2023-09-15">Recent Morning Routine 2023-09-15</a></li>
+</ul>
+<p>9/16</p>
+<ul>
+<li><a href="./Collect-lyrics-about-life-and-pick-out-your-favorite-phrases." class="internal alias" data-slug="Collect-lyrics-about-life-and-pick-out-your-favorite-phrases.">Collect lyrics about life and pick out your favorite phrases.</a></li>
+</ul>
+<p>9/18</p>
+<ul>
+<li><a href="./&quot;Which-parts-are-AI-and-which-parts-are-human&quot;-The-question-is-&quot;Which-part-is-AI-and-which-part-is-human" class="internal alias" data-slug="&quot;Which-parts-are-AI-and-which-parts-are-human&quot;-The-question-is-&quot;Which-part-is-AI-and-which-part-is-human">“Which parts are AI and which parts are human?” The question is “Which part is AI and which part is human?</a></li>
+</ul>
+<p>9/20
+Integration in private project</p>
+<ul>
+<li><a href="./Transverse-Vector-Search-Experiment-Memo-2023-09-20" class="internal alias" data-slug="Transverse-Vector-Search-Experiment-Memo-2023-09-20">Transverse Vector Search Experiment Memo 2023-09-20</a></li>
+</ul>
+<p>2023/9/22</p>
+<ul>
+<li><a href="./Have-them-verbalize-the-difference-between-what-is-similar-to-LLM" class="internal alias" data-slug="Have-them-verbalize-the-difference-between-what-is-similar-to-LLM">Have them verbalize the difference between what is similar to LLM</a></li>
+<li><a href="./(Tentative)-Operation-not-yet-named" class="internal alias" data-slug="(Tentative)-Operation-not-yet-named">(Tentative) Operation not yet named</a></li>
+<li><a href="./Restructuring-Thinking-and-Communication-with-Scrapbox" class="internal alias" data-slug="Restructuring-Thinking-and-Communication-with-Scrapbox">Restructuring Thinking and Communication with Scrapbox</a></li>
+</ul>
+<p>2023-09-24</p>
+<ul>
+<li><a href="./The-concept-of-&quot;human&quot;-is-vague." class="internal alias" data-slug="The-concept-of-&quot;human&quot;-is-vague.">The concept of “human” is vague.</a></li>
+</ul>
+<p>2023-09-29</p>
+<ul>
+<li>
+<p><a href="./Thoughts-on-using-a-private-OMNI" class="internal alias" data-slug="Thoughts-on-using-a-private-OMNI">Thoughts on using a private OMNI</a></p>
+</li>
+<li>
+<p><a href="./Teaching-LLM-to-Knowledge-Brewing-in-Scrapbox" class="internal alias" data-slug="Teaching-LLM-to-Knowledge-Brewing-in-Scrapbox">Teaching LLM to Knowledge Brewing in Scrapbox</a></p>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/LLM%E3%81%AB%E3%82%88%E3%82%8B%E7%9F%A5%E7%9A%84%E7%94%9F%E7%94%A3%E6%80%A7%E5%90%91%E4%B8%8A%E5%8B%89%E5%BC%B7%E4%BC%9A" class="external">/nishio/LLMによる知的生産性向上勉強会<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Diary-2023-09-29" class="internal">Diary 2023-09-29</a></li><li><a href="./Diary-2023-10-05" class="internal">Diary 2023-10-05</a></li><li><a href="./Diary-2023-10-06" class="internal">Diary 2023-10-06</a></li><li><a href="./Difference-in-skin-feel-between-vector-search-and-RAG" class="internal">Difference in skin feel between vector search and RAG</a></li><li><a href="./Thought-acceleration-effect-of-self-derived-LLMs" class="internal">Thought acceleration effect of self-derived LLMs</a></li><li><a href="./Weekly-journal-2023-09-02~2023-09-10" class="internal">Weekly journal 2023-09-02~2023-09-10</a></li><li><a href="./Weekly-journal-2023-10-07~2023-10-15" class="internal">Weekly journal 2023-10-07~2023-10-15</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

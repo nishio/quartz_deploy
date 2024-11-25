@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Fifth Algorithm Practical Skills Test</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Fifth Algorithm Practical Skills Test"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Fifth Algorithm Practical Skills Test"/><meta name="twitter:description" content="PAST5 PAST202012 Algorithm Practical Skill Test Fifth Algorithm Practical Skills Test - AtCoder It was 70 points, intermediate level. The first time I took the test, the third time, and the following time, the fourth time, I was in the intermediate level, and I was hoping to get to the advanced level this time PAST Past Question Practice 202012, but my score was rather low."/><meta property="og:description" content="PAST5 PAST202012 Algorithm Practical Skill Test Fifth Algorithm Practical Skills Test - AtCoder It was 70 points, intermediate level. The first time I took the test, the third time, and the following time, the fourth time, I was in the intermediate level, and I was hoping to get to the advanced level this time PAST Past Question Practice 202012, but my score was rather low."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="PAST5 PAST202012 Algorithm Practical Skill Test Fifth Algorithm Practical Skills Test - AtCoder It was 70 points, intermediate level. The first time I took the test, the third time, and the following time, the fourth time, I was in the intermediate level, and I was hoping to get to the advanced level this time PAST Past Question Practice 202012, but my score was rather low."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Fifth-Algorithm-Practical-Skills-Test"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Fifth-Algorithm-Practical-Skills-Test"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="PAST5 PAST202012 Algorithm Practical Skill Test Fifth Algorithm Practical Skills Test - AtCoder It was 70 points, intermediate level. The first time I took the test, the third time, and the following time, the fourth time, I was in the intermediate level, and I was hoping to get to the advanced level this time PAST Past Question Practice 202012, but my score was rather low."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Fifth-Algorithm-Practical-Skills-Test"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Fifth Algorithm Practical Skills Test</a></div></nav><h1 class="article-title">Fifth Algorithm Practical Skills Test</h1><p show-comma="true" class="content-meta"><span>Jan 05, 2021</span><span>8 min read</span></p></div></div><article class="popover-hint"><p><a href="./PAST5" class="internal" data-slug="PAST5">PAST5</a> <a href="./PAST202012" class="internal" data-slug="PAST202012">PAST202012</a>  <a href="./Algorithm-Practical-Skill-Test" class="internal alias" data-slug="Algorithm-Practical-Skill-Test">Algorithm Practical Skill Test</a>
+<a href="https://atcoder.jp/contests/past202012-open" class="external">Fifth Algorithm Practical Skills Test - AtCoder<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>It was 70 points, intermediate level.
+The first time I took the test, the third time, and the following time, the fourth time, I was in the intermediate level, and I was hoping to get to the advanced level this time <a href="./PAST-Past-Question-Practice-202012" class="internal alias" data-slug="PAST-Past-Question-Practice-202012">PAST Past Question Practice 202012</a>, but my score was rather low.
+<img src="https://gyazo.com/85686f0f9aea6837a7ee2e7a46ef64d5/thumb/1000" alt="image"/></p>
+<p>I’ll write down my thoughts during the exam. I can’t check the question texts and explanations because they have not been published as past exams yet. Detailed solutions to individual questions will be written separately after they are available.
+Past questions have been released and will be done in order.</p>
+<ul>
+<li>Explanation of E~.
+<ul>
+<li><a href="./PAST5E" class="internal" data-slug="PAST5E">PAST5E</a></li>
+<li><a href="./PAST5F" class="internal" data-slug="PAST5F">PAST5F</a></li>
+<li><a href="./PAST5G" class="internal" data-slug="PAST5G">PAST5G</a></li>
+<li><a href="./PAST5H" class="internal" data-slug="PAST5H">PAST5H</a></li>
+<li><a href="./PAST5I" class="internal" data-slug="PAST5I">PAST5I</a></li>
+<li><a href="./PAST5J" class="internal" data-slug="PAST5J">PAST5J</a> AC</li>
+<li><a href="./PAST5K" class="internal" data-slug="PAST5K">PAST5K</a></li>
+</ul>
+</li>
+<li><a href="./-Confirm-the-cause-of-TLE-in-H" class="internal alias" data-slug="-Confirm-the-cause-of-TLE-in-H">-Confirm the cause of TLE in H</a>.</li>
+<li><a href="./-Not-seeing-J's-commentary,-I'll-rewrite-it-when-I'm-done" class="internal alias" data-slug="-Not-seeing-J's-commentary,-I'll-rewrite-it-when-I'm-done">-Not seeing J’s commentary, I’ll rewrite it when I’m done</a>.</li>
+<li>Confirmation of LMNO’s commentary
+<ul>
+<li><a href="./PAST5L" class="internal" data-slug="PAST5L">PAST5L</a></li>
+<li><a href="./PAST5M" class="internal" data-slug="PAST5M">PAST5M</a></li>
+<li><a href="./PAST5N" class="internal" data-slug="PAST5N">PAST5N</a></li>
+<li><a href="./PAST5O" class="internal" data-slug="PAST5O">PAST5O</a></li>
+</ul>
+</li>
+</ul>
+<p>A〜D</p>
+<ul>
+<li>I solved it nonchalantly, without making any particular notes.</li>
+</ul>
+<p><a href="https://atcoder.jp/contests/past202012-open/tasks/past202012_e" class="external">E - stamp<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<img src="https://gyazo.com/96531e5dba571b147d99cf54cec7253f/thumb/1000" alt="image"/></p>
+<ul>
+<li>Just do a simple search for all of them.</li>
+<li>To search the whole area without overflowing, <a href="./sentry" class="internal" data-slug="sentry">sentry</a> is added to the non-stamped side to cover the width of the stamp.</li>
+<li>The code itself to attach the guard was already written.
+- <a href="./Putting-a-guard-on-when-loading-a-map" class="internal alias" data-slug="Putting-a-guard-on-when-loading-a-map">Putting a guard on when loading a map</a></li>
+<li>I didn’t expect rotation, so I wrote a new one this time.</li>
+<li>The length and width are exchanged when rotating, only the side of the stamp should be exchanged, but I got it wrong and WA’d.</li>
+</ul>
+<p><a href="https://atcoder.jp/contests/past202012-open/tasks/past202012_f" class="external">F - A Touch of Fiction<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<img src="https://gyazo.com/82689f73ea9cacb95a4584a9b4618956/thumb/1000" alt="image"/></p>
+<ul>
+<li>2 ** 14 == 16384</li>
+<li>14 * 13 * 12 == 364</li>
+<li>This is a good size to explore all</li>
+<li>WA by misunderstanding the problem conditions.
+<ul>
+<li>Not “the number of chemicals already mixed” at a touch of a button.</li>
+<li>Nor is it “the number of rules in a state of flux.”</li>
+<li>Size of the set of “chemicals that have not yet been added to the set of rules of a state of flux”.</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://atcoder.jp/contests/past202012-open/tasks/past202012_g" class="external">G - Snakes<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<img src="https://gyazo.com/3790c397c786b793094fb8a7167295bd/thumb/1000" alt="image"/></p>
+<ul>
+<li>Create a graph and DFS a “path through all vertices” starting at each vertex.</li>
+<li>When the length is 1, it is the corner case that is not graphed</li>
+</ul>
+<p>So far, it has been one hour and 25 minutes. Here I decided to look through all the remaining questions first. The following “Initial Discussion” is it.</p>
+<p><a href="https://atcoder.jp/contests/past202012-open/tasks/past202012_h" class="external">H - Conveyor<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<img src="https://gyazo.com/f0e4b1e3e154ed74f38484fa80a6fd5a/thumb/1000" alt="image"/></p>
+<ul>
+<li>Initial Considerations
+<ul>
+<li>Determine if it can be moved</li>
+<li>Construct a graph and DFS “can you reach the goal” from each starting point</li>
+<li>10^6 vertices, okay?</li>
+<li>Many starts, one goal.
+<ul>
+<li>→ <a href="./Make-the-Goal-the-Start" class="internal alias" data-slug="Make-the-Goal-the-Start">Make the Goal the Start</a></li>
+</ul>
+</li>
+<li>The graph is made with inverted edges, and the search is made for reachable vertices with the goal as the starting point.
+<ul>
+<li>Each vertex has only 4 edges at most, so O(N) will do.</li>
+</ul>
+</li>
+<li>Consideration complete</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://atcoder.jp/contests/past202012-open/tasks/past202012_i" class="external">I - Evacuation Plan<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<img src="https://gyazo.com/01513f650068f7946cc04b839444666a/thumb/1000" alt="image"/></p>
+<ul>
+<li>Initial Considerations
+<ul>
+<li>You can only move from higher elevations to lower elevations.
+<ul>
+<li>directed graph</li>
+</ul>
+</li>
+<li>Lots of goals.
+<ul>
+<li>Bundling around cost 0?
+- <a href="./One-Goal." class="internal alias" data-slug="One-Goal.">One Goal.</a></li>
+<li>One to all <a href="./Dijkstra-method" class="internal alias" data-slug="Dijkstra-method">Dijkstra method</a> from each goal?</li>
+<li>Let’s do the latter, and if not, let’s do the former.</li>
+</ul>
+</li>
+<li>Consideration complete</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://atcoder.jp/contests/past202012-open/tasks/past202012_j" class="external">J - long long string<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<img src="https://gyazo.com/a30032ca3d2b05fc4156aed0ed48365c/thumb/1000" alt="image"/></p>
+<ul>
+<li>Initial Considerations
+<ul>
+<li>No naive output.</li>
+<li>If we pre-calculate the size of the block for each iteration, we can solve the problem by gradually taking the value of the query as a remainder.</li>
+<li>Consideration complete</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://atcoder.jp/contests/past202012-open/tasks/past202012_k" class="external">K - Targeted<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<img src="https://gyazo.com/6479e86b1c951eb67508032cd297072f/thumb/1000" alt="image"/></p>
+<ul>
+<li>Initial Considerations
+<ul>
+<li id="16">The remaining target is 2</li>
+<li>bit DP] since the domain of definition is a subset of the set</li>
+<li>Use expected value as value range <a href="./Expected-DP" class="internal alias" data-slug="Expected-DP">Expected DP</a>.
+<ul>
+<li>The same terms appear on the left and right side of the preceding paragraphs and need to be sorted out and eliminated.</li>
+</ul>
+</li>
+<li>Consideration complete</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://atcoder.jp/contests/past202012-open/tasks/past202012_l" class="external">L - T erase<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<img src="https://gyazo.com/9d3a4c94bb870908ddb459d35f181fb0/thumb/1000" alt="image"/></p>
+<ul>
+<li>Initial Considerations
+<ul>
+<li>There are multiple points of appearance, and the best result may or may not be achieved depending on which one is prioritized for elimination.</li>
+<li><img src="https://gyazo.com/b7c90ebc80943d64f71cf6ecc519c5df/thumb/1000" alt="image"/></li>
+<li>Hmmm, is there some kind of greedy way of deciding?</li>
+<li>If there is no overlap, does it make a difference which way you do it from?
+<ul>
+<li>Still, 33 overlaps at worst; you can’t do 33 factorials.</li>
+</ul>
+</li>
+<li>I wonder if a non-decisional automaton could handle this in a nice way.</li>
+<li>hold (e.g. telephone button)</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://atcoder.jp/contests/past202012-open/tasks/past202012_m" class="external">M - Shipping Bars<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<img src="https://gyazo.com/d4601d3337d3e2a1f3a3e17ce6c0b8da/thumb/1000" alt="image"/></p>
+<ul>
+<li>Initial Considerations
+<ul>
+<li>2^N not to cut, because N is 10^5 or bigger.</li>
+<li>Will it be a 2N DP?
+<ul>
+<li>(after neg. verb stem) seeming impossible</li>
+</ul>
+</li>
+<li>How about a style that ticks once for maximum length and then moves forward one tick at a time?
+<ul>
+<li>Shakitori-legal approach, searching only for likely solutions</li>
+<li>I wonder if the lower limit will gradually increase, and if the search space will become rather small because it is not necessary to search for the area that becomes smaller than the lower limit…</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://atcoder.jp/contests/past202012-open/tasks/past202012_n" class="external">N - Travel Agent<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<img src="https://gyazo.com/c0b27c17755f5bd753462bf179457248/thumb/1000" alt="image"/></p>
+<ul>
+<li>Initial Considerations
+<ul>
+<li>The problem of finding the reachable range by assuming that the edge of the bus has an upper and lower age limit and that the edge exists only when the given age falls within that range.</li>
+<li>Make the age axis a time axis
+- <a href="./Make-one-of-the-two-dimensions-a-time-axis." class="internal alias" data-slug="Make-one-of-the-two-dimensions-a-time-axis.">Make one of the two dimensions a time axis.</a>
+<ul>
+<li>Connect at the lower limit and disconnect at the upper limit.</li>
+<li>Queries are read ahead, mixed and sorted.</li>
+</ul>
+</li>
+<li>In <a href="./PAST2N" class="internal" data-slug="PAST2N">PAST2N</a> it was Range Add, but not this time, what to do?
+<ul>
+<li>We just need to get the right and left edges of the connected range fast.</li>
+<li>We can have a phenic tree with the right end and a phenic tree with the left end.</li>
+<li>Given a position, finding the nearest left edge to the left of it is a binary search of logarithmic order</li>
+<li>Find the nearest right edge to the right of the left edge you found, and you’ll get the range.</li>
+<li>If the position given in the query is in that range, that’s the answer.</li>
+</ul>
+</li>
+<li>Consideration complete</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://atcoder.jp/contests/past202012-open/tasks/past202012_o" class="external">O - Notice<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<img src="https://gyazo.com/9d380fa7f1c141460e331b7a7e7f8144/thumb/1000" alt="image"/></p>
+<ul>
+<li>Initial Considerations
+<ul>
+<li>Worst case scenario, whether it’s a push or a pull, it’s 10^5, so 10^5 queries will break the bank.</li>
+<li>(Tip: In the case of “push”, which changes the recipient’s value when a notification occurs, it is not allowed if 10^5 people with 10^5 friends send the notification 10^5 times. Conversely, in the case of a “pull”, where you go to check who among your friends sent the notification when you confirm the notification, it is not allowed if a person with many friends confirms the notification all the time).</li>
+<li>Delay only the processing of people whose friends are on route N or higher.
+<ul>
+<li>These people are high route N people.</li>
+<li>Only pull these people x when confirming notification</li>
+<li>Total number of notifications generated by x with x</li>
+<li>The total number of routes y has received from x. Highly route n</li>
+<li>Subtract these two and you get the number of new notifications from x</li>
+</ul>
+</li>
+<li>Consideration complete</li>
+</ul>
+</li>
+</ul>
+<p>After a full consideration, there are three hours left.</p>
+<ul>
+<li>I don’t understand L at all.</li>
+<li>I think that M, O can be solved, but I think it will be “a pattern that looks solvable at first glance, but when solved, an oversight is discovered”.
+<ul>
+<li>Unlike contests, you don’t get a higher rate if you solve harder problems first (rather, your score is lower).</li>
+</ul>
+</li>
+<li>Let’s do it with the policy of solving the puzzles in order from the beginning and then looking back at L again.</li>
+</ul>
+<p>What happened next</p>
+<ul>
+<li>H, submitted in 18 minutes, WA, corrected, but it took 3 TLEs and 35 minutes to resolve the issue, so we put it on hold and moved on.</li>
+<li>I, Dijkstra, AC in 9 minutes.</li>
+<li>J, I’m confused when I should have been calm and implemented.
+<ul>
+<li>After solving one misalignment bug, the sample finally went through after 56 minutes.</li>
+<li>However, TLE</li>
+<li>I used to cut out the string that would be the unit of repetition, but I figure I can just wait and see where it starts in the original string.</li>
+<li>Plus, we’ll use 16 minutes and have another TLE, or even an MLE for that matter.</li>
+<li>What does that mean?</li>
+<li>For example, when there are a lot of 9s going on, the “size of the repeating block” becomes a very large number, the problem is that I was not aware of this and just did it.</li>
+<li>In real time, I thought, “Does that mean the policy was totally wrong?” And I gave up.
+<ul>
+<li>When I woke up after a night’s sleep, I realized that the number passed as a query is limited to less than 10^15, so I can terminate the string parsing process when it exceeds that number.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>K, expected DP, AC in 19 min.</li>
+<li>At this point, with 45 minutes left, we’re in no condition to challenge L, which has no policy in place, let’s resolve H, which is in TLE.</li>
+<li>H, used 30 minutes, TLE 3 more times, and finally AC with 15 minutes left.
+<ul>
+<li>Rewritten to a style that does not construct graphs explicitly.</li>
+<li>I made a version of DFS that does not call recursively.</li>
+</ul>
+</li>
+</ul>
+<p>Organized by time</p>
+<ul>
+<li>J is terrible, using 72 minutes and not scoring.</li>
+<li>I spent 80 minutes and finally AC’d H. It’s not good.</li>
+<li>The drop off is drastic compared to the I is 9 minutes and the K is 19 minutes.</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from [/nishio/第五回 アルゴリズム実技検定](<a href="https://scrapbox.io/nishio/%E7%AC%AC%E4%BA%94%E5%9B%9E" class="external">https://scrapbox.io/nishio/第五回<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> アルゴリズム実技検定) using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Algorithm-Practical-Skill-Test" class="internal">Algorithm Practical Skill Test</a></li><li><a href="./My-way-of-learning-atcoder-(~blue)" class="internal">My way of learning atcoder (~blue)</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

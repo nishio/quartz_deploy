@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Kozaneba Development Diary 2021-08-27</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Kozaneba Development Diary 2021-08-27"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Kozaneba Development Diary 2021-08-27"/><meta name="twitter:description" content="prev Kozaneba Development Diary 2021-08-26 I think it would be easier to introduce an arrow layer in the forefront. Braces are good for object layers. Better not to split into separate objects."/><meta property="og:description" content="prev Kozaneba Development Diary 2021-08-26 I think it would be easier to introduce an arrow layer in the forefront. Braces are good for object layers. Better not to split into separate objects."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="prev Kozaneba Development Diary 2021-08-26 I think it would be easier to introduce an arrow layer in the forefront. Braces are good for object layers. Better not to split into separate objects."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Kozaneba-Development-Diary-2021-08-27"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Kozaneba-Development-Diary-2021-08-27"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="prev Kozaneba Development Diary 2021-08-26 I think it would be easier to introduce an arrow layer in the forefront. Braces are good for object layers. Better not to split into separate objects."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Kozaneba-Development-Diary-2021-08-27"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Kozaneba Development Diary 2021-08-27</a></div></nav><h1 class="article-title">Kozaneba Development Diary 2021-08-27</h1><p show-comma="true" class="content-meta"><span>Jan 25, 2022</span><span>6 min read</span></p></div></div><article class="popover-hint"><p>prev  <a href="./Kozaneba-Development-Diary-2021-08-26" class="internal alias" data-slug="Kozaneba-Development-Diary-2021-08-26">Kozaneba Development Diary 2021-08-26</a></p>
+<p>I think it would be easier to introduce an arrow layer in the forefront.
+Braces are good for object layers.</p>
+<ul>
+<li>Better not to split into separate objects.
+<ul>
+<li>Custom Styles.</li>
+</ul>
+</li>
+</ul>
+<p>Relationships between multiple boxes</p>
+<ul>
+<li>It can be easily drawn once the location of the box is determined.
+What if you can draw an arrow against an arrow?</li>
+<li>Circular references can occur.</li>
+</ul>
+<p>Groups are also “relationships among multiple boxes” in</p>
+<ul>
+<li>The bounding box of the child element is calculated first to determine its own position.</li>
+</ul>
+<p>I was thinking about the arrows, but it’s not too difficult if you completely make the arrows a layer to be written afterwards.
+in that case</p>
+<ul>
+<li>
+<p>You can’t put a kozane on top of an arrow because the arrow is always the frontmost surface.</p>
+</li>
+<li>
+<p>Arrows cannot be drawn against arrows because arrows are a different kind of object from “boxes” such as kozane and groups
+become</p>
+</li>
+<li>
+<p><a href="./Dangling-is-not-grouping." class="internal alias" data-slug="Dangling-is-not-grouping.">Dangling is not grouping.</a></p>
+</li>
+<li>
+<p>Perhaps I’m unconsciously choosing the left way because I’m using the Kozane method from the state of paper stickies with no “grouping function” etc.</p>
+</li>
+<li>
+<p>On the other hand, as a new feature, “Now you can group stickies in a way that paper stickies couldn’t!” will appeal to people who started using it after seeing it, so they will unconsciously choose the right way to do it.</p>
+</li>
+<li>
+<p>You can “make it bigger,” which was not available on paper stickies!</p>
+</li>
+<li>
+<p>You can use a large space inexhaustibly and arrange them in a way that was difficult with paper stickies!</p>
+</li>
+</ul>
+<hr/>
+<p><img src="https://gyazo.com/872f3897132974239c3ad539a6a8df69/thumb/1000" alt="image"/></p>
+<ul>
+<li>Hmmm, this looks like it could be put back together.</li>
+<li>But if you give the link to someone else, and then put it back into a mode where people who know the link can edit it, of course they can.</li>
+<li>Is that okay with you?</li>
+</ul>
+<p>Google Spreadsheet</p>
+<ul>
+<li><img src="https://gyazo.com/329041b89912f417de2e5ddc1de21cff/thumb/1000" alt="image"/></li>
+<li><img src="https://gyazo.com/5aadc03eb256d471606454a1f1488b34/thumb/1000" alt="image"/></li>
+<li><img src="https://gyazo.com/492cf77957839cad1f61d9c9b36b56a4/thumb/1000" alt="image"/></li>
+<li>The link for view is the same as the link for edit.</li>
+<li>The screen I opened at the time of the view is still in readonly, but when I reopen it, I can write on it.</li>
+</ul>
+<p>Hmmm, so it’s the same shape I was trying to create, is that right?</p>
+<ul>
+<li>I thought it would be better to have separate view and write links and be able to turn them on and off separately, but I guess it works fine in most cases without such a feature.</li>
+</ul>
+<p>Cases where the current design causes problems</p>
+<ul>
+<li>After publishing a link to a view, there is no way to add a writer if you want to.
+<ul>
+<li>Reverting back to EDIT could result in unexpected people being promoted to WRITER.
+<ul>
+<li>This is because the specification says that “the person who edits is promoted to writer and has write permission even after being returned to view.</li>
+</ul>
+</li>
+<li>In the first place, it is unlikely that you will need to add a WRITER since it is basically intended for personal use.</li>
+<li>I’d like to have “receive the UID and add it” or “issue a separate invite link to add it to writer while in view mode”.
+<ul>
+<li>Just the latter.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/632a00c807872d619df58dbddc3164ab/thumb/1000" alt="image"/>
+<img src="https://gyazo.com/aa259e8b528230a5a37dc1c60b9b85bd/thumb/1000" alt="image"/></p>
+<p>Lead-only sharing is now available! You can share Kozaneba Kanban directly instead of images!</p>
+<ul>
+<li>
+<p><a href="https://kozaneba.netlify.app/#view=23YyYfzS1dTx05tugVW7" class="external">https://kozaneba.netlify.app/#view=23YyYfzS1dTx05tugVW7<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+<li>
+<p>There is still no function to show the image when it is posted to Twitter or other sites.</p>
+</li>
+<li>
+<p><img src="https://gyazo.com/8b4d5297c5a6632c22596fe5b0a2dc57/thumb/1000" alt="image"/></p>
+</li>
+<li>
+<p>With create and delete copies, if you accidentally share something you shouldn’t show, you can just copy it and delete the original one. Oh, you didn’t create an error process for when something you tried to open is not there.</p>
+</li>
+<li>
+<p>Oh, and I haven’t finished supporting touch events yet, so anyone who opens the link on a smartphone can’t do anything.</p>
+<ul>
+<li>In the future, I would like to see a flow of “add handwritten kozane”, “handwrite in the opened dialog”, and “become Gyazo kozane”.</li>
+</ul>
+</li>
+</ul>
+<p>To the front of the group when opened
+Even when 4 cards are added, the small group margin makes it difficult to select them.
+GyazoGIF Kozane</p>
+<p>There is no flow line for people who have received the lead-only share to go to the home page to view the tutorial.</p>
+<ul>
+<li>If you click on the name of the service, you will be taken to the top page or
+So when I open a read-only share on my other device, I can’t edit it because I’m not logged in, but I can’t log in because it’s not editable and I don’t get the cloud save menu either.</li>
+</ul>
+<p>I use the split menu a lot, but I almost always Replace.</p>
+<ul>
+<li>If it is possible to clone a clicked Kozane, there is no need to use “Add” and “Replace”.
+<ul>
+<li>split, add = clone, edit</li>
+<li>split, replace = edit</li>
+</ul>
+</li>
+</ul>
+<p>Huh? I see, the reason I had trouble using images from Gyazo in Regroup was because it was in Canvas, and if I simply paste it as an img, there’s no problem?</p>
+<ul>
+<li>If you want to make Scrapbox Kozane, you need Gyazo loading function after all</li>
+<li>The DOM is different in this area, and I think it’s making the problem too difficult to do with user extensions.</li>
+</ul>
+<p>ts</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="typescript" data-theme="github-light github-dark"><code data-language="typescript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> const</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> id_to_dom</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">id</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> string</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">offset</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> TOffset</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> item</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> get_item</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">getGlobal</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(), id);</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (item.type </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">===</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;kozane&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) {</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">    return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> &lt;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">Kozane</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> value</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">={</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">item</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">} </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">offset</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">={</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">offset</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">} </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">key</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">={</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">id</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">} </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">data</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">-</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">testid</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">={</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">id</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">} />;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">else</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (item.type </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">===</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;group&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) {</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">    return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> &lt;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">Group</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> value</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">={</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">item</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">} </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">offset</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">={</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">offset</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">} </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">key</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">={</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">id</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">} </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">data</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">-</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">testid</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">={</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">id</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">} />;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  }</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  return</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">};</span></span></code></pre></figure>
+<p>It’s like adding Gyazo and Scrapbox here.</p>
+<p><img src="https://gyazo.com/437c10a3d0bc8bdfce44f8d7ef52690a/thumb/1000" alt="image"/>
+<img src="https://gyazo.com/31a31d26e323a6164445e587a148ac3d/thumb/1000" alt="image"/>
+It’s a choice between looking like Scrapbox (copying the CSS) and keeping it to the bare minimum of what you understand.</p>
+<ul>
+<li>Rather than making it look like a complete system, it would be better to keep it to a minimum that serves the intended function, and if users want to tweak the look, they can do so with extensions.</li>
+<li>In general, when you go with a perfect match to the original, it’s not even a “familiar look” for people who are tweaking with UserCSS.</li>
+<li>I guess I’ll just have to go with the minimum implementation that will serve the function…</li>
+</ul>
+<p><img src="https://gyazo.com/9de8d92b2785201afdb555801d147cb2/thumb/1000" alt="image"/></p>
+<ul>
+<li>Maybe it’s just about 2 or 3 times the size of this one…</li>
+<li><img src="https://gyazo.com/8d12f6d2292a06af6804b97fddca28d7/thumb/1000" alt="image"/></li>
+<li>(of) good appearance</li>
+</ul>
+<p>It looks done, but…</p>
+<ul>
+<li>
+<p>Cannot drag and drop</p>
+</li>
+<li>
+<p>Cannot select a range</p>
+</li>
+<li>
+<p>Bounding box calculation is not yet implemented, so space key kills it.</p>
+</li>
+<li>
+<p><a href="./Manage-Kozaneba-development-in-Kozaneba" class="internal alias" data-slug="Manage-Kozaneba-development-in-Kozaneba">Manage Kozaneba development in Kozaneba</a></p>
+</li>
+<li>
+<p><a href="./Kozaneba-Development-Diary-2021-08-28" class="internal alias" data-slug="Kozaneba-Development-Diary-2021-08-28">Kozaneba Development Diary 2021-08-28</a></p>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/Kozaneba%E9%96%8B%E7%99%BA%E6%97%A5%E8%A8%982021-08-27" class="external">/nishio/Kozaneba開発日記2021-08-27<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Kozaneba-Development-Diary-2021-08-26" class="internal">Kozaneba Development Diary 2021-08-26</a></li><li><a href="./Kozaneba-Development-Diary-2021-08-28" class="internal">Kozaneba Development Diary 2021-08-28</a></li><li><a href="./pKozaneba" class="internal">pKozaneba</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

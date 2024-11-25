@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Quadratic Voting and Plural Management Study Group</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Quadratic Voting and Plural Management Study Group"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Quadratic Voting and Plural Management Study Group"/><meta name="twitter:description" content="[Quadratic Voting] and [Plural Management Protocol] Study Session 2024-03-15 Cybozu Labs Study Session In the last Plural Management Study Session, I read a freshly written paper ..."/><meta property="og:description" content="[Quadratic Voting] and [Plural Management Protocol] Study Session 2024-03-15 Cybozu Labs Study Session In the last Plural Management Study Session, I read a freshly written paper ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="[Quadratic Voting] and [Plural Management Protocol] Study Session 2024-03-15 Cybozu Labs Study Session In the last Plural Management Study Session, I read a freshly written paper ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Quadratic-Voting-and-Plural-Management-Study-Group"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Quadratic-Voting-and-Plural-Management-Study-Group"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="[Quadratic Voting] and [Plural Management Protocol] Study Session 2024-03-15 Cybozu Labs Study Session In the last Plural Management Study Session, I read a freshly written paper ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Quadratic-Voting-and-Plural-Management-Study-Group"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Quadratic Voting and Plural Management Study Group</a></div></nav><h1 class="article-title">Quadratic Voting and Plural Management Study Group</h1><p show-comma="true" class="content-meta"><span>Mar 26, 2024</span><span>26 min read</span></p></div></div><article class="popover-hint"><p><a href="./QV" class="internal alias" data-slug="QV">[Quadratic Voting]</a> and <a href="./PMP" class="internal alias" data-slug="PMP">[Plural Management Protocol]</a> Study Session</p>
+<ul>
+<li>2024-03-15  <a href="./Cybozu-Labs-Study-Session" class="internal alias" data-slug="Cybozu-Labs-Study-Session">Cybozu Labs Study Session</a></li>
+<li>In the last <a href="./Plural-Management-Study-Session" class="internal alias" data-slug="Plural-Management-Study-Session">Plural Management Study Session</a>, I read a freshly written paper on “Plural Management
+<ul>
+<li>
+<blockquote>
+<p>South, Tobin and Erichsen, Leon and Jain, Shrey and Maymounkov, Petar and Moore, Scott and Weyl, Eric Glen, <a href="./Plural-Management" class="internal alias" data-slug="Plural-Management">Plural Management</a> (January 9, 2024)</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>As a result, I realized I should start with <a href="./Quadratic-Voting" class="internal alias" data-slug="Quadratic-Voting">Quadratic Voting</a>.</li>
+<li>The following two stories are included in this issue
+<ul>
+<li><a href="./Quadratic-Voting" class="internal alias" data-slug="Quadratic-Voting">Quadratic Voting</a>
+<ul>
+<li>
+<blockquote>
+<p><a href="./Quadratic-Voting:-How-Mechanism-Design-Can-Radicalize-Democracy" class="internal alias" data-slug="Quadratic-Voting:-How-Mechanism-Design-Can-Radicalize-Democracy">Quadratic Voting: How Mechanism Design Can Radicalize Democracy</a></p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Steven Lalley, E. Glen Weyl (2012~2018)</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><a href="./Quadratic-Funding" class="internal alias" data-slug="Quadratic-Funding">Quadratic Funding</a>
+<ul>
+<li>
+<blockquote>
+<p><a href="./Liberal-Radicalism:-A-Flexible-Design-For-Philanthropic-Matching-Funds" class="internal alias" data-slug="Liberal-Radicalism:-A-Flexible-Design-For-Philanthropic-Matching-Funds">Liberal Radicalism: A Flexible Design For Philanthropic Matching Funds</a></p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Buterin, Vitalik and Hitzig, Zoë and Weyl, Eric Glen (2018)</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Plural Management] if there is room.</li>
+</ul>
+</li>
+<li>relevance
+<ul>
+<li>This is about [mechanism design
+- <a href="./Mechanism-Design-Study-Group" class="internal alias" data-slug="Mechanism-Design-Study-Group">Mechanism Design Study Group</a> / <a href="./Majority-Judgement-Study-Group" class="internal alias" data-slug="Majority-Judgement-Study-Group">Majority Judgement Study Group</a> (done in 2021)
+<ul>
+<li>I explained Majority Judgement (2007) at this time.
+<ul>
+<li><a href="./One-vote-per-person-is-unnatural." class="internal alias" data-slug="One-vote-per-person-is-unnatural.">One vote per person is unnatural.</a> by <a href="./Toyotaka-Sakai" class="internal alias" data-slug="Toyotaka-Sakai">Toyotaka Sakai</a> (a reference to QV by the author of a book read at a mechanism design study group)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Quadratic Voting</p>
+<ul>
+<li>Voting system designed to allow participants to express “strength of opinion”</li>
+<li>It’s explained in Japanese books like <a href="./radical-market" class="internal alias" data-slug="radical-market">radical market</a>.
+<ul>
+<li>Originally published in Radical Markets: Uprooting Capitalism and Democracy for a Just Society
+<ul>
+<li><a href="./Eric-A.-Posner" class="internal alias" data-slug="Eric-A.-Posner">Eric A. Posner</a>, <a href="./2018" class="internal alias" data-slug="2018">[E. Glen Weyl]</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>When I say, “Let’s allow people to express the strength of their opinions,” what comes to mind naively is a five-point vote.
+<ul>
+<li>Make it five levels: “Strongly in favor,” “Weakly in favor,” “Neutral,” “Weakly opposed,” and “Strongly opposed.”</li>
+</ul>
+</li>
+<li>What’s wrong with this?</li>
+<li>Since the cost of a “strong favor” and a “weak favor” are the same, in some cultures, “I don’t see why a weak argument should exist.”
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Explain how the distribution of votes differs from culture to culture when rated on a 5-point scale.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/gpt/icon" alt="gpt.icon" height="19.5"/>Cultural humility and self-expression
+<ul>
+<li>In high context cultures (e.g., Asian countries), people often value <a href="./humility" class="internal" data-slug="humility">humility</a> and tend to understate their own achievements and satisfaction. This may be reflected in a tendency to avoid extremely high or low ratings on a 5-point scale, preferring the middle option.</li>
+<li>In low-context cultures (e.g., the U.S. and Western European countries), <a href="./individualism" class="internal" data-slug="individualism">individualism</a> is emphasized, and one is encouraged to clearly express one’s opinions and accomplishments. This can lead to a tendency toward more extreme ratings (“1” or “5”).</li>
+</ul>
+</li>
+<li><img src="https://gyazo.com/196b0f1254fb49486d2291d5e1eab25b/thumb/1000" alt="image"/>
+- <a href="./radical-market" class="internal alias" data-slug="radical-market">radical market</a>  p.175~176
+- >  <a href="./Likert-survey" class="internal alias" data-slug="Likert-survey">Likert survey</a> does not force respondents to be honest about the strength of their preferences, so respondents tend to exaggerate
+<ul>
+<li>This is an American story of low context culture.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Now let’s make sure that the stronger the claim, the higher the cost!
+<ul>
+<li>→What cost function is appropriate?</li>
+</ul>
+</li>
+<li><a href="./Quadratic-Voting:-How-Mechanism-Design-Can-Radicalize-Democracy" class="internal alias" data-slug="Quadratic-Voting:-How-Mechanism-Design-Can-Radicalize-Democracy">Quadratic Voting: How Mechanism Design Can Radicalize Democracy</a>
+<ul>
+<li>preprint(2012)</li>
+<li>
+<blockquote>
+<p>Can <a href="./mechanism-design" class="internal alias" data-slug="mechanism-design">mechanism design</a> save <a href="./democracy" class="internal" data-slug="democracy">democracy</a>? We propose a simple design that provides an opportunity: give each individual as many votes as they wish, but at a cost that is proportional to a quadratic function of the number of purchased votes. Only quadratic costs make the marginal cost linear with respect to purchased votes, and thus the valuation of individual people’s votes is proportional to the value of the resulting change, yielding welfare optimality. Various analyses and evidence show that there is great promise that this still developing mechanism can robustly correct existing democratic failures and incorporate preference strength and knowledge.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>I like quadratic costs.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/gpt/icon" alt="gpt.icon" height="19.5"/>The main idea of Quadratic Voting is that each participant can purchase multiple votes and vote for the option he or she supports, but for each additional vote cast, the cost increases quadratically. That is, the first vote costs 1 unit, but it costs an additional 3 units to get a second vote (for a total of 4 units) and another 5 units to get a third vote (for a total of 9 units).</li>
+<li>This is Quadratic Voting</li>
+</ul>
+</li>
+<li>Why quadratic costs are good
+<ul>
+<li>I explained a bit about it earlier in [Why does Quadratic Voting take square roots?</li>
+<li>As of 2012, the calculations are based on slightly stronger assumptions.
+<ul>
+<li>Can we make that assumption? that would be</li>
+</ul>
+</li>
+<li>In 2014, “<a href="./Nash-Equilbria-for-Quadratic-Voting" class="internal alias" data-slug="Nash-Equilbria-for-Quadratic-Voting">Nash Equilbria for Quadratic Voting</a>” shows that the difference from the ideal is O(1/N) without strong assumptions.
+<ul>
+<li>but since <a href="./Bayesian-equilibrium" class="internal alias" data-slug="Bayesian-equilibrium">Bayesian equilibrium</a> is used for this proof, it is not explained here.</li>
+<li>Rough commentary here conveys the atmosphere.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Why quadratic costs are good</p>
+<ul>
+<li><img src="https://gyazo.com/78edad99698c1844d5808c5a95d3339e/thumb/1000" alt="image"/></li>
+<li>Consider a two-option vote to choose A or B.</li>
+<li>1 person 1 vote (<a href="./one-vote-per-person" class="internal alias" data-slug="one-vote-per-person">one vote per person</a>) voting mechanism where the voter votes +1 or -1 (<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6891em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">−</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">+</span><span class="mord">1</span><span class="mclose">}</span></span></span></span>)
+<ul>
+<li>If the sum of them <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0497em;vertical-align:-0.2997em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.162em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2997em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is greater than 0, A wins</li>
+</ul>
+</li>
+<li>But different people have different “how strongly they want that outcome” <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>.
+<ul>
+<li>Voters can only vote +1 or -1 (<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6891em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">−</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">+</span><span class="mord">1</span><span class="mclose">}</span></span></span></span>)</li>
+<li>As a result, “Being A is very important!” (<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">+</span><span class="mord">10</span></span></span></span>) and “I don’t care either way, but if I had to choose, I’d say B…” (<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span>) votes have the same power and cancel out</li>
+<li>This is not good!
+<ul>
+<li>If there is another person with the same preference as person #2, the <a href="./one-vote-per-person" class="internal alias" data-slug="one-vote-per-person">one vote per person</a> voting mechanism would decide on B
+<ul>
+<li>In that case, each person’s utility is (-10, +1, +1)</li>
+</ul>
+</li>
+<li>If we had chosen A, it would have been (+10, -1, -1), so this one has a larger sum of everyone’s utilities.
+<ul>
+<li>The one-person, one-vote voting mechanism would select options that would cost the minority a great deal of money.
+- <a href="./tyranny-of-the-majority" class="internal alias" data-slug="tyranny-of-the-majority">tyranny of the majority</a>  by  <a href="./Alexis-de-Tocqueville." class="internal alias" data-slug="Alexis-de-Tocqueville.">Alexis de Tocqueville.</a>
+- <a href="./When-they-first-attacked-the-communists" class="internal alias" data-slug="When-they-first-attacked-the-communists">When they first attacked the communists</a> by <a href="./Martein-Niemöller" class="internal alias" data-slug="Martein-Niemöller">Martein Niemöller</a>.</li>
+</ul>
+</li>
+<li>Sum of everyone’s utility: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0497em;vertical-align:-0.2997em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.162em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2997em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> to be determined by</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>So we’ll let the voters express “how strongly they want that outcome” <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>.
+<ul>
+<li>But if you ask a simple question, “How strong is strong enough?” the higher the number, the higher the probability of getting the result you want, so you end up with <a href="./one-vote-per-person" class="internal alias" data-slug="one-vote-per-person">one vote per person</a> in effect, with everyone claiming the maximum strength</li>
+<li>So we require payment of a cost <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">c</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> for increasing the “strength”.</li>
+<li>How to design this cost function <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">c</span></span></span></span> to be “good” is the topic of this paper</li>
+</ul>
+</li>
+<li>First, we need to define “goodness.”
+<ul>
+<li>robustly optimal:
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> have the same sign</li>
+</ul>
+</li>
+<li>That is, the results of the decision when the number of votes are added together and the results of the decision when the “strength of feeling” are added together.</li>
+</ul>
+</li>
+<li>Assume everyone agrees with the marginal pivotality <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span></span></span></span> proposed by Mueller (1973) and Laine (1977)
+<ul>
+<li>Probability of changing the outcome of one vote.</li>
+<li>This assumption is a pretty strong assumption</li>
+</ul>
+</li>
+<li>The rational number of votes in this case would be the one that maximizes [$ 2u_i pv_i - c (v_i)
+<ul>
+<li>The 2 is absorbed by the coefficient part of c, so it doesn’t matter, but the resulting utility of A is <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7333em;vertical-align:-0.15em;"></span><span class="mord">+</span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> and the utility of B is <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7333em;vertical-align:-0.15em;"></span><span class="mord">−</span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, so it doubles</li>
+<li>p is “pivotality per vote”, so <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is the pivotality, and multiplying by <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> gives the expected utility</li>
+<li>Individual maximizes expected utility minus cost</li>
+</ul>
+</li>
+<li>Robustly optimal if and only if c is a quadratic function
+<ul>
+<li>The proof is developed in a separate paper and briefly summarized in the text.</li>
+<li>simply put
+<ul>
+<li>Since <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">2</span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal">p</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">c</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> is maximized, differentiating by <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span></span></span> gives 0</li>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">2</span><span class="mord mathnormal">p</span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mord mathnormal">c</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span> holds.</li>
+<li>It is convenient for <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∝</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> (proportional) to be robustly optimal</li>
+<li>That only happens when <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">c</span></span></span></span> is a quadratic function.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>By the way, what would a naive “$1.00 per vote” look like?
+<ul>
+<li>The person with the highest utility buys enough votes to determine the outcome.</li>
+<li>Auction as a commodity transaction, dictatorship as a decision-making process</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Q: I wonder if “<a href="./move-one's-heart" class="internal alias" data-slug="move-one's-heart">move one’s heart</a>” (actions that elicit empathy and increase the number of friends) is for conventional democracy.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>A: No. Even with Quadratic Voting, it costs 100 for one person to cast 10 votes, but if you add 10 friends and 10 people each cast one vote, you get 10 votes for 10 costs. There is an incentive to get more people to understand.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Q. Even if the cost is squared, won’t it be like Elon Musk buying it all up?
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>A. It only costs you a square of the cost to buy it outright. If Elon Musk wants to do it and is willing to pay that much, it is preferable.
+<ul>
+<li>Supplementary explanation: the respondent interpreted “buyout” as “one person becomes a majority”; there is no limit to the number of votes, so the equivalent of a buyout of a product does not occur.</li>
+<li>If each vote costs 100 yen, and 10,000 people vote, and everyone but the mask votes for A, the mask can decide for B alone by paying 10 billion yen to buy 10,000 votes and vote for B.</li>
+<li>If people don’t like the idea of settling on B, they can pay another 100 yen and vote for A. If people don’t like the idea of settling on B, they can pay another 100 yen and vote for A. If people pay 200 yen, the mask needs to pay 20 billion yen.</li>
+<li>If people do not see the value of paying an additional 100 yen, then the subject is not that important to them and they can decide on B. A or B is worth less than 100 yen. Therefore, it is right that the decision to choose “B” is made at the discretion of Mask. It prevents the “tyranny of the majority” in which the “strongly interested minority” is dragged down by the “uninterested majority.</li>
+<li>The 10 billion yen paid by Mask at this time adds 1 million yen per person to the national treasury, a large enough price to pay for giving in a decision that is not worth more than about 100 yen.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Q. If an individual wants to do it even at the cost of buying up all the goods, does that mean that it is the right thing to do from a social perspective?</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>A. The argument of Quadratic Voting is that it is better to respect the will of a person who wants it that strongly, if that person wants it that strongly, than to crush the will of a minority with 99% of the majority. The definition of goodness is robustly optimal: “the result of a decision when the number of votes is added together and the result of a decision when the strength of feeling is added together.”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>It doesn’t feel democratic unless there is an assumption that there is no bias in cost allocation, something like that.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>If money is used, the weight of a dollar can vary from person to person. Spending money is not a requirement for QV, so if you think that is a problem, you can democratically distribute tokens that are not money. There are many examples of people doing so in practice, so let’s look at some applications.</li>
+</ul>
+</li>
+</ul>
+<p>Applications of Quadratic Voting<img src="https://scrapbox.io/api/pages/nishio/pplx/icon" alt="pplx.icon" height="19.5"/></p>
+<ul>
+<li>Political Decision Making (2019)
+<ul>
+<li>The QV was conducted in April 2019 as an experiment by the Democratic Executive Committee of the Colorado House of Representatives. Lawmakers used it to determine their legislative priorities for the next two years, choosing from 107 bills… . provided by <a href="./Democracy-Earth" class="internal alias" data-slug="Democracy-Earth">Democracy Earth</a>, an open-source <a href="./liquid-democracy" class="internal alias" data-slug="liquid-democracy">liquid democracy</a> platform for promoting government transparency. --- <a href="https://en.wikipedia.org/wiki/Quadratic_voting" class="external">Quadratic voting - Wikipedia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>President’s Cup Hackathon Voting (2019): in Taiwan, QV was applied at the President’s Cup Hackathon event organized by <a href="./RadicalxChange" class="internal" data-slug="RadicalxChange">RadicalxChange</a> in Taipei.</li>
+<li>Public budget allocation: The Taiwanese government’s e-democracy platform “<a href="./Join" class="internal" data-slug="Join">Join</a>” uses QV to promote citizen participation in budget matters.</li>
+<li>etc…</li>
+<li>The situation is roughly “about 5 years after it was first used”.</li>
+</ul>
+<p>Arrow’s impossibility theorem</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/gpt/icon" alt="gpt.icon" height="19.5"/>Arrow’s impossibility theorem is the theory that in the context of collective decision-making, it is impossible for any given voting rule to satisfy all of the several axioms it is thought to satisfy (e.g., non-dogmatic, Pareto efficiency, independence, etc.). This means that traditional voting systems are limited in their ability to fairly and efficiently reflect complex social preferences; Quadratic Voting offers one solution to this problem.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>A voting system of good nature is impossible!</li>
+<li>↑upThis is incorrect <a href="./overgeneralization" class="internal" data-slug="overgeneralization">overgeneralization</a>.</li>
+<li>What the public imagines by the word “voting” is not what Arrow is dealing with here.</li>
+<li>Arrow’s impossibility theorem states that “no preference voting system can simultaneously satisfy the conditions for ~.”
+<ul>
+<li>What is a preference vote?</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/gpt/icon" alt="gpt.icon" height="19.5"/>Preference voting (<a href="./preference-voting" class="internal alias" data-slug="preference-voting">preference voting</a>, <a href="./ranked-voting" class="internal alias" data-slug="ranked-voting">ranked voting</a>) is a voting method in which voters express their own <a href="./preference-order" class="internal alias" data-slug="preference-order">preference order</a> for multiple choices in an election or decision. In this method, the voter ranks all the options in order of preference, beginning with the most preferred option. Preference voting often yields more informative election results because it can reflect relative preferences among alternatives in greater detail.</li>
+</ul>
+</li>
+<li>Previously <a href="./Majority-Judgement-Study-Group" class="internal alias" data-slug="Majority-Judgement-Study-Group">Majority Judgement Study Group</a>, we talked about how Majority Judgement is not subject to the impossibility theorem because it votes on “absolute ratings” rather than on the “preference order” of the alternatives</li>
+<li>This time, Quadratic Voting is a similar system (at least in its original conception), in which people vote on the “absolute rating” rather than the “order of preference” of the choices.</li>
+</ul>
+<p>Continued Value</p>
+<ul>
+<li>Reason for the reservation “at least in the original conception.”</li>
+<li>
+<blockquote>
+<p>As is common in the analysis of markets for private goods (Willig, 1976), we assume there are enough issues and that each is sufficiently inconsequential that every voter has a quasi-linear “continuation value” for retaining voice credits for future votes.</p>
+</blockquote>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/GPT-4/icon" alt="GPT-4.icon" height="19.5"/>As is common in market analysis of private goods (Willig, 1976), assume that there are enough issues, each sufficiently irrelevant, that every voter has a “<a href="./Continued-Value" class="internal alias" data-slug="Continued-Value">Continued Value</a>” that holds a say credit for future votes.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>In today’s general voting, voting credits are “tokens that lose value if not exercised at the time”, but “<a href="./Speaking-Credits" class="internal alias" data-slug="Speaking-Credits">Speaking Credits</a>” in this paper can be “saved” for a future vote.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I know some QVs use a continuation value and some don’t.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/gpt/icon" alt="gpt.icon" height="19.5"/>Yes, when using Quadratic Voting (secondary voting), there are systems that use continuation value (carryover) and those that do not.
+<ul>
+<li>When using continuity value, participants can carry over voting rights (or their value) not used within a certain period of time to the next period. This allows participants to use resource-saving strategies if they wish to have a greater impact on future votes.</li>
+<li>In a system that does not use continuity value, on the other hand, each voting period is independent and unused voting rights are lost. This is a simple and direct approach, but gives participants an incentive to strategize only within each voting period.</li>
+</ul>
+</li>
+<li>For example, in the Taiwan President’s Cup Hackathon voting, 99 voting credits are given out to voters.
+<ul>
+<li>You can try these types of ballots at <a href="https://quadraticvote.radicalxchange.org/" class="external">RxC QV<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> right away.</li>
+</ul>
+</li>
+<li>This method is easy, but the feeling of “it would be a waste if I don’t use up the 99 votes I received” causes people to vote even for things they don’t value very much.
+<ul>
+<li>(worth continuing) <a href="./QV-is-a-meaningful-mechanism-for-not-voting" class="internal alias" data-slug="QV-is-a-meaningful-mechanism-for-not-voting">QV is a meaningful mechanism for not voting</a>.</li>
+</ul>
+</li>
+<li>On the other hand, if you can carry over credit, you can say, “I don’t have a good voting target, so I’ll save it.
+<ul>
+<li>This is closer to a true statement of voter preference strength.</li>
+<li>But it’s hard to implement because it requires ongoing account management and so on.</li>
+</ul>
+</li>
+</ul>
+<p>Quadratic Funding</p>
+<ul>
+<li>
+<blockquote>
+<p><a href="./Liberal-Radicalism:-A-Flexible-Design-For-Philanthropic-Matching-Funds" class="internal alias" data-slug="Liberal-Radicalism:-A-Flexible-Design-For-Philanthropic-Matching-Funds">Liberal Radicalism: A Flexible Design For Philanthropic Matching Funds</a></p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Buterin, <a href="./Vitalik" class="internal" data-slug="Vitalik">Vitalik</a> and Hitzig, Zoë and Weyl, Eric Glen (2018)</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>(abst)We propose a philanthropic/public design against funding. This will ensure that a decentralized, self-organizing public goods ecosystem is (nearly) optimally provided. This concept extends the idea of QV to a funding mechanism for endogenous community building. Citizens donate money to projects that are of value to them. The amount of money a project receives is proportional to the square of the sum of the square roots of the donations received. In this “standard model,” this yields optimal public good provision. Transformation can limit costs, help protect against collusion, and assist coordination. We will discuss its application to campaign finance, the open source software ecosystem, news media funding, and urban public projects. More broadly, we will relate our mechanism to political theory and discuss how a solution to this public goods problem could provide neutral, non-autocratic rules for society and yet support collective organization.</p>
+</blockquote>
+</li>
+<li>In short, you QV in currency.<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/></li>
+<li>Instead of implementing the continuing value of voice credits as a system, leave it to the currency, which is the “continuing value credits” that already exist.</li>
+</ul>
+<p>Gitcoin</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/gpt/icon" alt="gpt.icon" height="19.5"/>As an application of Quadratic Funding (QF), <a href="./Gitcoin" class="internal" data-slug="Gitcoin">Gitcoin</a> is of particular interest.
+<ul>
+<li>Gitcoin uses QF to fund open source projects and other public goods. QF is a mechanism whereby when there are many small donations to a project, they are amplified using matching funds. This allows projects that are supported by a larger number of people to receive more funds and encourages investment in projects that are of high value to the community The QF is a fundraising tool for projects that are not only supported by the public but also by the community.</li>
+<li>For example, Gitcoin Grants, in the ninth round of funding for blockchain projects, over 12,000 contributors donated a total of $1.38 million to 812 different projects. The platform determines the amount of matching funds a project receives based on the number of people who have made small donations. This method increases the opportunity for small or emerging projects to raise funds without having to rely on large donations.</li>
+</ul>
+</li>
+<li>Overall, we have distributed more than 50 million USD, which is more than 7.5 billion yen in Japanese Yen.</li>
+<li>I searched for “OSS donation” to get a sense of scale, and a familiar company was at the top of the list.
+<ul>
+<li><a href="https://blog.cybozu.io/entry/2022/06/17/150207" class="external">Recommendation of donation to OSS ~ Cybozu’s donation strategy to OSS - Cybozu Inside Out | Cybozu Engineer’s Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>
+<blockquote>
+<p>The total amount of donations is currently set at 0.05% of sales. As to why sales rather than profit, we based it on sales rather than profit because we are still using OSS regardless of whether we are making a profit or not.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>[Cybozu’s “kintone” Sales Surpass 10 Billion Yen—Medium to Long-Term Investment Going Forward - Cloud Watch <a href="https://cloud.watch.impress.co.jp/docs/news/1481021." class="external">https://cloud.watch.impress.co.jp/docs/news/1481021.<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> html]
+<ul>
+<li>
+<blockquote>
+<p>Consolidated sales for 2022 will increase 19.4% y/y to 22.067 billion yen.</p>
+</blockquote>
+</li>
+<li>Appropriate because I had trouble finding out what recent data was available to the public.</li>
+</ul>
+</li>
+<li>Gitcoin is redistributing roughly 700 Cybozu companies.</li>
+</ul>
+</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>QV/QF is definitely an important part of the attempt to solve social problems through technology.</li>
+</ul>
+<p>Plural Management Protocol</p>
+<ul>
+<li>Previously: <a href="./Plural-Management-Study-Session" class="internal alias" data-slug="Plural-Management-Study-Session">Plural Management Study Session</a>.</li>
+<li>
+<blockquote>
+<p>Introduces Plural Management, a model that partially replaces hierarchical organizational authority with a plural mechanism that enables networked authority. Participants gain influence by predicting and achieving organizational priorities and use this influence to set priorities and validate contributions, thereby fostering a dynamic, merit-based power structure. This approach, illustrated by the example of open source software development, emphasizes valuable contributions and diligence without the need for hierarchical bottlenecks, thereby strengthening participation and enabling adaptive collective knowledge.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Key words: management, plurality, secondary mechanisms, open source, software management, organizational dynamics</p>
+</blockquote>
+</li>
+<li><img src="https://gyazo.com/f1adcb67a3ac4116d16d0425c7ebd729/thumb/1000" alt="image"/></li>
+<li>
+<blockquote>
+<p>Organization members can dynamically earn management credits through their work. Issue boards allow members to prioritize assignments through <a href="./Quadratic-Funding" class="internal alias" data-slug="Quadratic-Funding">Quadratic Funding</a> using credits. These credits are paid to members who contribute to these issues. Payments are made only after a second vote taken by other members who consume management credits to exercise their authority.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Organizational managers may choose to allow members to earn management credit by correctly predicting voting results, rewarding individuals for due diligence in their contributions, or predicting the preferences of existing managers.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>This protocol allows for dynamic administrative control through a mechanism that scales from a small group of members to a large organization with no simplified hierarchy.</p>
+</blockquote>
+</li>
+<li>Previous exchange
+<ul>
+<li>
+<blockquote>
+<p><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>I wonder why they squared it. This is an item that could be tuned in a variety of ways.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/> That’s <a href="./Quadratic-Voting" class="internal alias" data-slug="Quadratic-Voting">Quadratic Voting</a>.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>You have a mathematical basis!</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>This is explained in this issue.</li>
+</ul>
+<p><a href="./Gov4Git" class="internal" data-slug="Gov4Git">Gov4Git</a></p>
+<ul>
+<li>Gov4git implementation of [Plural Management Protocol</li>
+<li>That’s how <a href="./Pluralitybook" class="internal" data-slug="Pluralitybook">Pluralitybook</a> is managed.
+<ul>
+<li><a href="https://github.com/pluralitybook/plurality" class="external">https://github.com/pluralitybook/plurality<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>
+<blockquote>
+<p>GlenWeyl: this should be a show and tell</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>The last time we did the <a href="./Plural-Management-Study-Session" class="internal alias" data-slug="Plural-Management-Study-Session">Plural Management Study Session</a> on 1/26, we were in a situation where we hadn’t received any credit yet.</li>
+<li>As of 3/14
+<ul>
+<li><img src="https://gyazo.com/95fbbf520e911fbe17bfc8eb9082966e/thumb/1000" alt="image"/><img src="https://gyazo.com/f4151b037a85c47fbd64622a3382f950/thumb/1000" alt="image"/></li>
+<li><a href="https://github.com/pluralitybook/plurality/issues/263" class="external">Gov4Git community dashboard · Issue #263 · pluralitybook/plurality<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>You can see detailed data here.</li>
+<li><img src="https://gyazo.com/29332ba1f6dc173fa8d028a85a83e44f/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>What was the experience like at this point in time?</li>
+<li>It’s a little interesting to look at the issues prioritized by credits and see what you might be able to contribute.
+<ul>
+<li>I sense that they’re motivated by incentives and induced to do things that are good for the community.
+<ul>
+<li>Compared to this situation, I feel that the move of “doing the implementation you want to do without reading the community’s issues and then suddenly making a Pull Request” is “an act of an individual trying to consume the limited public good “review energy&quot;&quot;.</li>
+<li>There is a sense that OSS projects are taking a step in the direction of using mechanisms to avoid falling into the <a href="./Tragedy-of-Common-Land" class="internal alias" data-slug="Tragedy-of-Common-Land">Tragedy of Common Land</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The contribution itself was verifiable on Github alone, but how the contribution was valued by the community was unverifiable, a value in the mind of each individual, and now it is visualized as credits.
+<ul>
+<li><img src="https://gyazo.com/839a476c8d02d070eb97787dfaa21805/thumb/1000" alt="image"/>
+<ul>
+<li>Overly detailed</li>
+<li>Maybe this is what Github can show compactly now.
+<ul>
+<li><img src="https://gyazo.com/af8b72f00f15905925e69421643e08d6/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Currently, I feel we are still in the tutorial state of the game, the main story has not started.
+<ul>
+<li>Issues built by ordinary participants like me are not Gov4Git managed.
+<ul>
+<li><img src="https://gyazo.com/265aff1817b1e1051ef2f641002b016c/thumb/1000" alt="image"/></li>
+<li>I can’t get a gov4git tag, I don’t have the authority to put it on, maybe Glen does.</li>
+<li>It is correct that <a href="./benevolent-dictator." class="internal alias" data-slug="benevolent-dictator.">benevolent dictator.</a> governs in the early stages of an OSS project</li>
+</ul>
+</li>
+<li>I believe Glen also makes the decision on whether to accept pull requests.
+<ul>
+<li>The PMP paper talked about the community using the prediction market to make decisions, but that hasn’t been done yet.</li>
+<li>Frankly, I think the current phase of trying to do a manuscript FIX on 3/17 is the best time to get Pull Requests, so I don’t think the community needs to make a decision if it’s going around here alone.</li>
+</ul>
+</li>
+<li>Issue of Credit
+<ul>
+<li><img src="https://gyazo.com/f53f4833228a3ae4bc0a0b7a64e24d0d/thumb/1000" alt="image"/></li>
+<li>There are very few Transfers and they are Issue.</li>
+<li>concrete example</li>
+<li><a href="https://github.com/pluralitybook/plurality/issues/407" class="external">Issuing credits to Nishio · Issue #407 · pluralitybook/plurality<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><img src="https://gyazo.com/1fa07a34d20d8b86fc69689a5cddd048/thumb/1000" alt="image"/></li>
+<li>Glen has issued me a credit of 160,000, which is a nice chunk of change.</li>
+<li>I believe this is issuing credits directly through the admin command, not through QF distribution.</li>
+</ul>
+</li>
+<li>So, I have yet to experience most of the features described in the paper.
+<ul>
+<li>Now that I’ve been recognized for my contribution and have a vote, I’m in a position to observe the stage not from the audience but as a performer.</li>
+<li>I’m wondering how the difference between the software and the nature of the project, which is a book, will affect the project.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>summary<img src="https://scrapbox.io/api/pages/nishio/Claude/icon" alt="Claude.icon" height="19.5"/></p>
+<ul>
+<li><img src="https://gyazo.com/ae1acdb372c8ed350fb9d8d539433d4d/thumb/1000" alt="image"/></li>
+<li>The last study session provided an overview of Plural Management, a protocol that combines the desirable characteristics of a hierarchical organizational structure and a flat, decentralized organization, dynamically assigning management authority based on individual contributions and management decisions It aims to.</li>
+<li>This workshop delved deeply into Quadratic Voting and Quadratic Funding, which are at the core of Plural Management. system designed to allow participants to express the “strength of their opinions” through their votes. Unlike the traditional one-person, one-vote system, which fails to reflect the strength of an individual’s preferences, Quadratic Voting makes it possible to reflect the strength of preferences in voting by making stronger arguments more costly.</li>
+<li>We also gained a better understanding of the mathematical basis for Quadratic Voting. By making the cost function of voting a quadratic function, the sum of the voting results and the “strength of feeling” will match. This is expected to improve fairness and efficiency in collective decision-making.</li>
+<li>Quadratic Funding is an application of the idea of Quadratic Voting to the funding of public goods, where Quadratic Funding is practiced on platforms such as Gitcoin to promote investment in projects of high value to the community. Quadratic Funding is being implemented on platforms such as Gitcoin to promote investment in projects of high value to the community.</li>
+<li>Combining the previous discussion of Plural Management with this understanding of Quadratic Voting and Quadratic Funding, the structure of Plural Management has become clearer. A dynamic, meritocratic power structure is formed when members of an organization earn management credits and use them to participate in prioritizing tasks and evaluating contributions.</li>
+<li>Plural Management is still a developing concept, but it has the potential to solve problems with conventional organizational structures and enable organizational management that is more adaptive and utilizes collective knowledge. We felt that further research is needed on the issues involved in implementing Plural Management in actual organizations and how to adjust the system in the future.</li>
+<li>I thought it was OK as is as a summary without any reworking.<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/></li>
+</ul>
+<p>question</p>
+<ul>
+<li>
+<p><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Q. I’m starting to feel that we should have, for example, “200 - age” as a voting right.</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>A. That is one approach to improvement from the viewpoint of Japanese youth who want to reduce the voice of the elderly because they have too much power, but there is the idea that a system in which the number of votes is influenced by the attribute of age causes a division between those who lose and those who gain. Voting has the advantage of being able to change the weight of votes according to one’s interests, without causing a division based on attributes.</li>
+</ul>
+</li>
+<li>
+<p><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Q. Is the QV independent of the talk about things like the death vote not decreasing?</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>A. In Quadratic Funding, every vote contributes to “how much will be distributed,” so there are no “dead votes” that are not reflected in decision-making. However, if you think so, you can carry over your vote without voting, so “I voted, but it has zero value” will not happen.</li>
+</ul>
+</li>
+<li>
+<p><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Q. When does a voter feel that QV is better than regular voting? Q. When does a voter feel that QV is better than regular voting?</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>A. The ability to express the strength of your opinion and to vote for more than one option is an advantage. The ability to carry over votes when you are not interested in the voting subject is also an advantage, but this is only if the tokens have a continuing value. The 99-vote mechanism of the Taiwan Presidential Cup Hackathon is more of an interesting UI device than a good Quadratic Voting.</li>
+</ul>
+</li>
+<li>
+<p><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Q. Does QV only let you vote in whole numbers?</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>A. Those restrictions are not in the QV itself. We are just doing that in the Taiwan President’s Cup Hackathon.</li>
+</ul>
+</li>
+<li>
+<p><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Q. Why not provide a separate incentive to vote for more than one (e.g., give an additional cost allocation)?</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>A. It would be good to experiment with various UX designs like that.</li>
+</ul>
+</li>
+<li>
+<p><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/>Q: Can we take the strategy of dividing and increasing to many the number of agendas on which a person is likely to vote high cost in order to destroy the utility of a person’s vote?</p>
+<ul>
+<li>A: If there is someone who can control the agenda, and that person can set the agenda to the detriment of certain people, then such an attack can be established. In this case, Audrey Tang argues that we should “<a href="./open-up-agenda-setting-authority-to-people" class="internal alias" data-slug="open-up-agenda-setting-authority-to-people">open up agenda-setting authority to people</a>” because the abuse of “the power to control the agenda” is the problem.</li>
+</ul>
+</li>
+<li>
+<p><img src="https://scrapbox.io/api/pages/nishio/human/icon" alt="human.icon" height="19.5"/> A very good example of <a href="./token-economy" class="internal alias" data-slug="token-economy">token economy</a>.</p>
+</li>
+</ul>
+<p>Discussion of “Voting Coupons”</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/gpt/icon" alt="gpt.icon" height="19.5"/>In this conversation we are talking about the idea of “voting coupons” as an incentive to participate in the voting process. These coupons would be earned by participating in the voting process and could be used at the next voting opportunity. In addition, a suggestion has been made that if there is more than one vote, the coupon could be increased on the spot. There is also discussion about a mechanism whereby coupons would be returned if the option that one supported is not adopted, so that all participants would have some degree of satisfaction.
+<ul>
+<li>Voting coupon suggestion: Voters who participate in the polls receive a coupon that can be redeemed at the next voting opportunity. This would be an incentive to participate in voting.</li>
+<li>Coupon Increases: In the case of multiple voting, coupons could be increased immediately upon voting. This serves as a mechanism to encourage more active participation.</li>
+<li>Coupon return: Coupons are returned if the supported option is not adopted. This idea is proposed as a way to reduce dead votes (i.e., votes that do not influence the outcome because they are too few) and to provide a certain level of satisfaction to all participants.</li>
+</ul>
+</li>
+<li>The purpose of this system is to provide a fairer feeling to participants and to motivate them to participate in the voting process.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Commenting from a QV perspective.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/gpt/icon" alt="gpt.icon" height="19.5"/>Consider the proposed idea from a Quadratic Voting (QV) perspective.
+<ul>
+<li>Introduce voting coupons: A system whereby people receive voting coupons for participating in the polls is an interesting mechanism for encouraging participation; in the context of QV, these coupons would represent a “strength of voice” that could be used in future polls. In other words, by participating more, you increase your right to have a stronger voice in the future. This approach has the potential to encourage long-term participation and greater involvement in the voting system for participants.</li>
+<li>Coupons that can be used at the next voting opportunity: The restriction that coupons can only be used at the next voting opportunity provides an incentive for participants to remain involved in the voting process on a regular basis. This may encourage continued participation and strengthen the base of active participants in the community decision-making process.</li>
+<li>Increased Coupons from Multiple Voting: Within the QV framework, increasing coupons by voting for multiple options gives voters an incentive to consider a variety of opinions and vote for a broader agenda. This is expected to avoid excessive concentration of votes on a single agenda or candidate and encourage more balanced decision-making.</li>
+<li>Returning coupons if preferences are not met: In QV, the cost of voting is proportional to the square of the number of votes cast for a choice, but a system that returns voting coupons if preferences are not met reduces dead votes and reassures participants that it is acceptable to take risks. This encourages participants to actively express their views and may contribute to a more fair and inclusive decision-making process.</li>
+</ul>
+</li>
+</ul>
+<p>unused fragment</p>
+<ul>
+<li>Corporate Governance (2014): Posner, E. A., &amp; Weyl, E. G. (2014). Quadratic voting as efficient corporate governance. the University of Chicago Law Review, 81(1), 251-272. [PDF <a href="https://chicagounbound.uchicago." class="external">https://chicagounbound.uchicago.<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> edu/cgi/viewcontent.cgi?article=1642&amp;context=law_and_economics]
+<ul>
+<li>Proposal to be used to determine shareholder voting rights</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from [/nishio/Quadratic VotingとPlural Management勉強会](<a href="https://scrapbox.io/nishio/Quadratic" class="external">https://scrapbox.io/nishio/Quadratic<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> VotingとPlural Management勉強会) using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Diary-2024-03-13" class="internal">Diary 2024-03-13</a></li><li><a href="./Have-Claude-3-Opus-summarize" class="internal">Have Claude 3 Opus summarize</a></li><li><a href="./Nash-Equilbria-for-Quadratic-Voting" class="internal">Nash Equilbria for Quadratic Voting</a></li><li><a href="./Plural-Management-Study-Session" class="internal">Plural Management Study Session</a></li><li><a href="./Plurality-Study-Session-1" class="internal">Plurality Study Session 1</a></li><li><a href="./Quadratic-Voting-Study-Group" class="internal">Quadratic Voting Study Group</a></li><li><a href="./Transcription-and-AI-summary-of-the-audio-from-the-study-group" class="internal">Transcription and AI summary of the audio from the study group</a></li><li><a href="./token-economy" class="internal">token economy</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

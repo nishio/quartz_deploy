@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>From if statements to machine learning</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="From if statements to machine learning"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="From if statements to machine learning"/><meta name="twitter:description" content="..."/><meta property="og:description" content="..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/From-if-statements-to-machine-learning"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/From-if-statements-to-machine-learning"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="From-if-statements-to-machine-learning"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>From if statements to machine learning</a></div></nav><h1 class="article-title">From if statements to machine learning</h1><p show-comma="true" class="content-meta"><span>Jun 10, 2023</span><span>20 min read</span></p></div></div><article class="popover-hint"><p><img src="https://gyazo.com/e6afaa643e5d90b03e2983764d9aa62b/thumb/1000" alt="image"/>
+From if statements to <a href="./machine-learning" class="internal alias" data-slug="machine-learning">machine learning</a> 2017-09-26 BPStudy#121
+Cybozu Labs / BeProud Technical Advisor Doctor of Science / Master of Technology Management
+NISHIO Hirokazu
+ver.2 published 2017-09-29
+ver.3 2018-06-22 diagram cleanup
+ver.4 2023-06-10Clean up and add OCR results</p>
+<p><img src="https://gyazo.com/678badbaf3519afe5324b43b56057ea7/thumb/1000" alt="image"/></p>
+<p>Do you think machine learning is a world away from the programs you are writing now?</p>
+<p><img src="https://gyazo.com/2ac79c15ccd864452d5dc1da9b655b3a/thumb/1000" alt="image"/>
+Purpose of this slide</p>
+<ul>
+<li>We will bridge the gap between if statements and machine learning, which everyone is familiar with, so that we can connect the ground and use machine learning in practice.</li>
+<li>He will also explain how to proceed with the business implementation of machine learning in four steps, step by step.</li>
+</ul>
+<p><img src="https://gyazo.com/2608d362e16adbca7400a3553c1a0e11/thumb/1000" alt="image"/>
+if statement 4 if(<code>condition</code>){ …}</p>
+<p><img src="https://gyazo.com/d3497b5db2fd5e7844aaf3bf4c9b6457/thumb/1000" alt="image"/>
+How if statement works</p>
+<ul>
+<li>Execute contents when the condition is True.</li>
+</ul>
+<p><img src="https://gyazo.com/0cef01d7cf9bcf217e4214d21c3a8bbb/thumb/1000" alt="image"/>
+When there is more than one condition</p>
+<ul>
+<li>What if I want to run when either condition x1 or condition x2 is True?</li>
+</ul>
+<p><img src="https://gyazo.com/b4431e9b8bb3903f3d2fdc759cd7b41e/thumb/1000" alt="image"/>
+or</p>
+<ul>
+<li><code>if(x1 or x2){ …}</code></li>
+</ul>
+<p><img src="https://gyazo.com/69bd44856d9f2285220fc323508164de/thumb/1000" alt="image"/>
+When there is more than one condition</p>
+<ul>
+<li>What if I want to run when both condition x1 and condition x2 are True?</li>
+</ul>
+<p><img src="https://gyazo.com/d72be5377d0a3983ccbfdcd350d14151/thumb/1000" alt="image"/>
+and</p>
+<ul>
+<li><code>if(x1 and x2){ …}</code></li>
+</ul>
+<p><img src="https://gyazo.com/03d5a280e95da798cdadfe8e2b07fc78/thumb/1000" alt="image"/>
+When there is more than one condition</p>
+<ul>
+<li>What if I want to execute when two or more of the conditions x1, x2, x3 are True?</li>
+</ul>
+<p><img src="https://gyazo.com/facfe680f16b01fcebcda515f5cf3177/thumb/1000" alt="image"/>
+Complicated!</p>
+<ul>
+<li><code>if((x1 and x2) or (x1 and x3) or (x2 and x3)){ …}</code></li>
+</ul>
+<p><img src="https://gyazo.com/1846ba35a0e14355e161b4868a882f93/thumb/1000" alt="image"/>
+When there is more than one condition</p>
+<ul>
+<li>What if I want to execute when 3 or more of the conditions x1, x2, …, x5 are True?</li>
+</ul>
+<p><img src="https://gyazo.com/ba6368d2da9a70acd23c06e5fe46f8d3/thumb/1000" alt="image"/>
+Complicated!</p>
+<ul>
+<li><code>if((x1 and x2 and x3) or (x1 and x2 and x4) or (x1 and x2 and x5) or…){ …}</code></li>
+</ul>
+<p><img src="https://gyazo.com/dd99a61bf5d2979a309b7ea1ff6b6519/thumb/1000" alt="image"/>
+There is a better way!</p>
+<p><img src="https://gyazo.com/cc5c2293acc809279378d9a7bb286701/thumb/1000" alt="image"/>
+<a href="./true/false-value-to-be-numeric" class="internal alias" data-slug="true/false-value-to-be-numeric">false value to be numeric</a>.</p>
+<ul>
+<li>Converting True to 1 and False to 0 changes “3 or more True” to “3 or more when added”.</li>
+<li><code>if((x1 + x2 + x3 + x4 + x5) >= 3){ …}</code></li>
+</ul>
+<p><img src="https://gyazo.com/e6c32404c0b84b44e4174b40a44a3cdd/thumb/1000" alt="image"/>
+Both and and or can have the same form.</p>
+<ul>
+<li><code>x1 and x2 and x3 and x4 and x5</code> = all of the conditions x1, x2, …, x5 are true = add up to 5 or more</li>
+<li><code>x1 or x2 or x3 or x4 or x5</code> = any of the conditions x1, x2, …, x5 are true = add up to 1 or more</li>
+</ul>
+<p><img src="https://gyazo.com/5fa7ff716d1dcd1460df8b8b9be293b4/thumb/1000" alt="image"/>
+Both and and or can have the same form.</p>
+<ul>
+<li>Condition x1, x2, …, x5 are all True
+<ul>
+<li><code>(x1 + x2 + x3 + x4 + x5) >= 5</code></li>
+</ul>
+</li>
+<li>At least 3 of the conditions x1, x2, …, x5 are True
+<ul>
+<li><code>(x1 + x2 + x3 + x4 + x5) >= 3</code></li>
+</ul>
+</li>
+<li>One of the conditions x1, x2, …, x5 is True
+<ul>
+<li><code>(x1 + x2 + x3 + x4 + x5) >= 1</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/076f4e8c6975883a642d2b39c2dcf49c/thumb/1000" alt="image"/>
+Try to align the right side</p>
+<ul>
+<li>Condition x1, x2, …, x5 are all True (weak)
+<ul>
+<li>(1/5 *x1 + …) >= 1</li>
+</ul>
+</li>
+<li>At least 3 of the conditions x1, x2, …, x5 are True
+<ul>
+<li>(1/3 *x1 + …) >= 1</li>
+</ul>
+</li>
+<li>One of the conditions x1, x2, …, x5 is True (strong).
+<ul>
+<li>(1 *x1 + …) >= 1</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/6e770115e61dfbc3f13e458737536689/thumb/1000" alt="image"/>
+Strength = Weight</p>
+<ul>
+<li>Something like the “strength” of the condition is expressed by the magnitude of the coefficient (<a href="./weight" class="internal" data-slug="weight">weight</a>).</li>
+</ul>
+<p><img src="https://gyazo.com/ffe9c0ca59d9a378ff8130d3ea02438d/thumb/1000" alt="image"/>
+question</p>
+<ul>
+<li>How can I express that all of the conditions x1, x2, …, x5 are True, or at least 3 of the conditions x6, x7, …, x10 are True, or any of the conditions x11, x12, …, x15 are True?</li>
+</ul>
+<p><img src="https://gyazo.com/b8b54921f347a17194d4770aa6bbab08/thumb/1000" alt="image"/>
+Weights may vary from condition to condition</p>
+<ul>
+<li>1 *x1 + … + 1/3 * x6 + … + 1 * x11 >= 1</li>
+</ul>
+<p><img src="https://gyazo.com/c7609fc432680f2e0b30fee3cdcc137c/thumb/1000" alt="image"/>
+Weighted sum method</p>
+<ul>
+<li>Set the true value of true to 1, false to 0, multiply by the strength of the condition as weights, and add them together.</li>
+<li>This allows for the description of complex conditions that would be difficult with and or combinations.</li>
+<li>Negation can be realized with negative weights and xor cannot be expressed, omitting the fact that xor</li>
+</ul>
+<p><img src="https://gyazo.com/a85146d3aef08470c3995de225807c06/thumb/1000" alt="image"/>
+How do you adjust the weight?</p>
+<ul>
+<li>1: People decide, just like we just did.</li>
+<li>2: Machine decides based on a large amount of data = machine learning</li>
+</ul>
+<p><img src="https://gyazo.com/7822bfdf9a569437e4bf141d1c507d74/thumb/1000" alt="image"/>
+Specific Codes</p>
+<ul>
+<li>The contents of this issue can be studied using <a href="./logistic-regression" class="internal alias" data-slug="logistic-regression">logistic regression</a>.</li>
+<li>If you do <code>from sklearn.linear_model import LogisticRegression</code> and call <code>fit(X, y)</code>, the weights will be adjusted automatically and if you call <code>predict(X)</code>, the weighted sum will be calculated and determined. Easy.</li>
+<li>If you want to learn more about logistic regression, I recommend the series of articles by Hidehiro Nakatani of Cybozu Labs on the Gijutsu Hyoronsha website.
+<ul>
+<li><a href="http://gihyo.jp/dev/serial/01/machine-learning/0018" class="external">18th logistic regression | gihyo.jp<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/22948174b3cdeeaa2007aa9b55241329/thumb/1000" alt="image"/>
+summary</p>
+<ul>
+<li>Complex conditions are difficult to write with and/or.</li>
+<li>It is easier to replace them with weighted sums.</li>
+<li>Weights can be determined by machine learning if there is enough data.</li>
+<li>The level of detail described in this article can be done in a few lines using scikit-learn.</li>
+</ul>
+<p><img src="https://gyazo.com/b0dbff4c39165e40f944e07856a96f54/thumb/1000" alt="image"/>
+Machine learning techniques so far
+Here are 4 steps to the business of machine learning</p>
+<p><img src="https://gyazo.com/b365eee5095d50b7bc6b50e95e7b6ddf/thumb/1000" alt="image"/>
+Differences between Academia and Business
+- <a href="./academia" class="internal" data-slug="academia">academia</a>
+- Data is publicly available.
+- Withered technology was investigated long ago.
+- Devise new methods and compete for accuracy.</p>
+<ul>
+<li>business
+<ul>
+<li>Data not publicly available.</li>
+<li>(Use of dead technology)</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/1ffa3b1f2dd43389bfa758fee341e4a5/thumb/1000" alt="image"/></p>
+<p>Business Objectives
+- <a href="./customer-value" class="internal alias" data-slug="customer-value">customer value</a></p>
+<ul>
+<li>([novelty (patentability) not)</li>
+</ul>
+<p><img src="https://gyazo.com/90a2986632d1803becd10903cfdc80dc/thumb/1000" alt="image"/>
+Sub-questions to experience customer value</p>
+<ul>
+<li>A certain gemstone has a 1/2 chance of containing a gem when broken and sells for 20,000 yen.</li>
+<li>One rough stone can be bought for 9,500 yen. Rough stones are hard and only 20 can be broken per day.</li>
+<li>Q1: What is the expected amount of revenue you can earn per day?</li>
+</ul>
+<p><img src="https://gyazo.com/a4119bf74ac65c2c56dd3cae6d388e37/thumb/1000" alt="image"/>
+A1 Revenue Expectations</p>
+<ul>
+<li>A1: The expected value of income per unit is 10,000 yen because you get 20,000 yen at 1/2 chance.</li>
+<li>The purchase price per unit is 9,500, so the revenue per unit is 500 yen.</li>
+<li>Since 20 units can be processed per day, the revenue per day is 1,000 yen.</li>
+</ul>
+<p><img src="https://gyazo.com/e9bccade278d7111b91fabc3c685bffb/thumb/1000" alt="image"/>
+Q2 Machining speed doubling device</p>
+<ul>
+<li>Q2: Suppose you have a machine that can break a rough stone twice as fast as a human.</li>
+<li>In other words, suppose the number of gemstones that can be broken per day increases from 20 to 40.</li>
+<li>How much more revenue can I expect?</li>
+</ul>
+<p><img src="https://gyazo.com/c4414907eb24a8144a0b0c0b46d0f209/thumb/1000" alt="image"/>
+A2 Machining speed doubling device</p>
+<ul>
+<li>A2: It is still a profit of 500 yen per gemstone.</li>
+<li>The amount that can be processed per day increases from 20 to 40.</li>
+<li>Since there will be 20 more units, profit will increase by 10,000 yen.</li>
+</ul>
+<p><img src="https://gyazo.com/78a99b9fd5288a6f023048d38e2b20b6/thumb/1000" alt="image"/>
+Q3 60% discriminator</p>
+<ul>
+<li>Q3: Suppose you can buy an identifier* that has a 60% chance of guessing the gemstone that contains the gem.
+<ul>
+<li>*Suppose that by using it before buying the gemstone, you can get a “gemstone with a 60% chance of containing a gemstone” for 9,500 yen.</li>
+<li>I am not concerned this time about the fact that the store owner might not like it.</li>
+<li>Also assume that the machine in Q2 is not in hand and the number of pieces that can be broken per day remains 20.</li>
+</ul>
+</li>
+<li>How much more revenue can I expect?</li>
+</ul>
+<p><img src="https://gyazo.com/deda9a9fc5b9e4a00ca891953de2531a/thumb/1000" alt="image"/>
+A3: 60% discriminator</p>
+<ul>
+<li>Since there is a 60% chance of getting 20,000 yen, the expected income per unit is 12,000 yen.</li>
+<li>Since the purchase price per unit is 9,500 yen, the revenue per unit is 2,500 yen.</li>
+<li>Since 20 units can be processed per day, the revenue per day is 50,000 yen.</li>
+<li>40,000 more…</li>
+</ul>
+<p><img src="https://gyazo.com/c2367038f172aeedf2c7fbe5876dff31/thumb/1000" alt="image"/>
+In other words, in this problem setting</p>
+<ul>
+<li>The “device that doubles the processing speed” increases the customer’s profit by 10,000 yen,</li>
+<li>The “identifier with 60% accuracy” increases the customer’s profit by 40,000 yen.</li>
+</ul>
+<p><img src="https://gyazo.com/524a8c04a98e2b004da22e17cbc7e68f/thumb/1000" alt="image"/>
+lesson</p>
+<ul>
+<li>In this problem setting, a “discriminator with 60% accuracy” has four times the customer value of a “device that doubles the processing speed.</li>
+<li>How much accuracy and how much customer value can be generated depends on <a href="./Business-Requirements" class="internal alias" data-slug="Business-Requirements">Business Requirements</a>.</li>
+<li>Accuracy is not always important.</li>
+</ul>
+<p><img src="https://gyazo.com/c7d047af5c2e3730b304e38971a8332d/thumb/1000" alt="image"/>
+Business Requirements</p>
+<ul>
+<li>Before thinking about improving accuracy, it is necessary to first clarify <a href="./what-customers-want" class="internal alias" data-slug="what-customers-want">what customers want</a> and what kind of <a href="./constraints" class="internal" data-slug="constraints">constraints</a> they have.</li>
+<li>Even if a method described in the latest paper is implemented, if the customer cannot provide the amount of data required by the method, then the implementation has no customer value.</li>
+</ul>
+<p><img src="https://gyazo.com/247dc788120a5b347094b8c0f2178cc3/thumb/1000" alt="image"/>
+Customers are not experts.</p>
+<ul>
+<li>In many cases, customers are not experts in machine learning and cannot clearly verbalize either the required accuracy or the constraints that must be met.</li>
+<li>So it is necessary to learn this fast.</li>
+</ul>
+<p><img src="https://gyazo.com/a3444a0672815f849793029a4690c5d8/thumb/1000" alt="image"/>
+<a href="./Minimum-Viable-Product" class="internal alias" data-slug="Minimum-Viable-Product">Minimum Viable Product</a></p>
+<ul>
+<li>A concept advocated in the “Lean Startup” methodology of IT venture management.</li>
+<li>Ventures have limited funds and must quickly understand customer needs.</li>
+<li>Therefore, by creating miscellaneous products at minimal cost and actually showing them to customers, we can find out where the customers’ needs lie.</li>
+</ul>
+<p><img src="https://gyazo.com/266ac1da93352348751aa9fb9b32696e/thumb/1000" alt="image"/>
+Minimal implementation = no implementation</p>
+<ul>
+<li>It’s called “<a href="./concierge-type-MVP" class="internal alias" data-slug="concierge-type-MVP">concierge-type MVP</a>.”</li>
+</ul>
+<p><img src="https://gyazo.com/83a5de9e5964bc206493fbaf97cd3c0d/thumb/1000" alt="image"/>
+Step 1</p>
+<ul>
+<li>Let’s assume it’s a human and answer the following questions
+<ul>
+<li>① <a href="./customer-value" class="internal alias" data-slug="customer-value">customer value</a> : What makes the customer happy?</li>
+<li>(2) <a href="./How-people-do-it" class="internal alias" data-slug="How-people-do-it">How people do it</a>: If people do it, how do they do it (are there people who already do it?)? No?)</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/89af264374c78c751c8eac8a1e9b1d0a/thumb/1000" alt="image"/>
+(2) How humans do it</p>
+<ul>
+<li>Someone is already doing it, or knows how to do it.</li>
+<li>But it takes too much time and effort.</li>
+<li>→ Opportunity! Mechanization to reduce time and labor is customer value!</li>
+</ul>
+<p><img src="https://gyazo.com/5d9d44baa4a45d32876c3e95ab502108/thumb/1000" alt="image"/>
+(2) How humans do it</p>
+<ul>
+<li>There are people doing it on the client side, etc., but I don’t know how to do it.</li>
+<li>→ There is some important information being omitted from being communicated.</li>
+</ul>
+<p><img src="https://gyazo.com/80a28a46c291fb43ac63e53b014b79ba/thumb/1000" alt="image"/>
+(2) How humans do it</p>
+<ul>
+<li>Neither the customer nor myself know how to do it the way humans do it.</li>
+<li>→ Possibility of being recklessly delusional in the first place.</li>
+</ul>
+<p><img src="https://gyazo.com/0721a06be0dcec2cad1638dbdd15c829/thumb/1000" alt="image"/>
+Example: Spam Filter</p>
+<ul>
+<li>Q1 What makes customers happy?</li>
+<li>A1 Customers have a problem with a lot of spam in their mailboxes, and would be happy if the spam would go away.</li>
+<li>Q2 How would a human being do that?</li>
+<li>A2 Look at the body of the e-mail to determine if it is spam or not, and move spam to a different folder.</li>
+</ul>
+<p><img src="https://gyazo.com/6d2a0c22cc8ddba81b87c7ef26856136/thumb/1000" alt="image"/>
+Step 2</p>
+<ul>
+<li>Putting humans in a box.
+<ul>
+<li>Only electronic data can be put in and out of this box.</li>
+<li>(Can be considered remote work).</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/dbb77c9716d7122a81cedfdc731007c6/thumb/1000" alt="image"/>
+Step 2</p>
+<ul>
+<li>(3) Input data: What data does a human put in the box to do (2)?</li>
+<li>(4) Output data: What kind of output data comes out of the box when a human does (2)?</li>
+</ul>
+<p><img src="https://gyazo.com/96f424014443c9cb4a7318179989d194/thumb/1000" alt="image"/>
+Step 2</p>
+<ul>
+<li>(5) How to obtain: How to obtain input data (3)? (first step and how to do it continuously)</li>
+<li>(6) How to give: How do we connect output data (4) to customer value (1)?</li>
+</ul>
+<p><img src="https://gyazo.com/8c650af8930351e96206a114682cdef8/thumb/1000" alt="image"/>
+The order in which these four questions are answered does not matter.</p>
+<ul>
+<li>Example 1: To do ~ to a customer (6), output ~ (4), therefore input ~ (3), how shall I get this? (5)</li>
+<li>Example 2: Now that we have the data (5, 3), how do we generate customer value from it? (6) What outputs are needed to achieve this? (4)</li>
+</ul>
+<p><img src="https://gyazo.com/b25029ef607e5f77be73b1df99a3e705/thumb/1000" alt="image"/>
+Example: Spam Filter</p>
+<ul>
+<li>Q2 How would a human being do that?</li>
+<li>A2If it’s done by a human, look at the body of the email, determine if it’s spam or not, and move the spam to a different folder.</li>
+<li>Q3 What data needs to be included for a human to (2)?</li>
+<li>Need information on the body of A3 emails. I’d like to get the title and sender if I can get them.</li>
+</ul>
+<p><img src="https://gyazo.com/7310d7584a70d6033a375a7d94a9ebd6/thumb/1000" alt="image"/>
+Example: Spam Filter</p>
+<ul>
+<li>Q4What output data comes out of the box when a human does (2)?</li>
+<li>A4Output “spam, not spam” labels for each e-mail</li>
+</ul>
+<p><img src="https://gyazo.com/f25c1b978c867c1806b8042137537af7/thumb/1000" alt="image"/>
+Example: Spam Filter</p>
+<ul>
+<li>Q5 How do I get the input data (3)?</li>
+<li>A5 As a first step, if you could export your email for now.
+<ul>
+<li>To do this on an ongoing basis, I would need to create a way to get the data from the mailer or modify the mail server side.</li>
+</ul>
+</li>
+<li>PS: Which is a higher priority, receiving the data for the first step and experimenting or modifying the mail server so that data is continually available?
+<ul>
+<li>Basically, “can it be identified by machine learning” is uncertain, so the sooner it is verified, the better.</li>
+<li>It depends on the situation, so we need to decide on a case-by-case basis which to do first, or whether to do them in parallel.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/0879baad881c2caefbb9052277b1d2d4/thumb/1000" alt="image"/>
+Example: Spam Filter</p>
+<ul>
+<li>Q6How do you connect output data (4) to customer value (1)?</li>
+<li>A6Sort mail by looking at the label that is/isn’t spam</li>
+<li>PS: Once we have verbalized that we need to “sort mail” in order to connect to “customer value,” the next question is, “How can we do that sorting?” and then we can dig deeper.
+<ul>
+<li>Can we modify the side of the program that displays the email?</li>
+<li>For example, do you put a specific string in the header indicating that it has been flagged as spam and ask the user to configure the sorting settings?</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/31c5a1dc3b9c17e5c05d247fed8d8b50/thumb/1000" alt="image"/>
+part-time job</p>
+<ul>
+<li>(7) If the person in the box is a part-time worker with no knowledge at all, what manuals do you need to provide? Thinking about this will make the next step easier.</li>
+</ul>
+<p><img src="https://gyazo.com/06f41fcadaf35bf4c7dcd2209adeb929/thumb/1000" alt="image"/>
+Step 3</p>
+<ul>
+<li>Step 1: Human beings do it.</li>
+<li>Step 2: The person in the box does it.</li>
+<li>Step 3: The machine in the box does it.</li>
+<li>Replace the person in the box with a computer.</li>
+</ul>
+<p><img src="https://gyazo.com/81315673a08b3471604deb5efd160bf5/thumb/1000" alt="image"/>
+First Program</p>
+<ul>
+<li>(8) Write a program for the computer in the box to do (2)</li>
+<li>It doesn’t have to be perfect.</li>
+<li>Does not have to be a sophisticated algorithm</li>
+<li>Accuracy can be low.</li>
+<li>It’s enough to say, “It works for now.”</li>
+</ul>
+<p><img src="https://gyazo.com/87559a341c14e9388f085dce931723b5/thumb/1000" alt="image"/>
+Run it and show it to your clients.</p>
+<ul>
+<li>(9) Put actual data into the program (8) and observe the behavior. (How is the accuracy? How fast is it?)</li>
+<li>(10) Will customers be satisfied with this?</li>
+</ul>
+<p><img src="https://gyazo.com/e99aeb165521a181c983c563af3e9735/thumb/1000" alt="image"/>
+Afraid to show your clients?</p>
+<ul>
+<li>Afraid to show clients if it’s not accurate?</li>
+<li>But only the customer knows what the customer values.</li>
+<li>Even if a customer says it’s low quality, it’s an opportunity to learn what the customer values. see “<a href="./Lean-Startup" class="internal alias" data-slug="Lean-Startup">Lean Startup</a>.”</li>
+</ul>
+<p><img src="https://gyazo.com/b39ca81e84965aadc16736a92a5892aa/thumb/1000" alt="image"/>
+If the customer is not satisfied.</p>
+<ul>
+<li>(11) Gather how you are not satisfied <a href="./specific-dissatisfaction" class="internal alias" data-slug="specific-dissatisfaction">specific dissatisfaction</a>.
+<ul>
+<li>(What kind of output do you want for what kind of input? This is called <a href="./teacher-data" class="internal alias" data-slug="teacher-data">teacher data</a>.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/b1a9434f253aba06f7d81479b3ee77ee/thumb/1000" alt="image"/>
+Step 4</p>
+<ul>
+<li>Finally, machine learning!</li>
+</ul>
+<p><img src="https://gyazo.com/f18fe3a70c5957694e082f39347edbe5/thumb/1000" alt="image"/>
+scientific methodology</p>
+<ul>
+<li>When the teacher data is enriched, the quality of the algorithm can be quantitatively measured.
+<ul>
+<li>(A portion of the teacher data is used for validation)</li>
+</ul>
+</li>
+<li>Compare with program (8) neatly, because just because it is made into machine learning does not mean it will be better.</li>
+<li>Cycle of hypothesis, experiment, verification, and revision.
+<ul>
+<li>( <a href="./PDCA-cycle" class="internal alias" data-slug="PDCA-cycle">PDCA cycle</a> / <a href="./scientific-methodology" class="internal alias" data-slug="scientific-methodology">scientific methodology</a> )</li>
+<li>cycle and <a href="./improve" class="internal" data-slug="improve">improve</a> it.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/8ad67b18a62bf39ad90f4fb10b16dc6f/thumb/1000" alt="image"/>
+Specific Methods of Improvement</p>
+<ul>
+<li>Extract and view “data that the current algorithm is unable to classify correctly” and consider what can be done to classify them correctly. (e.g., adding features).</li>
+<li>If the algorithm returns “confidence in the decision”, such as logistic regression, then look at the “unconfident results” and add more teacher data. (<a href="./active-learning" class="internal alias" data-slug="active-learning">active learning</a>)</li>
+</ul>
+<p><img src="https://gyazo.com/09ad0d2020987f7ccfdb6e7e5159f610/thumb/1000" alt="image"/>
+I’ll say it again and again so you don’t make a mistake.</p>
+<ul>
+<li>What matters in business is customer value. Not accuracy.</li>
+<li>Even if the accuracy is 99%, if the 1% that makes a mistake is fatal to the customer, a program with 60% accuracy that does not make that mistake is more valuable to the customer.</li>
+</ul>
+<p><img src="https://gyazo.com/434afc8e9a3fa8b193bb1d9e920cb3ff/thumb/1000" alt="image"/>
+summary</p>
+<ul>
+<li>Customer value is important in business.</li>
+<li>Neither the customer nor you understand exactly what customer value is.</li>
+<li>Repeat experiments with minimum man-hours for quick understanding (Minimum Viable Prodict)</li>
+<li>Experiments gradually materialize dissatisfaction and customer value.</li>
+<li>Iterate improvements to increase customer value.</li>
+</ul>
+<p><img src="https://gyazo.com/b8723e89dee56ac0ffbcdbb63c5b175c/thumb/1000" alt="image"/>
+Supplemental information and questions/answers below</p>
+<p><img src="https://gyazo.com/53c4188fa0b246a64536737c483e1619/thumb/1000" alt="image"/>
+supplement</p>
+<ul>
+<li>This is similar to “software development without clear customer requirements or specifications.</li>
+<li>The difference is that if a customer is dissatisfied, it could be solved by “adding that information to the training data” instead of “reworking the software”.</li>
+<li>However, it is not always possible to solve the problem with data, so it is still important to experiment with minimal implementation.</li>
+</ul>
+<p><img src="https://gyazo.com/1e2782fc81f6f34cb3a7c345987624d6/thumb/1000" alt="image"/>
+Supplement:Bad Pattern</p>
+<ul>
+<li>(1) Easy way</li>
+<li>(2) Textile data</li>
+<li>(3) Amazing Machine Learning
+<ul>
+<li>Use up all your time here.</li>
+</ul>
+</li>
+<li>(4) Highly accurate output data</li>
+<li>(5) bumping into each other in a miscellaneous manner</li>
+<li>
+<ol start="6">
+<li>Mismatch: Customer “this is not the one”.</li>
+</ol>
+</li>
+<li>(vii) Complaints without a snowball’s chance in hell
+To avoid this, it is important to have a form of experimentation that can be repeated.</li>
+</ul>
+<p><img src="https://gyazo.com/028b6f361f287e5f4c71128096950f91/thumb/1000" alt="image"/>
+Q&amp;A Manual Writing</p>
+<ul>
+<li>Question about (7) and (8): “If you can write a manual for a part-time job, shouldn’t you also be able to write a program?”</li>
+<li>Yes, I did. What I wanted to say was, “If the specifications are so vague that you can’t write a manual for part-time workers, it’s impossible to write a program.</li>
+<li>How do you write a manual?” This is how we notice what has not yet been verbalized, and this is how we encourage verbalization. (See examples on the next page).</li>
+</ul>
+<p><img src="https://gyazo.com/85cff9c46f65d0cd51d5d907b15e3894/thumb/1000" alt="image"/></p>
+<ul>
+<li>Example: Spam Filter</li>
+<li>What we want to achieve: >(2) “Look at the body of the email to determine if it is spam or not, and move spam to a different folder.”</li>
+<li>You “look at the text to determine if it’s spam.”</li>
+<li>Byte: “How do you judge?”</li>
+<li>You say, “For example, if the word ____ is in there, it’s spam.”</li>
+<li>Noticed: You should make the first step program (8) “determine if NG keywords are included”.
+<ul>
+<li>Supplement to the Supplement: The purpose of writing the manual for the part-time program is to help in writing the “first puerile program,” so you can skip it if you can write the program without much effort.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/4a3dfee51ecfe07b6d88a301aea93aee/thumb/1000" alt="image"/>
+production requirements</p>
+<ul>
+<li>Q: How many man-hours should I expect it to take?</li>
+<li>A: Case by case.
+<ul>
+<li>For example, when data is entered into logistic regression, which is a well-developed technique, sometimes the accuracy is so good that the client gives a one-shot OK, while other times it is completely inadequate. The only way is to experiment.</li>
+<li>Since it is difficult to estimate man-hours, it is dangerous to enter into a contract that promises results in a fixed amount of time.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/fc41f62b85bfe9cc2307f72bbfc8a771/thumb/1000" alt="image"/>
+accuracy</p>
+<ul>
+<li>Q: If a customer asks for an accuracy guarantee</li>
+<li>A: We need to make it a common understanding with customers that “we will not know how accurate it will be until we experiment with it.</li>
+<li>It is better to have a contract in the form of payment for “trial and error that may produce a good product” rather than a commitment to accuracy.</li>
+<li>We need to experiment with as small a unit as possible and communicate closely with customers.</li>
+</ul>
+<p><img src="https://gyazo.com/080326429c6036788508564f241ef605/thumb/1000" alt="image"/></p>
+<ul>
+<li>Cost and accuracy of decisions</li>
+<li>Knowledgeable “experts” make decisions</li>
+<li>A “part-time” worker with no knowledge makes a decision.</li>
+<li>Machine determines</li>
+<li>The accuracy and cost of decision making is high up there.</li>
+<li>Machines don’t get tired of working 24 hours a day and the labor department doesn’t get mad at them.</li>
+<li>Accuracy is not necessarily high*, but lower costs create business value. (*Depends on your efforts)</li>
+<li>2023 note: GPT-3.5 exceeds humans for a wide range of tasks.
+<ul>
+<li><a href="./ChatGPT-Outperforms-Crowd-Workers-for-Text-Annotation-Tasks" class="internal alias" data-slug="ChatGPT-Outperforms-Crowd-Workers-for-Text-Annotation-Tasks">ChatGPT Outperforms Crowd-Workers for Text-Annotation Tasks</a></li>
+<li>So the “machine” is now more accurate than a “part-time worker with no knowledge.”</li>
+<li>The time has come to say, “It is better to use GPT-3.5 than to crowdsource teacher data to amateurs who have neither the knowledge nor the motivation to do so.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/129dbf5d9009c5acb00cf6e9e5222364/thumb/1000" alt="image"/>
+Deep Learning</p>
+<ul>
+<li>Q: “Can’t Deep Learning do this automatically even if a human can’t define the conditions?”</li>
+<li>A: Half right.</li>
+<li>In the field of image processing, for example, even a 100x100 monochrome image is in the painful state of “there are 10,000 input values. Experts have been devising various conditions for decades in order to handle such inputs well.</li>
+<li>I created a special form of neural net that repeats convolution and trained it with a large amount of data, and surprisingly, it showed better accuracy than the one devised and implemented by the experts.</li>
+<li>This is the correct half. The incorrect half is on the next page.</li>
+</ul>
+<p><img src="https://gyazo.com/6f6bcd421095ca0da5132434ecc692d1/thumb/1000" alt="image"/>
+Deep Learning</p>
+<ul>
+<li>This success draws attention to Deep Leaning, takes out the context, and warps the message game to say that Deep Learning can be used to create programs that make more accurate decisions than humans.</li>
+<li>As a result, more and more people think, “This too can be managed by Deep Learning” for problems with totally different conditions.</li>
+<li>Since the effectiveness of a method changes as the problem conditions change, the only basic rule is to “repeat small experiments in the order of the dead methods.</li>
+</ul>
+<p><img src="https://gyazo.com/122c20f164c55c426df1f25b89a881dd/thumb/1000" alt="image"/>
+active learning</p>
+<ul>
+<li>Q: Is it better to do active learning with logistic regression rather than <a href="./naïve-Bayes" class="internal alias" data-slug="naïve-Bayes">naïve Bayes</a>?</li>
+<li>A: Naive Bayes is also a method that can produce a confidence level similar to logistic regression, so you can do active learning with Naive Bayes.</li>
+<li>Tip: Although I omitted it this time, both logistic regression and naive Bayes are “<a href="./stochastic-model" class="internal alias" data-slug="stochastic-model">stochastic model</a>”, which is a model that produces outputs like “the probability that this input is class 1 is 0.8”. This was expressed as “<a href="./decision-confidence" class="internal alias" data-slug="decision-confidence">decision confidence</a>” in this presentation.</li>
+</ul>
+<p><img src="https://gyazo.com/4a3ee64749819d105511033f7af924f1/thumb/1000" alt="image"/>
+differential (e.g. calculus)</p>
+<ul>
+<li>Twitter Thoughts, “No matrices or derivatives showing up.”</li>
+<li>When the machine adjusts the weights, it says, “Let’s change the weights a little bit in the direction of a smaller deviation from the correct answer.</li>
+<li>In mathematical terms, this would be “Differentiate the ‘deviation from the correct answer’ by the weights to obtain the gradient, and change the weights slightly in the direction of the gradient.</li>
+</ul>
+<p><img src="https://gyazo.com/866db9f8c322d2d08ee39ee3d403825d/thumb/1000" alt="image"/>
+matrix</p>
+<ul>
+<li>In logistic regression, for example, if there are 15 conditions, 15 values of “weight” can be created.</li>
+<li>The mathematical term for this is “vector”.</li>
+<li>A neural net is a collection of multiple logistic regression-like pieces, so if 10 pieces are collected, 15x10 values can be produced.</li>
+<li>The mathematical term for this would be “matrix.</li>
+</ul>
+<p><img src="https://gyazo.com/010ed83b713d9319fc3c8d5a32cf187b/thumb/1000" alt="image"/>
+Ambiguous judgment</p>
+<ul>
+<li>“P21 is 17/15 if, for example, x1, x2, x3, x4, and x6 are True, which is True. Mathematically incorrect.”</li>
+<li>Yes, that’s the important part (I forgot to emphasize).
+<ul>
+<li>The original equation and the weighted sum equation are not equivalent.</li>
+</ul>
+</li>
+<li>However, when trying to use machine learning, we do not understand “what kind of conditionals will create customer value” in the first place.
+<ul>
+<li>Therefore, “being equivalent to the original formula” has no customer value.</li>
+</ul>
+</li>
+<li>Let go of the need to describe things logically and properly, and instead express them in a messy and ambiguous conditional expression, and test them on real data, not logic, to see if they work properly. This is the basic stance of machine learning.</li>
+</ul>
+<p><img src="https://gyazo.com/a694f0b35ecfdec0b7641b1086001d3c/thumb/1000" alt="image"/>
+Supplement (advertisement)</p>
+<ul>
+<li>I forgot to specify and emphasize that “It is important to observe the data.</li>
+<li>PyQ’s “Machine Learning for Beginners,” which I supervised, explains everything from observing data and making if statements to logistic regression, step by step, in small steps.</li>
+<li>Let’s learn the basics of machine learning from if statements.</li>
+<li>Let’s find the thresholds.</li>
+<li>Visualize and find thresholds</li>
+<li>How to handle data for which thresholds cannot be determined</li>
+<li>Classification from 2D data</li>
+<li>Plot 2D data</li>
+<li>Classification using linear equations</li>
+<li>Machine Learning for Beginners: Logistic Regression</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/if%E6%96%87%E3%81%8B%E3%82%89%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92%E3%81%B8%E3%81%AE%E9%81%93" class="external">/nishio/if文から機械学習への道<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./New-and-required-course-&quot;Information-I&quot;-useful-for-work" class="internal">New and required course &quot;Information I&quot; useful for work</a></li><li><a href="./Replace-conditional-clauses-in-if-statements-with-2-class-classification" class="internal">Replace conditional clauses in if statements with 2-class classification</a></li><li><a href="./Self-Management-Strategies-for-Engineers" class="internal">Self-management strategies for engineers</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

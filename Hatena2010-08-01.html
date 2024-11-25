@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Hatena2010-08-01</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Hatena2010-08-01"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Hatena2010-08-01"/><meta name="twitter:description" content="hatena &lt;body> *1280651063*Translation of excerpt PEP3104: Access to Names in Outer Scopes ** Overview In many languages that support nested scopes, code can refer to and ..."/><meta property="og:description" content="hatena &lt;body> *1280651063*Translation of excerpt PEP3104: Access to Names in Outer Scopes ** Overview In many languages that support nested scopes, code can refer to and ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="hatena &lt;body> *1280651063*Translation of excerpt PEP3104: Access to Names in Outer Scopes ** Overview In many languages that support nested scopes, code can refer to and ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Hatena2010-08-01"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Hatena2010-08-01"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="hatena &lt;body> *1280651063*Translation of excerpt PEP3104: Access to Names in Outer Scopes ** Overview In many languages that support nested scopes, code can refer to and ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Hatena2010-08-01"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Hatena2010-08-01</a></div></nav><h1 class="article-title">Hatena2010-08-01</h1><p show-comma="true" class="content-meta"><span>Aug 01, 2010</span><span>8 min read</span></p></div></div><article class="popover-hint"><p>hatena</p>
+<pre><code>&lt;body>
+*1280651063*Translation of excerpt PEP3104: Access to Names in Outer Scopes
+** Overview
+
+In many languages that support nested scopes, code can refer to and re-bind (assign) names in the nearest scope. Currently, Python can refer to any name in the outer scope, but re-binding is only possible within two scopes. There are two scopes: the local scope (using a simple assignment) and the scope of the module global (using the ``global`` declaration).
+This limitation has been discussed many times on the Python-Dev mailing list and elsewhere, leading to much discussion and suggestions on how to remove this limitation. This PEP summarizes the many options that have been proposed and notes the advantages and disadvantages noted for each.
+
+** Reason
+Prior to version 2.1, Python's handling of scopes was similar to standard C. There were only two scope levels in a file: global and local. In C, this is a natural consequence of the fact that function definitions cannot be nested. In Python, however, function definitions can be executed anywhere, even though functions are usually defined at the top level. This syntactically makes it appear that Python has nested scopes. But that functionality is not there. This discrepancy surprises programmers.
+
+For example, a recursive function that was working at the top level will stop working when placed inside another function. This is because the name of the recursive function itself is not visible in the scope of the body of the recursive function. This goes against the intuition that functions should behave the same regardless of where they are placed. Here is an example::: recursive_function_name
+
+>|python|
+    def enclosing_function():
+        def factorial(n):
+            if n &lt; 2:
+                return 1
+            return n * factorial(n - 1)  # fails with NameError
+        print factorial(5)
+||&lt;
+
+In Python 2.1, bound names are now visible in all outer scopes, closer to statically nested scopes (see PEP 227) This change allows the code example above to work as expected. However, it is not possible to re-bind a name in the outer scope, since all assignments to a name implicitly declare that name as local (except to force the name into the global scope via a ``global`` declaration), so the code below will not work as expected, except for the following example, which is displayed when clicking the button The code expects the number to increase or decrease, but it does not work as someone familiar with lexical scopes would expect. ::.
+
+
+>|python|
+    def make_scoreboard(frame, score=0):
+        label = Label(frame)
+        label.pack()
+        for i in [-10, -1, 1, 10]:
+            def increment(step=i):
+                score = score + step  # fails with UnboundLocalError
+                label['text'] = score
+            button = Button(frame, text='%+d' % i, command=increment)
+            button.pack()
+        return label
+||&lt;
+
+**Examples in other languages
+
+*** JavaScript, Perl, Scheme, Smalltalk, GNU C, C# 2.0
+These languages use variable declarations to indicate scope: in JavaScript, lexical scope variables are declared with the keyword ``var``; undeclared variable names are interpreted as global. In Perl, lexical scope variables are declared with the keyword ``my``; undeclared variable names are interpreted as global. In Scheme, all variables must be declared (with ``define``, ``let``, or as dummy arguments); in Smalltalk, every block begins with a list of local variable names, separated by vertical bars. In C and C#, all variables require a type declaration. In all of them, the variable belongs to the scope that contains its declaration.
+
+***Ruby1.8
+Ruby is a helpful example. It is the only other currently well-known language that seems to have attempted to support statically nested scopes without requiring variable declarations, as Python does. Ruby functions can have other function definitions. A Ruby function can have other function definitions, and it can have blocks enclosed in curly brackets. Blocks can access outer scopes. Nested functions, however, do not. An assignment to a name in a block is interpreted as a declaration of a local variable only if it does not hide a name already bound in the outer scope. Ruby's syntax and rules for scope are also long debated and are expected to change in Ruby 2.0. [28]_
+
+*1280656890*Translated excerpt PEP 342: Coroutines via Enhanced Generators
+** Overview
+
+This PEP proposes to improve the API and syntax of the generator so that it can be used as a simple coroutine.
+
+** Motive
+
+Coroutines are a natural way to express various algorithms. Examples include simulations, games, asynchronous I/O, and other forms of event-driven programming and cooperative multitasking. Python's generator functions are mostly coroutines, but not entirely, because they allow you to create values and pause processing, but have no way to pass values or exceptions when resuming processing.
+
+** Implementation example
+1. a &quot;consumer&quot; decorator that automatically advances to the first yield when the generator function is first called: 1.
+>|python|
+def consumer(func):
+    def wrapper(*args,**kw):
+        gen = func(*args, **kw)
+        gen.next()
+        return gen
+    wrapper.__name__ = func.__name__
+    wrapper.__dict__ = func.__dict__
+    wrapper.__doc__  = func.__doc__
+    return wrapper
+||&lt;
+
+Create a &quot;reverse generator&quot; using the &quot;consumer&quot; decorator. This takes multiple images, creates a page of thumbnails, and sends them to other &quot;consumers&quot;. Functions like this can stitch together &quot;consumers,&quot; each of which can have complex internal states, to create an efficient processing pipeline.
+
+>|python|
+@consumer
+def thumbnail_pager(pagesize, thumbsize, destination):
+    while True:
+        page = new_image(pagesize)
+        rows, columns = pagesize / thumbsize
+        pending = False
+        try:
+            for row in xrange(rows):
+                for column in xrange(columns):
+                    thumb = create_thumbnail((yield), thumbsize)
+                    page.write(
+                        thumb, col*thumbsize.x, row*thumbsize.y
+                    )
+                    pending = True
+        except GeneratorExit:
+            # close() was called, so flush any pending output
+            if pending:
+                destination.send(page)
+
+            # then close the downstream consumer, and exit
+            destination.close()
+            return
+        else:
+            # we finished a page full of thumbnails, so send it
+            # downstream and keep on looping
+            destination.send(page)
+
+@consumer
+def jpeg_writer(dirname):
+    fileno = 1
+    while True:
+        filename = os.path.join(dirname,&quot;page%04d.jpg&quot; % fileno)
+        write_jpeg((yield), filename)
+        fileno += 1
+
+
+# Put them together to make a function that makes thumbnail
+# pages from a list of images and other parameters.
+#
+def write_thumbnails(pagesize, thumbsize, images, output_dir):
+    pipeline = thumbnail_pager(
+        pagesize, thumbsize, jpeg_writer(output_dir)
+    )
+
+    for image in images:
+        pipeline.send(image)
+
+    pipeline.close()
+||&lt;
+
+A simple coroutine scheduler, also known as a &quot;trampoline&quot;. It allows a coroutine to &quot;call&quot; another coroutine by yielding the coroutine it wants to call. Similarly, if a coroutine throws an exception, the exception is propagated to the &quot;called&quot; coroutine. Similarly, if a coroutine throws an exception, the exception is propagated to the coroutine that &quot;called&quot; it. As a result, this example behaves like a simple tasklet used in Stackless Python, as long as the yield expression is used to invoke the routine. Otherwise, it will &quot;block. This is just a very simple example. More sophisticated schedulers are possible (e.g., the existing GTasklet framework for Python (http://www.gnome.org/~gjc/gtasklet/gtasklets.html) or the peak.events framework (http:// peak.telecommunity.com/) already implement very similar functionality. But currently it uses a weird workaround because there is no way to pass values or exceptions to the generator, so I'm not sure if it's a good idea or not :) :.
+
+>|python|
+import collections
+
+class Trampoline:
+    &quot;&quot;&quot;Manage communications between coroutines&quot;&quot;&quot;
+
+    running = False
+
+    def __init__(self):
+        self.queue = collections.deque()
+
+    def add(self, coroutine):
+        &quot;&quot;&quot;Request that a coroutine be executed&quot;&quot;&quot;
+        self.schedule(coroutine)
+
+    def run(self):
+        result = None
+        self.running = True
+        try:
+            while self.running and self.queue:
+                func = self.queue.popleft()
+                result = func()
+            return result
+        finally:
+            self.running = False
+
+    def stop(self):
+        self.running = False
+
+    def schedule(self, coroutine, stack=(), value=None, *exc):
+        def resume():
+            try:
+                if exc:
+                    value = coroutine.throw(value,*exc)
+                else:
+                    value = coroutine.send(value)
+            except:
+                if stack:
+                    # send the error back to the &quot;caller&quot;
+                    self.schedule(
+                        stack[0], stack[1], *sys.exc_info()
+                    )
+                else:
+                    # Nothing left in this pseudothread to
+                    # handle it, let it propagate to the
+                    # run loop
+                    raise
+
+            if isinstance(value, types.GeneratorType):
+                # Yielded to a specific coroutine, push the
+                # current one on the stack, and call the new
+                # one with no args
+                self.schedule(value, (coroutine,stack))
+
+            elif stack:
+                # Yielded a result, pop the stack and send the
+                # value to the caller
+                self.schedule(stack[0], stack[1], value)
+
+            # else: this pseudothread has ended
+
+        self.queue.append(resume)
+||&lt;
+
+4. code to make it run with a simple echo server and trampoline (&quot;nonblocking_read&quot;, &quot;nonblocking_write&quot; and other I/O coroutines such as throwing ConnectionLost is closed, it assumes the existence of other I/O coroutines, such as throwing ConnectionLost when the connection is closed).
+
+>|python|
+# coroutine function that echos data back on a connected
+# socket
+#
+def echo_handler(sock):
+    while True:
+        try:
+            data = yield nonblocking_read(sock)
+            yield nonblocking_write(sock, data)
+        except ConnectionLost:
+            pass  # exit normally if connection lost
+
+# coroutine function that listens for connections on a
+# socket, and then launches a service &quot;handler&quot; coroutine
+# to service the connection
+#
+def listen_on(trampoline, sock, handler):
+    while True:
+        # get the next incoming connection
+        connected_socket = yield nonblocking_accept(sock)
+
+        # start another coroutine to handle the connection
+        trampoline.add( handler(connected_socket) )
+
+# Create a scheduler to manage all our coroutines
+t = Trampoline()
+
+# Create a coroutine instance to run the echo_handler on
+# incoming connections
+#
+server = listen_on(
+    t, listening_socket(&quot;localhost&quot;,&quot;echo&quot;), echo_handler
+)
+
+# Add the coroutine to the scheduler
+t.add(server)
+
+# loop forever, accepting connections and servicing them
+# &quot;in parallel&quot;
+#
+t.run()
+||&lt;
+
+*1280678844*Bohee
+I was going to add the PEP I translated today to the lecture material, but I completely forgot and submitted it as is, but that's okay. I'm only going to include the Outer Scope one, so I'll only have one more example to work with.
+&lt;/body>
+</code></pre>
+<h2 id="hatena-diary-2010-08-01"><a href="https://nishiohirokazu.hatenadiary.org/archive/2010/08/01" class="external">Hatena Diary 2010-08-01<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hatena-diary-2010-08-01" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/Hatena2010-08-01" class="external">/nishio/Hatena2010-08-01<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li>No backlinks found</li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

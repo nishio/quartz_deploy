@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Kozaneba Development Diary 2021-09-09</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Kozaneba Development Diary 2021-09-09"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Kozaneba Development Diary 2021-09-09"/><meta name="twitter:description" content="prev Kozaneba Development Diary 2021-09-08 Yesterday I was able to read JSON and visualize the source code. I should make sure it is in the correct format when importing because if a user tries the same thing and puts in incorrectly formatted JSON and gets an error, Sentry will see it and I will be confused."/><meta property="og:description" content="prev Kozaneba Development Diary 2021-09-08 Yesterday I was able to read JSON and visualize the source code. I should make sure it is in the correct format when importing because if a user tries the same thing and puts in incorrectly formatted JSON and gets an error, Sentry will see it and I will be confused."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="prev Kozaneba Development Diary 2021-09-08 Yesterday I was able to read JSON and visualize the source code. I should make sure it is in the correct format when importing because if a user tries the same thing and puts in incorrectly formatted JSON and gets an error, Sentry will see it and I will be confused."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Kozaneba-Development-Diary-2021-09-09"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Kozaneba-Development-Diary-2021-09-09"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="prev Kozaneba Development Diary 2021-09-08 Yesterday I was able to read JSON and visualize the source code. I should make sure it is in the correct format when importing because if a user tries the same thing and puts in incorrectly formatted JSON and gets an error, Sentry will see it and I will be confused."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Kozaneba-Development-Diary-2021-09-09"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Kozaneba Development Diary 2021-09-09</a></div></nav><h1 class="article-title">Kozaneba Development Diary 2021-09-09</h1><p show-comma="true" class="content-meta"><span>Jan 25, 2022</span><span>4 min read</span></p></div></div><article class="popover-hint"><p>prev  <a href="./Kozaneba-Development-Diary-2021-09-08" class="internal alias" data-slug="Kozaneba-Development-Diary-2021-09-08">Kozaneba Development Diary 2021-09-08</a>
+<img src="https://gyazo.com/cef794096b06743c1bbd9b9c4b40f0c4/thumb/1000" alt="image"/></p>
+<hr/>
+<p>Yesterday I was able to read JSON and visualize the source code.</p>
+<ul>
+<li>I should make sure it is in the correct format when importing because if a user tries the same thing and puts in incorrectly formatted JSON and gets an error, Sentry will see it and I will be confused.</li>
+<li>When it is not correct, I should give feedback to the user instead of sending the error to me.</li>
+</ul>
+<p>Arrow function</p>
+<ul>
+<li>There is no means of attaching it via GUI.</li>
+<li>Do you want the arrows you put in the GUI to be clickable?
+<ul>
+<li>The current one is too thin for that.</li>
+<li>But I liked the thin one for source code visualization.</li>
+<li>Need to be able to switch in Ba units.</li>
+</ul>
+</li>
+</ul>
+<p>physical operation</p>
+<ul>
+<li>You can turn it on and off by hitting the API from the console.</li>
+<li>Attach buttons with user scripts</li>
+</ul>
+<p>I want a user script edit screen.</p>
+<ul>
+<li>Even when this is done and an error occurs, it should be fed back to the user instead of sending it to Sentry.</li>
+</ul>
+<hr/>
+<p>Error feedback on import, done.</p>
+<p>You didn’t write the release notes yesterday.</p>
+<ul>
+<li><code>Annotation Layer</code> added.
+<ul>
+<li>Currently only the arrows are implemented.</li>
+<li>GUI has not been created yet, can only be created by importing JSON</li>
+</ul>
+</li>
+<li>Physics-based auto-shaping functionality has been added.</li>
+</ul>
+<p>Next to Edit User Script screen</p>
+<ul>
+<li>done</li>
+<li>Adding physics buttons with user scripts</li>
+</ul>
+<p><img src="https://gyazo.com/d493d53577b82f002ebac352258d2925/thumb/1000" alt="image"/></p>
+<p><img src="https://gyazo.com/679775b480aa540d3a095a97287a9792/thumb/1000" alt="image"/>
+<img src="https://gyazo.com/8f571f642b87f4a20ae59fa5f7f0207a/thumb/1000" alt="image"/>
+<img src="https://gyazo.com/6f34662f37f13b9ade7b6fd8b1d0ed51/thumb/1000" alt="image"/></p>
+<blockquote>
+<p>Do you want the arrows you put in the GUI to be clickable?
+The current one is too thin for that.
+But I liked the thin one for source code visualization.
+Need to be able to switch in Ba units.
+This is an error.</p>
+</blockquote>
+<ul>
+<li>Arrows that are programmed to generate 700 arrows are not the same as arrows that are attached by hand by humans.</li>
+<li>Arrows to be generated should be lighter weight data</li>
+<li>Just put a custom style on the one the user makes.</li>
+</ul>
+<p><img src="https://gyazo.com/8c1ce3bb6927e704966910f4aaa240b0/thumb/1000" alt="image"/></p>
+<p>release notes</p>
+<ul>
+<li>Added UserScript dialog to review, rewrite, execute, and save current code
+<ul>
+<li>Until now, the only way for UserScript was to rewrite localStorage directly.</li>
+</ul>
+</li>
+<li>Arrows can now be added from the selection menu.
+<ul>
+<li><img src="https://gyazo.com/cef794096b06743c1bbd9b9c4b40f0c4/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+<p>No deletions yet, but we’ll operate it for a while to see if it’s necessary.
+I was going to click on the arrow when I wanted to change the arrow style after the fact, but now I’m wondering if it’s quite easy to use, since I have to click on the “unheaded” side of the arrow when I want to put the head on the unheaded side of the arrow.</p>
+<p>I was thinking of adding help to Kozaneba besides the tutorial, but I’m starting to feel like I should just write it in the forum and show the link.</p>
+<ul>
+<li>For example, if I add Scrapbox format and Markdown format loading to the Add Kozane dialog in addition to the current “1 line 1 kozane”, and if I put a help icon there, when I open this in the help dialog in the app, the original dialog will be closed.</li>
+<li>The tutorials had the advantage of being integral to the program since they do rather a lot of things like “detect the screen size and warn if it’s too small” or “provide presets to try out operations”, but I don’t think so for the additional content…</li>
+</ul>
+<p>Tomorrow we will improve Keicho and Keicho will also move to project management in Kozaneba</p>
+<h2 id="copy-as-text-from-kozaneba-does-not-try-to-keep-groups-indented-or-anything-and-i-am-thinking-of-adding-copy-as-scrapbox-and-copy-as-markdown-separatelywell-ill-do-the-keicho-one-tomorrow-so-ill-just-work-on-ideas-and-if-i-do-it-it-will-be-next-week-some-people-say-that-we-are-adding-too-many-features-so-we-might-make-a-week-where-we-dont-add-any-features">Copy as Text from Kozaneba does not try to keep groups indented or anything, and I am thinking of adding Copy as Scrapbox and Copy as Markdown separately…
+Well, I’ll do the Keicho one tomorrow, so I’ll just work on ideas, and if I do it, it will be next week. Some people say that we are adding too many features, so we might make a week where we don’t add any features.<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#copy-as-text-from-kozaneba-does-not-try-to-keep-groups-indented-or-anything-and-i-am-thinking-of-adding-copy-as-scrapbox-and-copy-as-markdown-separatelywell-ill-do-the-keicho-one-tomorrow-so-ill-just-work-on-ideas-and-if-i-do-it-it-will-be-next-week-some-people-say-that-we-are-adding-too-many-features-so-we-might-make-a-week-where-we-dont-add-any-features" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/Kozaneba%E9%96%8B%E7%99%BA%E6%97%A5%E8%A8%982021-09-09" class="external">/nishio/Kozaneba開発日記2021-09-09<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Kozaneba-Development-Diary-2021-09-08" class="internal">Kozaneba Development Diary 2021-09-08</a></li><li><a href="./Kozaneba-Development-Diary-2021-10-01" class="internal">Kozaneba Development Diary 2021-10-01</a></li><li><a href="./Kozaneba-Development-Diary-2021-12-10" class="internal">Kozaneba Development Diary 2021-12-10</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

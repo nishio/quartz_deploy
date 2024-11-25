@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>2022-03-23</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="2022-03-23"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="2022-03-23"/><meta name="twitter:description" content="Kozaneba’s local development environment stops working due to compounding issues likely cause Node Upgrade There are several packages installed directly under the home directory, ..."/><meta property="og:description" content="Kozaneba’s local development environment stops working due to compounding issues likely cause Node Upgrade There are several packages installed directly under the home directory, ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="Kozaneba’s local development environment stops working due to compounding issues likely cause Node Upgrade There are several packages installed directly under the home directory, ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/2022-03-23"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/2022-03-23"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Kozaneba’s local development environment stops working due to compounding issues likely cause Node Upgrade There are several packages installed directly under the home directory, ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="2022-03-23"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>2022-03-23</a></div></nav><h1 class="article-title">2022-03-23</h1><p show-comma="true" class="content-meta"><span>Mar 23, 2022</span><span>12 min read</span></p></div></div><article class="popover-hint"><p>Kozaneba’s local development environment stops working due to compounding issues</p>
+<ul>
+<li>likely cause
+<ul>
+<li>Node Upgrade</li>
+<li>There are several packages installed directly under the home directory, probably due to an operational error.</li>
+</ul>
+</li>
+<li>solution
+<ul>
+<li>Delete installations directly under the home directory</li>
+<li><code>$ export NODE_OPTIONS=--openssl-legacy-provider</code></li>
+</ul>
+</li>
+<li>In addition, various updates
+<ul>
+<li>If FontAwesome is up-to-date, official React components are not yet supported, resulting in type errors, downgrade</li>
+<li>Updated MaterialUI
+<ul>
+<li>useStyle hook behavior changed.
+<ul>
+<li>Refactoring Opportunities</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>:</p>
+<pre><code>There might be a problem with the project dependency tree.
+It is likely not a bug in Create React App, but something you need to fix locally.
+
+The react-scripts package provided by Create React App requires a dependency:
+
+  &quot;babel-jest&quot;: &quot;^26.6.0&quot;
+
+Don't try to install it manually: your package manager does it automatically.
+However, a different version of babel-jest was detected higher up in the tree:
+
+  /Users/nishio/node_modules/babel-jest (version: 27.5.1) 
+
+Manually installing incompatible versions is known to cause hard-to-debug issues.
+
+If you would prefer to ignore this check, add SKIP_PREFLIGHT_CHECK=true to an .env file in your project.
+That will permanently disable this message but you might encounter other issues.
+
+To fix the dependency tree, try following the steps below in the exact order:
+
+  1. Delete package-lock.json (not package.json!) and/or yarn.lock in your project folder.
+  2. Delete node_modules in your project folder.
+  3. Remove &quot;babel-jest&quot; from dependencies and/or devDependencies in the package.json file in your project folder.
+  4. Run npm install or yarn, depending on the package manager you use.
+
+In most cases, this should be enough to fix the problem.
+If this has not helped, there are a few other things you can try:
+
+  5. If you used npm, install yarn (http://yarnpkg.com/) and repeat the above steps with it instead.
+     This may help because npm has known issues with package hoisting which may get resolved in future versions.
+
+  6. Check if /Users/nishio/node_modules/babel-jest is outside your project directory.
+     For example, you might have accidentally installed something in your home folder.
+
+  7. Try running npm ls babel-jest in your project folder.
+     This will tell you which other package (apart from the expected react-scripts) installed babel-jest.
+
+If nothing else helps, add SKIP_PREFLIGHT_CHECK=true to an .env file in your project.
+That would permanently disable this preflight check in case you want to proceed anyway.
+
+P.S. We know this message is long but please read the steps above :-) We hope you find them helpful!
+</code></pre>
+<blockquote>
+<ol start="3">
+<li>Remove “babel-jest” from dependencies and/or devDependencies in the package.json file in your project folder.
+not (verb-negating suffix; may indicate question or invitation with rising intonation)</li>
+</ol>
+</blockquote>
+<p>:</p>
+<pre><code>$ npm ls babel-jest 
+movidea@0.1.0 /Users/nishio/kozaneba
+└── (empty)
+</code></pre>
+<p>:</p>
+<pre><code>$ npm install 
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE unable to resolve dependency tree
+npm ERR! 
+npm ERR! While resolving: movidea@0.1.0
+npm ERR! Found: @types/react@17.0.41
+npm ERR! node_modules/@types/react
+npm ERR!   @types/react@&quot;^17.0.11&quot; from the root project
+npm ERR! 
+npm ERR! Could not resolve dependency:
+npm ERR! peer @types/react@&quot;^16.8.0&quot; from reactn@2.2.7
+npm ERR! node_modules/reactn
+npm ERR!   reactn@&quot;^2.2.7&quot; from the root project
+npm ERR! 
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force, or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+npm ERR! 
+npm ERR! See /Users/nishio/.npm/eresolve-report.txt for a full report.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/nishio/.npm/_logs/2022-03-23T05_31_45_790Z-debug-0.log
+</code></pre>
+<p>cope
+<code>$ npm install --legacy-peer-deps reactn@latest</code>
+Is that right?</p>
+<p>:</p>
+<pre><code>$ npm install --legacy-peer-deps reactn@latest
+npm WARN deprecated source-map-url@0.4.1: See https://github.com/lydell/source-map-url#deprecated
+npm WARN deprecated flatten@1.0.3: flatten is deprecated in favor of utility frameworks such as lodash.
+npm WARN deprecated @hapi/topo@3.1.6: This version has been deprecated and is no longer supported or maintained
+npm WARN deprecated @hapi/bourne@1.3.2: This version has been deprecated and is no longer supported or maintained
+npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+npm WARN deprecated source-map-resolve@0.6.0: See https://github.com/lydell/source-map-resolve#deprecated
+npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+npm WARN deprecated querystring@0.2.1: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+npm WARN deprecated source-map-resolve@0.5.3: See https://github.com/lydell/source-map-resolve#deprecated
+npm WARN deprecated source-map-resolve@0.5.3: See https://github.com/lydell/source-map-resolve#deprecated
+npm WARN deprecated redux-devtools-extension@2.13.9: Package moved to @redux-devtools/extension.
+npm WARN deprecated sane@4.1.0: some dependency vulnerabilities fixed, support for node &lt; 10 dropped, and newer ECMAScript syntax/features added
+npm WARN deprecated @fortawesome/fontawesome@1.1.8: This package is deprecated. See https://git.io/fNCzJ for information about upgrading.
+npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+npm WARN deprecated chokidar@2.1.8: Chokidar 2 does not receive security updates since 2019. Upgrade to chokidar 3 with 15x fewer dependencies
+npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+npm WARN deprecated chokidar@2.1.8: Chokidar 2 does not receive security updates since 2019. Upgrade to chokidar 3 with 15x fewer dependencies
+npm WARN deprecated querystring@0.2.0: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+npm WARN deprecated babel-eslint@10.1.0: babel-eslint is now @babel/eslint-parser. This package will no longer receive updates.
+npm WARN deprecated @hapi/address@2.1.4: Moved to 'npm install @sideway/address'
+npm WARN deprecated rollup-plugin-babel@4.4.0: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-babel.
+npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+npm WARN deprecated @hapi/hoek@8.5.1: This version has been deprecated and is no longer supported or maintained
+npm WARN deprecated @hapi/joi@15.1.1: Switch to 'npm install joi'
+npm WARN deprecated @material-ui/system@4.12.1: You can now upgrade to @mui/system. See the guide: https://mui.com/guides/migration-v4/
+npm WARN deprecated svgo@1.3.2: This SVGO version is no longer supported. Upgrade to v2.x.x.
+npm WARN deprecated @material-ui/styles@4.11.4: You can now upgrade to @mui/styles. See the guide: https://mui.com/guides/migration-v4/
+npm WARN deprecated core-js@2.6.12: core-js@&lt;3.4 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Please, upgrade your dependencies to the actual version of core-js.
+npm WARN deprecated @material-ui/core@4.12.3: You can now upgrade to @mui/material. See the guide: https://mui.com/guides/migration-v4/
+npm WARN deprecated @material-ui/icons@4.11.2: You can now upgrade to @mui/icons. See the guide: https://mui.com/guides/migration-v4/
+</code></pre>
+<p>not fixed yet
+:</p>
+<pre><code>In most cases, this should be enough to fix the problem.
+If this has not helped, there are a few other things you can try:
+
+  5. If you used npm, install yarn (http://yarnpkg.com/) and repeat the above steps with it instead.
+     This may help because npm has known issues with package hoisting which may get resolved in future versions.
+</code></pre>
+<p>:</p>
+<pre><code>$ yarn install
+yarn install v1.22.18
+warning ../package.json: No license field
+info No lockfile found.
+[1/4] 🔍  Resolving packages...
+warning @fortawesome/fontawesome@1.1.8: This package is deprecated. See https://git.io/fNCzJ for information about upgrading.
+warning @material-ui/core@4.12.3: You can now upgrade to @mui/material. See the guide: https://mui.com/guides/migration-v4/
+warning @material-ui/core > @material-ui/styles@4.11.4: You can now upgrade to @mui/styles. See the guide: https://mui.com/guides/migration-v4/
+warning @material-ui/core > @material-ui/system@4.12.1: You can now upgrade to @mui/system. See the guide: https://mui.com/guides/migration-v4/
+warning @material-ui/icons@4.11.2: You can now upgrade to @mui/icons. See the guide: https://mui.com/guides/migration-v4/
+warning @testing-library/jest-dom > css > source-map-resolve@0.6.0: See https://github.com/lydell/source-map-resolve#deprecated
+warning react-scripts > babel-eslint@10.1.0: babel-eslint is now @babel/eslint-parser. This package will no longer receive updates.
+warning react-scripts > resolve-url-loader > rework > css > source-map-resolve@0.5.3: See https://github.com/lydell/source-map-resolve#deprecated
+warning react-scripts > workbox-webpack-plugin > source-map-url@0.4.1: See https://github.com/lydell/source-map-url#deprecated
+warning react-scripts > resolve-url-loader > rework > css > source-map-resolve > source-map-url@0.4.1: See https://github.com/lydell/source-map-url#deprecated
+warning react-scripts > workbox-webpack-plugin > workbox-build > source-map-url@0.4.1: See https://github.com/lydell/source-map-url#deprecated
+warning react-scripts > webpack-dev-server > chokidar@2.1.8: Chokidar 2 does not receive security updates since 2019. Upgrade to chokidar 3 with 15x fewer dependencies
+warning react-scripts > webpack-dev-server > chokidar > fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+warning react-scripts > @svgr/webpack > @svgr/plugin-svgo > svgo@1.3.2: This SVGO version is no longer supported. Upgrade to v2.x.x.
+warning react-scripts > @pmmmwh/react-refresh-webpack-plugin > native-url > querystring@0.2.1: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+warning react-scripts > webpack-dev-server > url > querystring@0.2.0: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+warning react-scripts > webpack > micromatch > snapdragon > source-map-resolve@0.5.3: See https://github.com/lydell/source-map-resolve#deprecated
+warning react-scripts > resolve-url-loader > rework > css > urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+warning react-scripts > resolve-url-loader > rework > css > source-map-resolve > urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+warning react-scripts > resolve-url-loader > rework > css > source-map-resolve > resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+warning react-scripts > workbox-webpack-plugin > workbox-build > @hapi/joi@15.1.1: Switch to 'npm install joi'
+warning react-scripts > workbox-webpack-plugin > workbox-build > rollup-plugin-babel@4.4.0: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-babel.
+warning react-scripts > webpack-dev-server > webpack-log > uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+warning react-scripts > webpack > watchpack > watchpack-chokidar2 > chokidar@2.1.8: Chokidar 2 does not receive security updates since 2019. Upgrade to chokidar 3 with 15x fewer dependencies
+warning react-scripts > babel-jest > @jest/transform > jest-haste-map > sane@4.1.0: some dependency vulnerabilities fixed, support for node &lt; 10 dropped, and newer ECMAScript syntax/features added
+warning react-scripts > optimize-css-assets-webpack-plugin > cssnano > cssnano-preset-default > postcss-svgo > svgo@1.3.2: This SVGO version is no longer supported. Upgrade to v2.x.x.
+warning react-scripts > postcss-preset-env > postcss-color-functional-notation > postcss-values-parser > flatten@1.0.3: flatten is deprecated in favor of utility frameworks such as lodash.
+warning react-scripts > workbox-webpack-plugin > workbox-build > @hapi/joi > @hapi/bourne@1.3.2: This version has been deprecated and is no longer supported or maintained
+warning react-scripts > workbox-webpack-plugin > workbox-build > @hapi/joi > @hapi/address@2.1.4: Moved to 'npm install @sideway/address'
+warning react-scripts > workbox-webpack-plugin > workbox-build > @hapi/joi > @hapi/topo@3.1.6: This version has been deprecated and is no longer supported or maintained
+warning react-scripts > workbox-webpack-plugin > workbox-build > @hapi/joi > @hapi/hoek@8.5.1: This version has been deprecated and is no longer supported or maintained
+warning react-scripts > workbox-webpack-plugin > workbox-build > @hapi/joi > @hapi/topo > @hapi/hoek@8.5.1: This version has been deprecated and is no longer supported or maintained
+warning react-scripts > workbox-webpack-plugin > workbox-build > strip-comments > babel-plugin-transform-object-rest-spread > babel-runtime > core-js@2.6.12: core-js@&lt;3.4 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Please, upgrade your dependencies to the actual version of core-js.
+warning reactn-devtools > redux-devtools-extension@2.13.9: Package moved to @redux-devtools/extension.
+warning @fortawesome/fontawesome-svg-core@1.3.0: Please upgrade to 6.1.0. https://fontawesome.com/docs/changelog/
+warning @fortawesome/fontawesome-svg-core > @fortawesome/fontawesome-common-types@0.3.0: Please upgrade to 6.1.0. https://fontawesome.com/docs/changelog/
+[2/4] 🚚  Fetching packages...
+[3/4] 🔗  Linking dependencies...
+warning &quot; > @testing-library/user-event@12.8.3&quot; has unmet peer dependency &quot;@testing-library/dom@>=7.21.4&quot;.
+warning &quot; > eslint-plugin-cypress@2.12.1&quot; has unmet peer dependency &quot;eslint@>= 3.2.1&quot;.
+warning &quot; > reactn@2.2.7&quot; has incorrect peer dependency &quot;@types/react@^16.8.0&quot;.
+warning &quot; > styled-components@5.3.3&quot; has unmet peer dependency &quot;react-is@>= 16.8.0&quot;.
+warning &quot;firebase-admin > @firebase/database-compat@0.1.6&quot; has unmet peer dependency &quot;@firebase/app-compat@0.x&quot;.
+warning Workspaces can only be enabled in private projects.
+[4/4] 🔨  Building fresh packages...
+success Saved lockfile.
+✨  Done in 158.07s.
+yarn install  89.83s user 165.30s system 160% cpu 2:39.20 total
+</code></pre>
+<p>:</p>
+<pre><code>  6. Check if /Users/nishio/node_modules/babel-loader is outside your project directory.
+     For example, you might have accidentally installed something in your home folder.
+</code></pre>
+<p>existed, deleted</p>
+<p>:</p>
+<pre><code>7. Try running npm ls babel-loader in your project folder.
+     This will tell you which other package (apart from the expected react-scripts) installed babel-loader.
+</code></pre>
+<p>:</p>
+<pre><code>$ npm ls babel-loader 
+movidea@0.1.0 /Users/nishio/kozaneba
+└─┬ react-scripts@4.0.3
+  └── babel-loader@8.1.0
+</code></pre>
+<p>I thought I deleted it and it didn’t change… but then I looked closer and it changed to eslint.
+:</p>
+<pre><code>$ npm start                       
+
+> movidea@0.1.0 start
+> react-scripts start
+
+
+There might be a problem with the project dependency tree.
+It is likely not a bug in Create React App, but something you need to fix locally.
+
+The react-scripts package provided by Create React App requires a dependency:
+
+  &quot;eslint&quot;: &quot;^7.11.0&quot;
+
+Don't try to install it manually: your package manager does it automatically.
+However, a different version of eslint was detected higher up in the tree:
+
+  /Users/nishio/node_modules/eslint (version: 8.11.0) 
+</code></pre>
+<p>I’ll delete them in order, oh, and start up…</p>
+<p>died due to an error.
+:</p>
+<pre><code>Starting the development server...
+
+/Users/nishio/kozaneba/node_modules/react-scripts/scripts/start.js:19
+  throw err;
+  ^
+
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:67:19)
+    at Object.createHash (node:crypto:135:10)
+    at module.exports (/Users/nishio/kozaneba/node_modules/webpack/lib/util/createHash.js:135:53)
+    at NormalModule._initBuildHash (/Users/nishio/kozaneba/node_modules/webpack/lib/NormalModule.js:417:16)
+    at /Users/nishio/kozaneba/node_modules/webpack/lib/NormalModule.js:452:10
+    at /Users/nishio/kozaneba/node_modules/webpack/lib/NormalModule.js:323:13
+    at /Users/nishio/kozaneba/node_modules/loader-runner/lib/LoaderRunner.js:367:11
+    at /Users/nishio/kozaneba/node_modules/loader-runner/lib/LoaderRunner.js:233:18
+    at context.callback (/Users/nishio/kozaneba/node_modules/loader-runner/lib/LoaderRunner.js:111:13)
+    at /Users/nishio/kozaneba/node_modules/react-scripts/node_modules/babel-loader/lib/index.js:59:103 {
+  opensslErrorStack: [ 'error:03000086:digital envelope routines::initialization error' ],
+  library: 'digital envelope routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_EVP_UNSUPPORTED'
+}
+
+Node.js v17.7.2
+npm start  2.82s user 1.69s system 57% cpu 7.797 total
+</code></pre>
+<p><a href="https://stackoverflow.com/questions/69394632/webpack-build-failing-with-err-ossl-evp-unsupported" class="external">Webpack build failing with ERR_OSSL_EVP_UNSUPPORTED - Stack Overflow<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<code>$ export NODE_OPTIONS=--openssl-legacy-provider</code></p>
+<p>:</p>
+<pre><code>/Users/nishio/kozaneba/src/utils/support_touch.ts
+TypeScript error in /Users/nishio/kozaneba/src/utils/support_touch.ts(11,17):
+Property 'pointerEnabled' does not exist on type 'Navigator'.  TS2339
+
+     9 |   const navigator = window.navigator;
+    10 |   let mousedown, mousemove, mouseup;
+  > 11 |   if (navigator.pointerEnabled || navigator.msPointerEnabled) {
+       |                 ^
+    12 |     mousedown = &quot;onPointerDown&quot;;
+    13 |     mousemove = &quot;onPointerMove&quot;;
+    14 |     mouseup = &quot;onPointerUp onPointerCancel&quot;;
+</code></pre>
+<p>:</p>
+<pre><code>TypeScript error in /Users/nishio/kozaneba/src/App/StatusBar.tsx(28,33):
+Type 'IconDefinition' is not assignable to type 'IconProp'.  TS2322
+
+    26 |   let contents = null;
+    27 |   if (statusBar.type === &quot;loading&quot;) {
+  > 28 |     contents = &lt;FontAwesomeIcon icon={faSpinner} spin={true} />;
+       |                                 ^
+    29 |   } else if (statusBar.type === &quot;done&quot;) {
+    30 |     contents = addTooltip(
+    31 |       &lt;FontAwesomeIcon icon={faCheckCircle} />,
+</code></pre>
+<p>:</p>
+<pre><code> npm WARN deprecated @material-ui/core@4.12.3: You can now upgrade to @mui/material. See the guide: https://mui.com/guides/migration-v4/
+ npm WARN deprecated @material-ui/icons@4.11.2: You can now upgrade to @mui/icons. See the guide: https://mui.com/guides/migration-v4/
+</code></pre>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/2022-03-23" class="external">/nishio/2022-03-23<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Kozaneba-Development-Diary-2022-03-24" class="internal">Kozaneba Development Diary 2022-03-24</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

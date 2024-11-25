@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Textbook of Design Research</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Textbook of Design Research"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Textbook of Design Research"/><meta name="twitter:description" content="Amazon Books by Mikio Kiura aka [kur I have studied at CIID (Copenhagen Institute of Interaction Design) and have created a lot of things myself. It’s a book about design written by someone who knows how to design properly and has studied design properly.” Reading notes to explain at Cybozu’s internal study group A story about how design isn’t just about looks."/><meta property="og:description" content="Amazon Books by Mikio Kiura aka [kur I have studied at CIID (Copenhagen Institute of Interaction Design) and have created a lot of things myself. It’s a book about design written by someone who knows how to design properly and has studied design properly.” Reading notes to explain at Cybozu’s internal study group A story about how design isn’t just about looks."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="Amazon Books by Mikio Kiura aka [kur I have studied at CIID (Copenhagen Institute of Interaction Design) and have created a lot of things myself. It’s a book about design written by someone who knows how to design properly and has studied design properly.” Reading notes to explain at Cybozu’s internal study group A story about how design isn’t just about looks."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Textbook-of-Design-Research"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Textbook-of-Design-Research"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Amazon Books by Mikio Kiura aka [kur I have studied at CIID (Copenhagen Institute of Interaction Design) and have created a lot of things myself. It’s a book about design written by someone who knows how to design properly and has studied design properly.” Reading notes to explain at Cybozu’s internal study group A story about how design isn’t just about looks."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Textbook-of-Design-Research"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Textbook of Design Research</a></div></nav><h1 class="article-title">Textbook of Design Research</h1><p show-comma="true" class="content-meta"><span>Jul 03, 2021</span><span>11 min read</span></p></div></div><article class="popover-hint"><p><img src="https://gyazo.com/cd0c6c47247b33670de7bae19e506054/thumb/1000" alt="image"/></p>
+<ul>
+<li><a href="https://amzn.to/2UCfjBH" class="external">Amazon<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Books by <a href="./Mikio-Kiura" class="internal alias" data-slug="Mikio-Kiura">Mikio Kiura</a> aka [kur
+<ul>
+<li>I have studied at CIID (Copenhagen Institute of Interaction Design) and have created a lot of things myself.</li>
+<li>It’s a book about design written by someone who knows how to design properly and has studied design properly.”</li>
+</ul>
+</li>
+</ul>
+<p>Reading notes to explain at Cybozu’s internal study group</p>
+<ul>
+<li>
+<p>A story about how design isn’t just about looks.</p>
+<ul>
+<li>
+<p><a href="./Buchanan's-Orders-of-Design" class="internal alias" data-slug="Buchanan's-Orders-of-Design">Buchanan’s Orders of Design</a>, divided into four phases</p>
+<ul>
+<li>The word “design” tends to conjure up images of appearance and industrial product design, but it extends to interaction and ecosystem design.</li>
+<li>CIID is the Copenhagen Institute of Interaction Design.</li>
+</ul>
+</li>
+<li>
+<p><a href="./human-centered-design" class="internal alias" data-slug="human-centered-design">human-centered design</a> has changed the meaning of the word</p>
+</li>
+<li>
+<p>Related: “<a href="./Design-for-whom" class="internal alias" data-slug="Design-for-whom">Design for whom</a>”</p>
+</li>
+<li>
+<p>There was a time when ease of production was prioritized over ease of use for the user, and in response, the early days of human-centered design were based on the idea that the design should focus more on the people who use the product.</p>
+<ul>
+<li>Useful, Usable, Desirable</li>
+<li>Indicators related to the user’s inner life</li>
+</ul>
+</li>
+<li>
+<p>How exactly is “designing with a focus on the people who use it” achieved?</p>
+<ul>
+<li>What is the ease of use for the people who use it? without the people who use the product…</li>
+<li>This is why the <a href="./Participatory-Design" class="internal alias" data-slug="Participatory-Design">Participatory Design</a> method of “welcoming users into the design process” was born.</li>
+<li>See also: Participatory design was discussed in “[What features do you want?</li>
+</ul>
+</li>
+<li>
+<p>Looking at kintone from this perspective:.</p>
+<ul>
+<li>A system that “allows users to participate in the design process” with regard to the development of business applications.</li>
+<li>Users participate in the development process themselves, rather than purchasing something “already made.
+<ul>
+<li>Nor do we decide on the specifications and outsource them to a “maker”.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>design research</p>
+<ul>
+<li>This book assumes that the design is based on the results of research
+<ul>
+<li>It’s not a word that has a clear definition in the world.</li>
+</ul>
+</li>
+<li>Need to find issues that are needed, unresolved, and can be solved at a realistic cost
+<ul>
+<li>This is called “opportunity.”
+<ul>
+<li><a href="./Finding-Opportunities" class="internal alias" data-slug="Finding-Opportunities">Finding Opportunities</a> 3 phases of designer involvement1 p.40</li>
+<li>Opportunity Scout</li>
+<li>Storytelling</li>
+<li>Execution</li>
+<li>This is defined by CIID</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Half of the opportunity is “what value to provide” and half of the solution is “how to provide it.
+<ul>
+<li>Verbalize the opportunity first before suddenly thinking about solutions, solutions
+<ul>
+<li>It has the effect of reducing rework.</li>
+</ul>
+</li>
+<li>I think this has the effect of breaking “vague and large processes” into smaller processes, which makes it easier to decide on next actions when things go wrong.</li>
+</ul>
+</li>
+<li>To discover opportunities, it is better to increase the number of options and then reduce them
+<ul>
+<li>Because of various biases, humans can only recognize some of the “<a href="./possible-options" class="internal alias" data-slug="possible-options">possible options</a>,” so we need to expand our options first.
+<ul>
+<li>Discussed here: <a href="./Design-thinking-is-a-depth-first-search" class="internal alias" data-slug="Design-thinking-is-a-depth-first-search">Design thinking is a depth-first search?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Benefits of Opportunity Language: Transparency of the design process</p>
+<ul>
+<li>Confidence in “Why are we making this?” and “Do people really want this?”
+<ul>
+<li>→ Increased commitment to the project</li>
+</ul>
+</li>
+<li>Makes it easier for others to share in the project’s objectives
+<ul>
+<li>A black box makes it hard to get involved until things are finished.</li>
+</ul>
+</li>
+<li>Creating an environment in which members can move easily and autonomously</li>
+</ul>
+</li>
+<li>
+<p>Design research is not an upstream process</p>
+<ul>
+<li>Not in front of the development as an independent process.</li>
+<li>For example, developing a <a href="./Lean-startup" class="internal alias" data-slug="Lean-startup">Lean startup</a> type product.
+<ul>
+<li>The process itself is an iterative hypothesis testing process</li>
+<li>Product development itself can be described as design research.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Difference between marketing research and design research</p>
+<ul>
+<li>Easily confused but different objectives.
+- <a href="./I-need-a-fast-horse." class="internal alias" data-slug="I-need-a-fast-horse.">I need a fast horse.</a>
+- <a href="./People-don't-know-what-they-want." class="internal alias" data-slug="People-don't-know-what-they-want.">People don’t know what they want.</a>
+<ul>
+<li>→It’s not very useful research to ask directly what you want in creating something new.</li>
+</ul>
+</li>
+<li>Focus on the individual first
+- <a href="./Don't-abstract-people-too-easily." class="internal alias" data-slug="Don't-abstract-people-too-easily.">Don’t abstract people too easily.</a> 　 <a href="./People-have-individual-differences." class="internal alias" data-slug="People-have-individual-differences.">People have individual differences.</a>
+<ul>
+<li>Whether findings obtained by focusing on an individual are specific to that individual or applicable to many people can be ascertained after they are obtained</li>
+<li>No need to focus on “typical users”; some insights can be gained by focusing on extreme users
+<ul>
+<li>Turning these extreme users into new customers is not the main objective.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The Story of the Black Plate
+- Like <a href="./Abilene's-paradox" class="internal alias" data-slug="Abilene's-paradox">Abilene’s paradox</a>.
+<ul>
+<li>Fast Food and Organic Food</li>
+<li>You play on the speculation of how you should be socially, not how you actually are.</li>
+<li>Trying to be exemplary in front of others</li>
+<li>I want to observe under normal circumstances as much as possible.</li>
+</ul>
+</li>
+<li>Do not limit understanding to individual users
+<ul>
+<li>This is the same rut that once separated the user from the product and only looked at the product to design it.</li>
+<li>The user does not exist independently of the environment</li>
+<li>Interact with surrounding environment and people</li>
+<li>How does the user’s use of the product affect the surrounding people and environment? Should they? Should it not?</li>
+<li>Groupware, such as kintone, is particularly unique in that it is introduced to an organization.
+<ul>
+<li>Not only the ease of use for the individual user, but also how it interacts with those around it when used within the organization.</li>
+<li>For example, for an individual using groupware, you want to make a “everyone” mentions when you want many people to read what you have written, but it generates a notification for everyone around you.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>New business development in companies</p>
+<ul>
+<li>I say “new,” but not basically zero-based.</li>
+<li>Synergies from leveraging resources that the company already has
+<ul>
+<li>Exposure, recognition, and understanding of existing customers, facilities and personnel for development and production, procurement and sales channels, intellectual property, etc.</li>
+<li>In the case of Cybozu, it is easier to understand the problems of customers who are already using groupware than zero-based companies, and when a solution is developed, it is easier to make customers aware of it and to create sales channels.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Products are not just things.</p>
+<ul>
+<li>Product from the time the purchaser recognizes the product until it dies.
+<ul>
+<li>“In some cases, like tombstones, they generate value to those left behind after death.
+<ul>
+<li>From the time the purchaser becomes aware of the product until the user dies?”</li>
+<li>If the purchaser is a corporation in the first place, the person who made the purchase decision may leave the company</li>
+<li>Well, it’s not the end of the world when it’s time to buy or sell, that’s what I mean.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Organizational and business improvement itself can be a product.</li>
+<li>Improving the organizational and operational side of the business to fit the thing can also be a product.</li>
+<li>This is a concept that fits well with the Cybozu way of thinking.
+<ul>
+<li>It matches with the idea that “the goal is not to sell groupware, but to create and maintain a state of teamwork in the customer’s company.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The first two chapters are about 30% of the total, with explanations of specific methods in chapters 3 and beyond.</p>
+<p>Considerations after reading this far</p>
+<ul>
+<li><img src="https://gyazo.com/1ff82956b4b4d4aae31ceeb661a06db6/thumb/1000" alt="image"/></li>
+<li>Looking back at my usual behavior, I tend to go for the “gray stuff” because I can or can’t do it.
+<ul>
+<li>Because knowing that “something you don’t know if you can do” can be done is an expansion of the scope of what you can do.</li>
+<li>Unconsciously, they feel and act on the high value of “doing more of what they can do”.</li>
+<li>We’re going to move to the difficult side on the technical difficulty axis.</li>
+</ul>
+</li>
+<li>On the other hand, when we think about exploring opportunities for innovation, this is “unintentionally narrowing the scope of our search”
+<ul>
+<li><img src="https://gyazo.com/15d26f4637a37d08751b0e752b026259/thumb/1000" alt="image"/></li>
+<li>I only saw two of the five arrows marked going to the right.</li>
+<li>Even I would choose the one with the higher customer value if it were one of the two arrows going to the right, but that’s not a very appropriate opportunity search.</li>
+</ul>
+</li>
+</ul>
+<p>Chapter 3</p>
+<ul>
+<li>Design Research Procedure
+<ul>
+<li>design process
+- <a href="./double-diamond" class="internal alias" data-slug="double-diamond">double diamond</a> Talk about adding arrows to the 2019 edition.
+<ul>
+<li>d.school and CIID</li>
+</ul>
+</li>
+<li>Project Design</li>
+<li>team building
+- Variation of <a href="./tackman-model" class="internal alias" data-slug="tackman-model">tackman model</a> <a href="./DAU-Model" class="internal alias" data-slug="DAU-Model">DAU Model</a>
+- Storm is not in a phase of independence.
+<ul>
+<li>Disclose at the outset how you prefer to work, what you hope to gain from this project, etc.
+<ul>
+<li>Align perceptions of the project</li>
+</ul>
+</li>
+<li>Discussion technique: <a href="./Four-Player-Framework" class="internal alias" data-slug="Four-Player-Framework">Four-Player Framework</a>.
+<ul>
+<li>Related: <a href="./6-hats" class="internal alias" data-slug="6-hats">6 hats</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Research Design</li>
+<li>survey
+<ul>
+<li>interview (i.e. television, newspaper, etc.)
+<ul>
+<li>What makes you say it is the best choice?</li>
+<li>It would be nice to be able to objectively define what kind of people to talk to.</li>
+<li>Opinions differ on the optimal number of people.
+<ul>
+<li>The information gained by adding one more person gradually decreases, so somewhere along the line it becomes not worth the cost.</li>
+<li>Ideally, “doing the interview” should be a means, not an end, so it should stop even in the middle of the schedule.
+<ul>
+<li>Not so easy when it comes to client work.</li>
+</ul>
+</li>
+<li>If we don’t decide in advance who decides that, we’re going to continue to linger.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>It’s full of very specific information, 60 pages here alone.</li>
+</ul>
+</li>
+<li>analysis
+<ul>
+<li>Theme Creation
+<ul>
+<li>It appears to be an unbundled light version of the KJ method. <a href="./affinity-diagram" class="internal alias" data-slug="affinity-diagram">affinity diagram</a> form.</li>
+<li>Pick one interesting piece and then gather similar pieces close together.
+<ul>
+<li>When describing the KJ method, I would describe it as “possibly related” instead of “similar.”</li>
+<li>You call it “classification,” so maybe this is a process that doesn’t include the “<a href="./Do-not-classify." class="internal alias" data-slug="Do-not-classify.">Do not classify.</a>” philosophy of the KJ method.</li>
+</ul>
+</li>
+<li>It is a bottom-up process by selecting one interesting piece and attaching it to it. Top-down categorization is avoided because of this procedure.</li>
+</ul>
+</li>
+<li>Extracting Insights
+<ul>
+<li>What is good insight?
+<ul>
+<li>Read and understand
+<ul>
+<li>To make it possible to involve people who do not know the context in the team.</li>
+</ul>
+</li>
+<li>Leading to innovation
+<ul>
+<li>I can move on to the next action.</li>
+<li>Even interesting results are futile if they do not lead to action.</li>
+</ul>
+</li>
+<li>Must be new findings</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>opportunity detection
+<ul>
+<li>How might we
+<ul>
+<li>How can we do this?”
+<ul>
+<li>Target User</li>
+<li>constraints</li>
+<li>Goals to be achieved</li>
+</ul>
+</li>
+<li>10 Examples
+<ul>
+<li>Develop strengths/remove weaknesses</li>
+<li>Focus on the adjective and vary it.
+<ul>
+<li>Thinking backwards (e.g., turning a negative into a positive)</li>
+</ul>
+</li>
+<li>argument from the start
+<ul>
+<li>Eliminate things that are supposed to be there in the first place, etc.</li>
+</ul>
+</li>
+<li>Are there any other resources available?</li>
+<li>change one’s stance
+<ul>
+<li>We tend to think only from the perspective of the person who is being inconvenienced, but we dare to put ourselves in the shoes of the person who is causing the problem, etc.</li>
+</ul>
+</li>
+<li>Splitting the Problem</li>
+<li>I think there are a few more ideas for this one…</li>
+</ul>
+</li>
+<li>Do not use negative language</li>
+<li>Make the question neither too broad nor too narrow.</li>
+<li>Reconcile perceptions with stakeholders.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Considerations so far</p>
+<ul>
+<li>
+<p>It looks like I can replace it with a light version of my usual KJ method up to the theme creation part.</p>
+</li>
+<li>
+<p>The KJ method is vague after group formation, but in this method, “insight extraction” and “opportunity discovery” follow.</p>
+<ul>
+<li>It seems easy to proceed without getting lost because “what kind of things are good” for the output at each stage is clearly indicated.</li>
+<li>When I put KJ method groups into writing, I don’t particularly think about whether it will lead to innovation.
+<ul>
+<li>Might be interesting to consider.</li>
+<li>This is because the KJ method was originally created to create a hypothesis in academia, and even though the “creating a hypothesis” part of the method is the same as the method for designing something, the purpose of the hypothesis is different.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>idea</p>
+<ul>
+<li>Presto, “Everything on paper.” “Ideas not put on paper are worthless.”
+<ul>
+<li>Great, totally agree.</li>
+</ul>
+</li>
+<li>Idea Selection
+<ul>
+<li>First, establish an evaluation axis</li>
+<li>Don’t create a rating scale after looking at ideas, there will be a bias to select certain ideas.</li>
+<li>Don’t tell presto participants in advance what the evaluation criteria are, it will bias the ideas that come up.</li>
+<li>How do you mediate when there is a disagreement?
+<ul>
+<li>KUR: First, I would confirm the goals/objectives of the project. Since the goal setting may be ambiguous, interpreted differently by different people, or subject to different constraints, I would reconcile the assumptions. If we do not agree on the assumptions, it will be difficult to come to a consensus on which ideas are good. Without a consensus, it will be difficult to come to a cohesive solution.</li>
+<li>I see, so there may be differences in interpretation of objectives, understanding of implicit constraints, etc., and that is the first step in resolving them. Once that is resolved, the disagreement over which idea is better often disappears.
+- Similar to the idea of a [Conflict Resolution Diagram</li>
+<li>KUR: However, it is actually difficult because the “good state” does not always coincide with each other and with the stakeholders. For example, proposal A is better when considering the customer, but proposal B is better when considering the OKRs set for the organization.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Concept creation
+<ul>
+<li>What is the concept?
+<ul>
+<li>No clear definition.</li>
+<li>Communicate findings to stakeholders</li>
+<li>Make ideas more concrete and verifiable</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>storytelling</li>
+<li>Prototyping as hypothesis testing
+<ul>
+<li>Prototype with low fidelity
+<ul>
+<li>Like paper prototypes.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Chapter 4: Design Research Operations</p>
+<ul>
+<li>Design research in ongoing product development</li>
+<li>organizational structure
+<ul>
+<li>Considered a cost center for independent teams</li>
+<li>Often overlooks research opportunities</li>
+</ul>
+</li>
+<li>product management</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%83%AA%E3%82%B5%E3%83%BC%E3%83%81%E3%81%AE%E6%95%99%E7%A7%91%E6%9B%B8" class="external">/nishio/デザインリサーチの教科書<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Context-Proto-and-Insights" class="internal">Context Proto and Insights</a></li><li><a href="./Landing-point-of-the-KJ-method" class="internal">Landing point of the KJ method</a></li><li><a href="./Nodal-Point-of-Thought-2021-06-14" class="internal">Nodal Point of Thought 2021-06-14</a></li><li><a href="./Talk-about-asking-users-what-features-they-want." class="internal">Talk about asking users what features they want.</a></li><li><a href="./Why-make-this" class="internal">Why make this?</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

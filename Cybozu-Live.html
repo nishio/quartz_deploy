@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Cybozu Live</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Cybozu Live"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Cybozu Live"/><meta name="twitter:description" content="This is an interesting case study from a Technology Management point of view, in which a free service grows to 2 million users before it is terminated ..."/><meta property="og:description" content="This is an interesting case study from a Technology Management point of view, in which a free service grows to 2 million users before it is terminated ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="This is an interesting case study from a Technology Management point of view, in which a free service grows to 2 million users before it is terminated ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Cybozu-Live"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Cybozu-Live"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="This is an interesting case study from a Technology Management point of view, in which a free service grows to 2 million users before it is terminated ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Cybozu-Live"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Cybozu Live</a></div></nav><h1 class="article-title">Cybozu Live</h1><p show-comma="true" class="content-meta"><span>Oct 28, 2017</span><span>11 min read</span></p></div></div><article class="popover-hint"><p>This is an interesting case study from a <a href="./Technology-Management" class="internal alias" data-slug="Technology-Management">Technology Management</a> point of view, in which a free service grows to 2 million users before it is terminated. (Note: The author was not involved in the Cybozu Live project at all, and this page is based on speculation and summary based on public information. The content of this page is not guaranteed, nor does it represent the opinion of the organization to which it belongs).</p>
+<p>Brief description</p>
+<ul>
+<li>On November 26, 2009, the service was opened to the public in beta on an invitation-only basis.</li>
+<li>In August 2017, the total number of registered users exceeded 2 million.</li>
+<li>Announced on October 24, 2017 that services will end on April 15, 2019.</li>
+</ul>
+<p>Published Facts</p>
+<ul>
+<li>November 26, 2009 - The service is opened to the public in beta on an invitation-only basis.</li>
+<li>October 25, 2010 - Officially open to the public with free registration</li>
+<li>December 14, 2010 <a href="http://hatenanews.com/articles/201012/2098" class="external">Hatena News PR article:<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. Planning started in 2008, 4 team members, frameworks are Seasar and jQuery.</li>
+<li>July 19, 2011 - Cybozu releases “Cybozu Live for iPhone” iPhone application.</li>
+<li>December 7, 2011 Launch of Paid Services Postponed <a href="https://archive.fo/cSHmJ" class="external">Source:<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> <a href="https://magazine.cybozulive.com/2011/12/premiumplan.html" class="external">Original URL:<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>
+<blockquote>
+<p>We are pleased to announce that the launch of “Cybozu Live Paid Option”, which was scheduled to start in February 2012, has been postponed.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Cybozu Live will continue to be available free of charge for up to 100 members per group until the paid option is launched.</p>
+</blockquote>
+</li>
+<li>*Following the launch of the paid option, the service will continue to be available free of charge for groups with 20 or fewer members.</li>
+</ul>
+</li>
+<li>January 23, 2012 - Cybozu releases “Cybozu Live for Android” Android application.</li>
+<li>December 19, 2013 Expansion of Free User Limit to 300 users - Easier migration from “Yahoo!</li>
+<li>February 26, 2014 - Added features such as chat function, recycle bin function, login lock, CSV output of survey results, and emergency contact notification recipient settings.</li>
+<li>October 15, 2014 - Number of registered users exceeds 1 million</li>
+<li>In August 2017, the total number of registered users exceeded 2 million.</li>
+<li>On October 24, 2017, the company <a href="https://live.cybozu.co.jp/about/20171024.html" class="external">announced<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> that its services will end on April 15, 2019.
+<ul>
+<li>
+<blockquote>
+<p>We have decided to terminate “Cybozu Live” against the backdrop of the need for investment, such as fundamental reworking, to continue stable service in the future due to the aging of the system, and the need for further investment in paid services.</p>
+</blockquote>
+</li>
+<li>CNET writes <a href="https://japan.cnet.com/" class="external">https://japan.cnet.com/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> that “the paid version groupware business is strong and further investment is essential to provide a comfortable service to subscribed users, and we have decided that we should focus on the paid version service considering our limited resources.” article/35109275/]. The official source is <a href="https://topics.cybozu.co.jp/news/2017/10/24-4407.html" class="external">here<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+<p>Common Reactions</p>
+<ul>
+<li>I’ll pay you to continue.
+<ul>
+<li><a href="https://twitter.com/tetsutalow/status/922724533206966277" class="external">e.g.<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Published Fact: According to [IR <a href="https://topics.cybozu.co.jp/news/2017/08/10-4218.html" class="external">https://topics.cybozu.co.jp/news/2017/08/10-4218.html<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> on August 10, 2017] sales are up 15% over last year and recurring profit has been revised down but is still expected to be in the black at 360 million.</li>
+<li>It is not a matter of immediate cash.</li>
+</ul>
+</li>
+</ul>
+<p>Common Response 2</p>
+<ul>
+<li>I want it to be open source.
+<ul>
+<li><a href="https://twitter.com/kur/status/922726300321583105" class="external">Example<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>A beta version was released in 2009.</li>
+<li>According to a 2010 <a href="http://hatenanews.com/articles/201012/2098" class="external">Hatena News PR article<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, the frameworks are Seasar and jQuery.</li>
+<li>Apache + Tomcat + MySQL according to <a href="https://www.slideshare.net/kazfuku/cybozulive-seleniumtest" class="external">lecture<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> in 2011</li>
+<li>On September 26, 2016, many of the products offered by the Seasar project are End of Life (EOL) - <a href="http://www.seasar.org/" class="external">http://www.seasar.org/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>This EOL was announced September 26, 2015 <a href="http://gihyo.jp/news/report/2015/10/2701" class="external">Seasar Conference 2015<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Attempted to break away from S2Dao with the EOL of Seasar, the Java framework used by Kintone and others.</p>
+</blockquote>
+<ul>
+<li><a href="http://blog.cybozu.io/entry/2016/12/28/101500" class="external">How did we make the wrong technology choice? 2016 - Cybozu Inside Out | Cybozu Engineer’s Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>Considering what “the system has become obsolete” and “investment such as drastic reworking is necessary to continue stable service,” which are written as the reasons for termination in the release text, it would be difficult to provide the service even if the source code is made public.</li>
+</ul>
+</li>
+</ul>
+<p>Consideration of Nishio</p>
+<ul>
+<li>
+<p>By announcing the end of the program after 18 months with 2 million registered users, a market of 2 million “Cybozu Live refugees” was created at this moment today.</p>
+</li>
+<li>
+<p>Customers discovered by free groupware are freed from lock-in.</p>
+</li>
+<li>
+<p>Since there is a year and a half until the end of the program and it will be exported to CSV, we should be able to acquire users efficiently if we add a function that allows migration.</p>
+</li>
+<li>
+<p>I have a feeling that various services will be created.</p>
+</li>
+<li>
+<p>And since users have experienced that “services hosted by one company will end unexpectedly,” they should be concerned about the ease of transition.</p>
+</li>
+<li>
+<p>A Mastodon-like approach to Twitter will also emerge.</p>
+</li>
+<li>
+<p>A distributed communication infrastructure with a different timescale from Twitter and chat could be created.</p>
+</li>
+<li>
+<p>Is it still difficult for a for-profit company to continue to provide free services?</p>
+</li>
+<li>
+<p>Good up to the point where the project is launched and delivered, but threatened by dependent frameworks and other EOLs</p>
+</li>
+<li>
+<p>Is it impossible for software to continue to be used without being metabolized in the first place, not to mention a for-profit company?</p>
+</li>
+<li>
+<p>Does lock-in to services hinder metabolism?</p>
+</li>
+<li>
+<p>What should have been the role of groupware as “social infrastructure”?</p>
+</li>
+</ul>
+<p>Past Notices
+Oct. 24, 2017 Notice of Termination of Cybozu Live Service
+2017/08/02 <a href="./8/13-(Sun.)-from-1:00-AM" class="internal alias" data-slug="8/13-(Sun.)-from-1:00-AM">13 (Sun.) from 1:00 AM</a> Site maintenance (search function stopped)
+2017/07/12 (Completed) <a href="./7/12-(Wed.)-from-15:00" class="internal alias" data-slug="7/12-(Wed.)-from-15:00">12 (Wed.) from 15:00</a> Site maintenance (several minutes down)
+07/05/2017 Changes during site maintenance on Wednesday, 7/5 (no outage)
+06/13/2017 Disabling TLS 1.0 encryption
+06/12/2017 Changes for Site Maintenance on Wednesday, 6/14 (no outage)
+2017/06/12 (Completed) <a href="./Monday,-June-12,-noon-" class="internal alias" data-slug="Monday,-June-12,-noon-">Monday, June 12, noon-</a> Site maintenance (stopped for a few seconds)
+06/06/2017 (Completed) <a href="./Saturday,-June-10,-from-22:00" class="internal alias" data-slug="Saturday,-June-10,-from-22:00">Saturday, June 10, from 22:00</a> Site maintenance (60-minute outage)
+2017/05/31 Beware of unrecognized email invitations!
+2017/05/09 <a href="./Sunday,-5/14,-from-1:00-AM" class="internal alias" data-slug="Sunday,-5/14,-from-1:00-AM">14, from 1:00 AM</a> Site maintenance (30-minute outage)
+2017/04/24 (Completed) <a href="./4/27-(Thu.)-from-15:00" class="internal alias" data-slug="4/27-(Thu.)-from-15:00">27 (Thu.) from 15:00</a> Site maintenance (search function: suspended for several minutes)
+Apr 11, 2017 There is a delay in sending and receiving chat
+Apr. 05, 2017 (Completed) <a href="./4/9-(Sun.)-from-1:00-AM" class="internal alias" data-slug="4/9-(Sun.)-from-1:00-AM">9 (Sun.) from 1:00 AM</a> Site maintenance (chat/timeline functions suspended)
+Mar 28, 2017 (Fixed) Facebook login is not working (updated 3/30)
+03/23/2017 (Repaired) Notification of current problems (added on 4/11)
+03/15/2017 Notification of end of provision of old application for smartphones
+2017/03/08 Notice of “Cybozu Live” IP address change (updated 6/6)
+2017/03/06 (Completed) <a href="./3/12-(Sun.)-from-1:00-AM" class="internal alias" data-slug="3/12-(Sun.)-from-1:00-AM">12 (Sun.) from 1:00 AM</a> Site maintenance (1-hour suspension)
+2017/02/03 (Completed) <a href="./2/12-(Sun.)-from-1:00-AM" class="internal alias" data-slug="2/12-(Sun.)-from-1:00-AM">12 (Sun.) from 1:00 AM</a> Site maintenance (1-hour suspension)
+2017/01/23 (Completed) <a href="./Tuesday,-1/24" class="internal alias" data-slug="Tuesday,-1/24">24</a> Site maintenance (non-stop)
+12/21/2016 Smartphone-only application updated and consolidated into one.
+2016/12/ 8 User Support during the New Year’s Holidays
+11/26/2016 (Resolved) Access problems (added 11/29/2016)
+11/17/2016 Notice of current problems (added 11/29/2016)
+11/15/2016 Changes during site maintenance on Tuesday, 11/15/2016 (no outage)
+2016/11/7 <a href="./Sunday,-11/13,-from-1:00-AM" class="internal alias" data-slug="Sunday,-11/13,-from-1:00-AM">13, from 1:00 AM</a> Site maintenance (2-hour outage)
+10/25/2016 (Completed) <a href="./10/31-(Mon.)-from-1:00-AM" class="internal alias" data-slug="10/31-(Mon.)-from-1:00-AM">31 (Mon.) from 1:00 AM</a> Cybozu Live Emergency Maintenance Notice
+9/30/2016 An event is occurring in Mozilla Firefox that is preventing file attachments
+9/9/2016 (Completed) <a href="./9/11-(Sun.)-from-1:00-AM" class="internal alias" data-slug="9/11-(Sun.)-from-1:00-AM">11 (Sun.) from 1:00 AM</a> Site maintenance (some service restrictions apply)
+8/25/2016 Notification of current issues (added on 9/12)
+8/10/2016 (Completed) Changes during Site Maintenance on Tuesday, 8/16 (Non-Stop)
+8/8/2016 (Completed) <a href="./8/14-(Sun.)-from-1:00-AM" class="internal alias" data-slug="8/14-(Sun.)-from-1:00-AM">14 (Sun.) from 1:00 AM</a> Site maintenance (30-minute outage)
+6/15/2016 (Completed) <a href="./Monday,-6/20,-18:00-" class="internal alias" data-slug="Monday,-6/20,-18:00-">20, 18:00-</a> Site maintenance (non-stop)
+6/6/2016 (Completed) <a href="./6/12-(Sun.)-from-1:00-AM" class="internal alias" data-slug="6/12-(Sun.)-from-1:00-AM">12 (Sun.) from 1:00 AM</a> Site maintenance (search/chat/timeline functions suspended)
+5/19/2016 Update to “Cybozu Live TIMELINE”
+5/17/2016 (Completed) <a href="./Tuesday,-5/17/2016" class="internal alias" data-slug="Tuesday,-5/17/2016">2016</a> Emergency maintenance (non-stop)
+4/28/2016 (Completed) <a href="./Sunday,-5/8,-from-1:00-AM" class="internal alias" data-slug="Sunday,-5/8,-from-1:00-AM">8, from 1:00 AM</a> Site maintenance (120-minute outage)
+4/21/2016 (Completed) Changes during site maintenance on Monday, 4/25 (non-stop)
+4/5/2016 (Completed) <a href="./4/10-(Sun.)-from-1:00-AM" class="internal alias" data-slug="4/10-(Sun.)-from-1:00-AM">10 (Sun.) from 1:00 AM</a> Site maintenance (60-minute outage)
+3/23/2016 Update “Cybozu Live TIMELINE” - Support for QR Code and Invitation Link
+3/14/2016 Added group invite/approval function by “QR Code/Invite Link”.
+3/9/2016 (Completed) <a href="./3/13-(Sun.)-from-1:00-AM" class="internal alias" data-slug="3/13-(Sun.)-from-1:00-AM">13 (Sun.) from 1:00 AM</a> Site maintenance (60-minute outage)
+2016/2/10 (Completed) <a href="./2/14-(Sun.)-from-1:00-AM" class="internal alias" data-slug="2/14-(Sun.)-from-1:00-AM">14 (Sun.) from 1:00 AM</a> Site maintenance (search function stopped)
+1/8/2016 Update of “Cybozu Live TIMELINE” for Android
+1/6/2016 (Completed) <a href="./Tuesday,-1/12,-18:00-" class="internal alias" data-slug="Tuesday,-1/12,-18:00-">12, 18:00-</a> Site maintenance (non-stop)
+Call for participants for the user meeting to be held in Nagoya on Monday, 12/21/2015
+12/15/2015 Download of New Cybozu Live TIMELINE App for Android Available
+12/ 8/2015 (Completed) <a href="./12/13-(Sun.)-from-1:00-AM" class="internal alias" data-slug="12/13-(Sun.)-from-1:00-AM">13 (Sun.) from 1:00 AM</a> Site maintenance (search function stopped)
+Dec 7, 2015 Update of “Cybozu Live TIMELINE” for iOS
+2015/12/ 2 User Support during the New Year’s Holidays
+2015/12/ 2 (Completed) <a href="./12/7-(Mon.)-18:00-" class="internal alias" data-slug="12/7-(Mon.)-18:00-">7 (Mon.) 18:00-</a> Site maintenance (non-stop)
+11/9/2015 (Completed) <a href="./11/11-(Wed.)-18:00-" class="internal alias" data-slug="11/11-(Wed.)-18:00-">11 (Wed.) 18:00-</a> Site maintenance (non-stop)
+11/5/2015 (Completed) <a href="./11/8-(Sun.)-from-1:00-AM" class="internal alias" data-slug="11/8-(Sun.)-from-1:00-AM">8 (Sun.) from 1:00 AM</a> Site maintenance (20-minute outage)
+November 4, 2015 New Timeline Feature and New Cybozu Live TIMELINE App for iOS Available for Download
+11/2/2015 (Completed) <a href="./11/4-(Wed.)-18:00-" class="internal alias" data-slug="11/4-(Wed.)-18:00-">4 (Wed.) 18:00-</a> Site maintenance (non-stop)
+10/29/2015 New app “Cybozu Live TIMELINE” coming soon
+10/19/2015 Survey specifications were changed and functionality related to images was improved.
+10/16/2015 (Completed) <a href="./10/20-(Tue.)-18:00-" class="internal alias" data-slug="10/20-(Tue.)-18:00-">20 (Tue.) 18:00-</a> Site maintenance (non-stop)
+10/15/2015 (Completed) <a href="./Thursday,-10/15,-18:00-" class="internal alias" data-slug="Thursday,-10/15,-18:00-">15, 18:00-</a> Site maintenance (non-stop)
+10/14/2015 (Postponed) <a href="./10/14-(Wed.)-18:00-" class="internal alias" data-slug="10/14-(Wed.)-18:00-">14 (Wed.) 18:00-</a> Site maintenance (non-stop)
+10/6/2015 (Postponed) <a href="./10/13-(Tue.)-18:00-" class="internal alias" data-slug="10/13-(Tue.)-18:00-">13 (Tue.) 18:00-</a> Site maintenance (non-stop)
+Oct. 2, 2015 (Completed) <a href="./Oct.-11-(Sun.)-from-1:00-AM" class="internal alias" data-slug="Oct.-11-(Sun.)-from-1:00-AM">Oct. 11 (Sun.) from 1:00 AM</a> Site maintenance (search function stopped)
+9/7/2015 (Completed) <a href="./9/13-(Sun.)-from-1:00-AM" class="internal alias" data-slug="9/13-(Sun.)-from-1:00-AM">13 (Sun.) from 1:00 AM</a> Site maintenance (20-minute outage)
+8/7/2015 (Completed) <a href="./8/9-(Sun.)-from-1:00-AM" class="internal alias" data-slug="8/9-(Sun.)-from-1:00-AM">9 (Sun.) from 1:00 AM</a> Site maintenance (30-minute outage)
+2015/8/ 4 (Restored) <a href="./8/4" class="internal" data-slug="8/4">4</a> Emergency Maintenance
+7/24/2015 (Completed) Notice of SSL Server Certificate Change
+2015/7/13 (Completed) <a href="./Tuesday,-7/14,-18:00-" class="internal alias" data-slug="Tuesday,-7/14,-18:00-">14, 18:00-</a> Site maintenance (non-stop)
+7/6/2015 (Completed) <a href="./7/12-(Sun.)-from-1:00-AM" class="internal alias" data-slug="7/12-(Sun.)-from-1:00-AM">12 (Sun.) from 1:00 AM</a> Site maintenance (30-minute outage)
+6/10/2015 (Completed) <a href="./6/14-(Sun.)-from-1:00-AM" class="internal alias" data-slug="6/14-(Sun.)-from-1:00-AM">14 (Sun.) from 1:00 AM</a> Site maintenance (tens of seconds)
+6/1/2015 Functional improvements were made, including English display of chat
+5/29/2015 (Completed) <a href="./6/1-(Mon.)-13:00-" class="internal alias" data-slug="6/1-(Mon.)-13:00-">1 (Mon.) 13:00-</a> Site maintenance (non-stop)
+4/7/2015 (Completed) <a href="./4/12-(Sun.)-from-1:00-AM" class="internal alias" data-slug="4/12-(Sun.)-from-1:00-AM">12 (Sun.) from 1:00 AM</a> Site maintenance
+4/2/2015 The first English-language version has been released!
+3/31/2015 (Completed) <a href="./Thursday,-4/2,-13:00-" class="internal alias" data-slug="Thursday,-4/2,-13:00-">2, 13:00-</a> Site maintenance (non-stop)
+3/30/2015 <a href="./Restored" class="internal" data-slug="Restored">Restored</a> Access problems (as of 3/30 10:00 p.m.)
+2015/3/30 <a href="./Restored" class="internal" data-slug="Restored">Restored</a> Access failure due to increased load
+2015/3/23 (Completed) <a href="./3/30-(Mon.)-20:00-" class="internal alias" data-slug="3/30-(Mon.)-20:00-">30 (Mon.) 20:00-</a> Site maintenance (non-stop)
+2015/3/19<a href="./Postponed" class="internal" data-slug="Postponed">Postponed</a> Notice of SSL Server Certificate Change
+3/3/2015 (Completed) <a href="./3/8-(Sun.)-1:00-AM-" class="internal alias" data-slug="3/8-(Sun.)-1:00-AM-">8 (Sun.) 1:00 AM-</a> Site maintenance (non-stop)
+2/6/2015 (Resolved)2/6 Apology for access problem
+2015/1/29 (Completed) <a href="./2/8-(Sun.)-1:00-AM-" class="internal alias" data-slug="2/8-(Sun.)-1:00-AM-">8 (Sun.) 1:00 AM-</a> Site Maintenance
+1/22/2015 (Fixed) Google Calendar schedules may not sync using Cybozu Live Sync
+1/13/2015 (Completed) <a href="./1/14-(Wed.)-18:00-" class="internal alias" data-slug="1/14-(Wed.)-18:00-">14 (Wed.) 18:00-</a> Emergency maintenance (non-stop)
+1/13/2015 Updates were made, including improvements to the display of the chat function
+1/6/2015 (Completed) <a href="./1/11-(Sun.)-1:00-AM-" class="internal alias" data-slug="1/11-(Sun.)-1:00-AM-">11 (Sun.) 1:00 AM-</a> Site maintenance
+2014/12/22 User Support during the New Year’s Holidays
+12/ 5/2014 (Completed) <a href="./12/14-AM-1:00" class="internal alias" data-slug="12/14-AM-1:00">14 AM 1:00</a> Notice of Site Maintenance
+2014/12/ 1 Movie about working mothers’ work styles released
+11/18/2014 (Repaired) Unable to sync Google Calendar schedule using “Cybozu Live Sync”.
+November 4, 2014 Cybozu Live will not be available on some cell phones and Internet Explorer 6
+10/15/2014 Number of registered users exceeded 1 million!
+2014/9/26 (Completed) <a href="./Thursday,-10/2,-6:00-PM-to-7:00-PM" class="internal alias" data-slug="Thursday,-10/2,-6:00-PM-to-7:00-PM">2, 6:00 PM to 7:00 PM</a> Service display speed may be delayed
+9/25/2014 (Repaired) Unable to create a survey using Internet Explorer.
+9/16/2014 Updated functionality, including reuse of ToDo
+8/5/2014 (Completed) <a href="./8/8-(Fri.)-from-1:00-AM" class="internal alias" data-slug="8/8-(Fri.)-from-1:00-AM">8 (Fri.) from 1:00 AM</a> Notice of Site Maintenance
+2014/7/29 (Completed) <a href="./8/5-AM-1:00" class="internal alias" data-slug="8/5-AM-1:00">5 AM 1:00</a> Notice of Site Maintenance
+2014/7/23 (Completed) <a href="./Monday,-7/28,-from-9:20-a.m.-(20-minutes)" class="internal alias" data-slug="Monday,-7/28,-from-9:20-a.m.-(20-minutes)">28, from 9:20 a.m. (20 minutes)</a> Notice of Site Maintenance
+2014/7/22 <a href="./Restored" class="internal" data-slug="Restored">Restored</a> Access failure due to increased load
+7/17/2014 Apology for slow display speed
+2014/7/10 (Completed) <a href="./7/15-Early-Morning-5:30am-" class="internal alias" data-slug="7/15-Early-Morning-5:30am-">15 Early Morning 5:30am-</a> Site Maintenance Notice
+6/17/2014 (Completed) <a href="./6/23-Midnight-24:00-" class="internal alias" data-slug="6/23-Midnight-24:00-">23 Midnight 24:00-</a> Notice of Site Maintenance
+2014/6/12 (Completed) <a href="./6/17-AM-1:00" class="internal alias" data-slug="6/17-AM-1:00">17 AM 1:00</a> Notice of Site Maintenance
+2014/6/11 (Completed) <a href="./6/13-AM-6:00" class="internal alias" data-slug="6/13-AM-6:00">13 AM 6:00</a> Notice of Site Maintenance
+4/21/2014 Status of Response to OpenSSL Vulnerability (Heartbleed Issue)
+4/4/2014 <a href="./4/7-AM-6:00" class="internal alias" data-slug="4/7-AM-6:00">7 AM 6:00</a> Notice of Site Maintenance
+2014/3/11 (Completed) Notice of Site Maintenance
+2014/2/18 <a href="./2/25-25:00" class="internal alias" data-slug="2/25-25:00">25 25:00</a> Notice of Site Maintenance
+2013/12/26 User Support during the New Year’s Holidays
+2013/12/24 Special Collaboration Calendar 2014 Present
+2013/12/19 Expansion of free usage limit to 300 users - Easier migration from “Yahoo!
+2013/12/6 Announcement of beta release of chat function
+2013/12/ 5 <a href="./completion" class="internal" data-slug="completion">completion</a> Notice of Site Maintenance
+2013/7/24 <a href="./August-30" class="internal alias" data-slug="August-30">August 30</a> Management Course for NPOs: “Let’s Utilize it for Civic Activities! Cybozu Live
+2013/5/16 <a href="./Completed" class="internal" data-slug="Completed">Completed</a> Notice of Site Maintenance
+May 9, 2013 Number of registered users of Cybozu Live exceeds 500,000!
+4/9/2013 Why not use Cybozu Live for your new activities this spring?
+March 14, 2013 Seminar Information - “Cybozu Live Utilization Seminar” for NPOs <a href="./Monday,-March-18,-2013-in-Ichikawa-City,-Chiba-Prefecture" class="internal alias" data-slug="Monday,-March-18,-2013-in-Ichikawa-City,-Chiba-Prefecture">Monday, March 18, 2013 in Ichikawa City, Chiba Prefecture</a>.
+2013/3/ 6 Seminar Information - “Cybozu Live” Cloud-based Groupware Ideal for NPO Management
+2013/3/ 1 The 50th Advertising Conference Awards “Cybozu Live Award” was announced.
+2/18/2013 You can order a free brochure of Cybozu Live.
+2012/12/26 Year-end and New Year business</p>
+<p>Cybozu Live feature additions (to-do lists, file management, improved group events, etc.)
+by @saicolobe on 2011/11/01Add this entry to Hatena BookmarksHatena Bookmark - Cybozu Live feature additions (to-do lists, file management, improved group events, etc.)
+On November 1, 2011, Cybozu Live received a system update. This time, we have enhanced features such as To-Do lists, shared folders, and group events, greatly improving its usability as a project management tool.</p>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E3%82%B5%E3%82%A4%E3%83%9C%E3%82%A6%E3%82%BALive" class="external">/nishio/サイボウズLive<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Should-there-be-only-one-name" class="internal">Should there be only one name?</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

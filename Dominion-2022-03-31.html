@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Dominion 2022-03-31</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Dominion 2022-03-31"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Dominion 2022-03-31"/><meta name="twitter:description" content="Wrote a program to format Dominion Online logs for easier viewing. I would like to create a system based on this to graph changes in victory points, average amount of money, turning power, etc."/><meta property="og:description" content="Wrote a program to format Dominion Online logs for easier viewing. I would like to create a system based on this to graph changes in victory points, average amount of money, turning power, etc."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="Wrote a program to format Dominion Online logs for easier viewing. I would like to create a system based on this to graph changes in victory points, average amount of money, turning power, etc."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Dominion-2022-03-31"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Dominion-2022-03-31"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Wrote a program to format Dominion Online logs for easier viewing. I would like to create a system based on this to graph changes in victory points, average amount of money, turning power, etc."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Dominion-2022-03-31"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Dominion 2022-03-31</a></div></nav><h1 class="article-title">Dominion 2022-03-31</h1><p show-comma="true" class="content-meta"><span>Mar 31, 2022</span><span>15 min read</span></p></div></div><article class="popover-hint"><p>Wrote a program to format Dominion Online logs for easier viewing.
+I would like to create a system based on this to graph changes in victory points, average amount of money, turning power, etc.
+Output Example</p>
+<ul>
+<li>Oh, the supply information isn’t included in this.</li>
+<li>Released <a href="./Dominion-Online-Log-Formatter" class="internal alias" data-slug="Dominion-Online-Log-Formatter">Dominion Online Log Formatter</a></li>
+</ul>
+<p>Competitor 98423406, Practice match. Card Pool: Level 1
+n received 7 copper coins.
+n received 3 houses.
+L received 7 copper coins.
+L received 3 houses.</p>
+<p>n shuffled the deck.
+L shuffled the deck.
+n drew 4 coppers and a house.
+L drew 5 cards.</p>
+<h3 id="turn-1---nishio">turn 1 - nishio<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-1---nishio" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>n used 4 copper coins (+$4).</p>
+<p>n purchased and acquired a blacksmith.
+n drew 3 coppers and 2 houses.</p>
+<h3 id="turn-1---lord-rattington">Turn 1 - Lord Rattington<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-1---lord-rattington" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>L used 3 copper coins (+$3).</p>
+<p>L purchased/acquired a silver coin.
+L drew 5 cards.</p>
+<h3 id="turn-2---nishio">turn 2 - nishio<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-2---nishio" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>n used 3 copper coins (+$3).</p>
+<p>n purchased and acquired a village.
+n shuffled the deck.
+n drew 4 copper coins and a blacksmith.</p>
+<h3 id="turn-2---lord-rattington">Turn 2 - Lord Rattington<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-2---lord-rattington" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>L used 4 copper coins (+$4).</p>
+<p>L purchased and acquired a blacksmith.
+L shuffled the deck.
+L drew 5 cards.</p>
+<h3 id="turn-3---nishio">turn 3 - nishio<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-3---nishio" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>n used a blacksmith.</p>
+<ul>
+<li>n drew 2 copper coins and a house.</li>
+</ul>
+<p>n used 6 copper coins (+$6).</p>
+<p>n purchased and acquired a craftsman.
+n shuffled the deck.
+n drew copper coins, 2 houses, artisans, and a village.</p>
+<h3 id="turn-3---lord-rattington">Turn 3 - Lord Rattington<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-3---lord-rattington" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>L used a blacksmith.</p>
+<ul>
+<li>L drew 3 cards.</li>
+</ul>
+<p>L used silver and 4 copper coins (+$6).</p>
+<p>L purchased and acquired a bandit.
+L shuffled the deck.
+L drew 5 cards.</p>
+<h3 id="turn-4---nishio">turn 4 - nishio<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-4---nishio" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>n used the village.</p>
+<ul>
+<li>n drew a copper coin.</li>
+<li>n got +2 actions.</li>
+</ul>
+<p>N used artisans.</p>
+<ul>
+<li>
+<p>n gained a guard of honor.</p>
+</li>
+<li>
+<p>n placed the mansion on top of the deck.</p>
+</li>
+</ul>
+<p>n used the guards.</p>
+<ul>
+<li>
+<p>n drew a mansion.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw a copper coin and a blacksmith.</p>
+</li>
+<li>
+<p>n discarded the copper coins.</p>
+</li>
+<li>
+<p>n placed the blacksmith on top of the deck.</p>
+</li>
+</ul>
+<p>n used 2 copper coins (+$2).</p>
+<p>n drew 3 copper coins, a mansion, and a blacksmith.</p>
+<h3 id="turn-4---lord-rattington">Turn 4 - Lord Rattington<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-4---lord-rattington" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>L used 3 copper coins (+$3).</p>
+<p>L purchased/acquired a silver coin.
+L drew 5 cards.</p>
+<h3 id="turn-5---nishio">turn 5 - nishio<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-5---nishio" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>n used a blacksmith.</p>
+<ul>
+<li>n shuffled the deck.</li>
+<li>n drew 2 coppers and a guard.</li>
+</ul>
+<p>n used 5 copper coins (+$5).</p>
+<p>n purchased and acquired a guard.
+n drew copper coins, 2 houses, artisans, and a village.</p>
+<h3 id="turn-5---lord-rattington">Turn 5 - Lord Rattington<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-5---lord-rattington" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>L used a blacksmith.</p>
+<ul>
+<li>L drew 3 cards.</li>
+</ul>
+<p>L used silver and 4 copper coins (+$6).</p>
+<p>L purchased/acquired a gold coin.
+L shuffled the deck.
+L drew 5 cards.</p>
+<h3 id="turn-6---nishio">turn 6 - nishio<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-6---nishio" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>n used the village.</p>
+<ul>
+<li>n shuffled the deck.</li>
+<li>n drew the guards.</li>
+<li>n got +2 actions.</li>
+</ul>
+<p>N used artisans.</p>
+<ul>
+<li>
+<p>n gained a guard of honor.</p>
+</li>
+<li>
+<p>n placed a copper coin on top of the deck.</p>
+</li>
+</ul>
+<p>n used the guards.</p>
+<ul>
+<li>
+<p>n drew a copper coin.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw a copper coin and a house.</p>
+</li>
+<li>
+<p>n discarded the copper coins and the house.</p>
+</li>
+</ul>
+<p>n used the guards.</p>
+<ul>
+<li>
+<p>n drew the guards.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw a copper coin and a blacksmith.</p>
+</li>
+<li>
+<p>n discarded the copper coins.</p>
+</li>
+<li>
+<p>n placed the blacksmith on top of the deck.</p>
+</li>
+</ul>
+<p>n used the guards.</p>
+<ul>
+<li>
+<p>n drew a blacksmith.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw 2 copper coins.</p>
+</li>
+<li>
+<p>n discarded the copper coins.</p>
+</li>
+<li>
+<p>n placed a copper coin on top of the deck.</p>
+</li>
+</ul>
+<p>n used a blacksmith.</p>
+<ul>
+<li>n drew 2 copper coins.</li>
+</ul>
+<p>n used 3 copper coins (+$3).</p>
+<p>n purchased and acquired a retainer.
+n shuffled the deck.
+n drew 2 coppers, 2 houses, and a guard.</p>
+<h3 id="turn-6---lord-rattington">Turn 6 - Lord Rattington<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-6---lord-rattington" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>L used silver coins, gold coins, and 2 copper coins (+$7).</p>
+<p>L purchased/acquired a gold coin.
+L drew 5 cards.</p>
+<h3 id="turn-7---nishio">turn 7 - nishio<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-7---nishio" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>n used the guards.</p>
+<ul>
+<li>
+<p>n drew the guards.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw the craftsmen and the guards.</p>
+</li>
+<li>
+<p>n puts the artisan and the guard on top of the deck.</p>
+</li>
+</ul>
+<p>n used the guards.</p>
+<ul>
+<li>
+<p>n drew the guards.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw the artisans and the village.</p>
+</li>
+<li>
+<p>n placed the artisan and the village on top of the deck.</p>
+</li>
+</ul>
+<p>n used the guards.</p>
+<ul>
+<li>
+<p>n drew a village.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw the artisans and vassals.</p>
+</li>
+<li>
+<p>n places the artisan and the vassal on top of the deck.</p>
+</li>
+</ul>
+<p>n used the village.</p>
+<ul>
+<li>n drew vassals.</li>
+<li>n got +2 actions.</li>
+</ul>
+<p>n used vassals.</p>
+<ul>
+<li>
+<p>N obtained +$2.</p>
+</li>
+<li>
+<p>n discarded the artisan.</p>
+</li>
+<li>
+<p>N used artisans.</p>
+<ul>
+<li>
+<p>n gained a blacksmith.</p>
+</li>
+<li>
+<p>n placed the mansion on top of the deck.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>n used a blacksmith.</p>
+<ul>
+<li>n drew a copper coin, a mansion, and a blacksmith.</li>
+</ul>
+<p>n used 3 copper coins (+$3).</p>
+<p>n purchased and acquired renovations.
+n shuffled the deck.
+n drew the village with copper coins, mansions, renovations, blacksmiths, and</p>
+<h3 id="turn-7---lord-rattington">Turn 7 - Lord Rattington<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-7---lord-rattington" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>L used a blacksmith.</p>
+<ul>
+<li>L drew 3 cards.</li>
+</ul>
+<p>L used 4 copper coins (+$4).</p>
+<p>L purchased and acquired a blacksmith.
+L shuffled the deck.
+L drew 5 cards.</p>
+<h3 id="turn-8---nishio">turn 8 - nishio<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-8---nishio" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>n used the village.</p>
+<ul>
+<li>n drew a copper coin.</li>
+<li>n got +2 actions.</li>
+</ul>
+<p>n used a blacksmith.</p>
+<ul>
+<li>n drew a mansion, a guard of honor, and a blacksmith.</li>
+</ul>
+<p>n used the guards.</p>
+<ul>
+<li>
+<p>n drew a craftsman.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw the guards and retainers.</p>
+</li>
+<li>
+<p>n places a guard and a vassal on top of the deck.</p>
+</li>
+</ul>
+<p>n used renovation.</p>
+<ul>
+<li>
+<p>n discarded the mansion.</p>
+</li>
+<li>
+<p>n acquired the throne room.</p>
+</li>
+</ul>
+<p>n used 2 copper coins (+$2).</p>
+<p>n shuffled the deck.
+n drew a copper, 2 guards, a blacksmith, and a retainer.</p>
+<h3 id="turn-8---lord-rattington">Turn 8 - Lord Rattington<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-8---lord-rattington" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>L used a silver coin and 3 copper coins (+$5).</p>
+<p>L purchased/acquired a silver coin.
+L drew 5 cards.</p>
+<h3 id="turn-9---nishio">turn 9 - nishio<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-9---nishio" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>n used the guards.</p>
+<ul>
+<li>
+<p>n drew a copper coin.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw the guards and the blacksmith.</p>
+</li>
+<li>
+<p>n discarded the blacksmith.</p>
+</li>
+<li>
+<p>n placed the guards on top of the deck.</p>
+</li>
+</ul>
+<p>n used vassals.</p>
+<ul>
+<li>
+<p>N obtained +$2.</p>
+</li>
+<li>
+<p>n discarded the guards.</p>
+</li>
+<li>
+<p>n used the guards.</p>
+<ul>
+<li>
+<p>n drew a village.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw a copper coin and a craftsman.</p>
+</li>
+<li>
+<p>n discarded the copper coins.</p>
+</li>
+<li>
+<p>n placed the artisan on top of the deck.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>n used the village.</p>
+<ul>
+<li>n drew a craftsman.</li>
+<li>n got +2 actions.</li>
+</ul>
+<p>n used the guards.</p>
+<ul>
+<li>
+<p>n drew the throne room.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw the mansion and renovations.</p>
+</li>
+<li>
+<p>n discarded the mansion.</p>
+</li>
+<li>
+<p>n placed the renovation on the deck of cards.</p>
+</li>
+</ul>
+<p>n used the throne room.</p>
+<ul>
+<li>
+<p>N used artisans.</p>
+<ul>
+<li>
+<p>n acquired the throne room.</p>
+</li>
+<li>
+<p>n placed a copper coin on top of the deck.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>n reused artisans.</p>
+<ul>
+<li>
+<p>n acquired vassals.</p>
+</li>
+<li>
+<p>n placed a copper coin on top of the deck.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>n used the throne room.</p>
+<ul>
+<li>n used a blacksmith.
+<ul>
+<li>n minus 2 coppers and renovations.</li>
+</ul>
+</li>
+<li>n reused the forge.
+<ul>
+<li>n shuffled the deck.</li>
+<li>n drew a blacksmith.</li>
+</ul>
+</li>
+</ul>
+<p>n used 2 copper coins (+$2).</p>
+<p>n purchased and acquired a retainer.
+n shuffled the deck.
+n drew a copper, 2 guards, a blacksmith, and a retainer.</p>
+<h3 id="turn-9---lord-rattington">Turn 9 - Lord Rattington<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-9---lord-rattington" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>L used silver coins, 2 gold coins, and 2 copper coins (+$10).</p>
+<p>L purchased and acquired the genus state.
+L drew 5 cards.</p>
+<h3 id="turn-10---nishio">turn 10 - nishio<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-10---nishio" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>n used the guards.</p>
+<ul>
+<li>
+<p>n drew a craftsman.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw copper coins and renovations.</p>
+</li>
+<li>
+<p>n discarded the copper coins.</p>
+</li>
+<li>
+<p>N used the renovation as a discard.</p>
+</li>
+</ul>
+<p>n used the guards.</p>
+<ul>
+<li>
+<p>n drew the throne room.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw the blacksmith and the village.</p>
+</li>
+<li>
+<p>n placed the blacksmith and the village on the deck.</p>
+</li>
+</ul>
+<p>n used vassals.</p>
+<ul>
+<li>
+<p>N obtained +$2.</p>
+</li>
+<li>
+<p>n discarded the village.</p>
+</li>
+<li>
+<p>n used the village.</p>
+<ul>
+<li>n drew a blacksmith.</li>
+<li>n got +2 actions.</li>
+</ul>
+</li>
+</ul>
+<p>n used the throne room.</p>
+<ul>
+<li>n used a blacksmith.
+<ul>
+<li>n drew the guards, the throne room, and the retainers.</li>
+</ul>
+</li>
+<li>n reused the forge.
+<ul>
+<li>n shuffled the deck.</li>
+<li>n drew renovations and vassals.</li>
+</ul>
+</li>
+</ul>
+<p>n used the throne room.</p>
+<ul>
+<li>n used the guards.
+<ul>
+<li>n got +1 action.</li>
+</ul>
+</li>
+<li>n reused the guards.
+<ul>
+<li>n got +1 action.</li>
+</ul>
+</li>
+</ul>
+<p>n used vassals.</p>
+<ul>
+<li>N obtained +$2.</li>
+</ul>
+<p>N used artisans.</p>
+<ul>
+<li>
+<p>n acquired the throne room.</p>
+</li>
+<li>
+<p>n placed the throne room on top of the deck.</p>
+</li>
+</ul>
+<p>n used copper coins (+$1).</p>
+<p>n purchased and acquired the throne room.
+n shuffled the deck.
+n drew between 2 guards and 3 thrones.</p>
+<h3 id="turn-10---lord-rattington">Turn 10 - Lord Rattington<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-10---lord-rattington" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>L used a blacksmith.</p>
+<ul>
+<li>L shuffled the deck.</li>
+<li>L drew 3 cards.</li>
+</ul>
+<p>L used 2 copper coins (+$2).</p>
+<p>L drew 5 cards.</p>
+<h3 id="turn-11---nishio">turn 11 - nishio<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-11---nishio" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>n used the throne room.</p>
+<ul>
+<li>n used the guards.
+<ul>
+<li>
+<p>n drew a blacksmith.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw renovations and vassals.</p>
+</li>
+<li>
+<p>N used the renovation as a discard.</p>
+</li>
+<li>
+<p>n placed the retainer on top of the deck.</p>
+</li>
+</ul>
+</li>
+<li>n reused the guards.
+<ul>
+<li>
+<p>n drew vassals.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw the craftsmen and the guards.</p>
+</li>
+<li>
+<p>n discarded the artisan.</p>
+</li>
+<li>
+<p>n placed the guards on top of the deck.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>n used the throne room.</p>
+<ul>
+<li>n used vassals.
+<ul>
+<li>
+<p>N obtained +$2.</p>
+</li>
+<li>
+<p>n discarded the guards.</p>
+</li>
+<li>
+<p>n used the guards.</p>
+<ul>
+<li>
+<p>n drew a blacksmith.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw the vassals and the village.</p>
+</li>
+<li>
+<p>n places a vassal and a village on the deck.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>n reused vassals.
+<ul>
+<li>
+<p>N obtained +$2.</p>
+</li>
+<li>
+<p>n discarded the retainer.</p>
+</li>
+<li>
+<p>n used vassals.</p>
+<ul>
+<li>
+<p>N obtained +$2.</p>
+</li>
+<li>
+<p>n discarded the village.</p>
+</li>
+<li>
+<p>n used the village.</p>
+<ul>
+<li>n drew the throne room.</li>
+<li>n got +2 actions.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>n used the throne room.</p>
+<ul>
+<li>n used a blacksmith.
+<ul>
+<li>n shuffled the deck.</li>
+<li>n drew copper coins, renovations, and vassals.</li>
+</ul>
+</li>
+<li>n reused the forge.
+<ul>
+<li>n drew a craftsman.</li>
+</ul>
+</li>
+</ul>
+<p>n used the throne room.</p>
+<ul>
+<li>
+<p>N used artisans.</p>
+<ul>
+<li>
+<p>n acquired the throne room.</p>
+</li>
+<li>
+<p>n placed the throne room on top of the deck.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>n reused artisans.</p>
+<ul>
+<li>
+<p>n acquired the throne room.</p>
+</li>
+<li>
+<p>n placed the throne room on top of the deck.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>n used vassals.</p>
+<ul>
+<li>
+<p>N obtained +$2.</p>
+</li>
+<li>
+<p>n discarded the throne room.</p>
+</li>
+<li>
+<p>n used the throne room.</p>
+<ul>
+<li>n used the guards.
+<ul>
+<li>n drew the throne room.</li>
+<li>n got +1 action.</li>
+</ul>
+</li>
+<li>n reused the guards.
+<ul>
+<li>n got +1 action.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>n used renovation.</p>
+<ul>
+<li>
+<p>n discarded the copper coins.</p>
+</li>
+<li>
+<p>n won the mansion.</p>
+</li>
+</ul>
+<p>n purchased and acquired the genus state.
+n shuffled the deck.
+n drew a craftsman, a blacksmith, 2 throne room, and a vassal.</p>
+<h3 id="turn-11---lord-rattington">Turn 11 - Lord Rattington<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-11---lord-rattington" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>L used silver coins, gold coins, and 3 copper coins (+$8).</p>
+<p>L purchased and acquired the genus state.
+L drew 5 cards.</p>
+<h3 id="turn-12---nishio">turn 12 - nishio<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-12---nishio" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>n used the throne room.</p>
+<ul>
+<li>
+<p>n used the throne room.</p>
+<ul>
+<li>n used a blacksmith.
+<ul>
+<li>n drew house, guards, and retainers.</li>
+</ul>
+</li>
+<li>n reused the forge.
+<ul>
+<li>n drew the blacksmith, the throne room, and the vassals.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>n reused the throne room.</p>
+<ul>
+<li>
+<p>n used the throne room.</p>
+<ul>
+<li>n used the guards.
+<ul>
+<li>
+<p>n drew the throne room.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw the province and remodeling.</p>
+</li>
+<li>
+<p>n made the genus state and the remodeling a discarded bill.</p>
+</li>
+</ul>
+</li>
+<li>n reused the guards.
+<ul>
+<li>
+<p>n drew the guards.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw the guards and the village.</p>
+</li>
+<li>
+<p>n placed the guard and the village on top of the deck.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>n reused the throne room.</p>
+<ul>
+<li>n used vassals.
+<ul>
+<li>
+<p>N obtained +$2.</p>
+</li>
+<li>
+<p>n discarded the village.</p>
+</li>
+<li>
+<p>n used the village.</p>
+<ul>
+<li>n drew the guards.</li>
+<li>n got +2 actions.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>n reused vassals.
+<ul>
+<li>
+<p>N obtained +$2.</p>
+</li>
+<li>
+<p>n discarded the throne room.</p>
+</li>
+<li>
+<p>n used the throne room.</p>
+<ul>
+<li>n used vassals.
+<ul>
+<li>
+<p>N obtained +$2.</p>
+</li>
+<li>
+<p>n discarded the throne room.</p>
+</li>
+<li>
+<p>n used the throne room.</p>
+<ul>
+<li>n used vassals.
+<ul>
+<li>N obtained +$2.</li>
+<li>n shuffled the deck.</li>
+<li>n discarded the genus state.</li>
+</ul>
+</li>
+<li>n reused vassals.
+<ul>
+<li>
+<p>N obtained +$2.</p>
+</li>
+<li>
+<p>N used the renovation as a discard.</p>
+</li>
+<li>
+<p>n used renovation.</p>
+<ul>
+<li>
+<p>n discarded the mansion.</p>
+</li>
+<li>
+<p>n won a renovation.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>n reused vassals.
+<ul>
+<li>N obtained +$2.</li>
+<li>n shuffled the deck.</li>
+<li>n discarded the genus state.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>n used the throne room.</p>
+<ul>
+<li>
+<p>N used artisans.</p>
+<ul>
+<li>
+<p>n acquired the throne room.</p>
+</li>
+<li>
+<p>n placed the throne room on top of the deck.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>n reused artisans.</p>
+<ul>
+<li>
+<p>n acquired the throne room.</p>
+</li>
+<li>
+<p>n placed the guards on top of the deck.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>n purchased and acquired the genus state.
+n shuffled the deck.
+n reconstructed, drew between the guard, blacksmith, and 2 thrones.</p>
+<h3 id="turn-12---lord-rattington">Turn 12 - Lord Rattington<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-12---lord-rattington" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>L used 2 silver, gold, and copper coins (+$8).</p>
+<p>L purchased and acquired the genus state.
+L shuffled the deck.
+L drew 5 cards.</p>
+<h3 id="turn-13---nishio">turn 13 - nishio<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-13---nishio" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>n used the throne room.</p>
+<ul>
+<li>
+<p>n used the throne room.</p>
+<ul>
+<li>n used the guards.
+<ul>
+<li>
+<p>n subtracted the genus state.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw the guards and the throne room.</p>
+</li>
+<li>
+<p>n placed the guards and the throne room on top of the deck.</p>
+</li>
+</ul>
+</li>
+<li>n reused the guards.
+<ul>
+<li>
+<p>n drew the throne room.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw the gensu and the guards.</p>
+</li>
+<li>
+<p>n discarded the genus state.</p>
+</li>
+<li>
+<p>n placed the guards on top of the deck.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>n reused the throne room.</p>
+<ul>
+<li>
+<p>n used the throne room.</p>
+<ul>
+<li>n used a blacksmith.
+<ul>
+<li>n drew a guard and two vassals.</li>
+</ul>
+</li>
+<li>n reused the forge.
+<ul>
+<li>n drew between the guards and the two thrones.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>n reused the throne room.</p>
+<ul>
+<li>
+<p>n used the throne room.</p>
+<ul>
+<li>n used vassals.
+<ul>
+<li>
+<p>N obtained +$2.</p>
+</li>
+<li>
+<p>n discarded the artisan.</p>
+</li>
+<li>
+<p>N used artisans.</p>
+<ul>
+<li>
+<p>n acquired the throne room.</p>
+</li>
+<li>
+<p>n placed the guards on top of the deck.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>n reused vassals.
+<ul>
+<li>
+<p>N obtained +$2.</p>
+</li>
+<li>
+<p>n discarded the guards.</p>
+</li>
+<li>
+<p>n used the guards.</p>
+<ul>
+<li>
+<p>n drew the throne room.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw the blacksmith shop and the throne room.</p>
+</li>
+<li>
+<p>n placed the blacksmith and the throne room on top of the deck.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>n reused the throne room.</p>
+<ul>
+<li>
+<p>n used the throne room.</p>
+<ul>
+<li>n used vassals.
+<ul>
+<li>
+<p>N obtained +$2.</p>
+</li>
+<li>
+<p>n discarded the throne room.</p>
+</li>
+<li>
+<p>n used the throne room.</p>
+<ul>
+<li>
+<p>n used renovation.</p>
+<ul>
+<li>
+<p>n discarded the throne room.</p>
+</li>
+<li>
+<p>n won gold coins.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>n reused renovations.</p>
+<ul>
+<li>
+<p>n discarded the throne room.</p>
+</li>
+<li>
+<p>n won gold coins.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>n reused vassals.
+<ul>
+<li>
+<p>N obtained +$2.</p>
+</li>
+<li>
+<p>n discarded the blacksmith.</p>
+</li>
+<li>
+<p>n used a blacksmith.</p>
+<ul>
+<li>n the renovation, throne room, and drew the village.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>n reused the throne room.</p>
+<ul>
+<li>n used the village.
+<ul>
+<li>n drew vassals.</li>
+<li>n got +2 actions.</li>
+</ul>
+</li>
+<li>n reused the village.
+<ul>
+<li>n shuffled the deck.</li>
+<li>n subtracted the genus state.</li>
+<li>n got +2 actions.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>n used vassals.</p>
+<ul>
+<li>N obtained +$2.</li>
+<li>n discarded the gold coins.</li>
+</ul>
+<p>n used the throne room.</p>
+<ul>
+<li>n used the guards.
+<ul>
+<li>
+<p>n drew a gold coin.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n shuffled the deck.</p>
+</li>
+<li>
+<p>n saw the gold coins.</p>
+</li>
+<li>
+<p>n discarded the gold coins.</p>
+</li>
+</ul>
+</li>
+<li>n reused the guards.
+<ul>
+<li>n shuffled the deck.</li>
+<li>n drew a gold coin.</li>
+<li>n got +1 action.</li>
+</ul>
+</li>
+</ul>
+<p>n used renovation.</p>
+<ul>
+<li>
+<p>n discarded the gold coins.</p>
+</li>
+<li>
+<p>n gained a genus state.</p>
+</li>
+</ul>
+<p>n used gold coins (+$3).</p>
+<p>n purchased and acquired the genus state.
+n shuffled the deck.
+n drew between the gentry, artisans, guards, blacksmiths, and the throne room.</p>
+<h3 id="turn-13---lord-rattington">Turn 13 - Lord Rattington<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-13---lord-rattington" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>L used bandits.</p>
+<ul>
+<li>L won a gold coin.</li>
+<li>n opened the throne room and the vassals to the public.</li>
+<li>n discarded the throne room and the vassals.</li>
+</ul>
+<p>L used 2 copper coins (+$2).</p>
+<p>L purchased and acquired a mansion.
+L drew 5 cards.</p>
+<h3 id="turn-14---nishio">turn 14 - nishio<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#turn-14---nishio" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>n used the throne room.</p>
+<ul>
+<li>n used the guards.
+<ul>
+<li>
+<p>n subtracted the genus state.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw the guards and the throne room.</p>
+</li>
+<li>
+<p>n placed the guards and the throne room on top of the deck.</p>
+</li>
+</ul>
+</li>
+<li>n reused the guards.
+<ul>
+<li>
+<p>n drew the throne room.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw the guards and the throne room.</p>
+</li>
+<li>
+<p>n placed the guards and the throne room on top of the deck.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>n used the throne room.</p>
+<ul>
+<li>n used a blacksmith.
+<ul>
+<li>n drew between the guards and the two thrones.</li>
+</ul>
+</li>
+<li>n reused the forge.
+<ul>
+<li>n drew 2 renovations and a guard of honor.</li>
+</ul>
+</li>
+</ul>
+<p>n used the throne room.</p>
+<ul>
+<li>
+<p>n used the throne room.</p>
+<ul>
+<li>n used the guards.
+<ul>
+<li>
+<p>n drew a blacksmith.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw the throne room and the vassals.</p>
+</li>
+<li>
+<p>n placed the throne room and the vassals on top of the deck.</p>
+</li>
+</ul>
+</li>
+<li>n reused the guards.
+<ul>
+<li>
+<p>n drew vassals.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw the gold coins and the throne room.</p>
+</li>
+<li>
+<p>n placed the gold coin and the throne room on top of the deck.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>n reused the throne room.</p>
+<ul>
+<li>n used vassals.
+<ul>
+<li>
+<p>N obtained +$2.</p>
+</li>
+<li>
+<p>n discarded the throne room.</p>
+</li>
+<li>
+<p>n used the throne room.</p>
+<ul>
+<li>n used the guards.
+<ul>
+<li>
+<p>n drew a gold coin.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw the throne room and the village.</p>
+</li>
+<li>
+<p>n placed the throne room and the village on the deck.</p>
+</li>
+</ul>
+</li>
+<li>n reused the guards.
+<ul>
+<li>
+<p>n drew a village.</p>
+</li>
+<li>
+<p>n got +1 action.</p>
+</li>
+<li>
+<p>n saw the throne room and the vassals.</p>
+</li>
+<li>
+<p>n placed the throne room and the vassals on top of the deck.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>n reused vassals.
+<ul>
+<li>
+<p>N obtained +$2.</p>
+</li>
+<li>
+<p>n discarded the throne room.</p>
+</li>
+<li>
+<p>n used the throne room.</p>
+<ul>
+<li>n used the village.
+<ul>
+<li>n drew vassals.</li>
+<li>n got +2 actions.</li>
+</ul>
+</li>
+<li>n reused the village.
+<ul>
+<li>n subtracted the genus state.</li>
+<li>n got +2 actions.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>n used a blacksmith.</p>
+<ul>
+<li>n shuffled the deck.</li>
+<li>n drew the gentry, the throne room, and the vassals.</li>
+</ul>
+<p>n used the throne room.</p>
+<ul>
+<li>
+<p>N used artisans.</p>
+<ul>
+<li>
+<p>n gained public domain.</p>
+</li>
+<li>
+<p>n placed the public domain on top of the deck.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>n reused artisans.</p>
+<ul>
+<li>
+<p>n gained public domain.</p>
+</li>
+<li>
+<p>n placed the public domain on top of the deck.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>n used renovation.</p>
+<ul>
+<li>
+<p>n discarded the gold coins.</p>
+</li>
+<li>
+<p>n gained a genus state.</p>
+</li>
+</ul>
+<p>n used renovation.</p>
+<ul>
+<li>
+<p>n discarded vassals.</p>
+</li>
+<li>
+<p>n gained public domain.</p>
+</li>
+</ul>
+<p>n used vassals.</p>
+<ul>
+<li>N obtained +$2.</li>
+<li>n discarded the public domain.</li>
+</ul>
+<h2 id="n-purchased-and-acquired-a-public-domainn-shuffled-the-deckn-drew-between-the-dukedom-renovation-blacksmith-shop-and-2-thrones">n purchased and acquired a public domain.
+n shuffled the deck.
+n drew between the dukedom, renovation, blacksmith shop, and 2 thrones.<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#n-purchased-and-acquired-a-public-domainn-shuffled-the-deckn-drew-between-the-dukedom-renovation-blacksmith-shop-and-2-thrones" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>This page is auto-translated from [/nishio/Dominion 2022-03-31](<a href="https://scrapbox.io/nishio/Dominion" class="external">https://scrapbox.io/nishio/Dominion<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 2022-03-31) using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class aria-controls="toc-content" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content" class><ul class="overflow"><li class="depth-1"><a href="#turn-1---nishio" data-for="turn-1---nishio">turn 1 - nishio</a></li><li class="depth-1"><a href="#turn-1---lord-rattington" data-for="turn-1---lord-rattington">Turn 1 - Lord Rattington</a></li><li class="depth-1"><a href="#turn-2---nishio" data-for="turn-2---nishio">turn 2 - nishio</a></li><li class="depth-1"><a href="#turn-2---lord-rattington" data-for="turn-2---lord-rattington">Turn 2 - Lord Rattington</a></li><li class="depth-1"><a href="#turn-3---nishio" data-for="turn-3---nishio">turn 3 - nishio</a></li><li class="depth-1"><a href="#turn-3---lord-rattington" data-for="turn-3---lord-rattington">Turn 3 - Lord Rattington</a></li><li class="depth-1"><a href="#turn-4---nishio" data-for="turn-4---nishio">turn 4 - nishio</a></li><li class="depth-1"><a href="#turn-4---lord-rattington" data-for="turn-4---lord-rattington">Turn 4 - Lord Rattington</a></li><li class="depth-1"><a href="#turn-5---nishio" data-for="turn-5---nishio">turn 5 - nishio</a></li><li class="depth-1"><a href="#turn-5---lord-rattington" data-for="turn-5---lord-rattington">Turn 5 - Lord Rattington</a></li><li class="depth-1"><a href="#turn-6---nishio" data-for="turn-6---nishio">turn 6 - nishio</a></li><li class="depth-1"><a href="#turn-6---lord-rattington" data-for="turn-6---lord-rattington">Turn 6 - Lord Rattington</a></li><li class="depth-1"><a href="#turn-7---nishio" data-for="turn-7---nishio">turn 7 - nishio</a></li><li class="depth-1"><a href="#turn-7---lord-rattington" data-for="turn-7---lord-rattington">Turn 7 - Lord Rattington</a></li><li class="depth-1"><a href="#turn-8---nishio" data-for="turn-8---nishio">turn 8 - nishio</a></li><li class="depth-1"><a href="#turn-8---lord-rattington" data-for="turn-8---lord-rattington">Turn 8 - Lord Rattington</a></li><li class="depth-1"><a href="#turn-9---nishio" data-for="turn-9---nishio">turn 9 - nishio</a></li><li class="depth-1"><a href="#turn-9---lord-rattington" data-for="turn-9---lord-rattington">Turn 9 - Lord Rattington</a></li><li class="depth-1"><a href="#turn-10---nishio" data-for="turn-10---nishio">turn 10 - nishio</a></li><li class="depth-1"><a href="#turn-10---lord-rattington" data-for="turn-10---lord-rattington">Turn 10 - Lord Rattington</a></li><li class="depth-1"><a href="#turn-11---nishio" data-for="turn-11---nishio">turn 11 - nishio</a></li><li class="depth-1"><a href="#turn-11---lord-rattington" data-for="turn-11---lord-rattington">Turn 11 - Lord Rattington</a></li><li class="depth-1"><a href="#turn-12---nishio" data-for="turn-12---nishio">turn 12 - nishio</a></li><li class="depth-1"><a href="#turn-12---lord-rattington" data-for="turn-12---lord-rattington">Turn 12 - Lord Rattington</a></li><li class="depth-1"><a href="#turn-13---nishio" data-for="turn-13---nishio">turn 13 - nishio</a></li><li class="depth-1"><a href="#turn-13---lord-rattington" data-for="turn-13---lord-rattington">Turn 13 - Lord Rattington</a></li><li class="depth-1"><a href="#turn-14---nishio" data-for="turn-14---nishio">turn 14 - nishio</a></li><li class="depth-0"><a href="#n-purchased-and-acquired-a-public-domainn-shuffled-the-deckn-drew-between-the-dukedom-renovation-blacksmith-shop-and-2-thrones" data-for="n-purchased-and-acquired-a-public-domainn-shuffled-the-deckn-drew-between-the-dukedom-renovation-blacksmith-shop-and-2-thrones">n purchased and acquired a public domain.
+n shuffled the deck.
+n drew between the dukedom, renovation, blacksmith shop, and 2 thrones.</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li>No backlinks found</li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

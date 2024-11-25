@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>History of threading (or rather concurrency)</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="History of threading (or rather concurrency)"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="History of threading (or rather concurrency)"/><meta name="twitter:description" content="First published Hatena2011-05-12. Since when is a process flow called a “thread”? At the latest, in 1965, we were calling in the Berkeley Timesharing System."/><meta property="og:description" content="First published Hatena2011-05-12. Since when is a process flow called a “thread”? At the latest, in 1965, we were calling in the Berkeley Timesharing System."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="First published Hatena2011-05-12. Since when is a process flow called a “thread”? At the latest, in 1965, we were calling in the Berkeley Timesharing System."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/History-of-threading-(or-rather-concurrency)"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/History-of-threading-(or-rather-concurrency)"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="First published Hatena2011-05-12. Since when is a process flow called a “thread”? At the latest, in 1965, we were calling in the Berkeley Timesharing System."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="History-of-threading-(or-rather-concurrency)"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>History of threading (or rather concurrency)</a></div></nav><h1 class="article-title">History of threading (or rather concurrency)</h1><p show-comma="true" class="content-meta"><span>Feb 08, 2023</span><span>7 min read</span></p></div></div><article class="popover-hint"><p>First published <a href="./Hatena2011-05-12" class="internal" data-slug="Hatena2011-05-12">Hatena2011-05-12</a>.</p>
+<ul>
+<li>Since when is a process flow called a “thread”?
+<ul>
+<li>At the latest, in 1965, we were calling in the Berkeley Timesharing System.</li>
+<li>Prior to that, however, it was called “process”. (even in Dijkstra’s ‘65 paper).
+<ul>
+<li>This “process” (unlike what we now imagine as a Unix-like process) had shared memory and used semaphores for exclusivity.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>In 1970 Max Smith prototyped threads on Multics, which was an attempt to have multiple stacks in a single weight process.</li>
+<li>The originator of “threads” in programming languages is probably PL/I by IBM (1965-)
+<ul>
+<li>It had the syntax `CALL XXX (A, B) TASK;‘.</li>
+<li>This forks a thread for XXX.</li>
+<li>I do not know if any compilers have implemented this feature.</li>
+<li>It was made after careful study of how Multics was designed. For example, TASK calls are not mapped to processes, and memory is fully visible between threads.</li>
+<li>However, Multics changed direction and IBM removed TASK functionality from PL/I.</li>
+</ul>
+</li>
+<li>Then Unix emerges.
+<ul>
+<li>Unix used the word “process” to mean “thread + virtual address space”.</li>
+<li>(Incidentally, this notation in Unix is directly inherited from Multics.)</li>
+<li>That is why “process” in the Unix sense has become a heavy thing that involves switching virtual address spaces.</li>
+<li>The processes could not share memory because they each have their own individual address space, but they could interact with each other using pipes and signals.</li>
+<li>The shared memory feature will be added much later.</li>
+</ul>
+</li>
+<li>After a while, Unix users began to miss the old “memory sharing process.
+<ul>
+<li>This triggered the invention of the so-called “thread”.</li>
+<li>A thread is an “old-style process” that shares the virtual address space that a single Unix process has.</li>
+<li>The term “lightweight process” was also used in contrast to the heaviness of the Unix process.</li>
+<li>This distinction between “lightweight” and “heavyweight” processes can be traced back to the late 70s and early 80s, to the first “microkernels.</li>
+</ul>
+</li>
+</ul>
+<p>log</p>
+<ul>
+<li>
+<p>I suddenly wondered when threads were invented and looked it up, but I’m not sure.</p>
+<ul>
+<li>Linux has supported kernel threads since 2.6, so 2003, or is that surprisingly new? Of course user-level threads are probably even older, but I wonder when.</li>
+<li>hideaki_t: NeXTSTEP (Mach 2.0?) had cthread.</li>
+<li>atsuoishimoto: I first heard the term “thread” in OS/2 in the early ’90s, I think.</li>
+<li>This is 2004 > NetBSD 2.x+, and DragonFly BSD implement LWPs as kernel threads (1:1 model)</li>
+<li>shidocchi: I learned about it when I was doing Mach source reading in my grad school lab.</li>
+<li>October 2, 2001 Mac OS X v10.1…real-time threads, thread management, and</li>
+<li>Single task <span>→</span> cooperative multitasking <span>→</span> preemptive multitasking (but one thread per process) <span>→</span> so Unix connected processes with pipes <span>→</span> but it’s hard if the data to be shared is large <span>→</span> let’s make a more detailed execution unit in the process (which can share data) <span>→</span> user thread <span>→</span> kernel thread Kernel thread, and so on.</li>
+<li>koyama41: pthread is 1995 and Solaris libthread is 1993, I thought UNIX origin was around that time <a href="http://download.oracle.com/docs/cd/E19253-01/819-0390/mtintro-75924/" class="external">http://download.oracle.com/docs/cd/E19253-01/819-0390/mtintro-75924/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> index.html</li>
+<li>So Simula was 67 and the Actor model was 73 with Smalltalk in between.</li>
+<li>I understand that the concept of monitor, introduced by Hoare in concurrent Pascal, became widely popular when it was adopted by Java, but as a result, it was used in inappropriate ways, and the actor model was brought back into the spotlight by Aran and Scalar. Also, I’m trying to figure out what’s going on with closure.</li>
+</ul>
+</li>
+<li>
+<p>(I can’t find the origin of the thread here, so the story is spreading into parallelism.)</p>
+<ul>
+<li>I didn’t Tweet this, but the time-sharing system was proposed in 1957, MIT’s demonstration of the feasibility of a time-sharing system in 1961, and IBM’s release of a commercial time-sharing system OS in 1967.</li>
+<li>Dijkstra’s semaphore in 1965, the actor model in 1973, Hoare’s monitor in 1974, Java’s release in 1995, and pthread in 1995. That seems to be about the time flow. I thought, “Threads are surprisingly young.</li>
+</ul>
+</li>
+<li>
+<p>ksmakoto: the days when we called it “lightweight process”.</p>
+</li>
+<li>
+<p>kosaki55tea: I think the thread is older than the process. I can’t find any references, though. I mean, if you have an OS that doesn’t have virtual space management or something like that, you automatically only have threads.</p>
+</li>
+<li>
+<p>AkioHoshi @kosaki55tea @nishio Excuse me for sidestepping, but the basic concept of Mach operating system is “task and thread”, which was introduced by Masami Hagiya at DECUS in Japan around 1987. native threading in UNIX was later From.</p>
+</li>
+<li>
+<p>uebayasi: I googled faqs.org right away, but Usenet is too old for you to know. uebayasi: I googled it and found faqs.org right away.</p>
+</li>
+<li>
+<p><code>[2.2.3]</code> The history of threads <a href="http://www.faqs.org/faqs/os-research/part1/section-10.html" class="external">http://www.faqs.org/faqs/os-research/part1/section-10.html<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+<li>
+<p>terazzo I googled and found that the idea of “the importance of being able to create a lightweight process with ease” came from <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.41.3458&amp;rep=rep1&amp;type=pdf" class="external">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.41.3458&amp;rep=rep1&amp;type=pdf<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> It seems to have come from THOTH (<a href="http://cseweb.ucsd.edu/classes/wi08/cse221-a/papers/cheriton79.pdf" class="external">http://cseweb.ucsd.edu/classes/wi08/cse221-a/papers/cheriton79.pdf)<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>) or something like that.</p>
+</li>
+<li>
+<p>A rough translation of The history of threads <a href="http://www.faqs.org/faqs/os-research/part1/section-10.html:." class="external">http://www.faqs.org/faqs/os-research/part1/section-10.html:.<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+<li>
+<p>When did we start calling a process flow a “thread”? We called it in the Berkeley Timesharing System in 1965 at the latest. But the concept of concurrency did not exist before then; it was called “process” then. (Even in Dijkstra’s ‘65 paper.) This “process” (unlike what we now imagine as a process in the Unix sense) had shared memory and used semaphores for exclusions.</p>
+</li>
+<li>
+<p>In 1970 Max Smith prototyped threads on Multics, which was an attempt to have multiple stacks in a single weight process.</p>
+</li>
+<li>
+<p>The originator of “threads” in programming languages was probably PL/I (1965-) by IBM, which had the syntax `CALL XXX (A, B) TASK;‘. This forks a thread for XXX. I don’t know if any compilers implemented this feature; it was made after careful study of how Multics was designed. For example, TASK calls are not mapped to processes, and thread-to-thread memory is completely transparent. However, Multics changed direction and IBM removed the TASK feature from PL/I.</p>
+</li>
+<li>
+<p>Then came Unix, which used the word “process” to mean “thread + virtual address space. (Incidentally, this notation in Unix was inherited directly from Multics.) So “process” in the Unix sense became a heavy thing that involved switching virtual address spaces. Processes couldn’t share memory because they each had their own individual address space, but they could interact with each other using pipes and signals. The shared memory feature was added much later.</p>
+</li>
+<li>
+<p>After a while, Unix users began to miss the old “memory-sharing processes”. This triggered the invention of so-called “threads. Threads are “old-style processes” that share the virtual address space of a single Unix process. This distinction between “lightweight” and “heavyweight” processes can be traced back to the late 70s and early 80s, to the first “microkernel”.</p>
+</li>
+<li>
+<p>Harmless old man: the so-called threads predate Mach, V (1981-).</p>
+<ul>
+<li>If it’s a hardware thread, it seems to have been around since the 1950s.</li>
+<li>The first hardware interrupts seem to be UNIVAC I, which has only overflow interrupts, and NBS DYSEAC, which can do I/O interrupts.</li>
+</ul>
+</li>
+<li>
+<p>soda</p>
+<ul>
+<li>Solaris libthreads and pthreads are very similar in specification to Mach’s cthreads. I think it is safe to say that these are all straightforward bindings of Hoare’s Monitor to C. (To put a finer point on it, there are some minor variants of Monitor’s semantics…)</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E3%82%B9%E3%83%AC%E3%83%83%E3%83%89%E3%81%AE(%E3%81%A8%E3%81%84%E3%81%86%E3%81%8B%E4%B8%A6%E8%A1%8C%E5%87%A6%E7%90%86%E3%81%AE)%E6%AD%B4%E5%8F%B2" class="external">/nishio/スレッドの(というか並行処理の)歴史<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./🤖2023-08-12-00:51" class="internal">🤖2023-08-12 00:51</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

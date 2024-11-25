@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Oblique Strategies</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Oblique Strategies"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Oblique Strategies"/><meta name="twitter:description" content="..."/><meta property="og:description" content="..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Oblique-Strategies"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Oblique-Strategies"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Oblique-Strategies"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Oblique Strategies</a></div></nav><h1 class="article-title">Oblique Strategies</h1><p show-comma="true" class="content-meta"><span>May 27, 2022</span><span>10 min read</span></p></div></div><article class="popover-hint"><blockquote>
+<p>An interesting project in <a href="./Brian-Eno's" class="internal alias" data-slug="Brian-Eno's">Brian Eno’s</a> work is “Oblique Strategies,” a collaboration with composer Peter Schmick in the mid-1970s, in which each set of 115 white cards has a sentence or phrase written on it, and when you hit a wall in your creative process The idea is that when you hit a wall in your creative process, you can draw a card from a set of well-cut cards to get an idea or inspiration away from old thoughts.
+<a href="https://gigazine.net/news/20150210-oblique-strategies/" class="external">What is Ambient Pioneer Brian Eno’s creative strategy “Oblique Strategies”? - GIGAZINE<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+<p><img src="https://gyazo.com/6df3e11f1f03413a2db0ee9b7d6cf2ac/thumb/1000" alt="image"/>
+<a href="https://www.makoism.com/p/oblique-strategies-99e9bd223650?s=r" class="external">https://www.makoism.com/p/oblique-strategies-99e9bd223650?s=r<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<blockquote>
+<p>The goal of the cards (per Brian Eno) is “not final, as new ideas will present themselves, and others will become self-evident”; personally I find it best used to “trust” the card even if it is unclear. Let it drive you down a different path that wasn’t initially evident.
+(DeepL) The goal of the cards is (according to Brian Eno) “not to be final, but to present new ideas or make other things self-evident”. Personally, I believe the best use of the cards is to “believe” them, even if they are unclear. The cards will show you another way that wasn’t obvious at first.
+“honor thy error as a hidden intention”
+“only a part, not the whole”
+“lost in useless territory”
+“idiot glee”
+“take a break”
+“I respect your error as a hidden intention.”
+“Only some, not the whole.”
+“Lost in the area of futility.”
+“I’m going to make a fool of myself.”
+“I’m going to take a break.”</p>
+</blockquote>
+<p>[Wikipedia <a href="https://ja.wikipedia.org/wiki/%E3%83%96%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%BB%E3%82%A4%E3%83%BC%E3%83%8E#.E3.82.AA.E3.83.96.E3.83.AA.E3.83.BC.E3.82.AF.E3.83.BB.E3.82.B9.E3.83.88" class="external">https://ja.wikipedia.org/wiki/ブライアン%E3%83%BBイーノ#.E3.82.AA.E3.83.96.E3.83.AA.E3.83.BC.E3.82.AF.E3.83.BB.E3.82.B9.E3.83.88<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> .e3.83.a9.e3.83.86.e3.82.b8.e3.83.bc.e3.82.ba]</p>
+<ul>
+<li>State the problem in words as clearly as possible.</li>
+<li>What would your closest friend do? （What would your closest friend do?)</li>
+<li>What should we increase? What to increase? （What to increase?)</li>
+<li>Honour thy error as a hidden intention. (Honour thy error as a hidden intention.)</li>
+</ul>
+<p><a href="https://github.com/ceejbot/oblique-strategies/blob/master/index.js" class="external">https://github.com/ceejbot/oblique-strategies/blob/master/index.js<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<a href="https://monoskop.org/images/8/8c/Eno_Brian_Schmidt_Peter_Oblique_Strategies.pdf" class="external">https://monoskop.org/images/8/8c/Eno_Brian_Schmidt_Peter_Oblique_Strategies.pdf<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>I roughly ran it through DeepL<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/></p>
+<ul>
+<li>
+<p>The one that says, “Take a break, take a break.</p>
+</li>
+<li>
+<p>Do it in small units, that is.</p>
+</li>
+<li>
+<p>Musical</p>
+</li>
+<li>
+<p>A system that makes you throw it away to get out of fixation.</p>
+</li>
+<li>
+<p>Some of them don’t translate well to DeepL</p>
+</li>
+<li>
+<p>‘(Organic) machinery’,</p>
+<ul>
+<li>(Organic) Machinery</li>
+</ul>
+</li>
+<li>
+<p>‘A line has two sides’,</p>
+<ul>
+<li>‘A line has two sides’.</li>
+</ul>
+</li>
+<li>
+<p>‘A very small object         Its center’,</p>
+<ul>
+<li>‘a very small object, its center’.</li>
+</ul>
+</li>
+<li>
+<p>‘Abandon desire’,</p>
+<ul>
+<li>‘Abandoning Desire’.</li>
+</ul>
+</li>
+<li>
+<p>‘Abandon normal instructions’,</p>
+<ul>
+<li>‘Abandon normal instructions’.</li>
+</ul>
+</li>
+<li>
+<p>‘Abandon normal instruments’,</p>
+<ul>
+<li>‘Discard normal instruments’.</li>
+</ul>
+</li>
+<li>
+<p>‘Accept advice’,</p>
+<ul>
+<li>‘I accept your advice’.</li>
+</ul>
+</li>
+<li>
+<p>‘Accretion’,</p>
+<ul>
+<li>‘Descending’.</li>
+</ul>
+</li>
+<li>
+<p>‘Adding on’,</p>
+<ul>
+<li>add to</li>
+</ul>
+</li>
+<li>
+<p>‘Allow an easement (an easement is the abandonment of a stricture)’,</p>
+<ul>
+<li>‘Grant easement (easement is a waiver of strictness)‘.</li>
+</ul>
+</li>
+<li>
+<p>‘Always first steps’,</p>
+<ul>
+<li>‘Always take the first step’.</li>
+</ul>
+</li>
+<li>
+<p>‘Always give yourself credit for having more than personality (given by Arto Lindsay)’,</p>
+<ul>
+<li>‘Always allow yourself to have more than personality (given by Alt Lindsay)’</li>
+</ul>
+</li>
+<li>
+<p>‘Are there sections?  Consider transitions’,</p>
+<ul>
+<li>‘Is There a Section? Considering Transitions’.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Interesting, if there are separated sections, there are transitions between those sections.</li>
+</ul>
+</li>
+<li>
+<p>‘Ask people to work against their better judgement’,</p>
+<ul>
+<li>Asking people to work against their own decency’.</li>
+</ul>
+</li>
+<li>
+<p>‘Ask your body’,</p>
+<ul>
+<li>Listen to your body”.</li>
+</ul>
+</li>
+<li>
+<p>‘Assemble some of the elements in a group and treat the group’,</p>
+<ul>
+<li>‘Assemble some of the elements of the group and handle the group’.</li>
+</ul>
+</li>
+<li>
+<p>‘Balance the consistency principle with the inconsistency principle’,</p>
+<ul>
+<li>‘Balancing the principle of consistency with the principle of contradiction’.</li>
+</ul>
+</li>
+<li>
+<p>‘Be dirty’,</p>
+<ul>
+<li>Be ‘dirty’.</li>
+</ul>
+</li>
+<li>
+<p>‘Be extravagant’,</p>
+<ul>
+<li>Be extravagant”.</li>
+</ul>
+</li>
+<li>
+<p>‘Be less critical’,</p>
+<ul>
+<li>Be non-judgmental.</li>
+</ul>
+</li>
+<li>
+<p>‘Breathe more deeply’,</p>
+</li>
+<li>
+<p>‘Bridges\n—build\n—burn’,</p>
+</li>
+<li>
+<p>‘Cascades’,</p>
+<ul>
+<li>‘Cascades’.</li>
+</ul>
+</li>
+<li>
+<p>‘Change ambiguities to specifics’,</p>
+<ul>
+<li>‘Change ambiguities to specifics’.</li>
+</ul>
+</li>
+<li>
+<p>‘Change instrument roles’,</p>
+<ul>
+<li>‘Change instrument roles’.</li>
+</ul>
+</li>
+<li>
+<p>‘Change nothing and continue with immaculate consistency’,</p>
+<ul>
+<li>Change nothing and continue with immaculate consistency’.</li>
+</ul>
+</li>
+<li>
+<p>‘Change specifics to ambiguities’,</p>
+<ul>
+<li>‘Change specifics to ambiguities’, ‘Change ambiguities to specifics’,.</li>
+</ul>
+</li>
+<li>
+<p>‘Children\n—speaking\n—singing’,</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Children, talking, singing</li>
+</ul>
+</li>
+<li>
+<p>‘Cluster analysis’,</p>
+<ul>
+<li>‘Cluster Analysis’.</li>
+</ul>
+</li>
+<li>
+<p>‘Consider different fading systems’,</p>
+<ul>
+<li>‘Consider different fading systems’, ‘Consider different fading systems’</li>
+</ul>
+</li>
+<li>
+<p>‘Consider transitions’,</p>
+</li>
+<li>
+<p>‘Consult other sources\n—promising\n—unpromising’,</p>
+<ul>
+<li>Consult other sources, ‘Promising, Unpromising’,.</li>
+</ul>
+</li>
+<li>
+<p>‘Convert a melodic element into a rhythmic element’,</p>
+</li>
+<li>
+<p>‘Courage!’,</p>
+</li>
+<li>
+<p>‘Cut a vital connection’,</p>
+</li>
+<li>
+<p>‘Decorate, decorate’,</p>
+</li>
+<li>
+<p>‘Define an area as `safe’ and use it as an anchor’,</p>
+<ul>
+<li>Define an area as `safe’ and use it as an anchor</li>
+</ul>
+</li>
+<li>
+<p>‘Destroy\n-nothing\n-the most important thing’,</p>
+</li>
+<li>
+<p>‘Discard an axiom’,</p>
+<ul>
+<li>‘Discard an axiom’.</li>
+</ul>
+</li>
+<li>
+<p>‘Disciplined self-indulgence’,</p>
+<ul>
+<li>‘Disciplined self-indulgence’.</li>
+</ul>
+</li>
+<li>
+<p>‘Destroy﹑the most important thing’,</p>
+</li>
+<li>
+<p>‘Disconnect from desire’,</p>
+<ul>
+<li>‘Disconnect from desire’.</li>
+</ul>
+</li>
+<li>
+<p>‘Discover the recipes you are using and abandon them’,</p>
+<ul>
+<li>Discovering and Discarding a Recipe You’re Using,” and “Discarding a Recipe.</li>
+</ul>
+</li>
+<li>
+<p>‘Display your talent’,</p>
+<ul>
+<li>‘Showing off your talents’.</li>
+</ul>
+</li>
+<li>
+<p>‘Distort time’,</p>
+<ul>
+<li>‘Distorting Time’.</li>
+</ul>
+</li>
+<li>
+<p>‘Do nothing for as long as possible’,</p>
+<ul>
+<li>Nothing for as long as possible’.</li>
+</ul>
+</li>
+<li>
+<p>‘Do something boring’,</p>
+<ul>
+<li>Doing the Boring Thing’.</li>
+</ul>
+</li>
+<li>
+<p>‘Do the last thing first’,</p>
+<ul>
+<li>‘Do the last thing first’.</li>
+</ul>
+</li>
+<li>
+<p>‘Do the washing up’,</p>
+<ul>
+<li>‘washing up’.</li>
+</ul>
+</li>
+<li>
+<p>‘Do the words need changing?’,</p>
+</li>
+<li>
+<p>‘Do we need holes?’,</p>
+</li>
+<li>
+<p>‘Don’t avoid what is easy’,</p>
+</li>
+<li>
+<p>‘Don’t be frightened of cliches’,</p>
+</li>
+<li>
+<p>‘Don’t break the silence’,</p>
+</li>
+<li>
+<p>‘Don’t stress one thing more than another’,</p>
+</li>
+<li>
+<p>‘Dont be afraid of things because they’re easy to do’,</p>
+</li>
+<li>
+<p>‘Dont be frightened to display your talents’,</p>
+<ul>
+<li>Dont be frightened to display your talents’.</li>
+</ul>
+</li>
+<li>
+<p>‘Go outside. close the door’.</p>
+</li>
+<li>
+<p>‘Go slowly all the way round the outside’,</p>
+</li>
+<li>
+<p>Go to an extreme, come part way back” (Go to an extreme, come part way back)</p>
+</li>
+<li>
+<p>Respect thy mistakes as hidden intentions’.</p>
+</li>
+<li>
+<p>‘What would others do’.</p>
+</li>
+<li>
+<p>What would you do?”</p>
+</li>
+<li>
+<p>‘What is wrong is humanly possible’.</p>
+</li>
+<li>
+<p>‘Stupid rapture(?)‘.</p>
+</li>
+<li>
+<p>Imagining the work as a set of disconnected events’.</p>
+</li>
+<li>
+<p>In total darkness, or in a very large room, very quietly’.</p>
+</li>
+<li>
+<p>‘Infinitesimal gradations’.</p>
+</li>
+<li>
+<p>‘Emphasize differences’,</p>
+</li>
+<li>
+<p>‘Emphasize repetitions’,</p>
+</li>
+<li>
+<p>‘Emphasize the flaws’,</p>
+<ul>
+<li>‘Emphasize the flaws’.</li>
+</ul>
+</li>
+<li>
+<p>‘Faced with a choice, do both (given by Dieter Rot)’,</p>
+<ul>
+<li>‘When faced with a choice, do both (given by Dieter Lott)‘.</li>
+</ul>
+</li>
+<li>
+<p>‘Feed the recording back out of the medium’,</p>
+<ul>
+<li>Feedback on the Recording from the Medium”.</li>
+</ul>
+</li>
+<li>
+<p>‘Fill every beat with something’,</p>
+<ul>
+<li>Fill every beat with something’.</li>
+</ul>
+</li>
+<li>
+<p>‘Find a safe part and use it as an anchor’,</p>
+<ul>
+<li>Find a safe part and use it as an anchor”.</li>
+</ul>
+</li>
+<li>
+<p>‘Get your neck massaged’,</p>
+<ul>
+<li>Getting a neck massage”.</li>
+</ul>
+</li>
+<li>
+<p>‘Ghost echoes’,</p>
+<ul>
+<li>Ghost Echo”.</li>
+</ul>
+</li>
+<li>
+<p>‘Give the game away’,</p>
+<ul>
+<li>‘Give the game away’.</li>
+</ul>
+</li>
+<li>
+<p>‘Give way to your worst impulse’,</p>
+<ul>
+<li>‘Give way to your worst impulses’.</li>
+</ul>
+</li>
+<li>
+<p>‘Go outside. Shut the door.’,</p>
+</li>
+<li>
+<p>‘Go slowly all the way round the outside’,</p>
+</li>
+<li>
+<p>‘Go to an extreme, come part way back’,</p>
+</li>
+<li>
+<p>‘Honor thy mistake as a hidden intention’,</p>
+</li>
+<li>
+<p>‘How would someone else do it?’,</p>
+</li>
+<li>
+<p>‘How would you have done it?’,</p>
+</li>
+<li>
+<p>‘Humanize something free of error’,</p>
+</li>
+<li>
+<p>‘Idiot glee (?)’,</p>
+</li>
+<li>
+<p>‘Imagine the piece as a set of disconnected events’,</p>
+</li>
+<li>
+<p>‘In total darkness, or in a very large room, very quietly’,</p>
+</li>
+<li>
+<p>‘Infinitesimal gradations’,</p>
+</li>
+<li>
+<p>‘Intentions\n—nobility of\n—humility of\n—credibility of’,</p>
+</li>
+<li>
+<p>‘Into the impossible’,</p>
+</li>
+<li>
+<p>‘Is it finished?’,</p>
+</li>
+<li>
+<p>‘Is something missing?’,</p>
+</li>
+<li>
+<p>‘Is the information correct?’,</p>
+</li>
+<li>
+<p>‘Is the style right?’,</p>
+</li>
+<li>
+<p>‘Is there something missing’,</p>
+<ul>
+<li>‘Is there anything missing?’</li>
+</ul>
+</li>
+<li>
+<p>‘It is quite possible (after all)’,</p>
+<ul>
+<li>(After all) there is plenty of potential’.</li>
+</ul>
+</li>
+<li>
+<p>‘It is simply a matter of work’,</p>
+<ul>
+<li>It’s simply a matter of work.’</li>
+</ul>
+</li>
+<li>
+<p>‘Just carry on’,</p>
+<ul>
+<li>Just keep going,” he said.</li>
+</ul>
+</li>
+<li>
+<p>‘Left channel, right channel, center channel’,</p>
+<ul>
+<li>‘left channel, right channel, center channel’.</li>
+</ul>
+</li>
+<li>
+<p>‘Listen to the quiet voice’,</p>
+<ul>
+<li>‘Listen to the quiet voice’.</li>
+</ul>
+</li>
+<li>
+<p>‘Look at the order in which you do things’,</p>
+<ul>
+<li>‘Look at the order in which things are done.’</li>
+</ul>
+</li>
+<li>
+<p>‘Look closely at the most embarrassing details &amp; amplify them’,</p>
+<ul>
+<li>Look closely &amp; amplify the most embarrassing details’.</li>
+</ul>
+</li>
+<li>
+<p>‘Lost in useless territory’,</p>
+<ul>
+<li>Straying into the Realm of Futility’.</li>
+</ul>
+</li>
+<li>
+<p>‘Lowest common denominator’,</p>
+<ul>
+<li>‘Least common multiple’.</li>
+</ul>
+</li>
+<li>
+<p>‘Magnify the most difficult details’,</p>
+<ul>
+<li>Magnifying the Most Difficult Details”.</li>
+</ul>
+</li>
+<li>
+<p>‘Make a blank valuable by putting it in an exquisite frame’,</p>
+<ul>
+<li>Making the Blank Worthwhile by Putting it in an Exquisite Frame’.</li>
+</ul>
+</li>
+<li>
+<p>‘Make a sudden, destructive unpredictable action; incorporate’,</p>
+<ul>
+<li>‘To act in a sudden, disruptive, unpredictable manner; to incorporate’.</li>
+</ul>
+</li>
+<li>
+<p>‘Make an exhaustive list of everything you might do &amp; do the last thing on the list’,</p>
+<ul>
+<li>‘Make a comprehensive list of all the things you might do &amp; do the last thing on the list’,.</li>
+</ul>
+</li>
+<li>
+<p>‘Make it more sensual’,</p>
+</li>
+<li>
+<p>‘Make what’s perfect more human’,</p>
+</li>
+<li>
+<p>‘Mechanicalize something idiosyncratic’,</p>
+<ul>
+<li>‘Mechanize the peculiar’.</li>
+</ul>
+</li>
+<li>
+<p>‘Move towards the unimportant’,</p>
+</li>
+<li>
+<p>‘Mute and continue’,</p>
+<ul>
+<li>‘Mute and continue’.</li>
+</ul>
+</li>
+<li>
+<p>‘Not building a wall but making a brick’,</p>
+<ul>
+<li>‘Not building a wall but making a brick’.</li>
+</ul>
+</li>
+<li>
+<p>‘Once the search has begun, something will be found’,</p>
+<ul>
+<li>‘When the search begins, something will be found’.</li>
+</ul>
+</li>
+<li>
+<p>‘Only a part, not the whole’,</p>
+<ul>
+<li>Not the whole, just a part’.</li>
+</ul>
+</li>
+<li>
+<p>‘Only one element of each kind’,</p>
+<ul>
+<li>Only one element of each species”.</li>
+</ul>
+</li>
+<li>
+<p>‘Overtly resist change’,</p>
+</li>
+<li>
+<p>‘Pae White’s non-blank graphic metacard’,</p>
+</li>
+<li>
+<p>‘Put in earplugs’,</p>
+</li>
+<li>
+<p>‘Question the heroic’,</p>
+</li>
+<li>
+<p>‘Reevaluation (a warm feeling)’,</p>
+<ul>
+<li>Revaluation (warm feelings)“.</li>
+</ul>
+</li>
+<li>
+<p>‘Remember those quiet evenings’,</p>
+<ul>
+<li>‘Remember those quiet evenings’.</li>
+</ul>
+</li>
+<li>
+<p>‘Remove a restriction’,</p>
+<ul>
+<li>‘Remove restrictions’.</li>
+</ul>
+</li>
+<li>
+<p>‘Remove ambiguities and convert to specifics’,</p>
+<ul>
+<li>‘Remove ambiguity and convert to specifics’.</li>
+</ul>
+</li>
+<li>
+<p>‘Remove specifics and convert to ambiguities’,</p>
+<ul>
+<li>‘Remove specifics and convert to ambiguity’.</li>
+</ul>
+</li>
+<li>
+<p>‘Repetition is a form of change’,</p>
+<ul>
+<li>Repetition is a form of change’.</li>
+</ul>
+</li>
+<li>
+<p>‘Retrace your steps’,</p>
+</li>
+<li>
+<p>‘Reverse’,</p>
+<ul>
+<li>‘Reverse’.</li>
+</ul>
+</li>
+<li>
+<p>‘Short circuit (example; a man eating peas with the idea that they will improve  his virility shovels them straight into his lap)’,</p>
+<ul>
+<li>Thinking short (e.g.; a man who believes that eating beans will make him more energetic will scramble straight to his knees)‘.</li>
+</ul>
+</li>
+<li>
+<p>‘Simple subtraction’,</p>
+<ul>
+<li>‘Simple subtraction’.</li>
+</ul>
+</li>
+<li>
+<p>‘Simply a matter of work’,</p>
+<ul>
+<li>Simply a matter of work’.</li>
+</ul>
+</li>
+<li>
+<p>‘Slow preparation, fast execution’,</p>
+<ul>
+<li>Preparation is slow, execution is quick.</li>
+</ul>
+</li>
+<li>
+<p>‘Spectrum analysis’,</p>
+<ul>
+<li>‘Spectrum Analysis’.</li>
+</ul>
+</li>
+<li>
+<p>‘State the problem as clearly as possible’,</p>
+<ul>
+<li>State the problem as clearly as possible’.</li>
+</ul>
+</li>
+<li>
+<p>‘Take a break’,</p>
+<ul>
+<li>‘Take a break’.</li>
+</ul>
+</li>
+<li>
+<p>‘Take away the elements in order of apparent non-importance’,</p>
+<ul>
+<li>‘Taking the apparently unimportant elements in order of importance.</li>
+</ul>
+</li>
+<li>
+<p>‘Take away the important parts’,</p>
+<ul>
+<li>‘Take away the important parts’.</li>
+</ul>
+</li>
+<li>
+<p>‘Tape your mouth (given by Ritva Saarikko)’,</p>
+<ul>
+<li>Tape over the mouth (given by Litva Saarikko)“.</li>
+</ul>
+</li>
+<li>
+<p>‘Principle of Contradiction’.</p>
+<ul>
+<li>‘The inconsistency principle’,</li>
+</ul>
+</li>
+<li>
+<p>The most important thing is the most easily forgotten.”</p>
+<ul>
+<li>‘The most important thing is the thing most easily forgotten’,</li>
+</ul>
+</li>
+<li>
+<p>The tape becomes music”.</p>
+<ul>
+<li>‘The tape is now the music’,</li>
+</ul>
+</li>
+<li>
+<p>‘Think\n—inside the work\n—outside the work’,</p>
+</li>
+<li>
+<p>‘Think of the radio’,</p>
+<ul>
+<li>Think Radio”.</li>
+</ul>
+</li>
+<li>
+<p>‘Tidy up’,</p>
+</li>
+<li>
+<p>‘Towards the insignificant’,</p>
+</li>
+<li>
+<p>‘Trust in the you of now’,</p>
+</li>
+<li>
+<p>‘Try faking it (from Stewart Brand)’,</p>
+</li>
+<li>
+<p>‘Turn it upside down’,</p>
+<ul>
+<li>‘Turn upside down’.</li>
+</ul>
+</li>
+<li>
+<p>‘Twist the spine’,</p>
+<ul>
+<li>‘Twist the spine’.</li>
+</ul>
+</li>
+<li>
+<p>‘Use ‘unqualified’ people’,</p>
+</li>
+<li>
+<p>‘Use an old idea’,</p>
+<ul>
+<li>Use an old idea’, ‘Use an old idea’, ‘Use an old idea’</li>
+</ul>
+</li>
+<li>
+<p>‘Use an unacceptable color’,</p>
+<ul>
+<li>Use an unacceptable color’.</li>
+</ul>
+</li>
+<li>
+<p>‘Use cliches’,</p>
+<ul>
+<li>Use cliches’.</li>
+</ul>
+</li>
+<li>
+<p>‘Use fewer notes’,</p>
+<ul>
+<li>Use fewer notes’.</li>
+</ul>
+</li>
+<li>
+<p>Use ‘unqualified’ people’,</p>
+</li>
+<li>
+<p>‘Use filters’,</p>
+<ul>
+<li>Use filters’.</li>
+</ul>
+</li>
+<li>
+<p>‘Use something nearby as a model’,</p>
+<ul>
+<li>‘Follow the example of what is nearby’.</li>
+</ul>
+</li>
+<li>
+<p>‘Use your own ideas’,</p>
+<ul>
+<li>Use your own ideas’.</li>
+</ul>
+</li>
+<li>
+<p>‘Voice your suspicions’,</p>
+<ul>
+<li>‘Voice your doubts’.</li>
+</ul>
+</li>
+<li>
+<p>‘Water’,</p>
+<ul>
+<li>Use ‘water’.</li>
+</ul>
+</li>
+<li>
+<p>‘What are the sections sections of?    Imagine a caterpillar moving’,</p>
+<ul>
+<li>‘What is a cross-sectional view of?   Imagine a caterpillar in motion’.</li>
+</ul>
+</li>
+<li>
+<p>‘What are you really thinking about just now?’,</p>
+<ul>
+<li>What are we really thinking about now?’</li>
+</ul>
+</li>
+<li>
+<p>‘What context would look right?’,</p>
+<ul>
+<li>What context would look right’.</li>
+</ul>
+</li>
+<li>
+<p>‘What is the reality of the situation?’,</p>
+<ul>
+<li>‘What is the reality?</li>
+</ul>
+</li>
+<li>
+<p>‘What is the simplest solution?’,</p>
+<ul>
+<li>What is the simplest solution?’</li>
+</ul>
+</li>
+<li>
+<p>‘What mistakes did you make last time?’,</p>
+<ul>
+<li>‘What mistakes did you make last time?</li>
+</ul>
+</li>
+<li>
+<p>‘What to increase? What to reduce? What to maintain?’,</p>
+<ul>
+<li>‘What to increase? What to reduce? What to maintain’.</li>
+</ul>
+</li>
+<li>
+<p>‘What would your closest friend do?’,</p>
+</li>
+<li>
+<p>‘What wouldn’t you do?’,</p>
+</li>
+<li>
+<p>‘When is it for?’,</p>
+</li>
+<li>
+<p>‘Where is the edge?’,</p>
+</li>
+<li>
+<p>‘Which parts can be grouped?’,</p>
+</li>
+<li>
+<p>‘Work at a different speed’,</p>
+</li>
+<li>
+<p>‘Would anyone want it?</p>
+</li>
+<li>
+<p>‘You are an engineer’,</p>
+<ul>
+<li>‘You are an engineer’.</li>
+</ul>
+</li>
+<li>
+<p>‘You can only make one dot at a time’,</p>
+</li>
+<li>
+<p>‘You don’t have to be ashamed of using your own ideas’,</p>
+<ul>
+<li>There is no need to be ashamed of using your ideas.”</li>
+</ul>
+</li>
+<li>
+<p>‘blank white card’,</p>
+</li>
+</ul>
+<p>relevance
+- <a href="./tarot" class="internal" data-slug="tarot">tarot</a></p>
+<hr/>
+<p>This page is auto-translated from [/nishio/Oblique Strategies](<a href="https://scrapbox.io/nishio/Oblique" class="external">https://scrapbox.io/nishio/Oblique<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Strategies) using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Diary-2022-05-24" class="internal">Diary 2022-05-24</a></li><li><a href="./The-two-images-appear-to-overlap-depending-on-the-viewing-direction" class="internal">The two images appear to overlap depending on the viewing direction</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

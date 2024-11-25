@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Computer graphics, media art, tea culture, and Zen.</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Computer graphics, media art, tea culture, and Zen."/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Computer graphics, media art, tea culture, and Zen."/><meta name="twitter:description" content="Computer Graphics, Media Art, Tea Culture, and Zen computer graphics, media art, tea culture, and Zen (Buddhism). Yoichi Ochiai 2021-12-16SIGGRAPHASIA2021 I took rough notes at the venue."/><meta property="og:description" content="Computer Graphics, Media Art, Tea Culture, and Zen computer graphics, media art, tea culture, and Zen (Buddhism). Yoichi Ochiai 2021-12-16SIGGRAPHASIA2021 I took rough notes at the venue."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="Computer Graphics, Media Art, Tea Culture, and Zen computer graphics, media art, tea culture, and Zen (Buddhism). Yoichi Ochiai 2021-12-16SIGGRAPHASIA2021 I took rough notes at the venue."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Computer-graphics,-media-art,-tea-culture,-and-Zen."/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Computer-graphics,-media-art,-tea-culture,-and-Zen."/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Computer Graphics, Media Art, Tea Culture, and Zen computer graphics, media art, tea culture, and Zen (Buddhism). Yoichi Ochiai 2021-12-16SIGGRAPHASIA2021 I took rough notes at the venue."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Computer-graphics,-media-art,-tea-culture,-and-Zen."><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Computer graphics, media art, tea culture, and Zen.</a></div></nav><h1 class="article-title">Computer graphics, media art, tea culture, and Zen.</h1><p show-comma="true" class="content-meta"><span>Sep 11, 2024</span><span>15 min read</span></p><ul class="tags"><li><a href="./tags/SIGGRAPHASIA2021" class="internal tag-link">SIGGRAPHASIA2021</a></li><li><a href="./tags/Kozaneba" class="internal tag-link">Kozaneba</a></li></ul></div></div><article class="popover-hint"><p>Computer Graphics, Media Art, Tea Culture, and Zen
+<img src="https://gyazo.com/7f6e657f9eb761a358673b66cef83699/thumb/1000" alt="image"/></p>
+<ul>
+<li><a href="./computer-graphics" class="internal alias" data-slug="computer-graphics">computer graphics</a>, <a href="./media-art" class="internal alias" data-slug="media-art">media art</a>, <a href="./tea-culture" class="internal alias" data-slug="tea-culture">tea culture</a>, and <a href="./Zen-(Buddhism)" class="internal alias" data-slug="Zen-(Buddhism)">Zen (Buddhism)</a>. <a href="./Yoichi-Ochiai" class="internal alias" data-slug="Yoichi-Ochiai">Yoichi Ochiai</a></li>
+</ul>
+<p><img src="https://gyazo.com/1eebf9f57f16dc66e2b1121a3f5ccd73/thumb/1000" alt="image"/>
+2021-12-16<a href="./tags/SIGGRAPHASIA2021" class="tag-link internal alias" data-slug="tags/SIGGRAPHASIA2021">SIGGRAPHASIA2021</a>
+I took rough notes at the venue.
+2021-12-20 Additions.</p>
+<p>Table of Contents</p>
+<ul>
+<li>
+<p>Materializing computer nature</p>
+<ul>
+<li>Computer Graphics and Media Art</li>
+</ul>
+</li>
+<li>
+<p>Stationary nomads</p>
+<ul>
+<li>Sustainability and Media Art</li>
+</ul>
+</li>
+<li>
+<p>tea culture</p>
+<ul>
+<li>Media Art Alternatives</li>
+</ul>
+</li>
+<li>
+<p>the familiarity of a tea-ceremony scene</p>
+<ul>
+<li>Apu and sora, once in a lifetime</li>
+</ul>
+</li>
+<li>
+<p>Mingei and Symbiosis
+- <a href="./Tools-for-Conviviality" class="internal alias" data-slug="Tools-for-Conviviality">Tools for Conviviality</a></p>
+</li>
+<li>
+<p>To Life</p>
+<ul>
+<li>Alternatives to Man and Nature</li>
+</ul>
+</li>
+<li>
+<p><a href="./Nam-June-Paik" class="internal alias" data-slug="Nam-June-Paik">Nam June Paik</a></p>
+</li>
+<li>
+<p><a href="https://ja.m.wikipedia.org/wiki/%E3%83%8A%E3%83%A0," class="external">https://ja.m.wikipedia.org/wiki/ナム,<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> June Paik</p>
+</li>
+</ul>
+<p>What is “materialization”?</p>
+<ul>
+<li><a href="https://ja.wikipedia.org/wiki/%E8%8D%98%E5%AD%90" class="external">https://ja.wikipedia.org/wiki/荘子<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Theory of the Chiralty
+<ul>
+<li><a href="./Butterfly-Dreams" class="internal alias" data-slug="Butterfly-Dreams">Butterfly Dreams</a></li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I was reading Heidegger’s “<a href="./What-is-technology" class="internal alias" data-slug="What-is-technology">What is technology?</a>” recently, so I thought he was talking about the “materialization” of that one, maybe they have the same root, but I guess I should think of them as different things first.</li>
+</ul>
+</li>
+<li>transformation of material things</li>
+</ul>
+<p>media art</p>
+<ul>
+<li>Technological developments in photography and imaging
+<ul>
+<li>→The Birth of Media Art</li>
+</ul>
+</li>
+<li>Conscious of the newly emerging medium</li>
+</ul>
+<p>Gap between the material world and the image in the mind</p>
+<ul>
+<li>Process of rendering into matter to image
+<ul>
+<li>dig out a stone</li>
+<li>mural</li>
+<li>animation</li>
+<li>Aerial Display
+<ul>
+<li>Make the air glow</li>
+<li>acoustic levitation</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Creating a display that touches the air is halfway between a touchable substance and an untouchable image.</li>
+<li>Can interact with animals and plants
+<ul>
+<li>Matter and Image</li>
+</ul>
+</li>
+</ul>
+<p>Material and Image, Changing Perceptions of the After Corona</p>
+<ul>
+<li>Image as an extension of corporeality</li>
+<li>The image is the second body
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Avatar-like or videoconference camera footage
+<ul>
+<li>That would be presence.</li>
+<li>Not content.</li>
+</ul>
+</li>
+<li>It’s a different context than projection equipment or appreciation of a work of art.</li>
+</ul>
+</li>
+</ul>
+<p>“nomads in residence.”</p>
+<ul>
+<li>stationary nomad</li>
+<li>Nam June Paik
+<ul>
+<li>There was an oil crisis and other times when people thought about the relationship with the environment.</li>
+<li><a href="./random-access-information" class="internal alias" data-slug="random-access-information">random access information</a></li>
+</ul>
+</li>
+<li>Music and dance 500,000 years old, painting 20,000 years old.
+<ul>
+<li>They weren’t settled until agriculture was born.</li>
+<li>Music: Art that people can take with them
+- <a href="./weightless" class="internal" data-slug="weightless">weightless</a> stuff</li>
+<li>The Big Picture
+<ul>
+<li>Heavy and inconvenient to carry</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>To solve energy problems
+<ul>
+<li>Keep the body moving and the idea moving.</li>
+<li>Stationary nomads</li>
+<li>The body is fixed.
+<ul>
+<li>I’m sure you’ve all felt it keenly over the past two years.</li>
+<li>But something unfulfilling, a problem of physicality.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>More and more visual works are being created.
+<ul>
+<li>Until now, it has been mechanical.</li>
+</ul>
+</li>
+<li>Waterproof, LED, heightened resolution 4K, 6m, 1mm pitch, video outdoors
+<ul>
+<li>≪Brewing monoliths≫.</li>
+<li>To make it work as an installation without having to physically construct it.</li>
+</ul>
+</li>
+</ul>
+<p>Post-Covid, Nam June Pike Thinking</p>
+<ul>
+<li>Sustainability, the new everyday, physicality and video, NFT, changing media arts</li>
+</ul>
+<p>Visual works are becoming more physical.</p>
+<ul>
+<li>Draw a horizontal line to the horizon.
+<ul>
+<li>30 transmissive displays</li>
+</ul>
+</li>
+<li>To the extent that you feel physicality.
+<ul>
+<li>big</li>
+<li>Images that blend in with the space.</li>
+</ul>
+</li>
+<li>Human move and maintenance, but difficult</li>
+<li>Set up without going to the site
+<ul>
+<li>Things can be customs cleared, human mobility is difficult.</li>
+</ul>
+</li>
+<li>Sending works and things electronically</li>
+</ul>
+<p>The rise of the NFT market</p>
+<ul>
+<li>Moving non-physical art on electronic space</li>
+<li>We are approaching a sedentary nomadic population.</li>
+<li>Reasonable change from physical galleries and auctions to electronic ones</li>
+</ul>
+<p>Media Art and Sustainability</p>
+<ul>
+<li>two
+<ul>
+<li>1: Sustainability per se
+<ul>
+<li>Frequently broken</li>
+<li>plow (esp. horse or ox-drawn)
+<ul>
+<li>Float it so that it reflects the surroundings.</li>
+<li>Easily broken</li>
+</ul>
+</li>
+<li>3 exhibits, 10 spares, 8 broken.
+<ul>
+<li>Contrary to Sustainability.</li>
+</ul>
+</li>
+<li>How can it be unbroken?
+<ul>
+<li>→NFT and saved.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2: Environmental Impact
+<ul>
+<li>small is beautiful
+<ul>
+<li>Schumacher</li>
+<li>human-centered economics
+<ul>
+<li>Buddhist economics</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Stationary nomads
+<ul>
+<li>Settled in the vicinity</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Maybe there is a clue in the tea culture.</p>
+<ul>
+<li>bamboo tea spoon for making Japanese tea</li>
+<li>bamboo duster (with the leaves still attached at one end)</li>
+<li>It can be made by laying bamboo on a thatched roof for 100 years.</li>
+<li>I can get it from an abandoned house.
+<ul>
+<li>
+<blockquote>
+<p>Susudake is bamboo that has been collected from the attics and ceilings of old thatched-roof houses, and has been smoked over 100 to 200 years by the smoke from hearths, giving it a distinctive brownish-brown or candy-like color.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p>Seeing Tea Culture as an Alternative to Media Art</p>
+<ul>
+<li>courteous
+<ul>
+<li>The gesture of serving itself is a performance</li>
+</ul>
+</li>
+<li>Chajin is a curator and performance artist
+<ul>
+<li>What to put in a tea room = curation</li>
+<li>Create an experience to narrate something
+<ul>
+<li>Close to media art</li>
+<li>Conscious art of what media to use.</li>
+<li>Use of the classic medium of “message with assortment of videos”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Tea room made of gunpla runners</li>
+<li>Rikyu’s waiting-an vase</li>
+<li>Natural products for local production for local consumption</li>
+</ul>
+<p>the familiarity of a tea-ceremony scene</p>
+<ul>
+<li>steadfastly sticking to one’s principles</li>
+<li>Same taste
+<ul>
+<li>
+<blockquote>
+<p>This expression is used to mean that although the tea ceremony and Zen may seem to be different, the conditions sought are the same. Chanoyu is connected to Zen. Originally, the tea ceremony is a path that arose from Zen. (<a href="https://www.weblio.jp/content/%E8%8C%B6%E7%A6%85%E4%B8%80%E5%91%B3" class="external">Practical Japanese Expression Dictionary<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>)</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>ninja working in the field of Zen Buddhism</li>
+<li>tea used for tea ceremony</li>
+</ul>
+<p>500 year old teacups</p>
+<ul>
+<li>Highly sustainable</li>
+</ul>
+<p>National Museum of Emerging Science and Innovation</p>
+<ul>
+<li>I didn’t build a tearoom, but I represented a tearoom.</li>
+<li>Make a bamboo grove with silver and place hanging scrolls and ikebana.</li>
+<li>Nature in the computer,
+<ul>
+<li>Nature Outside</li>
+</ul>
+</li>
+<li>tea ceremony</li>
+<li>Kegon (sect of Buddhism)</li>
+<li>Computer Culture</li>
+<li>I think they’re close.</li>
+<li>Ikebana is an installation
+<ul>
+<li>Ikebana and Robot Arm</li>
+</ul>
+</li>
+<li>teacup
+<ul>
+<li>I’ll try to get the weight right and serve it in aluminum.</li>
+<li>Putting the digitally made object face to face with the craftsman.</li>
+</ul>
+</li>
+</ul>
+<p>aesthetic sense in Japanese art emphasising quiet simplicity and subdued refinement</p>
+<ul>
+<li>Can be explained without using Buddhist terminology.</li>
+<li><img src="https://scrapbox.io/files/61babbd4a17386001d0f93a5.jpeg" alt="image"/>
+<ul>
+<li>Wabi: Rough and random decadence</li>
+<li>Sabi: forms appearing by time, things that come up with time</li>
+<li>Beauty found in the process of harmony</li>
+<li>Repeatedly approaching Nature</li>
+</ul>
+</li>
+</ul>
+<p>folk art movement</p>
+<ul>
+<li>Beauty with Life</li>
+<li>Look for art created by someone who is not a specific artist.</li>
+</ul>
+<p>Mingei and Symbiosis</p>
+<ul>
+<li>What’s missing with Zoom
+<ul>
+<li><a href="./iRIICHI" class="internal" data-slug="iRIICHI">iRIICHI</a></li>
+<li><a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B4%E3%82%A1%E3%83%B3" class="external">https://ja.wikipedia.org/wiki/イヴァン<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> and IRIICHI</li>
+</ul>
+</li>
+<li>「 <a href="./Tools-for-Conviviality" class="internal alias" data-slug="Tools-for-Conviviality">Tools for Conviviality</a> 」
+- <a href="./convivial" class="internal" data-slug="convivial">convivial</a></li>
+<li>Conviviality, Festivity and Co-Exultation
+<ul>
+<li>If there is not enough, it will not be possible to efficiently satisfy the needs that are generated among the members of society.</li>
+</ul>
+</li>
+</ul>
+<p>Soetsu Yanagi</p>
+<ul>
+<li><a href="https://ja.wikipedia.org/wiki/%E6%9F%B3%E5%AE%97%E6%82%A6" class="external">https://ja.wikipedia.org/wiki/柳宗悦<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Traditional beauty in objects made by unknown artisans in their daily lives</li>
+<li>Rediscovering Mingei through Technology
+<ul>
+<li>Lion puppet about the size of a pinky finger</li>
+<li>When viewed with a zoom camera, there are DETAILS that are not captured by the human eye.</li>
+</ul>
+</li>
+</ul>
+<p>I want my digital data to last.</p>
+<ul>
+<li>platinum print</li>
+<li>Dedicated to Daigoji Temple
+<ul>
+<li><a href="https://ja.wikipedia.org/wiki/%E9%86%8D%E9%86%90%E5%AF%BA" class="external">https://ja.wikipedia.org/wiki/醍醐寺<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>
+<blockquote>
+<p>Year of foundation: 16th year of Sadakan (874)</p>
+</blockquote>
+</li>
+<li>last 1000 years</li>
+</ul>
+</li>
+<li>Cannot be printed commercially.
+<ul>
+<li>Printed by hand</li>
+<li>The process of doing it is very convivial</li>
+</ul>
+</li>
+<li>Japanese paper
+<ul>
+<li>Long-lasting because it does not change pH</li>
+<li>cellulose lump</li>
+<li>I treat paper very well knowing that my grandmother took the time and effort to make it.</li>
+<li>convivial</li>
+</ul>
+</li>
+<li>Make it together at the SIGGRAPH venue, or make it at home.
+<ul>
+<li>In addition to writing papers and making SOTA stuff.</li>
+<li>How can we create something CONVIVIAL?</li>
+</ul>
+</li>
+</ul>
+<p>To Life</p>
+<ul>
+<li>fashion show
+<ul>
+<li>patchwork</li>
+<li>Long-lasting clothing culture</li>
+<li>old rag from the Tohoku region</li>
+<li>Clothes that have been handed down for 200 years
+<ul>
+<li>shame</li>
+<li>In recent years, it has been re-attracted</li>
+</ul>
+</li>
+<li>Gathering sustainability stuff from all over the place</li>
+</ul>
+</li>
+</ul>
+<p>Daigoji Temple</p>
+<ul>
+<li>Trees were broken by the typhoon.</li>
+<li>Exhibit of digital objects growing from stumps
+<ul>
+<li>transmissive display</li>
+</ul>
+</li>
+<li>Collaboration with the voice of sutra reading</li>
+<li>LEDs will be a natural material in the future.</li>
+<li>Surprisingly, it fits in with tradition.</li>
+<li>A culture of using and enjoying different mediums
+<ul>
+<li>I think it will survive like the tea culture.</li>
+</ul>
+</li>
+</ul>
+<p>Saint-Exupery
+- <a href="./The-Land-of-Man" class="internal alias" data-slug="The-Land-of-Man">The Land of Man</a></p>
+<ul>
+<li>Machines are disappearing from human consciousness.</li>
+<li>Every technology approaches nature.
+<ul>
+<li>Digital becomes natural too.</li>
+</ul>
+</li>
+</ul>
+<p>A non-human-centered landscape of life</p>
+<ul>
+<li>Transcendence of value and worthlessness
+<ul>
+<li>Related: <a href="./free-from-obstacles" class="internal alias" data-slug="free-from-obstacles">free from obstacles</a> in [Kegon (sect of Buddhism)</li>
+</ul>
+</li>
+<li>Sustainability without subjectivity
+<ul>
+<li>Something that lasts even when people are gone.</li>
+</ul>
+</li>
+<li>world fair
+<ul>
+<li>We need to regularly make things that can only be made with computer science expertise.</li>
+</ul>
+</li>
+<li>folk art
+<ul>
+<li>Expo 1970</li>
+<li>High economic growth, industrial products, uniformity</li>
+<li>Review of the beauty of handwork that deviates from uniformity</li>
+</ul>
+</li>
+<li>At the next Expo.
+<ul>
+<li>They could all be wearing uniform goggles.</li>
+<li>But I think something less uniform will be reviewed.</li>
+</ul>
+</li>
+</ul>
+<p>Kegon (sect of Buddhism)
+symbiosis
+folk craft</p>
+<p>Buddhist philosophy</p>
+<ul>
+<li>computational nature</li>
+<li>It could be done without the religiosity.</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>You mean to pull out the oriental thought that has its roots in Buddhism and replant it in “nature with computers” in the same way that Wabi-sabi is expressed in computerized form?
+<ul>
+<li>Yes, because there were no computers in Buddha’s time.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>question</p>
+<p>Feeling that something is unfulfilled</p>
+<ul>
+<li>convivial</li>
+<li>Yanagi looks to folk art as a method to regain</li>
+<li>Not “what we believe” but “what people use.”
+<ul>
+<li>beauty for your use</li>
+<li>The Beauty of Use</li>
+</ul>
+</li>
+<li>I’m missing something in Zoom.
+<ul>
+<li>Must we revert to “stuff”?</li>
+<li>mindfulness
+<ul>
+<li>Derived from Zen practice</li>
+<li>Calm yourself down.</li>
+</ul>
+</li>
+<li>folk craft
+<ul>
+<li>It’s not what I practice.</li>
+<li>see through a tool
+<ul>
+<li>The unfulfilled is fulfilled.</li>
+</ul>
+</li>
+<li>self-serving</li>
+<li>For example, do foodstuffs at home
+<ul>
+<li>There’s a dish for that.</li>
+<li>Something I like, something I think is beautiful, rather than something that is functional.</li>
+<li>Hand craftsmanship, digital fabrication</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Regress to things that have fulfilled conviviality?</p>
+<ul>
+<li>I think so</li>
+</ul>
+<p>Metaverse, a world devoid of corporeality, this is not coming?</p>
+<ul>
+<li>No, convivial is a resolution issue.
+<ul>
+<li>The problem with the current Metaverse is largely a lack of resolution.</li>
+<li>OK as long as the display progresses.</li>
+</ul>
+</li>
+<li>It’s important to have a system that doesn’t specialize only in things that we think about with our minds, like logic.
+<ul>
+<li>To what you feel in your body</li>
+<li>Early Twitter “Now” = physicality
+<ul>
+<li>It is not the meaning that it flows in the timeline, but the body
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Maybe it’s because it’s an action that I shared without thinking too much about what I felt.</li>
+<li>If you come close to it, you will create a coexistent experience.</li>
+</ul>
+</li>
+<li>Approaching meaninglessness, non-logicality, and physicality
+<ul>
+<li>Ai zu ku, toast to bump it.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Direct, unequivocal action on an objective?</p>
+<ul>
+<li>Indeed, it diminished.
+<ul>
+<li>For example, it doesn’t produce added value for the purpose of moving conference rooms.</li>
+</ul>
+</li>
+<li>Q: Is it necessary to add more things that do not add value to the objective?</li>
+<li>A: Value-added can have better space with added value.
+<ul>
+<li>No need to stick that in the meeting.</li>
+<li>There is no need to include the “non-value-added conviviality” of “travel” in the meeting.
+<ul>
+<li>Or making tea at home.</li>
+</ul>
+</li>
+<li>A form of craft that is closely related to daily life
+<ul>
+<li>Digital or non-digital.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Discussion of physicality</p>
+<ul>
+<li>What’s the point of being mobile if you don’t stay home and move?</li>
+<li>Settled nomads place comfortable objects around them.
+<ul>
+<li>What I work for, what I live for, what I like (<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/> is this a quote?)</li>
+</ul>
+</li>
+<li>They’ve been saying that since Nam June Paik.
+<ul>
+<li>Marginal costs are lower, allowing for creations that are not for convenience purposes.</li>
+</ul>
+</li>
+</ul>
+<p>Q: I’m starting to understand a little better what you meant by Digital Nature. Why did you name your lab the way you did?</p>
+<ul>
+<li>When 26-7</li>
+<li>I was thinking of going with Computational Nature.
+<ul>
+<li>Too long.</li>
+<li>I decided to go digital.</li>
+</ul>
+</li>
+<li>Original nature ←→ Nature without mass Simulated nature</li>
+<li>by cutting out information on top of the digital signal.
+<ul>
+<li>Nature that is not in rocks but in living things.</li>
+</ul>
+</li>
+<li>Massless nature affects original nature.
+<ul>
+<li>Natural objects as a whole</li>
+<li>meta-nature
+<ul>
+<li>Every single level of the metaverse has different laws(?).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Q: I don’t understand how digital and nature get attached when you are older, do students understand this?</p>
+<ul>
+<li><a href="./Object-Oriented-Onntology" class="internal alias" data-slug="Object-Oriented-Onntology">Object Oriented Onntology</a>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Object-oriented_ontology" class="external">https://en.wikipedia.org/wiki/Object-oriented_ontology<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Philosophy influenced by object-oriented</li>
+<li>
+<blockquote>
+<p>In metaphysics, object-oriented ontology (OOO) is a 21st-century Heidegger-influenced school of thought that rejects the privileging of human existence over the existence of nonhuman objects.</p>
+</blockquote>
+</li>
+<li>Deconstruct nature and call <a href="./New-Nature" class="internal alias" data-slug="New-Nature">New Nature</a> digital nature.</li>
+<li>I understand students who are studying.
+<ul>
+<li>Philosophy or physical theory.</li>
+<li>Students may need to study it to understand it.</li>
+</ul>
+</li>
+<li>nature
+<ul>
+<li>Not in relation to humans.
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Not a “man v. s. nature” composition.</li>
+</ul>
+</li>
+<li>Nature as a system that includes humans</li>
+<li>Then it’s not surprising that digital is included there.
+<ul>
+<li>And the nature that contains the digital is a little different from the nature we’ve seen before.</li>
+</ul>
+</li>
+<li>When you reach the age of PhD or so, you reach a point where you can say “I’m not a PhD.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>---- afterwards</p>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1471523101469196288" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: I wonder if it means that the conflict structure of “art without mass (e.g. songs) v.s. art with mass (e.g. large paintings)” has reached the Aufheben of “digital data without mass” + “displays (= things with mass) large enough to feel physicality”. I wonder if this means that we have reached the Aufheben of “displays (= things with mass)”…</p>
+</blockquote>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1471525395904462848" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: I’ll have to go back and read the lecture video or slides a bit, my notes are not enough information. In particular, the keyword “hwagon” in “hwagon, symbiosis, and folk art” does not sit well. I think “physicality” is a stronger pipe connecting the first half and the second half.</p>
+</blockquote>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1471526074203127809" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>:<a href="./tags/Kozaneba" class="tag-link internal alias" data-slug="tags/Kozaneba">Kozaneba</a>
+<img src="https://gyazo.com/23296422fb19d86f165fb99c9a8636eb/thumb/1000" alt="image"/></p>
+</blockquote>
+<blockquote>
+<p><a href="https://twitter.com/ochyai/status/1471531867044483078" class="external">ochyai<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: I’m so sorry I skipped Kegon because I didn’t have time. I’m sorry I skipped Kegon because of lack of time…</p>
+<blockquote>
+<p>Formation of Chinese Hua Yan through fusion of the Hua Yan Sutra and Zhuangzi</p>
+</blockquote>
+</blockquote>
+<ul>
+<li><a href="https://neieiko.web.fc2.com/tzs/tz4r.html" class="external">“The Transcendence of Eastern and Western Thought” recounted in Part 4<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1471545658872299520" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: I think it is more important to know “which aspect of Miraikan’s exhibition you feel the concept of Hua Yue” than “the concept of Hua Yue” itself. I think it is more important to know “which aspect of the Miraikan exhibition you feel the concept of Kegon”.</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/ochyai/status/1472062123270635523" class="external">ochyai<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: oh I see!</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://www.asahi.com/and/article/20191204/7900625/" class="external">Pondering a Future in which the Boundary between Nature and Computers Dissolves A new permanent exhibition under the general supervision of Yoichi Ochiai opens at the National Museum of Emerging Science and Innovation (Miraikan) | Asahi Shimbun Digital Magazine &amp; and<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://bijutsutecho.com/magazine/news/exhibition/13512" class="external">Yoichi Ochiai’s recent and new works are all here! ∽mountain, purple and clear ∽everything is indispensable ∽computing machine nature” exhibition will be held｜Bijutsu Techo<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>[<a href="https://newspicks.com/news/2383238/body/" class="external">Yoichi Ochiai and Chiaki Hayashi<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Digital Nature can be explained in Buddhist terms]</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p>I started reading the Hua Yan material that Mr. Ochiai gave me.</p>
+<ul>
+<li><a href="Kozaneba:%20The%20Formation%20of%20Chinese%20Hua%20Yan%20through%20the%20Fusion%20of%20the%20Hua%20Yan%20Sutra%20and%20Zhuangzi" class="external">Kozaneba: The Formation of Chinese Hua Yan through the Fusion of the Hua Yan Sutra and Zhuangzi<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1472065599740473348" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: we, when a thing “is”, implicitly assume that it “will continue to be”, but that is just a “mental model of how the world works” that we learned while growing up in the old physical nature. It is just a “mental model” learned while growing up in the old physical nature. The assumption that things “continue to be” does not hold true in a “state where all five senses are digitally covered”, which is an extension of covering our vision with HMDs.</p>
+</blockquote>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1472066708378910721" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: The laws of the “old physical world” including “what is” is “always” need not be true in the “new digital world,” and it is natural to assume that the worldview of people of the future living in that world will naturally differ from the worldview of people of today. It is natural to assume that the worldview of people of the future, who live in such a world, will naturally differ from the worldview of people of today. For example, objects do not have fixed entities, but only appear as needed.</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1472068165199069186" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: In modern terms, “3D models in VR space are downloaded and placed as needed from asset stores containing vast amounts of data. In the words of a futurist who was born and raised in a digital world, “an individual object is a manifestation of the Absolute, segmented in various ways, and has no fixed substance”.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1472069730295238662" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: This “worldview taken for granted by people of the future” is actually, surprisingly, almost equal to the “<a href="./view-of-vacuum" class="internal alias" data-slug="view-of-vacuum">view of vacuum</a> = <a href="./all-individuals-have-no-fixed-substance" class="internal alias" data-slug="all-individuals-have-no-fixed-substance">all individuals have no fixed substance</a>” and the “[<a href="./view-of-the-board-of-directors" class="internal alias" data-slug="view-of-the-board-of-directors">view of the board of directors</a> = <a href="./eternal,-infinite,-and-absolute-existence-becomes-self-segmented-and-manifests-various-individuals" class="internal alias" data-slug="eternal,-infinite,-and-absolute-existence-becomes-self-segmented-and-manifests-various-individuals">eternal, infinite, and absolute existence becomes self-segmented and manifests various individuals</a>” in the Kegon sect. The “view of the world taken for granted by the future generation” is actually, surprisingly, almost equal to the “view of the vacuum” in Kegon Buddhism, and the “view of the unobstructed director” in Kegon Buddhism, in which “reason, which is eternal, infinite, and absolute, becomes self-segmented and manifests various individuals. Therefore, in computational nature, it is Hua Yan’s worldview.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/nishio/status/1472071399485636608" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: and I was told this after thinking this far. The latter link, “山紫水明∽事事無碍∽計算機自然” in “山紫水明∽事事無碍∽計算機自然” is a concept that corresponds to the pervasive connotation view that comes after the sense of vacuum and the director-free view, so it looks like my thinking is going in the right direction >[ochyai <a href="https://twitter.com/ochyai/status/" class="external">https://twitter.com/ochyai/status/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 1472062123270635523]</p>
+</blockquote>
+</li>
+</ul>
+<p>Summary.</p>
+<ul>
+<li>Regenerated in your own words.
+- <a href="./Kegon-Summary" class="internal alias" data-slug="Kegon-Summary">Kegon Summary</a></li>
+<li>Using Kozaneba’s network and original in-sentence keywords
+- <a href="./Kegon-Kozaneba-Summary" class="internal alias" data-slug="Kegon-Kozaneba-Summary">Kegon Kozaneba Summary</a></li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF%E3%82%B0%E3%83%A9%E3%83%95%E3%82%A3%E3%82%AF%E3%82%B9%E3%80%81%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%82%A2%E3%83%BC%E3%83%88%E3%80%81%E8%8C%B6%E6%96%87%E5%8C%96%E3%80%81%E3%81%9D%E3%81%97%E3%81%A6%E3%80%81%E7%A6%85%E3%80%82" class="external">/nishio/コンピュータグラフィクス、メディアアート、茶文化、そして、禅。<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Conviviality" class="internal">conviviality</a></li><li><a href="./Nodal-Point-of-Thought-2021-12-21" class="internal">Nodal Point of Thought 2021-12-21</a></li><li><a href="./SIGGRAPHASIA2021" class="internal">SIGGRAPHASIA2021</a></li><li><a href="./Translation-Candidates" class="internal">Translation Candidates</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Hatena2010-07-24</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Hatena2010-07-24"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Hatena2010-07-24"/><meta name="twitter:description" content="hatena &lt;body> *1279982968*Summary of Haskell's &quot;fib = 1:1:zipWith (+) fib (tail fib)&quot; which is very slow I almost summarized the previous day's story ..."/><meta property="og:description" content="hatena &lt;body> *1279982968*Summary of Haskell's &quot;fib = 1:1:zipWith (+) fib (tail fib)&quot; which is very slow I almost summarized the previous day's story ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="hatena &lt;body> *1279982968*Summary of Haskell's &quot;fib = 1:1:zipWith (+) fib (tail fib)&quot; which is very slow I almost summarized the previous day's story ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Hatena2010-07-24"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Hatena2010-07-24"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="hatena &lt;body> *1279982968*Summary of Haskell's &quot;fib = 1:1:zipWith (+) fib (tail fib)&quot; which is very slow I almost summarized the previous day's story ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Hatena2010-07-24"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Hatena2010-07-24</a></div></nav><h1 class="article-title">Hatena2010-07-24</h1><p show-comma="true" class="content-meta"><span>Jul 24, 2010</span><span>28 min read</span></p></div></div><article class="popover-hint"><p>hatena</p>
+<pre><code>&lt;body>
+*1279982968*Summary of Haskell's &quot;fib = 1:1:zipWith (+) fib (tail fib)&quot; which is very slow
+I almost summarized the previous day's story in chronological order, but there is so much information that it may be difficult for those who have not followed the story to catch up, so I will summarize it again. (For those who prefer more information: &lt;a href='http://d.hatena.ne.jp/nishiohirokazu/20100720/1279595270'>Continued: Haskell's fib is slow&lt;/a>)
+
+
+One way to define the Fibonacci sequence in Haskell is
+>|haskell|
+fib = 1:1:zipWith (+) fib (tail fib)
+||&lt;
+is well-known and Wikipedia introduces it as &quot;The following definition generates a list of Fibonacci sequences in linear time. However, at least in the range of n = 10000 to 300000 or so, it takes about O(n^2.6) computation time, which is not true. (See the graph here: &lt;a href='http://shinh.skr.jp/m/?date=20100719#p01'>Hajimete no Niki (2010-07-19)&lt;/a>)
+
+
+Where did the value of 2.6 come from? It appears to be about O(n^2.6) because the GC took about O(n^3), which is mixed in with the original computation time O(n^2) by a small factor.
+
+
+Why does GC take about O(n^3) time?Haskell's GC is a generational GC, which starts GC when the fixed-length minor heap is full. At this time, objects on the stack are used as the root of GC, so it takes O(m) time when the stack depth is m. In this case, when the stack depth is m, O(m) memory is allocated, so the consumption time m when the i-th GC occurs is i^0.5 ignoring the coefficient, and since this is added up for i, it integrates to i^1.5, and how much i increases is determined by dividing the memory consumption by the minor Since it is divided by the size of the heap, it is n^2 ignoring the coefficient, so n^3 is obtained by substituting this. So the computational complexity of GC is O(n^3).
+
+
+This behavior is not reproduced in GHC 6.10.1 or earlier, so it is likely due to a GC fix in 6.10.2 (&lt;a href='http://hackage.haskell.org/trac/ghc/ticket/2747'>#2747 (Excessive Memory Usage: space leak with foldl' on Integer) &amp;#8211; GHC&lt;/a>). In 6.10.1, it seems to be on the order of n squared.
+
+
+Also, the &quot;situation with a huge number of huge Integers on the stack&quot; is causing problems, so even in Haskell, if you write it naively with tail recursion, it will be O(n^2). The behavior changes depending on the order of computation (&lt;a href='http://d.hatena.ne.jp/mkotha/20100623/1277286946'>In fib with infinite list, it is faster to take the sum up to 300,000th than to take the 300,000th&lt;/a>), and the evaluation strategy It changes (&lt;a href='http://d.hatena.ne.jp/kazu-yamamoto/20100624/1277348961'>it is faster&lt;/a> to make a zipWith' that evaluates positive).
+
+
+The apparent complexity of the infinite list involved makes this a simpler &quot;it takes O(n ^ 2.6) time when trying to allocate memory that grows in proportion to n in a non-tail-recursive recursive call&quot; case (&lt;a href='http://d.hatena.ne.jp/ nishiohirokazu/20100721/1279687613'>It takes O(n ^ 2.6) time to simply multiply by 7 n times in Haskell&lt;/a>) might be easier to understand if you look first
+
+
+Some people air-read the claim that &quot;Haskell is slow,&quot; but it's just that &quot;fib = 1:1:zipWith (+) fib (tail fib) is slower (at n = 100000 than code written in Python in a naive loop!&quot; So please don't misunderstand me. In fact, the first entry is faster with simple tail recursion.
+
+
+
+I guess it is something like this. If I am wrong in any way, please let me know.
+
+*1279985270* Summary of personal lessons learned in this case.
+** How to use gnuplot
+- fit a*(x**b) &quot;data.txt&quot; via a, b
+- plot a*(x**b) &quot;data.txt&quot;
+- using (log ($1)):(log ($2))
+- set log x
+- unset log x
+
+** GC
+- GC affects the order of various processes more than you can imagine.
+
+** Facts and Interpretation
+When you have a disagreement with another person about an interpretation, especially when you are looking at and interpreting one fact X, it is easy to assume that the other person may not be looking at the facts, but may be looking at a different fact Y. We need to share facts promptly to avoid unproductive discussions.
+
+*1279985390* Methods for blogging manuscripts.
+I should have started a little earlier. When I found out about the deadline, the deadline was a week away.
+
+It is faster to write something that is likely to cause a firestorm and then revise it after receiving a rebuttal than to write something that is carefully written to be fair and unbiased, but mmmm.
+
+*1279999839* Incomplete and rather wordy comparative programming linguistics.
+Programming languages are man-made. People make mistakes. Therefore, there is no perfect programming language.
+
+People make mistakes, but it is a fool's errand to persist in error.&quot; (Cicero) Programming languages have also developed through the repetition of incorrect designs, which are then corrected by people who are not idiots.
+
+So, I am collecting information on design decision discrepancies and design failures between languages. I plan to include some excerpts in my lecture materials, so if you know of other examples, I would be very grateful for any information you can provide.
+
+** if(x = 0)
+In C, the assignment is an expression, so you would write if(x = 0) with the intention of if(x == 0), which is always false.
+
+- The value of x = 0 must be an int, and the conditional expression must be a bool, so it's a type error school: Java
+- x = 0 is not an expression, so it's a syntax error to include it in a conditional expression: Python
+- If x = 0 in the conditional expression, it is interpreted as x == 0: HMMMML ((http://twitter.com/HomeiMiyashita/status/19575507867))
+
+** pass by value, pass by reference
+In C, the only way to pass arguments when calling a function was to pass by value, which could be done by obtaining the address of a variable, passing it by value, and then indirectly accessing that address at the destination. C++ introduced pass-by-reference, which does not require indirect access by the caller.
+
+Java removed the &quot;method of getting the address of a variable&quot;. Access to the object was made to look like a C++ reference, but when passing it to a function, it was done by passing the address by value (reference passing by value). That was sufficient. Non-objects (primitive types) are still passed by value.
+
+Because everything in Python is an object, everything is now passed by value by reference. Primitives such as integers and strings were made unalterable objects, making it impossible to &quot;make destructive changes at the caller's end. This made it possible for references to be passed by value as if they were just passed by value.
+
+** Define a range of values
+In Java, the language specification defines the size and value range of primitive types such as int.
+
+** Array
+Arrays in C have no length. They are simply &quot;pointers to the beginning of a memory area that happens to contain data of the same type. Java arrays have a fixed length at the time of creation, and out-of-range access throws an exception.
+
+Arrays in Java are first-class objects and can be passed by themselves as function arguments.
+
+** pointer to function
+C can create pointers to functions. Since pointers are first-class objects, they can be passed to functions as function arguments.
+In Java, there are no functions to begin with. It is possible to get a method object by reflection.
+In C++, it is possible to create classes that define function call operators.
+Functions in Lisp, Haskell, and Python are first-class objects and can be passed as function arguments without any concern.
+Python also allows you to create classes that define function call operators.
+
+** Function call parentheses
+To call a function (method)
+- Parentheses are necessary even if there are no arguments: Python
+- Parentheses are necessary even if there are no arguments, but outside of them: Lisp
+- You can omit the parentheses only when there is no argument: D (thanks id:Dubhead)
+- Parentheses are not necessary: Perl, Ruby
+- Zero argument function? What's that, it's a constant: Haskell
+- Don't need parentheses, function with 0 arguments? Pass () to the argument school: OCaml
+- You don't need parentheses to change the concatenation order of operators, let alone functions, (1 + 2) * 3 should be written 1 2 + 3 *: Postscript, Forth
+- The order of operator concatenation? Why don't you just decide that the calculation is from the left? 1 + 2 * 3 is fine for the group: Smalltalk
+- The order of operations is from right to left: APL, J (thanks: straggler)
+
+In a language where function calls with no arguments do not require parentheses and functions are first class, a new syntax is needed to create expressions that mean &quot;the function itself,&quot; as opposed to the other way around.
+
+For example, where you could write this in Python:.
+>|python|
+>>> def foo():
+...     print &quot;foo!&quot;
+... 
+>>> bar = foo
+>>> bar()
+foo!
+||&lt;
+
+In Ruby, it would be written like this
+>|ruby|
+>> def foo
+>>   p &quot;foo!&quot;
+>> end
+=> nil
+>> bar = Object.method(:foo)
+=> #&lt;Method: Class(Object)#foo>
+>> bar.call
+&quot;foo!&quot;
+=> nil
+||&lt;
+
+** operator overloading
+
+C++ allows multiple definitions of operators. For example, &quot;+&quot; can be redefined. This can lead to very difficult-to-read code if abused.
+
+Java does not allow multiple definitions of operators. As a result, even if you wanted to write x + y for a class of your own definition, you would have to write x.add(y), which would have resulted in a loss of program readability.
+
+Python, Ruby, and others again allow multiple definitions of operators. The stance is &quot;don't abuse it, we are all adults.
+
+** Multiple inheritance
+C++ allows multiple inheritance of any class. This raises the question of which implementation will be chosen if there happen to be multiple method implementations of the same signature. ((&lt;a href='http://ja.wikipedia.org/wiki/%E8%8F%B1%E5%BD%A2%E7%B6%99%E6%89%BF%E5%95%8F%E9%A1%8C'>Rhombic inheritance problem - Wikipedia&lt;/a>))
+Java avoids this problem by limiting inheritance of classes with implementations to one. Java avoids this problem by limiting inheritance of classes with implementations to one. Classes (interfaces) without implementations can inherit from any number of classes. In Java, in such a situation, you can write a class with a reference to Foo, which has an implementation, and when your bar method is called, call Foo's bar method and leave the processing to Foo. When your bar method is called, you call Foo's bar method and let it take over the processing.
+Ruby introduced the concept of mix-in to allow partial implementation inheritance. Ruby provides a syntax for &quot;mixing in&quot; modules, which are &quot;special classes that cannot be instantiated and cannot inherit from a class,&quot; into a class.
+Python supports multiple inheritance and uses a relatively natural algorithm called C3-Linearization to determine the order in which methods are resolved. This usually doesn't cause problems. ((PEP 283 -- Python 2.3 Release Schedule http://www.python.org/dev/peps/pep-0283/))
+Perl used to be able to use C3 together with Python; since Perl 6, the default is C3. (( http://perldoc.jp/docs/modules/mro-1.00/mro.pod ))
+
+** GC
+- You need GC, you don't need to worry about memory, it's a pain in the ass: Lisp, Java, Python, Ruby, and most other modern languages.
+- There is no such thing as slowing down by adding functions for relaxation like GC: C
+- It's impossible to slow down the system by adding a function like GC, which is for relaxing the system, and a smart pointer can do most of the work: C++.
+- AutoreleasePool can be used for most purposes, but it would be easier to use GC: Objective-C (thanks id:jmuk)
+- I usually use GC, but I can malloc/free if needed: D (thanks id:Dubhead)
+- I tried region inference but region inference alone was not fast enough. So I also use GC: Haskell (thanks id:shelarcy)
+
+
+** Initialize variables
+- If initialization is necessary, programmers can do it when necessary. The default functionality is not a good way to slow down the process: C, C++.
+- The existence of uninitialized (unknowable value) variables is a dangerous bug and should not be tolerated; initialize on your own: Java, D (thanks id:Dubhead)
+- I mean, you can only create a variable by assigning a value to it, so there is no such thing as an uninitialized variable.
+- It's no good to have a mysterious value in an undefined variable, just put the value &quot;undefined&quot;: JS
+
+** Global Variables
+The C language allows global variables to be defined. Problems resulting from abuse of global variables are the responsibility of the programmer.
+Java does not allow defining global variables. If you need a global variable that can be accessed from anywhere, you can use the fact that the class name can be accessed from anywhere, a trick that is still sometimes abused and causes problems.
+Although Python appears to allow global variables to be defined, they are file-wise in scope. Rewriting a global variable requires a special &quot;this function rewrites global variable foo&quot; declaration. If you really want a variable that can be referenced from any file, add it dynamically in the __builtins__ module.
+
+** Direction of rounding for rectification
+In C and C++, it is environment-dependent whether integer division rounds toward zero or toward negative infinity when the division is not divisible. In other words, -1/2 can be either 0 or -1.
+Java always rounds to zero; C99 does the same.
+In Haskell, integers cannot be divided by &quot;/&quot;; there are two integer division functions, div and quot, which return -1 for div and 0 for quot.
+
+** x / 0.0
+Whether x / 0.0 should be an error or not
+
+In Ruby 1.8, it should be NaN or Infinity.
+Python throws an exception.
+
+** octal literals of type 0xxx
+
+>|python|
+>>> 1000 + 0100 + 0010 + 0001
+1073
+||&lt;
+
+- 0100 is 64 for: Python2.*, Java, Scala
+- 0o100 and 0O100 are 64. School: Python 3.0, Haskell
+
+I looked at the Haskell spec and thought it was a no-no to allow a capital O, but it's the same in Python 3.0.
+
+** allow lowercase els in long int literals
+
+I came up with the capital O. So:.
+>|python|
+>>> 100l == 100
+True
+||&lt;
+- Yes: Python2.6
+- No: D (>= 0.154 http://www.digitalmars.com/d/1.0/changelog2.html#new0154 ) thanks id:hzkr
+
+** Automatically change to a more expressive type when the result of an integer operation exceeds the int range
+
+The trap is that if you copy the bit operation code written in C or something like that, the result will not match because it changes to a long integer type where the upper bits are discarded by &quot;&lt;&lt;&lt;&quot;.
+
+But for those who don't recognize numbers as a mass of bits, the argument that &quot;it's strange that the upper limit is set for human convenience, and if you exceed it, it becomes a strange value without throwing an exception&quot; is, well, reasonable.
+
+-Schools that should be integers with no upper limit: Python, Ruby
+-Any conversion is not a good idea: C, Java
+-I mean, there is no such thing as an integer: JS
+-The default is to have no upper limit in the first place: Haskell.
+
+** Whether to allow reassignment to variables
+- What are you talking about?
+- It's better to have constants. Constants start with a capital letter. Well, it only gives a warning if you reassign it, but I'm with the group: Ruby.
+- Why don't you just add const or final to the ones you don't want to reassign: C++, Java
+- Reassignment to variables is the root of all evil.
+-- So I don't approve of it at all: Haskell
+-- but it's not practical to ban it completely, so I've prepared a place where you can write in it, or I've created a way to do so: Erlang, OCaml.
+
+** operator precedence
+In Pascal, addition operators (+, -, or, etc.) have lower precedence than multiplication operators (*, /, and, etc.), and comparison operators (==, >, etc.) have even lower precedence. In other words, &quot;4 + 1 * 2 == 3 * 2&quot; is interpreted as &quot;(4 + (1 * 2)) == (3 * 2)&quot;. This is natural. But &quot;0 &lt; x and x &lt; 9&quot; becomes &quot;0 &lt; (x and x) &lt; 9&quot; and compile error
+
+In many other languages, conditional operators (and, or) have a lower precedence than arithmetic operators (*, /, +, -, etc.).
+
+In C, x == y &amp; z becomes (x == y) &amp; z (thanks @mametter)
+
+** On the continuation of comparison operators
+- 0 &lt; x &amp;&amp; x &lt;= 9&quot; is a frequent pattern, so let's use the syntax &quot;a sequence of multiple comparisons is an expression&quot;. You can write 0 &lt; x &lt;= 9 in Python.
+
+** minus unary operator
+
+In Haskell, &quot;f -1&quot; is interpreted as &quot;f - 1&quot; and must be written as &quot;f (-1)&quot;. Conversely, by partial application of the operator, (/ 2) is interpreted as &quot;a function that divides by 2,&quot; but (- 1) is interpreted as -1.
+~1 in SML, _1 in J-language.
+
+** Loop
+- There are many ways to loop, such as for, while, goto, and so on.
+- goto is evil, just use for and while: Java
+- The school of thought that tail recursion can be replaced by jumps, so you can loop with a recursive call: Lisp.
+- I'd rather not need a loop since we have map and foldl: Haskell
+
+** type of empty list
+Cambridge LCF ML used to be able to create a polymorphic \forall a. a list ref by let x = ref [].
+
+It would be possible to put an int value in x and then retrieve it as a pointer and access it.
+
+SML '97 Types and Type Checking http://www.smlnj.org/doc/Conversion/types.html
+thanks id:camlspotter
+
+** Discrepancy between indentation and actual structure
+
+In C, if statements can be written as shown below.
+>|c|
+if (x > 0)
+  when_x_is_positive();
+||&lt;
+
+Don't write it this way, thinking to add another process when x > 0
+
+>|c|
+if (x > 0)
+  when_x_is_positive();
+  another_task();
+||&lt;
+
+This means as shown below, another_task() is always executed.
+>|c|
+if (x > 0) {
+  when_x_is_positive();
+}
+another_task();
+||&lt;
+
+There is also a discrepancy between indentation and structure in the code below.
+>|c|
+if (x > 0) 
+    if (y > 0)
+	all_positive();
+else 
+    x_isnt_positive();
+||&lt;
+x_isnt_positive() is not called when x == -1. Instead, it is called when x == 1 and y == -1. This code has the following structure.
+>|c|
+if (x > 0) {
+    if (y > 0) {
+	all_positive();
+    } else {
+        x_isnt_positive();
+    }
+}
+||&lt;
+
+In C, the programmer should be careful, or get around it with a coding convention that says to add braces {} &amp; indent correctly.
+In Ruby, close with end.
+In Python, the idea is reversed and the structure is determined based on indentation. The following code works as it appears.
+>|python|
+if x > 0:
+    if y > 0:
+	all_positive()
+else:
+    x_isnt_positive()
+||&lt;
+
+In QuickBASIC and HMMMML (( http://miyashita.com/HMMMML.pdf )), &quot;If ~ End If&quot; (QB), &quot;&amp;lt;/if >&quot; (HMMMML) is used.
+
+** How to receive the receiver
+Talking about how to access obj in method when executing obj.method(arg)-like code.
+
+- Receivers are the school of thought that explicitly accepts them as optional arguments: Python, C (thanks @mametter)
+- In a method, another_method() means obj.another_method(), so you don't have to be aware of the receiver, but if you want to do something with the receiver itself, it's in this: Java.
+- Receivers? That's just an argument, nothing special: Common Lisp with CLOS, Haskell
+
+** Can string objects be modified destructively?
+
+- Yes: Ruby, C++
+- No: Python, Java
+- String? What is that, a char*? C
+
+** Convert strings and numbers automatically?
+
+For PHP
+>||
+$ php -r 'print &quot;1&quot; + &quot;2&quot;;'
+3
+$ php -r 'print &quot;1&quot; . &quot;2&quot;;'
+12
+$ php -r 'print &quot;1&quot; . 2;'
+12
+$ php -r 'print &quot;1&quot; + 2;'
+3
+||&lt;
+Same for Perl.
+
+- Strings and numbers are automatically converted, so string concatenation and number addition are different operators: Perl, PHP
+- It's a type error: Python, Ruby
+- I'm sure objects, not just numbers, know how to convert themselves to strings (toString), so why not just convert them to strings? School: Java
+
+** What would 1/2 be?
+- Integer 0's: Python2.*, Ruby, OCaml
+- It's 0.5 of a floating point number. school: Python3.*
+- It's 1/2 of a rational number: Scheme
+- Just to make sure, the 1 or 2 is (Num a) => a, not Int, right? Then the result is (Fractional a) => a. This is a typeclass that can be either a floating-point number or a rational number, and which one is determined by type inference. Incidentally, when it cannot be determined by type inference, it is called Defaulting and (omitted. Read more &lt;a href=&quot;http://www.haskell.org/onlinereport/decls.html#sect4.3.4&quot;>here&lt;/a>): Haskell
+- Numerical values are BigDecimal by default: Groovy
+
+** OO
+- It's a hassle to manage data and procedures separately, so I think you'll be happy if there are objects or classes that unify them. : Simula
+- Everything can be expressed in terms of objects and the messages exchanged between them! Messages! Messages! : Smalltalk
+- What's that slow...: C
+- Hmmm, the concept of Simula classes is a good one. Adopted! In essence, it's an extension of the struct concept of combining existing types to create new types, and if we can combine functions into a single type, that's all we need, right? Oh, and inheritance. This is also useful. Adopt it! Access restrictions? Hmmm... I'll include that too. Messages? ...What's that good for? C++ : C++
+- Programming is all about defining classes and creating objects! Objects! Objects! What? Primitive types are not objects? Well, it's just for performance or something... (giggle): Java
+- Ta-da! I've converted integers and other types into objects! Primitive types are also converted to objects automatically! Objects! Objects! Java 5
+- Or, in short, all you need is a hash to hold the data and a way to paste the module containing the function: Perl.
+- If the function is a first-class object to begin with, why not put it in a hash? This is fine, right? : JavaScript
+- Namespaces themselves are dictionaries (hashes), right? You can easily create a namespace, put in functions, and add convenient functions such as inheritance and method/instance binding! That's it! Python : Python
+- No need for private: Perl, JavaScript, Python
+- The scripting languages of the world disregard PRIVATE too much! Unforgivable! School: Ruby
+
+** boolean
+
+- We provide the true and false values. If you put anything else in the conditional expression, it's a type error.
+- 0 is false, all others are true: C
+- #f is false and all others (including 0) are true: Scheme
+- False and nil are false, all others (including 0) are true: Ruby
+- false, null, undefined, 0, empty string, and NaN are false: JavaScript
+- False, None, zero and empty objects are false: Python (( http://www.python.jp/doc/2.4/lib/truth.html ))
+
+** Scope
+- Static scope, because dynamic scope is hard: ALGOL, C, Pascal
+- Dynamic Scope: Early Lisp, Early Perl
+- It would be nice to have both dynamic and static scopes: CommonLisp, Perl(my/local)
+- Lisp's dynamic scope is a mistake, isn't it? Faction: Scheme, Python
+- Scope? What's that good for? : BASIC
+
+** Array out-of-range access
+
+- Return something appropriate: Ruby(nil), JavaScript(undefined)
+- Throwing Exceptions: Python, Java
+- May die: C
+&lt;/body>
+&lt;comments>
+&lt;comment>
+&lt;username>shinichiro_h&lt;/username>
+&lt;body>O(n^2) on the stack is wrong. The maximum stack size should be proportional to N. Similarly, I don't think there is a huge Integer on the stack. &lt;br>&lt;br>The frequency of calling GC appears to be behaving more like O(N), and the reason for this is that in the beginning it was about once every k times, but in the second half we are talking about GC being triggered every time allocation is made. &lt;/body>
+&lt;timestamp>1279984844&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>nishiohirokazu&lt;/username>
+&lt;body>It is natural that the frequency of GC calls is more than O(n) because &quot;GC occurs when the fixed-length minor heap is filled&quot; and &quot;since fib is almost exponential, the memory allocated per call is O(n), so overall, O(n^2) memory is allocated. I think it's obvious, but what does it mean that there is no Integer on the stack? &lt;/body>
+&lt;timestamp>1279986873&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>shinichiro_h&lt;/username>
+&lt;body>Well, isn't Integer on the heap? Or do you mean that it is on the stack in the sense that it is referenced from the stack? In any case, I don't think that GC in a language like Haskell would be able to lick through multiple integers, so I think the cost of one GC would be O(N). &lt;/body>
+&lt;timestamp>1279989620&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>nishiohirokazu&lt;/username>
+&lt;body>I see, I see, I misunderstood why it is O(N^3), the GC itself is O(N) but the frequency of it increases so it is O(N^3). &lt;/body>
+&lt;timestamp>1279999950&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>nishiohirokazu&lt;/username>
+&lt;body>Fixed. &lt;/body>
+&lt;timestamp>1280000658&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>ujihisa&lt;/username>
+&lt;body>> Function calls need parentheses only when there are more than two arguments: Ruby&lt;br>&lt;br>f(a, b)&lt;br>f a, b&lt;/body>
+&lt;timestamp>1280021712&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>nishiohirokazu&lt;/username>
+&lt;body>Oh, well, thanks. I fixed it! &lt;/body>
+&lt;timestamp>1280022337&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>qnighy&lt;/username>
+&lt;body>J language has an interesting specification with - as an operator and _ as a literal, and it is really interesting and I really think everyone should be interested in it&lt;br>Example -2 3 4 5 is the same as _2 _3 _4 _5 (because - is applied to all vector values)&lt;/body>.
+&lt;timestamp>1280032290&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>Doyoubi&lt;/username>.
+&lt;body> Can string objects be modified destructively? &lt;br>Please add C++ to &quot;Yes&quot;&lt;/body>.
+&lt;timestamp>1280043571&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>I just happened to be here&lt;/username>.
+&lt;body>>> def foo&lt;br>>> p &quot;foo!&quot;&lt;br>>> end&lt;br>=> nil&lt;br>foo # => &quot;foo&quot;&lt;br>&lt;br> is enough&lt;/body>
+&lt;timestamp>1280059226&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>kudzu_naoki&lt;/username>
+&lt;body>At the end of the passing-by-value and passing-by-reference section, regarding Python, &quot;passed-by-value is now the same as just passing-by-value&quot; is &quot;passed-by-value is now the same as just passing-by-reference&quot;. Sorry for the limiting comment. &lt;/body>
+&lt;timestamp>1280105530&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>Dubhead&lt;/username>
+&lt;body>Only unusual parts of the D language&lt;br>○ If you have zero arguments, you can omit parentheses in function and method calls&lt;br>○ Usually GC is used, but malloc/free can be used if necessary&lt;br>○ Initialization of variables: initial values are determined by the type (e.g. int i; then i is 0. The compiler will do its best to avoid setting initial values that are not used. Of course, int i = 42; is also possible.) &lt;/body> &lt;/> &lt;/> &lt;/body> &lt;/> &lt;/body> &lt;/> &lt;/body
+&lt;timestamp>1280108937&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>nishiohirokazu&lt;/username>
+&lt;body>qnighy>&lt;br>I agree that the J-language is very interesting (in a perverse way, of course)&lt;br>&lt;br>Doyoubi>&lt;br>I added it! Thank you! &lt;BR>&lt;BR>I came here by accident&lt;BR>I don't understand the intent of the claim. &lt;BR>&lt;BR>kudzu_naoki>&lt;BR>No, if a reference is passed by value as in Java, the caller's object will be affected if a destructive method is called on the calling object, but Python does not attach destructive methods to primitive classes. Python does not add destructive methods to primitive classes, so the caller's object is not affected. &lt;br>&lt;br>&lt;br>I'm not sure how to fix this, but if you have any suggestions, please let me know. &lt;BR>&lt;BR>Dubhead>&lt;BR>I'll add it! Thank you! &lt;/body>
+&lt;timestamp>1280110756&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>Torisugi&lt;/username>.
+&lt;body>>I don't think it's possible to include a feature like GC by default, &lt;br>>I think smart pointers are almost always sufficient: C++&lt;br>According to the design and evolution of C++, the reason why GC is not (or was not) included in C++ is because it violates the principle of zero overhead (additional support for using a feature has no effect when that feature is not used)&lt;br &lt;br>So I was thinking more along the lines of &quot;smart pointers are almost always sufficient&quot; or &quot;it's impossible for smart pointers to be slow or impossible&quot;&lt;/body>.
+&lt;timestamp>1280115827&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>eldesh&lt;/username>
+&lt;body>>In the C language, the programmer was forced to waste a lot of effort because &quot;how many bits are in an int&quot; and so on varied depending on the environment. &lt;BR>That may be true, but I think you have it backwards. &lt;BR>In other words, isn't the bit length of an int defined so that code that doesn't depend on the bit width can be exchanged between platforms with different register bit lengths? &lt;BR>While this may be an unnecessary effort for programmers in the current situation, I don't think it's an example of &quot;the old guys got it wrong&quot;. &lt;br>(We could just use int32_t or something like that.)&lt;/body>
+&lt;timestamp>1280132620&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>dankogai&lt;/username>
+&lt;body>#Perl:Basic parentheses not required for function calls&lt;br>system 'rm', '-rf', '/';&lt;br># Also, I'd like a school of air-readers and non-readers, like perl and scala's _&lt;br>Dan the Man with Too Many Languages to Speak &lt;/body>
+&lt;timestamp>1280141742&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>nishiohirokazu&lt;/username>
+&lt;BODY>Torisugari>&lt;BR>I added this because it seems that it is difficult to convey the purpose of &quot;it is impossible because the default setting slows things down&quot;. &lt;BR>&lt;BR>eldesh>&lt;BR>If you know of a more obvious &quot;example of how people made mistakes in the past&quot;, I would be very grateful if you could share it with me. &lt;BR>&lt;BR>dankogai>&lt;BR>Thank you. I have added it! &lt;/body>
+&lt;timestamp>1280143691&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>straggler&lt;/username>
+&lt;body>>Order of operator concatenation? Why don't we just decide that the calculation is from the left? 1 + 2 * 3 is fine: Smalltalk&lt;br>Arithmetic is from the right: APL, J&lt;/body>.
+&lt;timestamp>1280340334&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>Tsumuji&lt;/username>.
+&lt;body>The &quot;function call parentheses&quot; ......&lt;br>In Ruby also, &lt;br>irb(main):001:0> def foo&lt;br>irb(main):002:1> p &quot;foo!&quot;&lt;br>irb(main):. 003:1> end&lt;br>=> nil&lt;br>irb(main):004:0> bar = foo&lt;br>&quot;foo!&quot;&lt;br>=> &quot;foo!&quot;&lt;br>irb(main):005:0> bar&lt;br>=> &quot;foo!&quot;&lt;br> This is the same as Python Isn't this the same as Python? &lt;br>&lt;br>By the way&lt;br>irb(main):006:0> foo = &quot;abc&quot;&lt;br>=> &quot;abc&quot;&lt;br>irb(main):007:0> foo&lt;br>=> &quot;abc&quot;&lt;br>In case the method name and variable name conflict, the variable name has priority, but &lt;br In such cases, the variable name will take precedence, but if you call the method with parentheses, it will be recognized&lt;br>as a method name. &lt;br>irb(main):008:0> foo()&lt;br>&quot;foo!&quot;&lt;br>=>&quot;foo!&quot;&lt;/body>
+&lt;timestamp>1280396426&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>nishiohirokazu&lt;/username>
+&lt;body>Tsumuji> Isn't this the same as Python? &lt;br>No. &lt;br>Try to figure out why &lt;br>irb(main):004:0> bar = foo&lt;br>&quot;foo!&quot;&lt;br>=> &quot;foo!&quot;&lt;br> is being output. Also, you could try bar.class. &lt;/body>
+&lt;timestamp>1280397295&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>Tsumuji&lt;/username>.
+&lt;body> After you pointed this out, I realized my mistake. In my code, the return value of the foo method, &quot;foo!&quot;, was just bound to bar. &lt;br>&lt;br>By the way, I read the blog post again and got stuck&lt;br>so I went to ...... in addition. &lt;br>&lt;br>Because Ruby is a purely object-oriented language, methods are not&lt;br>alone first classes like they are in functional languages. &lt;br>A method defined at the top level, as in this case, becomes a pra&lt;br> ive method of the Object class. If you define a foo method at the top level, you can check it by running &lt;br>Object.private_methods. &lt;/body>
+&lt;timestamp>1280461562&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>nishiohirokazu&lt;/username>
+&lt;body>straggler>&lt;br>Added! Thank you! &lt;BR>&lt;BR>Tsumuji>Ruby is a purely object-oriented language, so methods are not &lt;BR>alone first classes like in functional languages. &lt;BR>&lt;BR>I don't understand your assertion in two ways. &lt;br>- The point that I don't understand the meaning of the term &quot;pure object oriented language&quot;&lt;br>- &quot;Methods are never first class by themselves&quot;&lt;br>&lt;br>>> bar = Object.method(:foo)&lt;br>=> #&lt;Method: Class(Object )#foo>&lt;br>&lt;br>&lt;br>This method object appears to be first class, but is it an assertion that it is not? &lt;BR>&lt;BR>It is not a contradiction between being object oriented and a method or function being first class, Ruby is compatible, but since it does not emphasize such a functional language style of coding, it has adopted a syntax that makes it harder to write in that way than Python, I understand that. &lt;/body>
+&lt;timestamp>1280465633&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>Tsumuji&lt;/username>.
+&lt;body>Since I couldn't write in the comments section, I wrote a blog post: http://tsumuji.cocolog-nifty.com/tsumuji/2010/08/ruby-python-108.html&lt;/body>
+&lt;timestamp>1280606229&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>nishiohirokazu&lt;/username>
+&lt;body>I see what you mean, you don't mean Method object by the word &quot;method&quot;. If you mean that a method (without instance information) cannot be a first class by itself, then you are right. Therefore, you need to do Object.method(:foo), Foo.new.method(:bar), etc. to create a &quot;(instance-bound) method,&quot; which was the intent of the main text. You omitted the parentheses, which is the cause of the misunderstanding. &lt;/body>
+&lt;timestamp>1280645253&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>Tsumuji&lt;/username>.
+&lt;body>In the Ruby world, the word &quot;method&quot; usually brings to mind &quot;class method&quot; or &quot;instance method. I don't think there are many people who suddenly think of Method object when they hear the word &quot;method&quot;. &lt;/body>.
+&lt;timestamp>1280659864&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>nishiohirokazu&lt;/username>
+&lt;body>Hey, I didn't know that. I didn't know that. So you are claiming that &quot;such an interpretation is normal in the Ruby world&quot;. Thank you for your opinion. &lt;/body>
+&lt;timestamp>1280673473&lt;/timestamp>
+&lt;/comment>
+&lt;comment>
+&lt;username>sumim&lt;/username>
+&lt;body>Tsumuzi,&lt;br>&lt;br>Smalltalk, like Ruby, only supports an object-oriented paradigm, but unlike Ruby, methods are first class (f := Integer compiledMethodAt: #factorial ...) and static calls can be made regardless of the class to which they belong. For reference. &lt;/body>
+&lt;timestamp>1280833322&lt;/timestamp>
+&lt;/comment>
+&lt;/comments>
+</code></pre>
+<h2 id="hatena-diary-2010-07-24"><a href="https://nishiohirokazu.hatenadiary.org/archive/2010/07/24" class="external">Hatena Diary 2010-07-24<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hatena-diary-2010-07-24" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/Hatena2010-07-24" class="external">/nishio/Hatena2010-07-24<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li>No backlinks found</li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Cybozu's Human Resources System</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Cybozu's Human Resources System"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Cybozu's Human Resources System"/><meta name="twitter:description" content="2018-10-03 Cybozu today” tends to catch people’s attention, but I think what is useful as knowledge is “what Cybozu has done in the past 10 years to get to where it is today ..."/><meta property="og:description" content="2018-10-03 Cybozu today” tends to catch people’s attention, but I think what is useful as knowledge is “what Cybozu has done in the past 10 years to get to where it is today ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="2018-10-03 Cybozu today” tends to catch people’s attention, but I think what is useful as knowledge is “what Cybozu has done in the past 10 years to get to where it is today ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Cybozu's-Human-Resources-System"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Cybozu's-Human-Resources-System"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="2018-10-03 Cybozu today” tends to catch people’s attention, but I think what is useful as knowledge is “what Cybozu has done in the past 10 years to get to where it is today ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Cybozu's-Human-Resources-System"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Cybozu's Human Resources System</a></div></nav><h1 class="article-title">Cybozu's Human Resources System</h1><p show-comma="true" class="content-meta"><span>Sep 11, 2024</span><span>23 min read</span></p></div></div><article class="popover-hint"><p>2018-10-03</p>
+<blockquote>
+<p>Cybozu today” tends to catch people’s attention, but I think what is useful as knowledge is “what Cybozu has done in the past 10 years to get to where it is today. There is a book by the president himself that talks about his own naked failures, as well as a variety of information provided by employees, so you should be able to track a lot just from the public information. <a href="https://twitter.com/nishio/status/1047324307146207233" class="external">Twitter @nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+Therefore, I have arranged them in chronological order with the intention of summarizing how they have developed over time.
+Citations without source indicated are from <a href="https://cybozu.co.jp/company/work-style/" class="external">Workstyle | Cybozu, Inc.<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</p>
+</blockquote>
+<p>Summary for busy people</p>
+<ul>
+<li>The system started in 2007 with two options for how to work, was expanded to nine categories in 2013, and in 2018 the options were eliminated so that each individual can set his or her own work style.</li>
+<li>The approach to incorporate market assessments began in 2012; in 2016, the company announced itself as “in passing.”</li>
+</ul>
+<p>Presentation materials + transcription of talk</p>
+<ul>
+<li><a href="https://logmi.jp/business/articles/320484" class="external">At Cybozu, 100 people can work in 100 different ways Background of “too diverse work styles” - Log Me Biz<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>If you’re looking for story-like readability, this is the one for you.</li>
+<li>Below is a summary of the material</li>
+</ul>
+<hr/>
+<ul>
+<li>
+<p>1997-2001: Evaluation System: 1997-2001, when the company was founded, were individual evaluations, decided by the president. (<a href="https://www.hrpro.co.jp/hrsummit/2016/stage1/sp_rpt02.php" class="external">Nakane<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>)</p>
+</li>
+<li>
+<p>2000/8: Listed on Mothers.</p>
+<ul>
+<li>Head office in Osaka is relocated to Tokyo.</li>
+<li>All Osaka-based employees were also transferred to Tokyo, and the Osaka office was closed.</li>
+</ul>
+</li>
+<li>
+<p>2001-2002 Evaluation System: <a href="./management-by-objectives" class="internal alias" data-slug="management-by-objectives">management by objectives</a> and <a href="./resultism" class="internal" data-slug="resultism">resultism</a> personnel systems were introduced between 2001 and 2002.</p>
+<ul>
+<li>It didn’t work.”(<a href="https://www.hrpro.co.jp/hrsummit/2016/stage1/sp_rpt02.php" class="external">Nakane<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>)</li>
+<li>
+<blockquote>
+<p>Based on a goal management sheet, supervisors and subordinates discuss their goals, which are then evaluated once every six months, and wages are determined based on a 100-point scale. (<a href="https://jinjibu.jp/article/detl/tonari/252/" class="external">Yamada<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>)</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>2003-2005: Evaluation System: <a href="./360-degree-evaluation" class="internal alias" data-slug="360-degree-evaluation">360 degree evaluation</a> was introduced in 2003-2005.</p>
+<ul>
+<li>
+<blockquote>
+<p>Employees began to worry about their own evaluations and the sense of unity was undermined. (<a href="https://www.hrpro.co.jp/hrsummit/2016/stage1/sp_rpt02.php" class="external">Nakane<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>)</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>The score was lowered from 100 points to 60 points for goal management, and the evaluation from the general manager of another division was set at 30 points, and the evaluation from five randomly selected employees from the employee’s own division was set at 10 points, making a total of 100 points… …Regarding the evaluations from fellow employees, which were incorporated for the 360-degree evaluation, the evaluators were randomly chosen after six months, which meant that employees did not know exactly who they were being evaluated by and how they were being evaluated. As a result, it became unclear with whom and what kind of work was being evaluated, and the sense of unity within the company became diluted, with only the scores walking alone ([Yamada <a href="http://jibun.atmarkit.co.jp/lcareer01/rensai/cybozu/01/02." class="external">http://jibun.atmarkit.co.jp/lcareer01/rensai/cybozu/01/02.<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> html])</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>It is difficult to give a score for a process or challenge. It is not satisfactory for the individual to be told, “How many points did you get because someone else, other than your boss, said this…” A “strain” has been created between the supervisor and the subordinate. Dissatisfaction with evaluations increases, and people who have been hired quit… Anyway, we decided that we needed a personnel system that would prevent people from quitting (<a href="https://jinjibu.jp/article/detl/tonari/252/" class="external">Yamada<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>).</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>2005-2006: Aggressive M&amp;A activity in 2005-2006</p>
+<ul>
+<li>9 companies in 18 months</li>
+<li>The company grew, more than doubling its consolidated sales and number of employees.</li>
+<li>
+<blockquote>
+<p>But the number of strangers in the company was growing, the ideals they were striving for were becoming disparate, and turnover was skyrocketing. (<a href="https://www.hrpro.co.jp/hrsummit/2016/stage1/sp_rpt02.php" class="external">Nakane<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>)</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Mergers and acquisitions (M&amp;A)… The stock price went up gangbusters, and the market capitalization reached 140 billion yen. That’s about 7 times what it is now. Even though the profit at that time was about 500 million yen! The company was sold with a bang due to the Livedoor shock. When I looked at the shareholder list, I was surprised to see that the composition had changed… We were told, “It’s no good if we continue with the way we have been thinking… We changed our policy so that only those who agree with our desire to build this kind of company and create this kind of world should buy our shares. (<a href="https://cybozushiki.cybozu.co.jp/articles/m000323.html" class="external">Yamada<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>)</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>2005/4 President: Takasuga→Aono</p>
+</li>
+<li>
+<p>2005/8 Cybozu Labs established; President: Hata</p>
+<ul>
+<li>Started as a research division subsidiary with a separate legal entity and a separate personnel system
+<ul>
+<li><a href="https://www.itmedia.co.jp/enterprise/articles/0507/31/news003.html" class="external">Cybozu’s worrisome future revealed at Cybozu Lab - ITmedia Enterprise<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="./50-percent-rule" class="internal alias" data-slug="50-percent-rule">50% rule</a> : A system where at least 50% of work time can be spent on a theme of your choice.</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>Cybozu Labs guarantees that employees can devote at least 50% of their work time to research and development themes of their own choosing within the scope of research and development areas set by Cybozu Labs. In a nutshell, we say, ‘You can do whatever you want half the time,’ but if you look closely, you may find yourself doing what you like 100% of the time (laughs)” (Aono) <a href="https://japan.cnet.com/article/20367070/2/" class="external">src<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>2005/3 Stock options abolished</p>
+</li>
+<li>
+<p>2005/4 Employee Stock Ownership Plan introduced</p>
+<ul>
+<li>2005/9 Incentive raised to 100% <a href="https://japan.cnet.com/release/10434624/" class="external">https://japan.cnet.com/release/10434624/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>
+<p>2005: Turnover rate reaches record high of 28%.</p>
+</li>
+<li>
+<p>2005- <a href="./Club-activities-support" class="internal alias" data-slug="Club-activities-support">Club activities support</a>.</p>
+<ul>
+<li>
+<blockquote>
+<p>Create a club with 5 or more members across the headquarters. Subsidy of 10,000 yen per member per year</p>
+</blockquote>
+<ul>
+<li>Beginning of investment in “building human networks across departments
+<ul>
+<li>Related: 2008- Birthday Party 2009- Work Bar 2012- Event 10</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>2006: Evaluation system: from results-oriented to competence-oriented, “trust”, introduction of the concept of “<a href="./Skill-x-Preparedness" class="internal alias" data-slug="Skill-x-Preparedness">Skill x Preparedness</a>”.</p>
+<ul>
+<li>
+<blockquote>
+<p>We do not evaluate results against goals, but rather the ability to do what it takes to achieve those goals…</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Cybozu positions not only “ability” but also “trust” as an important axis of evaluation, and uses “skill x determination” to evaluate employees with respect to their goals as the key points of evaluation. The key point of evaluation is “skill x determination” toward the target. No matter how high your ability is, if you are not interested in Cybozu, you cannot be evaluated.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>If the employee does not agree with the evaluation after meeting with the supervisor, the employee can talk to the supervisor above him or her, and even to the Human Resources Department.</p>
+</blockquote>
+<ul>
+<li><a href="http://jibun.atmarkit.co.jp/lcareer01/rensai/cybozu/01/02.html" class="external">I’m done with the “evaluation system that employees don’t agree with” - @IT Self-Strategy Institute<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>2006: Up to 6 years of parental leave</p>
+<ul>
+<li>
+<blockquote>
+<p>We have established a childcare/nursing care leave system for up to six years, which can be taken from the time the pregnancy is found out.</p>
+</blockquote>
+<ul>
+<li><a href="https://toyokeizai.net/articles/-/17941" class="external">How did Cybozu change the way it works? | Toyo Keizai Online | The New Standard for Economic News<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>In 2005, a female employee gave birth to her first child. It was precisely the time when the turnover rate was high, so we decided to create a way for those who said “I don’t want to quit if possible” to work longer, and in 2006, we suddenly made “working hours optional”.</p>
+</blockquote>
+<ul>
+<li><a href="https://swri.jp/article/8" class="external">https://swri.jp/article/8<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>2007-2018 Selective HR System</p>
+<ul>
+<li>
+<p>Initially 2 classifications, later 3, then 9 in 2013, ending in 2018 with the ability to set up each person individually.</p>
+</li>
+<li>
+<p><a href="https://jinjibu.jp/article/detl/tonari/252/" class="external">Cybozu, Inc.: “Trust” view of human resources, growth of employees and a long working environment - “Japan’s Human Resources Department”<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>Considering the various life events that employees will experience over the course of their long lives, it is difficult to increase employee satisfaction and motivation to work only by emphasizing performance. It is important to provide both “performance-oriented” and “seniority-oriented” ways of working.</li>
+<li>The “career-track job system” and the “general job system” are often adopted by large companies, but they are often thought of as systems for men and systems for women. These systems should be made parallel so that employees can freely choose between them regardless of gender or type of job. Which one is chosen is solely up to the individual.</li>
+</ul>
+</li>
+<li>
+<p><a href="http://www.building.co.jp/news/1915/" class="external">Cybozu’s “Choice-Based Personnel System” has reduced the turnover rate from 28% to 4%. Cybozu, Inc. | Latest Articles<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>2008-2009</p>
+<ul>
+<li>
+<blockquote>
+<p>What we did in 2008-2009 was to sell acquired companies and reorganize our business. In parallel, we enhanced our systems to diversify work styles, allowing more people to work longer and grow. (<a href="https://www.hrpro.co.jp/hrsummit/2016/stage1/sp_rpt02.php" class="external">Nakane<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>)</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>2008- Birthday Party</p>
+<ul>
+<li>
+<blockquote>
+<p>3,000 yen per person will be subsidized for birthday parties.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>2008- Post-doctoral positions available</p>
+<ul>
+<li><a href="https://www.atmarkit.co.jp/ait/articles/0806/19/news149.html" class="external">Cybozu aims to hire talented engineers with post-doctoral positions: 10 target in 5 years - @IT<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>
+<p>2008 A number of new projects with a long-term perspective are initiated.</p>
+<ul>
+<li>
+<blockquote>
+<p>Cybozu itself believed that it could not survive without a new strategy, so it launched a number of projects in 2008. The results of these projects came to fruition in 2011 (Aono).</p>
+</blockquote>
+<ul>
+<li><a href="./Key-Man-Watch-by-Katsuyuki-Okawara" class="internal alias" data-slug="Key-Man-Watch-by-Katsuyuki-Okawara">Key Man Watch by Katsuyuki Okawara</a> “In 2012, we will focus on cybozu.com and aim to transform into a cloud company” - Cybozu President Yoshihisa Aono - Cloud Watch <a href="https://cloud.watch.impress.co.jp/docs/column/keyman" class="external">https://cloud.watch.impress.co.jp/docs/column/keyman<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> /516635.html]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>2009- Work Bar</p>
+<ul>
+<li>
+<blockquote>
+<p>This is a system to support food and beverage expenses for a “place (bar)” to talk about work seriously in a relaxed atmosphere. The program is for meetings of five or more people across departments. 1,500 yen per person will be subsidized.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>2010-2012 Telecommuting Program</p>
+<ul>
+<li>
+<blockquote>
+<p>Initially, there was a limit of four times a month, but since the “Ultra Work” program described below was launched in August 2012, there are no longer any restrictions on the number of times or locations.</p>
+</blockquote>
+</li>
+<li>Report on Cybozu’s telecommuting system pilot implementation
+<ul>
+<li><a href="http://kantan.cybozu.co.jp/topics/teleworking/report/index.html" class="external">telecommuting system to be introduced from the perspective of rationality, not just benefits<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>2011/03/11 The Great East Japan Earthquake, many employees went to full remote work. At that time, work went surprisingly smoothly and the number of people experiencing remote work increased, giving impetus to the remote work policy
+<ul>
+<li><a href="https://teamwork.cybozu.co.jp/blog/remotework3.html" class="external">How Cybozu Teleworks──Trust is a prerequisite for telework operations | Cybozu Teamwork Research Institute<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>2010- Support for departmental events</p>
+<ul>
+<li>
+<blockquote>
+<p>10,000 yen per person per year will be subsidized for drinking parties, etc. within the department.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>2010/08 Birth of President’s first child and parental leave</p>
+<ul>
+<li><a href="https://news.mynavi.jp/article/20101007-ikumen/" class="external">The “truth” about parental leave as told by Cybozu President Aono - Stories for parents in the IT industry (1) A hard-working “man” took parental leave because of Twitter | My Navi News<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>The trigger was 2010/02
+<ul>
+<li>
+<blockquote>
+<p>I learned that Bunkyo Ward Mayor Hiromu Narisawa, 44, had announced that he would be taking two weeks of childcare leave. When I tweeted about it on Twitter, the mayor followed me, and we eventually decided to go out for a drink together. Mayor Narisawa encouraged the president to encourage other companies to take childcare leave as well. It would be good publicity for the company and sounded interesting,” the president decided to take the leap of faith.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>President Aono decided to take maternity leave in late August, working late into the night every night for the two-week vacation and entering her maternity leave “in a state of exhaustion.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>I had planned to work only two hours a day while on maternity leave, but it was hard to afford that.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>The president’s values change after this experience.
+<ul>
+<li>
+<blockquote>
+<p>President Aono says that during his two-week maternity leave, he kept thinking about “what childcare means to me. He concluded that “child-rearing is clearly more important than work. If a society does not provide childcare, children will not grow up and the market will shrink. If a society does not take care of its children, it will not nurture them and the market will shrink.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>2010/10/30 Cybozu Labs joins the head office in Suidobashi. Due to reconstruction work on the building that housed the company.</p>
+</li>
+<li>
+<p>2011- <a href="http://labs.cybozu.co.jp/youth.html" class="external">Cybozu Lab Youth<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>
+<blockquote>
+<p>Cybozu Labo Youth was established on March 31, 2011 with the aim of discovering and fostering young Japanese engineers with world-class skills, and to provide young student creators with research and development opportunities.</p>
+</blockquote>
+</li>
+<li>Company support for individual student software research and development projects
+<ul>
+<li>It’s not a part-time job or an internship.</li>
+<li>Made with reference to IPA unexplored use</li>
+</ul>
+</li>
+<li>Cybozu pays incentive up to 1,030,000 yen per year</li>
+<li>Copyright of deliverables belongs to the individual</li>
+</ul>
+</li>
+<li>
+<p>2012- Ultra Work</p>
+<ul>
+<li>
+<blockquote>
+<p>Ultra-work is defined as a “one-off” work style that differs from the chosen work style.</p>
+</blockquote>
+</li>
+<li>2013 <a href="http://www.itmedia.co.jp/enterprise/articles/1302/26/news008.html" class="external">“Middleman” talks about the reality of ultra-work<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>
+<blockquote>
+<p>Nearly half of Cybozu employees, including myself, are on discretionary work. Still, before the trial of Ultra Work, I felt a little bad about sleeping during daytime travel. What has changed with Ultra Work is that the company no longer cares about this aspect of my working hours because of the freedom it offers. (Nomizu)</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Pilot introduction of Ultrawork from 2012/08 Full introduction from 2013/07 (<a href="http://www.building.co.jp/news/1915/" class="external">src<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>)</li>
+</ul>
+</li>
+<li>
+<p>2012- Self leave system for childcare</p>
+<ul>
+<li>Up to six years of “parental leave”
+<ul>
+<li>In line with the maximum length of parental leave being 6 years.</li>
+</ul>
+</li>
+<li><a href="https://www.sankeibiz.jp/econome/news/131106/ecd1311060600003-n1.htm" class="external">Cybozu’s Human Resource Strategy: “Self-employment leave system” that allows employees to return to work after 6 years (1/4 page) - SankeiBiz<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://cybozushiki.cybozu.co.jp/?p=16624" class="external">Diary of a leave of absence for childcare - To Africa, a 4-year employee. Differences in “common sense” noticed after leaving the company | Cybozu style<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>
+<p>2012- Secondary employment permit</p>
+<ul>
+<li>I was trying to hire someone who was paid more than the CEO, and he suggested I reduce my commitment hours <a href="https://cybozushiki.cybozu.co.jp/articles/m001149.html" class="external">src<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</li>
+<li>
+<blockquote>
+<p>When Mr. Ryuta asked me to allow him to work on the side, I was very hungry with Mr. Yamada to allow him to work on the side… We decided to allow all side jobs at Cybozu.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>2012- Iben 10</p>
+<ul>
+<li>
+<blockquote>
+<p>Half of the cost will be subsidized up to a maximum of ¥2,000 per person for one-off events conducted outside of business hours by 10 or more people across the headquarters.</p>
+</blockquote>
+</li>
+<li>Support for cross-departmental communication</li>
+</ul>
+</li>
+<li>
+<p>2012- Began incorporating market assessments into personnel evaluations</p>
+<ul>
+<li>
+<blockquote>
+<p>From around 2012 to the present, we have been operating with an “evaluation incorporating market value”. The salary is determined by including “how much salary will this career earn in the human resources market?</p>
+</blockquote>
+<ul>
+<li><a href="https://www.hrpro.co.jp/hrsummit/2016/stage1/sp_rpt02.php" class="external">“Cybozu’s HR Strategy” - What is a team connected by ideals and teamwork｜HR Summit 2016 Official HP<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>2013 9 Classification Choice Personnel Systems</p>
+<ul>
+<li>
+<blockquote>
+<p>Around 2013, the diversity of work styles within the company increased to a greater degree. Working hours varied. Some people came to the office all the time, while others came only occasionally. We sorted out these situations and increased the number of labels for working styles to nine categories based on “time” and “place. We took the form of choosing one’s own preference from among them and declaring it to those around them as well. <a href="https://cybozushiki.cybozu.co.jp/articles/m001471.html" class="external">src<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+</li>
+<li><img src="https://cybozushiki.cybozu.co.jp/images/graph_02%20%281%29.png" alt="image"/></li>
+</ul>
+</li>
+<li>
+<p>Aug. 2013 <a href="https://cybozushiki.cybozu.co.jp/?p=11455" class="external">Side jobs OK! Independence OK! What kind of changes will an ultra free HR system bring to companies? | Cybozu Style<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+<li>
+<p>2013- Hackathon</p>
+<ul>
+<li>Cybozu Labo Youth Hackathon []”](<a href="https://blog.cybozu.io/entry/5900" class="external">https://blog.cybozu.io/entry/5900<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>) 2013/9/11-9/13
+<ul>
+<li>Lab-sponsored events for students</li>
+</ul>
+</li>
+<li>We’re going to do it ourselves! Let’s do it ourselves! []”](<a href="https://nishiohirokazu.hatenadiary.org/entry/20131214/1386992255" class="external">https://nishiohirokazu.hatenadiary.org/entry/20131214/1386992255<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>)
+<ul>
+<li>A hackathon was also held at the headquarters in December.</li>
+<li>It has continued every year since.</li>
+<li>Employees conduct research and development on a spontaneously determined theme for three days and make a presentation.</li>
+<li>[Lean Startup” type of innovation creation</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>2014/8- Work system with children</p>
+<ul>
+<li><a href="https://cybozushiki.cybozu.co.jp/articles/m000331.html" class="external">I’m taking my child to work! ──A new work style trial from an employee who faced the “first-grade wall” | Cybozu-style<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>
+<p>Aug 2014 <a href="http://www.keyman.or.jp/at/30007179/" class="external">Continuously build a strong team with a selective HR system - IT and IT product information at<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+<li>
+<p>Aug. 2014 <a href="https://cybozushiki.cybozu.co.jp/articles/m000323.html" class="external">“Are deficits really a bad thing?” Tokyo Itoi Shigesato Office CFO Shinoda vs. Cybozu Vice President Yamada | Cybozu Style<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+<li>
+<p>10/2014 <a href="http://mydeskteam.com/casefile/1295/" class="external">Working for two companies, a way of working called “duplication of work”<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+<li>
+<p>2015 If you attend an event on your day off that is useful to your business, you may attend it as part of your duties and treat it as working on your day off.</p>
+<ul>
+<li><a href="https://blog.cybozu.io/entry/2018/09/13/113000" class="external">Cybozu Inside Out - Cybozu Inside Out - Cybozu Cybozu Engineer Blog - Cybozu Inside Out | Cybozu Engineer’s Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>Encouraged to attend technical events that are useful to their work as part of their duties
+<ul>
+<li>Transportation and participation fees are provided for those participating as part of their duties.</li>
+<li>If you participate on a holiday, you will be paid for the holiday (= paid salary).</li>
+<li>If you want to participate outside of work, you will not be forced to participate as part of your job.</li>
+</ul>
+</li>
+<li>This policy was explicitly established in 2015
+<ul>
+<li>Even before that, there was no prohibition against participation as a business activity.</li>
+<li>However, few offered to participate as part of their business.</li>
+<li>No one would have thought that it was acceptable to participate in an event on business just because you wanted to participate.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>2015/6 U-29 adoption</p>
+<ul>
+<li>
+<p><a href="https://at-jinji.jp/blog/10528/" class="external">Cybozu “U-29 Recruiting” Uncovers Hidden Talent with Unique Recruiting Methods｜@Human Resources ONLINE<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>
+<blockquote>
+<p>He went to Bangladesh with the Japan Overseas Cooperation Volunteers (JOCV) for two years after graduating from university, and upon his return to Japan, he job hunted as a graduate. He is a very talented person, but as a graduate, it was difficult to find a job, and even the places he applied for were limited.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>For example, people who have studied abroad or competed in the Olympics in sports often lack opportunities because they have no work experience, despite their excellence. If we put out a message that we will actively recruit people with such interesting backgrounds, we may see an increase in the number of applicants.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="./I-thought-only-of-the-team." class="internal alias" data-slug="I-thought-only-of-the-team.">I thought only of the team.</a>  <a href="https://amzn.to/2RluSuH" class="external">Amazon<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+<li>
+<p>2015/12/18</p>
+</li>
+<li>
+<p>A book in which President Aono talks candidly about his setbacks, useful for understanding what triggered the change.</p>
+</li>
+<li>
+<blockquote>
+<p>In 2005, when I became president, employee turnover reached 28%… One of the causes was the working environment.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>… Even if someone refuses to work hard, we say, “We are an IT venture. What did you come in here to do?” And I was thinking in this tone.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>… But after the setback, my thinking had changed. I had begun to think that it was an important issue that employees were not enjoying their work.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>Nov. 2015 <a href="https://cybozushiki.cybozu.co.jp/articles/m001020.html" class="external">Cybozu’s salary is determined by “How much would you be paid if you changed jobs?” We decide by | Cybozu formula<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+<li>
+<p>2015/12  <a href="./Once-we-stopped-setting-salaries-based-solely-on-internal-evaluations,-we-were-able-to-achieve-diverse-work-styles." class="internal alias" data-slug="Once-we-stopped-setting-salaries-based-solely-on-internal-evaluations,-we-were-able-to-achieve-diverse-work-styles.">Once we stopped setting salaries based solely on internal evaluations, we were able to achieve diverse work styles.</a></p>
+</li>
+<li>
+<p>2016/1  <a href="./Multiple-businesses-overlap." class="internal alias" data-slug="Multiple-businesses-overlap.">Multiple businesses overlap.</a></p>
+<ul>
+<li>
+<blockquote>
+<p>Diplomacy… I thought it was like “A today, B tomorrow” or something like that, but it’s actually more of an overlap. It’s a mix, and I’m not sure which is Cybozu and which is Danksoft… I’m not sure which is Cybozu and which is Danksoft… But I feel that it doesn’t make much sense to separate them, and that we should look not only at the Cybozu part, but rather at Ryuta’s activities as a whole, and say “I like that” or “I want it to be more like this”. (<a href="http://mydeskteam.com/casefile/1869/" class="external">Aono<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>)</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>With Ryuta doing other work, we are finding new places to apply Cybozu’s cloud. Things like IoT in agriculture being done well via Danksoft and other things that Cybozu has not been able to do in the past are having the effect of branches being extended all at once by people doing multiple jobs. The economist Schumpeter defines innovation as “<a href="./new-combination" class="internal alias" data-slug="new-combination">new combination</a>. Double-duty is precisely what creates that new combination, isn’t it? [Pulling and combining from the outside world what is not in the company” is innovation. I wish that everyone would do double jobs in a world I don’t know and accelerate innovation (<a href="http://mydeskteam.com/casefile/1887/" class="external">Aono<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>).</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>2016/01 51-Year-Old Executive Officer Told by President, “Why don’t you take a second job?” He said</p>
+<ul>
+<li><a href="https://cybozushiki.cybozu.co.jp/articles/m001198.html" class="external">The story of how a corporate executive officer who has devoted himself to the company started a side job. The story of how an executive officer who has devoted himself to the company started a side business | Cybozu Style<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>
+<p>Mar 2016 <a href="https://cybozushiki.cybozu.co.jp/articles/m001104.html" class="external">“How much do you get paid if you change jobs?” is a passing thought - think of “a company you want to work for” in terms of Cybozu’s HR system | Cybozu Style<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>
+<blockquote>
+<p>The recipient is also responsible for explaining “why they want that amount of money” (Yamada).</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>2016/03 Aiming for a loss and the president looks smug</p>
+<ul>
+<li>
+<blockquote>
+<p>I think it is rare to find a “CEO of a publicly traded company who is making a loss and looking smug about it.</p>
+</blockquote>
+<ul>
+<li><a href="https://note.mu/yoshiaono/n/nc581c8de16f7" class="external">Thoughts on “Deficit Settlement”｜Yoshihisa Aono｜note<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>2016/03</p>
+<ul>
+<li>
+<blockquote>
+<p>The other day, at the Ministry of Health, Labor and Welfare’s project “The Future of Work 2035,” I spoke about “banning regulations prohibiting side jobs in companies,” and the same day at the <a href="./unexplored-conference" class="internal alias" data-slug="unexplored-conference">unexplored conference</a>, Tsuyoshi Natsuno spoke about the same thing. I felt that the era of side jobs had finally arrived.</p>
+</blockquote>
+</li>
+<li>Apr 2016 <a href="https://note.mu/yoshiaono/n/nefbbb7f17981" class="external">Let’s ban “no side jobs”｜Yoshihisa Aono｜note<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>
+<p>06/2016 <a href="https://cybozushiki.cybozu.co.jp/articles/m001149.html" class="external">Mr. Aono, is it true that “banning side jobs is a management risk”? | Cybozu Style<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>
+<blockquote>
+<p>Ryuta-san was paid more than me before he changed jobs… Ryuta-san told me, “Then I’ll spend less time committing” (<a href="https://cybozushiki.cybozu.co.jp/articles/m001149.html" class="external">src<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>)</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>2016/4</p>
+<ul>
+<li><a href="https://www.city.nerima.tokyo.jp/kusei/koho/hodo/h28/2803/280322.files/280322.pdf" class="external">First in 23 wards! Long-term dispatch training to a private company Ward employees will be dispatched to IT company Cybozu<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>1 year</li>
+</ul>
+</li>
+<li>
+<p>4/2016 <a href="https://cybozushiki.cybozu.co.jp/articles/m001110.html" class="external">Is innovation more likely to occur in a company that values “personal fulfillment of life over job satisfaction”? | Cybozu Style<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>
+<blockquote>
+<p>I swung management in the opposite direction of growth and tried to create a thoroughly comfortable working environment for the people working there. I was going to quit if performance did not improve, but fortunately or unfortunately, performance is now improving little by little (Yamada).</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>2017/1 <a href="https://cybozu.co.jp/company/job/recruitment/fukugyou/" class="external">Multiple Employment<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>
+<blockquote>
+<p><a href="./recruiting-of-new-employees-through-multiple-jobs" class="internal alias" data-slug="recruiting-of-new-employees-through-multiple-jobs">recruiting of new employees through multiple jobs</a> is mainly for people who already have a job at another company (or as a sole proprietor, etc.) and are aiming to have multiple jobs as part of their own career development or on the basis of empathy with Cybozu. We are mainly targeting people who already have a job at another company (or as a sole proprietor, etc.) and are looking to have multiple jobs as part of their career development or as a way to share their passion for Cybozu.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>6/2017 <a href="https://style.nikkei.com/article/DGXMZO17758150W7A610C1000000" class="external">Cybozu dumped the wage table!　What happened to salaries? |WOMAN SMART | NIKKEI STYLE<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>
+<blockquote>
+<p>Yes. As work styles become more diverse, it becomes more difficult to compare employees with each other because conditions are so different. It is difficult to compare people who work longer hours, shorter hours, telecommute, etc. on the same salary table. So, when determining a person’s salary, we had no choice but to base it on marketability. (Aono)</p>
+</blockquote>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>Conversely, a company with a salary table isn’t diverse in the way it works.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>2017/5-10 <a href="http://www.scholar.co.jp/fudo/detail.php?id=15&amp;page=1" class="external"><svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a><a href="./Field-Report" class="internal alias" data-slug="Field-Report">Field Report</a> Is Cybozu really a “good company”? | Culture Reform Case Study｜Scola Consult []</p>
+<ul>
+<li>
+<blockquote>
+<p>Cybozu’s organizational structure is a typical hierarchical organization… In a typical hierarchical structure, work proceeds as a vertical organization, and instructions often descend from the top down. At Cybozu, however, “human resource development and evaluation” is executed on a vertical line within departments, while “groupware development and marketing” is executed on a horizontal line that goes beyond departments.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Information is distributed with a high degree of transparency because we can access most of the information in the entire company and other departments using our own product, Groupware.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Visualization of any interaction is a device that allows everyone to rapidly learn about the company’s culture and climate, such as “Is this the kind of thing that is emphasized at this company?</p>
+</blockquote>
+</li>
+<li>The story is not that the organizational structure is unique, but that it is characterized by open information sharing due to the very high utilization of groupware.
+<ul>
+<li><a href="./answerability" class="internal" data-slug="answerability">answerability</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>2017 Everyone was explicitly given time to negotiate salary (until 2016, it was “whoever wanted to do it had to coordinate with their supervisor”) [src <a href="https://www.slideshare.net/RyoMitoma/salary-negotiation-battle-on-cybozu-" class="external">https://www.slideshare.net/RyoMitoma/salary-negotiation-battle-on-cybozu-<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> employee-side]</p>
+<ul>
+<li><a href="./Maybe-the-monster-that-is-the-company-is-making-us-unhappy." class="internal alias" data-slug="Maybe-the-monster-that-is-the-company-is-making-us-unhappy.">Maybe the monster that is the company is making us unhappy.</a></li>
+<li>March 1, 2018 Publication
+<ul>
+<li>The concept of [There is no Mr. Company.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>2018/4 New Working Style Declaration System</p>
+<ul>
+<li>Abolished the 9-category selective personnel system, allowing each individual to freely declare and implement his or her own work style.</li>
+<li><a href="https://cybozushiki.cybozu.co.jp/articles/m001471.html" class="external">Too much freedom. …　I asked about the new “work system” that Cybozu recently started | Cybozu Style<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>
+<blockquote>
+<p>Labeling work styles, such as “2 categories” or “9 categories,” was of great significance to Cybozu. Labeling each way of working meant recognizing diverse ways of working “in parallel. This ultimately led to the elimination of the “people who work long hours are great” atmosphere.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>However, the role of this “labeling” has come to an end. Without going to the trouble of dividing people by labels, a culture of “respecting each person’s individuality and life” has permeated among employees.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p>5/2018 <a href="https://cybozushiki.cybozu.co.jp/articles/m001467.html" class="external">Case study of an employee using the Job Draft to measure market value and negotiate salary:<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>
+<blockquote>
+<p>In order to be satisfied with your salary, you must start by knowing your market value.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Market value is surprisingly out of line.</p>
+</blockquote>
+</li>
+</ul>
+<p>2018/9 OSS Policy</p>
+<ul>
+<li>
+<p><a href="https://blog.cybozu.io/entry/oss-policy" class="external">Cybozu Open Source Software Policy - Cybozu Inside Out | Cybozu Engineer’s Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>
+<blockquote>
+<p>Software created spontaneously without instructions, even during work hours, belongs to the individual.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://blog.cybozu.io/entry/2018/09/13/113000" class="external">Cybozu Inside Out - Cybozu Inside Out - Cybozu Cybozu Engineer Blog - Cybozu Inside Out | Cybozu Engineer’s Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>
+<blockquote>
+<p>For example, if you have an engineer who wants to learn Rust, you can buy a Rust book even if you do not use Rust in your work.</p>
+</blockquote>
+<ul>
+<li>Maybe since before 2015, but not sure when.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>2018/6/27</p>
+<ul>
+<li><a href="https://cybozu.co.jp/sp/workstyle/workstyle22.html" class="external">Cybozu’s too free way of working was managed in this way! Cybozu’s too free way of working was managed in this way｜Cybozu Work Style Encyclopedia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>A story about the use of information systems for human resource management</li>
+<li>Cybozu’s personnel system is sometimes commented as “too burdensome without <a href="./salary-table" class="internal alias" data-slug="salary-table">salary table</a>,” but we are creating a system that rotates without a salary table.</li>
+<li>In 2007, there were 3 classifications to choose from, then increased to 9 classifications, and since 2018, each person is individual, so almost 10 years of accumulation of “management of different states of work for different people”.</li>
+</ul>
+</li>
+<li>
+<p>2018/10</p>
+<ul>
+<li><a href="https://cybozushiki.cybozu.co.jp/articles/m001504.html" class="external">What is a teal organization?　What are the points that are often misunderstood? ─ ─ I asked Mr. Kenshu Kamura, a leading expert on the subject | Cybozu Style<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>When we began to think that the term <a href="./teal-organization" class="internal alias" data-slug="teal-organization">teal organization</a> might fit to describe the organization we had created.
+<ul>
+<li><a href="./Properties-prepared-as-a-result-of-sincere-work-toward-an-ideal" class="internal alias" data-slug="Properties-prepared-as-a-result-of-sincere-work-toward-an-ideal">Properties prepared as a result of sincere work toward an ideal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>2021/2  <a href="./Adoption-of-corporate-philosophy-as-a-resolution-item-for-the-General-Meeting-of-Shareholders" class="internal alias" data-slug="Adoption-of-corporate-philosophy-as-a-resolution-item-for-the-General-Meeting-of-Shareholders">Adoption of corporate philosophy as a resolution item for the General Meeting of Shareholders</a> / <a href="./In-house-recruitment-of-directors" class="internal alias" data-slug="In-house-recruitment-of-directors">In-house recruitment of directors</a></p>
+</li>
+</ul>
+<hr/>
+<ul>
+<li>
+<blockquote>
+<p>When you say “100 people can have 100 different ways of working,” the problem is “evaluation. Cybozu’s evaluation system has changed since the company was founded. From 1997 to 2001, when Cybozu was founded, evaluations were made individually by the president; from 2001 to 2002, we introduced a target management and performance-based personnel system, which did not go well; from 2003 to 2005, we introduced 360-degree evaluations, but the sense of unity was lost as employees began to worry about their own evaluations.</p>
+</blockquote>
+<ul>
+<li><a href="https://www.hrpro.co.jp/hrsummit/2016/stage1/sp_rpt02.php" class="external">“Cybozu’s HR Strategy” - What is a team connected by ideals and teamwork｜HR Summit 2016 Official HP<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>I thought it would be better to scatter them by each decade, so I split them up.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E3%82%B5%E3%82%A4%E3%83%9C%E3%82%A6%E3%82%BA%E3%81%AE%E4%BA%BA%E4%BA%8B%E5%88%B6%E5%BA%A6" class="external">/nishio/サイボウズの人事制度<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Cybozu-Labs-Human-Resources-System" class="internal">Cybozu Labs Human Resources System</a></li><li><a href="./Failure-to-observe-diversity." class="internal">Failure to observe diversity.</a></li><li><a href="./High-Payroll-System-Subsidiary" class="internal">High Payroll System Subsidiary</a></li><li><a href="./Steadily-Continue-to-Stay-Late" class="internal">Steadily Continue to Stay Late</a></li><li><a href="./leave-taken-after-the-compulsory-maternity-leave" class="internal">leave taken after the compulsory maternity leave</a></li><li><a href="./salary-negotiation" class="internal">salary negotiation</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

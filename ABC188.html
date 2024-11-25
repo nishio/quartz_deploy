@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>ABC188</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="ABC188"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="ABC188"/><meta name="twitter:description" content="AtCoder Beginner Contest 188 - AtCoder I answered all the questions correctly. After solving A-E in the first 25 minutes, I got into F and spent about 50 minutes."/><meta property="og:description" content="AtCoder Beginner Contest 188 - AtCoder I answered all the questions correctly. After solving A-E in the first 25 minutes, I got into F and spent about 50 minutes."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="AtCoder Beginner Contest 188 - AtCoder I answered all the questions correctly. After solving A-E in the first 25 minutes, I got into F and spent about 50 minutes."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/ABC188"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/ABC188"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="AtCoder Beginner Contest 188 - AtCoder I answered all the questions correctly. After solving A-E in the first 25 minutes, I got into F and spent about 50 minutes."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="ABC188"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>ABC188</a></div></nav><h1 class="article-title">ABC188</h1><p show-comma="true" class="content-meta"><span>Jan 11, 2021</span><span>6 min read</span></p></div></div><article class="popover-hint"><p><a href="https://atcoder.jp/contests/abc188" class="external">AtCoder Beginner Contest 188 - AtCoder<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+I answered all the questions correctly. After solving A-E in the first 25 minutes, I got into F and spent about 50 minutes. I got completely impatient during the process and got 6 penalties.</p>
+<p><img src="https://gyazo.com/c4d11f9ce3d61e26fe505cf52f0fcaeb/thumb/1000" alt="image"/>
+<img src="https://gyazo.com/4609564a3c452f696c5c8b8ae80f176e/thumb/1000" alt="image"/></p>
+<p><a href="https://atcoder.jp/contests/abc188/tasks/abc188_a" class="external">A - Three-Point Shot<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li><img src="https://gyazo.com/9440dcf0419562d1b705b2004be36511/thumb/1000" alt="image"/></li>
+<li>1WA, I’ll trade you, overlooking the condition “to the one with the lowest score.”
+python</li>
+</ul>
+<pre><code>X, Y = map(int, input().split())
+if X > Y:
+    Y, X = X, Y
+if X + 3 > Y:
+    print(&quot;Yes&quot;)
+else:
+    print(&quot;No&quot;)
+</code></pre>
+<p><a href="https://atcoder.jp/contests/abc188/tasks/abc188_b" class="external">B - Orthogonality<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li><img src="https://gyazo.com/d780c78a7d0081ce919dd80c915291da/thumb/1000" alt="image"/></li>
+<li>Repeat multiplying and adding in loops.
+python</li>
+</ul>
+<pre><code>def main():
+    N = int(input())
+    AS = list(map(int, input().split()))
+    BS = list(map(int, input().split()))
+    ret = 0
+    for i in range(N):
+        ret += AS[i] * BS[i]
+    if ret == 0:
+        print(&quot;Yes&quot;)
+    else:
+        print(&quot;No&quot;)
+</code></pre>
+<p><a href="https://atcoder.jp/contests/abc188/tasks/abc188_c" class="external">C - ABC Tournament<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li><img src="https://gyazo.com/0b911fc8e109fee21c9c592e6e26e671/thumb/1000" alt="image"/></li>
+<li>Make a list of IDs of people who will play the next game, play the tournament N-1 times, and return the IDs of the losing side as the last 2 people get
+python</li>
+</ul>
+<pre><code>def main():
+    N = int(input())
+    AS = list(map(int, input().split()))
+    PS = range(2 ** N)
+    for _r in range(N - 1):
+        newPS = []
+        for i in range(0, len(PS), 2):
+            if AS[PS[i]] > AS[PS[i + 1]]:
+                newPS.append(PS[i])
+            else:
+                newPS.append(PS[i + 1])
+        PS = newPS
+    if AS[PS[0]] > AS[PS[1]]:
+        print(PS[1] + 1)
+    else:
+        print(PS[0] + 1)
+</code></pre>
+<ul>
+<li>Twitter
+<ul>
+<li>
+<blockquote>
+<p>“The runner-up is the player who won the opposite block to the one who will win”, so the answer is the index of the right half and max and the left half max, whichever is smaller [src <a href="https://twitter.com/kyopro_friends/status/" class="external">https://twitter.com/kyopro_friends/status/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 1348264284417978369]</p>
+</blockquote>
+<ul>
+<li>I see!</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://atcoder.jp/contests/abc188/tasks/abc188_d" class="external">D - Snuke Prime<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li><img src="https://gyazo.com/9e383b268bf227d379e4cef649a273e1/thumb/1000" alt="image"/></li>
+<li>There is no penalty for joining and leaving Prime, so you can calculate the daily cost and pay C for each day you exceed C.</li>
+<li>I’d like to find the daily cost per day, but it’s impossible to add up to 10^5 times and up to 10^9 days to the section</li>
+<li>So <a href="./RangeAdd-is-two-PointAdd" class="internal alias" data-slug="RangeAdd-is-two-PointAdd">RangeAdd is two PointAdd</a>.
+<ul>
+<li>The 10^9 day section is hard to hold in array.</li>
+<li>So we’ll do it in the dictionary.
+python</li>
+</ul>
+</li>
+</ul>
+<pre><code>def main():
+    N, C = map(int, input().split())
+    from collections import defaultdict
+    diff = defaultdict(int)
+    for _n in range(N):
+        a, b, c = map(int, input().split())
+        diff[a] += c
+        diff[b + 1] -= c
+    keys = list(sorted(diff))
+    cost = 0
+    ret = 0
+    for i in range(1, len(keys)):
+        cost += diff[keys[i - 1]]
+        days = keys[i] - keys[i - 1]
+        ret += min(cost, C) * days
+
+    print(ret)
+</code></pre>
+<ul>
+<li>Twitter
+<ul>
+<li>
+<blockquote>
+<p><a href="./ABC183" class="internal" data-slug="ABC183">ABC183</a>Just do the simulation in the explanation of <a href="./ABC183" class="internal" data-slug="ABC183">ABC183</a>D <a href="https://twitter.com/kyopro_friends/status/1348264284417978369" class="external">src<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+<ul>
+<li>I see what you mean about doing <a href="./coordinate-compression" class="internal alias" data-slug="coordinate-compression">coordinate compression</a>, that’s certainly a good idea.</li>
+<li>I’ve heard it mentioned under various names, such as <a href="./Imosu-Act-(fifth-highest-of-the-eight-hereditary-titles,-later-demoted-to-sixth-highest-of-eight)" class="internal alias" data-slug="Imosu-Act-(fifth-highest-of-the-eight-hereditary-titles,-later-demoted-to-sixth-highest-of-eight)">Imosu Act (fifth highest of the eight hereditary titles, later demoted to sixth highest of eight)</a> and <a href="./event-sort" class="internal alias" data-slug="event-sort">event sort</a>, but I’ve never heard the term “event sort” before. I have never heard of event sorting before, but I guess it means “sorting the beginning and ending events of an interval together”. I used the “time <span>→</span> increase/decrease” dictionary, but I guess it means using a list of “(time, increase/decrease)“. Might be a bit of a hassle since some of the events are at the same time.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://atcoder.jp/contests/abc188/tasks/abc188_e" class="external">E - Peddler<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li><img src="https://gyazo.com/643399598cd75f589f09039a4773f7d8/thumb/1000" alt="image"/></li>
+<li>I’d like to know the likelihood of getting from each vertex to each vertex, but if I do it naively, I’ll never get there in time.</li>
+<li>Special Constraints] that “Xi&lt;Yi is guaranteed” is the key.</li>
+<li>In other words, we can update the “minimum purchase cost at the apex that can get there” in the order of decreasing i
+python</li>
+</ul>
+<pre><code>def main():
+    N, M = map(int, input().split())
+    AS = list(map(int, input().split()))
+    from collections import defaultdict
+    edges = defaultdict(list)
+    for _i in range(M):
+        frm, to = map(int, input().split())
+        edges[frm - 1].append(to - 1)  # -1 for 1-origin vertexes
+
+    INF = 9223372036854775807
+    minBuyCost = [INF] * N
+
+    ret = -INF
+    for i in range(N):
+        ret = max(ret, AS[i] - minBuyCost[i])
+        m = min(minBuyCost[i], AS[i])
+        for j in edges[i]:
+            minBuyCost[j] = min(minBuyCost[j], m)
+
+    print(ret)
+</code></pre>
+<p><a href="https://atcoder.jp/contests/abc188/tasks/abc188_f" class="external">F - +1-1x2<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li><img src="https://gyazo.com/2f312cac88ff2f3803637e6be88c1ff5/thumb/1000" alt="image"/>
+<ul>
+<li><a href="./time-reversal-(physics)" class="internal alias" data-slug="time-reversal-(physics)">time reversal (physics)</a></li>
+</ul>
+</li>
+<li>Never -1 after +1</li>
+<li>Never +1 after +1, because /2,+1 is cheaper than +1,+1,/2
+<ul>
+<li>Foreshadowing: There is a mistake here.</li>
+</ul>
+</li>
+<li>If Y is less than X, it can only be +1.</li>
+<li>Put them in a prioritized queue and try them from lowest cost to highest cost.
+<ul>
+<li>I observed that the queue had the same value over and over, so I combined the dictionaries <a href="./heapq+dict" class="internal" data-slug="heapq+dict">heapq+dict</a>.</li>
+</ul>
+</li>
+<li>12WA</li>
+<li>After a while of dawdling, implement the naive solution method and observe discrepancies in a range of small values.
+python</li>
+</ul>
+<pre><code>def blute(X, Y):
+    queue = {X}
+    ret = 0
+    while True:
+        newqueue = set()
+        if Y in queue:
+            return ret
+        ret += 1
+        for x in queue:
+            newqueue.add(x * 2)
+            newqueue.add(x + 1)
+            newqueue.add(x - 1)
+        queue = newqueue
+
+
+def fulltest():
+    for x in range(20):
+        for y in range(20):
+            s = solve(x, y)
+            b = blute(x, y)
+            if s != b:
+                print(x, y, s, b)
+</code></pre>
+<pre><code>- Cause of error: &quot;A sequence of +1s and -1s is missing the shortest path case.&quot;
+    - In (1) of the following code
+- The statement &quot;never +1 after +1&quot; is incorrect.
+    - No /2 would come after that, but it could have gone straight to the finish line.
+</code></pre>
+<p>python</p>
+<pre><code>def solve(X, Y):
+    from heapq import heappush, heappop
+
+    queue = [(0, Y)]
+    minCost = {Y: 0}
+    INF = 9223372036854775807
+
+    def add(cost, y):
+        c = minCost.get(y, INF)
+        if cost &lt; c:
+            minCost[y] = cost
+            heappush(queue, (cost, y))
+
+    while True:
+        cost, y = heappop(queue)
+        if y == X:
+            return cost
+        if y &lt; X:
+            add(cost + (X - y), X)
+            continue
+        if y == X + 1:
+            add(cost + 1, X)
+            continue
+
+        add(cost + (y - X), X)  # (1)
+
+        if y % 2 == 0:
+            add(cost + 1, y // 2)
+        else:
+            add(cost + 2, (y + 1) // 2)
+            add(cost + 2, (y - 1) // 2)
+</code></pre>
+<ul>
+<li>Twitter
+<ul>
+<li>
+<blockquote>
+<p>If y&lt;x, then x-y is the answer. When it’s not, it’s roughly the same as <a href="./AGC044A" class="internal" data-slug="AGC044A">AGC044A</a>. Thinking backwards, using the fact that ±1 is not continuous except at the end, we can solve it with a small number of states by memoization recursion <a href="https://twitter.com/kyopro_friends/status/1348264284417978369" class="external">src<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/ABC188" class="external">/nishio/ABC188<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./RangeAdd-is-two-PointAdd" class="internal">RangeAdd is two PointAdd</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

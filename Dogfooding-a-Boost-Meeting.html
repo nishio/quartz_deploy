@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Dogfooding a Boost Meeting</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Dogfooding a Boost Meeting"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Dogfooding a Boost Meeting"/><meta name="twitter:description" content="from mitoujr2021 2021-06-04~2021-06-06 I’ve actually been thinking for a few days about what would happen if the mentors dogfooding the Boost conference, but I’ve been so busy that ..."/><meta property="og:description" content="from mitoujr2021 2021-06-04~2021-06-06 I’ve actually been thinking for a few days about what would happen if the mentors dogfooding the Boost conference, but I’ve been so busy that ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="from mitoujr2021 2021-06-04~2021-06-06 I’ve actually been thinking for a few days about what would happen if the mentors dogfooding the Boost conference, but I’ve been so busy that ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Dogfooding-a-Boost-Meeting"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Dogfooding-a-Boost-Meeting"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="from mitoujr2021 2021-06-04~2021-06-06 I’ve actually been thinking for a few days about what would happen if the mentors dogfooding the Boost conference, but I’ve been so busy that ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Dogfooding-a-Boost-Meeting"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Dogfooding a Boost Meeting</a></div></nav><h1 class="article-title">Dogfooding a Boost Meeting</h1><p show-comma="true" class="content-meta"><span>Aug 13, 2021</span><span>10 min read</span></p></div></div><article class="popover-hint"><p>from <a href="./mitoujr2021" class="internal" data-slug="mitoujr2021">mitoujr2021</a> 2021-06-04~2021-06-06</p>
+<p><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I’ve actually been thinking for a few days about what would happen if the mentors <a href="./dogfooding" class="internal" data-slug="dogfooding">dogfooding</a> the Boost conference, but I’ve been so busy that I haven’t been able to do anything, so I made a page anyway.</p>
+<hr/>
+<ul>
+<li><a href="./How-to-make-a-presentation-video-for-the-Boost-Conference" class="internal alias" data-slug="How-to-make-a-presentation-video-for-the-Boost-Conference">How to make a presentation video for the Boost Conference</a></li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I read it again, but it doesn’t say anything about what should be said or what the purpose of the presentation is, well, I guess it’s communicated by communicating with the mentors.</li>
+<li><a href="./5-Tips-for-Creating-a-Communicative-Proposal" class="internal alias" data-slug="5-Tips-for-Creating-a-Communicative-Proposal">5 Tips for Creating a Communicative Proposal</a></li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I’ll think about it as I look at this.
+<ul>
+<li>area
+<ul>
+<li>digital notebook</li>
+<li>Information Sharing Tools
+<ul>
+<li>I’m wondering which one to use. If it is a notebook, it can be used mainly by one person, but if it is an information sharing tool, it would be strange to say “mainly used by one person”.</li>
+</ul>
+</li>
+<li>Digital whiteboard
+<ul>
+<li>You can use it alone to get your head out of the clouds, or you can use it with multiple people.</li>
+<li>Maybe not as “one of a kind” feeling as a notebook.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Objective.
+<ul>
+<li>To organize information
+<ul>
+<li>What do you mean “organize”?</li>
+</ul>
+</li>
+<li>Digital assists in situations that can be confusing when you’re thinking in your head to help you get your head straight.
+<ul>
+<li>Is it strange that digital assistance is a means to an end, so it’s not right to include it here?</li>
+</ul>
+</li>
+<li>The purpose of this service is to help people who are confused trying to think of complex things in their minds to become organized and clear.</li>
+</ul>
+</li>
+<li>means
+<ul>
+<li>Running in the browser</li>
+<li>Sticky notes with pieces of information that can be dragged and moved.</li>
+<li>Is this a common story so far?</li>
+<li>Compared to existing
+<ul>
+<li>Important stickies can be made larger.</li>
+<li>Stickies can be grouped and folded</li>
+<li>Can be handwritten.
+→“Write down what’s in your head and drag it around to help organize it on the digital whiteboard Regroup2” (tentative)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Let’s find out what was created for a similar purpose as the proposal.</p>
+</blockquote>
+<ul>
+<li>
+<p>Post sticky notes on the whiteboard.</p>
+</li>
+<li>
+<p>Move sticky notes and information cards on the desk.</p>
+</li>
+<li>
+<p>outline editor</p>
+</li>
+<li>
+<p>Miro</p>
+</li>
+<li>
+<p>Comparison</p>
+<ul>
+<li>whiteboard
+<ul>
+<li>Good for information sharing among multiple people in the same physical location.
+<ul>
+<li>But as remote work progresses, problems arise.</li>
+<li>Taking pictures of the whiteboard with a camera doesn’t share very well with the remote.</li>
+<li>It would be nice if the digital whiteboard could be shared with remote
+<ul>
+<li>But maybe this isn’t directly related to the goal of “getting my head out of my ass.”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>For single use
+<ul>
+<li>Actually, the legible and accessible area of a vertical whiteboard is not very large due to height limitations.</li>
+<li>The next “on the desk” has more sticky notes it can handle.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Sticky note on the desk
+<ul>
+<li>This is pretty good, or I used to use it myself.</li>
+<li>discontent
+<ul>
+<li>Written on paper is difficult to search and reuse.</li>
+<li>The effort of writing by hand on a paper sticky note is hard when you already have something written digitally.</li>
+<li>This is a common problem with whiteboards as well, but they take up a lot of space, so you often have to clean up what you’ve laid out.</li>
+<li>Bundling” allows “compression,” but then the spatial arrangement is destroyed.
+<ul>
+<li>Regroup2 “Fold” will be restored to its original form.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>outline editor
+<ul>
+<li>Bullet points to organize ideas.</li>
+<li>The tree can be folded.</li>
+<li>Low degree of freedom of placement</li>
+<li>Less information can be displayed on one screen.</li>
+</ul>
+</li>
+<li>Miro
+<ul>
+<li>Online Shared Whiteboard Service</li>
+<li>Sticky note functionality has also been added.</li>
+<li><a href="https://kawazoezoe.com/miro-sticky-note.html" class="external">https://kawazoezoe.com/miro-sticky-note.html<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Hmmm, there are minor feature differences, but “why not just use Miro?” It’s hard to say…</li>
+<li>Maybe, but Miro is not specialized in organizing information, so there could be a difference there…</li>
+<li>I’m getting the feeling you’re not going to adopt anything.</li>
+<li>I wouldn’t be persuaded to at least give Miro a try…
+- <a href="./Comparison-of-Miro-and-Regroup" class="internal alias" data-slug="Comparison-of-Miro-and-Regroup">Comparison of Miro and Regroup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>I feel that Miro is not good at all, but I need to explain why that is so that the audience can understand</p>
+<ul>
+<li>Regroup is focused on organizing 100+ sticky notes as an assumption, maximizing the limited screen space.</li>
+<li>I get the feeling that Miro is not suited for organizing sticky gaps, shadows, and other things like getting stuck on a limit and failing to import after a few dozen stickies.</li>
+</ul>
+</li>
+<li>
+<p>Well, aside from the comparison with Miro, consider what to do with the boost meeting if it were to be adopted.</p>
+<ul>
+<li>The prototype is pretty much done, but there is no point in appealing to the public about it because it will just end with “it’s done.</li>
+<li>I think I’ll focus on what I want to do and my immediate concerns.</li>
+</ul>
+</li>
+<li>
+<p>outline</p>
+<ul>
+<li>What is this?</li>
+<li>What to make it for.</li>
+<li>What are you struggling with right now?</li>
+</ul>
+</li>
+</ul>
+<p>What is this?</p>
+<ul>
+<li>
+<p>You’re blurring the axis of whether it’s a “digital whiteboard” for multiple people or a “digital notebook” for one person…</p>
+</li>
+<li>
+<p>I think the analogy to a whiteboard is rather misleading, since the envisioned use is to first put 100 sticky notes on it and then move them around.</p>
+</li>
+<li>
+<p>I wouldn’t compare it to a notebook or a whiteboard…</p>
+</li>
+<li>
+<p>An AI that helps you organize by writing out what’s in your head and dragging it around.”</p>
+<ul>
+<li>You can’t do that.</li>
+<li>AI is going to be too vague and picky.</li>
+<li>But I’d like to assist there in the future.</li>
+</ul>
+</li>
+<li>
+<p>I’d say it’s widely done up to the point of “moving stickies around to organize your mind,” but there’s a limit to the number of sheets and such due to the constraints of physical stickies and whiteboards.</p>
+<ul>
+<li>This is like, for example, the kind of work you do on your PC now can only be done on the small screen of your smartphone.</li>
+<li>Restrictions on video limit human intellectual production.</li>
+<li>So technology needs to evolve in a direction that removes that limitation.</li>
+</ul>
+</li>
+<li>
+<p>Let’s call it a “thought support tool.”</p>
+</li>
+<li>
+<p>What to make it for.</p>
+<ul>
+<li>The basic premise is that when organizing thoughts, it is very useful to put them on sticky notes and move them around as you think.
+<ul>
+<li>I need to be convinced here.</li>
+</ul>
+</li>
+<li>But there are some dissatisfactions with the current tool.</li>
+<li>So we need better “tools for thinking”.</li>
+</ul>
+</li>
+<li>
+<p>What I’m struggling with now</p>
+<ul>
+<li>Can we assume that it’s “for one person’s use?”
+<ul>
+<li>The backend is Firestore, so casual collaborative editing is still possible, which is surprisingly convenient.
+<ul>
+<li>One person can both list on the wide screen of a PC and handwrite on an iPad + Apple Pencil.</li>
+<li>There are cases where you want others to see what you have organized.</li>
+</ul>
+</li>
+<li>The fact that tools that support thinking are supposed to be used by one person may be a captive of the idea that thinking is something to be done by one person.</li>
+<li>On the other hand, the “make it possible to edit together well” line requires a complete change of the server side to our own implementation, and I’m not sure if I should do that.</li>
+</ul>
+</li>
+<li>The current prototype was made while learning React and TypeScript, so the code is dirty, but I wonder if I should rebuild it.</li>
+</ul>
+</li>
+</ul>
+<p>Let’s demo the title slide.</p>
+<p>Information density issues, hard to understand, so I’ll start by talking about the benefits of digitization.</p>
+<ul>
+<li>I’ll go ahead and mention the hassle of “digital to paper” because it could be countered by talking about OCR from paper to digital.</li>
+<li>Everything needs to be done digitally.</li>
+</ul>
+<p>Assumed Questions</p>
+<ul>
+<li>Automatic placement with machine learning and physics
+<ul>
+<li>→I can do it, but I don’t think it will end well.</li>
+<li>If it’s not auto-placement but presentation of related stickies, it’s possible.</li>
+<li>Placement is a human intellectual product and should not be overridden by mechanical output.</li>
+</ul>
+</li>
+</ul>
+<p>Digital whiteboards</p>
+<ul>
+<li>Miro
+<ul>
+<li>Show them how to use it the way it’s supposed to be used and tell them it’s not good at all.</li>
+</ul>
+</li>
+</ul>
+<p>Assumed zone with more than 100 sticky notes.</p>
+<ul>
+<li>For example, if you have about 20 sheets, you can do it with sticky notes on the whiteboard or with Miro, but if you have more sheets, it becomes harder to do it.</li>
+<li>Even if you use your smartphone to do work on your PC.</li>
+<li>Human potential is limited.</li>
+</ul>
+<hr/>
+<p>I was going to release it yesterday to help other creators, or to eliminate the anxiety of being the first to release it, but Mattermost failure has taken up all my time.
+memo</p>
+<ul>
+<li>The title demo will ask “Digital Notebook? Digital whiteboard? → Let’s do a “Thinking Support Tool” flow.</li>
+<li>Let’s use the key phrase “think with your hands” somewhere.</li>
+</ul>
+<p>I thought the deadline was 23:59 but it was 11:59!</p>
+<p>I’m very late to the party, but what should I do?</p>
+<p>Write down what’s in your head.
+Move sticky notes around to organize your thoughts.
+Tools to Support Thinking</p>
+<hr/>
+<p>tag
+what’s inside your head
+Write it down.
+tag
+Organize.
+Move it.
+thinking
+thinking
+support
+notebook
+whiteboard
+digital
+Tools to Support Thinking</p>
+<p>inside the head
+jumbled up
+I want to organize.
+Write it on a sticky note.
+Move it.
+Organize.
+Commonly used methods</p>
+<p>When you already have something digitally written.
+Labor to write by hand on paper sticky notes
+occupy space
+I’ve gone to a lot of trouble to arrange them.
+It will need to be put away.
+On paper
+search (e.g. for someone using a search engine)
+reuse
+difficult (e.g. customer, guest, child)
+spicy</p>
+<p>conversion to electronics
+necessary</p>
+<p>whiteboard
+Physically in the same place.
+Information sharing for multiple people
+The problem with more remote work
+Taken with a camera
+Cannot share well.
+Get your head out of the clouds.
+Might not be directly connected.
+For single use
+Visible and accessible areas
+Not very wide due to height limitations.
+Sticky note on the desk
+I used to use it myself.
+Difficult to search and reuse
+Labor to write by hand on paper sticky notes
+occupy space
+It will need to be put away.
+compression
+Bundling” allows for “compression.”
+Spatial arrangements are destroyed.
+Regroup’s “Fold”
+Restored to its original form
+outline editor
+Bullet points to organize ideas.
+The tree can be folded.
+Low degree of freedom of placement
+Less information can be displayed on one screen.
+Miro
+Online Shared Whiteboard Service
+Sticky note functionality has also been added.
+I don’t specialize in organizing information.
+character limit
+Only halfway through is imported.
+Organize information in a limited area
+Opening gaps and
+Shadows and
+Low density of information
+Failure to adjust font size
+Font smaller than necessary
+Multi-line text
+Paste does not import with sticky
+Become a text box
+Paste into a spreadsheet and copy and paste again
+good point
+touchpad
+Two-finger swipe to move parallel
+Pinch to zoom in and out
+Regroup
+assumption
+More than 100 sticky notes
+Limited screen space
+Organize.</p>
+<ul>
+<li>
+<p><a href="./Regroup,-a-tool-to-support-thinking-by-writing-and-moving-the-contents-of-your-mind-to-organize-your-thoughts-Presentation-materials" class="internal alias" data-slug="Regroup,-a-tool-to-support-thinking-by-writing-and-moving-the-contents-of-your-mind-to-organize-your-thoughts-Presentation-materials">Regroup, a tool to support thinking by writing and moving the contents of your mind to organize your thoughts Presentation materials</a>
+The presentation materials are ready for now, but my wife is taking a nap, so I’ll take pictures later.</p>
+</li>
+<li>
+<p><a href="./Thinking-Support-Tool-Regroup" class="internal alias" data-slug="Thinking-Support-Tool-Regroup">Thinking Support Tool Regroup</a>
+done</p>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E3%83%96%E3%83%BC%E3%82%B9%E3%83%88%E4%BC%9A%E8%AD%B0%E3%82%92%E3%83%89%E3%83%83%E3%82%B0%E3%83%95%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%81%99%E3%82%8B" class="external">/nishio/ブースト会議をドッグフーディングする<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Kozaneba-Development-Diary-2021-08-12" class="internal">Kozaneba Development Diary 2021-08-12</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

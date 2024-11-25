@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Language modeling experiment2018-09-28</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Language modeling experiment2018-09-28"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Language modeling experiment2018-09-28"/><meta name="twitter:description" content="..."/><meta property="og:description" content="..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Language-modeling-experiment2018-09-28"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Language-modeling-experiment2018-09-28"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Language-modeling-experiment2018-09-28"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Language modeling experiment2018-09-28</a></div></nav><h1 class="article-title">Language modeling experiment2018-09-28</h1><p show-comma="true" class="content-meta"><span>Oct 02, 2018</span><span>6 min read</span></p><ul class="tags"><li><a href="./tags/LSTM-RNN" class="internal tag-link">LSTM-RNN</a></li></ul></div></div><article class="popover-hint"><p><img src="https://gyazo.com/6c848c9690a3289e512c09cb3f72cc35/thumb/1000" alt="image"/></p>
+<p>Study the main text part of the Intellectual Production Techniques of Engineers with <a href="./LSTM" class="internal" data-slug="LSTM">LSTM</a><a href="./tags/LSTM-RNN" class="tag-link internal alias" data-slug="tags/LSTM-RNN">LSTM-RNN</a>
+:</p>
+<pre><code>%run train_rnnlm.py
+#vocab = 7069
+epoch       iteration   perplexity  val_perplexity
+3           500         207.066     168.164         
+7           1000        55.6905     88.8363         
+11          1500        32.3283     83.8262         
+15          2000        19.5342     96.141          
+19          2500        12.4958     115.902         
+23          3000        9.15305     138.699         
+26          3500        6.81103     159.106         
+30          4000        5.71608     178.38          
+34          4500        5.07816     201.215         
+38          5000        4.33354     223.951         
+test
+test perplexity: 333.32472655247705
+</code></pre>
+<p>I’m not sure you could have stopped at 15 epochs.</p>
+<ul>
+<li>→I’ve tried to generate sentences with the model at about 2000 iterations, but subjectively the last model seems to be better.</li>
+</ul>
+<p>Sentence generation experiments using LSTM language models:.</p>
+<ul>
+<li>
+<blockquote>
+<p>Intellectual big direction / Realistic :Compare pictures of tuples and repeat cycle again.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>7 Engineer’s Wall of 7 Ideas That Haven’t Came Out of Consciousness ❹Ideas come up with new ideas.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Remember the abstraction about growing up, and understanding is 8 hours frequent “This has to do with</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Understanding. It is UC V for philosophical language. Not one side of the table of contents, but the table of contents is back</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Repeat reading. Think first before you stand up. For example tree Mihaly (Edison), climbing</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>because I am looking at access to James Webb Young. I agree, and “U Theory.”</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Edison, during maintenance and engineering)❸ To instruct as often as you edit</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Wife guru research expeditions use state actively. The break-even point is past this design</p>
+</blockquote>
+</li>
+</ul>
+<p>The local word connections are pretty smooth, but, well, the sentence as a whole is meaningless.</p>
+<p>The above output gives one word and then generates 20 words, but I think it often outputs sentences that have a better mood if they run for a while</p>
+<ul>
+<li>
+<blockquote>
+<p>The wife’s mastery research expedition uses the state positively. So the break-even point stops with the intention of “I can’t proceed with the game I thought I needed such a table of contents” when the answer is “it seems relevant” out of the products past this design. For example, this somewhat relationship is the origin of the word 15 difficult. On the other hand, it is a way of ceasing to read while moving one’s hand, not something that goes actively learning to a physical teacher. It is important not to be able to distinguish between the two hares when the thought comes to mind, “He who pursues two hares will not get one hare.” The task that had been first of all to get the topic to connect can be downloaded from the URL somewhat for your experience to record and hit well.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Intelligent big direction/Realistic :Again by comparing pictures of the tuple and repeating the cycle, the understanding is verified. The experimental verification may have been some-like associating hypotheses. Experiencing ❶ being selected by myself, I need to clarify the purpose. I have a quest and a realization. The world is about whale sharks, fun, letting go of the concept of otherness and creating memories efficiently. Now the task of making questions is full and confusing, with the confusion must make new knowledge. For example, “coming up with an idea” is vague and a big task bud, you also realize the worry that “it would be wrong to be able to do it in your own words”.</p>
+</blockquote>
+</li>
+</ul>
+<p>This is probably due to the fact that the internal state created by a single word input is far from the distribution of the internal state at the time of learning, since many words are continuously input at the time of learning. <a href="./Sentence-generation-takes-multiple-words-as-input" class="internal alias" data-slug="Sentence-generation-takes-multiple-words-as-input">Sentence generation takes multiple words as input</a>.
+The model to find and cut out appropriate start and end points in a word sequence after running for a while seems to work well with the same mechanism as the <a href="./direct-quotation-model" class="internal alias" data-slug="direct-quotation-model">direct quotation model</a> from the original text.</p>
+<p>They can continue a topic related to time for a longer period of time. Only LSTM can retain context for a long time.</p>
+<ul>
+<li>
+<blockquote>
+<p>The “no big time” means that you know about the size of multiple tasks, read through bad replacements without realizing the optimal drop, and do not have a sense of time from the information based on the writing in GTDSensing : The state of not sensing the time based on the experience of others. I tried to work with the algorithm of choosing the option with the highest expected value based on the experience of others. Conversely, looking back is also the same part like the word “abstract” to its “grasp the whole picture” when you think that you have “found” in line following that the person who is framed in the gap between your afterimage and Cowan is used. It will be quite an observation to make what kind of knowledge you intend to assume based on this training every day. Is it easy in the pyramid of reading speed? For example, “grasping the big picture”.</p>
+</blockquote>
+</li>
+</ul>
+<p>This must have picked up the headline or something, “Chapter 1: Three Ways to Gather Information to Learn Something New”. Similarly, some of the footnotes have been picked up, which looks odd.</p>
+<ul>
+<li>
+<blockquote>
+<p>I prefer to do 50mm x 38mm fusen Chapter 1: The driving force that turns the cycle to learn new things:Motivation 8 Chapter 1: The three ways of information gathering to learn new things, how to allocate the three ways of information gathering, as you want to continue where you turn the conversation, you may learn the 1964. This is the birth of the phrase “30 seconds per book”, which means 30 seconds for just one page, and the two hours will be over.</p>
+</blockquote>
+</li>
+</ul>
+<p>Part of original data</p>
+<blockquote>
+<p>… But it is not. First of all, the top priority is excellence, and that Chapter 7: Deciding What to Learn Yourself Management Strategies 234.
+Chapter 7: Deciding What to Learn is a Self-Management Strategy 235 and thus an opportunity for growthNote 15…
+Ah, I see. So that’s how it is.
+Need to remove this: <a href="./Page-Row-Based-Language-Models" class="internal alias" data-slug="Page-Row-Based-Language-Models">Page Row-Based Language Models</a>.</p>
+</blockquote>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB%E4%BD%9C%E6%88%90%E5%AE%9F%E9%A8%932018-09-28" class="external">/nishio/言語モデル作成実験2018-09-28<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li>No backlinks found</li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

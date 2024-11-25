@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Talk to the City Study Group</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Talk to the City Study Group"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Talk to the City Study Group"/><meta name="twitter:description" content="2024-06-14 Cybozu Labs Study Session Lecture Presentation by Yasukazu Nishio I’d like to add my verbal questions, but I’m busy and behind. Shift to the past After Plurality Tokyo on 2023-04-12, I became interested in Plurality, especially broad listening, and talked about its elemental technology, Polis, in a study group."/><meta property="og:description" content="2024-06-14 Cybozu Labs Study Session Lecture Presentation by Yasukazu Nishio I’d like to add my verbal questions, but I’m busy and behind. Shift to the past After Plurality Tokyo on 2023-04-12, I became interested in Plurality, especially broad listening, and talked about its elemental technology, Polis, in a study group."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="2024-06-14 Cybozu Labs Study Session Lecture Presentation by Yasukazu Nishio I’d like to add my verbal questions, but I’m busy and behind. Shift to the past After Plurality Tokyo on 2023-04-12, I became interested in Plurality, especially broad listening, and talked about its elemental technology, Polis, in a study group."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Talk-to-the-City-Study-Group"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Talk-to-the-City-Study-Group"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="2024-06-14 Cybozu Labs Study Session Lecture Presentation by Yasukazu Nishio I’d like to add my verbal questions, but I’m busy and behind. Shift to the past After Plurality Tokyo on 2023-04-12, I became interested in Plurality, especially broad listening, and talked about its elemental technology, Polis, in a study group."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Talk-to-the-City-Study-Group"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Talk to the City Study Group</a></div></nav><h1 class="article-title">Talk to the City Study Group</h1><p show-comma="true" class="content-meta"><span>Jun 21, 2024</span><span>16 min read</span></p><ul class="tags"><li><a href="./tags/TOKYOAI" class="internal tag-link">TOKYOAI</a></li></ul></div></div><article class="popover-hint"><p>2024-06-14 <a href="./Cybozu-Labs-Study-Session" class="internal alias" data-slug="Cybozu-Labs-Study-Session">Cybozu Labs Study Session</a> Lecture Presentation by Yasukazu Nishio</p>
+<ul>
+<li>I’d like to add my verbal questions, but I’m busy and behind.</li>
+</ul>
+<p>Shift to the past</p>
+<ul>
+<li>After <a href="./Plurality-Tokyo" class="internal alias" data-slug="Plurality-Tokyo">Plurality Tokyo</a> on 2023-04-12, I became interested in <a href="./Plurality" class="internal" data-slug="Plurality">Plurality</a>, especially <a href="./broad-listening" class="internal alias" data-slug="broad-listening">broad listening</a>, and talked about its elemental technology, <a href="./Polis" class="internal" data-slug="Polis">Polis</a>, in a study group.
+- <a href="./Plurality-and-Polis-Study-Group" class="internal alias" data-slug="Plurality-and-Polis-Study-Group">Plurality and Polis Study Group</a> (2023-05-12)
+- <a href="./Polis-Study-Group" class="internal alias" data-slug="Polis-Study-Group">Polis Study Group</a> (2023-06-23)</li>
+<li>I was interested in the system introduced by <a href="./Audrey-Tang" class="internal alias" data-slug="Audrey-Tang">Audrey Tang</a> in <a href="./Plurality-Seoul" class="internal alias" data-slug="Plurality-Seoul">Plurality Seoul</a> on 2023-12-02, and asked <a href="./Gisele-Chou" class="internal alias" data-slug="Gisele-Chou">Gisele Chou</a> about it, and he told me it was <a href="./Talk-to-the-City" class="internal alias" data-slug="Talk-to-the-City">Talk to the City</a>.
+<ul>
+<li>I met <a href="./Deger-Turan" class="internal alias" data-slug="Deger-Turan">Deger Turan</a> of <a href="./AI-Objectives-Institute" class="internal alias" data-slug="AI-Objectives-Institute">AI Objectives Institute</a> who is developing this on 2024-05-15, talked a bit, and wanted to give it a try!</li>
+<li>On 2024-05-31, 5957 opinions for 2013 people were extracted and tested using data from the Agency for Cultural Affairs’ <a href="./Public-Comment-on-AI-and-Copyright" class="internal alias" data-slug="Public-Comment-on-AI-and-Copyright">Public Comment on AI and Copyright</a>.
+<ul>
+<li><img src="https://pbs.twimg.com/media/GO39erpaEAAGVXM?format=jpg&amp;name=medium#.png" alt="image"/></li>
+</ul>
+</li>
+<li>The main story of this Talk to the City (TTTC)</li>
+</ul>
+</li>
+</ul>
+<p>current topics</p>
+<ul>
+<li>
+<p>2024-06-06  <a href="./Takahiro-Yasuno-to-run-for-Governor-of-Tokyo" class="internal alias" data-slug="Takahiro-Yasuno-to-run-for-Governor-of-Tokyo">Takahiro Yasuno to run for Governor of Tokyo</a></p>
+<ul>
+<li>
+<blockquote>
+<p>In the past, the election period has been a time to “broadcast the candidate’s views,” that is, to tell voters what the candidate thinks one way or the other. I believe that this time around we can use technology to make it a period where people’s opinions are heard. In the world of digital democracy, we call this “[broad listening”. Through this broad listening, I would like to make the election period a time for everyone to think about ideal policies.</p>
+</blockquote>
+</li>
+<li><a href="./My-number-card" class="internal alias" data-slug="My-number-card">My number card</a> to verify your identity and achieve one-person, one-vote voting.
+<ul>
+<li>
+<blockquote>
+<p><a href="./Direct-voting" class="internal alias" data-slug="Direct-voting">Direct voting</a> results to capture the will of the people with a high resolution.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>and
+<ul>
+<li>
+<blockquote>
+<p>All programs used in these campaigns will be released as <a href="./open-source-(software,-etc.)" class="internal alias" data-slug="open-source-(software,-etc.)">open source (software, etc.)</a> after the election</p>
+</blockquote>
+<ul>
+<li><a href="./digital-public-goods" class="internal alias" data-slug="digital-public-goods">digital public goods</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="./Audrey-Tang" class="internal alias" data-slug="Audrey-Tang">Audrey Tang</a> also commented
+<ul>
+<li>
+<blockquote>
+<p>“I like the way Mr. Anno combines broad listening, the my number system, and the open source spirit.”</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>“Mr. Anno is not protesting. I like that very much. He is saying, ‘We can change for the better’.”</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>impressions</p>
+<ul>
+<li>
+<blockquote>
+<p><a href="https://x.com/golden_lucky/status/1798982636616196255" class="external">golden_lucky<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Plurality, I didn’t expect it to be a realistic option so soon in Japan.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://x.com/nishio/status/1800054514420224503" class="external">nishio<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Really that()</p>
+</blockquote>
+</li>
+<li>When I first learned about the concept of broad listening, I thought this was a technique that would allow me to “hear the multitude of opinions” at a level that was impossible for a live person.</li>
+<li>So I thought it was a kind of <a href="./human-enhancement" class="internal alias" data-slug="human-enhancement">human enhancement</a> or <a href="./increased-intellectual-productivity" class="internal alias" data-slug="increased-intellectual-productivity">increased intellectual productivity</a>.</li>
+<li>With the future development of LLM, the cost of realization will come down and it will become an “easy-to-use technology” in a few years, and in 5 or 10 years, it will be a technology that cannot be ignored by groupware companies like Cybozu.</li>
+<li>〜I had been thinking that the time span of the world would be about 1.5 to 2 years, but to come this far in one year, the world is changing at a rapid pace! That’s how I feel.</li>
+<li><a href="./Talk-to-the-City-for-Governor" class="internal alias" data-slug="Talk-to-the-City-for-Governor">Talk to the City for Governor</a></li>
+<li>
+<blockquote>
+<p><a href="https://x.com/takahiroanno/status/1800374247984107736" class="external">takahiroanno<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Public tweets about<a href="./tags/TOKYOAI" class="tag-link internal alias" data-slug="tags/TOKYOAI">TOKYOAI</a> will be crawled via API and visualized using LLM, <a href="./Talk-to-the-city" class="internal alias" data-slug="Talk-to-the-city">Talk to the city</a>, etc. We will try to visualize them using LLM, <a href="./Talk-to-the-city" class="internal alias" data-slug="Talk-to-the-city">Talk to the city</a>, etc.</p>
+</blockquote>
+</li>
+<li>I’m helping!</li>
+</ul>
+</li>
+<li>
+<p>Review of [broad listening</p>
+</li>
+<li>
+<p><img src="https://gyazo.com/8aed1a6ee239c672d1e504cdb48d0e9e/thumb/1000" alt="image"/></p>
+<ul>
+<li>Figure from “[Not subjective or objective, but from the subjectivity of one to the subjectivity of many.</li>
+</ul>
+</li>
+<li>
+<p>explanation</p>
+<ul>
+<li>The development of technology to duplicate and distribute information has made it easier for one person to communicate ideas to a large number of people.</li>
+<li>However, when a large number of people transmit information, the volume of information received by one person becomes enormous, and the person drowns in the flood of information.</li>
+<li>In a society and company where people actively communicate, technology that supports listening to the opinions of many will be important.</li>
+</ul>
+</li>
+<li>
+<p>Technical</p>
+<ul>
+<li>This is a kind of “summary” in the broadest sense</li>
+<li>But in LLM training, the “summary task” is trained with training data, such as putting in the text of the paper and taking out the abstract portion.</li>
+<li>This assumes “a well-formed sentence written by one person” as input.</li>
+<li>Summarizing techniques are needed for “a set of sentences written by many people, each with his or her own writing style.”</li>
+<li>Trial and error on how to do that is taking place.</li>
+</ul>
+</li>
+<li>
+<p>digression</p>
+</li>
+<li>
+<p>Haruyuki Seki of Code for Japan gave a keynote presentation titled “<a href="./Updating-Society-and-Democracy-through-Civic-Tech" class="internal alias" data-slug="Updating-Society-and-Democracy-through-Civic-Tech">Updating Society and Democracy through Civic Tech</a>” at the Organized Session “AI and Democracy” of the 2024 National Conference on Artificial Intelligence on 2024-05-31. The presentation was titled “Updating Society and Democracy through Civic Tech”.</p>
+<ul>
+<li><img src="https://gyazo.com/6ba0de3971710aa53717ccf0cee66be9/thumb/1000" alt="image"/></li>
+<li><img src="https://gyazo.com/48c12e0903a8841a6eb3b512bd451ce5/thumb/1000" alt="image"/></li>
+<li>My <a href="./Hand-drawn-diagram" class="internal alias" data-slug="Hand-drawn-diagram">Hand drawn diagram</a> suddenly appears on a beautiful slide.</li>
+<li>(I wonder if someone could make a cleaned up version of this in CC0 or something…)</li>
+<li>(I have given permission to Mr. Seki to use the images in Scrapbox as he likes.)</li>
+</ul>
+</li>
+</ul>
+<p>Review of [Polis</p>
+<ul>
+<li><img src="https://gyazo.com/c482df2fe3d92e75422add645a647d78/thumb/1000" alt="image"/>
+<ul>
+<li><a href="Polis:%20Scaling%20Deliberation%20by%20Mapping%20High%20Dimensional%20Opinion%20Spaces" class="external">Polis: Scaling Deliberation by Mapping High Dimensional Opinion Spaces<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://compdemocracy.org/Polis/" class="external">Polis | The Computational Democracy Project<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>Opinion vectors are “agree (+1)”, “disagree (-1)”, and “don’t know/neutral (0)” to the text.</li>
+<li>This vector is clustered, and the sentences and other information that caused the clusters to separate are displayed.</li>
+<li>What we actually did
+- <a href="./Polis-Experience-Report:-Should-Same-Sex-Marriage-Be-Legalized" class="internal alias" data-slug="Polis-Experience-Report:-Should-Same-Sex-Marriage-Be-Legalized">Polis Experience Report: Should Same-Sex Marriage Be Legalized?</a>
+<ul>
+<li><img src="https://gyazo.com/cd1644cee2b1fc42b56518d6e65d55ec/thumb/1000" alt="image"/></li>
+<li>Found a higher percentage of sentences in favor of legalization (73%) than in favor of legalization (73%).</li>
+<li>Example: Marriage as social proof and marriage as taxation/social security have their own issues to be considered in different layers. : 74% in favor, 11% opposed, 13% neutral</li>
+<li>86% in Cluster A, where most people are against same-sex marriage, and 69% in Cluster B, where all are in favor of same-sex marriage, both majorities.</li>
+<li>In other words, in order to resolve this “pro-same-sex marriage” conflict, it would be better to first proceed along the lines of “let’s separate social proof from financial social security,” which both sides have agreed to do.</li>
+<li>Incidentally, <a href="./Same-sex-marriages-in-Taiwan-are-not-kinship." class="internal alias" data-slug="Same-sex-marriages-in-Taiwan-are-not-kinship.">Same-sex marriages in Taiwan are not kinship.</a>
+<ul>
+<li>It is clear that many opponents of same-sex marriage are not opposed to same-sex marriage per se, but rather feel, for example, that “if my son marries a man and my son is happy, that is acceptable,” “but I am not sure about this ‘male spouse of my son,’ so I am not comfortable making him a member of my family. (p. 3)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Visualization and analysis allow us to observe the conflict composition from a different angle.</li>
+<li>Polis is used in <a href="./vTaiwan" class="internal" data-slug="vTaiwan">vTaiwan</a> in 2015.
+<ul>
+<li>vTaiwan is an online platform established by the Taiwanese government to promote citizen participation</li>
+<li>Primarily used as a forum for gathering public input and debate on public policy and legislation</li>
+<li>Keywords: <a href="./open-government" class="internal alias" data-slug="open-government">open government</a> and <a href="./digital-democracy" class="internal alias" data-slug="digital-democracy">digital democracy</a>, <a href="./transparency" class="internal" data-slug="transparency">transparency</a> and <a href="./participatory-democracy" class="internal alias" data-slug="participatory-democracy">participatory democracy</a></li>
+</ul>
+</li>
+<li>It’s from 2015, so no LLM or other AI-like features.
+<ul>
+<li>The basic idea is to vote for or against the text.</li>
+<li>The text itself can be set up to post as well.
+<ul>
+<li>Audrey Tang thinks this is good: <a href="./Open-up-agenda-setting-authority-to-people" class="internal alias" data-slug="Open-up-agenda-setting-authority-to-people">Open up agenda-setting authority to people</a>.</li>
+</ul>
+</li>
+<li>But there will be problems such as too many sentences and the people voting will get tired, or the sentences will be full of similar content, or the meaning of the sentences will be unclear.
+<ul>
+<li><a href="./moderation" class="internal" data-slug="moderation">moderation</a> issue</li>
+<li><a href="https://compdemocracy.org/Moderation" class="external">Moderation | The Computational Democracy Project<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+- <a href="./Polis-Moderation" class="internal alias" data-slug="Polis-Moderation">Polis Moderation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>What is Talk to the City?</p>
+<ul>
+<li>
+<blockquote>
+<p>Audrey Tang (summary): In 2014 it was impossible to gather the opinions of so many people and retain all the nuances, but now, thanks to the “Talk to the City” tool, it is very easy and inexpensive to do so.</p>
+</blockquote>
+<ul>
+<li>Original: <a href="https://ai.objectives.institute/talk-to-the-city" class="external">Talk to the City - AI - Objectives - Institute<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Translation and summary: <a href="./Audrey-Tang's-comments-on-AOI's-TTTC-page." class="internal alias" data-slug="Audrey-Tang's-comments-on-AOI's-TTTC-page.">Audrey Tang’s comments on AOI’s TTTC page.</a></li>
+</ul>
+</li>
+<li>Talk to the City is an open source analysis tool developed by the <a href="./AI-Objectives-Institute" class="internal alias" data-slug="AI-Objectives-Institute">AI Objectives Institute</a> (AOI)
+<ul>
+<li>Purpose of the tool: Improve <a href="./collective-discussion" class="internal alias" data-slug="collective-discussion">collective discussion</a>/[collective decision-making
+<ul>
+<li>Designed to facilitate dialogue with communities, especially cities</li>
+</ul>
+</li>
+<li>Collect and analyze Twitter tweets, Polis results, etc.</li>
+<li>Visualize clusters of opinions and arguments and generate commentary for each cluster</li>
+<li>This helps people get a fuller picture of the comment distribution and promotes constructive dialogue</li>
+</ul>
+</li>
+<li>What is <a href="./AI-Objectives-Institute" class="internal alias" data-slug="AI-Objectives-Institute">AI Objectives Institute</a>?
+<ul>
+<li>A non-profit organization founded in 2021 by Peter Eckersley (<a href="https://en.wikipedia.org/wiki/Peter_Eckersley_(computer_scientist)" class="external">Peter Eckersley<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>), to guide the direction of AI development toward human flourishing The purpose of the organization is to guide the direction of AI development toward the prosperity of mankind.</li>
+<li><a href="./Peter-Eckersley" class="internal alias" data-slug="Peter-Eckersley">Peter Eckersley</a> is an Australian computer scientist and computer security researcher, who has worked for the <a href="./Electronic-Frontier-Foundation" class="internal alias" data-slug="Electronic-Frontier-Foundation">Electronic Frontier Foundation</a> (EFF) and launched projects such as “<a href="./Let's-Encrypt" class="internal alias" data-slug="Let's-Encrypt">Let’s Encrypt</a>”, “<a href="./Certbot" class="internal" data-slug="Certbot">Certbot</a>”, and “<a href="./Privacy-Badger" class="internal alias" data-slug="Privacy-Badger">Privacy Badger</a>” and other projects.
+<ul>
+<li><a href="https://letsencrypt.org/" class="external">Let’s Encrypt<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> is a high-profile project that aims to improve security and privacy across the Web</li>
+<li>Cybozu has also donated to this project for 6 years: <a href="https://tech.cybozu.io/oss/" class="external">Open Source Software | Cybozu Tech<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>Peter Eckersley unfortunately passed away in 2022, and his colleagues <a href="./Deger-Turan" class="internal alias" data-slug="Deger-Turan">Deger Turan</a> and <a href="./Brittney-Gallagher" class="internal alias" data-slug="Brittney-Gallagher">Brittney Gallagher</a> are taking over AOI’s activities, led by their colleagues.</li>
+</ul>
+</li>
+</ul>
+<p>How Talk to the City works technically</p>
+<ul>
+<li>Unlike Polis, input is text data
+<ul>
+<li>So if you have text data, you can use it for anything.</li>
+<li>Utilize a variety of data sources, not only Polis, but also Twitter, Google Forms, comment sections of news articles, groupware, etc.</li>
+<li>As an outlandish experiment, I included each paragraph of the book:.
+- <a href="./Visualize-the-contents-of-the-Plurality-book-with-Talk-to-the-City" class="internal alias" data-slug="Visualize-the-contents-of-the-Plurality-book-with-Talk-to-the-City">Visualize the contents of the Plurality book with Talk to the City</a>
+<ul>
+<li>Useful or not, technically possible.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Use LLM to extract concise, readable messages for input text
+<ul>
+<li>Obtained in JSON list format, so multiple messages may be extracted for a single input.</li>
+<li>The default is GPT-3.5-turbo with Few-shots as an example.</li>
+</ul>
+</li>
+<li>Cluster this set of messages with [BERTopic
+<ul>
+<li>(2022) <a href="BERTopic:%20Neural%20topic%20modeling%20with%20a%20class-based%20TF-IDF" class="external">BERTopic: Neural topic modeling with a class-based TF-IDF<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>First, embed documents into high-dimensional vectors in the language model</li>
+<li><a href="./UMAP" class="internal" data-slug="UMAP">UMAP</a> (Uniform Manifold Approximation and Projection) projection to low-dimensional space</li>
+<li>Hierarchical clustering with <a href="./HDBSCAN" class="internal" data-slug="HDBSCAN">HDBSCAN</a>(Hierarchical Density-Based Spatial Clustering of Applications with Noise)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Visualization by dropping into 2D space with UMAP</li>
+<li>TF-IDF, which considers a cluster as a document, and identifies keywords that characterize the cluster.</li>
+<li>LLM generates cluster commentary</li>
+</ul>
+<p>Let’s see it in action</p>
+<ul>
+<li>2024-06-12 The first part of the report was published!
+<ul>
+<li>
+<blockquote>
+<p><a href="https://x.com/takahiroanno/status/1800734598344925656" class="external">takahiroanno<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> We extracted comments on the runoff announcement and created an AI-based analysis report.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>I now have a more concrete picture of where your interests and concerns about me lie. We will also use data and AI to face the thoughts and feelings of the people of Tokyo!</p>
+</blockquote>
+<ul>
+<li><a href="https://takahiroanno2024.github.io/yahoo-comment-analysis-20240610/" class="external">People’s reactions and issues regarding Takahiro Yasuno’s run for Governor<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p><a href="https://x.com/takahiroanno/status/1800734887290577198" class="external">takahiroanno<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Listening to people’s opinions through the use of technology is called “broad listening” in the world of digital democracy. As a concrete example, we have created this analysis report. We will continue to update this report and listen to your opinions!</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><img src="https://gyazo.com/8d2af6ecf7cbfb9190301b04f4ef88b4/thumb/1000" alt="image"/></li>
+</ul>
+<p>Polis 2.0</p>
+<ul>
+<li>Idea proposed by Audrey Tang
+<ul>
+<li>It’s like a development code name that has never been officially announced.</li>
+<li>(Confirmed by <a href="./mashbean" class="internal" data-slug="mashbean">mashbean</a>, MODA, Ministry of Digital Development, Taiwan)</li>
+</ul>
+</li>
+<li>Create clusters in TTTC from Polis data</li>
+<li>Allow chat with virtual opinion leaders generated from that cluster</li>
+<li><img src="https://gyazo.com/f4340548f38ff6bc2c43958a01d63a39/thumb/1000" alt="image"/>
+<ul>
+<li>from  <a href="./Polis-2.0:-forging-ahead-with-a-critical-review" class="internal alias" data-slug="Polis-2.0:-forging-ahead-with-a-critical-review">Polis 2.0: forging ahead with a critical review</a>  by <a href="./mashbean" class="internal" data-slug="mashbean">mashbean</a></li>
+</ul>
+</li>
+<li>This is what Audrey was talking about in [Plurality Seoul
+<ul>
+<li><img src="https://gyazo.com/70ef859c94406820a5a8a4da5b6a3c5e/thumb/1000" alt="image"/></li>
+<li>
+<blockquote>
+<p>For many participants, this is the first time interacting with AI in the context of <a href="./careful-deliberation" class="internal alias" data-slug="careful-deliberation">careful deliberation</a>.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>In other words, instead of talking to the AI alone, we are discussing it as a group for the benefit of all.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>With this augmented deliberation, everyone can contribute to and benefit from digital democracy.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Increased deliberation increases the <a href="./resilience" class="internal" data-slug="resilience">resilience</a> (ability to overcome difficulties) of a society.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Because it deepens understanding and empathy for different cultures and integrates information in a consistent manner.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>This discussion platform is designed as an <a href="./open-source-(software,-etc.)" class="internal alias" data-slug="open-source-(software,-etc.)">open source (software, etc.)</a> tool.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>This “augmented deliberation” is very interesting from the perspective of my interest in increasing intellectual productivity!
+<ul>
+<li>but not very exciting.</li>
+<li>The reason for this is probably
+<ul>
+<li>People are not used to a situation where the person they are talking to is a “cluster” with no characterization.</li>
+<li>I’m unfamiliar with this form of communication, so I want to see what others are doing first.</li>
+<li>Even if you can see other people’s interactions, you can’t meet other people unless you get a certain number of people together.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>It would be interesting to see Yasuno’s measures from that perspective.
+<ul>
+<li>
+<blockquote>
+<p>AI Town Meeting on YouTube Live --- <a href="https://note.com/takahiroanno/n/nead5c2e2454b" class="external">Full text of press conference by engineer and author announcing his candidacy for Governor of Tokyo｜Takahiro Yasuno<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+</li>
+<li>Using the already existing communication format of “interaction between VTuber and viewer”.</li>
+<li>Viewers can start by watching others interact with each other, and the archive will remain as a YouTube feature.</li>
+<li>Characterization as a candidate for Governor of Tokyo</li>
+</ul>
+</li>
+<li>In terms of candidates for governor of Tokyo.
+<ul>
+<li>A flesh and blood person can only use a portion of the 24 hours in a day.
+<ul>
+<li>Communicate with voters who could physically come there by standing in front of the station or</li>
+<li>The content of communication is clouded.</li>
+</ul>
+</li>
+<li>A digital person (virtual personality) can remain active 24 hours a day.
+<ul>
+<li>You can stay on a specific YouTube channel all the time and access and communicate from anywhere in the world.</li>
+<li>The content of the communication is preserved.
+<ul>
+<li>This means that comments made on YouTube Live can be included in TTTC’s analysis.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I’m thinking it’s a good idea.</li>
+</ul>
+<p><a href="./interactive-mass-communication" class="internal alias" data-slug="interactive-mass-communication">interactive mass communication</a>.</p>
+<ul>
+<li>
+<p>In one-on-one communication, I say things like, “Don’t just talk one way, listen to what the other person is saying,” and “Since we have one mouth and two ears, we should be willing to listen twice as much.</p>
+</li>
+<li>
+<p>However, in conventional mass communication via TV, newspapers, etc., a large number of viewers only receive what is transmitted one way.</p>
+</li>
+<li>
+<p>The reason why this happened is because the technology to duplicate and deliver information to a large number of people developed faster than the technology to summarize information.</p>
+</li>
+<li>
+<p><img src="https://gyazo.com/8aed1a6ee239c672d1e504cdb48d0e9e/thumb/1000" alt="image"/></p>
+</li>
+<li>
+<p>It is difficult to generalize, since various technologies spread at different rates, but one example is Germany’s <a href="./national-radio-(esp.-an-NHK-radio-station)" class="internal alias" data-slug="national-radio-(esp.-an-NHK-radio-station)">national radio (esp. an NHK radio station)</a>, which reached 70% of the population in 1939.</p>
+</li>
+<li>
+<p>Over the last 100 years, viewers accustomed to <a href="./one-way-mass-communication" class="internal alias" data-slug="one-way-mass-communication">one-way mass communication</a> have become less confident that it’s okay to speak up and that there are people who will listen.</p>
+</li>
+<li>
+<p>First, we launch “<a href="./Attitude-of-listening" class="internal alias" data-slug="Attitude-of-listening">Attitude of listening</a>” and collect comments, visualize them and show “this is what happened as a result of listening to your voices”, and then people who see them update their perception and write better comments to … By repeating this cycle, better “interactive mass communication” will be realized.</p>
+</li>
+<li>
+<p><img src="https://gyazo.com/c993101b5fb2bc34d642d7f880a9ad7a/thumb/1000" alt="image"/></p>
+<ul>
+<li>from  <a href="./Polis-2.0:-forging-ahead-with-a-critical-review" class="internal alias" data-slug="Polis-2.0:-forging-ahead-with-a-critical-review">Polis 2.0: forging ahead with a critical review</a>  by <a href="./mashbean" class="internal" data-slug="mashbean">mashbean</a>
+<ul>
+<li>
+<blockquote>
+<p><img src="https://scrapbox.io/api/pages/nishio/gpt/icon" alt="gpt.icon" height="19.5"/>Formation of a feedback loop allows automatic generation of seed opinions and expansion of the Polis database</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>There are various ways of expression, but the direction of “making mass communication bidirectional by repeating the cycle” is being sought in many parts of the world.</li>
+<li>As Audrey Tang says, “<a href="./Digital-natives" class="internal alias" data-slug="Digital-natives">Digital natives</a> don’t think that once-every-four-years upload bandwidth is enough.”
+<ul>
+<li>It is important to increase upload bandwidth.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>The image of a <a href="./snowball" class="internal" data-slug="snowball">snowball</a> that rolls and gets bigger and bigger.</p>
+</li>
+</ul>
+<p>summary</p>
+<ul>
+<li>In this workshop, <a href="./broad-listening" class="internal alias" data-slug="broad-listening">broad listening</a>, <a href="./Polis" class="internal" data-slug="Polis">Polis</a>, <a href="./Talk-to-the-City" class="internal alias" data-slug="Talk-to-the-City">Talk to the City</a>, and <a href="./Polis-2.0" class="internal alias" data-slug="Polis-2.0">Polis 2.0</a> were explained and the future direction of interactive mass communication was explained.
+<ul>
+<li><a href="./digital-democracy" class="internal alias" data-slug="digital-democracy">digital democracy</a>, Takahiro Yasuno’s campaign for governor of Tokyo utilizes the concept of broad listening to listen to the voices of a large number of voters.</li>
+<li>Interactive communication strategies utilizing YouTube have the potential to transform traditional one-way mass communication.</li>
+<li>This campaign will raise the profile of broad listening in Japan, and if it is shown that many voters consider it important, other politicians will embrace broad listening.</li>
+</ul>
+</li>
+<li>Polis and Talk to the City are both copylefted, open source (AGPL) tools that become more sophisticated the more people use them.
+<ul>
+<li>Technological developments make it possible to efficiently aggregate the opinions of large numbers of people and promote constructive dialogue.</li>
+<li>Through these efforts, more people will be able to participate in the democratic process and contribute to social decision-making.</li>
+</ul>
+</li>
+<li>The interactive nature of mass communication is gradually approaching realization through repeated feedback loops.
+<ul>
+<li>Just as a snowball grows as it rolls, we hope that these efforts will accumulate and lead to the realization of a better society.</li>
+</ul>
+</li>
+</ul>
+<p>Aside: I’ll write when I have room.</p>
+<ul>
+<li>Analogy with KJ method</li>
+<li><img src="https://gyazo.com/973ea9617662cabdccfcf594eff6bb7c/thumb/1000" alt="image"/>
+<ul>
+<li><a href="./way-of-thinking" class="internal alias" data-slug="way-of-thinking">way of thinking</a>  p.77</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>In his mind, he has a dogmatic principle of grouping, such as, “In my opinion, it is correct to divide this paper material into three major categories: market research, quality control, and labor management. They are simply applying this dogmatic classification scheme and sifting and fitting the paper materials into a ready-made framework. This is a mere sifting and fitting of paper materials into the ready-made wakku, which completely defeats the conceptual significance of the KJ method.</p>
+</blockquote>
+<ul>
+<li><a href="./Jiro-Kawakita" class="internal alias" data-slug="Jiro-Kawakita">Jiro Kawakita</a> criticized human beings for sieving, fitting into [* dogmatic classification wakugumi</li>
+</ul>
+</li>
+<li>As a way to deal with this problem, I proposed the KJ method, which is to look at each piece one by one and attach it to the related pieces.</li>
+<li>This is <a href="./Agglomerative-Hierarchical-Clustering" class="internal alias" data-slug="Agglomerative-Hierarchical-Clustering">Agglomerative Hierarchical Clustering</a> in data science terms.</li>
+<li>TTTC avoids “dogmatic human fitting” by having machines, rather than humans, perform the clustering.</li>
+<li>I think it’s an easy way to get some of the benefits of the KJ method.</li>
+<li>Replace the KJ method in its entirety?
+<ul>
+<li>Skin feeling that it is not.</li>
+<li>For the moment, “proximity” is “cosine distance in the embedded vector space”.</li>
+<li>I suspect this is where the human KJ method differs from the human KJ method, but it’s not really different, and humans may be processing it in a similar way.</li>
+<li>I think it would be more linguistic to compare a human doing KJ method and TTTC for the same data, future research.</li>
+<li>Analogy with [U-theory</li>
+<li><img src="https://gyazo.com/4af6ff261bf5d9399b1a3158120c28c6/thumb/1000" alt="image"/>
+<ul>
+<li>1: Stuck inside the frame</li>
+<li>2: Look outside the box</li>
+<li>3: The frame you originally had fades away with outside perspectives.</li>
+<li>4: Gathering perspectives from outside the company creates “understanding from a number of perspectives.</li>
+</ul>
+</li>
+<li>TTTC seems to be a system that encourages people to move to level 3~4</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from [/nishio/Talk to the City勉強会](<a href="https://scrapbox.io/nishio/Talk" class="external">https://scrapbox.io/nishio/Talk<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> to the City勉強会) using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Broad-Listening-&quot;That-Figure&quot;-Study-Group" class="internal">Broad Listening &quot;That Figure&quot; Study Group</a></li><li><a href="./Broad-Listening,-TTTC,-Digital-Democracy,-and-Plurality" class="internal">Broad Listening, TTTC, Digital Democracy, and Plurality</a></li><li><a href="./High-dimensional-data-analysis-study-group" class="internal">High-dimensional data analysis study group</a></li><li><a href="./TTTC:-People's-Reactions-and-Issues-Regarding-Takahiro-Yasuno's-Run-for-Governor-of-Tokyo" class="internal">TTTC: People's Reactions and Issues Regarding Takahiro Yasuno's Run for Governor of Tokyo</a></li><li><a href="./The-Digital-Anatomy-of-Bridging-Divides" class="internal">The Digital Anatomy of Bridging Divides</a></li><li><a href="./Weekly-journal-2024-06-09~2024-06-17" class="internal">Weekly journal 2024-06-09~2024-06-17</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

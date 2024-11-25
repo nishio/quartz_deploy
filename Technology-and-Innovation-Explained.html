@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Technology and Innovation Explained</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Technology and Innovation Explained"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Technology and Innovation Explained"/><meta name="twitter:description" content="- [[Technology and Innovation]], chapter 11 of [[2014-07]]-17, which explains 2023-05-07 OCR results nicely formatted. 2024-06-13 I think it was a round reading kind of seminar at Tokyo Tech MOT."/><meta property="og:description" content="- [[Technology and Innovation]], chapter 11 of [[2014-07]]-17, which explains 2023-05-07 OCR results nicely formatted. 2024-06-13 I think it was a round reading kind of seminar at Tokyo Tech MOT."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="- [[Technology and Innovation]], chapter 11 of [[2014-07]]-17, which explains 2023-05-07 OCR results nicely formatted. 2024-06-13 I think it was a round reading kind of seminar at Tokyo Tech MOT."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Technology-and-Innovation-Explained"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Technology-and-Innovation-Explained"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="- [[Technology and Innovation]], chapter 11 of [[2014-07]]-17, which explains 2023-05-07 OCR results nicely formatted. 2024-06-13 I think it was a round reading kind of seminar at Tokyo Tech MOT."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Technology-and-Innovation-Explained"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Technology and Innovation Explained</a></div></nav><h1 class="article-title">Technology and Innovation Explained</h1><p show-comma="true" class="content-meta"><span>Jun 13, 2024</span><span>12 min read</span></p></div></div><article class="popover-hint"><pre><code>- [[Technology and Innovation]], chapter 11 of [[2014-07]]-17, which explains
+</code></pre>
+<ul>
+<li>2023-05-07 OCR results nicely formatted.</li>
+<li>2024-06-13 I think it was a <a href="./round-reading" class="internal alias" data-slug="round-reading">round reading</a> kind of seminar at <a href="./Tokyo-Tech-MOT" class="internal alias" data-slug="Tokyo-Tech-MOT">Tokyo Tech MOT</a>.</li>
+</ul>
+<p><img src="https://gyazo.com/d72eae30e4cc213c9db9e34d346abdee/thumb/1000" alt="image"/>
+Technology and Innovation 2014-07-17 Yasukazu Nishio</p>
+<p><img src="https://gyazo.com/a3110fba4a29bfbe47a9e878935b48ff/thumb/1000" alt="image"/>
+Chapter 11.</p>
+<ul>
+<li>This final chapter discusses the relationship between technology, <a href="./economy" class="internal" data-slug="economy">economy</a>, and organisms.</li>
+<li>This presentation will introduce the contents of this document, present specific examples and related research, and conclude with a summary discussion.</li>
+</ul>
+<p><img src="https://gyazo.com/91e6c1aa06644945209fd458da78e245/thumb/1000" alt="image"/>
+introduction</p>
+<ul>
+<li><a href="./p.257" class="internal alias" data-slug="p.257">[Three Principles of Technology]</a></li>
+<li><a href="./p.258" class="internal alias" data-slug="p.258">[Mechanisms by which technology is created]</a>
+<ul>
+<li><a href="./Technology-becomes-a-living-organism." class="internal alias" data-slug="Technology-becomes-a-living-organism.">Technology becomes a living organism.</a> (p.260-262)</li>
+<li><a href="./Sources-of-Competitive-Advantage" class="internal alias" data-slug="Sources-of-Competitive-Advantage">Sources of Competitive Advantage</a> (p.265)</li>
+<li><a href="./How-to-deal-with-technology" class="internal alias" data-slug="How-to-deal-with-technology">How to deal with technology</a> (p.269)</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/fd3340246082799ca2328a5ef40ac801/thumb/1000" alt="image"/>
+consideration</p>
+<ul>
+<li>Why ignore the human will?</li>
+<li>What about the ends?
+<ul>
+<li>How is it different from <a href="./Darwin's-theory-of-evolution" class="internal alias" data-slug="Darwin's-theory-of-evolution">Darwin’s theory of evolution</a>?</li>
+</ul>
+</li>
+<li>Order versus vitality” and methodological evolution.</li>
+<li>Schematic of the evolution of technology</li>
+</ul>
+<p><img src="https://gyazo.com/1cc160c16bf65eb8e3c777f112dcc2e5/thumb/1000" alt="image"/>
+Introduction 1</p>
+<ul>
+<li>Three principles</li>
+<li>p.257
+<ul>
+<li>1: All technology is a combination of elements</li>
+<li>2: The element itself is technology</li>
+<li>3: Technology exploits phenomena for some purpose.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/5fad579401ab00b558b08ab31cf4d677/thumb/1000" alt="image"/>
+Questioning three principles</p>
+<ul>
+<li>1: All technology is a combination of elements</li>
+<li>2: The element itself is technology</li>
+<li>Doesn’t this definition imply that technology is an endless series of layers?</li>
+<li>→Consideration 1: “What’s going on at the ends?”</li>
+</ul>
+<p><img src="https://gyazo.com/c32f9564787ccd17561925cf3e8e67d3/thumb/1000" alt="image"/>
+Questioning three principles</p>
+<ul>
+<li>3: Technology exploits phenomena for some purpose.</li>
+<li>For example, what is the “position by zero”?
+<ul>
+<li>Not technology?</li>
+</ul>
+</li>
+<li>→Introduction 2 “Mechanisms of Technology Creation”</li>
+</ul>
+<p><img src="https://gyazo.com/6277fe97d6d7dcedb7c1571f37fda3b8/thumb/1000" alt="image"/>
+Introduction 2</p>
+<ul>
+<li>Mechanisms by which technology is created. p.258</li>
+<li>Combination of needs and seeds (effects that satisfy needs)</li>
+<li>Confronting Limitations / Creating New Problems</li>
+<li>This creates a new need = <a href="./niche" class="internal" data-slug="niche">niche</a>.
+<ul>
+<li>niche: (English) niche (French) nisch (German) nisch: hollow → <a href="./hamanas" class="internal" data-slug="hamanas">hamanas</a>, <a href="./hyperthermophilic-fungus" class="internal alias" data-slug="hyperthermophilic-fungus">hyperthermophilic fungus</a>.</li>
+</ul>
+</li>
+<li>Needs are drawn from human desires rather than technology itself</li>
+</ul>
+<p><img src="https://gyazo.com/e9039e38b4966f511cda9960cf41648d/thumb/1000" alt="image"/>
+Role of the Economy</p>
+<ul>
+<li>Inform your needs</li>
+<li>Test for commercial availability</li>
+<li>→Commercially available” means “profitable, with people willing to pay for it,” i.e., “satisfying human needs at low cost.”</li>
+</ul>
+<p><img src="https://gyazo.com/d4028a33cd10453ab5d2dfaadae74499/thumb/1000" alt="image"/>
+Economy is also technology</p>
+<ul>
+<li>There are “arrangements” for business, means of production, institutions, organization, etc.</li>
+<li>This creates an opportunity for the next generation to “make an arrangement”</li>
+<li>Author: “So it’s the same structure as technology!”</li>
+<li>Nishio: “Are you ignoring “3: Technology is using the phenomenon for some purpose?</li>
+<li>→ Consider the “Arrangement” 10</li>
+</ul>
+<p><img src="https://gyazo.com/a2ac98697c9f9372de843b6fbe518e70/thumb/1000" alt="image"/>
+Arrangement (1/3)</p>
+<ul>
+<li>Creating “<a href="./agreement" class="internal" data-slug="agreement">agreement</a>” creates value.</li>
+<li>Example: Barter (fish and wild vegetables)
+<ul>
+<li>The value of an object is subjective and can be increased by exchange</li>
+<li>→Value can be created even if nothing is produced.</li>
+</ul>
+</li>
+<li>e.g.: the right to obtain (→<a href="./currency" class="internal" data-slug="currency">currency</a>)
+<ul>
+<li>Exchange rotting fish (with zero future value) for “<a href="./the-right-to-acquire-things" class="internal alias" data-slug="the-right-to-acquire-things">the right to acquire things</a>”.</li>
+<li>→Value was created in exchange for inanimate objects.</li>
+<li><a href="./Arrangements-create-value." class="internal alias" data-slug="Arrangements-create-value.">Arrangements create value.</a></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/e3b64bd85e5ca6ef871c73355f956923/thumb/1000" alt="image"/>
+Arrangement (2/3)</p>
+<ul>
+<li>Example: <a href="./alphabet" class="internal" data-slug="alphabet">alphabet</a>.
+<ul>
+<li>By agreeing on symbols to represent words, information can now be conveyed without being in the same place at the same time.</li>
+<li>→ <a href="./Value-from-Standardization" class="internal alias" data-slug="Value-from-Standardization">Value from Standardization</a>
+<ul>
+<li>Clay tablet and cuneiform</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>e.g.:<a href="./0-based-system" class="internal alias" data-slug="0-based-system">0-based system</a> ⇔ Roman/Kanji numerals
+<ul>
+<li>Computing with ranks using 0 is easy = value of human cognitive cost saved (<a href="./thought-economy" class="internal alias" data-slug="thought-economy">thought economy</a>)</li>
+<li>↑upThis value can be obtained by using it alone.</li>
+<li>Standardization after the fact as good arrangements are disseminated</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/b4cf0861dc7f65e4d211f8728b664ec3/thumb/1000" alt="image"/>
+Arrangement (3/3)</p>
+<ul>
+<li>Arrangements” that do not take advantage of natural phenomena can also create value and meet human needs</li>
+<li>If the economy is technology, then all arrangements of this kind are technology.</li>
+<li>It does not have to be an arrangement with another person. Even one person can save that person cognitive costs.</li>
+<li>Isn’t this the driving force behind the creation of new concepts? (<a href="./concept-=-arrangement" class="internal alias" data-slug="concept-=-arrangement">concept = arrangement</a>)</li>
+</ul>
+<p><img src="https://gyazo.com/109e14edb190142a5aba0465aaf947c2/thumb/1000" alt="image"/>
+Introduction 3
+- <a href="./Technology-becomes-a-living-organism." class="internal alias" data-slug="Technology-becomes-a-living-organism.">Technology becomes a living organism.</a>
+- p.260</p>
+<ul>
+<li>Technology becomes more complex and <a href="./top-down" class="internal alias" data-slug="top-down">top down</a> design more difficult</li>
+<li>Inability to design rules in advance, especially when the environment changes quickly</li>
+<li>So make it so that it can be changed to interactive (interactive).</li>
+<li>What does “design for adaptability to changing environments” mean? →Example 14</li>
+</ul>
+<p><img src="https://gyazo.com/239f15775db0d9352cbdd8f2f74db449/thumb/1000" alt="image"/>
+Adaptation to changing environment</p>
+<ul>
+<li>Designed to change <a href="./interactive" class="internal" data-slug="interactive">interactive</a> as the environment changes</li>
+<li>Example: <a href="./centrifugal-regulator" class="internal alias" data-slug="centrifugal-regulator">centrifugal regulator</a> <a href="http://ja.wikipedia.org/wiki/%E8%AA%BF%E9%80%9F%E6%A9%9F" class="external">regulator - Wikipedia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<p><img src="https://gyazo.com/074489aad39ecaf9a8af832d0a8399c2/thumb/1000" alt="image"/>
+Adaptation to changing environment</p>
+<ul>
+<li>Example: Smartphone
+<ul>
+<li>Users can add applications according to their own needs, rather than designing and preparing the functions they want in advance.</li>
+<li>From the smartphone perspective, “a mechanism that adapts after the fact to environments (user needs) that are difficult to know about in advance.”</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/27a62c69f70dae3acb625c927d85493e/thumb/1000" alt="image"/>
+Adaptation to changing environment</p>
+<ul>
+<li>Example: Behavioral information collection + software updates
+<ul>
+<li>Excel, etc. We do not know in advance what kind of operations users will perform or where they will stumble. Therefore, we collect information on user operations. Based on this information, we make improvements and update the software.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/ca5d00223ab48a2f1628787d631c4d7c/thumb/1000" alt="image"/>
+Adaptation to changing environment</p>
+<ul>
+<li>Example: Web service load balancing (e.g. Amazon EC2)
+<ul>
+<li>Since they do not know in advance how much access they will receive, they cannot invest in appropriate equipment. Therefore, a mechanism was introduced to observe access and increase facilities after the fact.</li>
+<li>Unpredictability, speed of decision making is important → Automation</li>
+<li>Automation has eliminated human judgment intervention!</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/ae50fcd6d8f6f7ea381eb9e4cbd671ed/thumb/1000" alt="image"/>
+Becoming an Organism p. 261-262</p>
+<ul>
+<li>Isn’t this what we call “learning”?</li>
+<li>Hasn’t technology acquired intelligence?</li>
+<li>Could technology become biology?</li>
+<li>Nishio: “The gap from ‘acquisition of intelligence’ to ‘biology’…” and not ‘biology’?”
+<ul>
+<li>→Discuss organisms in detail in Discussion 2.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/2051e244c2e42427161a58a694cb0a99/thumb/1000" alt="image"/>
+Introduction 4</p>
+<ul>
+<li>Sources of Competitive Advantage
+<ul>
+<li>p.265</li>
+</ul>
+</li>
+<li>Not “the ability to store resources, combine them, and produce output.”</li>
+<li>Competitive edge” comes from “the ability to accumulate knowledge and combine it to create new <a href="./Combination-Strategies" class="internal alias" data-slug="Combination-Strategies">Combination Strategies</a>.
+<ul>
+<li>It’s mostly the same thing Drucker is talking about.<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/eecc7bcbc8254abbf217f57af67e19d1/thumb/1000" alt="image"/>
+Sources of Competitive Advantage</p>
+<ul>
+<li>Competitive advantage at the time of the Industrial Revolution
+<ul>
+<li>We have a lot of resources.</li>
+<li>Has processing facilities</li>
+<li>Competitive advantage in [knowledge-based economy</li>
+<li>I have a lot of knowledge.</li>
+<li>We have the ability to combine them.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/8033157cbfc6cfd01aa3db142940ec0c/thumb/1000" alt="image"/></p>
+<ul>
+<li><a href="./Organizational-Learning" class="internal alias" data-slug="Organizational-Learning">Organizational Learning</a></li>
+<li>The ability to combine knowledge” is often thought of as an individual ability, but it is also important to strengthen organizational capacity.</li>
+<li>in management strategy <a href="./learning-school" class="internal alias" data-slug="learning-school">learning school</a>.
+<ul>
+<li>→Mintzberg, “<a href="./strategic-safari" class="internal alias" data-slug="strategic-safari">strategic safari</a>”</li>
+</ul>
+</li>
+<li>Human capacity is enhanced by language, artifacts, and methodology
+<ul>
+<li>→ <a href="./Engelbard" class="internal" data-slug="Engelbard">Engelbard</a>  “<a href="./Augmenting-Human-Intellect:-A-Conceptual-Framework" class="internal alias" data-slug="Augmenting-Human-Intellect:-A-Conceptual-Framework">Augmenting Human Intellect: A Conceptual Framework</a>” (1962)</li>
+</ul>
+</li>
+<li>Enhancement by e.g. <a href="./groupware" class="internal" data-slug="groupware">groupware</a> (artifacts)</li>
+</ul>
+<p><img src="https://gyazo.com/6bb8d7bd5eb5cb9d7cae3e39d78d460a/thumb/1000" alt="image"/>
+Introduction 5</p>
+<ul>
+<li>How to deal with technology
+<ul>
+<li>p.269</li>
+</ul>
+</li>
+<li>It is important to distinguish between technology that enslaves nature and technology that is an extension of nature.</li>
+<li>(Nishio) I don’t think it’s very important.</li>
+</ul>
+<p><img src="https://gyazo.com/4c8061049d269c5fc785b780fafb165b/thumb/1000" alt="image"/>
+Consideration 1</p>
+<ul>
+<li>What about the human will?
+<ul>
+<li>Why do the authors ignore the “human will”?</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/cf818b6d43a4784ae1d29680a2a1db73/thumb/1000" alt="image"/></p>
+<ul>
+<li><a href="./selfish-gene-theory" class="internal alias" data-slug="selfish-gene-theory">selfish gene theory</a></li>
+<li>1970s</li>
+<li>Why do some individuals engage in “<a href="./altruistic-behavior" class="internal alias" data-slug="altruistic-behavior">altruistic behavior</a>” that does not contribute to their own genetic survival?</li>
+<li>From that individual perspective, it is not rational, but from the genetic perspective, some altruistic behavior is rational.
+<ul>
+<li>Disadvantageous to that individual but advantageous to another individual with the same genes.</li>
+</ul>
+</li>
+<li>The subject is not the individual, but the gene</li>
+<li>→The individual is merely a genetic “vehicle.”</li>
+</ul>
+<p><img src="https://gyazo.com/d874657c222c2eb1069231e10360c949/thumb/1000" alt="image"/></p>
+<ul>
+<li><a href="./meme" class="internal" data-slug="meme">meme</a></li>
+<li>1976 “<a href="./Selfish-genes" class="internal alias" data-slug="Selfish-genes">Selfish genes</a>” R. Dawkins</li>
+<li>Information is replicated by the human brain.</li>
+<li>Some are more efficient at replication than others, the good ones spread and the bad ones are weeded out.</li>
+<li>In other words, information is like genes, and like genes, it evolves through natural selection.</li>
+<li>→The human brain is merely a “vehicle” for memes.</li>
+</ul>
+<p><img src="https://gyazo.com/0781adf64c9260ccc37db9ad484e8123/thumb/1000" alt="image"/></p>
+<ul>
+<li><a href="./technium-(Tc)" class="internal alias" data-slug="technium-(Tc)">technium (Tc)</a></li>
+<li>K. Kelly 2011</li>
+<li>Original title “<a href="./What-Technology-Want" class="internal alias" data-slug="What-Technology-Want">What Technology Want</a>”
+<ul>
+<li>The subject is Technology</li>
+</ul>
+</li>
+<li>Technium = a collection of technologies</li>
+<li>Comparing the Evolution of Life with the Evolution of Technium</li>
+</ul>
+<p><img src="https://gyazo.com/4a241f9a279de81119f90286032f1dac/thumb/1000" alt="image"/></p>
+<ul>
+<li>Structural necessity and historical contingency are common among the forces at work in evolution</li>
+<li>The third force at work in the evolution of life is blind natural selection</li>
+<li>The third power of the Technium is the social <a href="./collective-free-will" class="internal alias" data-slug="collective-free-will">collective free will</a>.</li>
+</ul>
+<p><img src="https://gyazo.com/ccf2dacdf2705dc9d94c61830e820b29/thumb/1000" alt="image"/></p>
+<ul>
+<li>Q: Why do the authors ignore the “human will”?</li>
+<li>The idea that, like genes and memes <a href="./humans-are-merely-vehicles-of-technology" class="internal alias" data-slug="humans-are-merely-vehicles-of-technology">humans are merely vehicles of technology</a>, technology evolves independently of human will.</li>
+<li>K. Kelly argues that “human will causes technology to evolve faster than genetic evolution.” The distinction between this?</li>
+</ul>
+<p><img src="https://gyazo.com/414ed04ba8365147000b3bb32d3f72aa/thumb/1000" alt="image"/>
+Consideration 2</p>
+<ul>
+<li>What about the ends?</li>
+<li>If we define “X is all combinations of elements + element X”, X would be an infinite hierarchy. What about the ends?</li>
+<li>First technology, first life, first economy</li>
+</ul>
+<p><img src="https://gyazo.com/8fb93ad4bf83ed2c00ea5732d19bc149/thumb/1000" alt="image"/>
+First technology</p>
+<ul>
+<li>Woodpecker finches using branches to catch insects
+<ul>
+<li><a href="http://ja.wikipedia.org/wiki/%E3%83%80%E3%83%BC%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%95%E3%82%A3%E3%83%B3%E3%83%81%E9%A1%9E" class="external">Darwin’s finches - Wikipedia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>Bearded vulture dropping bones and turtles on stones to break them and eat them.</li>
+<li>Using the phenomenon to satisfy the need of appetite</li>
+<li>Not a combination.</li>
+</ul>
+<p><img src="https://gyazo.com/e49f1b3091c1d9ce9843f734fbc92443/thumb/1000" alt="image"/>
+first life</p>
+<ul>
+<li><a href="./The-Yulee-Miller-Experiment" class="internal alias" data-slug="The-Yulee-Miller-Experiment">The Yulee-Miller Experiment</a>
+<ul>
+<li>Repeated discharges into the primordial atmosphere happen to produce organic compounds such as amino acids</li>
+</ul>
+</li>
+<li><a href="./GADV-hypothesis" class="internal alias" data-slug="GADV-hypothesis">GADV hypothesis</a>
+<ul>
+<li>Peptides formed by the polymerization of amino acids created in the above experiment have catalytic activity → promote the reaction.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/5e952dce9eea39dd986b9f09a943597b/thumb/1000" alt="image"/>
+first life</p>
+<ul>
+<li><a href="./Coacervate" class="internal" data-slug="Coacervate">Coacervate</a>
+<ul>
+<li>A spherical object whose shape is maintained by the hydrophobic interaction of water and oil. Alexandre Oparin claimed that it may be the origin of life.
+<ul>
+<li>(Cell membrane: lipid bilayer)</li>
+</ul>
+</li>
+<li>…In a random combination of these various factors, something with the ability to self-replicate may have proliferated by chance (Nishio).</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/221e3b94d193051ffadf76f2712710b5/thumb/1000" alt="image"/>
+First Economy</p>
+<ul>
+<li>Mycorrhizal fungi (and other symbiotic relationships) 400 million years ago
+<ul>
+<li>Absorb phosphate and nitrogen from the soil and supply them to the host plant, and obtain carbon compounds produced by the host plant through photosynthesis</li>
+</ul>
+</li>
+<li>For humans: barter
+<ul>
+<li>Offer fish and get wild plants instead</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/a755eafbf965eb7ba632465ed1c4eb22/thumb/1000" alt="image"/>
+by chance</p>
+<ul>
+<li>If you happen to drop a turtle on a stone, it will crack.</li>
+<li>I happen to be able to self-replicate.</li>
+<li>Two parties who happen to benefit from the exchange met.</li>
+<li>The first X is born by chance.</li>
+</ul>
+<p><img src="https://gyazo.com/03b41dcf69dbfd90a8dd000615d64b4c/thumb/1000" alt="image"/>
+Consideration 3</p>
+<ul>
+<li>Darwinian evolution
+<ul>
+<li>The Darwinian principle of evolution is “random <span>→</span> more successful by chance.”</li>
+<li>Random variation Gene Random combination Individual Natural selection Surviving individual</li>
+<li>Random change Knowledge Random combination Application Success Survived Application</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/412e80e57ad1c4ce0f06dd06584c9173/thumb/1000" alt="image"/>
+Beyond Random</p>
+<ul>
+<li>Mechanisms of technological evolution differ from Darwin’s theory of evolution (p. 258)</li>
+<li>The science of creating <a href="./techne" class="internal" data-slug="techne">techne</a> that is more efficient than random = <a href="./methodology" class="internal" data-slug="methodology">methodology</a>.
+<ul>
+<li>2024-06-13 Explanation of this phrase: <a href="./The-connection-between-technology-(techne)-and-academia-(ology)" class="internal alias" data-slug="The-connection-between-technology-(techne)-and-academia-(ology)">The connection between technology (techne) and academia (ology)</a>.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/26140a21c45891ac3e194c0a2a1ed2fa/thumb/1000" alt="image"/>
+Beyond Random</p>
+<ul>
+<li>Human capacity is enhanced by language, artifacts, and methodology
+<ul>
+<li>→ <a href="./Engelbard" class="internal" data-slug="Engelbard">Engelbard</a> “<a href="./Augmenting-Human-Intellect:-A-Conceptual-Framework" class="internal alias" data-slug="Augmenting-Human-Intellect:-A-Conceptual-Framework">Augmenting Human Intellect: A Conceptual Framework</a>” (1962)</li>
+<li>Artifacts → tools, measuring instruments, processing equipment</li>
+<li>Language → Nomenclature Arrangements for concepts/phenomena e.g.: “power</li>
+<li>Methodology → Scientific Methodology and Experimental Techniques</li>
+</ul>
+</li>
+<li>Added 2024-06-13: <a href="./nonexistence-of-power" class="internal alias" data-slug="nonexistence-of-power">nonexistence of power</a>.</li>
+</ul>
+<p><img src="https://gyazo.com/bb5920dfffd497aefe7d64d30e2a7980/thumb/1000" alt="image"/>
+Consideration 4
+- <a href="./scientific-method" class="internal alias" data-slug="scientific-method">scientific method</a>
+- <a href="./Descartes" class="internal" data-slug="Descartes">Descartes</a> 「 <a href="./introduction-to-the-method" class="internal alias" data-slug="introduction-to-the-method">introduction to the method</a> 」
+- [The rule of clarity: Only what is clearly recognized as truth should be the criterion of judgment.
+- <a href="./Elemental-Decomposition" class="internal alias" data-slug="Elemental-Decomposition">Elemental Decomposition</a>: Consider breaking down the problem into elements that can be resolved.
+- [From the concrete to the abstract: The recognition of the simple to the complex in turn.
+- <a href="./Synthesis" class="internal" data-slug="Synthesis">Synthesis</a>:The whole is reconstructed by complete enumeration and reconstruction, making sure that nothing has been overlooked.
+- Early works on [scientific methodology</p>
+<ul>
+<li>→But what <a href="./clarification" class="internal" data-slug="clarification">clarification</a>?</li>
+<li><a href="http://ja.wikipedia.org/wiki/%E7%A7%91%E5%AD%A6%E7%9A%84%E6%96%B9%E6%B3%95" class="external">Scientific method - Wikipedia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<p><img src="https://gyazo.com/d6e975df3d55c9a89944c68dd771142b/thumb/1000" alt="image"/>
+Descartes</p>
+<ul>
+<li>「 <a href="./I-think,-therefore-I-am" class="internal alias" data-slug="I-think,-therefore-I-am">I think, therefore I am</a> 」
+<ul>
+<li>Only God-given “<a href="./reason" class="internal" data-slug="reason">reason</a>” is correct.</li>
+<li>Human cognition and <a href="./experience" class="internal" data-slug="experience">experience</a> cannot be trusted.</li>
+<li>Of course, experimental and observational data are also unreliable.</li>
+</ul>
+</li>
+<li>Using that reason, I questioned everything, and the only thing that remained was “my existence.
+<ul>
+<li>→ <a href="./methodic-doubt" class="internal alias" data-slug="methodic-doubt">methodic doubt</a></li>
+<li>→ Believed in God and doubted the correctness of science</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/3d3c291386c347b85c230907e2ad7481/thumb/1000" alt="image"/>
+historical background
+- <a href="./Kopernikus" class="internal" data-slug="Kopernikus">Kopernikus</a> 「 <a href="./Rotation-of-celestial-bodies" class="internal alias" data-slug="Rotation-of-celestial-bodies">Rotation of celestial bodies</a> 」
+- Published with his death in 1543</p>
+<ul>
+<li>1616 <a href="./Galileo" class="internal" data-slug="Galileo">Galileo</a> First Inquisition</li>
+<li>1637 Descartes, “Introduction to Method.”</li>
+<li>1669 <a href="./Newton-(Sir-Isaac)" class="internal alias" data-slug="Newton-(Sir-Isaac)">Newton (Sir Isaac)</a>, Study of Alchemy</li>
+<li>A time when Christianity was stronger than science41</li>
+</ul>
+<p><img src="https://gyazo.com/f11d3ef2bc63a1d01535aab0d7a7369b/thumb/1000" alt="image"/>
+How the world came to be</p>
+<ul>
+<li>Christianity: The idea that “God” <a href="./absolute-order" class="internal alias" data-slug="absolute-order">absolute order</a> “created the world.
+<ul>
+<li>→39% of people in the U.S. believe in <a href="./theory-of-evolution" class="internal alias" data-slug="theory-of-evolution">theory of evolution</a> (2009)</li>
+<li>←1859 “<a href="./Origin-of-species" class="internal alias" data-slug="Origin-of-species">Origin of species</a>”</li>
+</ul>
+</li>
+<li>1882  <a href="./Nietzsche" class="internal" data-slug="Nietzsche">Nietzsche</a> 「 <a href="./God-is-dead." class="internal alias" data-slug="God-is-dead.">God is dead.</a> 」
+<ul>
+<li>→ <a href="./will-to-power" class="internal alias" data-slug="will-to-power">will to power</a></li>
+<li>p. 268 “<a href="./All-the-various-movements-of-the-twentieth-century-that-had-pure-order-as-their-basis-have-collapsed" class="internal alias" data-slug="All-the-various-movements-of-the-twentieth-century-that-had-pure-order-as-their-basis-have-collapsed">All the various movements of the twentieth century that had pure order as their basis have collapsed</a>.”
+<ul>
+<li>← oversimplification
+<ul>
+<li><a href="./ID-Theory" class="internal alias" data-slug="ID-Theory">ID Theory</a>:Design Science Education by Advanced Intelligence, coined with Evolutionary Theory.</li>
+<li>2005 <a href="./Dover-trial" class="internal alias" data-slug="Dover-trial">Dover trial</a> → Unconstitutional</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Greece: “The world is born and grows” philosophy
+- <a href="./nature=birth,-nurture" class="internal alias" data-slug="nature=birth,-nurture">nature=birth, nurture</a>
+<ul>
+<li><a href="./Plato" class="internal" data-slug="Plato">Plato</a>, <a href="./Judaism" class="internal" data-slug="Judaism">Judaism</a> influence on the ideal world “<a href="./idea-(in-Platonic-thought)" class="internal alias" data-slug="idea-(in-Platonic-thought)">idea (in Platonic thought)</a>”</li>
+<li>→Reality was “made” in its image.</li>
+<li>Christianity: inherited the concept of <a href="./the-transcendent" class="internal alias" data-slug="the-transcendent">the transcendent</a> from Judaism, used Plato as justification in the Middle Ages</li>
+<li>Descartes: Human reason is <a href="./guardianship" class="internal" data-slug="guardianship">guardianship</a> by [divine reason
+<ul>
+<li>→ <a href="./Kant" class="internal" data-slug="Kant">Kant</a> :  <a href="./Critique-of-Pure-Reason-(Kritik-der-reinen-Vernunft)-(Kant)" class="internal alias" data-slug="Critique-of-Pure-Reason-(Kritik-der-reinen-Vernunft)-(Kant)">Critique of Pure Reason (Kritik der reinen Vernunft) (Kant)</a> (1781)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/5019cea7524769e58eff86bfef2deaff/thumb/1000" alt="image"/>
+p.267</p>
+<ul>
+<li>“<a href="./Pure-order" class="internal alias" data-slug="Pure-order">Pure order</a>” versus “<a href="./Unshapely-vitality" class="internal alias" data-slug="Unshapely-vitality">Unshapely vitality</a>”</li>
+<li>tracing the battle against Christian values in the history of philosophy.</li>
+</ul>
+<p><img src="https://gyazo.com/a2e3dcc70e199c23711d5348f132fcce/thumb/1000" alt="image"/>
+Consideration 5</p>
+<ul>
+<li>Evolution of Technology</li>
+<li>Why go beyond Darwinian evolution?
+<ul>
+<li>→What is the methodology derived from?</li>
+<li>→How is the direction of selection determined?</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/80e1a869238c62f931688cd1e835f7a2/thumb/1000" alt="image"/>
+What is it made of?</p>
+<p><img src="https://gyazo.com/22722fdd009411a0cc39fd49246366f1/thumb/1000" alt="image"/>
+Methodology is also hierarchical.</p>
+<ul>
+<li>Methodology is a value-generating decision to “create good applications.</li>
+<li>→ Technology as well as the economy</li>
+<li>Edges are “random”.</li>
+</ul>
+<p><img src="https://gyazo.com/45cb3619d20fd8c73d5cb83137abd7bf/thumb/1000" alt="image"/>
+What decides?</p>
+<p><img src="https://gyazo.com/1936f57f4d1270abf39fcb0a4c38a31b/thumb/1000" alt="image"/>
+Role of the Economy</p>
+<ul>
+<li>Test for commercial availability</li>
+<li>(Kelly) Collective free will of society</li>
+<li>Acceleration by Market
+<ul>
+<li>Unexpected success: meeting a different need than intended</li>
+<li>Improvement bias of widely used</li>
+<li>Diverse use bias (<a href="./openness" class="internal" data-slug="openness">openness</a>)</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/1383fc2d9e28af40f2e65fba8b41080d/thumb/1000" alt="image"/>
+summary</p>
+<ul>
+<li>Arrangements = concepts as well as objects create value</li>
+<li>Methodology allows for more efficient search for “combinations” than Darwinian evolution</li>
+<li>Methodology is also a hierarchical technology</li>
+<li>Market bias toward greater openness
+<ul>
+<li>→ Openness makes the combination of elements more complex</li>
+<li>→ top-down design becomes impossible (<a href="./bio-" class="internal" data-slug="bio-">bio-</a>)</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/ec449f9852cdaa4ecec63b67671d16f3/thumb/1000" alt="image"/>
+bonus</p>
+<ul>
+<li>programming
+<ul>
+<li>Function Definition: Gives a name to a complex series of processes so that they can be performed under that name in the future.</li>
+<li>= “Designed like words in a language” (Chapter 4)</li>
+<li>= “Arrangements” that reduce cognitive costs.</li>
+<li>= hierarchical components (functions can be used as components to create other functions)</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/ae40f4d078e32079033d0861564f6396/thumb/1000" alt="image"/>
+History of Programming Languages</p>
+<ul>
+<li>Before birth: A computer that can change its calculations by wiring it with wires.</li>
+<li>Wiring is troublesome → Computers that can change the calculation by writing data</li>
+<li>Data is difficult to understand in 01001010 <span>→</span> Program to convert human-understandable alphabet to 01001010
+<ul>
+<li>It is “up to you” what notation to use.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gyazo.com/c88fc9ab0df3295bf29ac2b72e38ee34/thumb/1000" alt="image"/>
+History of Programming Languages</p>
+<ul>
+<li>Writing similar processes over and over is tedious.
+<ul>
+<li>→Decisions for reusing program fragments</li>
+</ul>
+</li>
+<li>I have trouble keeping up with the rules.
+<ul>
+<li>→ Add instructions for program reuse to the computer (ret)</li>
+</ul>
+</li>
+<li>Cumbersome to remember the numerical location of programs to be reused
+<ul>
+<li>→Notation for naming and calling program fragments, a decision to be made.</li>
+<li>→Birth of the concept of “function</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E3%83%86%E3%82%AF%E3%83%8E%E3%83%AD%E3%82%B8%E3%83%BC%E3%81%A8%E3%82%A4%E3%83%8E%E3%83%99%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E8%A7%A3%E8%AA%AC" class="external">/nishio/テクノロジーとイノベーション解説<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Technology-and-Innovation" class="internal">Technology and Innovation</a></li><li><a href="./Weekly-note-2022-12-11" class="internal">Weekly note 2022-12-11</a></li><li><a href="./technium-(Tc)" class="internal">technium (Tc)</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Clean space + KJ method experiment</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Clean space + KJ method experiment"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Clean space + KJ method experiment"/><meta name="twitter:description" content="20150514 experimental log 20150520 experimental log In the recent experiment of merging the CleanSpace and KJ methods, there were ultimately only two perspectives: a bird’s-eye ..."/><meta property="og:description" content="20150514 experimental log 20150520 experimental log In the recent experiment of merging the CleanSpace and KJ methods, there were ultimately only two perspectives: a bird’s-eye ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="20150514 experimental log 20150520 experimental log In the recent experiment of merging the CleanSpace and KJ methods, there were ultimately only two perspectives: a bird’s-eye ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Clean-space-+-KJ-method-experiment"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Clean-space-+-KJ-method-experiment"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="20150514 experimental log 20150520 experimental log In the recent experiment of merging the CleanSpace and KJ methods, there were ultimately only two perspectives: a bird’s-eye ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Clean-space-+-KJ-method-experiment"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Clean space + KJ method experiment</a></div></nav><h1 class="article-title">Clean space + KJ method experiment</h1><p show-comma="true" class="content-meta"><span>May 20, 2018</span><span>10 min read</span></p></div></div><article class="popover-hint"><p><a href="https://www.facebook.com/nishiohirokazu/posts/10205940279122630" class="external">20150514 experimental log<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<a href="https://www.facebook.com/nishiohirokazu/posts/10205982892707943" class="external">20150520 experimental log<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>
+<p>In the recent experiment of merging the CleanSpace and KJ methods, there were ultimately only two perspectives: a bird’s-eye view of the KJ method sticky notes and a (virtual) moving view of the KJ method map.</p>
+</li>
+<li>
+<p>In clean spaces</p>
+<ul>
+<li>It’s important to get six perspectives out there (because once you’re frustrated by the complexity, you find new perspectives).”</li>
+<li>You have to physically move, you can’t just do it on paper and think you’re moving.”
+<ul>
+<li>(because the physical sensation of physical movement is important in promoting awareness)</li>
+</ul>
+</li>
+<li>There is an opinion that</li>
+</ul>
+</li>
+<li>
+<p>Based on that, we should give more “perspectives in the KJ method map”.</p>
+</li>
+<li>
+<p>So, assuming I’m in the KJ method map, I’ve come up with six locations.</p>
+<ul>
+<li>1: Ikujiro Nonaka’s “Knowledge Creation Methodology” and “Knowledge Creation Companies</li>
+<li>2: Computer Science</li>
+<li>3: Mathematical Sciences</li>
+<li>4: Philosophy</li>
+<li>5: Psychology</li>
+<li>6: Strategic Safari</li>
+</ul>
+</li>
+<li>
+<p>Note for the record.</p>
+<ul>
+<li><img src="https://gyazo.com/f3a7ce45ab65c8864f1a8cdeaab2b0f7/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>
+<p>Standing at number 6, I asked, “What do you know about 5 here?”</p>
+<ul>
+<li>5: Psychology is about the individual’s mental behavior, but the layers of strategy theory are too detailed for individual psychology.</li>
+</ul>
+</li>
+<li>
+<p>Regarding 4 from the perspective of 6: Philosophy is mostly impractical. Pragmatism is, well, forgivable.</p>
+</li>
+<li>
+<p>Regarding 3 in 6 perspective: Mathematical science is also beneficial to strategy theory. There is a school of thought that views strategy in terms of game theory, quantitative evaluation of organizational behavior, etc.</p>
+</li>
+<li>
+<p>Regarding 2 in 6 perspective: I have no idea what computer science can do for strategy theory. I feel like it’s slinking away in the distance.</p>
+</li>
+<li>
+<p>Regarding 1 in the perspective of 6: Knowledge-creating companies are one of the key literatures of a school of thought that emphasizes the study of strategy theory, so it’s no surprise that 1 is in the most familiar position.</p>
+</li>
+</ul>
+<p>Now, move to 5.</p>
+<ul>
+<li>5 On the 6 Strategic Safaris from a psychological perspective: the position is blurry. Well, it is placed next to the Knowledge Creation Enterprise, but since the book is an introduction to “10 ways of thinking,” shouldn’t it essentially be scattered among 10 positions? Isn’t this arrangement, in effect, only about one school of thought that values learning?</li>
+<li>Regarding 1 in 5 perspective: that was a story that distinguished between formal knowledge and tacit knowledge and argued that their mutual transformation is important for knowledge creation. As for tacit knowledge, some, such as Polanyi, are more than philosophical, but from this viewpoint, which has a neuroscientific basis, it is natural that there are kinds of cognition that are not verbalized, and rather philosophy takes verbalized formal knowledge for granted too much.</li>
+<li>On the 4 in 5 perspective: Yes. Philosophy. In philosophy, Merleau-Ponty and others have said that the meaning of words is institutionalized a posteriori, and that idea fits.</li>
+</ul>
+<p>When expressed in numbers, it is confusing and often wrong.</p>
+<ul>
+<li>On computer science from a psychological perspective: Yeah, it’s behind us, so we can’t see it well. And that one has its back to us, too.</li>
+<li>On mathematical science from a psychological perspective: this is also behind me, but when I look back (oh, the cat is peeling off, restoration), that side is looking at me, though not straight ahead. I’m not really aware of the psychology side, but I’m not immune to statistics and data mining.</li>
+</ul>
+<p>Now let’s move on to philosophy 4.</p>
+<ul>
+<li>So what do we know now here?
+<ul>
+<li>I can see philosophy’s perspective on the whole thing. But only philosophy is in a different room across the bran rail…</li>
+</ul>
+</li>
+<li>On strategic safaris from a philosophical perspective: hazy in the shadow of the knowledge creation company in the foreground.</li>
+<li>On knowledge creation companies from a philosophical perspective: That’s a kind of philosophy, too, isn’t it? In the Knowledge Creation Methodology, there was a classification of philosophy and a reference to Nishida’s philosophy. I am not quite sure about the classification, but I found Kitaro Nishida’s “Introduction to Philosophy” the easiest to understand book on philosophy that I have ever read.</li>
+<li>On psychology from a philosophical perspective: I wonder if we share some of the same motivations for wanting to know about human beings.</li>
+<li>On mathematical science from a philosophical perspective: far from it.</li>
+<li>On computer science from a philosophical perspective: further afield.</li>
+</ul>
+<p>Now please move on to Mathematical Sciences.</p>
+<ul>
+<li>On strategic safaris from a mathematical science perspective: I’m not sure that strategic theory is equal to organizational theory, although there may be some talk about mathematical models of organizations in between.</li>
+<li>Knowledge creation from the perspective of the mathematical sciences: it seems far away and slinking away.</li>
+<li>Psychology from a mathematical science perspective: this is the closest to the front for me, but I don’t feel like I’m seeing things over there.</li>
+<li>On philosophy from the perspective of mathematical science: distant in distance. But I feel something close. There is psychology in between, but there seems to be something in between that is not psychology. It feels like it’s floating in the void.</li>
+<li>On computer science from a mathematical science perspective: we are very close, but we are passing each other by.</li>
+</ul>
+<p>Now move on to Computer Science.</p>
+<ul>
+<li>Why am I in this corner?</li>
+<li>There was Weinberg’s “Psychology of Programming” or something like that.</li>
+<li>Let’s turn around for a moment.</li>
+<li>On strategic safaris from a computer science perspective: hmmm, seems distant. Blurry.</li>
+<li>I mean, in retrospect, this is almost the same perspective as actuarial science, so the way I see it is the same.</li>
+</ul>
+<p>We are back to knowledge creation.</p>
+<ul>
+<li>So now, what do we know here?</li>
+<li>Oh well, computer science should have turned this way.</li>
+<li>There is a sense of what computer science is all about. Some things are distant. But there must surely be a connection mediated by psychology between computer science and knowledge creation.</li>
+<li>It’s supposed to be a book on “learning embedded in situations” or something in the psychological field, but I believe it was originally about the user interface of a Xerox copier.</li>
+<li>Oh, “Psychology of Programming” and “Is the Light On?” are by the same author?</li>
+<li>(2018 supplement: also related to brainstorming with Computer’s assistance, and knowledge sharing via groupware in the first place)</li>
+</ul>
+<p>A review of this experiment:
+He has made several mistakes due to his unfamiliarity with clean spaces.</p>
+<ul>
+<li>
+<p>I’ve written my name on a sticky note and then I’m looking for a place to put it.</p>
+<ul>
+<li>It is not very good in using location as a metaphor.</li>
+<li>In the clean space, have them find the location first, then explain what they can find in that location,</li>
+<li>After that, I let them name it.</li>
+<li>If you name it first, as in this case, you are thinking in conceptual layers, and there is a sense that you are not utilizing the metaphor of the place properly.</li>
+<li>Number 2, “Computer Science,” and number 3, “Mathematical Science,” are exactly the names of the groups created using the KJ method, and they were probably placed in the corner because they did not feel any proximity to “Knowledge Creation” at the placement stage.</li>
+<li>Well, I got off to such a bad start, but I finally turned it over by saying, “Why are you looking away in the corner?” and I was able to remember that there are several bridges between what I thought were unrelated, so maybe that was a step forward.</li>
+</ul>
+</li>
+<li>
+<p>The clean space procedure is much sloppier.</p>
+<ul>
+<li>After moving from place to place, “So, what do you know about this place?” And sometimes you don’t ask.</li>
+<li>After answering the question, I didn’t ask if there was anything else at all.</li>
+<li>Maybe next time I do it, I should have the procedure in hand properly.</li>
+<li>Or don’t do it alone and have someone else play the role of facilitator.</li>
+</ul>
+</li>
+</ul>
+<p>update
+<img src="https://gyazo.com/361026db4b09e3aaf2ab1b42e89c24a0/thumb/1000" alt="image"/></p>
+<ul>
+<li>Two and three say, “Wouldn’t it be better if we switched places?” I say.</li>
+<li>Philosophy has been walled off and withdrawn w</li>
+<li>I have ordered about 5 of Weinberg’s books. Because I feel the need to delve into his point of view.</li>
+<li>Looking back, I feel that I am thinking in terms of layers of concepts when I write “Knowledge Creation Company and Knowledge Creation Methodology” on the first sticky note.</li>
+<li>Should I place all the labels I made using the KJ method on the floor first, then follow the separate clean space procedure to find 6 spaces?</li>
+</ul>
+<hr/>
+<p>20150520</p>
+<ul>
+<li>
+<p>I thought right after I finished the experiment of connecting KJ method and clean space, that the last time I did it, I made a mistake in the order of naming the questions to the space and moving them to the space, so it turned out to be a “KJ method of moving myself” kind of thing, and it did not turn out very well, but then a while later, I realized that the However, I still remember the map perfectly, so I knew that it was very effective as a mind palace.</p>
+</li>
+<li>
+<p>Questionnaire and notebook for answers.</p>
+</li>
+<li>
+<p>The project was completed in 1.5 hours. Quite useful results were obtained.</p>
+</li>
+<li>
+<p>This time, I wrote all the answers in a paper notebook, but it is too cumbersome to reproduce here because it is three A4 pages long, so I will write them in the <a href="./Clean-Space-Experiment" class="internal alias" data-slug="Clean-Space-Experiment">Clean Space Experiment</a> that I plan to publish soon.</p>
+</li>
+<li>
+<p>If I skip the process and just write about the results, the reader may not understand what is going on, but in the end, I concluded that the four key elements are the “Strategy Office,” “Strategy Office design staff,” “Library entrance,” and “Mind Palace Architects and Design Office.</p>
+</li>
+<li>
+<p>This first KJ map was a list of sticky notes with TODOs, long-term projects, and directions to go.</p>
+</li>
+<li>
+<p>The perspective from which we do this KJ method was initially called the “KJ seat,” but eventually became the “strategy room.</p>
+</li>
+<li>
+<p>I realized that some of the stickies should be handled by the library, not the Strategy Office.</p>
+</li>
+<li>
+<p>At the request of the library, one task was clarified in an area that had been underdeveloped because the task was not verbalized.</p>
+</li>
+<li>
+<p>I was also requested to “clarify why” and realized that I should be aware of why and how to arrange sticky notes in the strategy room in the first place.</p>
+</li>
+<li>
+<p>What I have noticed with clean space practitioners is that they tend to forget to ask the question, “What do I know now in this space?” after moving from one space to another. This is probably because we are more conscious of the totality of the relationships between spaces. Not good. The former is a question that MUST be answered, whereas the latter is “What do you know?”, so the former is far more important.</p>
+</li>
+<li>
+<p>In terms of space, it was reaffirmed that the ties of material existence are not so much a problem but rather an opportunity for creative use, such as sitting on a chair that happens to be there, or on a sofa that happens to be there, or on a door that happens to be behind it instead of on the wall, so one can open it and move a chair to that spot.</p>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9+KJ%E6%B3%95%E5%AE%9F%E9%A8%93" class="external">/nishio/クリーンスペース+KJ法実験<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Clean-Space-Experiment" class="internal">Clean Space Experiment</a></li><li><a href="./Distributed-representation-of-books" class="internal">Distributed representation of books</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

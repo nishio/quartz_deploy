@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Natural Language Processing on Heroku</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Natural Language Processing on Heroku"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Natural Language Processing on Heroku"/><meta name="twitter:description" content="Notes on the process of turning a locally experimented natural language processing algorithm into an API server on Heroku (No consideration of whether it is appropriate to do this ..."/><meta property="og:description" content="Notes on the process of turning a locally experimented natural language processing algorithm into an API server on Heroku (No consideration of whether it is appropriate to do this ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="Notes on the process of turning a locally experimented natural language processing algorithm into an API server on Heroku (No consideration of whether it is appropriate to do this ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Natural-Language-Processing-on-Heroku"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Natural-Language-Processing-on-Heroku"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Notes on the process of turning a locally experimented natural language processing algorithm into an API server on Heroku (No consideration of whether it is appropriate to do this ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Natural-Language-Processing-on-Heroku"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Natural Language Processing on Heroku</a></div></nav><h1 class="article-title">Natural Language Processing on Heroku</h1><p show-comma="true" class="content-meta"><span>Jan 20, 2021</span><span>6 min read</span></p></div></div><article class="popover-hint"><p>Notes on the process of turning a locally experimented natural language processing algorithm into an API server on Heroku
+(No consideration of whether it is appropriate to do this on Heroku → <a href="./API-server-placement-considerations" class="internal alias" data-slug="API-server-placement-considerations">API server placement considerations</a>)</p>
+<ul>
+<li>I’ll refer to my notes <a href="./Heroku+Flask" class="internal" data-slug="Heroku+Flask">Heroku+Flask</a> when I did something similar before.
+<ul>
+<li>Create a new working directory
+<ul>
+<li>I’ve thought about using existing repositories, but it’s so complicated that it would take a long time to find the cause of a problem and be barren, so I’ll try to keep it as simple as possible.</li>
+<li><code>$ mkdir regroup-split-server</code></li>
+<li><code>$ cd regroup-split-server </code></li>
+</ul>
+</li>
+<li>Create a virtual environment and work on VSCode
+<ul>
+<li><code>$ python3 -m venv venv</code></li>
+<li><code>$ code .</code></li>
+<li>View <span>→</span> Terminal</li>
+<li><code>$ source venv/bin/activate</code></li>
+</ul>
+</li>
+<li>Create a minimal server with Flask
+<ul>
+<li><code>$ mkdir server</code></li>
+<li><code>$ code server/__init__.py</code>
+python</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>from flask import Flask
+
+app = Flask(__name__)
+
+def create_app():
+    return app
+
+@app.route('/')
+def root():
+    return &quot;OK&quot;
+</code></pre>
+<pre><code>    - `$ pip install --upgrade pip`
+    - `$ pip install flask`
+    - Set environment variables in a file
+        - `$ code .env`
+</code></pre>
+<p>.env</p>
+<pre><code>FLASK_APP=server
+FLASK_ENV=development
+</code></pre>
+<pre><code>        - `$ pip install python-dotenv`
+    - `$ flask run`
+        - Verify that it runs without problems and that you get an OK when you open [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+    - `$ git init`
+    - `$ code .gitignore`
+</code></pre>
+<p>.gitignore</p>
+<pre><code>venv/     
+*.pyc
+__pycache__/
+</code></pre>
+<pre><code>        - `$ git commit -m 'minimal Flask server'`
+            - Actually, I'm doing Cmd+Enter in the Source Control tab of VSCode.
+- Add [[gunicorn]] and deploy.
+    - This also serves as [[HTTPS for Flask]], which is included in the minimum configuration because I think it is not possible to have only HTTP as a modern API server.
+    - `$ pip install gunicorn`
+    - `$ pip freeze > requirements.txt`
+    - `$ code Procfile`
+</code></pre>
+<p>Procfile</p>
+<pre><code>web: gunicorn server:&quot;create_app()&quot;
+</code></pre>
+<pre><code>    - `$ heroku create regroup-split-server`
+    - `$ git commit -m &quot;add gunicorn&quot;`
+    - `$ git push --set-upstream heroku master`
+        - Build logs appear. Make sure it's not an error.
+    - `$ heroku open`
+        - Open the deployed one in a browser, making sure OK is displayed.
+</code></pre>
+<ul>
+<li>I haven’t figured out yet what to do with this deployment repository and what to do with the local R&amp;D repository to keep it clean.
+<ul>
+<li>
+<p>I’m sure I’ll want to separate them under certain circumstances, but until I have a clearer idea of how I want to separate them, I’m going to do it in unison.</p>
+<ul>
+<li>I’ve had a hard link with separate repositories, but I don’t think it’s a good idea.</li>
+<li>I guess I’d better use a git submodule or pip to connect them.
+<ul>
+<li><a href="https://devcenter.heroku.com/articles/git-submodules" class="external">Resolving Application Dependencies with Git Submodules | Heroku Dev Center<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li><a href="./PIP-for-myself" class="internal alias" data-slug="PIP-for-myself">PIP for myself</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Keep folders separate for easy separation in the future.</p>
+<ul>
+<li><code>$ mkdir server/regroup_split</code></li>
+</ul>
+</li>
+<li>
+<p>Copy files that look necessary
+deploy.sh</p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>cp rich_tokenizer.py ../regroup-split-server/server/regroup_split/
+cp regroup_split.py ../regroup-split-server/server/regroup_split/
+cp TAIL_TOKENS_TO_REMOVE.txt ../regroup-split-server/server/regroup_split/
+cp HEAD_TOKENS_TO_REMOVE.txt ../regroup-split-server/server/regroup_split/
+cp test/simplelines1.txt ../regroup-split-server/server/regroup_split/test
+cp test/regression_test.json ../regroup-split-server/server/regroup_split/test
+</code></pre>
+<pre><code>- Run unit tests and check for errors.
+    - `ModuleNotFoundError: No module named 'MeCab'`
+        - $ pip install mecab
+            - Don't do this see [[mecab on heroku]].
+        - `$ pip install mecab-python3==0.996.5`
+
+- If the unit test passes, call the test from server/__init__.py
+    - flask run to see if the test works on the local development server
+    - It's easier to read error messages on the local development server than after deployment.
+    - Common Corrections
+        - Relative import `from .foo import bar`.
+            - I usually run it as a script and experiment with it, but it is imported from the server and run as a module, so the import behavior changes.
+            - Maybe it's better to [[IPython with %run -m]] on a regular basis.
+        - path of a data file
+            - If you're writing in a way that depends on the current directory at runtime, you'll get into trouble here.
+                - Use `DIR = os.path.dirname(__file__)`.
+</code></pre>
+<ul>
+<li>
+<p>Push to heroku when it works locally</p>
+<ul>
+<li><code>$ pip freeze > requirements.txt</code>
+<ul>
+<li>Don’t forget to ADD and COMMIT!</li>
+<li>I guess I should have done that when I INSTALLED it.</li>
+</ul>
+</li>
+<li><code>$ git push</code>
+<ul>
+<li>Build errors <a href="./mecab-on-heroku" class="internal alias" data-slug="mecab-on-heroku">mecab on heroku</a>.</li>
+</ul>
+</li>
+<li>After successful build, heroku open with 500 error
+<ul>
+<li>View runtime logs
+<ul>
+<li><code>$ heroku logs --tail</code></li>
+</ul>
+</li>
+<li><code>TypeError: 'dict_keys' object is not reversible</code>
+<ul>
+<li>Python on heroku is 3.6 by default</li>
+<li>
+<blockquote>
+<p>By default, newly created Python apps use the python-3.6.12 runtime. --- <a href="https://devcenter.heroku.com/articles/python-support" class="external">Heroku Python Support | Heroku Dev Center<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Align the executed version with the one at hand
+<ul>
+<li><code>$ echo python-3.8.7 > runtime.txt</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Test cases now work on heroku as well.</li>
+</ul>
+</li>
+<li>
+<p>Add an interface to return processed values passed from the server to the experimental scripts that have been running on the terminal and observing the results on the standard output.</p>
+<ul>
+<li>In this case, it takes a string and returns a list of token strings.</li>
+<li>At this point, it is up to you to decide whether you want to return a rich object or one that can be serialized in json.
+<ul>
+<li>By itself, it depends on the application.</li>
+<li>I think the process of making json serializable is something that is required everywhere, so I think it would be good to have it on the library side.</li>
+<li>Proper serialization can change as internal structures change, and
+python</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>def process_single_line(line):
+    tokens = tokenize(line)
+    calc_split_priority(tokens)
+    return dict(
+        tokens=concat_tokens(tokens, &quot; &quot;),
+        split=[concat_tokens(ts) for ts in split(tokens)])
+</code></pre>
+<ul>
+<li>GET
+python</li>
+</ul>
+<pre><code>@app.route('/api/', methods=['GET'])
+def api():
+    text = request.args[&quot;q&quot;]
+    ret = regroup_split.process_single_line(text)
+    return ret
+</code></pre>
+<pre><code>- /api/?q=... Pass to GET to check operation with
+- Automatically serialized in JSON
+</code></pre>
+<ul>
+<li>POST
+python</li>
+</ul>
+<pre><code>@app.route('/api/', methods=['GET', 'POST'])
+def api():
+    if request.method == &quot;GET&quot;:
+        text = request.args[&quot;q&quot;]
+    else:
+        text = request.json[&quot;q&quot;]
+    ret = regroup_split.process_single_line(text)
+    return ret
+</code></pre>
+<pre><code>- `$ curl -X POST -H &quot;Content-Type: application/json&quot; -d '{&quot;q&quot;:&quot;test&quot;}' localhost:5000/api/`
+- operation check
+- git push to make sure it works on heroku as well
+</code></pre>
+<ul>
+<li>Create a client side that calls this API
+python</li>
+</ul>
+<pre><code>import requests
+import json
+
+API_URL = &quot;https://regroup-split-server.herokuapp.com/api/&quot;
+sample_text = &quot;Ah, so people who are not used to the process of making lots of stickies and doing the KJ method don't have a good idea of how granular the information should be at the point of making the stickies in the first place. That's where the software needs to help.&quot;
+payload = {&quot;q&quot;: sample_text}
+r = requests.post(API_URL, json=payload)
+assert r.ok
+for s in r.json()[&quot;split&quot;]:
+    print(s)
+
+&quot;&quot;&quot;
+Expected output:
+Make lots of sticky notes.
+People unfamiliar with the process of doing the KJ method.
+How granular is the information at the point where you make a sticky note?
+I can't pinpoint a good one.
+Software needs to support
+&quot;&quot;&quot;
+</code></pre>
+<ul>
+<li>Call from JS
+<ul>
+<li><a href="./Flask-CORS" class="internal" data-slug="Flask-CORS">Flask-CORS</a></li>
+<li>Done <a href="./✅-longest-line-is-ticked-with-one-click" class="internal alias" data-slug="✅-longest-line-is-ticked-with-one-click">✅ longest line is ticked with one click</a>.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<ul>
+<li><a href="./Flask-to-HTTPS" class="internal alias" data-slug="Flask-to-HTTPS">Flask to HTTPS</a></li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/Heroku%E3%81%A7%E8%87%AA%E7%84%B6%E8%A8%80%E8%AA%9E%E5%87%A6%E7%90%86" class="external">/nishio/Herokuで自然言語処理<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Assistance-in-dividing-long-sentences-into-stickies" class="internal">Assistance in dividing long sentences into stickies</a></li><li><a href="./Heroku+Flask" class="internal">Heroku+Flask</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

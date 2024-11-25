@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>2021-07-26Movidea Development Diary</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="2021-07-26Movidea Development Diary"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="2021-07-26Movidea Development Diary"/><meta name="twitter:description" content="prev 2021-07-20Movidea Development Diary Twitter If dog-footing is useful in software development, then it could be useful in mentoring, too. and this year I’m trying to do the presentation material preparation that is assigned to the adopters myself, and when I do that, I say, “I’d better do user testing before the midterm presentation,” but I feel that “mine is not yet ready to be tested…” In other words, this means that there is a discrepancy between the timing that the creator thinks is appropriate for user testing and the timing that the person watching from the side thinks is appropriate."/><meta property="og:description" content="prev 2021-07-20Movidea Development Diary Twitter If dog-footing is useful in software development, then it could be useful in mentoring, too. and this year I’m trying to do the presentation material preparation that is assigned to the adopters myself, and when I do that, I say, “I’d better do user testing before the midterm presentation,” but I feel that “mine is not yet ready to be tested…” In other words, this means that there is a discrepancy between the timing that the creator thinks is appropriate for user testing and the timing that the person watching from the side thinks is appropriate."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="prev 2021-07-20Movidea Development Diary Twitter If dog-footing is useful in software development, then it could be useful in mentoring, too. and this year I’m trying to do the presentation material preparation that is assigned to the adopters myself, and when I do that, I say, “I’d better do user testing before the midterm presentation,” but I feel that “mine is not yet ready to be tested…” In other words, this means that there is a discrepancy between the timing that the creator thinks is appropriate for user testing and the timing that the person watching from the side thinks is appropriate."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/2021-07-26Movidea-Development-Diary"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/2021-07-26Movidea-Development-Diary"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="prev 2021-07-20Movidea Development Diary Twitter If dog-footing is useful in software development, then it could be useful in mentoring, too. and this year I’m trying to do the presentation material preparation that is assigned to the adopters myself, and when I do that, I say, “I’d better do user testing before the midterm presentation,” but I feel that “mine is not yet ready to be tested…” In other words, this means that there is a discrepancy between the timing that the creator thinks is appropriate for user testing and the timing that the person watching from the side thinks is appropriate."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="2021-07-26Movidea-Development-Diary"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>2021-07-26Movidea Development Diary</a></div></nav><h1 class="article-title">2021-07-26Movidea Development Diary</h1><p show-comma="true" class="content-meta"><span>Jul 27, 2021</span><span>9 min read</span></p></div></div><article class="popover-hint"><h2 id="prev--2021-07-20movidea-development-diary">prev  <a href="./2021-07-20Movidea-Development-Diary" class="internal alias" data-slug="2021-07-20Movidea-Development-Diary">2021-07-20Movidea Development Diary</a>
+<img src="https://gyazo.com/f5ec0d0c1f2416f023576d43b5924157/thumb/1000" alt="image"/><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#prev--2021-07-20movidea-development-diary" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><a href="https://twitter.com/nishio/status/1419295427849977859?s=21" class="external">Twitter<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>If dog-footing is useful in software development, then it could be useful in mentoring, too. and this year I’m trying to do the presentation material preparation that is assigned to the adopters myself, and when I do that, I say, “I’d better do user testing before the midterm presentation,” but I feel that “mine is not yet ready to be tested…”</li>
+<li>In other words, this means that there is a discrepancy between the timing that the creator thinks is appropriate for user testing and the timing that the person watching from the side thinks is appropriate. Since the creator can predict “it will be better if I implement this a little more,” the creator prioritizes immediate implementation over user testing, which is unpredictable (self-discipline).</li>
+<li>This time I decided to rebuild after the announcement of the start of the project, so I am tempted to think “it’s not ready for user testing yet”, but this is typical “<a href="./Looking-for-reasons-not-to" class="internal alias" data-slug="Looking-for-reasons-not-to">Looking for reasons not to</a>”. Even if it is not appropriate to do it now, I should think about what needs to be done or break down the task to validate it as soon as possible</li>
+<li>The reason why we do user testing is to “test a hypothesis.”
+<ul>
+<li>(In some cases, we don’t even realize we’ve created them, but we just assume they must be true.)</li>
+<li>You can’t test everything because testing a hypothesis is costly.</li>
+<li>Therefore, I think the priority of verification is determined by multiplying the probability of “If we proceed with the project without verifying this, we may incur a large rework loss” and the amount of loss.</li>
+</ul>
+</li>
+<li>In that sense, my hypothesis for the last Regroup was “The method I found valuable on paper must be even more valuable in electronic form.” I created a prototype while learning React and TypeScript, and my hypothesis was verified when I became a repeat customer myself. But I need to verify if it has value for other people as well.</li>
+<li>When I tried to do user test with Regroup as it is, “2 non-intuitive operations are required to create a new one, and also a difficult-to-understand operation is required to get to the recommended initial state” is bad, and the assumed device “iPad + Apple Pencil” is also tough, so I had to rework it.</li>
+<li>Therefore, I think the first thing to be verified is “can first-time users start using the system without being confused? This is followed by the question of whether the first-time user will feel the value. It is impossible for people to feel the value of a tool if they cannot start using it, so the first priority is to start using it.</li>
+</ul>
+<p>New dialog should appear when you click on the New link</p>
+<ul>
+<li>Should it be similar to the add sticky dialog but separate?</li>
+<li>Let’s paste a multi-line text, and I’ll provide you with the text?
+<ul>
+<li>word</li>
+<li>Short Phrases</li>
+<li>This is a short sentence</li>
+<li>This is a very, very long sentence, so if you make it into a sticky, the text will be small!</li>
+</ul>
+</li>
+<li>The “should be chopped to a reasonable length” is too burdensome for first-timers.
+<ul>
+<li>Because once you don’t move on, you don’t understand “why it’s necessary.”</li>
+</ul>
+</li>
+<li>Carving lines that are too long
+<ul>
+<li>Do you want to do it automatically?</li>
+<li>Check box for default ON?</li>
+</ul>
+</li>
+<li>Tutorial balloon out?
+<ul>
+<li>Should I have one?</li>
+<li>Wouldn’t it be nice to see video help page by page instead of ballooning it out?</li>
+<li>Oxygen Not Included style</li>
+</ul>
+</li>
+</ul>
+<p>When multiple stickies are added, should they be separate stickies or grouped together?</p>
+<ul>
+<li>Convenient when grouped together.
+<ul>
+<li>Intuitive repair when accidentally added on top of an existing sticky</li>
+</ul>
+</li>
+<li>Disadvantages of being grouped
+<ul>
+<li>First time users suddenly become “select and release the group first”.</li>
+<li>No, don’t you?
+<ul>
+<li>Don’t ungroup them, just move them as they’re grouped.</li>
+<li>You can drag it out of the group.</li>
+<li>You can keep all the “imported but unused” items together and tucked away beside you.
+→ Grouped and OK.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>“Two non-intuitive operations are required to create a new one, and another operation is required to get to the recommended initial state, which is not easy to understand the correct answer” is bad.</p>
+</blockquote>
+<ul>
+<li>Reflecting on why it happened</li>
+<li>Access to the URL root is now a link placement.
+<ul>
+<li><img src="https://gyazo.com/d7bf516ac4f588a674a99db6e0b2696a/thumb/1000" alt="image"/></li>
+<li>Router Design Issues</li>
+<li>Initially, I tried to do the help itself in Regroup.</li>
+<li>I put a link to a sandbox or something that won’t be saved.</li>
+<li>New creation is not saved in the cloud.
+<ul>
+<li>
+<p>Why?</p>
+</li>
+<li>
+<p>Create New Link</p>
+<ul>
+<li><a href="https://regroup.netlify.app/#/blank" class="external">https://regroup.netlify.app/#/blank<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>
+<p><img src="https://gyazo.com/08ff543690907be4bf19e83e8ac5c55a/thumb/1000" alt="image"/></p>
+</li>
+<li>
+<p>Create Blank Map</p>
+</li>
+<li>
+<p>Cloud Saved Links</p>
+<ul>
+<li>example: <a href="https://regroup.netlify.app/#/key=hppNrkDvUWx2UFNKwrpG" class="external">https://regroup.netlify.app/#/key=hppNrkDvUWx2UFNKwrpG<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Open in a new tab</li>
+<li>Change to dialog later because popup is blocked by environment</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>What the routing should be</p>
+<ul>
+<li>Since the first time person is/will come to the site, the tutorial should start there without making them choose from the extra “options”.
+<ul>
+<li>Regroup is not good because it only has a list of poorly explained links</li>
+<li>Movidea is a blank screen with no net connection
+<ul>
+<li>This is useful for testing and should be kept, but it shouldn’t be in such a prime location.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Capability URL] to allow editing without the need to log in.
+<ul>
+<li>I should have known view and edit by URL.</li>
+<li>In the Google Docs metaphor, it would be interesting to have “separate layers for commenting” in addition to view and edit, but this will be an experiment for later.</li>
+</ul>
+</li>
+</ul>
+<p><code>$ npx cypress open</code></p>
+<p>:</p>
+<pre><code>You are currently running Version 7.7.0
+To get the latest, run the following command*:
+npm:npm install --save-dev cypress@8.0.0
+</code></pre>
+<p>View Regroup code</p>
+<ul>
+<li>I’m trying to figure out how to do routing, so I’m using react-router, but it doesn’t match my typical use case, so I end up handling the hash values myself.</li>
+<li>The typical use case is to have multiple pages, but my app is a single page, and when another screen is needed, it is not a page transition, but a dialog, so it does not fit into the typical use case.
+ts</li>
+</ul>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="typescript" data-theme="github-light github-dark"><code data-language="typescript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> { Route, RouteComponentProps } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;react-router&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> { HashRouter } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;react-router-dom&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">...</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    &lt;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">HashRouter</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">></span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">      &lt;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Route path</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;/:id&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> component</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{WhenHashSpecified} </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">/></span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">      &lt;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Route exact path</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;/&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">></span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">      ...</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">...</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> WhenHashSpecified</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> React</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">FC</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">RouteComponentProps</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;{</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">  id</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> string</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}>> </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;"> props</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> =></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> &lt;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">App</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> urlParam</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">={</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">props</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">match</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">params</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">.</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">id</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">} />;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">};</span></span>
+<span data-line> </span></code></pre></figure>
+<p>So I implemented the routing part.</p>
+<p>I changed <code>cy.visit(&quot;/&quot;)</code> to <code>cy.visit(&quot;/#blank&quot;)</code> in the test code, and the test was broken.
+The reason for the rub is that <code>cy.visit(&quot;/#blank&quot;)</code> does not reset the state of the app.</p>
+<ul>
+<li>I was in the middle of the test code and did a VISIT with the intention of resetting the status, but it didn’t.</li>
+<li>Therefore, an error occurs when trying to draw a new screen with the previous range selection dragging on.</li>
+<li>Moreover, it looks as if the problems that occurred there affected the next test case.
+Huh? Why doesn’t it reset?</li>
+<li>I thought <code>cy.visit(&quot;/&quot;)</code> reset it, right?</li>
+</ul>
+<p>In (A) after <code>cy.visit(&quot;/&quot;)</code> the state is reset, but in (B) after <code>cy.visit(&quot;/#blank&quot;)</code> the value is not reset
+ts</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="typescript" data-theme="github-light github-dark"><code data-language="typescript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">describe</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;visit_reset&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, () </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">  beforeEach</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(() </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    cy.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">visit</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;/&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">);</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  });</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">  it</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;main&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, () </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    cy.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">updateGlobal</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">((</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">g</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">      g.scale </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> 2</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    })</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    cy.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">getGlobal</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">g</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> =></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> g.scale).</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">should</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;eql&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">2</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">);</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    cy.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">visit</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;/&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">);</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    cy.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">getGlobal</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">g</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> =></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> g.scale).</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">should</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;eql&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">);  </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">// (A)</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    cy.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">updateGlobal</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">((</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">g</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">      g.scale </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> 2</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    })</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    cy.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">visit</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;/#blank&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">);</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    cy.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">getGlobal</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">g</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> =></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> g.scale).</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">should</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;eql&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">2</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">);  </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">// (B)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  });</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">});</span></span></code></pre></figure>
+<p>reported <a href="https://github.com/cypress-io/cypress/issues/17479" class="external">https://github.com/cypress-io/cypress/issues/17479<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>Assigned a new URL to the page for testing, and when the root is accessed, it now starts with the add sticky dialog open.</p>
+<p>Next, add multiple sticky notes.</p>
+<ul>
+<li>Dialogue is on.</li>
+<li>Grouping</li>
+</ul>
+<p>after that</p>
+<ul>
+<li>
+<p>Move single stickies by dragging (only groups for now)</p>
+</li>
+<li>
+<p>From inside the group to outside the group</p>
+<ul>
+<li>I want to highlight if the drag target is a group</li>
+</ul>
+</li>
+<li>
+<p>Added to the figure in <a href="./2021-07-20Movidea-Development-Diary" class="internal alias" data-slug="2021-07-20Movidea-Development-Diary">2021-07-20Movidea Development Diary</a>.
+<img src="https://gyazo.com/036de58bf7b1abc5d6a47f4b38a7f90d/thumb/1000" alt="image"/>
+Hmmm, I need to do something about the notation.</p>
+</li>
+<li>
+<p>event handler</p>
+</li>
+<li>
+<p>processing to be performed</p>
+</li>
+<li>
+<p>Relationship to be stopped by stopPropagation depending on the inclusion of the element</p>
+</li>
+<li>
+<p>Dynamic scope of time series
+<img src="https://gyazo.com/3a2bfb6046f1470934bdb5fba8925ace/thumb/1000" alt="image"/></p>
+</li>
+</ul>
+<p>stopPropagation, it doesn’t need to stand out like that, also the dynamic scope should be clearer, and it’s not good to recognize the same thing by having the same color, it should have a name.</p>
+<p>Now “selected” is determined by “does the selected object exist”, but should the selection indicator be turned off when there is no object in the selection, or should it be possible to enter the selected state even if there is no object to be selected?</p>
+<ul>
+<li>I think the latter is more natural.</li>
+</ul>
+<p>It was not a good idea to reuse the code to try to render the closed group faceplate stickies as if they were normal stickies.</p>
+<ul>
+<li>Type error when trying to specify a drag target because the id is now a string instead of an ItemId so that it can be reused.</li>
+<li>The unit of reuse was incorrect.</li>
+<li>Components separated into Fusen and NameplateFusen</li>
+<li>Commonly needed font size adjustment processes are handled by custom hooks.</li>
+</ul>
+<p>Need to make sure that the sticky’s dragstart does not propagate to the parent group.</p>
+<ul>
+<li>Red line in the figure
+<ul>
+<li><img src="https://gyazo.com/63941a044cdf9b823c4d5fa040344dff/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+<p>It’s done.
+<img src="https://gyazo.com/f5ec0d0c1f2416f023576d43b5924157/thumb/1000" alt="image"/></p>
+<ul>
+<li>I hope we’ve now moved the Regroup equivalent.</li>
+<li>Figure Update
+<ul>
+<li><img src="https://gyazo.com/d4f212e311dace98f0186f8535241eb3/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>Right now, the group is not receiving drops, so the drop is happening on the canvas through and through.
+<ul>
+<li>If you drop this in the group, it should be processed now, and if you drop it on the canvas, it should be taken out of the group.</li>
+</ul>
+</li>
+</ul>
+<p>I found a pattern.</p>
+<ul>
+<li><img src="https://gyazo.com/64a50b4a3cb7324d1ccc4339da5d680a/thumb/1000" alt="image"/></li>
+<li>I want to do different processing with a common event handler.
+<ul>
+<li>Including one of them being “no process”.</li>
+</ul>
+</li>
+<li>At this time, the “which process” information must be obtained from outside the event handler, i.e., dynamic scope</li>
+</ul>
+<p>If the behavior changes depending on whether it was dropped on a canvas or a group, the user needs to know which one it is now.
+<img src="https://gyazo.com/e0840d722c87482ee1c5143acfd1c8e3/thumb/1000" alt="image"/>
+This implementation required processing not shown in the illustration.
+<img src="https://gyazo.com/f87038d9dd418529f5805f9cfd2e9773/thumb/1000" alt="image"/></p>
+<ul>
+<li>When there is another element in the drop target, the dragleave event is fired.</li>
+<li>Determine if it went out in a reference-counting way, since the dragenter happens first.</li>
+</ul>
+<p>ts</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="typescript" data-theme="github-light github-dark"><code data-language="typescript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  let</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> enter_count </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> 0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  const</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> onDragEnter</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">e</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> React</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">DragEvent</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">HTMLDivElement</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">>) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    enter_count</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">++</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">    if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (self.current </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">!==</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) {</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">      self.current.style.borderColor </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> GROUP_HIGHLIGHTED_BORDER_COLOR</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    }</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    e.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">stopPropagation</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">();</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  }</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  const</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> onDragLeave</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">e</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> React</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">DragEvent</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">HTMLDivElement</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">>) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    enter_count</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">--</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">    if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (self.current </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">!==</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> null</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> &amp;&amp;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> enter_count </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">===</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> 0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) {</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">      self.current.style.borderColor </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> GROUP_BORDER_COLOR</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    }</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    e.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">stopPropagation</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">();</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  }</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  const</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> onDrop</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">e</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> React</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">DragEvent</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">HTMLDivElement</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">>) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">    if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (self.current </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">!==</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) {</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">      self.current.style.borderColor </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> GROUP_BORDER_COLOR</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    }</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">    onGroupDrop</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(e, value);</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  }</span></span></code></pre></figure>
+<ul>
+<li><a href="./2021-07-27Movidea-Development-Diary" class="internal alias" data-slug="2021-07-27Movidea-Development-Diary">2021-07-27Movidea Development Diary</a></li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/2021-07-26Movidea%E9%96%8B%E7%99%BA%E6%97%A5%E8%A8%98" class="external">/nishio/2021-07-26Movidea開発日記<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li>No backlinks found</li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

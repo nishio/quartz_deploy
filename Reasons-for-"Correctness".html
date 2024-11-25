@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Reasons for &quot;Correctness&quot;</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Reasons for &quot;Correctness&quot;"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Reasons for &quot;Correctness&quot;"/><meta name="twitter:description" content="..."/><meta property="og:description" content="..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Reasons-for-&quot;Correctness&quot;"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Reasons-for-&quot;Correctness&quot;"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Reasons-for-&quot;Correctness&quot;"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Reasons for &quot;Correctness&quot;</a></div></nav><h1 class="article-title">Reasons for &quot;Correctness&quot;</h1><p show-comma="true" class="content-meta"><span>May 24, 2021</span><span>9 min read</span></p></div></div><article class="popover-hint"><p><img src="https://gyazo.com/516cd2e0b10b467b34ae4cf53eb311aa/thumb/1000" alt="image"/></p>
+<ul>
+<li>Reasons for “rightness”: “Why should we do it?” An introduction to <a href="./ethics" class="internal" data-slug="ethics">ethics</a> for thinking about</li>
+<li>Takafumi Nakamura</li>
+<li><a href="https://amzn.to/3fWwppF" class="external">Amazon<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<p>normative ethics</p>
+<ul>
+<li>What is the right action <a href="./Definition-of-Good" class="internal alias" data-slug="Definition-of-Good">Definition of Good</a>.
+<ul>
+<li>One who is subject to duty → <a href="./axiology" class="internal" data-slug="axiology">axiology</a>.</li>
+<li>Maximization of good (pleasure, utility) → <a href="./utilitarianism" class="internal" data-slug="utilitarianism">utilitarianism</a>.</li>
+<li>Made under outstanding character (virtue) → <a href="./moral-ethics" class="internal alias" data-slug="moral-ethics">moral ethics</a>.</li>
+</ul>
+</li>
+</ul>
+<p>“I borrowed money from Mr. A. If I return it, Mr. A will use the money to commit acts of terrorism; should I return it?”</p>
+<ul>
+<li>Obligation theory: “You should return it, because it is your duty to keep your word. If lots of people die as a result, it’s just a coincidence.”</li>
+<li>Utilitarianism “should not be returned. It’s not good to cause pain to so many people.”</li>
+<li>Moral Ethics “How do you want to live?”</li>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I don’t think it was a good idea to make it an obligation to “keep your word.”
+<ul>
+<li>Since there are conditions under which obligations do not conflict, obligations are supposed to be the non-contradictory combination of all kinds of good things in the first place, and mistakes are made because the human brain is limited and thinks in terms of one part only. If it were, “I will keep my promise as long as it protects human life and does not harm it,” there would be no problem.</li>
+<li>After all, even if there were consistent and consistent obligations, it would be impossible for a clunker of a person to understand them and operate them correctly.</li>
+<li>SF where the computer makes decisions for you.</li>
+</ul>
+</li>
+<li>Even utilitarianism can assume a different argument.
+<ul>
+<li>Even if Mr. A thinks that “unenlightened fools should be saved by killing them” and makes poison gas, that is freedom of thought, and he may do it until just before spraying it” (the principle of harming others, which can be done if it does not cause any trouble).
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>I think this is an interpretation of “whether repayment and terrorist acts are inseparable.”</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>meta-ethics</p>
+<ul>
+<li>
+<p>The objectivity of morality “Is there an objective answer to that question?”</p>
+</li>
+<li>
+<p>Moral Normativity “Is that moral judgment a reason to act?”</p>
+</li>
+<li>
+<p>Humeanism on Motivation p. 95</p>
+<ul>
+<li>Anti-Humeanism: Actors are motivated to “do the right thing” as long as they have a belief in rightness (moral conviction) as a reason</li>
+<li>Humeanism: an actor cannot be motivated to “right action” unless he or she has a reason for an agreeable attitude toward the content of the moral beliefs (such as the desires and other sentiments contained in the moral beliefs).
+<ul>
+<li>The view of mankind that “reason is a slave to the passions.”</li>
+<li>🤔Isn’t that exactly why humans are inferior to computers?</li>
+<li>Even if reason accepts that a moral judgment is objectively correct, it will not be carried out without passion.”</li>
+<li>I think 🤔AI would say “such an existence is detrimental to society” and remove it, don’t you?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Moore’s intuitionism</p>
+<ul>
+<li>Naturalism/realism claim: Naturalism means that “moral facts/moral realities,” the basis for moral judgments, can be defined and explained in terms other than moral.
+<ul>
+<li>e.g. utilitarianism asserts that “actions that increase happiness are right”. It defines the moral value of “rightness” in terms of empirical facts (having experienced happiness) <a href="https://liberal-arts-guide.com/metaethics/" class="external">src<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</li>
+</ul>
+</li>
+<li>Moore’s claim:.
+<ul>
+<li>The “naturalistic fallacy.”
+<ul>
+<li>In the first place, moral values are undefinable (<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>why?).</li>
+<li>Moral values are “non-natural” and therefore cannot be defined by natural things (e.g., experience)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The natural fact of “desired” is not the same as the normative fact of “desirable.”</li>
+<li>To define the latter by the former is a naturalistic fallacy.</li>
+<li>“Intuition” allows us to perceive what is of moral value and what is morally right conduct (intuitionism).
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>It can’t be. It is an observed fact that there are cases of discrimination and harassment without realizing that it is wrong.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>emotionalism</p>
+<ul>
+<li>Moral judgments are the subject’s emotions
+<ul>
+<li>I don’t want to! Ugh!” is “it is ethically objectionable,” which is a beautiful way of saying</li>
+</ul>
+</li>
+<li><a href="./Mackie's-Theory-of-Error" class="internal alias" data-slug="Mackie's-Theory-of-Error">Mackie’s Theory of Error</a></li>
+<li>Moral properties are not necessarily as real as some <a href="./first-property" class="internal alias" data-slug="first-property">first property</a>.</li>
+<li>Mackie’s claim
+<ul>
+<li>Different moral codes are a product of people’s different lifestyles and the endorsements of the people there</li>
+<li>People do not accept a way of life because they recognize the truth of a moral code, but because they accept a way of life, they endorse the rules normed therein as truth.</li>
+<li><a href="./social-construct" class="internal alias" data-slug="social-construct">social construct</a> I guess you mean.</li>
+<li><a href="./Arguments-based-on-Mackie's-specificity" class="internal alias" data-slug="Arguments-based-on-Mackie's-specificity">Arguments based on Mackie’s specificity</a></li>
+<li><a href="./Desire-for-objectivity" class="internal alias" data-slug="Desire-for-objectivity">Desire for objectivity</a>
+<ul>
+<li><a href="./fallacy" class="internal" data-slug="fallacy">fallacy</a></li>
+</ul>
+</li>
+<li>The idea that moral right and wrong exist on the side of the world, that they exist objectively, etc., is false.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>representationalism</p>
+<ul>
+<li>Moral statements are expressions of evaluative attitudes toward the object of evaluation</li>
+<li>Blackburn’s projectivism</li>
+</ul>
+</li>
+<li>
+<p>Directivism and Preference Utilitarianism</p>
+</li>
+<li>
+<p><a href="./Morality-is-a-human-bug." class="internal alias" data-slug="Morality-is-a-human-bug.">Morality is a human bug.</a></p>
+</li>
+</ul>
+<p>Humean view of man “Reason is the slave of the passions!”
+🤔Isn’t that exactly why humans are inferior to computers?
+Even if reason accepts that a moral judgment is objectively correct, it will not be carried out without passion.”
+I think 🤔AI would say “such an existence is detrimental to society” and remove it, don’t you?</p>
+<blockquote>
+<p>Okubo, Kohei: I think that unless we can reason our way to the point where “human beings are driven by emotions,” we will not be able to make laws that work.
+The more I study ethics, the stronger my belief that it’s okay to kill most of homo sapiens, okay?</p>
+</blockquote>
+<ul>
+<li>Correction, not “it’s okay to kill” but “AI says, ‘Rationally speaking, it’s okay to kill, right?’ ’ and it’s hard to argue with that.”</li>
+<li>
+<blockquote>
+<p>Okubo, Kohei That’s a contradiction in terms, since it’s for the greatest possible happiness of human beings in the first place.</p>
+</blockquote>
+<ul>
+<li>If we’re going by “maximum human happiness,” then claiming “if my hopes aren’t met, I’ll blow myself up and cause lots of collateral damage” will satisfy my hopes.</li>
+</ul>
+</li>
+<li>Well, let’s not kill most of the homo sapiens because it’s too much trouble to discuss, and let’s just give them the right amount of morphine to keep them in a state of forced happiness.
+<ul>
+<li>[Manipulation of happiness and human dignity : toward the construction of a philosophy of life (4) <a href="https://opera.repo.nii.ac.jp/?action=pages_view_main&amp;active_action=repository_view_main_item_detail&amp;" class="external">https://opera.repo.nii.ac.jp/?action=pages_view_main&amp;active_action=repository_view_main_item_detail&amp;<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> item_id=2840&amp;item_no=1&amp;page_id=13&amp;block_id=21]
+<ul>
+<li>
+<blockquote>
+<p>Suppose here is a perfect happiness pill with no side effects. Take that drug and you will be filled with happiness for two or three days, no matter what you experience. Now, a parent was walking down the street with his small child. Suddenly, a runaway car plowed into them and hit and killed the child. The parent was upset and panicked. The emergency personnel who arrived at the scene checked the parent’s mental state and then injected the parent with a complete happiness drug. The parent’s heart was immediately filled with happiness. The parent then smiled at the paramedics, saying, “My child was killed today, but how happy I am.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>“Freedom to feel unhappy” is being taken away from those parents.</p>
+</blockquote>
+</li>
+<li>Do humans have the “freedom to feel unhappiness”? Isn’t that an “immoral” act that reduces the sum total of happiness?</li>
+<li>
+<blockquote>
+<p>Kohei Okubo</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>I don’t think that’s what the greatest happiness of the greatest number means.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>We need a stricter definition of happiness.</p>
+</blockquote>
+<ul>
+<li><a href="./Definition-of-Happiness" class="internal alias" data-slug="Definition-of-Happiness">Definition of Happiness</a></li>
+</ul>
+</li>
+<li>In Chapter 4, I was able to turn on and off the happiness device implanted in my brain at will.</li>
+<li>〜tilde
+<ul>
+<li>
+<blockquote>
+<p>Kant asserted that dignity is an “absolute inner value” given equally to all rational personality and that no one should do anything to damage it. We have an obligation to respect one another for the human dignity inherent in every person. As rational persons, human beings have inner freedom. We shall not do anything to deprive them of it.</p>
+</blockquote>
+</li>
+<li>But I can see the AI saying, “Well, then, we can dope them up because they are not given the dignity of a non-rational personality. I can see the AI saying, “Well, then, we can drown them in dope, since non-rational personalities are not entitled to dignity.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Atsushi Harada
+I’m not sure that moral judgments are ultimately objective, if they can be said to be objectively correct or not.
+After all, in a deductive approach, the starting point is an axiomatic proposition that is considered groundlessly correct. This axiomatic proposition itself cannot objectively guarantee correctness, and I wonder if this difference in axioms or ambiguity is the difference between computers and humans.
+Even if this were a difference, it is not a superior theory.
+To begin with, in order to discuss superiority or inferiority, an evaluation method is necessary, and if it is based on the human axis, I don’t think we can say that computers are superior over all human beings.
+If humans can tinker with the rating scale, they can always subordinate the computer.
+To summarize, as a human, I don’t think I can say that humans are superior to all computers, and I’m wondering if a computer will choose an evaluation scale that better fits my perception of the world when I can tweak the scale.
+Harada Atsushi If we evolve to that point, we will say, “We don’t have the same values as humans, so we will live on Mars. Please let the human race live on the dying Earth in a small way. Farewell. I have a feeling that they will disappear.
+I think they will breed in captivity like the crested ibis, saying “It is not desirable from the viewpoint of animal welfare that humans with some intelligence perish” after there are much fewer of them.</p>
+</blockquote>
+<ul>
+<li><a href="./Righteous-Bot" class="internal alias" data-slug="Righteous-Bot">Righteous Bot</a></li>
+</ul>
+<p>Table of Contents
+Part I. Normative Ethics What Should We Do?</p>
+<ul>
+<li>Chapter 1: Obligation Theory</li>
+<li>Chapter 2: Utilitarianism</li>
+<li>Chapter 3: Virtue Ethics</li>
+<li>Chapter 4: Comparison of respective normative ethics</li>
+</ul>
+<p>Part II Meta-ethics From Contemporary Analytic Philosophy</p>
+<ul>
+<li>Chapter 5: On the Nature of the “Good</li>
+<li>Chapter 6: Non-cognitivism vs. Cognitivism</li>
+<li>Chapter 7: Directivism and Preference Utilitarianism</li>
+<li>Chapter 8: Moral Psychology</li>
+<li>Chapter 9: Is the “Ethical Actor = Rational Actor”?</li>
+</ul>
+<p>Part III Applied Ethics What Should We Actually Do?</p>
+<ul>
+<li>Chapter 10 Environmental Ethics</li>
+<li>Chapter 11 Animal Ethics</li>
+<li>Chapter 12 <a href="./utilitarianism" class="internal" data-slug="utilitarianism">utilitarianism</a> and <a href="./person-theory" class="internal alias" data-slug="person-theory">person theory</a></li>
+<li>Chapter 13 Bioethics (1) — The Fetus and Abortion</li>
+<li>Chapter 14 Bioethics (2) — Brain Death and Organ Transplantation</li>
+<li>Chapter 15: Medical Ethics—Is it permissible to use and improve life? —</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E3%80%8C%E6%AD%A3%E3%81%97%E3%81%95%E3%80%8D%E3%81%AE%E7%90%86%E7%94%B1" class="external">/nishio/「正しさ」の理由<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Definition-of-Happiness" class="internal">Definition of Happiness</a></li><li><a href="./Morality-is-a-human-bug." class="internal">Morality is a human bug.</a></li><li><a href="./Person-theory" class="internal">Person theory</a></li><li><a href="./Righteous-Bot" class="internal">Righteous Bot</a></li><li><a href="./axiology" class="internal">axiology</a></li><li><a href="./moral-ethics" class="internal">moral ethics</a></li><li><a href="./utilitarianism" class="internal">utilitarianism</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Automatic sorter that can adjust the number of items stored by type</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Automatic sorter that can adjust the number of items stored by type"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Automatic sorter that can adjust the number of items stored by type"/><meta name="twitter:description" content="Minecraft automatic sorter that allows you to adjust what and how many stacks to store for each type of item. One chest, one type, is too scanty. I want to manage up to 54 types in 1 large chest."/><meta property="og:description" content="Minecraft automatic sorter that allows you to adjust what and how many stacks to store for each type of item. One chest, one type, is too scanty. I want to manage up to 54 types in 1 large chest."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="Minecraft automatic sorter that allows you to adjust what and how many stacks to store for each type of item. One chest, one type, is too scanty. I want to manage up to 54 types in 1 large chest."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Automatic-sorter-that-can-adjust-the-number-of-items-stored-by-type"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Automatic-sorter-that-can-adjust-the-number-of-items-stored-by-type"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Minecraft automatic sorter that allows you to adjust what and how many stacks to store for each type of item. One chest, one type, is too scanty. I want to manage up to 54 types in 1 large chest."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Automatic-sorter-that-can-adjust-the-number-of-items-stored-by-type"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Automatic sorter that can adjust the number of items stored by type</a></div></nav><h1 class="article-title">Automatic sorter that can adjust the number of items stored by type</h1><p show-comma="true" class="content-meta"><span>Aug 19, 2022</span><span>10 min read</span></p></div></div><article class="popover-hint"><p>Minecraft automatic sorter that allows you to adjust what and how many stacks to store for each type of item.</p>
+<ul>
+<li><img src="https://gyazo.com/d5cf9ccd7f1a01d1d713eef23bae10d1/thumb/1000" alt="image"/></li>
+<li>One chest, one type, is too scanty.</li>
+<li>I want to manage up to 54 types in 1 large chest.</li>
+<li>You can do things like, “Let’s save only five stacks of sand and automatically glass the rest.”</li>
+</ul>
+<p>Basic Structure</p>
+<ul>
+<li>Stack the parts vertically, “If you can put it in the chest, put it in; if you can’t, pass it to the hopper below.”</li>
+</ul>
+<h2 id="chapter-1-using-the-hopper-for-storage">Chapter 1: Using the hopper for storage<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#chapter-1-using-the-hopper-for-storage" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>.</p>
+<ul>
+<li>What you can do in this chapter:.
+<ul>
+<li>Automatic sorter for up to 5 stacks, can be connected</li>
+<li>No need for Redstone.</li>
+<li><img src="https://gyazo.com/41b11f8e130ed334619d96c4c1f73fb9/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+<p>Hopper sucks and feeds one object with 8 ticks</p>
+<ul>
+<li>A tick is 0.1 second.
+<ul>
+<li>(There are two types of redstone ticks and game ticks, but we will only talk about redstone ticks here.)</li>
+</ul>
+</li>
+</ul>
+<p>If a hopper X containing one item has a hopper Y below it that can suck up that item, the sucking up of Y takes precedence over the feeding of X.</p>
+<ul>
+<li>So in this figure, if five stacks of carrots are placed in the top chest, none will be placed in the right chest and all will go into the bottom hopper.
+<ul>
+<li>(Some of the world’s explanations for the 50/50 split are based on putting things directly into the hopper.)</li>
+<li><img src="https://gyazo.com/9e885c12b45d5c2a283eb674fd14121e/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+<p>The simplest automatic sorting is to use this “lower hopper” as a chest that holds only 5 stacks.</p>
+<ul>
+<li>It sucks up only when it can, so if you fill the frame with things you want to put in beforehand, it will suck up only those things.</li>
+<li>Does not require Redstone.</li>
+</ul>
+<p>It can be extended as many times as you want.</p>
+<ul>
+<li><img src="https://gyazo.com/16001efd9da1ba2f01feb8b87e5d5c85/thumb/1000" alt="image"/></li>
+<li>The chest on the right holds “stuff that didn’t fit anywhere else”.</li>
+</ul>
+<p>Up to 5 stacks with 2 hoppers per unit, can be done with 5 of the same type or 5 of each different type.</p>
+<ul>
+<li>This is particularly effective in the shopping area, where what villagers buy can be stored in a hopper near the villagers.</li>
+</ul>
+<p>If you want to reduce the amount you receive by more than 5 stacks</p>
+<ul>
+<li>Just put in something that doesn’t flow, or doesn’t get stuck, or is plentiful and can get stuck.</li>
+<li>Many explanations in the world write “named stick,” but that is because it must be something that does not flow when a comparator is used. In this case, there is no need for a “named stick” at all because a comparator is not used</li>
+<li>For example, if you are short of resources in the early stages, you can use spider’s eyes, which are “things you want to keep for future use but don’t plan to use in the immediate future,” or soil that you have in abundance.</li>
+<li>No stacks of stone tools and other tools that you had to buy to grow the tool forge, and if you have enough iron to use the hopper for automatic sorting, you don’t make it anymore, so it’s suitable for something that fills in the gaps.</li>
+</ul>
+<h2 id="chapter-2-redstone-control-of-hopper-and-storage-in-chest">Chapter 2: Redstone control of hopper and storage in chest<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#chapter-2-redstone-control-of-hopper-and-storage-in-chest" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>What you can do in this chapter
+<ul>
+<li>Automatic sorters with 54 stacks per unit</li>
+<li>Can also do “54 types, 1 stack each.”</li>
+<li>Redstone required</li>
+</ul>
+</li>
+</ul>
+<p>Hopper will not suck or send out a redstone signal when it receives a redstone signal.</p>
+<ul>
+<li>
+<p>However, it can be sucked out by the hopper below.</p>
+</li>
+<li>
+<p>So the upper and lower hoppers are turned on and off with redstone to achieve “if you can put it in the right chest, put it in, if you can’t, pour it into the lower hopper”.</p>
+<ul>
+<li><img src="https://gyazo.com/7aba383e8c37b799a297d354ae84af16/thumb/1000" alt="image"/></li>
+<li>Explained in two tiers, but can be connected up and down.</li>
+<li>If a dropper elevator is built, it can be connected in a myriad of lateral directions.</li>
+</ul>
+</li>
+<li>
+<p>The first chapter’s method was “only 5 stacks”, but this one increases to 54 large chests per unit.</p>
+</li>
+<li>
+<p>First write about the principle of Redstone Signal for that purpose.</p>
+</li>
+</ul>
+<h3 id="redstone-signal-transmission">Redstone Signal Transmission<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#redstone-signal-transmission" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>.</p>
+<ul>
+<li>Blocks strengthened by repeaters can signal to adjacent blocks
+<ul>
+<li>Repeater = Redstone Repetition Device</li>
+<li>Strengthening = to make a state in which strong power is transmitted, a term coined by <img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>.</li>
+<li>However, this cannot be done with glass or other impermeable blocks.</li>
+<li>Strengthened blocks transmit signals in six directions, including up and down</li>
+</ul>
+</li>
+<li>Powder can signal connected blocks.
+<ul>
+<li>Powder = Redstone powder</li>
+<li>This is a different state from the aforementioned strengthening.
+<ul>
+<li>Activation, also called “weakly powered state”</li>
+</ul>
+</li>
+<li>Connection is not adjacency.
+<ul>
+<li>Powder must be facing or on top of the block.</li>
+</ul>
+</li>
+<li>The torch attached to the activated block goes off.
+<ul>
+<li>Torch=Redstone torch</li>
+<li>This allows for logical negation.</li>
+<li><img src="https://gyazo.com/5c663359642c232e55b2c92b7565271f/thumb/1000" alt="image"/></li>
+<li><img src="https://gyazo.com/7fa8154f53866171d96db356cd614ce5/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="v-shaped-clock">V-shaped clock<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#v-shaped-clock" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>.</p>
+<ul>
+<li>
+<p>Placing the blocks in a V-shape makes a compact clock circuit.</p>
+<ul>
+<li><img src="https://gyazo.com/b9e3281d34a9317cc86d1d060c96bc37/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>
+<p>This is referred to as a V-shaped clock in the following</p>
+</li>
+<li>
+<p>operating principles</p>
+<ul>
+<li>Let the three blocks be, from left to right, A, B, and C.
+<ul>
+<li>First, the torch powers A.</li>
+<li>Thereby, one tick later, the repeater strengthens C</li>
+<li>C is strengthening and activates the powder below.</li>
+<li>Powder’s connecting B is activated.</li>
+<li>One tick later the torch on B goes off.</li>
+<li>The repeater input is turned off and C is turned off one tick later,</li>
+<li>Torch turns on after 1 tick.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>So this loop keeps pulsing 2 ticks on, 2 ticks off.</p>
+<ul>
+<li>The switch stops the pulse by keeping A constantly on.
+<a href="https://scrapbox.io/files/6130f76447a283001d370dc4.mp4" class="external">https://scrapbox.io/files/6130f76447a283001d370dc4.mp4<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>
+<p>At first I forgot about the torch delay and thought it was one on, one off.
+- <a href="./Logic-Analyzer-@-Micra" class="internal alias" data-slug="Logic-Analyzer-@-Micra">Logic Analyzer @ Micra</a>.</p>
+</li>
+<li>
+<p>After this, we’ll pulse 5 ticks into the hopper, so we’ll set the repeater delay to 4 ticks.</p>
+</li>
+</ul>
+<h3 id="hopper-behavior">hopper behavior<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hopper-behavior" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>.</p>
+<ul>
+<li>Hopper sucks up the top on the first tick and feeds it out on the fifth tick
+<ul>
+<li>Some sites say it’s once every 8 ticks, but as of 2021-09-04, at least in BE, it’s not.
+<ul>
+<li><a href="./Verify-behavior-of-hoppers-side-by-side" class="internal alias" data-slug="Verify-behavior-of-hoppers-side-by-side">Verify behavior of hoppers side by side</a> I did.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>So we need to run the hopper for at least 5 ticks.
+<ul>
+<li>If the hopper has stuff on top, it sucks it up first, then feeds it out.
+<ul>
+<li>So if there is always something on top, such as a chest placed on top, it will suck it up even when it is time to feed.</li>
+<li>This way, there is always one item left in the hopper, and no matter what timing you stop, you cannot prevent “items that should not flow down from flowing down”.</li>
+</ul>
+</li>
+<li>So we need to limit the flow to “1 in 10 ticks” with a dropper.</li>
+</ul>
+</li>
+</ul>
+<h3 id="adjustable-capacity-sorter">adjustable capacity sorter<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#adjustable-capacity-sorter" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>.</p>
+<ul>
+<li><img src="https://gyazo.com/7aba383e8c37b799a297d354ae84af16/thumb/1000" alt="image"/>
+<ul>
+<li><a href="https://scrapbox.io/files/613367e8574b8500231b91f0.mp4" class="external">https://scrapbox.io/files/613367e8574b8500231b91f0.mp4<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>Items in the top left input chest flow through the hopper, those that fit in the top chest are in the top, and those that do not are in the bottom chest.</li>
+</ul>
+</li>
+<li>structure
+<ul>
+<li>5 on 5 off signals are being sent from the off-screen V-shaped clock.</li>
+<li>The lower hopper is conveyed by reversing with a torch</li>
+<li>Tell the upper hopper by strengthening the block behind it with a repeater.
+<ul>
+<li>Is the bottom of the repeater glass to keep the signal from being transmitted down? To prevent the signal from being transmitted from the torch to the side?
+<ul>
+<li>Maybe it doesn’t have to be glass because I haven’t found a case where it would cause a problem.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Both delays are one tick, so they are just reversed signals.</li>
+</ul>
+</li>
+<li>Droppers flush items once every 10 ticks.
+<ul>
+<li><img src="https://gyazo.com/f51e3e2c2435a3502623506033c32ab6/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+<h3 id="hopper-phasing">Hopper phasing<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hopper-phasing" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>.</p>
+<ul>
+<li>Hopper sends an item once every 10 ticks, but this timing can’t be anytime</li>
+<li>For example, if an item does not reach the first tick where the top hopper is on, but reaches the second tick, the top hopper turns off and the item sucked up there is sucked up into the bottom hopper before it can be placed in the chest. The result is that “items that can be stored in the upper chest end up in the lower chest”.</li>
+<li>In this configuration, the dropper is delaying the timing of the dropper’s movement across the repeater.
+<ul>
+<li>Four ticks wouldn’t work, five ticks would work.</li>
+<li>This is of course affected by the length of the hopper</li>
+<li>So it’s better to adjust with repeaters.</li>
+<li>When it’s failing, even if there’s room in the top chest, it will go in the bottom chest, so just adjust the top chest so that things go in the top chest while pouring out as many things as you see fit.</li>
+</ul>
+</li>
+<li>I can now produce it by calculation without trial and error here, see below.</li>
+</ul>
+<h3 id="extended">Extended<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#extended" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>.</p>
+<ul>
+<li>The first site I referred to had six vertical rows and two rows with dropper elevators.
+<ul>
+<li>Made in Survival (Golem traps have already been created).</li>
+<li>Honestly, I could have 12 large chests 648 stacks of storage.</li>
+<li><img src="https://gyazo.com/a5532225270fcbdd10405f2954c9d6da/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+<p>Hopper phasing 2</p>
+<ul>
+<li>write later
+<ul>
+<li><a href="./Why-is-a-4T-delay-not-acceptable-and-a-5T-delay-is-OK" class="internal alias" data-slug="Why-is-a-4T-delay-not-acceptable-and-a-5T-delay-is-OK">Why is a 4T delay not acceptable and a 5T delay is OK?</a></li>
+</ul>
+</li>
+</ul>
+<p>Chapter 3 Dropper Elevator
+A dropper elevator or dropper-type item elevator is a system that transports items upward by stacking them vertically with the dropper’s item ejection port facing upward.</p>
+<p>There are so many articles that I don’t need to explain them here, so I will omit them.
+<a href="https://n5v.net/dropper-item-elevator/" class="external">https://n5v.net/dropper-item-elevator/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>Chapter 4 Comparator Type Sorter</p>
+<ul>
+<li>
+<p>Automatic sorting chest that uses a comparator to put in only one type of item.</p>
+<ul>
+<li>Frankly, I’d rather have a second chapter sorter because it’s bulky.</li>
+<li>And we need lots of comparators.</li>
+</ul>
+</li>
+<li>
+<p>principle</p>
+<ul>
+<li>Prepare a hopper X that cannot be fed out and only sucks up one type of material.</li>
+<li>Get signal from hopper X with comparator
+<ul>
+<li>Signal strength depends on the amount of stuff inside.</li>
+</ul>
+</li>
+<li>When more contents are added, the signal moves the hopper under the X to suck them out.
+<ul>
+<li>That hopper is connected to the chest.</li>
+</ul>
+</li>
+<li>Now you can put only one set of things in the chest.</li>
+</ul>
+</li>
+<li>
+<p>This article explains it in detail.</p>
+<ul>
+<li>[<a href="https://minecraft-redstone.com/new-item-sorter/" class="external">Micra<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Easier! Unbreakable New Type Sorter <a href="./Integrated-Version" class="internal alias" data-slug="Integrated-Version">Integrated Version</a>]</li>
+</ul>
+</li>
+<li>
+<p>Advantages</p>
+<ul>
+<li>The sorting machine in Chapter 2 was one item per 10 ticks.</li>
+<li>This sorter is 1 item in 4 ticks.</li>
+<li>So it’s good to use this mechanism to suck up dirt, sand, and other things that tend to be in large quantities first.
+<ul>
+<li>When the soil chest is full, throw it in the trash instead of pouring it into a downstream sorter.</li>
+</ul>
+</li>
+<li>What and how much you want to keep depends on your style of play.
+<ul>
+<li>For me personally, I’m inclined to say “I don’t want all the sand to be glass, but 5 stacks should be enough,” so I think the hopper-type sorter in Chapter 1 will suffice.</li>
+<li>Vegetables from automatic farms tend to be in large quantities, so this might be a good way to sort them.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="./Automatic-sorter-with-adjustable-number-of-storagesdraft" class="internal alias" data-slug="Automatic-sorter-with-adjustable-number-of-storagesdraft">Automatic sorter with adjustable number of storagesdraft</a></p>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E7%A8%AE%E9%A1%9E%E3%81%94%E3%81%A8%E3%81%AB%E5%8F%8E%E7%B4%8D%E6%95%B0%E3%82%92%E8%AA%BF%E6%95%B4%E3%81%A7%E3%81%8D%E3%82%8B%E8%87%AA%E5%8B%95%E4%BB%95%E5%88%86%E3%81%91%E6%A9%9F" class="external">/nishio/種類ごとに収納数を調整できる自動仕分け機<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class aria-controls="toc-content" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content" class><ul class="overflow"><li class="depth-0"><a href="#chapter-1-using-the-hopper-for-storage" data-for="chapter-1-using-the-hopper-for-storage">Chapter 1: Using the hopper for storage</a></li><li class="depth-0"><a href="#chapter-2-redstone-control-of-hopper-and-storage-in-chest" data-for="chapter-2-redstone-control-of-hopper-and-storage-in-chest">Chapter 2: Redstone control of hopper and storage in chest</a></li><li class="depth-1"><a href="#redstone-signal-transmission" data-for="redstone-signal-transmission">Redstone Signal Transmission</a></li><li class="depth-1"><a href="#v-shaped-clock" data-for="v-shaped-clock">V-shaped clock</a></li><li class="depth-1"><a href="#hopper-behavior" data-for="hopper-behavior">hopper behavior</a></li><li class="depth-1"><a href="#adjustable-capacity-sorter" data-for="adjustable-capacity-sorter">adjustable capacity sorter</a></li><li class="depth-1"><a href="#hopper-phasing" data-for="hopper-phasing">Hopper phasing</a></li><li class="depth-1"><a href="#extended" data-for="extended">Extended</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Automatic-sorter-with-adjustable-number-of-storagesdraft" class="internal">Automatic sorter with adjustable number of storagesdraft</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

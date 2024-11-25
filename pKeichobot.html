@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>pKeichobot</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="pKeichobot"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="pKeichobot"/><meta name="twitter:description" content="Project note on [Listening Chat System from /villagepump/why-I-make-Wiki. Scrapbox→Keichobot It would be nice to be able to have a “let’s have a conversation based on what we’ve talked about so far” while writing Scrapbox, but if you want to run it on Scrapbox, you have to use browser extensions, etc."/><meta property="og:description" content="Project note on [Listening Chat System from /villagepump/why-I-make-Wiki. Scrapbox→Keichobot It would be nice to be able to have a “let’s have a conversation based on what we’ve talked about so far” while writing Scrapbox, but if you want to run it on Scrapbox, you have to use browser extensions, etc."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="Project note on [Listening Chat System from /villagepump/why-I-make-Wiki. Scrapbox→Keichobot It would be nice to be able to have a “let’s have a conversation based on what we’ve talked about so far” while writing Scrapbox, but if you want to run it on Scrapbox, you have to use browser extensions, etc."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/pKeichobot"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/pKeichobot"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Project note on [Listening Chat System from /villagepump/why-I-make-Wiki. Scrapbox→Keichobot It would be nice to be able to have a “let’s have a conversation based on what we’ve talked about so far” while writing Scrapbox, but if you want to run it on Scrapbox, you have to use browser extensions, etc."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="pKeichobot"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>pKeichobot</a></div></nav><h1 class="article-title">pKeichobot</h1><p show-comma="true" class="content-meta"><span>Nov 14, 2023</span><span>8 min read</span></p></div></div><article class="popover-hint"><ul>
+<li>Project note on [Listening Chat System</li>
+</ul>
+<p>from <a href="https://scrapbox.io/villagepump/why-I-make-Wiki" class="external">/villagepump/why-I-make-Wiki<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</p>
+<ul>
+<li>Scrapbox→Keichobot
+<ul>
+<li>It would be nice to be able to have a “let’s have a conversation based on what we’ve talked about so far” while writing Scrapbox, but if you want to run it on Scrapbox, you have to use browser extensions, etc.</li>
+<li>Keichobot is designed to be used while walking around with a smartphone, so the choice of browser extensions is not great</li>
+<li>I can take data on a page-by-page basis and use it as a reference (just noticed).</li>
+</ul>
+</li>
+</ul>
+<p>--- old memo 2021
+2021-08-20  <a href="./Renamed-from-Keicho-to-Keichobot" class="internal alias" data-slug="Renamed-from-Keicho-to-Keichobot">Renamed from Keicho to Keichobot</a></p>
+<pre><code>- [[Sample of how to use Kikidashi Chat]]
+- [[Listening Chat System Conversation Log]]
+- [[Kikidashi Chat System Release Notes]]
+</code></pre>
+<p>Kanban in Scrapbox</p>
+<ul>
+<li>WIP</li>
+<li>HaveBetter
+- <a href="./🤔Allow-footer-to-be-specified-when-exporting-to-Scrapbox" class="internal alias" data-slug="🤔Allow-footer-to-be-specified-when-exporting-to-Scrapbox">🤔Allow footer to be specified when exporting to Scrapbox</a>
+<ul>
+<li><a href="./Dynalist" class="internal" data-slug="Dynalist">Dynalist</a>
+<ul>
+<li><a href="./□Recapture-screenshots-of-commentary" class="internal alias" data-slug="□Recapture-screenshots-of-commentary">□Recapture screenshots of commentary</a></li>
+</ul>
+</li>
+<li>The Phenomenon of Separate Conversations
+- <a href="./I'd-like-to-discuss-a-bug-that-caused-a-mysterious-log-breakdown." class="internal alias" data-slug="I'd-like-to-discuss-a-bug-that-caused-a-mysterious-log-breakdown.">I’d like to discuss a bug that caused a mysterious log breakdown.</a></li>
+<li>Make questions that do not take other keywords score in active learning.
+<ul>
+<li>What exactly?</li>
+<li>Then <a href="./End-Design" class="internal alias" data-slug="End-Design">End Design</a>.
+<ul>
+<li><a href="./I-was-talking-about-how-active-learning-doesn't-work,-and-I-concluded-that-you-should-read-books." class="internal alias" data-slug="I-was-talking-about-how-active-learning-doesn't-work,-and-I-concluded-that-you-should-read-books.">I was talking about how active learning doesn’t work, and I concluded that you should read books.</a></li>
+</ul>
+</li>
+<li><a href="./🤔Task-Management-Chatbot" class="internal alias" data-slug="🤔Task-Management-Chatbot">🤔Task Management Chatbot</a></li>
+<li><a href="./🤔-screen-height-and-virtual-keyboard-issues" class="internal alias" data-slug="🤔-screen-height-and-virtual-keyboard-issues">🤔 screen height and virtual keyboard issues</a></li>
+</ul>
+</li>
+<li>Is local storage shared or not when “bring to home screen” in standalone?</li>
+<li><a href="./🤔http-would-not-work-with-clipboard#606da96aaff09e0000d54778" class="internal alias" data-slug="🤔http-would-not-work-with-clipboard">606da96aaff09e0000d54778</a>
+<ul>
+<li><a href="./Accept-only-🤔choice-answers" class="internal alias" data-slug="Accept-only-🤔choice-answers">Accept only 🤔choice answers</a></li>
+<li><a href="./Put-🤔-mode-changes-on-the-menu" class="internal alias" data-slug="Put-🤔-mode-changes-on-the-menu">Put 🤔 mode changes on the menu?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="./pKeicho202103-202104done" class="internal" data-slug="pKeicho202103-202104done">pKeicho202103-202104done</a></p>
+<p>Memo
+- <a href="./End-Design" class="internal alias" data-slug="End-Design">End Design</a>
+- In the derivation, “[Allow questions to create command buttons.
+- <a href="./Conversation-log-2021-01-30" class="internal alias" data-slug="Conversation-log-2021-01-30">Conversation log 2021-01-30</a>
+- I think the endgame of this one is probably that after the mode transitions to asking about relationships between symbols because it has a lot of keywords and considers them developed enough, it runs out of high scoring words, but it’s still in the asking about relationships mode.
+- Perhaps judging it from the distribution of keyword scores,
+- I propose an end.
+- Propose a new chat.
+- Return to search mode
+- I think it would be appropriate to do one of the following
+- <a href="./question-naturalness-data-set" class="internal alias" data-slug="question-naturalness-data-set">question naturalness data set</a>
+- The amount of features should be improved.
+- Related: <a href="./Tuning-questions-that-take-two-arguments" class="internal alias" data-slug="Tuning-questions-that-take-two-arguments">Tuning questions that take two arguments</a>.
+- Do not repeat symmetrical questions: done
+- Need to collect naturalness for questions that take two arguments as well.
+- Related: <a href="./Good-and-bad-feedback-during-conversation" class="internal alias" data-slug="Good-and-bad-feedback-during-conversation">Good and bad feedback during conversation</a>.
+- NG feedback is used as training data
+- → Not enough data and poor quality as training data.
+- I think I’d be better off teaching through active learning.</p>
+<hr/>
+<pre><code>- [[One-click import to Regroup]]
+- [[IGNORE file to exclude inappropriate items from the analysis]]
+- (e.g., logs that are not being used properly)
+- [[Feedback button: Like]]
+</code></pre>
+<ul>
+<li>
+<p>Do not tamper with the score to represent the subject of interest.</p>
+<ul>
+<li>This is causing confusion between “what is actually repeated in the user’s statement” and “what the system determines to be noteworthy”.
+<ul>
+<li><a href="./Score-=-development,-not-attention" class="internal alias" data-slug="Score-=-development,-not-attention">Score = development, not attention</a></li>
+</ul>
+</li>
+<li><a href="./If-you-were-to-create-a-task-organizing-version-of-the-listening-chat-system" class="internal alias" data-slug="If-you-were-to-create-a-task-organizing-version-of-the-listening-chat-system">If you were to create a task-organizing version of the listening chat system</a></li>
+</ul>
+</li>
+<li>
+<p>In response to the input “Tsu, Tsuyoshi”.</p>
+<ul>
+<li>Not selected as a keyword because “strong” is an adjective.
+<ul>
+<li>“What kind of “tough” is that “tough”?” is an ant question, so you might want to extract it.</li>
+</ul>
+</li>
+<li>The “つ” can be a noun, so it is included in the keywords.</li>
+<li>The result is that you end up asking “one” digging question.</li>
+</ul>
+</li>
+<li>
+<p>Play keywords that are not good.</p>
+<ul>
+<li>The CUI version had.</li>
+<li>Turn it off when you make the Mattermost version and keep it off.</li>
+<li>Use NGKW feedback to learn!</li>
+<li>→There are quite a few cases where users are unaware of NGKW even though it’s a good keyword, and learning from users makes you a fool.
+<ul>
+<li>I put it in the form of putting only the obvious no-no’s on the list.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>What we want to feedback</p>
+<ul>
+<li>Keyword extraction is not the first step.
+<ul>
+<li>
+<blockquote>
+<p>You’re starting to buy into the subtlety of it.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Where is that w?</p>
+</blockquote>
+</li>
+<li>NGKW command.</li>
+</ul>
+</li>
+<li>NG keywords selected for input
+<ul>
+<li>Example: The
+- <a href="./midday-sun" class="internal alias" data-slug="midday-sun">midday sun</a></li>
+<li>Keyword extraction is fine, but not in the direction the user wants to drill down
+<ul>
+<li>I hope you can say, “No, not that way,” because this might not be something you can learn about in advance.</li>
+<li>It was realized in the form of the NGKW and UPKW commands.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Not a good combination of keywords and questions chosen.
+<ul>
+<li>NG feedback is used as training data</li>
+</ul>
+</li>
+<li><a href="./Identical-symbol-relationship" class="internal alias" data-slug="Identical-symbol-relationship">Identical symbol relationship</a></li>
+<li>
+<blockquote>
+<p>If the answer is that the relationship between two symbols is identical, it’s not a good idea to ask questions about the relationship between symbols.</p>
+</blockquote>
+</li>
+<li>Wouldn’t it be nice if a button appeared that said “same” and when you pressed it, the two keywords were merged as a command?
+<ul>
+<li>I’ll test it properly, because I’m afraid that the disappearance of one of the keywords might cause some bug.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>State Transition Mechanism</p>
+<ul>
+<li>How should state transition diagrams be maintained?</li>
+<li>How to soften it up.</li>
+<li>Beliefs about the state
+- <a href="./partially-observed-Markov-decision-process" class="internal alias" data-slug="partially-observed-Markov-decision-process">partially observed Markov decision process</a>
+<ul>
+<li><a href="./Conversation-Log:-State-Transitions" class="internal alias" data-slug="Conversation-Log:-State-Transitions">Conversation Log: State Transitions</a></li>
+<li>Isn’t it bad that the score you have for each word is one-dimensional to begin with? That’s what I’m talking about.
+- <a href="./Score-=-development,-not-attention" class="internal alias" data-slug="Score-=-development,-not-attention">Score = development, not attention</a></li>
+<li><a href="./Keyword-and-question-selection-is-an-internal-volume-caution." class="internal alias" data-slug="Keyword-and-question-selection-is-an-internal-volume-caution.">Keyword and question selection is an internal volume caution.</a></li>
+</ul>
+</li>
+<li>Described by a relatively small number of parameters
+<ul>
+<li>I want to make the BETTER indicators as good as possible while adhering to the MUST constraints.</li>
+<li>parameter search</li>
+<li>The large number of variations in the choice of questions (all of which must appear at least once) is also a constraint.</li>
+</ul>
+</li>
+<li><a href="./Order-of-appearance-of-the-five-basic-questions" class="internal alias" data-slug="Order-of-appearance-of-the-five-basic-questions">Order of appearance of the five basic questions</a></li>
+</ul>
+</li>
+<li>
+<p>Include attenuation in cumulative score calculation?</p>
+<ul>
+<li>Wouldn’t it be better to add attenuation? I’ve wondered about that.</li>
+<li>On the other hand, I’m also inclined to think that if you’re responding well to the first “what do you hope will happen in this dialogue”, you might want to remind yourself of the key words there from time to time.
+<ul>
+<li>Often we observe cases where the first answer on this is messy.</li>
+<li>It’s quite common for people to get more organized as they talk and it becomes clearer what they were looking for, so don’t put too much emphasis on the first statement…</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="./write_learning_pair" class="internal" data-slug="write_learning_pair">write_learning_pair</a></p>
+<ul>
+<li>Hypothesis that questions that provoke long user input are good questions</li>
+<li><a href="./Questions-that-do-not-take-keywords-should-take-features-from-env." class="internal alias" data-slug="Questions-that-do-not-take-keywords-should-take-features-from-env.">Questions that do not take keywords should take features from env.</a></li>
+<li><a href="./No-means-of-recovery-if-keywords-are-split" class="internal alias" data-slug="No-means-of-recovery-if-keywords-are-split">No means of recovery if keywords are split</a></li>
+<li><a href="./Judgment-of-Awareness" class="internal alias" data-slug="Judgment-of-Awareness">Judgment of Awareness</a></li>
+<li><a href="./Early-design" class="internal alias" data-slug="Early-design">Early design</a></li>
+<li>Someone is making utterances that do not contain keywords on the first move. Now I’m asking questions without keywords anyway to avoid errors, but I might as well direct them to help since they don’t seem to understand how to use it in the first place.
+<ul>
+<li>There are cases where people don’t understand “digging for keywords,” and there are cases where people want to bully the program.
+<ul>
+<li><a href="./Conversation-termination-from-the-program's-side" class="internal alias" data-slug="Conversation-termination-from-the-program's-side">Conversation termination from the program’s side</a> Maybe we could.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If you cut too much with NGKW before the keywords are developed, the “fountain has dried up”.
+<ul>
+<li>Maybe we are in a vicious cycle of using NGKW so much that the keywords are depleted, the program jumps to a keyword from the most recent statement and asks a question, which is off the main topic, so it is NGKWed again.</li>
+<li>How can we successfully lead them to the state of being crowded with lots of keywords?</li>
+<li>Show the percentage of the value to be achieved in each phase?</li>
+<li>Point out that there are too few keywords and the pace of NGKW is too fast?
+<ul>
+<li>We could make it so that when there are few keywords, you have to wait a bit before you can press the button.
+<ul>
+<li><a href="./lull-(e.g.-in-the-rain)" class="internal alias" data-slug="lull-(e.g.-in-the-rain)">lull (e.g. in the rain)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>It would be nice if questions could specify some of the answers.</p>
+<ul>
+<li>Is it the same? No?” displays the “Same” button
+<ul>
+<li>When selected, it functions as a merge command for keywords.</li>
+</ul>
+</li>
+<li>Is this a good place to end?” should be “yes” or “no”.
+<ul>
+<li>That selection can be used directly for training data.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="./ppoi" class="internal" data-slug="ppoi">ppoi</a></p>
+<ul>
+<li>Read back and update</li>
+</ul>
+</li>
+<li>
+<p>Add a RAKE-like element to keyword extraction</p>
+<ul>
+<li>Extract long sequences that appear in your own past statements/past logs/Scrapbox</li>
+</ul>
+</li>
+<li>
+<p><a href="./pKeicho-done-2021-02-05" class="internal" data-slug="pKeicho-done-2021-02-05">pKeicho-done-2021-02-05</a></p>
+</li>
+</ul>
+<hr/>
+<p><a href="./Keichobot-History" class="internal alias" data-slug="Keichobot-History">Keichobot History</a></p>
+<blockquote>
+<p>This is software that helps you verbalize and retrieve “what is already in you but not yet verbalized” and is not intended to give you answers to your questions.</p>
+</blockquote>
+<p>Keywords:.<a href="./chatbot" class="internal" data-slug="chatbot">chatbot</a>  <img src="https://scrapbox.io/api/pages/nishio/nisbot/icon" alt="nisbot.icon" height="19.5"/></p>
+<ul>
+<li>
+<p><a href="./key-use-case" class="internal alias" data-slug="key-use-case">key use case</a></p>
+</li>
+<li>
+<p><a href="./pKeicho-word-frequency" class="internal alias" data-slug="pKeicho-word-frequency">pKeicho word frequency</a>  /  <a href="./Word-frequency-in-source-code" class="internal alias" data-slug="Word-frequency-in-source-code">Word frequency in source code</a></p>
+</li>
+</ul>
+<hr/>
+<ul>
+<li><a href="./Calling-from-the-export-tool" class="internal alias" data-slug="Calling-from-the-export-tool">Calling from the export tool?</a></li>
+<li><a href="./Move-to-local-environment" class="internal alias" data-slug="Move-to-local-environment">Move to local environment?</a></li>
+</ul>
+<hr/>
+<ul>
+<li>
+<p><a href="./pKeicho-Mattermost-done" class="internal" data-slug="pKeicho-Mattermost-done">pKeicho-Mattermost-done</a></p>
+</li>
+<li>
+<p><a href="./Keicho-Mattermost-State-Transitions" class="internal alias" data-slug="Keicho-Mattermost-State-Transitions">Keicho-Mattermost State Transitions</a>
+<a href="Keicho-CUI:%20kw%20type" class="external">Keicho-CUI: kw type<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+<li>
+<p><a href="./(6/2019)Keicho-Study" class="internal alias" data-slug="(6/2019)Keicho-Study">2019)Keicho Study</a></p>
+</li>
+<li>
+<p>The number of keywords taken is indefinite (0 or 1) only with respect to the phase.</p>
+<ul>
+<li>Maybe we should split it into two questions.</li>
+</ul>
+</li>
+</ul>
+<p><a href="./pKeicho-done" class="internal" data-slug="pKeicho-done">pKeicho-done</a>
+Don’t we need pairs of input rows and keyword extraction results? →done</p>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/pKeichobot" class="external">/nishio/pKeichobot<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./2021-08-13Keicho→Keichat-Diary" class="internal">2021-08-13Keicho→Keichat Diary</a></li><li><a href="./Keichobot-Development-Diary-2022-02-16" class="internal">Keichobot Development Diary 2022-02-16</a></li><li><a href="./Renamed-from-Keicho-to-Keichobot" class="internal">Renamed from Keicho to Keichobot</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

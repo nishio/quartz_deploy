@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>BPStudy Learning Technologies for Engineers</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="BPStudy Learning Technologies for Engineers"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="BPStudy Learning Technologies for Engineers"/><meta name="twitter:description" content="- Based on [[PyConJP Keynote Speech]], with requests to add [[KJ method]] and [[U-theory]] talks Learning Technology for Engineers2015-10-27 BPStudy 98 Cybozu Labs NISHIO Hirokazu ..."/><meta property="og:description" content="- Based on [[PyConJP Keynote Speech]], with requests to add [[KJ method]] and [[U-theory]] talks Learning Technology for Engineers2015-10-27 BPStudy 98 Cybozu Labs NISHIO Hirokazu ..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="- Based on [[PyConJP Keynote Speech]], with requests to add [[KJ method]] and [[U-theory]] talks Learning Technology for Engineers2015-10-27 BPStudy 98 Cybozu Labs NISHIO Hirokazu ..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/BPStudy-Learning-Technologies-for-Engineers"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/BPStudy-Learning-Technologies-for-Engineers"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="- Based on [[PyConJP Keynote Speech]], with requests to add [[KJ method]] and [[U-theory]] talks Learning Technology for Engineers2015-10-27 BPStudy 98 Cybozu Labs NISHIO Hirokazu ..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="BPStudy-Learning-Technologies-for-Engineers"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>BPStudy Learning Technologies for Engineers</a></div></nav><h1 class="article-title">BPStudy Learning Technologies for Engineers</h1><p show-comma="true" class="content-meta"><span>Jun 11, 2020</span><span>10 min read</span></p></div></div><article class="popover-hint"><pre><code>- Based on [[PyConJP Keynote Speech]], with requests to add [[KJ method]] and [[U-theory]] talks
+</code></pre>
+<p><img src="https://gyazo.com/f94ed955f02f20d5ea5ce698cdb65c0d/thumb/1000" alt="image"/>
+Learning Technology for Engineers2015-10-27 BPStudy 98 Cybozu Labs NISHIO Hirokazu</p>
+<p><img src="https://gyazo.com/cc438983e597f22f889574505c489dca/thumb/1000" alt="image"/>
+Self Introduction2Cybozu LabsResearch and development of technology that will serve as the foundation for the next generation of groupware</p>
+<p><img src="https://gyazo.com/fcf610a75a35c11593fecf88bb31e457/thumb/1000" alt="image"/>
+3What is Groupware?</p>
+<p><img src="https://gyazo.com/b47a9bfc0dc45897688c6a62eeab99b4/thumb/1000" alt="image"/>
+4 Group + Software</p>
+<p><img src="https://gyazo.com/cfdc4c200880ab2a4716c3b681ddc2e4/thumb/1000" alt="image"/>
+Douglas Engelbart 5 <a href="https://commons.wikimedia.org/wiki/File:Douglas_Engelbart_in_2008.jpg" class="external">https://commons.wikimedia.org/wiki/File:Douglas_Engelbart_in_2008.jpg<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p><img src="https://gyazo.com/f7111318f60033f762ffd9860aca74a2/thumb/1000" alt="image"/>
+Douglas Engelbart 6-mouse GUI hypertext groupware <a href="https://commons.wikimedia.org/wiki/File:Douglas_Engelbart_in_2008.jpg" class="external">https://commons.wikimedia.org/wiki/File:Douglas_Engelbart_in_2008.jpg<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p><img src="https://gyazo.com/2588d9994b3763973308263e63253f51/thumb/1000" alt="image"/>
+Augmenting Human Intellect 7: Augmenting Human Capabilities with Software “Augmenting Human Intellect: A Conceptual Framework” (1962)</p>
+<p><img src="https://gyazo.com/eef6362c18c431a869a200ab1fa997ac/thumb/1000" alt="image"/>
+Augmenting Group Intellect 8 software augments group capabilities = groupware</p>
+<p><img src="https://gyazo.com/95c7a92e5fc4bc45ad5910beb4b906a8/thumb/1000" alt="image"/>
+human computer</p>
+<p><img src="https://gyazo.com/e873ac0dbc2e6749f5e91c3288bf4f9e/thumb/1000" alt="image"/>
+Human + computer = augmented human human human</p>
+<p><img src="https://gyazo.com/5c4701205320c77ccda189fa1301b9df/thumb/1000" alt="image"/>
+Human + computer = augmented human human human</p>
+<p><img src="https://gyazo.com/ea13b5579398cb62f7c9502c685a31b5/thumb/1000" alt="image"/>
+Selling software - this is customer value</p>
+<p><img src="https://gyazo.com/ea5b88a294f14eba51cd681876b09313/thumb/1000" alt="image"/>
+Augmenting Human Intellect: A Conceptual Framework” (1962)</p>
+<p><img src="https://gyazo.com/ab95941a6ef8ef7ae7334039c4587b00/thumb/1000" alt="image"/>
+Four elements of human enhancement - 1: Artifacts - 2: Language - 3: Methodology - 4: Training</p>
+<p><img src="https://gyazo.com/831a1b1a5de0e15ea0d6fda26e9795cf/thumb/1000" alt="image"/>
+Four elements of human enhancement -1: Artifacts (e.g., software) -2: Language -3: Methodology -4: Training )</p>
+<p><img src="https://gyazo.com/6683553298b71098e58cfac3294651dc/thumb/1000" alt="image"/>
+Software is not the only way to enhance - creating software (artifacts) is not the only way to enhance - creating words to help people think - verbalizing and systematizing “how to do things” - and educating people on how to use them. And educate people on how to use them.</p>
+<p><img src="https://gyazo.com/0514364a9073007f628f060ffed2293a/thumb/1000" alt="image"/>
+Four elements of human enhancement -1: Artifacts -2: Language -3: Methodology -4: Training ← Use 13 Training of skillsupNo matter how good the software is, it is useless unless people understand how to use it</p>
+<p><img src="https://gyazo.com/027c5e442cfa1150ee2832bb8866ad99/thumb/1000" alt="image"/>
+Approaches other than the author’s software - Kyoto University Summer Design School - “Designing the way of learning” Nada School Saturday Lecture - “How engineers learn” Gijutsu-Hyohron-Sha - PyCon JP Keynote Lecture - “How Engineers Learn” Cybozu Style - Cybozu Lab Youth Public Lecture (in preparation)</p>
+<p><img src="https://gyazo.com/71705e078ab1592eb778ac23e36e2b6c/thumb/1000" alt="image"/>
+19 Q: What is the first step in the “learning” process?</p>
+<p><img src="https://gyazo.com/35cdbde3f30c4e0a0ddad5547088ad7a/thumb/1000" alt="image"/>
+20In order to learn something new, you need to be aware of your <em>blind spots</em> *things you don’t know and didn’t realize you “didn’t know”</p>
+<p><img src="https://gyazo.com/fbaff99ba9403b749a45f066acee516d/thumb/1000" alt="image"/>
+Observe reality without preconceptions and look for discrepancies with your understanding21</p>
+<p><img src="https://gyazo.com/f9baf4c3ab8e7683253100c23bf0535a/thumb/1000" alt="image"/>
+Specific examples for engineers22Read error messages properlyDon’t assume “this must be the case” but write confirmation codeRead the acceleration manual after profiling what is slow (even if in English)Pay attention to the discrepancy between your understanding (=assumptions) and reality</p>
+<p><img src="https://gyazo.com/25f4ad16d2a3122f1b82649af509e633/thumb/1000" alt="image"/>
+Difficult to see without preconceived notions23 ← You don’t see it</p>
+<p><img src="https://gyazo.com/fc2212e040431bf3c24838801c67d3e3/thumb/1000" alt="image"/>
+24 Reducing preconceptions by gaining more perspectives “other people’s” perspectives are useful.</p>
+<p><img src="https://gyazo.com/4354fb3e56e6413ca9e3524a710799bd/thumb/1000" alt="image"/>
+Is this right? People with more knowledge teach people with less knowledge, people with less knowledge teach people with more knowledge, and people with less knowledge teach people with more knowledge.</p>
+<p><img src="https://gyazo.com/2692fd69fd86022a3056c7d0f12b4e92/thumb/1000" alt="image"/>
+A B, which can be learned from those with little knowledge.</p>
+<p><img src="https://gyazo.com/4fd9d86a0ab955b69c7f74e9a19a731a/thumb/1000" alt="image"/>
+×x A mental barrier created by the belief that there is nothing that can be taught to you, which you learn one way from someone other than yourself.</p>
+<p><img src="https://gyazo.com/ccef7f621bcd5083e64cdf90ea4f5b35/thumb/1000" alt="image"/>
+○○ Exchange knowledge with each other and learn from each other</p>
+<p><img src="https://gyazo.com/ac4c78deefa2c9faeeacff6440abad8b/thumb/1000" alt="image"/>
+29 Reducing preconceptions by gaining more perspectives “other people’s” perspectives are useful</p>
+<p><img src="https://gyazo.com/078239061dcbb6a8bd920cb4acdc06f0/thumb/1000" alt="image"/>
+Observe reality without preconceptions and look for discrepancies with your understanding30</p>
+<p><img src="https://gyazo.com/fb6d7261da1260cb99e036cbfd6cd2ec/thumb/1000" alt="image"/>
+31That’s what it takes to find and learn about blind spots.</p>
+<p><img src="https://gyazo.com/119b72f8bd653e38029b38c5d6c783b9/thumb/1000" alt="image"/>
+Bad Pattern 32: The structural problem of “<a href="./Fixation-of-the-&quot;teaching-role&quot;-and-the-&quot;role-of-the-instructor&quot;" class="internal alias" data-slug="Fixation-of-the-&quot;teaching-role&quot;-and-the-&quot;role-of-the-instructor&quot;">Fixation of the “teaching role” and the “role of the instructor&quot;</a>&quot; rather than an individual problem of “listen only people” and “say only people” that prevents this. How can this be resolved?</p>
+<p><img src="https://gyazo.com/203903743ea696e5c06ea84fa6444424/thumb/1000" alt="image"/>
+First of all, think about “people who only listen “33 “Let’s be on the speaking side at study groups, etc.” I’ve got an ear for it, and few people do it, but I don’t know what I can teach myself → I can’t take the first step.</p>
+<p><img src="https://gyazo.com/dfdfdd6c58246efbe78885cd5daa8f5b/thumb/1000" alt="image"/>
+34What you will learn</p>
+<p><img src="https://gyazo.com/abde13a5f29dc747f1ea436c4ad5a6bb/thumb/1000" alt="image"/>
+35The more abstract the knowledge, the more applicable it is.</p>
+<p><img src="https://gyazo.com/36e291349d49ddc4447cff5902fd40cf/thumb/1000" alt="image"/>
+36Memorize the answer to a concrete problem → learn how to solve it (abstract methodology) as many times as you can solve that problem → solve new problems.</p>
+<p><img src="https://gyazo.com/cb5bc9d48fdb62ecd224aac054bec102/thumb/1000" alt="image"/>
+37Can one learn abstract methodology without solving concrete problems?</p>
+<p><img src="https://gyazo.com/76905e35a31adf3d67f63c7ad552450b/thumb/1000" alt="image"/>
+38 that repeatedly abstracts from one’s own experience and fosters understanding.</p>
+<p><img src="https://gyazo.com/f401b394d36258a85650eeec4bc32a82/thumb/1000" alt="image"/>
+Knowledge that cannot be applied unless it is connected to the “root” of experience39 Rootless Knowledge Rooted Knowledge Applied</p>
+<p><img src="https://gyazo.com/25c227f81b2579a03cdc75afcc7a211e/thumb/1000" alt="image"/>
+40 Experience</p>
+<p><img src="https://gyazo.com/24dfe83a656b60a828724f2245a28c3f/thumb/1000" alt="image"/>
+41 <a href="./I-know-&quot;what-I-experienced&quot;-better-than-anyone-else-in-the-world." class="internal alias" data-slug="I-know-&quot;what-I-experienced&quot;-better-than-anyone-else-in-the-world.">I know “what I experienced” better than anyone else in the world.</a></p>
+<p><img src="https://gyazo.com/13184b676ceee76c4ee16ec01ae11a70/thumb/1000" alt="image"/>
+Common examples42 Presenter “afraid of failure, afraid of making mistakes”→Representation by copying the textbook→When asked a question, he/she can only answer “that’s what the textbook says”→Questioning is not lively, and trying to avoid failure leads to a bigger failure.</p>
+<p><img src="https://gyazo.com/20564a5ac2948a32a7379560c84e839e/thumb/1000" alt="image"/>
+Don’t try to avoid making mistakes43 - If you think of yourself as a “teacher,” you may think that making mistakes is a failure - but since the goal is to “teach each other,” the process of being corrected and discussed is beneficial in itself. The process of discussion is not useful if you use an “outside authority” such as a textbook as justification for your presentation.</p>
+<p><img src="https://gyazo.com/f462fe41cff48ef6628cc66ca0f2e6be/thumb/1000" alt="image"/>
+Experience is the main dish44I had this experience (fact) (option) Textbook says this (fact) I understood this (interpretation) →This leaves room for the listener to give his/her own interpretation</p>
+<p><img src="https://gyazo.com/3b5f3c177a6bffc23dcaa66adfb25711/thumb/1000" alt="image"/>
+45 on the verification of understanding.</p>
+<p><img src="https://gyazo.com/6f011bc332e8b393f75774fe649321b8/thumb/1000" alt="image"/>
+How do I know if the “understanding” I have developed within myself is knowledge I can apply? 46</p>
+<p><img src="https://gyazo.com/a16926d4533c1494b569ea17b9d292df/thumb/1000" alt="image"/>
+47 “Understood” is only a hypothesis.</p>
+<p><img src="https://gyazo.com/107bbb8ec39bca95c281cbb98cc882cf/thumb/1000" alt="image"/>
+Let’s test the hypothesis by experimenting48Verification: Did it turn out the way you thought it would?</p>
+<p><img src="https://gyazo.com/860858058612c806d2c161f8fd7ed358/thumb/1000" alt="image"/>
+Specific examples for engineers49When learning a programming language: A: I read the manual and understand it! The end! B: I read the manual and felt I understood it, so I implemented a program to check it!</p>
+<p><img src="https://gyazo.com/58788e4e66fa3567589cd03c9e1b3a22/thumb/1000" alt="image"/>
+Discussion of the results of the revised plan of action</p>
+<p><img src="https://gyazo.com/83ea60ba382c9569a7c11682d4138031/thumb/1000" alt="image"/>
+Hypothesis Experiment Discussion of revised results of hypotheses</p>
+<p><img src="https://gyazo.com/b02a5eb22bdebba1a9c58e749dc39471/thumb/1000" alt="image"/>
+Understanding Behavioral Understanding Modification Result Consideration</p>
+<p><img src="https://gyazo.com/90361b1e1343f5af7707169e14a9b8fe/thumb/1000" alt="image"/>
+Observe reality without preconceptions and look for discrepancies with your understanding53</p>
+<p><img src="https://gyazo.com/2e102b1c712dc25163b8bf4aba642def/thumb/1000" alt="image"/>
+54 What is the first step in “learning through the PDCA cycle”?</p>
+<p><img src="https://gyazo.com/eeb9b4b253ddcb4788976e57853048d3/thumb/1000" alt="image"/>
+55 “Let’s present something!” ↓ “Let’s present something…”</p>
+<p><img src="https://gyazo.com/f93e2c4c2cbbbd2f37e214799f1335de/thumb/1000" alt="image"/>
+How do you take the first step? Understanding Behavior Understanding Modification Results Consideration</p>
+<p><img src="https://gyazo.com/e951a5d21e17f33467d168a19910f038/thumb/1000" alt="image"/>
+57 write it down and then we’ll figure it out.</p>
+<p><img src="https://gyazo.com/6bff71e0599246da2b1685f8b7de0850/thumb/1000" alt="image"/>
+58 eliminate the need to write down and remember everything that might be relevant first.</p>
+<p><img src="https://gyazo.com/6c4e8baac8679c96e85922bfa09b2d21/thumb/1000" alt="image"/>
+59 specific example, “Write 50 sticky notes of things that might be good material for your presentation.”</p>
+<p><img src="https://gyazo.com/cbe820d3ff21d939f60ddd39c746f722/thumb/1000" alt="image"/>
+60 “Make presentation materials” is a large, unmeasurable task that tends to lose motivation “Write 50 sticky notes with stories” is measurable and can be performed in a gap of time</p>
+<p><img src="https://gyazo.com/7f293332daf3133e52079bfc7513f783/thumb/1000" alt="image"/>
+61 spread the writing on the desk.</p>
+<p><img src="https://gyazo.com/6129acb5b0fd9da492ab4d073133fc90/thumb/1000" alt="image"/>
+62</p>
+<p><img src="https://gyazo.com/8003ce47bf4a6bb260fd1b1d3690426c/thumb/1000" alt="image"/>
+63Human working memory is enhanced by paper and a desk (artifact) that allows us to see 100 items at a glance by spreading about 7 written items on the desk.</p>
+<p><img src="https://gyazo.com/db7d9842af46ab35cf91cacac9c80137/thumb/1000" alt="image"/>
+64Bottom-up group building.</p>
+<p><img src="https://gyazo.com/5db2964dc67aac6346ca07f24a4f1df0/thumb/1000" alt="image"/>
+65</p>
+<p><img src="https://gyazo.com/f8f64f4d3b5f85fb21ac2e6d4f0b7ebd/thumb/1000" alt="image"/>
+66Top-down categorization only pushes information into the framework of existing ideas.</p>
+<p><img src="https://gyazo.com/096afb053cf3074192fd22bf028c7344/thumb/1000" alt="image"/>
+67 bundle and put a nameplate on it.</p>
+<p><img src="https://gyazo.com/fd5da168b3b8b5807173ead3776257ef/thumb/1000" alt="image"/>
+68</p>
+<p><img src="https://gyazo.com/dce3e01bf948f83027beadda5489bd00/thumb/1000" alt="image"/>
+69 bundled, summarized, and fronted to reduce the number of apparent pieces and reduce the burden on the brain.</p>
+<p><img src="https://gyazo.com/6501514249d7d16cb0fcdb7c11107687/thumb/1000" alt="image"/>
+Collected and bundled bottom-up to form faceplate chunks70</p>
+<p><img src="https://gyazo.com/9cc62a260541833368a7485a125172f6/thumb/1000" alt="image"/>
+71 Illustration and Writing</p>
+<p><img src="https://gyazo.com/1a59ff9d97128b748eaa294b961bc272/thumb/1000" alt="image"/>
+72</p>
+<p><img src="https://gyazo.com/640f152bfef09967fc77b67a45c9b557/thumb/1000" alt="image"/>
+73 Diagrams are good for organizing the big picture of one’s understanding <span>→</span> but not communicated to others</p>
+<p><img src="https://gyazo.com/31f5aa0b6b65eeba021c510c5d89a8cc/thumb/1000" alt="image"/>
+74 illustration is two dimensional, writing is one dimensional, and speaking to people is one dimensional, and if you want to communicate to people, you need to be one dimensional.</p>
+<p><img src="https://gyazo.com/1c56fdb4e3131af0a4787c0cb8ebaca7/thumb/1000" alt="image"/>
+75 ↑Output as text</p>
+<p><img src="https://gyazo.com/d112f96c2789fdbc7758fe28b0f0c1d8/thumb/1000" alt="image"/>
+76 writing and communicating it to others to get feedback.</p>
+<p><img src="https://gyazo.com/8a6df54120235c8d19b2ae71aca5ef89/thumb/1000" alt="image"/>
+How do you take the first step? Write, summarize, illustrate, and communicate to others in writingDiscussion of modified feedback results of behavioral understanding</p>
+<p><img src="https://gyazo.com/5a701e566f60595830bf530b786307c4/thumb/1000" alt="image"/>
+For me, this lecture is… writing, summarizing, illustrating, writing, communicating to others, and discussing the results of the feedback feedback of the revised understanding of behavior.</p>
+<p><img src="https://gyazo.com/0cd9d775d481bcc5e661b1689bc2e972/thumb/1000" alt="image"/>
+How to escape from the “listen-only person” - output to others and learn from their feedback. -Write 50 sticky notes in your spare time and assemble them from the bottom up. -Focus on your own experience. I am the most knowledgeable person in the world on the subject.</p>
+<p><img src="https://gyazo.com/e40deca1efdefa6db30ba4a30a66a145/thumb/1000" alt="image"/>
+I’m done here now.</p>
+<p><img src="https://gyazo.com/091f5b3c63a01d432ed035846fa8c1aa/thumb/1000" alt="image"/>
+81 “People who just say” issue</p>
+<p><img src="https://gyazo.com/c77e21d7848510d01421171aef865fef/thumb/1000" alt="image"/>
+The problem of “people who just say” 82The problem of “people who just say” is even more serious than the problem of “people who just listen” in the goal of “exchanging knowledge and learning from each other.</p>
+<p><img src="https://gyazo.com/22b166d6b853ee05b70e952b527d8f00/thumb/1000" alt="image"/>
+At the company’s year-end party at the end of 83 years, I spoke in front of company members about getting out of my comfort zone (my lukewarmness) and expanding my comfort zone2015-10-14 - B-Ploud President’s Blog<a href="http://shacho.beproud.jp/entries/2015/10/" class="external">http://shacho.beproud.jp/entries/2015/10/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 14</p>
+<p><img src="https://gyazo.com/f6b684139601249c0fc04f27b33f17e6/thumb/1000" alt="image"/>
+84 preconceived notions and frames of thinking</p>
+<ul>
+<li><a href="./comfort-zone" class="internal alias" data-slug="comfort-zone">comfort zone</a>
+How do we break it down?</li>
+</ul>
+<p><img src="https://gyazo.com/18d8e9b40fc06e4e5f6a32afefb98080/thumb/1000" alt="image"/>
+The Flow of Breaking the Frame85 1. Realize that you have a pre-existing frame 2. Suspend rather than judge by your frame 3. Overcome the idea that “changing the frame doesn’t make sense” 4. Overcome the fear of “fear of changing the frame”</p>
+<p><img src="https://gyazo.com/1978e1ddd6071145bf1f5b3fe05f6481/thumb/1000" alt="image"/>
+A concrete example for engineers86Engineer N is a self-proclaimed “I feel more comfortable talking to a machine than to a human being. ↓He is asked if he would like to be an interviewer. I have no such experience and no confidence! →I’ll do it though (overcoming the fear of changing the frame).</p>
+<p><img src="https://gyazo.com/f3476c9b6ceb757430fb95967290846b/thumb/1000" alt="image"/>
+How to “listen” 87 I never learned how to listen! I bought 10 books on interviewing and made all of them sticky notes and KJ’d them, not so many important concepts.</p>
+<p><img src="https://gyazo.com/d75a2536375e093d9be3b3c9c6407ed3/thumb/1000" alt="image"/>
+88The words used by the other party are not always used in the sense that you think they mean.</p>
+<p><img src="https://gyazo.com/9b09cba611613dfe2503bfd5e0ca731e/thumb/1000" alt="image"/>
+89 customer “build a <a href="./time-machine" class="internal alias" data-slug="time-machine">time machine</a>” engineer “there’s no way you can do that”</p>
+<p><img src="https://gyazo.com/cebf6d6b6678e362d0465fdd5c2619a1/thumb/1000" alt="image"/>
+90 thinking that what the other party is trying to describe by the term “time machine” is the same as their own idea of a time machine.</p>
+<p><img src="https://gyazo.com/1dcb42c7a64e7c19f115ac7c5ef16603/thumb/1000" alt="image"/>
+91 If you think about it dispassionately, it’s obvious that the premise isn’t true, but you’re distorting reality in your own frame of reference.</p>
+<p><img src="https://gyazo.com/07e625c773c6e0a2dcba3c13e4e64791/thumb/1000" alt="image"/>
+92Customer “Build a time machine” Engineer “What kind of time machine?” Engineer: “What would you like the time machine to do?”</p>
+<p><img src="https://gyazo.com/679c679df960249a7861dcae5bdd4830/thumb/1000" alt="image"/>
+93Sensitive to assumptions.</p>
+<p><img src="https://gyazo.com/9b3e1430a0e200799947d1cf5cfc382b/thumb/1000" alt="image"/>
+94 Choosing between A and B: “Which do you prefer, product A or product B?” The premise of buying one or the other is implicitly acknowledged.</p>
+<p><img src="https://gyazo.com/8971a4fc3e5a76e5a013d3571fa8518f/thumb/1000" alt="image"/>
+95 Assumptive questions are easy to elicit answers to, but they distort the answers.</p>
+<p><img src="https://gyazo.com/004890b71e422ca540bd8ba14a7c3ad0/thumb/1000" alt="image"/>
+96 “What is your latest concern?” → Assuming that you are troubled</p>
+<p><img src="https://gyazo.com/40a75e4fe7fed7fc60ec6b7cd29d9e68/thumb/1000" alt="image"/>
+97 “What technologies have you been interested in recently?” → Assumption of interest in technology</p>
+<p><img src="https://gyazo.com/060c7ecbf5ceefa32076b720a5adb043/thumb/1000" alt="image"/>
+98It is important to encourage them.</p>
+<p><img src="https://gyazo.com/7a7d7adca9ed5b99afc8b29b1da74f83/thumb/1000" alt="image"/>
+99 people who have a hard time coming up with words people who lack confidence in speaking people who need to be encouraged and motivated to speak.</p>
+<p><img src="https://gyazo.com/3673d532bf6e4805b37c3b517dc4e16b/thumb/1000" alt="image"/>
+100I think it is important for “teachers” to get out of their comfort zone and actively take on the role of “teacher” in order to eliminate the stereotypical “teachable” and “teachable” roles.</p>
+<p><img src="https://gyazo.com/1407ed63a832013d34c847539ff826f9/thumb/1000" alt="image"/>
+How to Get Out of “Just Say It” 101 - Get out of the “teaching role” and play the “teaching role”. -Premises and words have different meanings for you and the other person. Don’t impose your own frame of reference on the other person. -Encourage and motivate the other person to speak.</p>
+<p><img src="https://gyazo.com/610f014694022621a36e1f8a1b2f6f06/thumb/1000" alt="image"/>
+○○ Exchange knowledge with each other and learn from each other</p>
+<p><img src="https://gyazo.com/b7e52a55f47181f71340438b79ab7246/thumb/1000" alt="image"/>
+103 Reducing preconceptions by gaining more perspectives “other people’s” perspectives are useful</p>
+<p><img src="https://gyazo.com/076fd5b58afc4f6bf9650c9fd3a91bb3/thumb/1000" alt="image"/>
+Observe reality without preconceptions and look for discrepancies with your understanding104</p>
+<p><img src="https://gyazo.com/f9a2dfc72d334b43ffac448bb19bfac8/thumb/1000" alt="image"/>
+105 That’s what it takes to find and learn about blind spots.</p>
+<p><img src="https://gyazo.com/55b3eb21c8641112fc17856249421c9e/thumb/1000" alt="image"/>
+For me, this lecture is… writing, summarizing, illustrating, writing, communicating to others, and discussing the results of the feedback feedback of the revised understanding of behavior.</p>
+<p><img src="https://gyazo.com/590020aa3721d1dc309a3ba18617b34b/thumb/1000" alt="image"/>
+Question &amp; CommentWrite, summarize, illustrate, and communicate to others in writingModification of behavioral understanding feedback results</p>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/BPStudy%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E5%AD%A6%E3%81%B6%E6%8A%80%E8%A1%93" class="external">/nishio/BPStudyエンジニアのための学ぶ技術<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Setting-assignments-to-listen-well" class="internal">Setting assignments to listen well</a></li><li><a href="./The-&quot;teaching&quot;-role-inhibits-learning." class="internal">The &quot;teaching&quot; role inhibits learning.</a></li><li><a href="./When-you-are-called-a-&quot;teacher&quot;-and-start-playing-the-role-of-a-&quot;teacher,&quot;-it-hinders-your-own-learning." class="internal">When you are called a &quot;teacher&quot; and start playing the role of a &quot;teacher,&quot; it hinders your own learning.</a></li><li><a href="./Why-are-you-interested-in-learning" class="internal">Why are you interested in learning?</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

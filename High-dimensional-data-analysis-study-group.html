@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>High-dimensional data analysis study group</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="High-dimensional data analysis study group"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="High-dimensional data analysis study group"/><meta name="twitter:description" content="2024-11-22 Cybozu Labs Study Session Previously: 2024-10-18 Public Opinion Map Study Group. It was the day that “public opinion map”, a service that collects and visualizes people’s opinion vectors in the 2024 lower house election, was released."/><meta property="og:description" content="2024-11-22 Cybozu Labs Study Session Previously: 2024-10-18 Public Opinion Map Study Group. It was the day that “public opinion map”, a service that collects and visualizes people’s opinion vectors in the 2024 lower house election, was released."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="2024-11-22 Cybozu Labs Study Session Previously: 2024-10-18 Public Opinion Map Study Group. It was the day that “public opinion map”, a service that collects and visualizes people’s opinion vectors in the 2024 lower house election, was released."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/High-dimensional-data-analysis-study-group"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/High-dimensional-data-analysis-study-group"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="2024-11-22 Cybozu Labs Study Session Previously: 2024-10-18 Public Opinion Map Study Group. It was the day that “public opinion map”, a service that collects and visualizes people’s opinion vectors in the 2024 lower house election, was released."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="High-dimensional-data-analysis-study-group"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>High-dimensional data analysis study group</a></div></nav><h1 class="article-title">High-dimensional data analysis study group</h1><p show-comma="true" class="content-meta"><span>Nov 22, 2024</span><span>17 min read</span></p></div></div><article class="popover-hint"><p>2024-11-22  <a href="./Cybozu-Labs-Study-Session" class="internal alias" data-slug="Cybozu-Labs-Study-Session">Cybozu Labs Study Session</a></p>
+<ul>
+<li>Previously: 2024-10-18 <a href="./Public-Opinion-Map-Study-Group" class="internal alias" data-slug="Public-Opinion-Map-Study-Group">Public Opinion Map Study Group</a>.
+<ul>
+<li>It was the day that “<a href="./public-opinion-map" class="internal alias" data-slug="public-opinion-map">public opinion map</a>”, a service that collects and visualizes people’s opinion vectors in the <a href="./2024-lower-house-election" class="internal alias" data-slug="2024-lower-house-election">2024 lower house election</a>, was released.</li>
+</ul>
+</li>
+<li>This ended up with 4403 rows x 84 columns of data
+<ul>
+<li>(We are in the process of converting it to open data and will write about it here when it is ready)</li>
+</ul>
+</li>
+<li>In this article, I will explain “analysis of high-dimensional data,” including the analysis of this data.</li>
+<li>Rough Table of Contents
+<ul>
+<li>History of dimensionality reduction (from PCA to UMAP)</li>
+<li>UMAP visualization experiment for the 2022 Upper House election
+<ul>
+<li>pleasant feeling</li>
+<li><a href="./UMAP-of-public-opinion-map" class="internal alias" data-slug="UMAP-of-public-opinion-map">UMAP of public opinion map</a> Experiment</li>
+<li>Struggle with high-dimensional mud dumplings</li>
+<li>Distressed <span>→</span> Aware</li>
+</ul>
+</li>
+<li>New projects (to be announced 11/22)</li>
+<li><a href="./Extraction-of-dense-masses" class="internal alias" data-slug="Extraction-of-dense-masses">Extraction of dense masses</a></li>
+<li>Relation to the KJ method</li>
+</ul>
+</li>
+</ul>
+<p>History of dimensionality reduction (from PCA to UMAP)</p>
+<ul>
+<li>
+<p>PCA (Principal Component Analysis) is a linear dimensionality reduction method</p>
+<ul>
+<li>The classic method proposed by <a href="./Karl-Pearson" class="internal alias" data-slug="Karl-Pearson">Karl Pearson</a> (<a href="./Karl-Pearson" class="internal alias" data-slug="Karl-Pearson">Karl Pearson</a>) in 1901</li>
+</ul>
+</li>
+<li>
+<p>Mid-20th century: Limitations of PCA (reliance on linearity) begin to be pointed out and the need for methods to handle nonlinear structures increases.</p>
+</li>
+<li>
+<p>1960s: <a href="./Multidimensional-Scaling" class="internal alias" data-slug="Multidimensional-Scaling">Multidimensional Scaling</a> (MDS)</p>
+<ul>
+<li>Mapping high-dimensional data to low-dimensional space based on a distance matrix.</li>
+<li>
+<blockquote>
+<p>Classical MDS is also called Principal Coordinate Analysis (PCoA), and is equivalent to Principal Component Analysis when Euclidean distance is used in Principal Coordinate Analysis. --- <a href="https://ja.wikipedia.org/wiki/%E5%A4%9A%E6%AC%A1%E5%85%83%E5%B0%BA%E5%BA%A6%E6%A7%8B%E6%88%90%E6%B3%95" class="external">Multidimensional scaling - Wikipedia<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+</li>
+<li>There are linear and nonlinear versions, and nonlinear MDS can handle non-Euclidean distances.</li>
+</ul>
+</li>
+<li>
+<p>1982: <a href="./Self-organizing-map" class="internal alias" data-slug="Self-organizing-map">Self-organizing map</a> (<a href="./SOM" class="internal" data-slug="SOM">SOM</a>, <a href="./Self-Organizing-Maps" class="internal alias" data-slug="Self-Organizing-Maps">Self-Organizing Maps</a>)</p>
+<ul>
+<li>Actually, my PhD research 20 years ago was one of the extensions of SOM, so when I told ChatGPT to write a history of nonlinear dimensionality reduction and this came up, I was like, “Whoa, a familiar face!
+<ul>
+<li>ChatGPT explains that it’s “based on a neuroscientific approach, mapping data onto a low-dimensional grid,” and well, in general, that’s not wrong, but it’s a “model inspired by the neural connections in the brain,” which is common at this time, and it’s so close that it no longer has much to do with the behavior in the brain. It doesn’t have much to do with the behavior in the brain.
+<ul>
+<li>Well, now neural nets are much less neural.</li>
+</ul>
+</li>
+<li>k-means method with adjacencies/distances between representative points
+<ul>
+<li>Pioneering role as an analysis method that takes into account the topological characteristics of data</li>
+</ul>
+</li>
+<li>As of 20 years ago, extensions to non-Euclidean distances were being made.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>1998: Kernel PCA (Kernel PCA)</p>
+<ul>
+<li><a href="./kernel-method" class="internal alias" data-slug="kernel-method">kernel method</a> to deal with nonlinear structures.
+<ul>
+<li><a href="./regenerative-nuclear-hillbelt-space" class="internal alias" data-slug="regenerative-nuclear-hillbelt-space">regenerative nuclear hillbelt space</a> (RKHS) to apply PCA.</li>
+</ul>
+</li>
+<li>One of the derivations from the prosperity of <a href="./1992" class="internal alias" data-slug="1992">[Support Vector Machine]</a></li>
+<li>Kernel concepts are getting renewed attention in relation to the mathematics of deep learning.</li>
+</ul>
+</li>
+<li>
+<p>Development of “analytical methods that take into account the topological properties of the data.</p>
+<ul>
+<li>2000: <a href="./Isomap" class="internal" data-slug="Isomap">Isomap</a> (<a href="./Isometric-Mapping" class="internal alias" data-slug="Isometric-Mapping">Isometric Mapping</a>)
+<ul>
+<li>Distance structure is approximated based on graphs, and dimensionality reduction preserving the manifold structure.</li>
+</ul>
+</li>
+<li>2000: <a href="./LLE" class="internal" data-slug="LLE">LLE</a> (<a href="./Locally-Linear-Embedding" class="internal alias" data-slug="Locally-Linear-Embedding">Locally Linear Embedding</a>)
+<ul>
+<li>Dimensionality reduction is achieved by exploiting the local linearity of the data.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>2008: t-SNE (t-Distributed Stochastic Neighbor Embedding)</p>
+<ul>
+<li>Probabilistic representation of local similarity in higher dimensional spaces and mapping to lower dimensions.</li>
+<li>Widely used as a specialized method for visualization.</li>
+</ul>
+</li>
+<li>
+<p>2018: UMAP (Uniform Manifold Approximation and Projection)</p>
+<ul>
+<li>Improvements to the shortcomings of t-SNE (computational load and collapse of local structure).</li>
+<li>Mainstream modern visualization and dimensionality reduction methods.</li>
+</ul>
+</li>
+<li>
+<p>I was going to explain the detailed algorithm of UMAP, but that alone would have taken up an hour, so I decided to save it for another time.</p>
+<ul>
+<li>Summary of this section
+<ul>
+<li>PCA is a classical dimensionality reduction method from 1901</li>
+<li>Nonlinear dimensionality reduction methods have been studied for many years because of the disadvantages of being linear</li>
+<li>Right now it’s considered a good idea to use the 2018 UMAP.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Cases where PCA is not a good choice</p>
+<ul>
+<li><img src="https://gyazo.com/188215f1b3ee60ca4f81903b19984082/thumb/1000" alt="image"/>
+<ul>
+<li><a href="./antagonistic-dimension" class="internal alias" data-slug="antagonistic-dimension">antagonistic dimension</a></li>
+<li>1: A and B are in conflict</li>
+<li>2: (A+B) and C are in conflict</li>
+<li>3: ((A+B)+C) and D are in conflict
+<ul>
+<li>Here the number of dimensions is not enough so that A and B become identical in the 2-dimensional <a href="./PCA" class="internal" data-slug="PCA">PCA</a>.</li>
+<li>Nonlinear dimensionality reduction (e.g., <a href="./UMAP" class="internal" data-slug="UMAP">UMAP</a>) divides</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="./UMAP-visibility-for-the-2022-Upper-House-election" class="internal alias" data-slug="UMAP-visibility-for-the-2022-Upper-House-election">UMAP visibility for the 2022 Upper House election</a></p>
+</li>
+<li>
+<p>My experience so far has been that Polis tends to become less and less divided into clusters as it progresses.</p>
+<ul>
+<li>I didn’t want all the clusters to be separated at the end of this poll map.</li>
+<li>So I was considering a version that uses non-linear UMAP instead of dimensionality reduction using the original Polis PCA.</li>
+<li>In the experiment of the public opinion map, the “tendency for the clusters to become less divided as they progress” was not observed.
+<ul>
+<li>This phenomenon may not be due to an increase in the number of voting users, but rather to the fact that the opinion space is becoming more highly dimensioned as users contribute new opinions</li>
+<li>Detailed discussion: <a href="./Problem-with-two-Polis-clusters" class="internal alias" data-slug="Problem-with-two-Polis-clusters">Problem with two Polis clusters</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>As a preliminary experiment, I visualized the 2022 Upper House election data (<a href="./Joint-research-by-Taniguchi-Laboratory,-University-of-Tokyo-and-Asahi-Shimbun" class="internal alias" data-slug="Joint-research-by-Taniguchi-Laboratory,-University-of-Tokyo-and-Asahi-Shimbun">Joint research by Taniguchi Laboratory, University of Tokyo and Asahi Shimbun</a>) analyzed by PCA using <a href="./UMAP" class="internal" data-slug="UMAP">UMAP</a> before the public opinion map data were available ( 592 respondents, 42 questions)</p>
+<ul>
+<li>Left: UMAP <a href="./UMAP-visibility-for-the-2022-Upper-House-election" class="internal alias" data-slug="UMAP-visibility-for-the-2022-Upper-House-election">UMAP visibility for the 2022 Upper House election</a> / Right: PCA <a href="./Polis-like-visualization-of-the-2022-House-of-Councillors-election" class="internal alias" data-slug="Polis-like-visualization-of-the-2022-House-of-Councillors-election">Polis-like visualization of the 2022 House of Councillors election</a>.</li>
+<li><img src="https://gyazo.com/2d34ad06a7c1206fc84cc7292123700d/thumb/1000" alt="image"/><img src="https://gyazo.com/77f9fc60c241159a0062e4842a7435cf/thumb/1000" alt="image"/></li>
+<li>The PCA is almost just an ellipse if you look at the dots.
+<ul>
+<li>The party is surrounded by <a href="./Convex-Hull" class="internal alias" data-slug="Convex-Hull">Convex Hull</a> and painted in color because the meaning is not so clear as it is.</li>
+<li>This is what “PCA will no longer separate clusters” means</li>
+<li>However, it is not divided into separate sections, but it seems to be very interesting, and Mr. Yasuno introduced it at the Keynote of <a href="./Code-for-Japan-Summit-2024" class="internal alias" data-slug="Code-for-Japan-Summit-2024">Code for Japan Summit 2024</a> on 2024-11-16.</li>
+<li><img src="https://gyazo.com/b5cbb13a30bb7cc903d0cabae78a7040/thumb/1000" alt="image"/></li>
+<li><img src="https://gyazo.com/9efdf13860b4680989cac0361b5f0e97/thumb/1000" alt="image"/></li>
+<li>Advantage is that it is PCA, so the axes make sense.
+<ul>
+<li>Non-linear methods make the current interpretation impossible because the axis bends all over the place.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>The UMAP analysis is very clearly divided into clusters compared to the PCA analysis, which is almost one cluster of ellipses.</p>
+<ul>
+<li><img src="https://gyazo.com/2d34ad06a7c1206fc84cc7292123700d/thumb/1000" alt="image"/></li>
+<li>Red boxes are manually added for detailed explanation
+<ul>
+<li>For a detailed cluster-by-cluster explanation, see: <a href="./UMAP-visibility-for-the-2022-Upper-House-election" class="internal alias" data-slug="UMAP-visibility-for-the-2022-Upper-House-election">UMAP visibility for the 2022 Upper House election</a>.</li>
+</ul>
+</li>
+<li>Some islands are dense, occupied by a particular political party, while others are a mixture of several parties
+<ul>
+<li>In other words, when there are parties A, B, and C, we tend to think that the division of opinion is between the parties, but in fact the division is between extremists and moderates within the parties.</li>
+<li><img src="https://gyazo.com/3916e82cf21628e1fd4e0e54177dda48/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>I think this is a pretty interesting outcome.</p>
+</li>
+<li>
+<p><a href="./UMAP-of-public-opinion-map" class="internal alias" data-slug="UMAP-of-public-opinion-map">UMAP of public opinion map</a>
+<img src="https://gyazo.com/30c9d0303e0de3e01269148c72184c1e/thumb/1000" alt="image"/></p>
+</li>
+<li>
+<p>I got the data for the poll map and immediately UMAP’d it.</p>
+<ul>
+<li><a href="./Public-Opinion-Map-3970-UMAP" class="internal alias" data-slug="Public-Opinion-Map-3970-UMAP">Public Opinion Map 3970 UMAP</a></li>
+<li>3970 people x 84 dimensions (when data from all maps are combined)</li>
+</ul>
+</li>
+<li>
+<p>Unlike the 2022 Upper House election data, there is no party data, so I used <a href="./DBSCAN" class="internal" data-slug="DBSCAN">DBSCAN</a> to cluster the data.</p>
+<ul>
+<li>DBSCAN has nothing to do with database scanning at all, but Density-Based Spatial Clustering of Applications with Noise</li>
+<li>Density-based clustering methods (I’ll talk more about them later, so that’s enough for now)</li>
+</ul>
+</li>
+<li>
+<p>There are about 13 scattered clusters and a central [high-dimensional mud pie</p>
+</li>
+<li>
+<p>What is the data volume ratio?</p>
+<ul>
+<li>3970 in all, with 655 smaller clusters around the perimeter.</li>
+<li>84% of users are in a central cluster with no clear separation</li>
+</ul>
+</li>
+<li>
+<p>Perhaps in the case of politicians answering a questionnaire with a name, there is a “dynamics of opinion polarization” such as the relationship with the claims of the party they belong to, position talk of the opposition party to the ruling party, <a href="./group-polarization" class="internal alias" data-slug="group-polarization">group polarization</a>, etc.
+- <a href="./The-opinion-vectors-of-anonymous-citizens-are-not-so-clearly-separated." class="internal alias" data-slug="The-opinion-vectors-of-anonymous-citizens-are-not-so-clearly-separated.">The opinion vectors of anonymous citizens are not so clearly separated.</a></p>
+</li>
+</ul>
+<p>Struggle with high-dimensional mud dumplings</p>
+<ul>
+<li>
+<p>Can we analyze this part of the center a little better?</p>
+<ul>
+<li><img src="https://gyazo.com/ca78ba9feeb5beabee68258e4128cdc9/thumb/1000" alt="image"/></li>
+<li>It looks like it has a meaningful internal structure, doesn’t it?</li>
+</ul>
+</li>
+<li>
+<p>I was trying to analyze this part of the analysis (<a href="./Should-UMAP-results-be-clustered" class="internal alias" data-slug="Should-UMAP-results-be-clustered">Should UMAP results be clustered?</a>, I started thinking that it might be better not to cluster them).</p>
+<ul>
+<li><img src="https://gyazo.com/2ede642899c3f91ba27476630daa82f7/thumb/1000" alt="image"/></li>
+<li>Increasing parameter eps to reduce gray “outliers” causes clusters to be merged</li>
+<li><img src="https://gyazo.com/868a75c921455b846d041acd1ca2a45c/thumb/1000" alt="image"/><img src="https://gyazo.com/8f47923a4850a422f8cd1d6b127b5db3/thumb/1000" alt="image"/></li>
+<li>This is more of a problem with interpreting DBSCAN “outliers” as “data that is discarded because it is an outlier that is far away” and should be interpreted as “data that is between two clusters and hard to say which side it is on”.
+<ul>
+<li><img src="https://gyazo.com/a7b9acd91aa50cf79544b11fff78fde0/thumb/1000" alt="image"/></li>
+<li>We want to separate A from B, so where do we draw the line?”
+<ul>
+<li>Isn’t this question wrong in the first place? that this question is wrong in the first place, isn’t it?</li>
+<li>Drawing a boundary line is putting in the assumption that it is divisible by a line of no thickness.</li>
+<li>In reality, many things in the world do not have clear boundaries, but are divided across a wide “neither-here-nor-there” zone</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>(I understood later that this was reinventing the design concept of the DBSCAN/HDBSCAN system.)</li>
+</ul>
+</li>
+<li>
+<p>I shared this story within the Yasuno team and they told me an interesting story: <a href="./Careful-clustering-of-tSNE-results" class="internal alias" data-slug="Careful-clustering-of-tSNE-results">Careful clustering of tSNE results</a>.</p>
+</li>
+<li>
+<p>Attempted clustering directly on higher dimensional space rather than on post-UMAP data</p>
+<ul>
+<li><img src="https://gyazo.com/dcd3a244de09a631bc23d62aece80449/thumb/1000" alt="image"/></li>
+<li>I was shocked to see these results.</li>
+<li><img src="https://gyazo.com/8648c886f5ef2c68dc9cb97c5db24fc4/thumb/1000" alt="image"/></li>
+<li>What I mean is.
+<ul>
+<li>Cluster-like dense masses” (blue and purple) after 2D visualization in UMAP</li>
+<li><img src="https://gyazo.com/ca78ba9feeb5beabee68258e4128cdc9/thumb/1000" alt="image"/><img src="https://gyazo.com/5eb99e21a33cd7a7e65d68bfb98457aa/thumb/1000" alt="image"/></li>
+<li>That this is actually not dense at all in higher dimensional space.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>What is happening?</p>
+</li>
+<li>
+<p><a href="./UMAP-of-the-data-for-and-against" class="internal alias" data-slug="UMAP-of-the-data-for-and-against">UMAP of the data for and against</a> issue</p>
+</li>
+<li>
+<p><img src="https://gyazo.com/66f90b8311c1343c4720c730623b1ca1/thumb/1000" alt="image"/></p>
+<ul>
+<li>The greater the amount of data that is neither for nor against, the more reddened it is.</li>
+<li>The “cluster-like dense clusters” were collections of data with few missing values, and the surrounding complex and meaningful shapes were data with many missing values.</li>
+</ul>
+</li>
+<li>
+<p>Originally, this data was set to <code>matrix.dropna(thresh=3)</code> (only keep the data with 3 or more missing data), but when I changed this to <code>matrix.dropna(thresh=8)</code>, the UMAP result was as follows</p>
+<ul>
+<li><img src="https://gyazo.com/cfdedf73e89a82d60ef898acd424606f/thumb/1000" alt="image"/></li>
+<li>Almost all of the complex shapes were artifacts caused by missing values.</li>
+<li>Reprinted: <a href="./The-opinion-vectors-of-anonymous-citizens-are-not-so-clearly-separated." class="internal alias" data-slug="The-opinion-vectors-of-anonymous-citizens-are-not-so-clearly-separated.">The opinion vectors of anonymous citizens are not so clearly separated.</a></li>
+</ul>
+</li>
+<li>
+<p>Maybe it’s like this:.</p>
+<ul>
+<li>The process of filling in missing values with averages has created a very strong cluster of “people who hardly vote at all”.</li>
+<li>Those who voted properly a lot are scattered in the higher dimensional space, forming a “thin, clear, boundaryless mass”.</li>
+<li>UMAP estimates density using the distance to the k nearest neighbor points, which interferes with the characteristics of the opposite data where the data are discrete and overlap at the same coordinates, and is recognized as “clusters that are denser than they really are”, and UMAP attempts to isolate and visualize the characteristic clusters.</li>
+</ul>
+</li>
+<li>
+<p>I have not been able to verify it thoroughly, but once I decided that the discrete value opposite vector is not suitable for UMAP, I put this line of thinking on hold.</p>
+<ul>
+<li>
+<p>I discarded all the people with missing values and UMAPed the data for only one map, not the 84 dimensions of the whole map, and I was able to get a better idea.</p>
+<ul>
+<li><img src="https://gyazo.com/757f3430e3b2aec806bc9a31117dc920/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>
+<p>This also supports the hypothesis that “the lack of cluster separation is not a phenomenon caused by an increase in the number of voting users, but by the opinion space becoming more dimensional as users contribute new opinions” for the negative observation in <a href="./Problem-with-two-Polis-clusters" class="internal alias" data-slug="Problem-with-two-Polis-clusters">Problem with two Polis clusters</a>. Support.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>New projects (to be announced 11/22)</p>
+<ul>
+<li>This is an analysis for embedded vectors of natural language</li>
+<li>I found the characteristics of the data distribution to be important, so I examined them with similar data.
+- <a href="./distribution-of-text-embedded-vectors" class="internal alias" data-slug="distribution-of-text-embedded-vectors">distribution of text-embedded vectors</a>
+- Argument 7574 extracted by Talk to the City extruction from the 18129 retrieved from X
+- Embedded in <a href="./text-embedding-3-large" class="internal" data-slug="text-embedding-3-large">text-embedding-3-large</a>, 3072 dimensions
+- A single mass of nearly uniform distance with some dark areas in places.
+- Conceptual drawing: <a href="./One-lump-with-small-grains" class="internal alias" data-slug="One-lump-with-small-grains">One lump with small grains</a>.
+- <img src="https://gyazo.com/3f553409f14a1b3dd040101a7c102a6d/thumb/1000" alt="image"/>
+<ul>
+<li><a href="./Clustering-and-Partitioning" class="internal alias" data-slug="Clustering-and-Partitioning">Clustering and Partitioning</a></li>
+<li>The “where do we draw the line” question I mentioned earlier.
+<ul>
+<li><img src="https://gyazo.com/80377b55bf03bd7d9ff2cae6ff49cc34/thumb/1000" alt="image"/></li>
+<li>If you have a density distribution with nothing in between the density peaks like the one on the left, you don’t have to worry about clustering.</li>
+<li>Real world data has no clear boundary because the data is also between density peaks, as shown on the right.</li>
+</ul>
+</li>
+<li>Traditional “<a href="./clustering" class="internal" data-slug="clustering">clustering</a>” such as <a href="./K-means" class="internal" data-slug="K-means">K-means</a> attempts to “split” the data set
+<ul>
+<li>That “division” (partition) is called a cluster.</li>
+<li><img src="https://gyazo.com/a68806e0a41cf35ff092174d3580ce7f/thumb/1000" alt="image"/></li>
+<li>Even data that are quite far from the peak of A, such as X, separated by a thin density zone, would be considered a “cluster of A”.</li>
+<li>The DBSCAN authors saw this as a problem.</li>
+<li>What is a “cluster” anyway?</li>
+</ul>
+</li>
+<li>The concept of “clusters” redefined by the authors of DBSCAN
+<ul>
+<li>A cluster is an area where data points are densely distributed.”
+<ul>
+<li>
+<blockquote>
+<p>a cluster is defined to be a set of density-connected points which is maximal wrt. density-reachability.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><img src="https://gyazo.com/e5281054f0acd540ae656eebb2362ad7/thumb/1000" alt="image"/>
+<ul>
+<li>The idea that a cluster is just a region of data points above a certain density, and X is noise that does not belong to any cluster.</li>
+</ul>
+</li>
+<li>To distinguish between these two ways of thinking about clustering, they refer to the former as “partitioning”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Clustering of opinion vectors using Talk to the City is “partitioning”
+<ul>
+<li><img src="https://gyazo.com/c2c76475e5a518a3fe868e76c588a42d/thumb/1000" alt="image"/>
+- <a href="./Differences-between-SpectralClustering-and-HDBSCAN" class="internal alias" data-slug="Differences-between-SpectralClustering-and-HDBSCAN">Differences between SpectralClustering and HDBSCAN</a>
+<ul>
+<li>Spectral Clustering is used by Talk to the City for visualization purposes.</li>
+<li>HDBSCAN is “Hierarchical DBSCAN</li>
+<li>While watching the discussion in <a href="./Nittele-NEWS-x-2024-House-of-Representatives-Election-x-Broad-Listening" class="internal alias" data-slug="Nittele-NEWS-x-2024-House-of-Representatives-Election-x-Broad-Listening">Nittele NEWS x 2024 House of Representatives Election x Broad Listening</a>, I wondered, “Wouldn’t it be better to cut out the high-density parts and discard them as “X is low-density data” so that downstream “generation of <a href="./AI-based-cluster-commentary" class="internal alias" data-slug="AI-based-cluster-commentary">AI-based cluster commentary</a>,” etc. would work better.” I was thinking.</li>
+</ul>
+</li>
+<li>Then I learned about DBSCAN and other issues and thought, well, it’s the same thing!</li>
+</ul>
+</li>
+</ul>
+<p><a href="./Extraction-of-dense-masses" class="internal alias" data-slug="Extraction-of-dense-masses">Extraction of dense masses</a></p>
+<ul>
+<li>Now that I understand DBSCAN/HDBSCAN a little better, I decided to use that policy to tweak the Talk to the City algorithm.
+<ul>
+<li>Experiment log: <a href="./pTTTC2024-11-12" class="internal" data-slug="pTTTC2024-11-12">pTTTC2024-11-12</a>.</li>
+</ul>
+</li>
+<li>Argument 7574 extracted by Talk to the City extruction from the 18129 retrieved from X</li>
+<li>Embedded in <a href="./text-embedding-3-large" class="internal" data-slug="text-embedding-3-large">text-embedding-3-large</a>, 3072 dimensions</li>
+<li>From here, we extracted the densely populated areas with HDBSCAN(min_cluster_size=5, max_cluster_size=30, min_samples=2) and obtained 79
+<ul>
+<li>This setting is intended to pick up a lot of fine clusters</li>
+<li>Visually, it became, “It’s definitely dense content.”</li>
+</ul>
+</li>
+<li>739 data used for the cluster, 9.8% coverage
+<ul>
+<li>Judgment that 90% is noise</li>
+<li>Sometimes we call noise <a href="./the-outlier" class="internal alias" data-slug="the-outlier">the outlier</a>, but when we say outlier, you’d think it’s relatively small.</li>
+</ul>
+</li>
+<li>This approach has advantages and disadvantages compared to the current TTTC</li>
+<li>The current TTTC, which shows the whole picture with scatter plots and forced clustering, is well suited to satisfy the desire <a href="./Let's-start-with-the-broad-strokes..." class="internal alias" data-slug="Let's-start-with-the-broad-strokes...">Let’s start with the broad strokes…</a> <a href="./I-want-to-get-the-whole-picture..." class="internal alias" data-slug="I-want-to-get-the-whole-picture...">I want to get the whole picture…</a>.
+<ul>
+<li>During the gubernatorial campaign, it was like they’d shut up and show it to the people across the net OR the policy team would read it and refer to it.
+<ul>
+<li>Some policy team members suggested that another method <a href="./Talk-to-the-City-Turbo" class="internal alias" data-slug="Talk-to-the-City-Turbo">Talk to the City Turbo</a> was more in-depth and helpful (N=1).</li>
+<li><a href="./Nittele-NEWS-x-2024-House-of-Representatives-Election-x-Broad-Listening" class="internal alias" data-slug="Nittele-NEWS-x-2024-House-of-Representatives-Election-x-Broad-Listening">Nittele NEWS x 2024 House of Representatives Election x Broad Listening</a> needed to provide “commentary” for viewers</li>
+<li>The process clarified the need to not only present the big picture, but also to “dig deeper into deep opinions.
+<ul>
+<li>In this process, the current TTTC can only show N=1 by “mouse hovering over a point”.</li>
+<li>Also, there is a lack of support in that “finding an opinion to focus on” area.
+<ul>
+<li>You just look at a few at random and leave it up to luck.</li>
+<li>You end up looking at all 7,000 cases.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The new method we have developed will improve this area.
+<ul>
+<li>Reduce the burden of “looking at 79 clusters with high concentration instead of looking at all 7,000 cases.”</li>
+<li>Increased persuasiveness by being able to present as “N=5~30 opinions instead of N=1”.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>We applied this algorithm to the data in <a href="TTTC:%20Public%20Comments%20on%20AI%20and%20Copyright" class="external">TTTC: Public Comments on AI and Copyright<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, which can be made publicly available.
+<ul>
+<li><a href="https://github.com/nishio/ai_kj/blob/main/dense_cluster_extruction.ipynb" class="external">https://github.com/nishio/ai_kj/blob/main/dense_cluster_extruction.ipynb<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>5957 cases 1536 dimensions</li>
+<li>48 clusters were extracted</li>
+<li>We had GPT-4o score the cluster interesting, but that in itself did not yield very interesting results!
+<ul>
+<li>Well, this may be partly because we haven’t taught the AI what the purpose of research is and what kind of things are interesting.</li>
+</ul>
+</li>
+<li>It would be more interesting to include a prompt in the output list of clusters to “List clusters that introduce a unique perspective and what is original about them.
+<ul>
+<li><img src="https://gyazo.com/6f6d83e0fb6c3fda4c88b197727d82f0/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li><a href="https://chatgpt.com/share/6735c2e5-5bac-8011-bccc-d8ffd64fd1d9" class="external">ChatGPT log<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+<p>Relation to the KJ method</p>
+<ul>
+<li>In the June <a href="./Talk-to-the-City-Study-Group" class="internal alias" data-slug="Talk-to-the-City-Study-Group">Talk to the City Study Group</a>, I also wrote about the connection with the <a href="./KJ-method" class="internal alias" data-slug="KJ-method">KJ method</a> in the appendix.
+<ul>
+<li><img src="https://gyazo.com/973ea9617662cabdccfcf594eff6bb7c/thumb/1000" alt="image"/>
+<ul>
+<li><a href="./way-of-thinking" class="internal alias" data-slug="way-of-thinking">way of thinking</a>  p.77</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>In his mind, he has a dogmatic principle of grouping, such as, “In my opinion, it is correct to divide this paper material into three major categories: market research, quality control, and labor management. They are simply applying this dogmatic classification scheme and sifting and fitting the paper materials into a ready-made framework. This is a mere sifting and fitting of paper materials into the ready-made wakku, which completely defeats the conceptual significance of the KJ method.</p>
+</blockquote>
+<ul>
+<li><a href="./Jiro-Kawakita" class="internal alias" data-slug="Jiro-Kawakita">Jiro Kawakita</a> criticized human beings for sieving, fitting into [* dogmatic classification wakugumi</li>
+</ul>
+</li>
+<li>As a way to deal with this problem, I proposed the KJ method, which is to look at each piece one by one and attach it to the related pieces.</li>
+<li>This is <a href="./Agglomerative-Hierarchical-Clustering" class="internal alias" data-slug="Agglomerative-Hierarchical-Clustering">Agglomerative Hierarchical Clustering</a> in data science terms.</li>
+<li>TTTC avoids “dogmatic human fitting” by having machines, rather than humans, perform the clustering.</li>
+</ul>
+</li>
+<li>This time, the relationship with the KJ method has become even clearer.</li>
+<li>Clustering in the sense of “partitioning” has split the data set top-down.</li>
+<li>Extracting clusters with high concentration using a method like DBSCAN is almost equal to “collecting related things to form a group” in the KJ method</li>
+<li>Leaving things that don’t fit well in a cluster without putting them in a cluster is the same as the KJ method “<a href="./leave-monkey" class="internal alias" data-slug="leave-monkey">leave monkey</a> away”.
+<ul>
+<li>It is not KJ legal to say that 90% of the data will be away monkeys.</li>
+<li>This phenomenon is caused by the fact that this method defines “proximity” as “distance in the embedded vector space.</li>
+<li>When humans do the KJ method, they are asked to find connections between things that do not seem to be connected and group them together, and they “discover relationships” such as “This X and Y do not seem to be connected at first glance, but they are related on <a href="./side" class="internal" data-slug="side">side</a> A.
+<ul>
+<li>So this is finding another meaning of “nearness” by performing an additional operation on something that is “far” in the sense of “cosine distance in the embedded vector space”.</li>
+<li>I think the reason why the KJ method causes the promotion of ideas as a “way of thinking” or “intellectual production technique” is because it forces people to do this “search for relationships.</li>
+</ul>
+</li>
+<li>How can a machine search for relationships that are not expressed in the distance of the embedding vector?
+<ul>
+<li>In my book “<a href="./Natural-Language-Processing-with-word2vec" class="internal alias" data-slug="Natural-Language-Processing-with-word2vec">Natural Language Processing with word2vec</a>, [Similarity of concepts is not distance.</li>
+<li>In this case, it may be possible to deal with the problem by randomly collapsing axes, or by collapsing axes with low contribution rate by PCA, or by collapsing axes with the closest contribution rate by reversing the idea (future experiment).</li>
+<li>If you’d rather get into the LLM context, you could let LLMs “discover relationships” just like humans.
+<ul>
+<li>I think it’s good to chop it down to an amount that will fit into the LLM context.</li>
+<li>Because there is a limit to the number of labels that can fit in the human field of vision.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>KJ legal never throws away one of the away monkeys.
+<ul>
+<li>In order to achieve this, we need to figure out how to merge the separate monkeys into a cluster.</li>
+<li>Maybe on a mere distance basis it would “move, but not with good results”.</li>
+<li>Need to experiment to see if I can prompt the LLM to do it.</li>
+</ul>
+</li>
+<li>The KJ method is a technique that requires a great deal of skill to begin with, and Jiro Kawakita, the world’s most experienced KJ methodner, says “<a href="./50-KJ-method-assumes-10-hours" class="internal alias" data-slug="50-KJ-method-assumes-10-hours">50 KJ method assumes 10 hours</a>” and has done only 129 KJ sheets in 5 years because it takes too much time. I felt that the time was approaching when AI would make it an easy method.</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from <a href="https://scrapbox.io/nishio/%E9%AB%98%E6%AC%A1%E5%85%83%E3%83%87%E3%83%BC%E3%82%BF%E5%88%86%E6%9E%90%E5%8B%89%E5%BC%B7%E4%BC%9A" class="external">/nishio/高次元データ分析勉強会<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Diary-2024-11-18" class="internal">Diary 2024-11-18</a></li><li><a href="./Weekly-Report-2024-11-23~" class="internal">Weekly Report 2024-11-23~</a></li><li><a href="./Weekly-journal-2024-11-17~2024-11-23" class="internal">Weekly journal 2024-11-17~2024-11-23</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

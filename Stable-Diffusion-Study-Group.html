@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Stable Diffusion Study Group</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Stable Diffusion Study Group"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Stable Diffusion Study Group"/><meta name="twitter:description" content="2022-09-30 Cybozu Labs Machine Learning Study Group How it works. I’m not talking about usage or business value. Objective: “Reduce black boxes.” At first, I wrote “eliminate the black box,” but if you dig in depth-first search until the black box is gone, you won’t finish even after 10 hours, so you’ll use width-first search."/><meta property="og:description" content="2022-09-30 Cybozu Labs Machine Learning Study Group How it works. I’m not talking about usage or business value. Objective: “Reduce black boxes.” At first, I wrote “eliminate the black box,” but if you dig in depth-first search until the black box is gone, you won’t finish even after 10 hours, so you’ll use width-first search."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="2022-09-30 Cybozu Labs Machine Learning Study Group How it works. I’m not talking about usage or business value. Objective: “Reduce black boxes.” At first, I wrote “eliminate the black box,” but if you dig in depth-first search until the black box is gone, you won’t finish even after 10 hours, so you’ll use width-first search."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Stable-Diffusion-Study-Group"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Stable-Diffusion-Study-Group"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="2022-09-30 Cybozu Labs Machine Learning Study Group How it works. I’m not talking about usage or business value. Objective: “Reduce black boxes.” At first, I wrote “eliminate the black box,” but if you dig in depth-first search until the black box is gone, you won’t finish even after 10 hours, so you’ll use width-first search."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Stable-Diffusion-Study-Group"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Stable Diffusion Study Group</a></div></nav><h1 class="article-title">Stable Diffusion Study Group</h1><p show-comma="true" class="content-meta"><span>Oct 26, 2022</span><span>21 min read</span></p><ul class="tags"><li><a href="./tags/stablediffusion" class="internal tag-link">stablediffusion</a></li></ul></div></div><article class="popover-hint"><ul>
+<li>2022-09-30</li>
+<li>Cybozu Labs Machine Learning Study Group</li>
+<li>How it works.
+<ul>
+<li>I’m not talking about usage or business value.</li>
+</ul>
+</li>
+<li>Objective: “Reduce black boxes.”
+<ul>
+<li>At first, I wrote “eliminate the black box,” but if you dig in depth-first search until the black box is gone, you won’t finish even after 10 hours, so you’ll use width-first search.</li>
+</ul>
+</li>
+</ul>
+<p>How Stable Diffusion works</p>
+<ul>
+<li>a rough overall view</li>
+<li><img src="https://gyazo.com/f3a87d87da66e6c21724d190130d09a5/thumb/1000" alt="image"/></li>
+<li>There are three main components.
+<ul>
+<li><a href="./diffusion-model" class="internal alias" data-slug="diffusion-model">diffusion model</a>  (<a href="./Denoising-Diffusion-Probabilistic-Models" class="internal alias" data-slug="Denoising-Diffusion-Probabilistic-Models">Denoising Diffusion Probabilistic Models</a>, <a href="./DDPM" class="internal" data-slug="DDPM">DDPM</a>)</li>
+<li>Basically, the image is generated by repeatedly using the “noise removal mechanism”.</li>
+<li>Prepare images x collected from the Internet and y with noise added to them, and train a “neural network that produces x when y is input”.</li>
+<li>When this is applied to pure noise, a new image is created</li>
+<li><img src="https://gyazo.com/ce8e64d674d1dcb54c5be9e07438e3b2/thumb/1000" alt="image"/>
+<ul>
+<li>The actual values during the Stable Diffusion process were extracted and visualized.</li>
+<li>The far left is pure noise, repeated noise removal, and it’s a cat.</li>
+</ul>
+</li>
+<li><img src="https://gyazo.com/f3a87d87da66e6c21724d190130d09a5/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li><a href="./High-Resolution-Image-Synthesis-with-Latent-Diffusion-Models" class="internal alias" data-slug="High-Resolution-Image-Synthesis-with-Latent-Diffusion-Models">High-Resolution Image Synthesis with Latent Diffusion Models</a>
+<ul>
+<li><a href="./latent-diffusion-model" class="internal alias" data-slug="latent-diffusion-model">latent diffusion model</a>
+<ul>
+<li>Meaning of this latent</li>
+<li>Encode the image not in the space of the image itself, but in a low-dimensional space (latent space) using <a href="./VAE" class="internal" data-slug="VAE">VAE</a>, and then decode it using a diffusion model.
+<ul>
+<li>We’ll talk about <a href="./VAE" class="internal" data-slug="VAE">VAE</a> later.</li>
+</ul>
+</li>
+<li>Stable Diffusion’s standard setting is a 4x64x64 dimensional tensor.
+<ul>
+<li><img src="https://gyazo.com/03001d0e0afbd7ac95f7383401bc3178/thumb/1000" alt="image"/> <a href="./Stable-Diffusion-Latent-Space-Visualization" class="internal alias" data-slug="Stable-Diffusion-Latent-Space-Visualization">Stable Diffusion Latent Space Visualization</a></li>
+</ul>
+</li>
+<li><img src="https://gyazo.com/0ee08cf35c00aa27a9f4cd99c25acc8c/thumb/1000" alt="image"/>
+<ul>
+<li>Finally, I’m using this VAE decode to convert it back to a 512x512 RGB image.</li>
+</ul>
+</li>
+<li>The space has shrunk from 800,000 dimensions (3 x 512 x 512) to 20,000 dimensions (4 x 64 x 64), making learning more efficient.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="./[[DDIM]]" class="internal alias" data-slug="[[DDIM]]">[Denoising Diffusion Implicit Models]</a>
+<ul>
+<li>Denoise process is now 10-100 times faster</li>
+<li>In the past, models denoise one step at a time.
+<ul>
+<li>This is done in multiple steps using the implicit method</li>
+<li>The idea is that if you can guess Y with acceptable accuracy “the result of doing process X 20 times”, you should do process Y instead of doing process X 20 times.</li>
+</ul>
+</li>
+<li>In fact, the standard Stable Diffusion setting of 1,000 steps of noise reduction is done in 50 steps of 20 steps each.
+<ul>
+<li><img src="https://gyazo.com/66f99c801210fb64d6c16c0affdc7786/thumb/1000" alt="image"/>
+Question so far</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Q: What does Stable mean?
+<ul>
+<li>A: Just a name, like saying what is Dream in DreamBooth, just a project name</li>
+<li>Q: I can’t seem to get rid of the noise or stabilize it at all.</li>
+<li>A: I don’t know why I chose this name because I am not the author.</li>
+<li>B: I wonder if it was named in the atmosphere that it produces a stable and beautiful picture.</li>
+</ul>
+</li>
+<li>Q: What is a prompt?
+<ul>
+<li>A: A string of characters to be entered, explained in detail below
+<ul>
+<li>The world recognizes it as a tool where you put text in and a picture comes out, but the explanation so far still doesn’t explain where you put the text in.</li>
+</ul>
+</li>
+<li>Q: Are you saying that the denoising process itself is not prompt-related?</li>
+<li>A: It’s not about prompts, or…
+<ul>
+<li>The way the diffusion model works to generate an image is by denoising from just noise to create an image.</li>
+<li>The denoising part is a conditional probability, which can be modified by specifying conditions, and the prompt string can be inserted there as a condition.</li>
+<li>PS: This condition parameter does not have to be textual, in fact, the paper experiments with various types of conditions.
+<ul>
+<li>The world just buzzed about the “just put in a text prompt and you get a picture!” is just a buzzword that can be used by people with no knowledge of the pathway.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Q: Does the 4 x 64 x 64 in Tensor mean there are 4 pieces?
+<ul>
+<li>A: It means there are four cards; it can be taken as having four channels.</li>
+<li>Q: What is 3 x 512 x 512?</li>
+<li>A: 3 channels of RGB</li>
+</ul>
+</li>
+<li>Q: Why don’t we do the 1000 steps all at once, but instead do 20 steps 50 times each?
+<ul>
+<li>The more you put a lot together, the bigger the “discrepancy from when you did it right one step at a time”.</li>
+<li>Formulatively, we can make an update formula that does 1,000 steps at a time, but this is an estimate, so the error will be large.</li>
+<li>If the error becomes too large, there is no practical benefit.
+<ul>
+<li>The trade-off between time and accuracy is that about 20 times is just about practical.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>(computer) prompt</p>
+<ul>
+<li>
+<p>The text to be entered when generating the image.</p>
+</li>
+<li>
+<p>Divided into subwords, then one token (often one word) becomes a vector of 768 dimensions.</p>
+<ul>
+<li>If you enter a word that is not in the dictionary, such as bozuman, a word is split into three tokens.</li>
+<li>When the prompts are split into tokens at a time when there are more than 77, they’re truncated to a fixed length.
+<ul>
+<li>Padding with 0 if short</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>It will be a 77 tokens x 768 dimensional tensor.</p>
+<ul>
+<li><img src="https://gyazo.com/9b56949eefcc9f7f031b74a847a68d1b/thumb/1000" alt="image"/>
+- <a href="./Stable-Diffusion's-prompt-will-be-a-77-x-768-dimensional-tensor" class="internal alias" data-slug="Stable-Diffusion's-prompt-will-be-a-77-x-768-dimensional-tensor">Stable Diffusion’s prompt will be a 77 x 768 dimensional tensor</a>
+<ul>
+<li>Vertical stripes appear to be vertical because variants of <a href="./Positional-Encoding" class="internal alias" data-slug="Positional-Encoding">Positional Encoding</a> are added.</li>
+</ul>
+</li>
+<li>This is done by <a href="./[[clip-ViT-L-14]]" class="internal alias" data-slug="[[clip-ViT-L-14]]">[CLIP]</a>
+<ul>
+<li>Not learned in Stable Diffusion
+<ul>
+<li>They just take an existing published model and use it as a component without modification.</li>
+</ul>
+</li>
+<li>Learning of the task of mapping images and sentences (guessing which images and sentences are paired) in a nutshell
+<ul>
+<li>There are 5 images and 5 texts, which one is the pair? something like that.</li>
+</ul>
+</li>
+<li>Both images and text can be projected onto a 768-dimensional vector to compute cosine similarity.</li>
+<li>Various projects are using parts of the model because it has been trained on a large scale and the model is publicly available.
+<ul>
+<li>Stable Diffusion only used to embed prompts</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Go to <a href="./attention-mechanism" class="internal alias" data-slug="attention-mechanism">attention mechanism</a> for information on prompts during denoise</p>
+<ul>
+<li>What size exactly is the attention mechanism?</li>
+<li>The noise reduction process is specifically <a href="./U-Net" class="internal" data-slug="U-Net">U-Net</a>, and since it is difficult to explain the whole process because the attention mechanism extends from each layer, I will extract one part and explain it.</li>
+<li><img src="https://gyazo.com/370a3b55cca24971403d856683e2e1a8/thumb/1000" alt="image"/>
+<ul>
+<li>The prompt has 77 vectors of 768 dimensions.</li>
+<li>I have it converted to 300 dimensions each with the appropriate neural net.
+<ul>
+<li>This is the set of keys K and the set of values V</li>
+</ul>
+</li>
+<li>Information taken from somewhere else and converted to 300 dimensions, this is the query Q</li>
+<li>Matmul Q and K. In essence, it is equivalent to taking the inner product of each vector.</li>
+<li>And if you put it in Softmax, the value where the direction of the vector is close to the direction of the vector will be larger.
+<ul>
+<li>This is the attention weight</li>
+<li>If one of the places were to be 1, then the matmul with the next V would effectively be equivalent to “choose that one”.</li>
+<li>In other words, “which of the 77 tokens to pay attention to and which to ignore” is contained in this value</li>
+</ul>
+</li>
+<li>This is how we create value, mixing only the parts we pay attention to.</li>
+<li>The mechanism itself is a so-called “<a href="./attention-mechanism" class="internal alias" data-slug="attention-mechanism">attention mechanism</a>” and does nothing mundane or StableDiffusion-specific.</li>
+</ul>
+</li>
+<li><a href="./U-Net" class="internal" data-slug="U-Net">U-Net</a> model for Denoising Diffusion Probabilistic Models (DDPM)
+<ul>
+<li><a href="https://nn.labml.ai/diffusion/ddpm/unet.html" class="external">https://nn.labml.ai/diffusion/ddpm/unet.html<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><img src="https://gyazo.com/3b66a0599134b164ac6317347b8ac6c7/thumb/1000" alt="image"/></li>
+<li>Simply put, U-Net is a group used for tasks that take images as input and output images.
+<ul>
+<li>A mechanism to pass through a low-resolution, high-channel count representation once</li>
+<li>I’m copying and pasting the information before it goes through that thin space.
+<ul>
+<li>Gray arrows and white squares</li>
+<li>Reproduce high-resolution information using both information that has been passed through low-resolution space and information that has not been passed through space.</li>
+<li>It is my understanding that this pasting together also adds information from the caution mechanism, I could be wrong.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>In the figure above, the 572 x 572 330,000 dimensional information is once a small 28 x 28 image.
+<ul>
+<li>There are 1024 channels, which increases to 800,000 dimensions.
+<ul>
+<li>The highly abstract information gathered from a wide range of images would be packed into this deep channel.</li>
+</ul>
+</li>
+<li>Passing higher dimensional information through a lower dimensional space is a concept related to <a href="./autoencoders" class="internal" data-slug="autoencoders">autoencoders</a> and others, whereby “trivial information” that is not necessary for recognition, etc., can be discarded.
+<ul>
+<li>There was no dimensional reduction.</li>
+<li>It’s said to reduce spatial resolution and discard trivial high-frequency components, etc.</li>
+<li>The dimensionality in the middle is not reduced, so if you let the auto-encoder-like task of restoring the original image be done, it will restore it perfectly.</li>
+<li>The network in the figure is illustrated with an example of a segmentation task</li>
+<li>If it’s that kind of task, I wonder if a lot of channels are used effectively because it’s a problem that can’t be solved even if every single pixel in the image is discrete.</li>
+<li>Segments are physically localized
+<ul>
+<li>There are no segments scattered on the screen.</li>
+<li>= High-frequency components of pixels are less likely to be affected</li>
+<li>To get results that fit these patterns of human cognition, they are low-resolution and discard components in the spatial frequency direction.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>guidance_scale</p>
+<ul>
+<li>I saw this in the parameter list and wondered, “What is it?” I guess a lot of people wondered.</li>
+<li>
+<blockquote>
+<p><code>guidance_scale</code> is defined analog to the guidance weight <code>w</code> of equation (2) of the Imagen paper: <a href="https://arxiv.org/pdf/2205.11487.pdf" class="external">https://arxiv.org/pdf/2205.11487.pdf<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+</li>
+<li><img src="https://gyazo.com/74cbce41ccd4ee28594cbf970e64c1e1/thumb/1000" alt="image"/></li>
+<li>Compute the unconditional noise prediction <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">θ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> and the noise estimate <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">θ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">c</span><span class="mclose">)</span></span></span></span> when there is no prompt, respectively</li>
+<li>The difference is then multiplied by a factor and added together, i.e., this parameter determines how much prompting is important.</li>
+<li>I thought it was supposed to be 0 to 1 from the form of the formula, but the default value is 7.5
+<ul>
+<li>Applied with more emphasis on the impact of the prompt than the actual estimation.</li>
+</ul>
+</li>
+<li>In NovelAI, this second term, unconditional noise prediction, has been replaced by negative prompt conditional noise prediction.
+<ul>
+<li>It makes the effect of negative prompts opposite to the normal prompts.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="./Seed-and-prompt-relationship-for-Stable-Diffusion" class="internal alias" data-slug="Seed-and-prompt-relationship-for-Stable-Diffusion">Seed and prompt relationship for Stable Diffusion</a></p>
+</li>
+<li>
+<p>This is an article explained for unexplored juniors, once we move on to this page to explain</p>
+</li>
+<li>
+<p><a href="./Stable-Diffusion-Embedded-Tensor-Editing" class="internal alias" data-slug="Stable-Diffusion-Embedded-Tensor-Editing">Stable Diffusion Embedded Tensor Editing</a></p>
+</li>
+<li>
+<p><img src="https://pbs.twimg.com/media/FcruvumacAE1QHu.jpg" alt="image"/></p>
+</li>
+<li>
+<p>The world recognizes it as a system that generates an image with a prompt (text), but the prompt is immediately embedded in the vector space, so it can be added and scalar multiplied.</p>
+</li>
+</ul>
+<p>How img2img works</p>
+<ul>
+<li><img src="https://gyazo.com/4ab142483fe6161633e24987b79a5fac/thumb/1000" alt="image"/>
+<ul>
+<li>Last time I did text to image, the initial value was just a random number.
+<ul>
+<li>In this method, the image given by a human is embedded in the latent space, and then a little noise is added to it to make it an initial value.</li>
+<li>Denoise the original image about 75% of the time, for example, and then denoise 75% of the times.
+<ul>
+<li>The strength of the noise and the number of denoise are both determined by strength.</li>
+<li>Less noise will be closer to the original image.</li>
+<li>The greater the noise, the greater the change.</li>
+<li>The parameters of the picture in this commentary are as follows
+<ul>
+<li>prompt: “cat, sea, wave, palm tree, in Edvard Munch style”</li>
+<li>strength: 0.75</li>
+<li><a href="./Stable-Diffusion-Latent-Space-Visualization" class="internal alias" data-slug="Stable-Diffusion-Latent-Space-Visualization">Stable Diffusion Latent Space Visualization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I’ve tried different STRENGTH.
+<ul>
+<li>Strength was increased from 0.6 to 0.99 in 0.01 increments.</li>
+<li><img src="https://gyazo.com/0879fa5004d77ded58b9bcc98a34f055/thumb/1000" alt="image"/>
+<ul>
+<li>step: 0.1” in the image is a typo for “step: 0.01</li>
+</ul>
+</li>
+<li>The greater the amount of noise, the freer you draw, ignoring the original picture.
+<ul>
+<li>On the top left, much closer to what I wrote.</li>
+<li>Down on the right, there’s a cat missing, a palm tree turned into a cat, a cat buried in sand, and a freebie.</li>
+</ul>
+</li>
+<li>Q: What’s going on with the prompts?
+<ul>
+<li>A: All in common, prompt: “cat, sea, wave, palm tree, in Edvard Munch style.”
+<ul>
+<li>Edvard Munch is Munch from Munch’s The Scream.</li>
+<li>The way you painted the sky gives it a Munch look.</li>
+<li>The first image I gave you was painted flat with a single color, which is reproduced in the upper left, but the lower right, the more complex the sky paint becomes.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>What I think I failed to do during this experiment is not fixing the random seed when I put noise on it.
+<ul>
+<li>That’s the reason for the wide variation in results.</li>
+<li>Maybe it would have been better to fix it and experiment with it so we could ignore that factor.</li>
+</ul>
+</li>
+<li>Since the lower right corner is 99% noise, I am rather surprised that the composition of sand in the foreground and the sea in the background can be maintained.</li>
+<li>Enlargement of cat. part of 0.6 unit
+<ul>
+<li><img src="https://gyazo.com/c97b908051fea30461729f2a81607013/thumb/1000" alt="image"/> <img src="https://gyazo.com/f37628eb413e3693305bb410120bf37c/thumb/1000" alt="image"/><img src="https://gyazo.com/db1c4e2836e2b3356de771beff24a00b/thumb/1000" alt="image"/><img src="https://gyazo.com/6b29646b7ffd43164777c9da0e639aff/thumb/1000" alt="image"/></li>
+<li>I drew it just right, and the shape of the ears was “Is that a cat? I drew it properly, but it has been corrected to a decent ear shape, which is good.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Experiment with hand-drawn diagrams and see what happens.
+<ul>
+<li>It would be nice if you could neatly clean up the hand-drawn diagrams.</li>
+<li>but so far I haven’t found a good prompt.
+<ul>
+<li>
+<p><img src="https://gyazo.com/6d7c429bf18c8c4241ff5e4f7b712e32/thumb/1000" alt="image"/> <img src="https://gyazo.com/00a5fe2e0f5608e729b044aac2fdf915/thumb/1000" alt="image"/></p>
+</li>
+<li>
+<p>I’m redrawing it with 90% noise, but it’s hard to tell the difference.</p>
+</li>
+<li>
+<p><img src="https://gyazo.com/80829926214f2960bea545cf0c121cea/thumb/1000" alt="image"/> <img src="https://gyazo.com/6e3838c5ac16740d741015306a39be96/thumb/1000" alt="image"/></p>
+</li>
+<li>
+<p><img src="https://gyazo.com/769aec555c457759ce1d87c81849ee5e/thumb/1000" alt="image"/> <img src="https://gyazo.com/82734ded31c35b2eb80db9c7c4cc3f8e/thumb/1000" alt="image"/></p>
+</li>
+<li>
+<p>This area is clean, but w</p>
+<ul>
+<li>It’s too detailed for most people to understand.</li>
+</ul>
+</li>
+<li>
+<p>And conversely, letters and other characters are garbled into other characters (5 becomes S, etc.).</p>
+<ul>
+<li><img src="https://gyazo.com/79a5be84b4d3badcc5552083135937d4/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>There’s a handwritten style image out there.</li>
+<li>I wish I could get a chart finished with exactly straight lines and arcs, such as path drawings.
+<ul>
+<li>I hope you can find a prompt to put out something like that…</li>
+<li>There’s a way to get them to learn that kind of style through fine tuning.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>inpaint</p>
+<ul>
+<li><img src="https://gyazo.com/1e683ae1f60758ddd9d6e36391da3608/thumb/1000" alt="image"/></li>
+<li><img src="https://gyazo.com/7bbbd2f36bc287afe03cd0b19e6f9ce9/thumb/1000" alt="image"/>
+- <a href="./How-Stable-Diffusion-Inpaint-works" class="internal alias" data-slug="How-Stable-Diffusion-Inpaint-works">How Stable Diffusion Inpaint works</a></li>
+<li>It’s not “the ability to redraw only the unmasked areas.”
+<ul>
+<li>That’s a crude explanation for the general public.</li>
+<li>It’s not a “don’t change anything that’s masked, just make the rest of it so that the boundaries add up.”</li>
+<li>I assumed that was the case at first, too, but when I looked into it more closely I found that it wasn’t, due to behavior that was contrary to my understanding.
+<ul>
+<li><img src="https://gyazo.com/8e774b25c948331055c2f27ecb84b864/thumb/1000" alt="image"/>
+<ul>
+<li>
+<blockquote>
+<p>What’s wrong with the masked area that doesn’t seem to be maintained? (9/12/2022)</p>
+</blockquote>
+</li>
+<li>God part is masked. The top and bottom margins are unmasked.
+<ul>
+<li><img src="https://gyazo.com/71e41bc6a8ae03e54fe89c7309098897/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>I expected God to be the mom of the original painting and the margins to be painted appropriately, but that didn’t happen.</li>
+<li>Q: Surprise the mask part changes.
+<ul>
+<li>A: I know, the God part was rewritten like crazy, and I was like, “Is there something wrong with the way I’m using it or the code or something?” I was worried.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>It’s natural when you know how it works.
+<ul>
+<li>There is not enough information to maintain the original image because it goes through the latent space once in between.</li>
+</ul>
+</li>
+<li>The bench dog sample, which at first glance appears to maintain the masked area, but upon zooming in, you can see that the mesh pattern of the masked bench has changed.
+<ul>
+<li><img src="https://gyazo.com/3555cfd5ad7d03a520c5be77bb59ad93/thumb/1000" alt="image"/></li>
+<li>It just so happens that humans don’t pay attention to the pattern on the bench, so it’s hard to notice.</li>
+<li>Human attention is directed to the dog and cat in the center.</li>
+</ul>
+</li>
+<li>Realistic workflow is synthesized again after generation
+<ul>
+<li>Example of compositing in Photoshop
+<ul>
+<li><a href="https://note.com/abubu_nounanka/n/n3a0431d2c47a" class="external">Create images the way you want! About img2img &amp; photobash composite workflow StableDiffusion ｜abubu nounanka｜note<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>Would the borders stand out if the mask image itself were used to compose the image?
+<ul>
+<li>Tried: <a href="./mask-again-after-inpaint" class="internal alias" data-slug="mask-again-after-inpaint">mask again after inpaint</a>.</li>
+<li>There are seams, but the seams are learning to be closer together, so they weren’t as noticeable in this case.</li>
+<li>This process can be fully automated.</li>
+<li>It is up to individual human use cases to decide whether they prefer this treatment or not
+<ul>
+<li>It doesn’t cost much, and realistically, it’s better to generate both.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I didn’t explain in detail how it works.
+<ul>
+<li><img src="https://gyazo.com/7bbbd2f36bc287afe03cd0b19e6f9ce9/thumb/1000" alt="image"/></li>
+<li>The white areas of the mask image “may be freely drawn.”
+<ul>
+<li>The black area says, “Feel free to write whatever you want, but I’ll blend it with the original image with the appropriate coefficient.”</li>
+<li>Blended with the original image many times during the denoising process
+<ul>
+<li>So the final black area will be “fairly close to the original image”.</li>
+<li>This process is of course done in latent space, so it is only “close in latent space”, 64x64 resolution
+<ul>
+<li>A 64x64 image restored to 512x512 by VAE will not match the original image.</li>
+<li>In the example of the cat and God, this “returned image” was not of acceptable human quality.</li>
+<li>Because unlike a fence fence, God was “in the foreground” and “the focus of human attention.”</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>How <a href="./img2prompt" class="internal" data-slug="img2prompt">img2prompt</a> works</p>
+<ul>
+<li><a href="https://replicate.com/methexis-inc/img2prompt" class="external">methexis-inc/img2prompt – Run with an API on Replicate<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<ul>
+<li>The name <a href="./CLIP-interrogator" class="internal alias" data-slug="CLIP-interrogator">CLIP interrogator</a> may be taking root.
+<ul>
+<li><a href="https://github.com/pharmapsychotic/clip-interrogator" class="external">GitHub - pharmapsychotic/clip-interrogator<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://gyazo.com/0fc5ddd200ee59aebb028a38c79c09c0/thumb/1000" alt="image"/>
+<ul>
+<li>The Stable Diffusion txt2img we’ve been talking about is a mechanism for creating images from text.</li>
+<li>A separate project from Stable Diffusion is the task of inputting images and describing them
+<ul>
+<li>There is a project and repository that is tweaking this a bit and doing a “make a prompt that looks good to put in Stable Diffusion”.</li>
+</ul>
+</li>
+<li>In this example, a black cat with yellow eyes, colored pencil drawing, looks like it was drawn by some guy.
+<ul>
+<li>And then there are all the little attributes, like “chalk drawing” or “charcoal drawing” or “charcoal style,” and then there’s the mysterious CC-BY license.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>First, create an image description in <a href="./BLIP" class="internal" data-slug="BLIP">BLIP</a>.
+<ul>
+<li>[” a painting of a black cat with yellow eyes</li>
+<li>how it works
+<ul>
+<li>Divide the image into sections and describe each part, then put them together.</li>
+<li>If you take it as a whole, it’s a black cat, and if you zoom in, yellow eyes, the description is generated.</li>
+<li>Other examples include “cat on a window sill” and “cats in a row”.</li>
+</ul>
+</li>
+<li>So even though I only indicated “black cat”, there are more detail explanations than I indicated.
+<ul>
+<li>The yellowing of the eyes is due to random seeding.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>After that, I’m doing a round-the-clock search for elements to add.
+<ul>
+<li>For example, the list of writers’ names lists 5,219 names.
+<ul>
+<li>Edvard Munch, Wassily Kandinsky, and many others I can’t think of that have been written.</li>
+<li>From here, we’ll do a brute-force search.
+<ul>
+<li>Adopt the one that increases the similarity the most by sticking together.</li>
+</ul>
+</li>
+<li>Opportunity to discover unfamiliar painters and style keywords.
+<ul>
+<li>Examples: <a href="./Discover-the-painter" class="internal alias" data-slug="Discover-the-painter">Discover the painter</a> , [/c3cats/space cat](<a href="https://scrapbox.io/c3cats/space" class="external">https://scrapbox.io/c3cats/space<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> cat).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Cosine similarity written at <a href="./CLIP" class="internal" data-slug="CLIP">CLIP</a>.
+<ul>
+<li>
+<blockquote>
+<p>Both images and text can be projected onto a 768-dimensional vector to compute cosine similarity.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>A system that looks at the cosine similarity to see if it is close to the target image, and finds and combines keywords that are close.
+<ul>
+<li>Note: This 768 dimension is different from the token’s embedding space, which happens to be dimensionally coincident.
+<ul>
+<li>One step further, the “text and image are embedded in the same 768-dimensional space” space.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>BLIP alone produces a cosine similarity of about 0.2.
+<ul>
+<li>If you have a 2-dimensional image, you may think “they are not similar at all”, but this cosine similarity is calculated in a 768-dimensional space.
+<ul>
+<li><a href="./Cosine-similarity-of-0.2-is-extremely-rare-in-higher-dimensions" class="internal alias" data-slug="Cosine-similarity-of-0.2-is-extremely-rare-in-higher-dimensions">Cosine similarity of 0.2 is extremely rare in higher dimensions</a></li>
+</ul>
+</li>
+<li>768 dimensions, so less than one part per million.</li>
+<li>0.22~0.24 depending on additional search</li>
+</ul>
+</li>
+<li>important point
+<ul>
+<li>CLIP’s 768 dimensional vectors are searched for increasing similarity in the space of 768 dimensional vectors</li>
+<li>It doesn’t increase the “likelihood of that picture being output when you put that prompt in.”
+<ul>
+<li>That’s a totally different thing, it’s more of a Textual Inversion that I’ll explain next.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Textual Inversion
+- <a href="./Try-Textual-Inversion" class="internal alias" data-slug="Try-Textual-Inversion">Try Textual Inversion</a>
+- <img src="https://gyazo.com/461f9aa8415fdc0e45e20a4eb9d42dec/thumb/1000" alt="image"/></p>
+<ul>
+<li>A system that feeds about 5 images A and waits for 1 hour to produce a 768-dimensional vector B.</li>
+<li>This vector is the same space as the prompt token embedding
+<ul>
+<li>The space where I was working on interpolating between CAT and KITTEN and so on.</li>
+</ul>
+</li>
+<li>Assign this to a token that is not normally used, such as *, so that it can be used in subsequent prompts.</li>
+<li>I haven’t delved into the details of the learning method, but in a nutshell, it is “learning to increase the probability that an image with features similar to A will be generated when an image is generated using a single word embedded in B as a prompt.”</li>
+<li>Initially, I was hoping that the cat pattern and bowman design would be reproduced, but I guess I was expecting too much.
+<ul>
+<li>In the first place, we only get one vector of 768 dimensions.
+<ul>
+<li>It’s absurd to use a single word-equivalent vector to describe something that doesn’t have a “compact vocabulary to describe it” like a bowman’s pattern.</li>
+</ul>
+</li>
+<li>Useful when humanity makes distinctions in language but users are not able to express themselves in those distinctions.</li>
+<li>For example, users who can only express “a cat like this” with the vague concept of “cat.</li>
+<li>Anthropomorphic description of AI (metaphor):.</li>
+<li>AI: “This is an ORANGE CAT.”
+<ul>
+<li><img src="https://gyazo.com/883e354ba11391e3f8ce8bdb3257cf09/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>AI “but not tabby”
+<ul>
+<li><img src="https://gyazo.com/0ca53d63ef0734f925cd8f2965a8fa0e/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>AI “bicolor-like, but in different colors.”
+<ul>
+<li><img src="https://gyazo.com/b1820f14ebbb89be348714bd3f1e9c0a/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>AI “orange bicolor!
+<ul>
+<li><img src="https://gyazo.com/ab518b99313e00366f5913e8386ab50f/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>AI: “This is different, it’s GREEN EYES, not YELLOW EYES.”
+<ul>
+<li><img src="https://gyazo.com/baf126ed3b5b5f7623d3b28074422ac8/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+<li>I compared it to linguistic thinking because it is anthropomorphic, but in reality, we don’t do this kind of linguistic thinking, but rather change the vector to determine if we are “close” or not.</li>
+<li>Due to the relationship through the “one-word meaning space,” which has only 768 dimensions, it is not possible to learn an image-like memory like the Cybozu logo.</li>
+<li>The vocabulary for cat patterns and the vocabulary for patterns of bowman-like objects is more extensive in the former.
+<ul>
+<li>So the former is easier to do.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Yesterday <a href="./DreamBooth" class="internal" data-slug="DreamBooth">DreamBooth</a> was released in an easy-to-use format.
+<ul>
+<li>
+<blockquote>
+<p><a href="https://twitter.com/psuraj28/status/1575123562435956740?s=21&amp;t=nsEudpoT1W4dsOjQVkyQyg" class="external">@psuraj28<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>: dreambooth<a href="./tags/stablediffusion" class="tag-link internal alias" data-slug="tags/stablediffusion">stablediffusion</a> training is now available in 🧨diffusers!</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>And guess what! You can run this on a 16GB colab in less than 15 mins!</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><img src="https://pbs.twimg.com/media/Fdv2h9TWYAAun3H.jpg" alt="image"/></p>
+</blockquote>
+</li>
+<li>16GB of VRAM, 15 minutes for fine tuning.</li>
+<li>Is the principle different from Textual Inversion and the facial design is maintained?</li>
+<li>Where we would like to try in the future</li>
+</ul>
+</li>
+</ul>
+<p>Q: In <a href="./Stable-Diffusion-Embedded-Tensor-Editing" class="internal alias" data-slug="Stable-Diffusion-Embedded-Tensor-Editing">Stable Diffusion Embedded Tensor Editing</a>, when I add the vectors of words together, do they not change continuously because the place to attach is deep?</p>
+<ul>
+<li>A: I think the branching off near the beginning of the process of going from noise to image is where the crass change occurs.
+<ul>
+<li>It’s hard to verbalize an image.</li>
+<li><img src="https://gyazo.com/e59c5d923638d28ea56abe2ad8fca381/thumb/1000" alt="image"/>
+<ul>
+<li>Basically, the prompt vector is almost the same, so if the input is the same, the output should also be almost the same</li>
+<li>However, when it crosses the divide, the difference widens, and as a result, the input values are further apart, so the difference widens even more… and so on.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Q: I thought the picture was going to change a lot where the attention mechanism means attention changes a lot.</li>
+<li>A: As far as this experiment is concerned, the form of the prompt is identical and only the vector of one word in cat is changed smoothly, so I don’t think it means that the attention is changing rapidly and that is what is showing up in this behavior.
+<ul>
+<li>I can’t say for sure because we don’t have visualization of attention yet.</li>
+<li>(Tip: Note that in Stable Diffusion, the default is “Attention to the 77 tokens in the prompt”, although you can change it in many ways, and it does not do anything about where in the image to focus attention.)</li>
+<li>Even though you’re interpolating between cat and kitten, since they’re both nouns, there shouldn’t be a big change in syntax, so the attension hasn’t changed much.</li>
+</ul>
+</li>
+<li>B: I think you mean that the process of repeating the denoise 50 times diverges in the middle of the process, and the results change so much from there that what you end up with appears to be discontinuous.</li>
+<li>A: Yes, the mapping itself is not linear, so when you look at the result of stacking it over and over again, of course there are places where it behaves discontinuously, and that’s just the way it should be.</li>
+<li>Q: Is that like the <a href="./butterfly-effect-(chaos-theory)" class="internal alias" data-slug="butterfly-effect-(chaos-theory)">butterfly effect (chaos theory)</a>?</li>
+<li>A: I’m talking about something like the butterfly effect.
+<ul>
+<li>Supplemental note:.
+<ul>
+<li>The story of how a very small difference in initial values can lead to a large difference in the result when the difference is multiplied over and over again with an expanding map, an analogy to a hurricane in the US caused by a butterfly flapping its wings in Tokyo.</li>
+<li>In this case, to be precise, the initial values are exactly the same and the mapping is very slightly different. I’m just saying that error magnification can occur in this case as well, perhaps that’s what’s happening.</li>
+</ul>
+</li>
+<li>Even if the effect of the prompt is small, if it changes whether you fall on the right or left side of the mountain, then the subsequent denoising moves you in the direction away from it!
+<ul>
+<li><img src="https://gyazo.com/5a0218f95bbc047d3e5470bbced29597/thumb/1000" alt="image"/>
+<ul>
+<li>Image of a stream hitting a mountain and branching off.</li>
+</ul>
+</li>
+<li>Q: Okay, so it developed in different ways to be like that.</li>
+<li>A: Yes, it is very possible that the inputs are not different but the outputs are very far apart, because it is non-linear.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Q: Interesting that you can add and subtract vectors like <a href="./word2vec" class="internal" data-slug="word2vec">word2vec</a>.</p>
+<ul>
+<li>A: You never know until you try, I thought I could do it, but my impression is that there are more non-sequential jumps than I thought.
+<ul>
+<li>It is technically possible to erase the face using an inpaint mask, and then have the artist redraw it with instructions such as, “You said cat, but this part should be more like a kitten.</li>
+<li>But I think it would be less burdensome for humans to choose from 100 randomly seeded items rather than trying to manipulate such details for something that is difficult to control.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from [/nishio/Stable Diffusion勉強会](<a href="https://scrapbox.io/nishio/Stable" class="external">https://scrapbox.io/nishio/Stable<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Diffusion勉強会) using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./2022-11-07-Study-Session" class="internal">2022-11-07 Study Session</a></li><li><a href="./Diary-2022-09-30" class="internal">Diary 2022-09-30</a></li><li><a href="./Image-Generation-AI-Study-Group-(Digest-October-2022)" class="internal">Image Generation AI Study Group (Digest October 2022)</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

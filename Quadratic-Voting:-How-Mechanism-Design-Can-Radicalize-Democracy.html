@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Quadratic Voting: How Mechanism Design Can Radicalize Democracy</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="🪴 Quartz 4.0"/><meta property="og:title" content="Quadratic Voting: How Mechanism Design Can Radicalize Democracy"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Quadratic Voting: How Mechanism Design Can Radicalize Democracy"/><meta name="twitter:description" content="Steven Lalley, E. Glen Weyl (2018) Can mechanism design save democracy? We propose a simple design that offers a chance: individuals pay for as many votes as they wish using a number of “voice credits” quadratic in the votes they buy."/><meta property="og:description" content="Steven Lalley, E. Glen Weyl (2018) Can mechanism design save democracy? We propose a simple design that offers a chance: individuals pay for as many votes as they wish using a number of “voice credits” quadratic in the votes they buy."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="Steven Lalley, E. Glen Weyl (2018) Can mechanism design save democracy? We propose a simple design that offers a chance: individuals pay for as many votes as they wish using a number of “voice credits” quadratic in the votes they buy."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:width" content="1200"/><meta property="og:height" content="630"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https:/quartz.jzhao.xyz/Quadratic-Voting:-How-Mechanism-Design-Can-Radicalize-Democracy"/><meta property="twitter:url" content="https:/quartz.jzhao.xyz/Quadratic-Voting:-How-Mechanism-Design-Can-Radicalize-Democracy"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Steven Lalley, E. Glen Weyl (2018) Can mechanism design save democracy? We propose a simple design that offers a chance: individuals pay for as many votes as they wish using a number of “voice credits” quadratic in the votes they buy."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Quadratic-Voting:-How-Mechanism-Design-Can-Radicalize-Democracy"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">🪴 Quartz 4.0</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Quadratic Voting: How Mechanism Design Can Radicalize Democracy</a></div></nav><h1 class="article-title">Quadratic Voting: How Mechanism Design Can Radicalize Democracy</h1><p show-comma="true" class="content-meta"><span>Mar 13, 2024</span><span>6 min read</span></p></div></div><article class="popover-hint"><p><a href="./Steven-Lalley" class="internal alias" data-slug="Steven-Lalley">Steven Lalley</a>, <a href="./E.-Glen-Weyl" class="internal alias" data-slug="E.-Glen-Weyl">E. Glen Weyl</a> (2018)</p>
+<blockquote>
+<p>Can mechanism design save democracy? We propose a simple design that offers a chance: individuals pay for as many votes as they wish using a number of “voice credits” quadratic in the votes they buy. Only quadratic cost induces marginal costs linear in votes purchased and thus welfare optimality if individuals’ valuation of votes is proportional to their value of changing the outcome. A variety of analysis and evidence suggests that this still-nascent mechanism has significant promise to robustly correct the failure of existing democracies to incorporate intensity of preference and knowledge.</p>
+<p>The online appendix for “Quadratic Voting: How Mechanism Design Can Radicalize Democracy” may be found here: <a href="http://ssrn.com/abstract=2790624." class="external">http://ssrn.com/abstract=2790624.<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2003531" class="external">https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2003531<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+American Economic Association Papers and Proceedings, Vol. 1, No. 1, 2018
+but the preprint was published in 2012.</p>
+</blockquote>
+<p>2024-01-30</p>
+<ul>
+<li>Below are my notes from reading the 2023-07-20- “What the heck is this?” I’m not very organized.</li>
+<li>The more I understand, the more I feel it’s an important concept.</li>
+</ul>
+<p>from <a href="./Quadratic-Voting" class="internal alias" data-slug="Quadratic-Voting">Quadratic Voting</a>
+Quadratic Voting: How <a href="./Mechanism-Design" class="internal alias" data-slug="Mechanism-Design">Mechanism Design</a> Can Radicalize Democracy
+<a href="https://www.researchgate.net/publication/325310987_Quadratic_Voting_How_Mechanism_Design_Can_Radicalize_Democracy" class="external">https://www.researchgate.net/publication/325310987_Quadratic_Voting_How_Mechanism_Design_Can_Radicalize_Democracy<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<blockquote>
+<p>Can mechanism design save democracy? We propose a simple design that offers a chance: individuals pay for as many votes as they wish using a number of “voice credits” in the votes they buy. Only quadratic cost induces marginal costs linear in votes purchased and thus welfare optimality if individuals’ valuation of votes is proportional to their value of changing the outcome. A variety of analysis and evidence suggests that this still-nascent mechanism has significant promise to robustly correct the failure of existing democracies to incorporate intensity of preference and knowledge.
+(DeepL+nishio) Can <a href="./mechanism-design" class="internal alias" data-slug="mechanism-design">mechanism design</a> save <a href="./democracy" class="internal" data-slug="democracy">democracy</a><code>? We propose a simple design that offers that possibility. Individuals pay for as many votes as they wish, using the number of &quot;voice credits&quot; in the votes they purchase. If individuals' valuation of their votes is proportional to their value for changing the outcome, then only the quadratic cost yields a marginal cost that is linear in the number of votes purchased, resulting in a welfare optimum. Various analyses and evidence suggest that this still developing mechanism has great potential to robustly correct existing democracies' failure to incorporate preference strength and knowledge.</code></p>
+</blockquote>
+<ul>
+<li>I don’t like translating “quadratic” as “secondary” because it feels like a secondary nuance.<img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>
+<ul>
+<li>
+<p>In Taiwan, it seems to be “<a href="./square-vote" class="internal alias" data-slug="square-vote">square vote</a>”, I prefer this one <a href="https://discord.com/channels/1087587764691808316/1093884258231267499/1114087516870561912" class="external">Discord<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+<li>
+<p><a href="./direct-democracy" class="internal alias" data-slug="direct-democracy">direct democracy</a> as a prerequisite and an improvement on how to achieve it?</p>
+</li>
+<li>
+<p>Is there only one agenda item for the “choose from multiple candidates who will be mayor” type of thing that many people associate with the word “vote”?</p>
+<ul>
+<li>
+<blockquote>
+<p>Many two-option collective decisions (e.g., referendums, election of leaders) are made.</p>
+</blockquote>
+</li>
+<li>Encode the selection of leaders into a two-choice group decision as well?</li>
+</ul>
+</li>
+<li>
+<p>Ah, I see, the premise is to change the right to vote from “something that disappears if not used in a particular election” to <a href="./Speech-tokens" class="internal alias" data-slug="Speech-tokens">Speech tokens</a> that have continuing value.</p>
+<ul>
+<li>
+<blockquote>
+<p>As is common in the analysis of markets for private goods (Willig, 1976), we assume there are enough issues and that each is sufficiently inconsequential that every voter has a quasi-linear “continuation value” for retaining voice credits for future votes.</p>
+</blockquote>
+</li>
+<li>(DeepL) As is common in private goods market analysis (Willig, 1976), we assume here that there are a sufficient number of issues, each sufficiently inconsequential, that all voters have a quasi-linear “continuation value” that retains a say in future voting.</li>
+<li>So possible future votes will be in scope and “multiple agenda items”.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The “one vote per agenda item” implicitly assumed “equality of <a href="./attention" class="internal" data-slug="attention">attention</a> to the agenda item,” but that’s not really the case.</li>
+</ul>
+<p><img src="https://scrapbox.io/api/pages/nishio/GPT-4/icon" alt="GPT-4.icon" height="19.5"/>As is common in market analysis of private goods (Willig, 1976), assume that there are enough issues, each sufficiently irrelevant, that every voter has a “<a href="./Continued-Value" class="internal alias" data-slug="Continued-Value">Continued Value</a>” that holds a say credit for future votes.</p>
+<ul>
+<li>
+<p><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/>In today’s general voting, voting credits are “tokens that lose value if not exercised at the time of the vote,” but “<a href="./Speaking-Credits" class="internal alias" data-slug="Speaking-Credits">Speaking Credits</a>” in this paper have continuing value because they can be used for future votes.</p>
+</li>
+<li>
+<p><a href="./Why-does-Quadratic-Voting-take-square-roots" class="internal alias" data-slug="Why-does-Quadratic-Voting-take-square-roots">Why does Quadratic Voting take square roots?</a>
+<img src="https://gyazo.com/790419420c09b9156f713bbfda589030/thumb/1000" alt="image"/></p>
+</li>
+<li>
+<p>In an existing two-option vote to choose A or B, voters can only vote +1 or -1</p>
+<ul>
+<li>If the sum of them is greater than zero, A wins.</li>
+</ul>
+</li>
+<li>
+<p>As a result, the votes of the “Being an A is very important!” and “I don’t care either way, but if I had to choose, I’d say B!” people’s votes have the same power and cancel each other out.</p>
+<ul>
+<li>Not good!</li>
+</ul>
+</li>
+<li>
+<p>So we want to allow voters to change the weight of their votes.</p>
+<ul>
+<li>But if you can change it arbitrarily, people will make it infinitely stronger.</li>
+<li>So introduce a structure where “it costs more to have a stronger voice”.</li>
+<li>This paper examines the conditions for the cost function c to have favorable characteristics in order to discuss how this cost should be</li>
+<li>In conclusion, it is better to make it a quadratic function</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://scrapbox.io/api/pages/nishio/GPT-4/icon" alt="GPT-4.icon" height="19.5"/>In deciding how many votes to purchase, each voter compares the marginal cost of an additional vote with the probability that the vote is perceived to play a decisive role in influencing the outcome of the election. The price acceptance assumption we adopt, first proposed by Mueller (1973) and Laine (1977), is that all voters agree on the marginal determinacy p of their votes in this issue (although it may vary from issue to issue).</p>
+<ul>
+<li><img src="https://scrapbox.io/api/pages/nishio/nishio/icon" alt="nishio.icon" height="19.5"/><code>marginal pivotality of votes p</code>
+<ul>
+<li>The assumption is made that everyone knows before purchasing a ballot that the acquisition of additional voting rights could change the outcome, and that everyone assumes the same value.</li>
+<li>That’s a pretty strong assumption.</li>
+<li>If we accept that assumption, then a rational voter would choose the number of votes that maximizes [$ 2u_ipv_i - c(v_i)</li>
+</ul>
+</li>
+<li><code>robustly optimal</code> means that the signs of <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0497em;vertical-align:-0.2997em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.162em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2997em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6887em;"><span style="top:-2.4413em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2587em;"><span></span></span></span></span></span></span></span></span></span> and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0497em;vertical-align:-0.2997em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.162em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2997em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> match
+<ul>
+<li>for every p > 0, N and vector u, each price-taking voter i chooses votes <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9474em;vertical-align:-0.2587em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6887em;"><span style="top:-2.4413em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2587em;"><span></span></span></span></span></span></span></span></span></span></li>
+</ul>
+</li>
+</ul>
+<p>[/blu3mo-public/Quadratic Voting#6435f5161286260000f30f6c](<a href="https://scrapbox.io/blu3mo-public/Quadratic" class="external">https://scrapbox.io/blu3mo-public/Quadratic<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Voting#6435f5161286260000f30f6c)</p>
+<ul>
+<li>
+<blockquote>
+<p>Is there a rationale for setting n=2…?</p>
+</blockquote>
+</li>
+<li>
+<p>Answer to this</p>
+</li>
+<li>
+<blockquote>
+<p>THEOREM 1: A vote pricing rule is robustly optimal if and only if it is quadratic.</p>
+</blockquote>
+</li>
+<li>
+<p>If <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">2</span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal">p</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">c</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> is maximized, then the derivative of it by v is zero</p>
+<ul>
+<li>If we expand this, we see that u and v are proportional only when c is a quadratic function
+<ul>
+<li><img src="https://gyazo.com/1bf407b0356839250026e6a178224c72/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Consideration of changing this a</p>
+<ul>
+<li>If a=1, the cost of getting a new vote is constant.
+<ul>
+<li>In this case, it would be a dictatorship of the person with the highest absolute value of u</li>
+<li>Because the value of this shoulder goes to infinity.
+<ul>
+<li><img src="https://gyazo.com/cdf578f6c0eee5eac996f037d8ed75d8/thumb/1000" alt="image"/></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If you set a to infinity, everyone votes for just one.
+<ul>
+<li>Just like a normal majority vote now.</li>
+</ul>
+</li>
+<li>a=2 is <a href="./moderation" class="internal" data-slug="moderation">moderation</a>.</li>
+</ul>
+</li>
+<li>
+<p>relevance</p>
+<ul>
+<li><a href="https://scrapbox.io/tkgshn/why-quadratic-voting-is-squared" class="external">/tkgshn/why-quadratic-voting-is-squared<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>
+<img src="https://scrapbox.io/api/pages/nishio/Quadratic Payments: A Primer/icon" alt="Quadratic Payments: A Primer.icon" height="19.5"/>
+</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p>This page is auto-translated from [/nishio/Quadratic Voting: How Mechanism Design Can Radicalize Democracy](<a href="https://scrapbox.io/nishio/Quadratic" class="external">https://scrapbox.io/nishio/Quadratic<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Voting: How Mechanism Design Can Radicalize Democracy) using DeepL. If you looks something interesting but the auto-translated English is not good enough to understand it, feel free to let me know at <a href="https://twitter.com/nishio_en" class="external">@nishio_en<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. I’m very happy to spread my thought to non-Japanese readers.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="./Diary-2024-01-02" class="internal">Diary 2024-01-02</a></li><li><a href="./Plural-Management-Study-Session" class="internal">Plural Management Study Session</a></li><li><a href="./QV-assumes-continuing-value-of-voice-credit" class="internal">QV assumes continuing value of voice credit</a></li><li><a href="./Quadratic-Payments:-A-Primer" class="internal">Quadratic Payments: A Primer</a></li><li><a href="./Quadratic-Voting-and-Plural-Management-Study-Group" class="internal">Quadratic Voting and Plural Management Study Group</a></li><li><a href="./Quadratic-Voting" class="internal">Quadratic Voting</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>
